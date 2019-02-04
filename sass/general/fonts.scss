@@ -1,17 +1,26 @@
 @font-face {
-  font-family: "PTSans-Caption";
+  font-family: "Segoe UI Regular";
   src: local("PTSans-Caption"),
-       url("../fonts/PTSans-Caption.woff2") format("woff2"),
-       url("../fonts/PTSans-Caption.woff") format("woff");
+       url("../fonts/SegoeUI-Regular.woff2") format("woff2"),
+       url("../fonts/SegoeUI-Regular.woff") format("woff2");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "PTSans-Caption";
-  src: local("PTSans-CaptionBold"),
-       url("../fonts/PTSans-CaptionBold.woff2") format("woff2"),
-       url("../fonts/PTSans-CaptionBold.woff") format("woff");
+  font-family: "Segoe UI SemiBold";
+  src: local("PTSans-Caption"),
+       url("../fonts/SegoeUI-SemiBold.woff2") format("woff2"),
+       url("../fonts/SegoeUI-SemiBold.woff") format("woff2");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Segoe UI Bold";
+  src: local("PTSans-Caption"),
+       url("../fonts/SegoeUI-Bold.woff2") format("woff2"),
+       url("../fonts/SegoeUI-Bold.woff") format("woff2");
   font-weight: 700;
   font-display: swap;
 }

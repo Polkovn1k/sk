@@ -1,3 +1,12 @@
+//---Bootstrap
+@import "../node_modules/bootstrap/scss/_functions.scss";
+@import "general/custom.scss";
+@import "../node_modules/bootstrap/scss/_variables.scss";
+@import "../node_modules/bootstrap/scss/_mixins.scss";
+@import "../node_modules/bootstrap/scss/_grid.scss";
+
+
+//
 @import "general/fonts.scss";
 @import "general/variables.scss";
 @import "general/mixins.scss";
