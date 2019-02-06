@@ -1,6 +1,115 @@
 .header {
+    background-image: linear-gradient(180deg, $white $gradient-breakpoint-mobile, $blue $gradient-breakpoint-mobile);
+    @media (min-width: $lg) {
+        background-image: linear-gradient(180deg, $white $gradient-breakpoint-desktop, $blue $gradient-breakpoint-desktop);
+    }
 
     &__container {
+        @include container();
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 auto;
+    }
+//тоглер
+    &__nav-tog {
+        order: -2;
+        width: 22px;
+        height: 22px;
+        padding: 0;
+        font-size: 0;
+        background: $transparent;
+        border: none;
+        svg {
+            height: 22px;
+            width: 22px;
+        }
+        @media (min-width: $lg) {
+            order: 0;
+            display: none;
+        }
+    }
+//логотип
+    &__logo {
+        order: -2;
+        width: 145px;
+        height: 22px;
+        overflow: hidden;
+        @media (min-width: $lg) {
+            order: 0;
+            width: 155px;
+            height: 40px;
+        }
+    }
+    &__logo-link {
+        display: block;
+        width: 100%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+//обертка основного контента
+    &__content-wrapper {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+//блок инфо
+    &__info {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+//дополнительная навигация (синии кнопки)
+    &__extra-nav {
+        @include order-reset();
+        width: 100%;
+        font-size: 0;
+        @media (min-width: $lg) {
+            width: 250px;//временно
+        }
+    }
+
+    &__extra-nav-item {
+        display: inline-block;
+        width: 50%;
+        font-size: 16px;
+    }
+
+    &__extra-nav-item--toggler {
+        svg {
+            display: none;
+        }
+        @media (min-width: $lg) {
+            width: 27px;
+            height: 23px;
+            font-size: 0;
+            svg {
+                display: block;
+                width: 100%;
+                height: 100%;
+                fill: $white;
+            }
+        }
+    }
+
+    &__extra-nav-item--hide-lg {
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__extra-nav-item--hide-mob {
+        display: none;
+        @media (min-width: $lg) {
+            display: inline-block;
+        }
+    }
+
+    &__extra-nav-link {
 
     }
 }

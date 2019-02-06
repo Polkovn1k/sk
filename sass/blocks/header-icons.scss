@@ -1,0 +1,22 @@
+.header-icons {
+    order: -2;
+    @media (min-width: $lg) {
+        order: 0;
+    }
+
+    &__list {
+        @include order-reset();
+        display: flex;
+    }
+
+    &__item {
+        font-size: 0;
+    }
+
+    &__link {
+        display: block;
+        svg {
+            fill: $blue;
+        }
+    }
+}

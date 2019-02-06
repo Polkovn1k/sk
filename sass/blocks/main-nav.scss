@@ -1,0 +1,38 @@
+.main-nav {
+    @media (min-width: $lg) {
+        display: block;
+    }
+
+    &__title {
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__list {
+        @include order-reset();
+        @media (min-width: $lg) {
+            display: flex;
+        }
+    }
+
+    &__item {
+
+    }
+
+    &__item-link {
+
+    }
+//второе выпадающее меню
+    &__dropdawn-list {
+        @include order-reset();
+    }
+
+    &__dropdawn-item {
+
+    }
+
+    &__item-link {
+
+    }
+}

@@ -1,4 +1,4 @@
-@mixin container($miw: 320px, $maw: 1330px, $pd-right: 15px, $pd-left: 15px) {
+@mixin container($miw: 320px, $maw: 1395px, $pd-right: 15px, $pd-left: 15px) {
   min-width: $miw;
   max-width: $maw;
   padding-right: $pd-right;

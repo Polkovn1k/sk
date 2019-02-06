@@ -1,4 +1,4 @@
-//Ширина сетки lg
+//Точки вьюпорта
 $grid-breakpoints: () !default;
 $grid-breakpoints: map-merge(
   (
@@ -6,19 +6,19 @@ $grid-breakpoints: map-merge(
     sm: 576px,
     md: 768px,
     lg: 1024px,
-    xl: 1200px
+    xl: 1395px
   ),
   $grid-breakpoints
 );
 
-//Ширина контейнера lg
+//Ширина контейнера
 $container-max-widths: () !default;
 $container-max-widths: map-merge(
   (
     sm: 540px,
     md: 720px,
-    lg: 992px,
-    xl: 1140px
+    lg: 994px,
+    xl: 1365px
   ),
   $container-max-widths
 );

@@ -1,8 +1,8 @@
 // Grid
 $sm: 576px;
 $md: 768px;
-$lg: 992px;
-$xl: 1200px;
+$lg: 1024px;
+$xl: 1395px;
 
 // Fonts
 $font: "Segoe UI", sans-serif;
@@ -13,5 +13,10 @@ $black: #000000;
 $bg-color: #fafafa;
 $transparent: transparent;
 $main-color: #2c2c2c;
+$blue: #008aff;
 
 // Other
+$gradient-breakpoint-mobile: 60px;
+$gradient-breakpoint-desktop: 75px;
+$mobile-header-height: 100px;
+$desktop-header-height: 150px;

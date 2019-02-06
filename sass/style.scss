@@ -5,7 +5,6 @@
 @import "../node_modules/bootstrap/scss/_mixins.scss";
 @import "../node_modules/bootstrap/scss/_grid.scss";
 
-
 //---Utility
 @import "general/fonts.scss";
 @import "general/variables.scss";
@@ -16,4 +15,7 @@
 //---BEM blocks
 @import "blocks/header.scss";
 @import "blocks/main-nav.scss";
+@import "blocks/communication-type.scss";
+@import "blocks/search.scss";
+@import "blocks/header-icons.scss";
 @import "blocks/visually-hidden.scss";
