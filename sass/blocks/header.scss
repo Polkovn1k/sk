@@ -1,4 +1,6 @@
 .header {
+    position: fixed;
+    width: 100%;
     background-image: linear-gradient(180deg, $white $gradient-breakpoint-mobile, $blue $gradient-breakpoint-mobile);
     @media (min-width: $lg) {
         background-image: linear-gradient(180deg, $white $gradient-breakpoint-desktop, $blue $gradient-breakpoint-desktop);
@@ -6,6 +8,7 @@
 
     &__container {
         @include container();
+        position: relative;
         display: flex;
         flex-wrap: wrap;
         margin: 0 auto;
@@ -13,6 +16,17 @@
 //тоглер
     &__nav-tog {
         order: -2;
+        height: $gradient-breakpoint-mobile;
+        width: 22px;
+        margin-right: 20px;
+        padding-top: 20px;
+        @media (min-width: $lg) {
+            order: 0;
+            display: none;
+        }
+    }
+
+    &__nav-tog-btn {
         width: 22px;
         height: 22px;
         padding: 0;
@@ -22,37 +36,57 @@
         svg {
             height: 22px;
             width: 22px;
-        }
-        @media (min-width: $lg) {
-            order: 0;
-            display: none;
+            fill: $blue;
         }
     }
 //логотип
     &__logo {
         order: -2;
-        width: 145px;
-        height: 22px;
-        overflow: hidden;
+        height: $gradient-breakpoint-mobile;
+        padding-top: 15px;
+        @media (min-width: $sm) {
+            padding-top: 19px;
+        }
         @media (min-width: $lg) {
             order: 0;
-            width: 155px;
-            height: 40px;
+            height: $gradient-breakpoint-desktop;
+            padding-top: 10px;
         }
     }
     &__logo-link {
         display: block;
-        width: 100%;
-        height: 100%;
-        img {
-            width: 100%;
-            height: auto;
+        height: 40px;
+        overflow: hidden;
+        @media (min-width: $sm) {
+            height: 30px;
+        }
+        @media (min-width: $lg) {
+            height: 40px;
+        }
+    }
+    &__logo-img-mob {
+        display: inline;
+        width: 30px;
+        height: 30px;
+        @media (min-width: $sm) {
+            display: none;
+        }
+    }
+    &__logo-img {
+        display: none;
+        @media (min-width: $sm) {
+            display: inline;
+            width: 160px;
         }
     }
 //обертка основного контента
     &__content-wrapper {
-        display: none;
+        position: absolute;
+        top: $mobile-header-height;
+        width: 100%;
+        display: block;
         @media (min-width: $lg) {
+            position: static;
             display: block;
         }
     }
@@ -76,10 +110,17 @@
     &__extra-nav-item {
         display: inline-block;
         width: 50%;
+
+        font-family: $font;
         font-size: 16px;
+        font-weight: 600;
+        line-height: $gradient-breakpoint-mobile-end;
+        text-align: center;
+        color: $white;
     }
 
     &__extra-nav-item--toggler {
+        border-right: 1px solid $dark-blue;
         svg {
             display: none;
         }
@@ -97,6 +138,7 @@
     }
 
     &__extra-nav-item--hide-lg {
+        border-left: 1px solid $dark-blue;
         @media (min-width: $lg) {
             display: none;
         }
@@ -110,6 +152,8 @@
     }
 
     &__extra-nav-link {
-
+        display: block;
+        width: 100%;
+        height: 100%;
     }
 }

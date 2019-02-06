@@ -1,20 +1,42 @@
 .header-icons {
     order: -2;
+    height: $gradient-breakpoint-mobile;
+    margin-left: auto;
     @media (min-width: $lg) {
         order: 0;
+        height: $gradient-breakpoint-desktop;
     }
 
     &__list {
         @include order-reset();
         display: flex;
+        height: 100%;
     }
 
     &__item {
+        width: 50px;
+        padding-top: 20px;
         font-size: 0;
+    }
+
+    &__item--hide-lg {
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__item--hide-mob {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+        }
     }
 
     &__link {
         display: block;
+        width: 30px;
+        margin: 0 auto;
+        text-align: center;
         svg {
             fill: $blue;
         }

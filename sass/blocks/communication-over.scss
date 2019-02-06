@@ -1,0 +1,6 @@
+.communication-over {
+    display: none;
+    @media (min-width: $lg) {
+        display: block;
+    }
+}
