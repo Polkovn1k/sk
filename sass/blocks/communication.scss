@@ -1,0 +1,65 @@
+.communication {
+    @media (min-width: $lg) {
+        display: none;
+    }
+
+    &__title {
+        @include nav-title-block();
+        padding-top: 30px;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        color: $add-text-color;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__list {
+        @include order-reset();
+    }
+
+    &__item {
+        height: $mobile-header-nav-item-height;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 600;
+        color: $extra-text-color;
+    }
+
+    &__item--bold {
+        color: $communication-add-color;
+        span {
+            font-weight: 700;
+            color: $extra-text-color;
+        }
+    }
+
+    &__item-link {
+        position: relative;
+        display: block;
+        height: 100%;
+        padding: 10px $grid-padding 0 $grid-padding;
+        background: $white;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border-bottom: none;
+        }
+    }
+
+    &__item-link::before {
+        @include pseudo();
+        top: 15px;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+        border: 2px solid $border-color;
+        border-left: transparent;
+        border-bottom: transparent;
+        transform: rotate(45deg);
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+}

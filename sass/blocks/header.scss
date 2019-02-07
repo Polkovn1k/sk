@@ -11,6 +11,7 @@
         position: relative;
         display: flex;
         flex-wrap: wrap;
+        align-items: flex-start;
         margin: 0 auto;
     }
 //тоглер
@@ -49,8 +50,10 @@
         }
         @media (min-width: $lg) {
             order: 0;
+            display: flex;
+            align-items: center;
             height: $gradient-breakpoint-desktop;
-            padding-top: 10px;
+            padding-top: 0;
         }
     }
     &__logo-link {
@@ -61,7 +64,7 @@
             height: 30px;
         }
         @media (min-width: $lg) {
-            height: 40px;
+            height: auto;
         }
     }
     &__logo-img-mob {
@@ -81,19 +84,66 @@
     }
 //обертка основного контента
     &__content-wrapper {
-        position: absolute;
-        top: $mobile-header-height;
-        width: 100%;
+        position: fixed;
+        top: $gradient-breakpoint-mobile;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: auto;
         display: block;
+        background: $white;
+        border-top: 1px solid $border-color;
         @media (min-width: $lg) {
+            flex-grow: 1;
             position: static;
-            display: block;
+            height: $gradient-breakpoint-desktop;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            overflow: visible;
         }
+    }
+//маленький пункт на мобиле
+    &__add-nav {
+        @include order-reset();
+        height: $mobile-header-nav-item-height;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__add-nav-item {
+        height: 100%;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 600;
+        color: $white;
+    }
+
+    &__add-nav-link {
+        position: relative;
+        display: block;
+        height: 100%;
+        padding: 10px $grid-padding 0 $grid-padding;
+        background: $blue;
+    }
+
+    &__add-nav-link::before {
+        @include pseudo();
+        top: 15px;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+        border: 2px solid $white;
+        border-left: none;
+        border-bottom: none;
+        transform: rotate(45deg);
     }
 //блок инфо
     &__info {
         display: none;
-        @media (min-width: $lg) {
+        @media (min-width: $xl) {
             display: block;
         }
     }

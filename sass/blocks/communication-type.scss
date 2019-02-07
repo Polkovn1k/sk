@@ -1,3 +1,170 @@
 .communication-type {
-    display: none;
+    @include full-absolute();
+    //display: none;
+    padding: $grid-padding;
+    position: fixed;
+    overflow: auto;
+    background-color: transparentize($black, 0.5);
+    @media (min-width: $lg) {
+        display: flex;
+        position: static;
+        height: $gradient-breakpoint-desktop;
+        padding: 0;
+        overflow: visible;
+        background-color: transparent;
+    }
+
+    &__container {
+        position: relative;
+        padding: 20px;
+        background: $white;
+        border-radius: 5px;
+        @media (min-width: $lg) {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0;
+        }
+    }
+
+    &__title {
+        @include field-reset();
+        margin: 0 -20px;
+        padding: 0 20px;
+        min-height: 45px;
+        font-family: $font;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $extra-text-color;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__text {
+        @include field-reset();
+        padding-top: 20px;
+        padding-bottom: 25px;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+        span {
+            font-weight: 700;
+        }
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__list {
+        @include order-reset();
+        @media (min-width: $lg) {
+            display: flex;
+            align-items: center;
+            height: 100%;
+        }
+    }
+
+    &__item {
+        height: $mobile-communication-item-height;
+        margin-bottom: 20px;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.38;
+        color: $white;
+        @media (min-width: $lg) {
+            height: auto;
+            margin-right: 30px;
+            margin-bottom: 0;
+            font-size: 0;
+        }
+    }
+
+    &__item:last-child {
+        margin-bottom: 0;
+        @media (min-width: $lg) {
+            margin-right: 0;
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: block;
+        padding-left: 50px;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        line-height: $mobile-communication-item-height;
+        svg {
+            width: $mobile-communication-item-height;
+            height: $mobile-communication-item-height;
+            position: absolute;
+            left: 0;
+        }
+        @media (min-width: $lg) {
+            padding-left: 0;
+            line-height: 1.15;
+            svg {
+                position: static;
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+    &__link--whatsapp {
+        background: $whatsapp-color;
+        svg {
+            fill: $whatsapp-color;
+        }
+        @media (min-width: $lg) {
+            background: transparent;
+        }
+    }
+
+    &__link--telegram {
+        background: $telega-color;
+        svg {
+            fill: $telega-color;
+        }
+        @media (min-width: $lg) {
+            background: transparent;
+        }
+    }
+
+    &__link--call {
+        background: $black;
+        svg {
+            fill: $black;
+        }
+        @media (min-width: $lg) {
+            background: transparent;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        width: 50px;
+        height: 50px;
+        border: none;
+        cursor: pointer;
+        font-size: 0;
+        background: transparent;
+        text-align: center;
+        svg {
+            width: 25px;
+            height: 25px;
+            fill: $communication-add-color;
+        }
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
 }

@@ -1,0 +1,13 @@
+.btn {
+    display: inline-block;
+    height: $btn-height;
+    padding: 3px 10px;
+    border: 1px solid $blue;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: 600;
+    color: $blue;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}

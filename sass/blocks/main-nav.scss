@@ -4,6 +4,13 @@
     }
 
     &__title {
+        @include nav-title-block();
+        padding-top: 30px;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        color: $add-text-color;
         @media (min-width: $lg) {
             display: none;
         }
@@ -17,22 +24,93 @@
     }
 
     &__item {
+        height: $mobile-header-nav-item-height;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 600;
+        color: $extra-text-color;
+        @media (min-width: $lg) {
+            height: auto;
+            font-size: 14px;
+        }
+    }
 
+    &__item--inner {
+        height: auto;
     }
 
     &__item-link {
+        position: relative;
+        display: block;
+        height: 100%;
+        padding: 10px $grid-padding 0 $grid-padding;
+        background: $white;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border-bottom: none;
+            //height: 30px;
+            padding: 7px 12px;
+        }
+    }
 
+    &__item-link--hide-mob {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+
+    &__item-link::before {
+        @include pseudo();
+        top: 15px;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+        border: 2px solid $border-color;
+        border-left: transparent;
+        border-bottom: transparent;
+        transform: rotate(45deg);
+        @media (min-width: $lg) {
+            display: none;
+        }
     }
 //второе выпадающее меню
     &__dropdawn-list {
         @include order-reset();
+        @media (min-width: $lg) {
+            display: none;
+        }
     }
 
     &__dropdawn-item {
-
+        height: $mobile-header-nav-item-height;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 600;
+        color: $extra-text-color;
     }
 
-    &__item-link {
+    &__dropdawn-link {
+        position: relative;
+        display: block;
+        height: 100%;
+        padding: 10px $grid-padding 0 $grid-padding;
+        background: $white;
+        border-bottom: 1px solid $border-color;
+    }
 
+    &__dropdawn-link::before {
+        @include pseudo();
+        top: 15px;
+        right: 20px;
+        width: 10px;
+        height: 10px;
+        border: 2px solid $border-color;
+        border-left: transparent;
+        border-bottom: transparent;
+        transform: rotate(45deg);
+        @media (min-width: $lg) {
+            display: none;
+        }
     }
 }
