@@ -83,6 +83,12 @@
             margin-bottom: 0;
             font-size: 0;
         }
+        @media (min-width: $tp) {
+            margin-right: 15px;
+        }
+        @media (min-width: $xl) {
+            margin-right: 30px;
+        }
     }
 
     &__item:last-child {

@@ -39,7 +39,7 @@
         height: auto;
         @media (min-width: $lg) {
             position: relative;
-            padding-right: 5px;
+            padding-right: 7px;
         }
     }
 
@@ -47,7 +47,7 @@
         @media (min-width: $lg) {
             @include pseudo();
             z-index: 10;
-            top: 8px;
+            top: 9px;
             right: 0;
             width: 7px;
             height: 7px;
@@ -67,6 +67,12 @@
         border-bottom: 1px solid $border-color;
         @media (min-width: $lg) {
             border-bottom: none;
+            padding: 7px 12px;
+        }
+        @media (min-width: $tp) {
+            padding: 7px;
+        }
+        @media (min-width: $xl) {
             padding: 7px 12px;
         }
     }
@@ -97,6 +103,7 @@
     &__dropdawn-list {
         @include order-reset();
         @media (min-width: $lg) {
+            position: absolute;
             display: none;
         }
     }
@@ -130,6 +137,12 @@
         transform: rotate(45deg);
         @media (min-width: $lg) {
             display: none;
+        }
+    }
+//hover на дополнительное меню desktop
+    &__item--inner:hover {
+        .main-nav__dropdawn-list {
+            display: block;
         }
     }
 }
