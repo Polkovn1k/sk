@@ -4,13 +4,16 @@
     margin-left: auto;
     @media (min-width: $md) {
         min-width: 30%;
+        margin-left: 0;
     }
     @media (min-width: $lg) {
         order: 0;
-        flex-grow: 1;
-        max-width: 250px;
+        max-width: 290px;
         min-width: 0;
         height: $gradient-breakpoint-desktop-end;
+    }
+    @media (min-width: $xl) {
+        max-width: 330px;
     }
 
     &__list {
@@ -33,7 +36,10 @@
         @media (min-width: $lg) {
             width: 30px;
             padding-top: 0;
-            margin-right: 10px;
+            margin-right: 20px;
+        }
+        @media (min-width: $xl) {
+            margin-right: 40px;
         }
     }
 
@@ -61,18 +67,23 @@
             width: auto;
             a {
                 width: auto;
-                display: inline-block;
+                display: table;
                 svg {
-                    display: inline-block;
+                    vertical-align: middle;
                 }
-
-            }
-            span {
-                display: inline-block;
-                font-family: $font;
-                font-size: 14px;
-                font-weight: 700;
-                color: $white;
+                span {
+                    display: inline-block;
+                    max-width: 90px;
+                    padding-left: 10px;
+                    font-family: $font;
+                    font-size: 14px;
+                    font-weight: 700;
+                    color: $white;
+                    vertical-align: middle;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                }
             }
         }
     }
