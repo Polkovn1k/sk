@@ -1,3 +1,41 @@
 .search {
     display: none;
+    @media (min-width: $lg) {
+        display: block;
+        height: $gradient-breakpoint-desktop-end;
+    }
+
+    &__container {
+        height: 100%;
+    }
+
+    &__form {
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    &__input {
+        flex-grow: 1;
+        height: $mobile-search-item-height;
+        padding: 5px 20px;
+        line-height: $mobile-search-item-height;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 400;
+        color: $extra-text-color;
+        border: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+    &__btn {
+        height: $mobile-search-item-height;
+        width: 100px;
+        color: $white;
+        background: $black;
+        border: none;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
 }
