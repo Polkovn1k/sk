@@ -2,7 +2,7 @@
     position: fixed;
     width: 100%;
     background-image: linear-gradient(180deg, $white $gradient-breakpoint-mobile, $blue $gradient-breakpoint-mobile);
-    @media (min-width: $lg) {
+    @media (min-width: $md) {
         background-image: linear-gradient(180deg, $white $gradient-breakpoint-desktop, $blue $gradient-breakpoint-desktop);
     }
 
@@ -20,11 +20,13 @@
 //тоглер
     &__nav-tog {
         order: -2;
+        display: flex;
+        align-items: center;
         height: $gradient-breakpoint-mobile;
         width: 22px;
         margin-right: 20px;
-        padding-top: 20px;
         @media (min-width: $md) {
+            height: $gradient-breakpoint-desktop;
             margin-right: 0;
             min-width: 30%;
         }
@@ -53,19 +55,17 @@
     &__logo {
         order: -2;
         height: $gradient-breakpoint-mobile;
-        padding-top: 15px;
-        @media (min-width: $sm) {
-            padding-top: 19px;
-        }
+        padding-top: 5px;
+        display: flex;
+        align-items: center;
         @media (min-width: $md) {
+            height: $gradient-breakpoint-desktop;
             margin: 0 auto;
+            padding-top: 0;
         }
         @media (min-width: $lg) {
             order: 0;
             margin: 0;
-            display: flex;
-            align-items: center;
-            height: $gradient-breakpoint-desktop;
             padding-top: 0;
         }
     }
@@ -76,7 +76,7 @@
         @media (min-width: $sm) {
             height: 30px;
         }
-        @media (min-width: $lg) {
+        @media (min-width: $md) {
             height: auto;
         }
     }

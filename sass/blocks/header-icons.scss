@@ -3,6 +3,7 @@
     height: $gradient-breakpoint-mobile;
     margin-left: auto;
     @media (min-width: $md) {
+        height: $gradient-breakpoint-desktop;
         min-width: 30%;
         margin-left: 0;
     }
@@ -19,6 +20,7 @@
     &__list {
         @include order-reset();
         display: flex;
+        align-items: center;
         height: 100%;
         @media (min-width: $md) {
             justify-content: flex-end;
@@ -31,7 +33,6 @@
 
     &__item {
         width: 50px;
-        padding-top: 20px;
         font-size: 0;
         @media (min-width: $lg) {
             width: 30px;
@@ -65,28 +66,9 @@
     &__item--cart {
         @media (min-width: $lg) {
             width: auto;
-            a {
-                width: auto;
-                display: table;
-                svg {
-                    vertical-align: middle;
-                }
-                span {
-                    display: inline-block;
-                    max-width: 90px;
-                    padding-left: 10px;
-                    font-family: $font;
-                    font-size: 14px;
-                    font-weight: 700;
-                    color: $white;
-                    vertical-align: middle;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                    overflow: hidden;
-                }
-            }
         }
     }
+
 
     &__link {
         display: block;
@@ -99,6 +81,29 @@
         @media (min-width: $lg) {
             svg {
                 fill: $white;
+            }
+        }
+    }
+
+    &__link--cart {
+        width: auto;
+        svg {
+            vertical-align: middle;
+        }
+        span {
+            display: none;
+            @media (min-width: $lg) {
+               display: inline-block;
+               max-width: 100px;
+               padding-left: 10px;
+               font-family: $font;
+               font-size: 14px;
+               font-weight: 700;
+               color: $white;
+               vertical-align: middle;
+               text-overflow: ellipsis;
+               white-space: nowrap;
+               overflow: hidden;
             }
         }
     }
