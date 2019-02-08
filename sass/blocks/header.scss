@@ -217,14 +217,13 @@
             display: flex;
             align-items: center;
             height: $gradient-breakpoint-desktop-end;
-            width: 250px;//временно
+            width: 215px;//временно
         }
     }
 
     &__extra-nav-item {
         display: inline-block;
         width: 50%;
-
         font-family: $font;
         font-size: 16px;
         font-weight: 600;
@@ -232,6 +231,7 @@
         text-align: center;
         color: $white;
         @media (min-width: $lg) {
+            width: auto;
             font-size: 14px;
         }
     }

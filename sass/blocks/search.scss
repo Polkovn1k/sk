@@ -1,8 +1,12 @@
 .search {
     display: none;
     @media (min-width: $lg) {
+        flex-grow: 1;
+        padding: 0;
+        width: auto;
         display: block;
         height: $gradient-breakpoint-desktop-end;
+        padding-right: 15px;
     }
 
     &__container {
