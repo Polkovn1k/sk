@@ -3,14 +3,14 @@
   src: local("Segoe UI"),
        url("../fonts/SegoeUI-Regular.woff2") format("woff2"),
        url("../fonts/SegoeUI-Regular.woff") format("woff2"),
-       url("../fonts/SegoeUI-Regular.ttf") format("ttf"),;
+       url("../fonts/SegoeUI-Regular.ttf") format("ttf");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Segoe UI";
-  src: local("Segoe UI"),
+  src: local("Segoe UI Semibold"),
        url("../fonts/SegoeUI-SemiBold.woff2") format("woff2"),
        url("../fonts/SegoeUI-SemiBold.woff") format("woff2"),
        url("../fonts/SegoeUI-SemiBold.ttf") format("ttf");
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: "Segoe UI";
-  src: local("Segoe UI Semibold"),
+  src: local("Segoe UI Bold"),
        url("../fonts/SegoeUI-Bold.woff2") format("woff2"),
        url("../fonts/SegoeUI-Bold.woff") format("woff2"),
        url("../fonts/SegoeUI-Bold.ttf") format("ttf");
