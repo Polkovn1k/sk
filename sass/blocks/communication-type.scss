@@ -1,6 +1,6 @@
 .communication-type {
     @include full-absolute();
-    //display: none;
+    display: none;
     padding: $grid-padding;
     position: fixed;
     overflow: auto;

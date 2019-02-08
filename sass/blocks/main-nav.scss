@@ -37,6 +37,25 @@
 
     &__item--inner {
         height: auto;
+        @media (min-width: $lg) {
+            position: relative;
+            padding-right: 5px;
+        }
+    }
+
+    &__item--inner::before {
+        @media (min-width: $lg) {
+            @include pseudo();
+            z-index: 10;
+            top: 8px;
+            right: 0;
+            width: 7px;
+            height: 7px;
+            border: 2px solid $extra-text-color;
+            border-left: transparent;
+            border-top: transparent;
+            transform: rotate(45deg);
+        }
     }
 
     &__item-link {
@@ -48,7 +67,6 @@
         border-bottom: 1px solid $border-color;
         @media (min-width: $lg) {
             border-bottom: none;
-            //height: 30px;
             padding: 7px 12px;
         }
     }
@@ -57,6 +75,7 @@
         display: none;
         @media (min-width: $lg) {
             display: block;
+            cursor: pointer;
         }
     }
 

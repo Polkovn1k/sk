@@ -2,8 +2,12 @@
     order: -2;
     height: $gradient-breakpoint-mobile;
     margin-left: auto;
+    @media (min-width: $md) {
+        min-width: 30%;
+    }
     @media (min-width: $lg) {
         order: 0;
+        min-width: 0;
         height: $gradient-breakpoint-desktop;
     }
 
@@ -11,6 +15,12 @@
         @include order-reset();
         display: flex;
         height: 100%;
+        @media (min-width: $md) {
+            justify-content: flex-end;
+        }
+        @media (min-width: $lg) {
+            justify-content: flex-start;
+        }
     }
 
     &__item {
