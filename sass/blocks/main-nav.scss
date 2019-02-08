@@ -38,6 +38,7 @@
     &__item--inner {
         height: auto;
         @media (min-width: $lg) {
+            cursor: pointer;
             position: relative;
             padding-right: 7px;
         }
@@ -104,7 +105,19 @@
         @include order-reset();
         @media (min-width: $lg) {
             position: absolute;
+            top: 30px;
+            z-index: 10;
+            left: -9px;
             display: none;
+            padding: 5px 0 10px 0;
+            box-shadow: 0 3px 6px 0 transparentize($black, 0.84);
+            background: $white;
+        }
+        @media (min-width: $tp) {
+            left: -14px;
+        }
+        @media (min-width: $xl) {
+            left: -9px;
         }
     }
 
@@ -114,6 +127,13 @@
         font-size: 16px;
         font-weight: 600;
         color: $extra-text-color;
+        @media (min-width: $lg) {
+            height: auto;
+            font-size: 14px;
+            line-height: 1.30;
+            text-align: left;
+            color: $main-color;
+        }
     }
 
     &__dropdawn-link {
@@ -123,6 +143,11 @@
         padding: 10px $grid-padding 0 $grid-padding;
         background: $white;
         border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            width: 160px;
+            padding: 10px 20px;
+            border-bottom: none;
+        }
     }
 
     &__dropdawn-link::before {

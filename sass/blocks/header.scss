@@ -42,6 +42,7 @@
         font-size: 0;
         background: $transparent;
         border: none;
+        cursor: pointer;
         svg {
             height: 22px;
             width: 22px;
@@ -96,13 +97,13 @@
     }
 //обертка основного контента
     &__content-wrapper {
+        display: none;
         position: fixed;
         top: $gradient-breakpoint-mobile;
         left: 0;
         right: 0;
         bottom: 0;
         overflow: auto;
-        display: block;
         background: $white;
         border-top: 1px solid $border-color;
         @media (min-width: $lg) {
