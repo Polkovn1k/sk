@@ -16,8 +16,14 @@
 
     &__container {
         background: $white;
+        @media (min-width: $lg) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+            padding-right: 25%;
+        }
         @media (min-width: $xl) {
             max-width: $xl;
+            padding-right: $xl / 4;
         }
     }
 
@@ -35,8 +41,17 @@
         font-size: 16px;
         font-weight: 600;
         color: $extra-text-color;
-
         background: $white;
+        @media (min-width: $lg) {
+            display: block;
+            padding-bottom: 60px;
+        }
+    }
+
+    &__item--hide {
+        @media (min-width: $lg) {
+            display: none;
+        }
     }
 
     &__product-link {
@@ -47,6 +62,11 @@
         padding: 0 $grid-padding;
         border-bottom: 1px solid $border-color;
         @media (min-width: $lg) {
+            padding: 0;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.33;
+            color: $main-color;
             border-bottom: none;
         }
     }
@@ -86,14 +106,40 @@
     }
 //Подменю на desktop
     &__link-text {
-        @include order-reset();
-        display: none;//-----------
+        display: none;
+        @media (min-width: $lg) {
+            @include order-reset();
+            display: block;
+        }
         li {
-
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 1.71;
+            color: $communication-add-color;
         }
-        a {
+        li:last-child {
+          color: $blue;
+      }
+    }
 
-        }
+    &__calc {
+        position: relative;
+        color: $communication-add-color;
+    }
+
+    &__calc::before {
+        content: "новое";
+        position: absolute;
+        display: block;
+        top: 0;
+        right: -60px;
+        padding: 2px 4px;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-weight: 600;
+        color: $white;
+        background: $blue;
+        border-radius: 3px;
     }
 //Подменю на mobile
     &__sub-nav-list {
