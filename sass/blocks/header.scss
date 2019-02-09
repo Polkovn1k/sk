@@ -148,7 +148,7 @@
     &__add-nav-link::before {
         @include pseudo();
         top: 15px;
-        right: 20px;
+        right: $grid-padding;
         width: 10px;
         height: 10px;
         border: 2px solid $white;

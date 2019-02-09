@@ -1,0 +1,135 @@
+.product-nav {
+    //display: none;
+    position: fixed;
+    @include full-absolute();
+    top: $gradient-breakpoint-mobile + $gradient-breakpoint-mobile-end;
+    overflow: auto;
+    background: $white;
+    @media (min-width: $md) {
+        top: $gradient-breakpoint-desktop + $gradient-breakpoint-mobile-end;
+    }
+    @media (min-width: $lg) {
+        top: $gradient-breakpoint-desktop + $gradient-breakpoint-desktop-end;
+        position: fixed;
+        background-color: transparentize($black, 0.5);
+    }
+
+    &__container {
+        background: $white;
+        @media (min-width: $xl) {
+            max-width: $xl;
+        }
+    }
+
+    &__list {
+        @include order-reset();
+        margin: 0 (-$grid-padding);
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 600;
+        color: $extra-text-color;
+
+        background: $white;
+    }
+
+    &__product-link {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        height: $mobile-header-nav-item-height;
+        padding: 0 $grid-padding;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border-bottom: none;
+        }
+    }
+
+    &__sub-nav-tog {
+        position: relative;
+        display: block;
+        width: 70px;
+        height: $mobile-header-nav-item-height;
+        font-size: 0;
+        border: 0;
+        border-bottom: 1px solid $border-color;
+        background: transparent;
+        cursor: pointer;
+        @media (min-width: $sm) {
+            width: 50%;
+        }
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__sub-nav-tog::before,
+    &__product-link--arrow::before {
+        @include pseudo();
+        top: 15px;
+        right: $grid-padding;
+        width: 10px;
+        height: 10px;
+        border: 2px solid $border-color;
+        border-left: transparent;
+        border-bottom: transparent;
+        transform: rotate(45deg);
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+//Подменю на desktop
+    &__link-text {
+        @include order-reset();
+        display: none;//-----------
+        li {
+
+        }
+        a {
+
+        }
+    }
+//Подменю на mobile
+    &__sub-nav-list {
+        @include order-reset();
+        width: 100%;
+        padding: 10px 30px;
+        background: $bg-color;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__sub-nav-item {
+        a {
+            display: block;
+            padding: 8px 0;
+            font-size: 16px;
+            font-weight: 400;
+            color: $communication-add-color;
+        }
+    }
+//Рекламный баннер
+    &__sale {
+        display: none;
+        @media (min-width: $sm) {
+            display: block;
+            padding: 20px 0;
+        }
+    }
+
+    &__sale-img {
+        display: block;
+        text-align: center;
+        img {
+
+        }
+    }
+}
