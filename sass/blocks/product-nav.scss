@@ -17,6 +17,7 @@
     &__container {
         background: $white;
         @media (min-width: $lg) {
+            position: relative;
             padding-top: 60px;
             padding-bottom: 60px;
             padding-right: 25%;
@@ -32,7 +33,15 @@
         margin: 0 (-$grid-padding);
     }
 
-    &__item {
+    &__item {}
+
+    &__item--hide {
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__item-container {
         position: relative;
         display: flex;
         flex-wrap: wrap;
@@ -45,13 +54,18 @@
         @media (min-width: $lg) {
             display: block;
             padding-bottom: 60px;
-            padding-left: 150px !important;
+            padding-left: 40%;
         }
     }
 
-    &__item--hide {
+    &__item-img {
+        display: none;
         @media (min-width: $lg) {
-            display: none;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: 44px;
         }
     }
 
@@ -169,6 +183,14 @@
         @media (min-width: $sm) {
             display: block;
             padding: 20px 0;
+        }
+        @media (min-width: $lg) {
+            width: 33.33333%;
+            max-width: 33.33333%;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: 0;
         }
     }
 
