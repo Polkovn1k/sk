@@ -16,6 +16,8 @@
 
     &__container {
         background: $white;
+        padding-right: 0;
+        padding-left: 0;
         @media (min-width: $lg) {
             position: relative;
             padding-top: 60px;
@@ -31,7 +33,6 @@
     &__list {
         @include order-reset();
         position: relative;
-        margin: 0 (-$grid-padding);
     }
 
     &__item {}
@@ -39,7 +40,7 @@
     &__item--desktop {
         @media (min-width: $lg) {
             position: absolute;
-            right: -33.3333333%;
+            right: -$col-4-width;
             top: 0;
         }
     }
@@ -63,7 +64,7 @@
         @media (min-width: $lg) {
             display: block;
             padding-bottom: 60px;
-            padding-left: 40%;
+            padding-left: 38%;
         }
     }
 
@@ -74,7 +75,6 @@
             position: absolute;
             top: 0;
             left: 0;
-            max-width: 44px;
         }
     }
 
@@ -147,23 +147,17 @@
     }
 
     &__calc {
-        position: relative;
         color: $communication-add-color;
-    }
-
-    &__calc::before {
-        content: "новое";
-        position: absolute;
-        display: block;
-        top: 0;
-        right: -60px;
-        padding: 2px 4px;
-        text-transform: uppercase;
-        font-size: 10px;
-        font-weight: 600;
-        color: $white;
-        background: $blue;
-        border-radius: 3px;
+        span {
+            display: inline-block;
+            padding: 2px 4px;
+            text-transform: uppercase;
+            font-size: 10px;
+            font-weight: 600;
+            color: $white;
+            background: $blue;
+            border-radius: 3px;
+        }
     }
 //Подменю на mobile
     &__sub-nav-list {
@@ -194,10 +188,7 @@
             padding: 20px 0;
         }
         @media (min-width: $lg) {
-            //width: 33.33333%;
-            //max-width: 33.33333%;
             padding: 0;
-            //position: absolute;
             top: 0;
             right: 0;
         }
