@@ -1,5 +1,23 @@
 .main {
-    * {
+    margin-top: $mobile-header-height;
+    @media (min-width: $md) {
+        margin-top: $gradient-breakpoint-desktop + $gradient-breakpoint-mobile-end;
+    }
+    @media (min-width: $lg) {
+        margin-top: $gradient-breakpoint-desktop + $gradient-breakpoint-desktop-end;
+    }
+
+    &__container {
+        @include container();
+    }
+
+
+
+
+
+    .communication-over,
+    .city-pick-over
+     {
         display: none;
     }
 }

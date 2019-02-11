@@ -1,0 +1,72 @@
+.catalog {
+    padding: 0;
+
+    &__container {
+        padding-top: 15px;
+    }
+
+    &__list {
+        @include order-reset();
+        position: relative;
+    }
+
+    &__item {
+        position: relative;
+        background: $white;
+
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.15;
+        color: $main-color;
+
+        cursor: pointer;
+        box-shadow: inset 0px -1px 0 0px $border-color;
+    }
+
+    &__item::before {
+        @include pseudo();
+        top: 50%;
+        right: 15px;
+        width: 5px;
+        height: 5px;
+        border: 2px solid $border-color;
+        border-left: transparent;
+        border-bottom: transparent;
+        transform: rotate(45deg);
+    }
+
+    &__item > &__list {
+        display: none;
+    }
+
+    &__item:hover {}
+
+    &__item:hover > &__list {
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 100%;
+    }
+
+    &__list &__list {
+        z-index: 1;
+    }
+
+    &__item-link {
+        display: block;
+        padding: 0 15px;
+        line-height: $common-item-height;
+    }
+}
+//overlay
+.catalog__container > .catalog__list:hover::before {
+    @include pseudo();
+    position: fixed;
+    top: $gradient-breakpoint-desktop + $gradient-breakpoint-desktop-end;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparentize($black, 0.5);
+}
