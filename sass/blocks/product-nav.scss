@@ -20,29 +20,30 @@
         padding-left: 0;
         @media (min-width: $lg) {
             position: relative;
-            padding-top: 60px;
-            padding-bottom: 60px;
-            padding-right: 25%;
+            padding: 60px 20px $product-nav-container-padding-bottom 20px;
         }
         @media (min-width: $xl) {
             max-width: $xl;
-            padding-right: $xl / 4;
+        }
+    }
+
+    &__row {
+        @media (min-width: $lg) {
+            align-items: flex-start;
         }
     }
 
     &__list {
         @include order-reset();
-        position: relative;
+        @media (min-width: $lg) {
+            position: static;
+            display: flex;
+            flex-wrap: wrap;
+        }
     }
 
-    &__item {}
-
-    &__item--desktop {
-        @media (min-width: $lg) {
-            position: absolute;
-            right: -$col-4-width;
-            top: 0;
-        }
+    &__item {
+        padding: 0;
     }
 
     &__item--hide {
@@ -63,8 +64,9 @@
         background: $white;
         @media (min-width: $lg) {
             display: block;
-            padding-bottom: 60px;
-            padding-left: 38%;
+            padding-bottom: $item-container-padding-bottom;
+            padding-left: 30%;
+            padding-right: 20px;
         }
     }
 
@@ -73,8 +75,9 @@
         @media (min-width: $lg) {
             display: block;
             position: absolute;
-            top: 0;
-            left: 0;
+            top: 12px;
+            right: 77%;
+            max-height: 65px;
         }
     }
 
@@ -86,6 +89,7 @@
         padding: 0 $grid-padding;
         border-bottom: 1px solid $border-color;
         @media (min-width: $lg) {
+            height: auto;
             padding: 0;
             font-size: 18px;
             font-weight: 600;
@@ -150,7 +154,7 @@
         color: $communication-add-color;
         span {
             display: inline-block;
-            padding: 2px 4px;
+            padding: 0 4px;
             text-transform: uppercase;
             font-size: 10px;
             font-weight: 600;
@@ -185,20 +189,57 @@
         display: none;
         @media (min-width: $sm) {
             display: block;
-            padding: 20px 0;
+        }
+    }
+
+    &__sale-container {
+        text-align: center;
+        @media (min-width: $sm) {
+            padding: 20px;
         }
         @media (min-width: $lg) {
             padding: 0;
-            top: 0;
-            right: 0;
+            padding-left: 20px;
+            text-align: left;
         }
     }
 
     &__sale-img {
-        display: block;
-        text-align: center;
+        vertical-align: top;
+        font-size: 0;
         img {
+            max-height: $sale-img-max-height;
+        }
+    }
+//Список брэндов на десктопе
+    &__item--brands {
+        @media (min-width: $lg) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            max-width: none;
+            height: 110px;
+            .product-nav__item-container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0;
+                padding: 0 60px;
+                height: $item-brands-height-desktop;
+                border-top: 1px solid $border-color;
+            }
 
+            .product-nav__product-link {
+                flex-grow: 0;
+                margin-right: 3%;
+            }
+
+            .product-nav__link-text {
+                display: flex;
+                flex-grow: 1;
+                justify-content: space-between;
+            }
         }
     }
 }
