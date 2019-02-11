@@ -1,5 +1,5 @@
 .product-nav {
-    //display: none;
+    display: none;
     position: fixed;
     @include full-absolute();
     top: $gradient-breakpoint-mobile + $gradient-breakpoint-mobile-end;
