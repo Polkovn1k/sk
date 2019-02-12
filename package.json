@@ -4,6 +4,7 @@
   "private": true,
   "description": "Semya satellite №1",
   "devDependencies": {
+    "@glidejs/glide": "^3.2.6",
     "autoprefixer": "9.3.x",
     "bootstrap": "^4.2.1",
     "browser-sync": "2.26.x",

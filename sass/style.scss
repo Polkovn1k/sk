@@ -28,3 +28,8 @@
 @import "blocks/main.scss";
 @import "blocks/catalog.scss";
 @import "blocks/visually-hidden.scss";
+
+//---Glide slider & carousel
+@import "glide/_variables.scss";
+@import "glide/glide.core.scss";
+@import "glide/glide.theme.scss";

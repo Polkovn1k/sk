@@ -40,6 +40,10 @@
         display: none;
     }
 
+    &__item:last-child {
+        box-shadow: none;
+    }
+
     &__item:hover {}
 
     &__item:hover > &__list {

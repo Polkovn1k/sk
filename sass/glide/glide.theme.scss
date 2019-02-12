@@ -1,0 +1,166 @@
+@import 'variables';
+
+.#{$glide-class} {
+    $this: &;
+
+    $se: $glide-element-separator;
+    $sm: $glide-modifier-separator;
+
+    &#{$se}arrow {
+        position: absolute;
+        display: block;
+        top: 50%;
+        z-index: 2;
+        color: white;
+        text-transform: uppercase;
+        padding: 9px 12px;
+        background-color: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 4px;
+        box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+        text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+        opacity: 1;
+        cursor: pointer;
+        transition: opacity 150ms ease, border 300ms ease-in-out;
+        transform: translateY(-50%);
+        line-height: 1;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            border-color: white;
+        }
+
+        &#{$sm}left {
+            left: 2em;
+        }
+
+        &#{$sm}right {
+            right: 2em;
+        }
+
+        &#{$sm}disabled {
+            opacity: 0.33;
+        }
+    }
+
+    &#{$se}bullets {
+        position: absolute;
+        z-index: 2;
+        bottom: 2em;
+        left: 50%;
+        display: inline-flex;
+        list-style: none;
+        transform: translateX(-50%);
+    }
+
+    &#{$se}bullet {
+        background-color: $transparent;
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border-radius: 50%;
+        border: 2px solid $blue;
+        transition: all 300ms ease-in-out;
+        cursor: pointer;
+        line-height: 0;
+        margin: 0 7px;
+        @media (min-width: $lg) {
+            width: 14px;
+            height: 14px;
+            border: 3px solid $blue;
+        }
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover,
+        &:focus {
+
+        }
+
+        &#{$sm}active {
+            background-color: $blue;
+        }
+    }
+
+    &#{$sm}swipeable {
+        cursor: grab;
+        cursor: -moz-grab;
+        cursor: -webkit-grab;
+    }
+
+    &#{$sm}dragging {
+        cursor: grabbing;
+        cursor: -moz-grabbing;
+        cursor: -webkit-grabbing;
+    }
+}
+//index top slider
+.glide--top-slider {
+    @media (min-width: $lg) {
+        padding-top: 15px;
+    }
+
+    .glide__item {
+        position: relative;
+        text-align: center;
+        img {
+            height: 240px;
+            max-width: none;
+        }
+        @media (min-width: $lg) {
+            height: auto;
+            img {
+                height: auto;
+                max-width: none;
+                min-height: none;
+            }
+        }
+    }
+
+    .glide__text {
+        @include field-reset();
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 380px;
+        padding: 0 15px;
+        position: absolute;
+        bottom: $bullets-bottom-position + 30px;
+        font-family: $font;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 1.33;
+        text-align: center;
+        color: $main-color;
+        @media (min-width: $lg) {
+            top: 20px;
+            left: 30px;
+            transform: none;
+            max-width: 380px;
+            font-size: 33px;
+            text-align: left;
+        }
+    }
+
+    .glide__bullets {
+        bottom: $bullets-bottom-position;
+        @media (min-width: $lg) {
+            left: 20px;
+            bottom: $bullets-bottom-position + 5px;
+            transform: none;
+        }
+    }
+}
