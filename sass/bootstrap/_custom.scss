@@ -1,3 +1,6 @@
+//переопределяем сумму padding'ов контейнера с 30px на 15px
+$grid-gutter-width: 15px;
+
 //Точки вьюпорта
 $grid-breakpoints: () !default;
 $grid-breakpoints: map-merge(
