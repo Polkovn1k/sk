@@ -81,3 +81,7 @@
     background: transparentize($black, 0.5);
     z-index: 10;
 }
+
+.catalog__container > .catalog__list {
+    margin-left: 15px;
+}

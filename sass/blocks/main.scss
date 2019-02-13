@@ -11,6 +11,12 @@
         @include container();
     }
 
+    &--advantages {
+        @media (min-width: $xl) {
+            //padding: 0;
+        }
+    }
+
 
 
 

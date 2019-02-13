@@ -246,6 +246,7 @@
         @media (min-width: $lg) {
             width: 27px;
             height: 23px;
+            margin-left: $grid-padding;
             margin-right: 15px;
             font-size: 0;
             svg {

@@ -11,28 +11,32 @@
     }
 
     &#{$se}arrow {
+        display: none;
         position: absolute;
         top: 50%;
         z-index: 2;
-        display: block;
         width: 40px;
         height: 40px;
         border-radius: 50%;
         background-color: $white;
         border: 2px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 15px 0 transparentize($black, 0.84);
+        box-shadow: 0 0 20px 0 transparentize($black, 0.9);
         opacity: 0;
         cursor: pointer;
         transition: opacity 0.3s ease, border 0.3s ease-in-out;
         transform: translateY(-50%);
         font-size: 0;
+        outline: none;
+        @media (min-width: $lg) {
+            display: block;
+        }
 
         &::before {
             display: block;
             content: "";
             position: absolute;
             top: 13px;
-            left: 14px;
+            left: 15px;
             width: 10px;
             height: 10px;
             border: 2px solid $blue;
@@ -59,7 +63,7 @@
 
         &#{$sm}right::before {
             top: 14px;
-            left: 13px;
+            left: 12px;
             border: 2px solid $blue;
             border-left: transparent;
             border-bottom: transparent;
@@ -134,7 +138,7 @@
 //index top slider
 .glide--top-slider {
     @media (min-width: $lg) {
-        padding-top: 15px;
+        padding-top: $common-block-vertical-padding;
     }
 
     .glide__item {
@@ -149,7 +153,6 @@
             img {
                 height: auto;
                 max-width: none;
-                min-height: none;
             }
         }
     }
@@ -170,8 +173,8 @@
         text-align: center;
         color: $main-color;
         @media (min-width: $lg) {
-            top: 20px;
-            left: 30px;
+            top: 12px;
+            left: 5px;
             transform: none;
             max-width: 380px;
             font-size: 33px;
@@ -185,6 +188,89 @@
             left: 20px;
             bottom: $bullets-bottom-position + 5px;
             transform: none;
+        }
+    }
+}
+//index advantages slider
+.glide--advantages {
+    padding-top: $common-block-vertical-padding;
+    @media (min-width: $lg) {
+        cursor: default;
+    }
+
+    .glide__track {
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    .glide__slide {
+        @media (min-width: $lg) {
+            user-select: auto;
+            transform: translate3d(0px, 0px, 0px) !important;
+        }
+    }
+
+    .glide__item {
+        position: relative;
+        padding: $parent-padding;
+        padding-left: $svg-size + $parent-padding + 15px;
+        padding-bottom: $parent-padding + 20px;
+        svg {
+            position: absolute;
+            top: $parent-padding;
+            left: 15px;
+            width: $svg-size;
+            height: $svg-size;
+            fill: $blue;
+        }
+        @media (min-width: $lg) {
+            padding: $parent-padding;
+            svg {
+                position: static;
+                //display: inline-block;
+            }
+        }
+        @media (min-width: $xl) {
+            padding-left: $svg-size + $parent-padding + 15px;
+            svg {
+                position: absolute;
+            }
+        }
+    }
+
+    .glide__title {
+        @include field-reset();
+        padding-bottom: 5px;
+        font-family: $font;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.17;
+        color: $extra-text-color;
+        @media (min-width: $lg) {
+            font-size: 16px;
+        }
+    }
+
+    .glide__text {
+        @include field-reset();
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+        @media (min-width: $lg) {
+            font-size: 12px;
+            line-height: 1.17;
+        }
+    }
+
+    .glide__bullets {
+        bottom: 20px;
+        @media (min-width: $lg) {
+            display: none;
         }
     }
 }

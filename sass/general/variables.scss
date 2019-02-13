@@ -25,6 +25,7 @@ $telega-color: #31a5d4;
 
 // Other
 $grid-padding: 15px;
+$common-block-vertical-padding: 15px;
 $gradient-breakpoint-mobile: 60px;
 $gradient-breakpoint-mobile-end: 40px;
 $gradient-breakpoint-desktop: 75px;
@@ -42,5 +43,9 @@ $item-brands-height-desktop: 110px;
 $product-nav-container-padding-bottom: $item-brands-height-desktop + 20px;
 $common-item-height: 40px;
 
-//Slider
+//Slider--top
 $bullets-bottom-position: 20px;
+
+//Slider--advantages
+$parent-padding: 20px;
+$svg-size: 60px;
