@@ -230,13 +230,14 @@
             padding: $parent-padding;
             svg {
                 position: static;
-                //display: inline-block;
             }
         }
         @media (min-width: $xl) {
-            padding-left: $svg-size + $parent-padding + 15px;
+            padding-left: $svg-size + $parent-padding + 5px;
             svg {
                 position: absolute;
+                width: $svg-size - 10px;
+                height: $svg-size - 10px;
             }
         }
     }
@@ -251,6 +252,9 @@
         color: $extra-text-color;
         @media (min-width: $lg) {
             font-size: 16px;
+        }
+        @media (min-width: $xl) {
+            font-size: 14px;
         }
     }
 
