@@ -26,6 +26,7 @@
             justify-content: flex-end;
         }
         @media (min-width: $lg) {
+            padding-right: $grid-padding;
             justify-content: flex-end;
             align-items: center;
         }
