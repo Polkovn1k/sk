@@ -8,6 +8,12 @@
     &__list {
         @include order-reset();
         position: relative;
+        z-index: 100;
+    }
+
+    &__overlay {
+        display: none;
+        font-size: 0;
     }
 
     &__item {
@@ -55,7 +61,7 @@
     }
 
     &__list &__list {
-        z-index: 1;
+        z-index: 10;
     }
 
     &__item-link {
@@ -65,12 +71,13 @@
     }
 }
 //overlay
-.catalog__container > .catalog__list:hover::before {
-    @include pseudo();
+.catalog__container > .catalog__list:hover + .catalog__overlay {
+    display: block;
     position: fixed;
     top: $gradient-breakpoint-desktop + $gradient-breakpoint-desktop-end;
     right: 0;
     bottom: 0;
     left: 0;
     background: transparentize($black, 0.5);
+    z-index: 10;
 }

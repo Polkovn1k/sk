@@ -6,24 +6,40 @@
     $se: $glide-element-separator;
     $sm: $glide-modifier-separator;
 
+    &:hover &__arrow {
+        opacity: 1;
+    }
+
     &#{$se}arrow {
         position: absolute;
-        display: block;
         top: 50%;
         z-index: 2;
-        color: white;
-        text-transform: uppercase;
-        padding: 9px 12px;
-        background-color: transparent;
+        display: block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $white;
         border: 2px solid rgba(255, 255, 255, 0.5);
-        border-radius: 4px;
-        box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
-        text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
-        opacity: 1;
+        box-shadow: 0 0 15px 0 transparentize($black, 0.84);
+        opacity: 0;
         cursor: pointer;
-        transition: opacity 150ms ease, border 300ms ease-in-out;
+        transition: opacity 0.3s ease, border 0.3s ease-in-out;
         transform: translateY(-50%);
-        line-height: 1;
+        font-size: 0;
+
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            top: 13px;
+            left: 14px;
+            width: 10px;
+            height: 10px;
+            border: 2px solid $blue;
+            border-right: transparent;
+            border-top: transparent;
+            transform: rotate(45deg);
+        }
 
         &:focus {
             outline: none;
@@ -34,11 +50,19 @@
         }
 
         &#{$sm}left {
-            left: 2em;
+            left: 20px;
         }
 
         &#{$sm}right {
-            right: 2em;
+            right: 20px;
+        }
+
+        &#{$sm}right::before {
+            top: 14px;
+            left: 13px;
+            border: 2px solid $blue;
+            border-left: transparent;
+            border-bottom: transparent;
         }
 
         &#{$sm}disabled {

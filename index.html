@@ -731,6 +731,7 @@
                               <a href="#" class="catalog__item-link">Комплектующие</a>
                           </li>
                       </ul>
+                      <div aria-hidden="true" role="presentation" class="catalog__overlay"></div>
                   </div>
               </div>
               <div class="col-12 col-lg-9 col-xl-10">
@@ -753,7 +754,7 @@
                               </li>
                               <li class="glide__slide">
                                   <div class="glide__item">
-                                      <p class="glide__text">Вэйп eGo ONE VT</p>
+                                      <p class="glide__text">Вейп eGo ONE VT</p>
                                       <img src="img/sliders/top-slider__3.png" alt="">
                                   </div>
                               </li>
@@ -765,7 +766,7 @@
                               </li>
                               <li class="glide__slide">
                                   <div class="glide__item">
-                                      <p class="glide__text">Вэйп eGo ONE VT</p>
+                                      <p class="glide__text">Вейп eGo ONE VT</p>
                                       <img src="img/sliders/top-slider__5.png" alt="">
                                   </div>
                               </li>
@@ -785,6 +786,11 @@
                           <button class="glide__bullet top-slider__bullet" data-glide-dir="=3"></button>
                           <button class="glide__bullet top-slider__bullet" data-glide-dir="=4"></button>
                           <button class="glide__bullet top-slider__bullet" data-glide-dir="=5"></button>
+                      </div>
+                      <!-- ARROWS OF SLIDER -->
+                      <div class="glide__arrows" data-glide-el="controls">
+                          <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                          <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
                       </div>
                   </div>
               </div>
@@ -843,9 +849,15 @@
   <!----------footer-->
   <footer class="footer"></footer>
 
+
   <script src="js/script.js"></script>
-  <script src="node_modules/@glidejs/glide/glide.min.js"></script>
-  <script>new Glide('.glide').mount()</script>
+  <script>
+      var glide = new Glide('.glide--top-slider', {
+          autoplay: 3000,
+          hoverpause: true,
+      });
+      glide.mount();
+</script>
 </body>
 
 </html>
