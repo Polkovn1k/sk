@@ -1,0 +1,116 @@
+.product {
+    height: 100%;
+    margin-top: -1px;
+    background: $white;
+    border: 1px solid $border-color;
+
+    &:hover {
+        .product__action {
+            opacity: 1;
+        }
+    }
+
+    &__container {
+        position: relative;
+        padding: 15px;
+        padding-top: 45px;
+    }
+//блок с картинкой
+    &__img {
+        padding-bottom: 30px;
+        text-align: center;
+        img {
+            max-height: 180px;
+        }
+    }
+//левый блок с особенностями товара
+    &__features {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding: 10px;
+        font-size: 0;
+    }
+
+    &__features-item {
+        display: inline-block;
+        padding: 1px 6px;
+        margin-bottom: 10px;
+        margin-right: 3px;
+        text-align: center;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.36;
+        color: $red;
+        background: $white;
+        border: 1px solid $red;
+        border-radius: 3px;
+    }
+
+    &__features-item--hit {
+        color: $green;
+        border: 1px solid $green;
+    }
+
+    &__features-item:last-child {
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+//правый блок сравнения/в избранное
+    &__action {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 10px;
+        opacity: 0;
+        transition: 0.3s opacity ease-in;
+    }
+
+    &__action-item {
+        display: block;
+        width: 36px;
+        height: 36px;
+        margin-bottom: 10px;
+        padding-top: 8px;
+        font-size: 0;
+        text-align: center;
+        border-radius: 3px;
+        border: 1px solid $extra-text-color;
+        background: $white;
+        svg {
+            fill: $extra-text-color;
+            width: 20px;
+            height: auto;
+        }
+    }
+
+    &__action-item:last-child {
+        margin-bottom: 0;
+    }
+
+    &__action-item:hover {
+        border-color: $blue;
+        background: $blue;
+        svg {
+            fill: $white;
+        }
+    }
+//название товара
+    &__name {
+        display: block;
+        height: 50px;
+        overflow: hidden;
+        font-family: $font;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.33;
+        color: $main-color;
+
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+}

@@ -1,0 +1,46 @@
+.goods-sliders {
+    padding: 15px 0;
+    @media (min-width: $lg) {
+        background: $goods-sliders-background;
+    }
+
+    &__container {
+        @include container();
+    }
+
+    &__item {
+
+    }
+//блок заголовка
+    &__type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+        min-height: 70px;
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $md) {
+            min-height: 85px;
+            padding: 0 30px;
+        }
+        @media (min-width: $lg) {
+            min-height: 95px;
+        }
+    }
+
+    &__title {
+        @include field-reset();
+        font-family: $font;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.35;
+        color: $extra-text-color;
+    }
+
+    &__btn {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.36;
+    }
+}

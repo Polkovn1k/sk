@@ -43,6 +43,7 @@
 
     &__title {
         @include field-reset();
+        padding: 0 10px;
         position: relative;
         z-index: 1;
         font-family: $font;
@@ -55,7 +56,7 @@
             display: none;
         }
         @media (min-width: $md) {
-            padding-bottom: 15px;
+            padding: 0 0 15px 0;
             font-size: 24px;
             text-align: left;
             span {
@@ -110,6 +111,7 @@
                 vertical-align: top;
                 padding-right: 10px;
                 width: 50%;
+                max-width: 350px;
             }
             li:nth-child(2n) {
                 width: 40%;
