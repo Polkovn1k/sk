@@ -17,16 +17,16 @@
         justify-content: space-between;
         align-items: center;
         padding: 0 15px;
-        min-height: 70px;
+        height: 70px;
         background: $white;
         border: 1px solid $border-color;
         @media (min-width: $md) {
-            min-height: 85px;
+            height: 85px;
             padding: 0 30px;
         }
         @media (min-width: $lg) {
             border: none;
-            min-height: 95px;
+            height: 95px;
         }
     }
 
