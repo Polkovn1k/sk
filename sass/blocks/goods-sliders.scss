@@ -1,6 +1,6 @@
 .goods-sliders {
-    padding: 15px 0;
     @media (min-width: $lg) {
+        padding: 15px 0;
         background: $goods-sliders-background;
     }
 
@@ -25,6 +25,7 @@
             padding: 0 30px;
         }
         @media (min-width: $lg) {
+            border: none;
             min-height: 95px;
         }
     }

@@ -3,6 +3,9 @@
     margin-top: -1px;
     background: $white;
     border: 1px solid $border-color;
+    @media (min-width: $lg) {
+        margin-top: 0;
+    }
 
     &:hover {
         .product__action {
@@ -20,7 +23,7 @@
         padding-bottom: 30px;
         text-align: center;
         img {
-            max-height: 180px;
+            max-height: 150px;
         }
     }
 //левый блок с особенностями товара
@@ -64,10 +67,11 @@
         right: 0;
         padding: 10px;
         opacity: 0;
-        transition: 0.3s opacity ease-in;
+        transition: 0.1s opacity ease-in;
     }
 
     &__action-item {
+        position: relative;
         display: block;
         width: 36px;
         height: 36px;
@@ -83,6 +87,47 @@
             width: 20px;
             height: auto;
         }
+    }
+
+    &__action-item:hover::after {
+        content: "";
+        position: absolute;
+        display: block;
+        z-index: 10;
+        top: 50%;
+        right: -$action-item-pseudo-width - 12px;
+        transform: translateY(-50%);
+        width: $action-item-pseudo-width;
+        height: 25px;
+        padding: 0 8px;
+        background: $extra-text-color;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: center;
+        color: $white;
+    }
+
+    &__action-item:hover::before {
+        content: "";
+        position: absolute;
+        display: block;
+        z-index: 10;
+        top: 50%;
+        right: -17px;
+        transform: translateY(-50%) rotate(-45deg);
+        width: 10px;
+        height: 10px;
+        background: $extra-text-color;
+    }
+
+    &__action-item--favorite:hover::after {
+        content: "В избранное";
+    }
+
+    &__action-item--compare:hover::after {
+        content: "К сравнению";
     }
 
     &__action-item:last-child {
@@ -112,5 +157,69 @@
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+    }
+//рейтинг
+    &__rating {
+        display: inline-block;
+        vertical-align: top;
+        padding-right: 5px;
+    }
+
+    &__rating-stars {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        width: 96px;
+        height: 21px;
+        svg {
+            width: 96px;
+            height: 16px;
+            position: absolute;
+            top: 3px;
+            left: 0;
+            fill: $yellow;
+        }
+    }
+
+    &__stars-empty {
+
+    }
+
+    &__stars-fill {
+
+    }
+
+    &__rating-votes {
+        font-family: $font;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.33;
+        color: $communication-add-color;
+    }
+//сообщения
+    &__message {
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    &__message-img {
+        display: inline-block;
+        vertical-align: top;
+        width: 16px;
+        height: 23px;
+        padding-top: 5px;
+        svg {
+            width: 16px;
+            height: 18px;
+            fill: $extra-text-color;
+        }
+    }
+
+    &__message-value {
+        font-family: $font;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.33;
+        color: $communication-add-color;
     }
 }
