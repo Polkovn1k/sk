@@ -85,7 +85,7 @@
         svg {
             fill: $extra-text-color;
             width: 20px;
-            height: auto;
+            height: 20px;
         }
     }
 
@@ -158,6 +158,13 @@
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
     }
+
+    &__response {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
 //рейтинг
     &__rating {
         display: inline-block;
@@ -172,24 +179,38 @@
         width: 96px;
         height: 21px;
         svg {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 96px;
             height: 16px;
-            position: absolute;
-            top: 3px;
-            left: 0;
             fill: $yellow;
         }
     }
 
     &__stars-empty {
-
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 96px;
+        height: 16px;
+        overflow: hidden;
     }
 
     &__stars-fill {
-
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 60%;
+        height: 16px;
+        overflow: hidden;
+        z-index: 1;
     }
 
     &__rating-votes {
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 2px;
         font-family: $font;
         font-size: 15px;
         font-weight: 400;
@@ -216,6 +237,9 @@
     }
 
     &__message-value {
+        display: inline;
+        vertical-align: middle;
+        padding-top: 2px;
         font-family: $font;
         font-size: 15px;
         font-weight: 400;
