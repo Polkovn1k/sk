@@ -8,9 +8,7 @@
         @include container();
     }
 
-    &__item {
-
-    }
+    &__item {}
 //блок заголовка
     &__type {
         display: flex;
@@ -20,13 +18,9 @@
         height: 70px;
         background: $white;
         border: 1px solid $border-color;
-        @media (min-width: $md) {
-            height: 85px;
-            padding: 0 30px;
-        }
+        border-bottom: none;
         @media (min-width: $lg) {
             border: none;
-            height: 95px;
         }
     }
 

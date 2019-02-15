@@ -54,11 +54,11 @@
         }
 
         &#{$sm}left {
-            left: 20px;
+            left: 15px;
         }
 
         &#{$sm}right {
-            right: 20px;
+            right: 15px;
         }
 
         &#{$sm}right::before {
@@ -280,6 +280,16 @@
 }
 //goods sliders
 .glide--goods-sliders {
+
+    &::after{
+        @include pseudo();
+        width: 1px;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background: $border-color;
+    }
+
     .glide__slide {
         height: auto;
     }

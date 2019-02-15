@@ -1,13 +1,14 @@
 .product {
+    position: relative;
     height: 100%;
-    margin-top: -1px;
     background: $white;
     border: 1px solid $border-color;
-    @media (min-width: $lg) {
-        margin-top: 0;
-    }
+    border-right: 1px solid transparent;
+    transition: box-shadow 0.3s ease;
 
     &:hover {
+        z-index: 10;
+        box-shadow: 0 0 20px 0 transparentize($black, 0.9);
         .product__action {
             opacity: 1;
         }
@@ -31,7 +32,7 @@
         position: absolute;
         top: 0px;
         left: 0px;
-        padding: 10px;
+        padding: 15px;
         font-size: 0;
     }
 
@@ -65,7 +66,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        padding: 10px;
+        padding: 15px;
         opacity: 0;
         transition: 0.1s opacity ease-in;
     }
@@ -163,6 +164,7 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        padding-bottom: 15px;
     }
 
 //рейтинг
@@ -246,4 +248,92 @@
         line-height: 1.33;
         color: $communication-add-color;
     }
+//свойства продукта
+    &__properties {
+        height: 38px;
+        margin-bottom: 25px;
+        overflow: hidden;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.36;
+        color: $communication-add-color;
+    }
+
+    &__properties-value {
+        @include field-reset();
+        display: inline-block;
+        vertical-align: top;
+        padding-right: 5px;
+    }
+
+    &__properties-value:first-child {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    &__properties-value:last-child {
+        padding-right: 0;
+    }
+//блок цен
+    &__price {
+        position: relative;
+        padding-top: 15px;
+        font-family: $font;
+        color: $main-color;
+    }
+
+    &__old-price {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.31;
+        text-decoration: line-through;
+    }
+
+    &__current-price {
+        vertical-align: middle;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.33;
+    }
+
+    &__current-value {
+        display: inline-block;
+        vertical-align: top;
+        height: 40px;
+        margin-right: 10px;
+        line-height: 40px;
+    }
+
+    &__cart {
+        display: inline-block;
+        vertical-align: top;
+        height: 40px;
+        width: 68px;
+        background: $yellow;
+        border-radius: 3px;
+        text-align: center;
+        svg {
+            width: 25px;
+            height: 25px;
+            fill: $main-color;
+            vertical-align: middle;
+        }
+    }
 }
+
+
+
+
+
+//border-left для первого элемента слайдера
+/* .glide__slide:first-child .product {
+    border-left: 2px solid $border-color;
+}
+
+.glide__slide:first-child .product:hover {
+    border-left: 2px solid red;
+} */
