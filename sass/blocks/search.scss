@@ -34,13 +34,19 @@
     }
 
     &__btn {
+        display: block;
+        vertical-align: top;
         height: $mobile-search-item-height;
+        line-height: $mobile-search-item-height;
         width: 100px;
+        font-size: 14px;
+        font-weight: 600;
         color: $white;
         background: $black;
         border: none;
         border-radius: 0;
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
+        cursor: pointer;
     }
 }

@@ -1,8 +1,11 @@
 .btn {
     display: inline-block;
+    vertical-align: top;
     height: $btn-height;
-    padding: 3px 10px;
+    padding: 0 10px;
     border: 1px solid $blue;
+    line-height: $btn-height;
+    text-align: center;
     font-family: $font;
     font-size: 14px;
     font-weight: 600;
@@ -10,4 +13,33 @@
     background-color: transparent;
     border-radius: 5px;
     cursor: pointer;
+    transition: 0.3s background-color ease, 0.3s color ease;
+
+    &:hover {
+        background-color: $blue;
+        color: $white;
+    }
+}
+//дополнительная кнопка
+.silver-btn {
+    display: inline-block;
+    vertical-align: top;
+    height: $add-btn-height;
+    padding: 0 20px;
+    border: 1px solid $border-color;
+    line-height: $add-btn-height;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: 400;
+    color: $add-btn-color;
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s background-color ease, 0.3s color ease, 0.3s border-color ease;
+
+    &:hover {
+        background-color: $main-color;
+        border-color: $main-color;
+        color: $white;
+    }
 }

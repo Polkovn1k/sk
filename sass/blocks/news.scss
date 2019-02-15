@@ -16,22 +16,30 @@
         color: $extra-text-color;
     }
 
-    &__btn {
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.36;
-    }
-
     &__list {
         @include order-reset();
+        padding: 0;
+        margin: 0 -7.5px;
+        display: flex;
+    }
+
+    &__container {
+        padding-bottom: 15px;
+        @media (min-width: $lg) {
+            padding-bottom: 0;
+        }
     }
 
     &__item {
         display: flex;
         flex-direction: column;
+        width: 100%;
         padding: 15px;
         border: 1px solid $border-color;
         margin-bottom: 15px;
+        @media (min-width: $lg) {
+            height: 256px;
+        }
     }
 
     &__item:last-child {
@@ -39,7 +47,7 @@
     }
 
     &__item-title {
-        @include field-reset();
+        display: block;
         order: 1;
         font-size: 18px;
         font-weight: 700;
@@ -65,7 +73,39 @@
     &__view {
         display: none;
         @media (min-width: $lg) {
-            display: block;
+            order: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: auto;
+        }
+    }
+
+    &__btn-view {
+        display: inline-block;
+        vertical-align: top;
+        height: 40px;
+        padding: 0 20px;
+        line-height: 40px;
+        color: $add-btn-color;
+        border-color: $border-color;
+    }
+
+    &__icon {
+        svg {
+            vertical-align: middle;
+            margin-right: 3px;
+            fill: $blue;
+            width: 20px;
+            height: 15px;
+        }
+        span {
+            vertical-align: middle;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.36;
+            color: $main-color;
         }
     }
 }
