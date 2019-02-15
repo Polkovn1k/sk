@@ -234,7 +234,7 @@
         svg {
             width: 16px;
             height: 18px;
-            fill: $extra-text-color;
+            fill: $add-text-color;
         }
     }
 
@@ -324,16 +324,3 @@
         }
     }
 }
-
-
-
-
-
-//border-left для первого элемента слайдера
-/* .glide__slide:first-child .product {
-    border-left: 2px solid $border-color;
-}
-
-.glide__slide:first-child .product:hover {
-    border-left: 2px solid red;
-} */
