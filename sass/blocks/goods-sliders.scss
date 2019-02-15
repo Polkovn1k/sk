@@ -1,12 +1,9 @@
 .goods-sliders {
     @media (min-width: $lg) {
         padding: 15px 0;
-        background: $goods-sliders-background;
     }
 
-    &__container {
-        @include container();
-    }
+    &__container {}
 
     &__item {}
 //блок заголовка
