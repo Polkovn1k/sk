@@ -14,6 +14,8 @@
 
 
     &--main-catalog {
+        display: flex;
+        flex-wrap: wrap;
         padding-top: $common-block-vertical-padding;
     }
 
