@@ -96,7 +96,7 @@
         display: block;
         z-index: 10;
         top: 50%;
-        right: -$action-item-pseudo-width - 12px;
+        left: -$action-item-pseudo-width - 12px;
         transform: translateY(-50%);
         width: $action-item-pseudo-width;
         height: 25px;
@@ -108,19 +108,6 @@
         line-height: 25px;
         text-align: center;
         color: $white;
-    }
-
-    &__action-item:hover::before {
-        content: "";
-        position: absolute;
-        display: block;
-        z-index: 10;
-        top: 50%;
-        right: -17px;
-        transform: translateY(-50%) rotate(-45deg);
-        width: 10px;
-        height: 10px;
-        background: $extra-text-color;
     }
 
     &__action-item--favorite:hover::after {

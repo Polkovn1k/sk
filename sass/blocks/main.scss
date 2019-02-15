@@ -12,6 +12,13 @@
         @include container();
     }
 
+    &--advantages {
+        order: 1;
+        @media (min-width: $lg) {
+            order: 0;
+        }
+    }
+
     &--main-catalog {
         display: flex;
         flex-wrap: wrap;
@@ -20,7 +27,7 @@
 
     &--goods-sliders {
         position: relative;
-        @include container(0, 0);
+        width: 100%;
     }
 
     &--goods-sliders::after {
