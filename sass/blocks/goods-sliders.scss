@@ -5,6 +5,14 @@
 
     &__container {}
 
+    &__col {
+        padding-bottom: 15px;
+    }
+
+    &__col:last-child {
+        padding-bottom: 0;
+    }
+
     &__item {}
 //блок заголовка
     &__type {
