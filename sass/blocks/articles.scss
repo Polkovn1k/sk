@@ -1,0 +1,188 @@
+.articles {
+    font-family: $font;
+
+    &__container {
+
+    }
+
+    &__type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    &__title {
+        @include field-reset();
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1.32;
+        color: $extra-text-color;
+    }
+
+    &__btn {
+        min-width: 105px;
+    }
+//карточка слайдера
+    &__item {
+        max-width: 329px;
+
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: $article-height-mobile;
+        padding: 15px;
+        overflow: hidden;
+        background: $white;
+        @media (min-width: $lg) {
+            height: $article-height-desktop;
+        }
+    }
+
+    &__text {
+        flex-grow: 1;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        padding-top: $category-height + 15px;
+        @media (min-width: $lg) {
+            padding-top: 0;
+        }
+    }
+
+    &__item-title {
+        @include field-reset();
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.33;
+        color: $white;
+        @media (min-width: $lg) {
+            color: $main-color;
+        }
+    }
+
+    &__date {
+        @include field-reset();
+        order: -1;
+        display: flex;
+        align-items: center;
+        padding-bottom: 5px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.31;
+        color: $white;
+        svg {
+            fill: $white;
+            margin-right: 10px;
+        }
+        @media (min-width: $lg) {
+            color: $main-color;
+            svg {
+                fill: $blue;
+            }
+        }
+    }
+
+    &__icons {
+        display: flex;
+        margin-top: auto;
+        color: $white;
+        @media (min-width: $lg) {
+            margin-bottom: 20px;
+            color: $main-color;
+        }
+    }
+
+    &__icons-item {
+        display: flex;
+        align-items: center;
+        margin-right: 10px;
+        svg {
+            fill: $white;
+            margin-right: 10px;
+        }
+        @media (min-width: $lg) {
+            svg {
+                fill: $blue;
+            }
+        }
+    }
+
+    &__icons-item:last-child {
+        margin-right: 0;
+    }
+
+    &__icons-item--view {
+        margin-left: auto;
+    }
+
+    &__silver-btn {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        height: $article-height-mobile;
+        overflow: hidden;
+        img {
+            max-width: none;
+            max-height: none;
+        }
+        @media (min-width: $lg) {
+            position: static;
+            order: -1;
+            margin: -15px -15px 25px -15px;
+        }
+    }
+
+    &__img::before {
+        @include pseudo();
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparentize($black, 0.5);;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__category {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        height: $category-height;
+        padding: 0 10px;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: $category-height;
+        color: $white;
+        border-radius: 3px;
+    }
+
+    &__category--mix {
+        background: $articles-blue;
+    }
+
+    &__category--popular {
+        background: $articles-orange;
+    }
+
+    &__category--newbie {
+        background: $articles-green;
+    }
+
+    &__category--components {
+        background: $articles-purple;
+    }
+}
