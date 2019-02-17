@@ -12,25 +12,25 @@
         @include container();
     }
 
-    &--advantages {
+    &__advantages {
         order: 1;
         @media (min-width: $lg) {
             order: 0;
         }
     }
 
-    &--main-catalog {
+    &__main-catalog {
         display: flex;
         flex-wrap: wrap;
         padding-top: $common-block-vertical-padding;
     }
 
-    &--goods-sliders {
+    &__goods-sliders {
         position: relative;
         width: 100%;
     }
 
-    &--goods-sliders::after {
+    &__goods-sliders::after {
         @media (min-width: $lg) {
             @include pseudo();
             top: 0;
