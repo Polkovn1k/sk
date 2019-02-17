@@ -25,7 +25,7 @@
     }
 //карточка слайдера
     &__item {
-        max-width: 329px;
+        //max-width: 329px;
 
         position: relative;
         display: flex;
@@ -53,10 +53,17 @@
 
     &__item-title {
         @include field-reset();
+        max-height: 130px;
         font-size: 24px;
         font-weight: 700;
         line-height: 1.33;
         color: $white;
+
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
         @media (min-width: $lg) {
             color: $main-color;
         }
