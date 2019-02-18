@@ -10,6 +10,9 @@
         padding: 0 15px;
         border: 1px solid $border-color;
         background: $white;
+        @media (min-width: $lg) {
+            border: none;
+        }
     }
 
     &__title {

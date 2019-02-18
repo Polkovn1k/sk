@@ -1,0 +1,47 @@
+.social {
+    @include order-reset();
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    display: flex;
+    @media (min-width: $lg) {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    &__item {
+        margin-right: 40px;
+    }
+
+    &__item:last-child {
+        margin-right: 0;
+    }
+
+    &__link {
+        display: block;
+        height: 100%;
+        width: 100%;
+        font-size: 0;
+        svg {
+            fill: $extra-text-color;
+        }
+    }
+
+    &__link--vk:hover {
+        svg {
+            fill: #45668e;
+        }
+    }
+
+    &__link--youtube:hover {
+        svg {
+            fill: red;
+        }
+    }
+
+    &__link--insta:hover {
+        svg {
+            fill: #b84a85;
+        }
+    }
+}

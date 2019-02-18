@@ -51,6 +51,8 @@ $item-brands-height-desktop: 110px;
 $product-nav-container-padding-bottom: $item-brands-height-desktop + 20px;
 $common-item-height: 40px;
 $add-btn-height: 40px;
+$footer-nav-item-height: 30px;
+$footer-nav-tog-mobile-width: 70px;
 
 //Slider--top
 $bullets-bottom-position: 20px;
@@ -70,3 +72,8 @@ $articles-blue: #578fa1;
 $articles-orange: #ff8000;
 $articles-green: #17bc2d;
 $articles-purple: #9b47b8;
+
+//Switch
+$swith-width: 64px;
+$swith-height: $swith-width / 2;
+$switch-marker-indent: 3px;

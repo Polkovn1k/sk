@@ -1,0 +1,125 @@
+.footer-nav {
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        font-family: $font;
+        @media (min-width: $lg) {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        @media (min-width: $xl) {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__sub-title {
+        display: block;
+        height: $footer-nav-item-height;
+        width: calc(100% - #{$footer-nav-tog-mobile-width});
+        font-size: 18px;
+        font-weight: 600;
+        line-height: $footer-nav-item-height;
+        color: $white;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        @media (min-width: $sm) {
+            width: 50%;
+        }
+        @media (min-width: $lg) {
+            width: 100%;
+            margin-bottom: 15px;
+            span {
+                display: none;
+            }
+        }
+    }
+
+    &__sub-title:first-letter {
+        text-transform: uppercase;
+    }
+
+    &__sub-title--hide {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+
+    &__nav-tog {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: $footer-nav-tog-mobile-width;
+        height: $footer-nav-item-height;
+        font-size: 0;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        @media (min-width: $sm) {
+            width: 50%;
+        }
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__nav-tog::after {
+        @include pseudo();
+        top: 50%;
+        right: $grid-padding;
+        width: 10px;
+        height: 10px;
+        border: 2px solid $communication-add-color;
+        border-left: transparent;
+        border-bottom: transparent;
+        transform: translateY(-30%) rotate(45deg);
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__links-list {
+        @include order-reset();
+        padding-bottom: 10px;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 400;
+        color: $communication-add-color;
+        @media (min-width: $lg) {
+            padding-bottom: 0;
+            font-size: 14px;
+        }
+    }
+
+    &__links-item {
+        p {
+            @include field-reset();
+            padding: 8px 0 8px 15px;
+        }
+        a {
+            display: block;
+            padding: 8px 0 8px 15px;
+        }
+        @media (min-width: $lg) {
+            a {
+                padding-left: 0;
+            }
+            p {
+                padding-left: 0;
+            }
+        }
+    }
+
+    &__links-item--whatsapp {
+        color: $whatsapp-color;
+    }
+
+    &__links-item--telegram {
+        color: $telega-color;
+    }
+}
