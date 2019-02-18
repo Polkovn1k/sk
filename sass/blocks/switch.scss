@@ -6,51 +6,50 @@
     width: $swith-width;
     height: $swith-height;
     border-radius: $swith-height;
-}
 
-.switch__input,
-.switch__label {
-    position: absolute;
-    left: 0;
-    top: 0;
-}
+    &__input,
+    &__label {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
 
-.switch__input {
-    @include field-reset();
-    height: 0;
-    width: 0;
-    opacity: 0;
-    pointer-events: none;
+    &__input {
+        @include field-reset();
+        height: 0;
+        width: 0;
+        opacity: 0;
+        pointer-events: none;
+    }
 
-    &:checked + .switch__label {
+    &__input:checked + .switch__label {
         background-color: $green;
     }
 
-    &:checked + .switch__label + .switch__marker {
-        //left: calc(100% - 32px + 3px);
+    &__input:checked + .switch__label + .switch__marker {
         left: calc(100% - #{$swith-height} + #{$switch-marker-indent});
     }
-}
 
-.switch__label {
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    color: transparent;
-    user-select: none;
-    background-color: $add-text-color;
-    border-radius: inherit;
-    transition: background 0.2s ease;
-}
+    &__label {
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        color: transparent;
+        user-select: none;
+        background-color: $add-text-color;
+        border-radius: inherit;
+        transition: background 0.2s ease;
+    }
 
-.switch__marker {
-    position: relative;
-    z-index: 2;
-    left: $switch-marker-indent;
-    width: $swith-height - $switch-marker-indent * 2;
-    height: $swith-height - $switch-marker-indent * 2;
-    border-radius: 50%;
-    background: $white;
-    pointer-events: none;
-    transition: left 0.2s ease;
+    &__marker {
+        position: relative;
+        z-index: 2;
+        left: $switch-marker-indent;
+        width: $swith-height - $switch-marker-indent * 2;
+        height: $swith-height - $switch-marker-indent * 2;
+        border-radius: 50%;
+        background: $white;
+        pointer-events: none;
+        transition: left 0.2s ease;
+    }
 }
