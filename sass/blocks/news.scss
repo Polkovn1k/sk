@@ -46,6 +46,7 @@
         padding: 15px;
         border: 1px solid $border-color;
         margin-bottom: 15px;
+        background: $white;
         @media (min-width: $lg) {
             height: 256px;
         }
@@ -58,10 +59,23 @@
     &__item-title {
         display: block;
         order: 1;
+        max-height: 25px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         font-size: 18px;
         font-weight: 700;
         line-height: 1.39;
         color: $extra-text-color;
+        @media (min-width: $lg) {
+            max-height: 130px;
+            font-size: 24px;
+
+            white-space: normal;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
     }
 
     &__date {
