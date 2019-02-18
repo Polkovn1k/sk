@@ -119,8 +119,6 @@
       <div class="footer__container container-fluid">
           <div class="row">
 
-
-
               <div class="footer-nav col-12 col-lg-3 col-xl-2">
                   <div class="footer-nav__container">
                       <a href="#" class="footer-nav__sub-title">
@@ -299,16 +297,21 @@
 
               <div class="footer-nav col-12 col-lg-6 col-xl-12">
                   <div class="footer-nav__container">
-                      <a href="#" class="footer-nav__sub-title">
+                      <a href="#" class="footer-nav__sub-title footer-nav__sub-title--hide-mob">
                           Узнай первым о новинках и акциях. Подпишись.
                       </a>
                       <form class="subscription" action="action.php" autocomplete="off">
-                          <input class="subscription__input" type="email" placeholder="Введите email">
-                          <button type="submit" class="subscription__btn">Подписаться</button>
-                          <div class="switch">
-                            <input class="switch__input" type="checkbox" id="switchOn">
-                            <label aria-hidden="true" class="switch__label" for="switchOn">On</label>
-                            <div aria-hidden="true" class="switch__marker"></div>
+                          <div class="subscription__mail-input">
+                              <input class="subscription__input" type="email" placeholder="Введите email">
+                              <button type="submit" class="subscription__btn">Подписаться</button>
+                          </div>
+                          <div class="subscription__confirm">
+                              <div class="switch subscription__switch">
+                                <input class="switch__input" type="checkbox" id="switchOn">
+                                <label aria-hidden="true" class="switch__label" for="switchOn">On</label>
+                                <div aria-hidden="true" class="switch__marker"></div>
+                              </div>
+                              <a href="#" class="subscription__link">Я прочел условия и даю согласие на обработку данных</a>
                           </div>
                       </form>
                   </div>

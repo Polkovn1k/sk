@@ -1,4 +1,7 @@
 .footer-nav {
+    @media (min-width: $lg) {
+        padding-bottom: 20px;
+    }
 
     &__container {
         display: flex;
@@ -47,6 +50,14 @@
         display: none;
         @media (min-width: $lg) {
             display: block;
+        }
+    }
+
+    &__sub-title--hide-mob {
+        display: none;
+        @media (min-width: $md) {
+            display: block;
+            margin-bottom: 15px;
         }
     }
 

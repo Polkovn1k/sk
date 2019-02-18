@@ -9,4 +9,16 @@
     &__container {
         @include container();
     }
+/*
+    &__separator {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+            width: 100%;
+            padding-bottom: 20px;
+        }
+        @media (min-width: $xl) {
+            display: none;
+        }
+    } */
 }
