@@ -20,16 +20,12 @@
 
     &__sub-title {
         display: block;
-        height: $footer-nav-item-height;
+        min-height: $footer-nav-item-height;
         width: calc(100% - #{$footer-nav-tog-mobile-width});
         font-size: 18px;
         font-weight: 600;
         line-height: $footer-nav-item-height;
         color: $white;
-
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
         @media (min-width: $sm) {
             width: 50%;
         }
@@ -56,6 +52,7 @@
     &__sub-title--hide-mob {
         display: none;
         @media (min-width: $md) {
+            width: auto;
             display: block;
             margin-bottom: 15px;
         }
