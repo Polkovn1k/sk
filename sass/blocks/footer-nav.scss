@@ -59,6 +59,9 @@
             display: block;
             margin-bottom: 15px;
         }
+        @media (min-width: $xl) {
+            width: 33.33333%;
+        }
     }
 
     &__nav-tog {

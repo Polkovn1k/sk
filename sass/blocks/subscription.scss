@@ -4,6 +4,9 @@
     align-items: center;
     width: 100%;
     font-family: $font;
+    @media (min-width: $xl) {
+        width: 66.66667%;
+    }
 
     &__mail-input {
         display: flex;
