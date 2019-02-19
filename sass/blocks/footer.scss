@@ -100,9 +100,6 @@
 
     &__restrict {
         padding-bottom: 20px;
-        @media (min-width: $lg) {
-            padding-left: 45px;
-        }
         span {
             display: table-cell;
             vertical-align: middle;
@@ -124,6 +121,12 @@
             font-weight: 600;
             line-height: 1.71;
             color: $communication-add-color;
+        }
+        @media (min-width: $lg) {
+            padding-left: 45px;
+        }
+        @media (min-width: $xl) {
+            padding-left: 30px;
         }
     }
 
