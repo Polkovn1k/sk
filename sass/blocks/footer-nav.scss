@@ -6,7 +6,7 @@
     &__container {
         display: flex;
         flex-wrap: wrap;
-        align-items: flex-start;
+        align-items: center;
         font-family: $font;
         @media (min-width: $lg) {
             padding-left: 15px;
@@ -61,6 +61,7 @@
         }
         @media (min-width: $xl) {
             width: 33.33333%;
+            margin-bottom: 0;
         }
     }
 
