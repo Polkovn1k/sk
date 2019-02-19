@@ -7,6 +7,7 @@
     &__list {
         @include order-reset();
         position: relative;
+        width: 100%;
         z-index: 100;
     }
 
@@ -27,6 +28,7 @@
 
         cursor: pointer;
         box-shadow: inset 0px -1px 0 0px $border-color;
+        transition: 0.3s color ease;
     }
 
     &__item::before {
@@ -49,7 +51,9 @@
         box-shadow: none;
     }
 
-    &__item:hover {}
+    &__item:hover {
+        color: $blue;
+    }
 
     &__item:hover > &__list {
         display: block;

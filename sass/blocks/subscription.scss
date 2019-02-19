@@ -63,6 +63,12 @@
         border-top-right-radius: 5px;
         border-bottom-right-radius: 5px;
         outline: none;
+        cursor: pointer;
+        transition: 0.2s background ease;
+    }
+
+    &__btn:hover {
+        background: lighten($yellow, 10%);
     }
 
     &__confirm {

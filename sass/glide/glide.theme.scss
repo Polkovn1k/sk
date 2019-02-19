@@ -122,18 +122,6 @@
             background-color: $blue;
         }
     }
-
-    &#{$sm}swipeable {
-        cursor: grab;
-        cursor: -moz-grab;
-        cursor: -webkit-grab;
-    }
-
-    &#{$sm}dragging {
-        cursor: grabbing;
-        cursor: -moz-grabbing;
-        cursor: -webkit-grabbing;
-    }
 }
 //index top slider
 .glide--top-slider {

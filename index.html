@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="canonical" href="https://***.ru/">
   <script>document.createElement("picture");</script>
-  <script src="picturefill.js" async></script>
+  <!-- <script src="picturefill.js" async></script> -->
 </head>
 
 <body>
@@ -63,56 +63,8 @@
           </div>
       </div>
 
+      <include src="html-modules/in-modify/overlays.html"></include>
 
-
-
-
-      <!-- overlays: call-back -->
-      <section class="communication-over">
-          <h3 class="communication-over__title">Звонок специалиста</h3>
-          <p class="communication-over__text">
-              Если вы не хотите тратить время на поиск нужной информации на сайте, находитесь в другом часовом поясе или просто предпочитаете телефонное сообщение по интересующему вопросу, то закажите консультацию нашего специалиста.
-          </p>
-          <form action="#" class="communication-over__form">
-              <input type="text" placeholder="Введите имя">
-              <input type="tel" placeholder="Введите номер телефона">
-              <button type="submit" class="dark-btn">Заказать звонок</button>
-          </form>
-      </section>
-
-      <!-- overlays: call-back -->
-      <div class="city-pick-over">
-          <section class="city-pick-over__container">
-              <h3 class="city-pick-over__title">Выбор города</h3>
-              <input type="text" placeholder="Введите название города">
-              <ul class="city-pick-over__list">
-                  <li class="city-pick-over__item">Москва</li>
-                  <li class="city-pick-over__item">Санкт-Петербург</li>
-                  <li class="city-pick-over__item">Архангельск</li>
-                  <li class="city-pick-over__item">Владивосток</li>
-                  <li class="city-pick-over__item">Волгоград</li>
-                  <li class="city-pick-over__item">Воронеж</li>
-                  <li class="city-pick-over__item">Екатеринбург</li>
-                  <li class="city-pick-over__item">Ижевск</li>
-                  <li class="city-pick-over__item">Иркутск</li>
-                  <li class="city-pick-over__item">Казань</li>
-                  <li class="city-pick-over__item">Кемерово</li>
-                  <li class="city-pick-over__item">Краснодар</li>
-                  <li class="city-pick-over__item">Красноярск</li>
-                  <li class="city-pick-over__item">Мурманск</li>
-                  <li class="city-pick-over__item">Набережные Челны</li>
-                  <li class="city-pick-over__item">Нижний Новгород</li>
-                  <li class="city-pick-over__item">Новосибирск</li>
-                  <li class="city-pick-over__item">Омск</li>
-                  <li class="city-pick-over__item">Пермь</li>
-                  <li class="city-pick-over__item">Ростов-на-Дону</li>
-                  <li class="city-pick-over__item">Саратов</li>
-                  <li class="city-pick-over__item">Самара</li>
-                  <li class="city-pick-over__item">Сочи</li>
-                  <li class="city-pick-over__item">Сургут</li>
-              </ul>
-          </section>
-      </div>
   </main>
 
   <!----------footer-->
@@ -128,6 +80,7 @@
 
   <script src="js/script.js"></script>
   <script>
+//---------index-page
       var glide = new Glide('.glide--top-slider', {
           autoplay: 3000,
           hoverpause: true,
@@ -146,7 +99,7 @@
           }
       });
       glideAdvantages.mount();
-//---------
+//---------index-page
       var sliders = document.querySelectorAll(".glide--goods-sliders");
       var glideGoodsSliders = [];
 
@@ -180,7 +133,7 @@
     for (var i = 0; i < sliders.length; i++) {
         sliderCollection(i, sliders);
     }
-//---------
+//---------index-page
     var articlesSlider = new Glide('.glide--articles', {
         gap: 15,
         bound: true,
@@ -225,7 +178,7 @@
         }
     });
     articlesSlider.mount();
-//---------
+//---------index-page
     var brandsSlider = new Glide('.glide--brands', {
         gap: 15,
         bound: true,

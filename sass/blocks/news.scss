@@ -43,6 +43,7 @@
     }
 
     &__item {
+        position: relative;
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -50,11 +51,31 @@
         border: 1px solid $border-color;
         margin-bottom: 15px;
         background: $white;
+        transition: 0.3s box-shadow ease;
         @media (min-width: $lg) {
             height: 256px;
             padding: 30px;
             border: none;
         }
+    }
+
+    &__item::after {
+        @include pseudo();
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 5px;
+        background: $blue;
+        transition: 0.2s width ease;
+    }
+
+    &__item:hover::after {
+        width: 100%;
+        transition: 0.3s width ease;
+    }
+
+    &__item:hover {
+        box-shadow: 0 0 15px 0 transparentize($main-color, 0.9);
     }
 
     &__item:last-child {
@@ -72,6 +93,7 @@
         font-weight: 700;
         line-height: 1.39;
         color: $extra-text-color;
+        transition: 0.3s color ease;
         @media (min-width: $lg) {
             max-height: 105px;
             font-size: 24px;
@@ -81,6 +103,10 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
         }
+    }
+
+    &__item-title:hover {
+        color: $blue;
     }
 
     &__date {

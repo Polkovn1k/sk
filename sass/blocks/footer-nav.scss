@@ -19,6 +19,7 @@
     }
 
     &__sub-title {
+        @include field-reset();
         display: block;
         min-height: $footer-nav-item-height;
         width: calc(100% - #{$footer-nav-tog-mobile-width});

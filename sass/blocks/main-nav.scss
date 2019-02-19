@@ -66,6 +66,7 @@
         padding: 10px $grid-padding 0 $grid-padding;
         background: $white;
         border-bottom: 1px solid $border-color;
+        transition: 0.3s color ease;
         @media (min-width: $lg) {
             border-bottom: none;
             padding: 7px 12px;
@@ -76,6 +77,10 @@
         @media (min-width: $xl) {
             padding: 7px 12px;
         }
+    }
+
+    &__item-link:hover {
+        color: $blue;
     }
 
     &__item-link--hide-mob {
@@ -143,11 +148,16 @@
         padding: 10px $grid-padding 0 $grid-padding;
         background: $white;
         border-bottom: 1px solid $border-color;
+        transition: 0.3s color ease;
         @media (min-width: $lg) {
             width: 160px;
             padding: 10px 20px;
             border-bottom: none;
         }
+    }
+
+    &__dropdawn-link:hover {
+        color: $blue;
     }
 
     &__dropdawn-link::before {

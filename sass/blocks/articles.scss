@@ -36,9 +36,29 @@
         padding: 15px;
         overflow: hidden;
         background: $white;
+        transition: 0.2s box-shadow ease;
         @media (min-width: $lg) {
             height: $article-height-desktop;
         }
+    }
+
+    &__item::after {
+        @include pseudo();
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 5px;
+        background: $blue;
+        transition: 0.2s width ease;
+    }
+
+    &__item:hover::after {
+        width: 100%;
+        transition: 0.3s width ease;
+    }
+
+    &__item:hover {
+        box-shadow: 0 0 15px 0 transparentize($main-color, 0.9);
     }
 
     &__text {
@@ -66,9 +86,14 @@
         display: -webkit-box;
         -webkit-line-clamp: 4;
         -webkit-box-orient: vertical;
+        transition: 0.2s color ease;
         @media (min-width: $lg) {
             color: $main-color;
         }
+    }
+
+    &__item-title:hover {
+        color: $blue;
     }
 
     &__date {
