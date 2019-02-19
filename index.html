@@ -58,6 +58,7 @@
 
               <include src="html-modules/main/news.html"></include>
               <include src="html-modules/main/articles.html"></include>
+              <include src="html-modules/main/brands.html"></include>
 
           </div>
       </div>
@@ -224,6 +225,44 @@
         }
     });
     articlesSlider.mount();
+//---------
+    var brandsSlider = new Glide('.glide--brands', {
+        gap: 15,
+        bound: true,
+        rewind: false,
+        perView: 6,
+        breakpoints: {
+            1023: {
+                peek: {
+                    before: 0,
+                    after: 40,
+                },
+                perView: 5,
+            },
+            767: {
+                peek: {
+                    before: 0,
+                    after: 100,
+                },
+                perView: 3,
+            },
+            575: {
+                peek: {
+                    before: 0,
+                    after: 70,
+                },
+                perView: 3,
+            },
+            480: {
+                peek: {
+                    before: 0,
+                    after: 70,
+                },
+                perView: 2,
+            },
+        }
+    });
+    brandsSlider.mount();
 </script>
 </body>
 

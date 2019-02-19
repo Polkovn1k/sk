@@ -1,0 +1,26 @@
+.brands {
+
+    &__container {
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    &__item {
+        width: 100%;
+        height: $slider-height;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__link {
+        img {
+            width: auto;
+            max-height: $img-height - 10px;
+            max-width: 155px;
+        }
+    }
+}

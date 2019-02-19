@@ -15,6 +15,9 @@
         font-weight: 400;
         line-height: 1.32;
         color: $extra-text-color;
+        @media (min-width: $md) {
+            font-size: 33px;
+        }
     }
 
     &__btn {
