@@ -26,8 +26,8 @@
                 top: auto;
                 left: auto;
                 bottom: 0;
-                right: 40px;
-                max-height: none;
+                right: 30px;
+                max-height: 210px;
                 transform: none;
             }
         }
@@ -140,6 +140,12 @@
     }
 //чтобы картики вмещались на lg и не перекрывали текст
     &:nth-child(n+4) &__item {
+        @media (min-width: $md) {
+            img {
+                max-height: 130px;
+                right: 20px;
+            }
+        }
         @media (min-width: $lg) {
             img {
                 max-height: 70px;

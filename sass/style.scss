@@ -14,6 +14,7 @@
 @import "general/global.scss";
 
 //---BEM blocks
+    //common-----
 @import "blocks/btn.scss";
 @import "blocks/header.scss";
 @import "blocks/main-nav.scss";
@@ -26,20 +27,25 @@
 @import "blocks/city-pick.scss";
 @import "blocks/city-pick-over.scss";
 @import "blocks/main.scss";
-@import "blocks/catalog.scss";
-@import "blocks/main-catalog.scss";
-@import "blocks/goods-sliders.scss";
-@import "blocks/product.scss";
-@import "blocks/vk-comments.scss";
-@import "blocks/news.scss";
-@import "blocks/articles.scss";
-@import "blocks/brands.scss";
 @import "blocks/footer.scss";
 @import "blocks/footer-nav.scss";
 @import "blocks/social.scss";
 @import "blocks/switch.scss";
 @import "blocks/subscription.scss";
 @import "blocks/visually-hidden.scss";
+    //catalog-pages-----
+@import "blocks/crumbs.scss";
+    //index-----
+@import "blocks/index/catalog.scss";
+@import "blocks/index/main-catalog.scss";
+@import "blocks/index/goods-sliders.scss";
+@import "blocks/index/product.scss";
+@import "blocks/index/vk-comments.scss";
+@import "blocks/index/news.scss";
+@import "blocks/index/articles.scss";
+@import "blocks/index/brands.scss";
+    //catalog-----
+@import "blocks/catalog/catalog-main-page.scss";
 
 //---Glide slider & carousel
 @import "glide/_variables.scss";

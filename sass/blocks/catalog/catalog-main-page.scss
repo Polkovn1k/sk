@@ -1,0 +1,74 @@
+.catalog-main-page {
+    display: block;
+    margin-bottom: 15px;
+    position: relative;
+    min-height: $mobile-catalog-page-item-height;
+    position: relative;
+    padding: $mobile-catalog-page-padding;
+    border: 1px solid $border-color;
+    font-family: $font;
+    background: $white;
+    transition: 0.3s min-height ease, 0.3s padding ease;
+    @media (min-width: $lg) {
+        min-height: $desktop-catalog-page-item-height;
+        padding: $desktop-catalog-page-padding;
+        border: none;
+    }
+
+    img {
+        position: absolute;
+        bottom: 0;
+        right: 40px;
+        max-height: 85px;
+        @media (min-width: $md) {
+            max-height: 90px;
+        }
+        @media (min-width: $lg) {
+            right: 50px;
+            max-height: 150px;
+        }
+    }
+
+    &:last-child {
+        //margin-bottom: 0;
+    }
+
+    &::after {
+        @include pseudo();
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 5px;
+        background: $blue;
+        transition: 0.2s width ease;
+    }
+
+    &:hover::after {
+        width: 100%;
+        transition: 0.3s width ease;
+    }
+
+    &:hover {
+        box-shadow: 0 0 15px 0 transparentize($main-color, 0.9);
+    }
+
+    &__text {
+        @include field-reset();
+        display: inline-block;
+        vertical-align: top;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 1.33;
+        color: $extra-text-color;
+        transition: 0.3s color ease;
+        @media (min-width: $lg) {
+            font-size: 24px;
+        }
+    }
+
+    &__text:hover {
+        color: $blue;
+    }
+
+
+}

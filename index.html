@@ -33,22 +33,22 @@
   </header>
 
   <!----------main-->
-  <main class="main">
+  <main class="main main--no-padding">
       <div class="main__container container-fluid">
           <div class="row">
 
-              <include src="html-modules/main/catalog.html"></include>
-              <include src="html-modules/main/glide--top-slider.html"></include>
-              <include src="html-modules/main/main__advantages.html"></include>
-              <include src="html-modules/main/main__main-catalog.html"></include>
-              <include src="html-modules/main/main__goods-sliders.html"></include>
+              <include src="html-modules/__index-page/catalog.html"></include>
+              <include src="html-modules/__index-page/glide--top-slider.html"></include>
+              <include src="html-modules/__index-page/main__advantages.html"></include>
+              <include src="html-modules/__index-page/main__main-catalog.html"></include>
+              <include src="html-modules/__index-page/main__goods-sliders.html"></include>
 
           </div>
       </div>
       <div class="main__container container-fluid">
           <div class="row">
 
-              <include src="html-modules/main/vk-comments.html"></include>
+              <include src="html-modules/__index-page/vk-comments.html"></include>
 
           </div>
       </div>
@@ -56,9 +56,9 @@
       <div class="main__container container-fluid">
           <div class="row">
 
-              <include src="html-modules/main/news.html"></include>
-              <include src="html-modules/main/articles.html"></include>
-              <include src="html-modules/main/brands.html"></include>
+              <include src="html-modules/__index-page/news.html"></include>
+              <include src="html-modules/__index-page/articles.html"></include>
+              <include src="html-modules/__index-page/brands.html"></include>
 
           </div>
       </div>
@@ -82,6 +82,7 @@
   <script>
 //---------index-page
       var glide = new Glide('.glide--top-slider', {
+          type: 'carousel',
           autoplay: 3000,
           hoverpause: true,
       });

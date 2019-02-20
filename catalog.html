@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smoking Shop</title>
+  <meta name="description" content="Smoking Shop">
+  <meta name="keywords" content="Smoking Shop">
+  <link rel="shortcut icon" type="image/x-icon" href="*.ico">
+  <link rel="shortcut icon" type="image/png" href="*.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="canonical" href="https://***.ru/">
+  <script>document.createElement("picture");</script>
+  <!-- <script src="picturefill.js" async></script> -->
+</head>
+
+<body>
+
+  <div style="display: none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+  <!----------header-->
+  <header class="header">
+      <div class="header__container">
+
+          <include src="html-modules/header/header.html"></include>
+
+      </div>
+  </header>
+
+  <!----------main-->
+  <main class="main">
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <!-- <include src="html-modules/__catalog-page/catalog.html"></include> -->
+              <div class="col-12">
+                  <ul class="crumbs">
+                      <li class="crumbs__item">
+                          <a href="/" class="crumbs__link">Главная</a>
+                      </li>
+                      <li class="crumbs__item">
+                          <a href="#" class="crumbs__link">Каталог</a>
+                      </li>
+                  </ul>
+              </div>
+              <h2 class="main__title col-12">Каталог товаров</h2>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Вейпы</p>
+                      <img src="img/decoration/ecigarette.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Жидкости</p>
+                      <img src="img/decoration/liquid.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Батарейные моды</p>
+                      <img src="img/decoration/box-mode.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Атомайзеры</p>
+                      <img src="img/decoration/atomizer.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Аккумуляторы</p>
+                      <img src="img/decoration/battery.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Самозамес</p>
+                      <img src="img/decoration/samozames.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Ароматизаторы</p>
+                      <img src="img/decoration/flavor.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Расходные материалы</p>
+                      <img src="img/decoration/expendable.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Комплектующие</p>
+                      <img src="img/decoration/parts.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Бренды</p>
+                      <img src="img/decoration/ehpro.png" alt="">
+                  </a>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 col-xl-3">
+                  <a href="#" class="catalog-main-page">
+                      <p class="catalog-main-page__text">Подарочные сертификаты</p>
+                      <img src="img/decoration/certificate.png" alt="">
+                  </a>
+              </div>
+
+          </div>
+      </div>
+
+      <include src="html-modules/in-modify/overlays.html"></include>
+
+  </main>
+
+  <!----------footer-->
+  <footer class="footer">
+      <div class="footer__container container-fluid">
+
+          <include src="html-modules/footer/top-footer.html"></include>
+          <include src="html-modules/footer/bottom-footer.html"></include>
+
+      </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

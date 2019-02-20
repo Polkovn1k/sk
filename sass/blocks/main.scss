@@ -1,15 +1,35 @@
 .main {
     overflow: hidden;
     margin-top: $mobile-header-height;
+    padding-top: 20px;
+    font-family: $font;
     @media (min-width: $md) {
         margin-top: $gradient-breakpoint-desktop + $gradient-breakpoint-mobile-end;
     }
     @media (min-width: $lg) {
         margin-top: $gradient-breakpoint-desktop + $gradient-breakpoint-desktop-end;
+        padding-top: 30px;
+    }
+
+    &--no-padding {
+        padding-top: 0;
     }
 
     &__container {
         @include container();
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1.32;
+        text-align: left;
+        color: $extra-text-color;
+        @media (min-width: $lg) {
+            margin-bottom: 30px;
+        }
     }
 
     &__advantages {
