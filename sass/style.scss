@@ -48,6 +48,11 @@
 @import "blocks/catalog/catalog-main-page.scss";
     //catalog-section-----
 @import "blocks/catalog-section/catalog-section.scss";
+@import "blocks/catalog-section/filter.scss";
+@import "blocks/catalog-section/range-filter.scss";
+@import "blocks/catalog-section/check-box.scss";
+@import "blocks/catalog-section/sort.scss";
+@import "blocks/catalog-section/add-sort.scss";
 
 //---Glide slider & carousel
 @import "glide/_variables.scss";
