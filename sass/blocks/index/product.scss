@@ -67,8 +67,12 @@
         top: 0;
         right: 0;
         padding: 15px;
-        opacity: 0;
+        opacity: 1;
         transition: 0.1s opacity ease-in;
+        background: $white;
+        @media (min-width: $lg) {
+            opacity: 0;
+        }
     }
 
     &__action-item {
