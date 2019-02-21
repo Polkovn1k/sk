@@ -32,6 +32,7 @@
 @import "blocks/social.scss";
 @import "blocks/switch.scss";
 @import "blocks/subscription.scss";
+@import "blocks/index/product.scss";
 @import "blocks/visually-hidden.scss";
     //catalog-pages-----
 @import "blocks/crumbs.scss";
@@ -39,7 +40,6 @@
 @import "blocks/index/catalog.scss";
 @import "blocks/index/main-catalog.scss";
 @import "blocks/index/goods-sliders.scss";
-@import "blocks/index/product.scss";
 @import "blocks/index/vk-comments.scss";
 @import "blocks/index/news.scss";
 @import "blocks/index/articles.scss";
@@ -48,11 +48,14 @@
 @import "blocks/catalog/catalog-main-page.scss";
     //catalog-section-----
 @import "blocks/catalog-section/catalog-section.scss";
-@import "blocks/catalog-section/filter.scss";
+@import "blocks/catalog-section/filters.scss";
 @import "blocks/catalog-section/range-filter.scss";
 @import "blocks/catalog-section/check-box.scss";
 @import "blocks/catalog-section/sort.scss";
 @import "blocks/catalog-section/add-sort.scss";
+@import "blocks/catalog-section/pagination.scss";
+@import "blocks/catalog-section/catalog-slider.scss";
+@import "blocks/catalog-section/add-product.scss";
 
 //---Glide slider & carousel
 @import "glide/_variables.scss";

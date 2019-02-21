@@ -51,56 +51,82 @@
                       </li>
                   </ul>
               </div>
-              <h2 class="main__title col-12">Вейпы</h2>
-              <div class="col-12">
+              <h2 class="col-12 main__title">Вейпы</h2>
+              <div class="col-12 catalog-section">
                   <div class="row">
                       <div class="col-12 col-lg-3">
-                          <div class="filters">
-                              <button class="filters__toggler">
-                                  Фильтр
-                                  <span>Close/Open Modal</span>
-                              </button>
+                          <div class="filters filters--active">
+                              <div class="filters__tog-modal">
+                                  <span>Фильтр</span>
+                                  <button class="filters__open-modal">
+                                      Открыть модальное окно
+                                      <svg class="filter__icon-open" width="20" height="20" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#filter"></use>
+                                      </svg>
+                                  </button>
+                                  <button class="filters__close-modal">
+                                      Закрыть модальное окно
+                                      <svg class="filter__icon-close" width="26" height="26" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                                      </svg>
+                                  </button>
+                              </div>
                               <form action="some.php" class="filters__container">
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">Цена</legend>
+                                      <legend class="filters__title">
+                                          Цена
+                                          <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                          </svg>
+                                      </legend>
                                       <div id="price_ranger" class="range-filter">
                                           <div class="range-filter__inputs">
-                                              <input id="price_ranger_min" type="text" name="price_min" value="700" class="range-filter__input-min">
-                                              <input id="price_ranger_max" type="text" name="price_max" value="1500" class="range-filter__input-max">
+                                              <input id="price_ranger_min" type="text" name="price_min" placeholder="от" class="range-filter__input-min">
+                                              <input id="price_ranger_max" type="text" name="price_max" placeholder="до" class="range-filter__input-max">
                                               <span class="range-filter__unit">руб.</span>
                                           </div>
-                                          <div class="range-filter">
-                                              <div class="range-filter__handles">
+                                          <div class="range-filter__handles">
+                                              <div class="range-filter__bar">
                                                   <div class="range-filter__left-handle"></div>
                                                   <div class="range-filter__right-handle"></div>
                                               </div>
-                                              <div class="range-filter"></div>
+                                              <div class="range-filter__progress-bar"></div>
                                               <input type="hidden" id="price_ranger_available_min" class="range-filter__min-available" value="700">
                                               <input type="hidden" id="price_ranger_available_max" class="range-filter__max-available" value="1500">
                                           </div>
                                       </div>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">Мощность, ВТ</legend>
+                                      <legend class="filters__title">
+                                          Мощность, ВТ
+                                          <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                          </svg>
+                                      </legend>
                                       <div id="power_ranger" class="range-filter">
                                           <div class="range-filter__inputs">
-                                              <input id="power_ranger_min" type="text" name="power_min" value="700" class="range-filter__input-min">
-                                              <input id="power_ranger_max" type="text" name="power_max" value="1500" class="range-filter__input-max">
+                                              <input id="power_ranger_min" type="text" name="power_min" placeholder="от" class="range-filter__input-min">
+                                              <input id="power_ranger_max" type="text" name="power_max" placeholder="до" class="range-filter__input-max">
                                               <span class="range-filter__unit">руб.</span>
                                           </div>
-                                          <div class="range-filter">
-                                              <div class="range-filter__handles">
+                                          <div class="range-filter__handles">
+                                              <div class="range-filter__bar">
                                                   <div class="range-filter__left-handle"></div>
                                                   <div class="range-filter__right-handle"></div>
                                               </div>
-                                              <div class="range-filter"></div>
+                                              <div class="range-filter__progress-bar"></div>
                                               <input type="hidden" id="power_ranger_available_min" class="range-filter__min-available" value="700">
                                               <input type="hidden" id="power_ranger_available_max" class="range-filter__max-available" value="1500">
                                           </div>
                                       </div>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">Аккумулятор</legend>
+                                      <legend class="filters__title">
+                                          Аккумулятор
+                                          <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                          </svg>
+                                      </legend>
                                       <ul id="price_ranger" class="check-box">
                                           <li class="check-box__item">
                                               <label for="battery_1" class="check-box__label">
@@ -119,7 +145,12 @@
                                       </ul>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">Цвет</legend>
+                                      <legend class="filters__title">
+                                          Цвет
+                                          <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                          </svg>
+                                      </legend>
                                       <ul id="price_ranger" class="check-box">
                                           <li class="check-box__item">
                                               <label for="color_1" class="check-box__label">
@@ -159,7 +190,12 @@
                                       </ul>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">Диаметр посадочной площадки</legend>
+                                      <legend class="filters__title">
+                                          Диаметр посадочной площадки
+                                          <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                          </svg>
+                                      </legend>
                                       <ul id="price_ranger" class="check-box">
                                           <li class="check-box__item">
                                               <label for="diameter_1" class="check-box__label">
@@ -199,7 +235,12 @@
                                       </ul>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">Функционал</legend>
+                                      <legend class="filters__title">
+                                          Функционал
+                                          <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                          </svg>
+                                      </legend>
                                       <ul id="price_ranger" class="check-box">
                                           <li class="check-box__item">
                                               <label for="functional_1" class="check-box__label">
@@ -260,7 +301,12 @@
                                       </ul>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">Бренд</legend>
+                                      <legend class="filters__title">
+                                          Бренд
+                                          <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                          </svg>
+                                      </legend>
                                       <input type="text" class="filters__text-input">
                                       <ul id="price_ranger" class="check-box">
                                           <li class="check-box__item">
@@ -295,7 +341,12 @@
                                       <button class="filters__show-all">Показать еще +</button>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">Наличие</legend>
+                                      <legend class="filters__title">
+                                          Наличие
+                                          <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
+                                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                          </svg>
+                                      </legend>
                                       <ul id="price_ranger" class="check-box">
                                           <li class="check-box__item">
                                               <label for="available_1" class="check-box__label">
@@ -321,7 +372,14 @@
                               </form>
                           </div>
                       </div>
-                      <div class="col-12 col-lg-9">
+                      <!-- <div class="col-12 col-lg-9">
+                          <section class="catalog-section__text">
+                              <button class="catalog-section__text-tog">Показать полностьбю текст/Свернуть текст</button>
+                              <p>
+                                  Электронную сигарету также называют вейпом, он призван дарить своему владельцу визуальное и вкусовое удовольствие. Данное устройство состоит из источника питания и атомайзера, внутри которого находится камера испарения и (бак), наполняемая жидкостью для электронных сигарет. Существует несколько основных формфакторов: цилиндрический, бокс-мод, мини-девайс, AIO.<br>
+                                  К цилиндрам относятся такие известные электронные сигареты, как Eleaf iJust 2, iJust S. Цилиндрические электронки зачастую имеют емкость аккумулятора сопоставимую с одним аккумулятором 18650, а также не имеют информационного дисплея и снабжены лишь клавишей питания. Бокс-моды же имеют форму коробочки, делятся на устройства с интегрированным и сменным аккумулятором. Разница заключается в удобстве – одним пользователям вейп-девайсов нравится использовать сменные батареи, а другие за практичность и их устраивает наличие интегрированного элемента питания.
+                              </p>
+                          </section>
                           <div class="sort">
                               <div class="sort__by-property">
                                   <div class="sort__title">Отсортировать по:</div>
@@ -377,9 +435,978 @@
                                   </li>
                               </ul>
                           </div>
-                      </div>
+                          <div class="catalog-section__products">
+                              <ul class="row no-gutters">
+                                  <li class="col-12 col-lg-4">
+                                      <div class="product">
+                                          <div class="product__container">
+                                              <div class="product__features">
+                                                  <span class="product__features-item product__features-item--hit">Хит</span>
+                                                  <span class="product__features-item">Выгода 5 Р.</span>
+                                                  <span class="product__features-item">-10%</span>
+                                                  <span class="product__features-item">Акция</span>
+                                              </div>
+                                              <div class="product__action">
+                                                  <a href="#" class="product__action-item product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="product__action-item product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="product__img">
+                                                  <img src="img/temp__img/item__3.png" alt="">
+                                              </div>
+                                              <a href="#" class="product__name">Электронная сигарета Eleaf Just 3</a>
+                                              <div class="product__response">
+                                                  <div class="product__rating">
+                                                      <div class="product__rating-stars">
+                                                          <div class="product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="product__message">
+                                                      <div class="product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="product__properties">
+                                                  <p class="product__properties-value">USB: <span>есть</span></p>
+                                                  <p class="product__properties-value">Цвет: <span>Металик, Белый</span></p>
+                                                  <p class="product__properties-value">Вес: <span>300 г.</span></p>
+                                              </div>
+                                              <div class="product__price">
+                                                  <span class="product__old-price">2578 Р.</span>
+                                                  <div class="product__current-price">
+                                                      <span class="product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="col-12 col-lg-4">
+                                      <div class="product">
+                                          <div class="product__container">
+                                              <div class="product__features">
+                                                  <span class="product__features-item product__features-item--hit">Хит</span>
+                                                  <span class="product__features-item">Выгода 5 Р.</span>
+                                                  <span class="product__features-item">-10%</span>
+                                                  <span class="product__features-item">Акция</span>
+                                              </div>
+                                              <div class="product__action">
+                                                  <a href="#" class="product__action-item product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="product__action-item product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="product__img">
+                                                  <img src="img/temp__img/item__3.png" alt="">
+                                              </div>
+                                              <a href="#" class="product__name">Электронная сигарета Eleaf Just 3</a>
+                                              <div class="product__response">
+                                                  <div class="product__rating">
+                                                      <div class="product__rating-stars">
+                                                          <div class="product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="product__message">
+                                                      <div class="product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="product__properties">
+                                                  <p class="product__properties-value">USB: <span>есть</span></p>
+                                                  <p class="product__properties-value">Цвет: <span>Металик, Белый</span></p>
+                                                  <p class="product__properties-value">Вес: <span>300 г.</span></p>
+                                              </div>
+                                              <div class="product__price">
+                                                  <span class="product__old-price">2578 Р.</span>
+                                                  <div class="product__current-price">
+                                                      <span class="product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="col-12 col-lg-4">
+                                      <div class="product">
+                                          <div class="product__container">
+                                              <div class="product__features">
+                                                  <span class="product__features-item product__features-item--hit">Хит</span>
+                                                  <span class="product__features-item">Выгода 5 Р.</span>
+                                                  <span class="product__features-item">-10%</span>
+                                                  <span class="product__features-item">Акция</span>
+                                              </div>
+                                              <div class="product__action">
+                                                  <a href="#" class="product__action-item product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="product__action-item product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="product__img">
+                                                  <img src="img/temp__img/item__3.png" alt="">
+                                              </div>
+                                              <a href="#" class="product__name">Электронная сигарета Eleaf Just 3</a>
+                                              <div class="product__response">
+                                                  <div class="product__rating">
+                                                      <div class="product__rating-stars">
+                                                          <div class="product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="product__message">
+                                                      <div class="product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="product__properties">
+                                                  <p class="product__properties-value">USB: <span>есть</span></p>
+                                                  <p class="product__properties-value">Цвет: <span>Металик, Белый</span></p>
+                                                  <p class="product__properties-value">Вес: <span>300 г.</span></p>
+                                              </div>
+                                              <div class="product__price">
+                                                  <span class="product__old-price">2578 Р.</span>
+                                                  <div class="product__current-price">
+                                                      <span class="product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="col-12 col-lg-4">
+                                      <div class="product">
+                                          <div class="product__container">
+                                              <div class="product__features">
+                                                  <span class="product__features-item product__features-item--hit">Хит</span>
+                                                  <span class="product__features-item">Выгода 5 Р.</span>
+                                                  <span class="product__features-item">-10%</span>
+                                                  <span class="product__features-item">Акция</span>
+                                              </div>
+                                              <div class="product__action">
+                                                  <a href="#" class="product__action-item product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="product__action-item product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="product__img">
+                                                  <img src="img/temp__img/item__3.png" alt="">
+                                              </div>
+                                              <a href="#" class="product__name">Электронная сигарета Eleaf Just 3</a>
+                                              <div class="product__response">
+                                                  <div class="product__rating">
+                                                      <div class="product__rating-stars">
+                                                          <div class="product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="product__message">
+                                                      <div class="product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="product__properties">
+                                                  <p class="product__properties-value">USB: <span>есть</span></p>
+                                                  <p class="product__properties-value">Цвет: <span>Металик, Белый</span></p>
+                                                  <p class="product__properties-value">Вес: <span>300 г.</span></p>
+                                              </div>
+                                              <div class="product__price">
+                                                  <span class="product__old-price">2578 Р.</span>
+                                                  <div class="product__current-price">
+                                                      <span class="product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="col-12 col-lg-4">
+                                      <div class="product">
+                                          <div class="product__container">
+                                              <div class="product__features">
+                                                  <span class="product__features-item product__features-item--hit">Хит</span>
+                                                  <span class="product__features-item">Выгода 5 Р.</span>
+                                                  <span class="product__features-item">-10%</span>
+                                                  <span class="product__features-item">Акция</span>
+                                              </div>
+                                              <div class="product__action">
+                                                  <a href="#" class="product__action-item product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="product__action-item product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="product__img">
+                                                  <img src="img/temp__img/item__3.png" alt="">
+                                              </div>
+                                              <a href="#" class="product__name">Электронная сигарета Eleaf Just 3</a>
+                                              <div class="product__response">
+                                                  <div class="product__rating">
+                                                      <div class="product__rating-stars">
+                                                          <div class="product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="product__message">
+                                                      <div class="product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="product__properties">
+                                                  <p class="product__properties-value">USB: <span>есть</span></p>
+                                                  <p class="product__properties-value">Цвет: <span>Металик, Белый</span></p>
+                                                  <p class="product__properties-value">Вес: <span>300 г.</span></p>
+                                              </div>
+                                              <div class="product__price">
+                                                  <span class="product__old-price">2578 Р.</span>
+                                                  <div class="product__current-price">
+                                                      <span class="product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="col-12 col-lg-4">
+                                      <div class="product">
+                                          <div class="product__container">
+                                              <div class="product__features">
+                                                  <span class="product__features-item product__features-item--hit">Хит</span>
+                                                  <span class="product__features-item">Выгода 5 Р.</span>
+                                                  <span class="product__features-item">-10%</span>
+                                                  <span class="product__features-item">Акция</span>
+                                              </div>
+                                              <div class="product__action">
+                                                  <a href="#" class="product__action-item product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="product__action-item product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="product__img">
+                                                  <img src="img/temp__img/item__3.png" alt="">
+                                              </div>
+                                              <a href="#" class="product__name">Электронная сигарета Eleaf Just 3</a>
+                                              <div class="product__response">
+                                                  <div class="product__rating">
+                                                      <div class="product__rating-stars">
+                                                          <div class="product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="product__message">
+                                                      <div class="product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="product__properties">
+                                                  <p class="product__properties-value">USB: <span>есть</span></p>
+                                                  <p class="product__properties-value">Цвет: <span>Металик, Белый</span></p>
+                                                  <p class="product__properties-value">Вес: <span>300 г.</span></p>
+                                              </div>
+                                              <div class="product__price">
+                                                  <span class="product__old-price">2578 Р.</span>
+                                                  <div class="product__current-price">
+                                                      <span class="product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="col-12 col-lg-4">
+                                      <div class="product">
+                                          <div class="product__container">
+                                              <div class="product__features">
+                                                  <span class="product__features-item product__features-item--hit">Хит</span>
+                                                  <span class="product__features-item">Выгода 5 Р.</span>
+                                                  <span class="product__features-item">-10%</span>
+                                                  <span class="product__features-item">Акция</span>
+                                              </div>
+                                              <div class="product__action">
+                                                  <a href="#" class="product__action-item product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="product__action-item product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="product__img">
+                                                  <img src="img/temp__img/item__3.png" alt="">
+                                              </div>
+                                              <a href="#" class="product__name">Электронная сигарета Eleaf Just 3</a>
+                                              <div class="product__response">
+                                                  <div class="product__rating">
+                                                      <div class="product__rating-stars">
+                                                          <div class="product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="product__message">
+                                                      <div class="product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="product__properties">
+                                                  <p class="product__properties-value">USB: <span>есть</span></p>
+                                                  <p class="product__properties-value">Цвет: <span>Металик, Белый</span></p>
+                                                  <p class="product__properties-value">Вес: <span>300 г.</span></p>
+                                              </div>
+                                              <div class="product__price">
+                                                  <span class="product__old-price">2578 Р.</span>
+                                                  <div class="product__current-price">
+                                                      <span class="product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="col-12 col-lg-4">
+                                      <div class="product">
+                                          <div class="product__container">
+                                              <div class="product__features">
+                                                  <span class="product__features-item product__features-item--hit">Хит</span>
+                                                  <span class="product__features-item">Выгода 5 Р.</span>
+                                                  <span class="product__features-item">-10%</span>
+                                                  <span class="product__features-item">Акция</span>
+                                              </div>
+                                              <div class="product__action">
+                                                  <a href="#" class="product__action-item product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="product__action-item product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="product__img">
+                                                  <img src="img/temp__img/item__3.png" alt="">
+                                              </div>
+                                              <a href="#" class="product__name">Электронная сигарета Eleaf Just 3</a>
+                                              <div class="product__response">
+                                                  <div class="product__rating">
+                                                      <div class="product__rating-stars">
+                                                          <div class="product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="product__message">
+                                                      <div class="product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="product__properties">
+                                                  <p class="product__properties-value">USB: <span>есть</span></p>
+                                                  <p class="product__properties-value">Цвет: <span>Металик, Белый</span></p>
+                                                  <p class="product__properties-value">Вес: <span>300 г.</span></p>
+                                              </div>
+                                              <div class="product__price">
+                                                  <span class="product__old-price">2578 Р.</span>
+                                                  <div class="product__current-price">
+                                                      <span class="product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="col-12 col-lg-4">
+                                      <div class="product">
+                                          <div class="product__container">
+                                              <div class="product__features">
+                                                  <span class="product__features-item product__features-item--hit">Хит</span>
+                                                  <span class="product__features-item">Выгода 5 Р.</span>
+                                                  <span class="product__features-item">-10%</span>
+                                                  <span class="product__features-item">Акция</span>
+                                              </div>
+                                              <div class="product__action">
+                                                  <a href="#" class="product__action-item product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="product__action-item product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="product__img">
+                                                  <img src="img/temp__img/item__3.png" alt="">
+                                              </div>
+                                              <a href="#" class="product__name">Электронная сигарета Eleaf Just 3</a>
+                                              <div class="product__response">
+                                                  <div class="product__rating">
+                                                      <div class="product__rating-stars">
+                                                          <div class="product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="product__message">
+                                                      <div class="product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="product__properties">
+                                                  <p class="product__properties-value">USB: <span>есть</span></p>
+                                                  <p class="product__properties-value">Цвет: <span>Металик, Белый</span></p>
+                                                  <p class="product__properties-value">Вес: <span>300 г.</span></p>
+                                              </div>
+                                              <div class="product__price">
+                                                  <span class="product__old-price">2578 Р.</span>
+                                                  <div class="product__current-price">
+                                                      <span class="product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                              <div class="catalog-section__pagination">
+                                  <button class="catalog-section__btn">Загрузить еще</button>
+                                  <ul class="pagination">
+                                      <li class="pagination__item">
+                                          <a href="#">Back</a>
+                                      </li>
+                                      <li class="pagination__item">
+                                          <a href="#">1</a>
+                                      </li>
+                                      <li class="pagination__item">
+                                          <a href="#">2</a>
+                                      </li>
+                                      <li class="pagination__item">
+                                          <a href="#">3</a>
+                                      </li>
+                                      <li class="pagination__item">
+                                          <a href="#">Forward</a>
+                                      </li>
+                                      <li class="pagination__item">
+                                          <a href="#">24</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+
+                      </div> -->
                   </div>
               </div>
+              <!-- <div class="col-12 goods-sliders__col">
+                  <div class="catalog-slider">
+
+                      <div class="glide catalog-slider__container">
+                          SLIDER
+                          <div class="glide__track" data-glide-el="track">
+                              <ul class="glide__slides">
+                                  <li class="glide__slide">
+                                      <div class="glide__item add-product">
+                                          <div class="add-product__container">
+                                              <div class="add-product__features">
+                                                  <span class="add-product__features-item add-product__features-item--hit">Хит</span>
+                                                  <span class="add-product__features-item">Выгода 5 Р.</span>
+                                                  <span class="add-product__features-item">-10%</span>
+                                                  <span class="add-product__features-item">Акция</span>
+                                              </div>
+                                              <div class="add-product__action">
+                                                  <a href="#" class="add-product__action-item add-product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="add-product__action-item add-product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="add-product__img">
+                                                  <img src="img/temp__img/item__1.png" alt="">
+                                              </div>
+                                              <a href="#" class="add-product__name">Жидкость Volcano "Dragon Cookie" для ваших электронных сигарет</a>
+                                              <div class="add-product__response">
+                                                  <div class="add-product__rating">
+                                                      <div class="add-product__rating-stars">
+                                                          <div class="add-product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="add-product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="add-product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="add-product__message">
+                                                      <div class="add-product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="add-product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="add-product__properties">
+                                                  <p class="add-product__properties-value">Вкус: <span>арбуз, клубника</span></p>
+                                                  <p class="add-product__properties-value">Объем: <span>100 мл.</span></p>
+                                                  <p class="add-product__properties-value">PG/VG: <span>30/70</span></p>
+                                              </div>
+                                              <div class="add-product__price">
+                                                  <span class="add-product__old-price">2578 Р.</span>
+                                                  <div class="add-product__current-price">
+                                                      <span class="add-product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="add-product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="glide__slide">
+                                      <div class="glide__item add-product">
+                                          <div class="add-product__container">
+                                              <div class="add-product__features">
+                                                  <span class="add-product__features-item add-product__features-item--hit">Хит</span>
+                                                  <span class="add-product__features-item">Выгода 5 Р.</span>
+                                                  <span class="add-product__features-item">-10%</span>
+                                                  <span class="add-product__features-item">Акция</span>
+                                              </div>
+                                              <div class="add-product__action">
+                                                  <a href="#" class="add-product__action-item add-product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="add-product__action-item add-product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="add-product__img">
+                                                  <img src="img/temp__img/item__1.png" alt="">
+                                              </div>
+                                              <a href="#" class="add-product__name">Жидкость Volcano "Dragon Cookie" для ваших электронных сигарет</a>
+                                              <div class="add-product__response">
+                                                  <div class="add-product__rating">
+                                                      <div class="add-product__rating-stars">
+                                                          <div class="add-product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="add-product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="add-product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="add-product__message">
+                                                      <div class="add-product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="add-product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="add-product__properties">
+                                                  <p class="add-product__properties-value">Вкус: <span>арбуз, клубника</span></p>
+                                                  <p class="add-product__properties-value">Объем: <span>100 мл.</span></p>
+                                                  <p class="add-product__properties-value">PG/VG: <span>30/70</span></p>
+                                              </div>
+                                              <div class="add-product__price">
+                                                  <span class="add-product__old-price">2578 Р.</span>
+                                                  <div class="add-product__current-price">
+                                                      <span class="add-product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="add-product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="glide__slide">
+                                      <div class="glide__item add-product">
+                                          <div class="add-product__container">
+                                              <div class="add-product__features">
+                                                  <span class="add-product__features-item add-product__features-item--hit">Хит</span>
+                                                  <span class="add-product__features-item">Выгода 5 Р.</span>
+                                                  <span class="add-product__features-item">-10%</span>
+                                                  <span class="add-product__features-item">Акция</span>
+                                              </div>
+                                              <div class="add-product__action">
+                                                  <a href="#" class="add-product__action-item add-product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="add-product__action-item add-product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="add-product__img">
+                                                  <img src="img/temp__img/item__1.png" alt="">
+                                              </div>
+                                              <a href="#" class="add-product__name">Жидкость Volcano "Dragon Cookie" для ваших электронных сигарет</a>
+                                              <div class="add-product__response">
+                                                  <div class="add-product__rating">
+                                                      <div class="add-product__rating-stars">
+                                                          <div class="add-product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="add-product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="add-product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="add-product__message">
+                                                      <div class="add-product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="add-product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="add-product__properties">
+                                                  <p class="add-product__properties-value">Вкус: <span>арбуз, клубника</span></p>
+                                                  <p class="add-product__properties-value">Объем: <span>100 мл.</span></p>
+                                                  <p class="add-product__properties-value">PG/VG: <span>30/70</span></p>
+                                              </div>
+                                              <div class="add-product__price">
+                                                  <span class="add-product__old-price">2578 Р.</span>
+                                                  <div class="add-product__current-price">
+                                                      <span class="add-product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="add-product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="glide__slide">
+                                      <div class="glide__item add-product">
+                                          <div class="add-product__container">
+                                              <div class="add-product__features">
+                                                  <span class="add-product__features-item add-product__features-item--hit">Хит</span>
+                                                  <span class="add-product__features-item">Выгода 5 Р.</span>
+                                                  <span class="add-product__features-item">-10%</span>
+                                                  <span class="add-product__features-item">Акция</span>
+                                              </div>
+                                              <div class="add-product__action">
+                                                  <a href="#" class="add-product__action-item add-product__action-item--favorite">
+                                                      В избранное
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                                  <a href="#" class="add-product__action-item add-product__action-item--compare">
+                                                      К сравнению
+                                                      <svg aria-hidden="true" role="presentation">
+                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                                      </svg>
+                                                  </a>
+                                              </div>
+                                              <div class="add-product__img">
+                                                  <img src="img/temp__img/item__1.png" alt="">
+                                              </div>
+                                              <a href="#" class="add-product__name">Жидкость Volcano "Dragon Cookie" для ваших электронных сигарет</a>
+                                              <div class="add-product__response">
+                                                  <div class="add-product__rating">
+                                                      <div class="add-product__rating-stars">
+                                                          <div class="add-product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="add-product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="add-product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="add-product__message">
+                                                      <div class="add-product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="add-product__message-value">(102)</span>
+                                                  </a>
+                                              </div>
+                                              <div class="add-product__properties">
+                                                  <p class="add-product__properties-value">Вкус: <span>арбуз, клубника</span></p>
+                                                  <p class="add-product__properties-value">Объем: <span>100 мл.</span></p>
+                                                  <p class="add-product__properties-value">PG/VG: <span>30/70</span></p>
+                                              </div>
+                                              <div class="add-product__price">
+                                                  <span class="add-product__old-price">2578 Р.</span>
+                                                  <div class="add-product__current-price">
+                                                      <span class="add-product__current-value">2579 Р.</span>
+                                                      <a href="#" title="Добавить в корзину" class="add-product__cart">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                          </svg>
+                                                      </a>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                              </ul>
+                          </div>
+                          ARROWS OF SLIDER
+                          <div class="glide__arrows" data-glide-el="controls">
+                              <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
+                              <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
+                          </div>
+                      </div>
+
+                  </div>
+              </div> -->
 
           </div>
       </div>
