@@ -1,9 +1,7 @@
 .range-filter {
     display: flex;
     flex-direction: column-reverse;
-    max-width: $item-in-panel-filter-max-width;
     font-family: $font;
-    padding: 0 $grid-padding;
 //блок инпутов
     &__inputs {
         display: flex;
@@ -19,6 +17,7 @@
             margin-right: 15px;
             color: $extra-text-color;
             outline: none;
+            transition: 0.3s border-color ease;
         }
         input:hover,
         input:focus {
@@ -43,7 +42,11 @@
 //блок хэндлеров
     &__handles {
         position: relative;
-        margin: 20px 0 30px 0;
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+            margin: 20px 0 30px 0;
+        }
     }
 
     &__bar {

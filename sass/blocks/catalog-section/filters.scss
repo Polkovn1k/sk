@@ -152,7 +152,7 @@
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
-        height: $filter-title-height;
+        min-height: $filter-title-height;
         width: 100%;
         padding: 0 $grid-padding;
         padding-top: $filter-title-padding-top;
@@ -165,12 +165,67 @@
         color: $main-color;
         cursor: pointer;
         svg {
+            flex-shrink: 0;
             margin-top: 8px;
             width: 15px;
             height: 8px;
-            fill: $add-text-color;
+            fill: $blue;
             transform: rotate(180deg);
         }
+    }
+
+    &__content {
+        padding: 0 $grid-padding;
+        @media (min-width: $sm) {
+            max-width: 70%;
+        }
+        @media (min-width: $md) {
+            max-width: 60%;
+        }
+        @media (min-width: $lg) {
+            max-width: none;
+        }
+    }
+
+    &__show-all {
+        display: block;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.30;
+        text-align: center;
+        color: $main-color;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        @include transition();
+    }
+
+
+    &__show-all:hover {
+        color: $blue;
+    }
+
+    &__text-input {
+        width: 100%;
+        height: $common-item-height;
+        margin: 10px 0;
+        padding: 0 $grid-padding;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.30;
+        color: $main-color;
+        line-height: $common-item-height;
+        border-radius: 5px;
+        border: 1px solid $border-color;
+        outline: none;
+        @include transition(border-color);
+    }
+
+    &__text-input:hover,
+    &__text-input:focus {
+        border-color: $blue;
     }
 
     &__buttons {

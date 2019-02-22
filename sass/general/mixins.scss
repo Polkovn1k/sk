@@ -28,6 +28,10 @@
   bottom: 0;
   left: 0;
 }
+
+@mixin transition($property: color, $time: 0.3s, $type: ease) {
+    transition: $time $property $type;
+}
 //-------------------------------------------default placeholder
 @mixin placeholder {
   &::-webkit-input-placeholder {
