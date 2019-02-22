@@ -1,10 +1,10 @@
 .filters {
+    padding-bottom: 20px;
     font-family: $font;
     background: $white;
 //Стиль кнопки при нажатии и открытии оверлея на мобилке
     &--active {
         position: fixed;
-        display: block;
         z-index: 1000;
         top: 0;
         right: 0;
@@ -69,8 +69,8 @@
             }
         }
         .filters__container {
-            margin-top: $active-tog-modal-height;
             display: block;
+            margin-top: $active-tog-modal-height;
             @media (min-width: $lg) {
                 margin-top: 0;
             }
@@ -87,7 +87,7 @@
         font-size: 16px;
         font-weight: 600;
         line-height: $common-item-height;
-        color: $extra-text-color;
+        color: $main-color;
         transition: 0.3s color ease;
         @media (min-width: $lg) {
             display: none;
@@ -167,6 +167,7 @@
         svg {
             flex-shrink: 0;
             margin-top: 8px;
+            margin-left: 5px;
             width: 15px;
             height: 8px;
             fill: $blue;
@@ -229,15 +230,37 @@
     }
 
     &__buttons {
-
+        padding: 20px $grid-padding 0 $grid-padding;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.31;
+        color: $main-color;
     }
 
     &__value {
-
+        @include field-reset();
+        padding-bottom: 20px;
+        text-align: center;
     }
 
     &__btn {
+        display: block;
+        width: 100%;
+        height: $common-item-height;
+        margin-bottom: 15px;
+    }
 
+    &__btn:last-child {
+        margin-bottom: 0;
+    }
+
+    &__btn--reset {
+        border-color: $add-red;
+        color: $add-red;
+    }
+
+    &__btn--reset:hover {
+        background: $add-red;
     }
 }
 
