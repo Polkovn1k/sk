@@ -1,3 +1,15 @@
 .catalog-section {
 
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
+        order: 1;
+        @media (min-width: $lg) {
+            order: 0;
+        }
+    }
 }

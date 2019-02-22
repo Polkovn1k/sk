@@ -53,8 +53,10 @@
     }
 
     &__item:hover::after {
-        width: 100%;
-        transition: 0.3s width ease;
+        @media (min-width: $lg) {
+            width: 100%;
+            transition: 0.3s width ease;
+        }
     }
 
     &__item:hover {
@@ -69,7 +71,7 @@
         flex-direction: column;
         padding-top: $category-height + 15px;
         @media (min-width: $lg) {
-            padding-top: 0;
+            padding: 15px;
         }
     }
 
@@ -93,7 +95,9 @@
     }
 
     &__item-title:hover {
-        color: $blue;
+        @media (min-width: $lg) {
+            color: $blue;
+        }
     }
 
     &__date {

@@ -8,7 +8,7 @@
     border: 1px solid $border-color;
     font-family: $font;
     background: $white;
-    transition: 0.3s min-height ease, 0.3s padding ease;
+    transition: 0.3s min-height ease, 0.3s padding ease, 0.3s box-shadow ease;
     @media (min-width: $lg) {
         min-height: $desktop-catalog-page-item-height;
         padding: $desktop-catalog-page-padding;
