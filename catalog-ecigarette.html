@@ -73,13 +73,13 @@
                               </div>
                               <form action="some.php" class="filters__container">
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">
+                                      <legend data-filtertype="#collapsePrice" class="filters__title filters__title--open js-filters__title">
                                           Цена
                                           <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                                           </svg>
                                       </legend>
-                                      <div class="filters__content">
+                                      <div id="#collapsePrice" class="filters__content">
                                           <div id="price_ranger" class="range-filter">
                                               <div class="range-filter__inputs">
                                                   <input id="price_ranger_min" type="text" name="price_min" placeholder="от" class="range-filter__input-min">
@@ -99,13 +99,13 @@
                                       </div>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">
+                                      <legend data-filtertype="#collapsePower" class="filters__title filters__title--open js-filters__title">
                                           Мощность, ВТ
                                           <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                                           </svg>
                                       </legend>
-                                      <div class="filters__content">
+                                      <div id="#collapsePower" class="filters__content">
                                           <div id="power_ranger" class="range-filter">
                                               <div class="range-filter__inputs">
                                                   <input id="power_ranger_min" type="text" name="power_min" placeholder="от" class="range-filter__input-min">
@@ -125,13 +125,13 @@
                                       </div>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">
+                                      <legend data-filtertype="#collapseBattery" class="filters__title filters__title--open js-filters__title">
                                           Аккумулятор
                                           <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                                           </svg>
                                       </legend>
-                                      <div class="filters__content">
+                                      <div id="#collapseBattery" class="filters__content">
                                           <ul id="battery_checkbox" class="check-box">
                                               <li class="check-box__item">
                                                   <label for="battery_1" class="check-box__label">
@@ -159,13 +159,13 @@
                                       </div>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">
+                                      <legend data-filtertype="#collapseColor" class="filters__title filters__title--open js-filters__title">
                                           Цвет
                                           <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                                           </svg>
                                       </legend>
-                                      <div class="filters__content">
+                                      <div id="#collapseColor" class="filters__content">
                                           <ul id="color_checkbox" class="check-box">
                                               <li class="check-box__item">
                                                   <label for="color_1" class="check-box__label">
@@ -226,13 +226,13 @@
                                       </div>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">
+                                      <legend data-filtertype="#collapseDiameter" class="filters__title filters__title--open js-filters__title">
                                           Диаметр посадочной площадки
                                           <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                                           </svg>
                                       </legend>
-                                      <div class="filters__content">
+                                      <div id="#collapseDiameter" class="filters__content">
                                           <ul id="diameter_checkbox" class="check-box">
                                               <li class="check-box__item">
                                                   <label for="diameter_1" class="check-box__label">
@@ -293,13 +293,13 @@
                                       </div>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">
+                                      <legend data-filtertype="#collapseFunctional" class="filters__title filters__title--open js-filters__title">
                                           Функционал
                                           <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                                           </svg>
                                       </legend>
-                                      <div class="filters__content">
+                                      <div id="#collapseFunctional" class="filters__content">
                                           <ul id="functional_checkbox" class="check-box">
                                               <li class="check-box__item">
                                                   <label for="functional_1" class="check-box__label">
@@ -393,13 +393,13 @@
                                       </div>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">
+                                      <legend data-filtertype="#collapseBrand" class="filters__title filters__title--open js-filters__title">
                                           Бренд
                                           <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                                           </svg>
                                       </legend>
-                                      <div class="filters__content">
+                                      <div id="#collapseBrand" class="filters__content">
                                           <input type="text" class="filters__text-input" placeholder="Поиск">
                                           <ul id="brand_checkbox" class="check-box">
                                               <li class="check-box__item">
@@ -447,17 +447,17 @@
                                                   </label>
                                               </li>
                                           </ul>
+                                          <button type="button" class="filters__show-all">Показать еще +</button>
                                       </div>
-                                      <button type="button" class="filters__show-all">Показать еще +</button>
                                   </fieldset>
                                   <fieldset class="filters__panel">
-                                      <legend class="filters__title">
+                                      <legend data-filtertype="#collapseAvailable" class="filters__title filters__title--open js-filters__title">
                                           Наличие
                                           <svg class="filter__icon-open" width="15" height="8" aria-hidden="true" role="presentation">
                                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                                           </svg>
                                       </legend>
-                                      <div class="filters__content">
+                                      <div id="#collapseAvailable" class="filters__content">
                                           <ul id="available_checkbox" class="check-box">
                                               <li class="check-box__item">
                                                   <label for="available_1" class="check-box__label">
@@ -1548,6 +1548,45 @@
   <script src="js/script.js"></script>
   <!----------only page scripts-->
   <include src="js-modules/__catalog-ecigarette/script.html"></include>
+  <script>
+      var catalogFilter = {
+          TRANSITION_TIME: "300",
+// Вешаем клик
+          filterShowContent: () => {
+              document.querySelectorAll(".js-filters__title").forEach((item) => {
+                  item.addEventListener("click", (event) => {
+                      item.classList.toggle("filters__title--open");
+                      catalogFilter.findContentId(item);
+                  });
+              });
+          },
+// Высчитываем высоту контентной области
+          calculateContentHeight: (item) => {
+              var itemHeight = item.offsetHeight + "px";
+              item.style.maxHeight = itemHeight;
+          },
+// Убираем ограничитель высоты
+          deleteItemMaxHeight: (item) => {
+              setTimeout(function() {
+                  item.style.removeProperty("max-height");
+                  console.dir(item);
+              }, catalogFilter.TRANSITION_TIME);
+          },
+// Находим элемент через id с помощью data-атрибута
+          findContentId: (item) => {
+              var buttonDataToId = item.dataset.filtertype;
+              var findContentElementByID = document.getElementById(buttonDataToId);
+              findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
+              if (!item.classList.contains("filters__title--open")) {
+                  findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
+                  findContentElementByID.style.maxHeight = "0px";
+                  return false;
+              };
+              catalogFilter.deleteItemMaxHeight(findContentElementByID);
+          },
+      };
+      catalogFilter.filterShowContent();
+  </script>
 </body>
 
 </html>

@@ -171,12 +171,20 @@
             width: 15px;
             height: 8px;
             fill: $blue;
+            transform: rotate(0deg);
+            transition: 0.3s transform ease;
+        }
+    }
+
+    &__title--open {
+        svg {
             transform: rotate(180deg);
         }
     }
 
     &__content {
         padding: 0 $grid-padding;
+        overflow: hidden;
         transition: 0.3s max-height ease;
         @media (min-width: $sm) {
             max-width: 70%;
