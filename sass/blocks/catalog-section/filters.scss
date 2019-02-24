@@ -177,6 +177,7 @@
 
     &__content {
         padding: 0 $grid-padding;
+        transition: 0.3s max-height ease;
         @media (min-width: $sm) {
             max-width: 70%;
         }
