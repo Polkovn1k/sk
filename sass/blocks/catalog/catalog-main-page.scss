@@ -29,10 +29,6 @@
         }
     }
 
-    &:last-child {
-        //margin-bottom: 0;
-    }
-
     &::after {
         @include pseudo();
         bottom: 0;
