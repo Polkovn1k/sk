@@ -1,4 +1,5 @@
 .sort {
+    margin-bottom: 20px;
     font-family: $font;
     background: $white;
     max-height: $common-item-height;
@@ -13,7 +14,7 @@
         justify-content: space-between;
         align-items: center;
         max-height: none;
-        padding: 18px 15px;
+        padding: 18px 30px;
         border-radius: 0;
         border: none;
     }
@@ -56,6 +57,7 @@
         }
         @media (min-width: $lg) {
             height: auto;
+            padding-left: 0;
             padding-right: 15px;
             font-size: $sort-desktop-font-size;
             line-height: 1.25;

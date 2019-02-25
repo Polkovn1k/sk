@@ -1,15 +1,86 @@
 .catalog-section {
+    font-family: $font;
 
     &__container {
         position: relative;
         display: flex;
         flex-direction: column;
     }
-
+//текстовый блок
     &__text {
         order: 1;
+        padding: 20px 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+        border: 1px solid $border-color;
+        background: $white;
+        p {
+            @include field-reset();
+            max-height: 90px;
+            margin-bottom: 10px;
+            overflow: hidden;
+        }
         @media (min-width: $lg) {
             order: 0;
+            display: flex;
+            padding: 30px;
+            margin-bottom: 15px;
+            border: none;
+            p {
+                flex-grow: 1;
+                padding-right: 10px;
+                margin-bottom: 0;
+            }
         }
     }
+
+    &__text-tog {
+        @include field-reset();
+        display: block;
+        width: 100%;
+        height: $common-item-height;
+        border: 1px solid $communication-add-color;
+        border-radius: 5px;
+        background: transparent;
+        transition: 0.3s ease;
+        cursor: pointer;
+        svg {
+            display: none;
+        }
+        @media (min-width: $lg) {
+            position: relative;
+            flex-shrink: 0;
+            width: 80px;
+            border-radius: 0;
+            border: none;
+            font-size: 0;
+
+            svg {
+                position: absolute;
+                top: 5px;
+                right: 0;
+                display: inline;
+                fill: $blue;
+            }
+        }
+    }
+
+    &__text-tog:hover {
+        border-color: $blue;
+        color: $blue;
+    }
+//Список товаров
+    &__products {
+
+    }
+
+    &__products-list {
+        @include order-reset();
+    }
+}
+
+.catalog-section__products-list--list {
+
 }
