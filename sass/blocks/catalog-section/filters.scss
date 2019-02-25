@@ -125,7 +125,7 @@
             transform: translateY(-50%);
             width: 20px;
             height: 20px;
-            fill: $add-text-color;
+            fill: $extra-text-color;
             transition: 0.3s fill ease;
         }
     }
@@ -155,13 +155,13 @@
         padding: 0 $grid-padding;
         padding-top: $filter-title-padding-top;
         padding-right: #{$grid-padding + $filter-title-svg-width + 5px};
-        margin-bottom: 10px;
         font-size: 18px;
         font-weight: 600;
         line-height: 1.33;
         text-align: left;
         color: $main-color;
         cursor: pointer;
+        transition: 0.3s margin-bottom ease;
         svg {
             position: absolute;
             top: $filter-title-padding-top + 8px;
@@ -175,6 +175,7 @@
     }
 
     &__title--open {
+        margin-bottom: 10px;
         svg {
             transform: rotate(180deg);
         }
