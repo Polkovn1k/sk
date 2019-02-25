@@ -79,8 +79,15 @@
     &__products-list {
         @include order-reset();
     }
-}
 
-.catalog-section__products-list--list {
+    &__products-item {
+        margin-bottom: 15px;
+        @media (min-width: $lg) {
+            margin-bottom: 0;
+        }
+    }
 
+    &__products-item:last-child {
+        margin-bottom: 0;
+    }
 }
