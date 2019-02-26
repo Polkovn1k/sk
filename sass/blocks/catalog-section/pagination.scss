@@ -1,3 +1,75 @@
 .pagination {
+    @include order-reset();
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font;
+    @media (min-width: $lg) {
+        margin-bottom: 0;
+    }
 
+    &__item {
+        display: block;
+        overflow: hidden;
+        margin-right: 5px;
+        width: $pagination-item-height;
+        height: $pagination-item-height;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.15;
+        text-align: center;
+        color: $extra-text-color;
+    }
+
+    &__item-link {
+        display: block;
+        height: 100%;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        line-height: $pagination-item-height - 2px;
+    }
+
+    &__item:last-child {
+        margin-right: 0;
+    }
+
+    &__item-link[href]:hover,
+    &__item-link.active {
+        border-color: $blue;
+        background: $blue;
+        color: $white;
+        svg {
+            fill: $white;
+        }
+    }
+
+    &__item-link.active {
+        cursor: default;
+    }
+
+    &__item-link--back,
+    &__item-link--forward {
+        position: relative;
+        font-size: 0;
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+    }
+
+    &__item-link--back {
+        svg {
+            transform: translateX(-50%) translateY(-50%) rotate(90deg);
+        }
+    }
+
+    &__item-link--forward {
+        svg {
+            transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+        }
+    }
 }

@@ -339,6 +339,14 @@
             color: $red;
         }
     }
+//если есть блок об отсутсвии товара - цену скрываем
+    &__available + &__price {
+        .catalog-product__current-value {
+            @media (min-width: $lg) {
+                display: none;
+            }
+        }
+    }
 //блок цен
     &__price {
         margin-top: auto;
@@ -379,22 +387,27 @@
     &__current-value {
         display: inline-block;
         vertical-align: top;
-        height: 40px;
+        height: $common-item-height;
         margin-right: 10px;
-        line-height: 40px;
+        line-height: $common-item-height;
     }
 
     &__cart {
+        position: relative;
         display: inline-block;
         vertical-align: top;
         margin-left: auto;
-        height: 40px;
+        height: $common-item-height;
         width: 68px;
         background: $yellow;
         border-radius: 3px;
         text-align: center;
         transition: 0.3s opacity ease;
         svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
             width: 25px;
             height: 25px;
             fill: $main-color;
@@ -404,5 +417,53 @@
 
     &__cart:hover {
         opacity: 0.8;
+    }
+
+    &__goods-incoming {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        padding: 6px;
+        margin-left: auto;
+        min-height: $common-item-height;
+        width: 68px;
+        font-size: 0;
+        background: $bg-color;
+        border-radius: 3px;
+        border: 1px solid $border-color;
+        text-align: center;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            width: 25px;
+            height: 25px;
+            fill: $main-color;
+            vertical-align: middle;
+            transition: 0.3s ease;
+        }
+        @media (min-width: $lg) {
+            width: 100%;
+            line-height: 1.30;
+            font-size: 14px;
+            font-weight: 600;
+            text-align: center;
+            color: $main-color;
+            svg {
+                display: none;
+            }
+        }
+    }
+
+    &__goods-incoming:hover {
+        border-color: $blue;
+        color: $blue;
+        svg {
+            fill: $blue;
+        }
     }
 }

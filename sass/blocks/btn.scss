@@ -12,6 +12,7 @@
     color: $blue;
     background-color: transparent;
     border-radius: 5px;
+    outline: none;
     cursor: pointer;
     transition: 0.3s background-color ease, 0.3s color ease;
 
@@ -35,6 +36,7 @@
     color: $add-btn-color;
     background-color: transparent;
     border-radius: 5px;
+    outline: none;
     cursor: pointer;
     transition: 0.3s background-color ease, 0.3s color ease, 0.3s border-color ease;
 
@@ -42,5 +44,29 @@
         background-color: $main-color;
         border-color: $main-color;
         color: $white;
+    }
+}
+
+.add-btn {
+    display: inline-block;
+    vertical-align: top;
+    height: $add-btn-height;
+    padding: 0 20px;
+    border: 1px solid $border-color;
+    line-height: $add-btn-height;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: $add-btn-color;
+    background-color: transparent;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+        border-color: $blue;
+        color: $blue;
     }
 }

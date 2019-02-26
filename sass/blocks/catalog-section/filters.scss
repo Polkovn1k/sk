@@ -174,7 +174,7 @@
         }
     }
 
-    &__title--open {
+    .active-btn {
         margin-bottom: 10px;
         svg {
             transform: rotate(180deg);

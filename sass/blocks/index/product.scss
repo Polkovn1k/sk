@@ -310,15 +310,15 @@
     &__current-value {
         display: inline-block;
         vertical-align: top;
-        height: 40px;
+        height: $common-item-height;
         margin-right: 10px;
-        line-height: 40px;
+        line-height: $common-item-height;
     }
 
     &__cart {
         display: inline-block;
         vertical-align: top;
-        height: 40px;
+        height: $common-item-height;
         width: 68px;
         background: $yellow;
         border-radius: 3px;
