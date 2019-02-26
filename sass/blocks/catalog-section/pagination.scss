@@ -2,14 +2,10 @@
     @include order-reset();
     width: 100%;
     margin: 0 auto;
-    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     font-family: $font;
-    @media (min-width: $lg) {
-        margin-bottom: 0;
-    }
 
     &__item {
         display: block;

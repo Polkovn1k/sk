@@ -23,14 +23,20 @@
         padding-left: $catalog-product-mobile-container-padding-left;
         min-height: 230px;
         @media (min-width: $sm) {
-            padding-top: $catalog-product-sm-container-padding-top;
             padding-left: $catalog-product-sm-container-padding-left;
         }
         @media (min-width: $lg) {
             min-height: 0;
             height: 100%;
             padding: 15px;
-            padding-top: 45px;
+            padding-top: $catalog-product-sm-container-padding-top--add;
+        }
+    }
+
+    &__container--add-info {
+        padding-top: $catalog-product-mobile-container-padding-top--add;
+        @media (min-width: $sm) {
+            padding-top: $catalog-product-sm-container-padding-top--add;
         }
     }
 //блок с картинкой
@@ -45,13 +51,19 @@
             max-height: 150px;
         }
         @media (min-width: $sm) {
-            top: $catalog-product-sm-container-padding-top;
             width: $catalog-product-sm-container-padding-left;
         }
         @media (min-width: $lg) {
             position: static;
             width: 100%;
             padding-bottom: 15px;
+        }
+    }
+
+    &__img:nth-child(3) {
+        top: $catalog-product-mobile-container-padding-top--add;
+        @media (min-width: $sm) {
+            top: $catalog-product-sm-container-padding-top--add;
         }
     }
 //левый блок с особенностями товара
@@ -373,7 +385,7 @@
             left: 0;
         }
     }
-
+//скрываем блок цен на десктопе если есть блок об отсутствии товара
     .catalog-product__available ~ .catalog-product__price {
         .catalog-product__current-value {
             @media (min-width: $lg) {
@@ -495,10 +507,6 @@
     }
 
     &__goods-incoming:hover {
-        border-color: $blue;
-        color: $blue;
-        svg {
-            stroke: $blue;
-        }
+        opacity: 0.8;
     }
 }
