@@ -768,6 +768,17 @@
               }, catalogSection.TRANSITION_TIME);
           },
 
+//события при ресайзе и повороте мобильного устройства
+          resizeDocumentForContent: (item) => {
+              window.addEventListener("resize", (event) => {
+
+              });
+
+              window.addEventListener("orientationchange", (event) => {
+
+              });
+          },
+
 // Находим элемент через id с помощью data-атрибута (без заданной высоты)
           findFilterContentId: (item) => {
               var findContentElementByID = document.getElementById(item.dataset.findId);

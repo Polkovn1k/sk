@@ -26,6 +26,9 @@
     &:hover {
         border-color: $blue;
         cursor: pointer;
+        @media (min-width: $lg) {
+            cursor: auto;
+        }
     }
 
 //Сортировка по свойствам
@@ -103,6 +106,7 @@
             border: none;
             color: $communication-add-color;
             background: transparent;
+            outline: none;
             cursor: pointer;
             transition: 0.3s color ease;
         }
@@ -177,6 +181,7 @@
             background: transparent;
             cursor: pointer;
             font-size: 0;
+            outline: none;
             transition: 0.3s background ease;
         }
         svg {
