@@ -510,3 +510,48 @@
         opacity: 0.8;
     }
 }
+
+//list-style карточки
+.list-style {
+    flex-basis: 100%;
+    max-width: 100%;
+    min-height: $list-style-catalog-product-min-height;
+    @media (min-width: $lg) {
+        .catalog-product__container {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .catalog-product__features {
+
+        }
+
+        .catalog-product__available {
+
+        }
+
+        .catalog-product__action {
+
+        }
+
+        .catalog-product__img {
+
+        }
+
+        .catalog-product__name {
+
+        }
+
+        .catalog-product__response {
+
+        }
+
+        .catalog-product__properties {
+            display: none;
+        }
+
+        .catalog-product__price {
+
+        }
+    }
+}
