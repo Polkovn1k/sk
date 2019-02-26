@@ -168,6 +168,7 @@
         overflow: hidden;
         transition: 0.3s border-color ease;
         button {
+            display: block;
             height: 100%;
             width: 100%;
             border: none;
@@ -175,6 +176,7 @@
             text-align: center;
             background: transparent;
             cursor: pointer;
+            font-size: 0;
             transition: 0.3s background ease;
         }
         svg {

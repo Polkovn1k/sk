@@ -21,6 +21,7 @@
             max-height: 90px;
             margin-bottom: 10px;
             overflow: hidden;
+            transition: 0.3s ease;
         }
         @media (min-width: $lg) {
             order: 0;
@@ -45,6 +46,7 @@
         border-radius: 5px;
         background: transparent;
         transition: 0.3s ease;
+        outline: none;
         cursor: pointer;
         svg {
             display: none;

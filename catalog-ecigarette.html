@@ -127,7 +127,7 @@
                                       <li class="sort__view-item">
                                           <button>
                                               Grid Items
-                                              <svg width="14" height="14" aria-hidden="true" role="presentation">
+                                              <svg width="12" height="12" aria-hidden="true" role="presentation">
                                                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#grid-icon"></use>
                                               </svg>
                                           </button>
@@ -135,7 +135,7 @@
                                       <li class="sort__view-item">
                                           <button>
                                               List Items
-                                              <svg width="15" height="14" aria-hidden="true" role="presentation">
+                                              <svg width="13" height="12" aria-hidden="true" role="presentation">
                                                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#list-icon"></use>
                                               </svg>
                                           </button>
@@ -755,20 +755,20 @@
               });
           },
 
-
-
 // Высота элемента без учета схлопывания
           elementHeightBeforeCollapse: (item) => {
               item.style.maxHeight = item.scrollHeight + "px";
               item.style.maxHeight = "0px";
           },
+
 // Убираем ограничитель высоты
           deleteItemMaxHeight: (item) => {
               setTimeout(function() {
                   item.style.removeProperty("max-height");
               }, catalogSection.TRANSITION_TIME);
           },
-// Находим элемент через id с помощью data-атрибута
+
+// Находим элемент через id с помощью data-атрибута (без заданной высоты)
           findFilterContentId: (item) => {
               var findContentElementByID = document.getElementById(item.dataset.findId);
               findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
@@ -779,79 +779,17 @@
               catalogSection.deleteItemMaxHeight(findContentElementByID);
           },
 
+// Находим элемент через id с помощью data-атрибута (с заданной высотой)
           findOtherContentId: (item) => {
               var findContentElementByID = document.getElementById(item.dataset.findId);
-              findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
-              if (!item.classList.contains("active-btn")) {
+              if (item.classList.contains("active-btn")) {
+                  findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
                   return false;
               }
               findContentElementByID.style.removeProperty("max-height");
           },
       };
       catalogSection.filterShowContent();
-
-
-
-
-
-
-
-
-
-
-/*
-
-
-
-
-
-// ----------------------------------------СОРТИРОВКА
-      var catalogSort = {
-// Вешаем клик
-          sortShowContent: () => {
-              var sortBtn = document.querySelector(".js-sort__title");
-              sortBtn.addEventListener("click", (event) => {
-                  sortBtn.classList.toggle("sort__title--opened");
-                  catalogSort.findContentId(sortBtn);
-              });
-              catalogSort.resizeDocumentForBtn(sortBtn);
-          },
-
-          resizeDocumentForBtn: (item) => {
-              window.addEventListener("resize", (event) => {
-                  if (item.classList.contains("sort__title--opened")) {
-                      item.classList.remove("sort__title--opened");
-                  }
-              });
-          },
-
-          resizeDocumentForContent: (item) => {
-              window.addEventListener("resize", (event) => {
-                  item.style.removeProperty("max-height");
-              });
-          },
-
-// Находим элемент через id с помощью data-атрибута
-          findContentId: (item) => {
-              var buttonDataToId = item.dataset.sorttitle;
-              var findContentElementByID = document.getElementById(buttonDataToId);
-              findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
-              if (!item.classList.contains("sort__title--opened")) {
-                  findContentElementByID.style.removeProperty("max-height");
-                  return false;
-              };
-              catalogSort.resizeDocumentForContent(findContentElementByID);
-          },
-      };
-      catalogSort.sortShowContent();
-
-
-
-
-*/
-
-
-
   </script>
 </body>
 
