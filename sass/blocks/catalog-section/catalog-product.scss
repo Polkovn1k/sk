@@ -508,12 +508,13 @@
 
 //list-style карточки
 .list-style {
-    flex-basis: 100%;
-    max-width: 100%;
-    min-height: $list-style-catalog-product-min-height;
     @media (min-width: $lg) {
+        flex-basis: 100%;
+        max-width: 100%;
+        height: $list-style-catalog-product-min-height;
+
         .catalog-product__container {
-            height: $list-style-catalog-product-min-height;
+            height: 100%;
             padding: $list-style-catalog-product-padding;
             padding-left: $list-style-catalog-product-padding-left;
             padding-right: calc(#{$list-style-catalog-product-right-content-width} + #{$list-style-catalog-product-padding-right});
@@ -521,10 +522,17 @@
 
         .catalog-product__features {
             position: static;
+            padding: 0;
+            padding-bottom: 5px;
         }
 
         .catalog-product__available {
             position: static;
+            padding: 0;
+            padding-bottom: 5px;
+            p {
+                font-size: 12px;
+            }
         }
 
         .catalog-product__action {
@@ -549,7 +557,10 @@
         }
 
         .catalog-product__name {
-
+            height: auto;
+            max-height: 50px;
+            margin-bottom: 10px;
+            font-size: 16px;
         }
 
         .catalog-product__response {
@@ -557,7 +568,7 @@
         }
 
         .catalog-product__properties {
-            //display: none;
+            margin-bottom: 0;
         }
 //блок цен
         .catalog-product__price {
@@ -592,7 +603,6 @@
             display: block !important;
             flex-shrink: 0;
             width: 115px;
-            //white-space: nowrap;
             font-size: 20px;
         }
 
