@@ -531,6 +531,10 @@
             padding: 0;
             padding-bottom: 5px;
             p {
+                display: inline-block;
+                vertical-align: top;
+                padding-right: 6px;
+                padding-left: 6px;
                 font-size: 12px;
             }
         }
@@ -546,17 +550,20 @@
             position: absolute;
             top: 0;
             left: 0;
-
-            width: 120px;
+            width: $list-style-catalog-product-padding-left;
             height: 100%;
             padding: $list-style-catalog-product-padding;
+            padding-right: 15px;
+            display: flex;
+            align-items: center;
             img {
                 max-height: 100%;
-                width: auto;
+                width: 100%;
             }
         }
 
         .catalog-product__name {
+            order: 1;
             height: auto;
             max-height: 50px;
             margin-bottom: 10px;
@@ -564,11 +571,16 @@
         }
 
         .catalog-product__response {
-
+            order: 1;
         }
 
         .catalog-product__properties {
+            order: 1;
             margin-bottom: 0;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
 //блок цен
         .catalog-product__price {
