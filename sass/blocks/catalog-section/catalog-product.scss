@@ -612,10 +612,15 @@
         }
 
         .catalog-product__current-value {
-            display: block !important;
             flex-shrink: 0;
             width: 115px;
             font-size: 20px;
+        }
+//показываем если если list-style
+        .catalog-product__available ~ .catalog-product__price {
+            .catalog-product__current-value {
+                display: inline-block;
+            }
         }
 
         .catalog-product__old-price {
