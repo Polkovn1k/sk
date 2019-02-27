@@ -35,7 +35,7 @@
 
     &__container--add-info {
         padding-top: $catalog-product-mobile-container-padding-top--add;
-        @media (min-width: $sm) {
+        @media (min-width: $lg) {
             padding-top: $catalog-product-sm-container-padding-top--add;
         }
     }
@@ -62,9 +62,6 @@
 
     &__img:nth-child(3) {
         top: $catalog-product-mobile-container-padding-top--add;
-        @media (min-width: $sm) {
-            top: $catalog-product-sm-container-padding-top--add;
-        }
     }
 //левый блок с особенностями товара
     &__features {
@@ -100,9 +97,6 @@
         background: $white;
         border: 1px solid $red;
         border-radius: 3px;
-        @media (min-width: $md) {
-            font-size: 14px;
-        }
     }
 
     &__features-item--hit {
@@ -117,6 +111,7 @@
 //правый блок сравнения/в избранное
     &__action {
         position: absolute;
+        z-index: 1;
         top: 0;
         right: 0;
         padding: 15px 15px 5px 5px;
@@ -147,8 +142,8 @@
         }
         @media (min-width: $md) {
             padding-top: 8px;
-            width: 36px;
-            height: 36px;
+            width: $catalog-product-action-item;
+            height: $catalog-product-action-item;
             svg {
                 fill: $extra-text-color;
                 width: 20px;
@@ -407,7 +402,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        font-size: 16px;
+        font-size: $catalog-product-old-price-size;
         font-weight: 400;
         line-height: 1.31;
         text-decoration: line-through;
@@ -423,7 +418,7 @@
     &__current-price {
         display: flex;
         align-items: center;
-        font-size: 24px;
+        font-size: 20px;
         font-weight: 700;
         line-height: 1.33;
         @media (min-width: $lg) {
@@ -518,24 +513,39 @@
     min-height: $list-style-catalog-product-min-height;
     @media (min-width: $lg) {
         .catalog-product__container {
-            flex-direction: row;
-            flex-wrap: wrap;
+            height: $list-style-catalog-product-min-height;
+            padding: $list-style-catalog-product-padding;
+            padding-left: $list-style-catalog-product-padding-left;
+            padding-right: calc(#{$list-style-catalog-product-right-content-width} + #{$list-style-catalog-product-padding-right});
         }
 
         .catalog-product__features {
-
+            position: static;
         }
 
         .catalog-product__available {
-
+            position: static;
         }
 
         .catalog-product__action {
-
+            padding: 0;
+            right: $list-style-catalog-product-padding;
+            top: 50%;
+            transform: translateY(-50%);
         }
 
         .catalog-product__img {
+            position: absolute;
+            top: 0;
+            left: 0;
 
+            width: 120px;
+            height: 100%;
+            padding: $list-style-catalog-product-padding;
+            img {
+                max-height: 100%;
+                width: auto;
+            }
         }
 
         .catalog-product__name {
@@ -547,11 +557,47 @@
         }
 
         .catalog-product__properties {
-            display: none;
+            //display: none;
+        }
+//блок цен
+        .catalog-product__price {
+            position: absolute;
+            right: $list-style-catalog-product-padding + 36px;
+            top: 50%;
+            width: $list-style-catalog-product-right-content-width;
+            padding: 0;
+            padding-right: $list-style-catalog-product-padding;
+            transform: translateY(-50%);
         }
 
-        .catalog-product__price {
+        .catalog-product__current-price {
+            display: flex;
+        }
 
+        .catalog-product__cart {
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        .catalog-product__goods-incoming {
+            flex-grow: 1;
+            flex-shrink: 1;
+            font-size: 0;
+            svg {
+                display: inline;
+            }
+        }
+
+        .catalog-product__current-value {
+            display: block !important;
+            flex-shrink: 0;
+            width: 115px;
+            //white-space: nowrap;
+            font-size: 20px;
+        }
+
+        .catalog-product__old-price {
+            top: -$catalog-product-old-price-size;
         }
     }
 }

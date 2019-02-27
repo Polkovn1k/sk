@@ -119,7 +119,14 @@ $catalog-product-sm-container-padding-left: 165px;
 $catalog-product-mobile-container-padding-top: 35px;
 $catalog-product-mobile-container-padding-top--add: 45px;
 $catalog-product-sm-container-padding-top--add: 55px;
-$list-style-catalog-product-min-height: 130px;
+$catalog-product-old-price-size: 16px;
+$catalog-product-action-item: 36px;
+$list-style-catalog-product-min-height: 160px;
+$list-style-catalog-product-padding: 30px;
+$list-style-catalog-product-right-content-width: 30%;
+$list-style-catalog-product-padding-right: $catalog-product-action-item + $list-style-catalog-product-padding + 15px;
+$list-style-catalog-product-padding-left: 110px;
+
 
 //Pagination
 $pagination-item-height: 30px;
