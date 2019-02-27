@@ -192,10 +192,18 @@
     }
 
     &__view-item:hover {
-        border-color: $blue;
+        border-color: transparent;
         button {
             background: $blue;
         }
+        svg {
+            fill: $white;
+        }
+    }
+
+    .active-btn {
+        background: $blue;
+
         svg {
             fill: $white;
         }

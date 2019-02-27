@@ -125,7 +125,7 @@
                                   <div class="sort__title">Вид</div>
                                   <ul class="sort__view-list">
                                       <li class="sort__view-item">
-                                          <button>
+                                          <button class="js-sort__view-item" data-find-id="grid-style">
                                               Grid Items
                                               <svg width="12" height="12" aria-hidden="true" role="presentation">
                                                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#grid-icon"></use>
@@ -133,7 +133,7 @@
                                           </button>
                                       </li>
                                       <li class="sort__view-item">
-                                          <button>
+                                          <button class="js-sort__view-item list-style" data-find-id="list-style">
                                               List Items
                                               <svg width="13" height="12" aria-hidden="true" role="presentation">
                                                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#list-icon"></use>
@@ -166,8 +166,8 @@
                               </ul>
                           </div>
                           <div class="catalog-section__products">
-                              <ul class="catalog-section__products-list row no-gutters">
-                                  <li class="catalog-section__products-item col-12 col-lg-4 list-style">
+                              <ul class="catalog-section__products-list row no-gutters grid-style">
+                                  <li class="catalog-section__products-item col-12 col-lg-4">
                                       <div class="catalog-product">
                                           <div class="catalog-product__container catalog-product__container--add-info">
                                               <div class="catalog-product__features">
@@ -237,7 +237,7 @@
                                           </div>
                                       </div>
                                   </li>
-                                  <li class="catalog-section__products-item col-12 col-lg-4 list-style">
+                                  <li class="catalog-section__products-item col-12 col-lg-4">
                                       <div class="catalog-product">
                                           <div class="catalog-product__container catalog-product__container--add-info">
                                               <div class="catalog-product__available">
@@ -305,7 +305,7 @@
                                           </div>
                                       </div>
                                   </li>
-                                  <li class="catalog-section__products-item col-12 col-lg-4 list-style">
+                                  <li class="catalog-section__products-item col-12 col-lg-4">
                                       <div class="catalog-product">
                                           <div class="catalog-product__container">
                                               <div class="catalog-product__action">
@@ -370,7 +370,7 @@
                                           </div>
                                       </div>
                                   </li>
-                                  <li class="catalog-section__products-item col-12 col-lg-4 list-style">
+                                  <li class="catalog-section__products-item col-12 col-lg-4">
                                       <div class="catalog-product">
                                           <div class="catalog-product__container catalog-product__container--add-info">
                                               <div class="catalog-product__features">
@@ -440,7 +440,7 @@
                                           </div>
                                       </div>
                                   </li>
-                                  <li class="catalog-section__products-item col-12 col-lg-4 list-style">
+                                  <li class="catalog-section__products-item col-12 col-lg-4">
                                       <div class="catalog-product">
                                           <div class="catalog-product__container catalog-product__container--add-info">
                                               <div class="catalog-product__action">
@@ -508,7 +508,7 @@
                                           </div>
                                       </div>
                                   </li>
-                                  <li class="catalog-section__products-item col-12 col-lg-4 list-style">
+                                  <li class="catalog-section__products-item col-12 col-lg-4">
                                       <div class="catalog-product">
                                           <div class="catalog-product__container">
                                               <div class="catalog-product__action">
@@ -945,7 +945,30 @@
           ".js-catalog-section__text-tog",
           ],
 
+          itemsStyleByttons: [
+          "js-sort__view-item",
+          ],
+
           TRANSITION_TIME: "300",
+
+// Показываем карточки товаров grid/style
+          itemsStyle: () => {
+              var itemsContainer = document.querySelector(".catalog-section__products-list");
+              document.querySelectorAll(".js-sort__view-item").forEach((item) => {
+                  item.addEventListener("click", (event) => {
+                    for (var i = 0; i < item.length; i++) {
+                        item[i].classList.remove("active-btn");
+                    };
+                      item.classList.add("active-btn");
+                      itemsContainer.classList.remove("list-style");
+                      if (item.classList.contains("list-style")) {
+                          itemsContainer.classList.add("list-style");
+                          return false;
+                      }
+                  });
+              });
+          },
+
 // Вешаем клик
           filterShowContent: () => {
               catalogSection.catalogButtons.forEach(function(item) {
@@ -1008,6 +1031,7 @@
           },
       };
       catalogSection.filterShowContent();
+      catalogSection.itemsStyle();
   </script>
 </body>
 

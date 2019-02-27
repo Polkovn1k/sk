@@ -509,9 +509,11 @@
 //list-style карточки
 .list-style {
     @media (min-width: $lg) {
-        flex-basis: 100%;
-        max-width: 100%;
-        height: $list-style-catalog-product-min-height;
+        .catalog-section__products-item {
+            flex-basis: 100%;
+            max-width: 100%;
+            height: $list-style-catalog-product-min-height;
+        }
 
         .catalog-product__container {
             height: 100%;
@@ -622,7 +624,7 @@
                 display: inline-block;
             }
         }
-
+//----------
         .catalog-product__old-price {
             top: -$catalog-product-old-price-size;
         }
