@@ -173,14 +173,14 @@
             transition: 0.3s transform ease;
         }
     }
-
+//анимация на стрелку
     .active-btn {
         margin-bottom: 10px;
         svg {
             transform: rotate(180deg);
         }
     }
-
+//--------
     &__content {
         padding: 0 $grid-padding;
         overflow: hidden;

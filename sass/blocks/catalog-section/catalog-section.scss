@@ -53,13 +53,13 @@
             border-radius: 0;
             border: none;
             font-size: 0;
-
             svg {
                 position: absolute;
                 top: 5px;
                 right: 0;
                 display: inline;
                 fill: $blue;
+                transition: 0.3s ease;
             }
         }
     }
@@ -67,6 +67,12 @@
     &__text-tog:hover {
         border-color: $blue;
         color: $blue;
+    }
+//анимация на стрелку
+    .active-btn {
+        svg {
+            transform: rotate(180deg);
+        }
     }
 //Список товаров
     &__products {
