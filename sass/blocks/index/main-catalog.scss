@@ -146,7 +146,7 @@
         }
     }
 //чтобы картики вмещались на lg и не перекрывали текст
-    &:nth-child(n+4) &__item {
+    &__col:nth-child(n+4) &__item {
         @media (min-width: $md) {
             img {
                 max-height: 130px;
@@ -167,7 +167,7 @@
     }
 
     a {
-        transition: 0.3s color ease;
+        transition: 0.3s ease;
     }
 
     a:hover {

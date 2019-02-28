@@ -2,5 +2,6 @@
     display: none;
     @media (min-width: $lg) {
         display: block;
+        display: none;//временно
     }
 }

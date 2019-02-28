@@ -1,6 +1,7 @@
 .communication-over {
     display: none;
     @media (min-width: $lg) {
-        display: block;
+        //display: block;
+        display: none;//временно
     }
 }

@@ -1,0 +1,58 @@
+.top-slider {
+
+    &__container {
+        @media (min-width: $lg) {
+            padding-top: $common-block-vertical-padding;
+        }
+    }
+
+    &__item {
+        position: relative;
+        display: block;
+        text-align: center;
+        img {
+            height: 380px;
+            max-width: none;
+        }
+        @media (min-width: $lg) {
+            height: auto;
+            img {
+                height: auto;
+                max-width: none;
+            }
+        }
+    }
+
+    &__text {
+        @include field-reset();
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        padding: 0 15px;
+        position: absolute;
+        bottom: $bullets-bottom-position + 30px;
+        font-family: $font;
+        font-weight: 400;
+        font-size: 25px;
+        line-height: 1.33;
+        text-align: center;
+        color: $main-color;
+        @media (min-width: $lg) {
+            top: 12px;
+            left: 5px;
+            transform: none;
+            max-width: 380px;
+            font-size: 33px;
+            text-align: left;
+        }
+    }
+
+    &__bullets {
+        bottom: $bullets-bottom-position;
+        @media (min-width: $lg) {
+            left: 20px;
+            bottom: $bullets-bottom-position + 5px;
+            transform: none;
+        }
+    }
+}

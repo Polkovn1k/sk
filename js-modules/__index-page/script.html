@@ -1,13 +1,13 @@
 <script>
 //---------index-page
-var glide = new Glide('.glide--top-slider', {
+var glide = new Glide('.js-top-slider__container', {
   type: 'carousel',
   autoplay: 3000,
   hoverpause: true,
 });
 glide.mount();
-
-var glideAdvantages = new Glide('.advantages__container', {
+//---------index-page
+var glideAdvantages = new Glide('.js-advantages__container', {
   perView: 5,
   dragThreshold: false,
   bound: true,
@@ -20,7 +20,7 @@ var glideAdvantages = new Glide('.advantages__container', {
 });
 glideAdvantages.mount();
 //---------index-page
-var sliders = document.querySelectorAll(".goods-sliders__slider");
+var sliders = document.querySelectorAll(".js-goods-sliders__slider");
 var glideGoodsSliders = [];
 
 var sliderCollection = function (i, item) {
@@ -49,12 +49,11 @@ var sliderCollection = function (i, item) {
   });
     glideGoodsSliders[i].mount();
 }
-
 for (var i = 0; i < sliders.length; i++) {
     sliderCollection(i, sliders);
 }
 //---------index-page
-var articlesSlider = new Glide('.glide--articles', {
+var articlesSlider = new Glide('.js-articles__slider', {
     gap: 15,
     bound: true,
     rewind: false,
@@ -99,7 +98,7 @@ var articlesSlider = new Glide('.glide--articles', {
 });
 articlesSlider.mount();
 //---------index-page
-var brandsSlider = new Glide('.glide--brands', {
+var brandsSlider = new Glide('.js-brands__slider', {
     gap: 15,
     bound: true,
     rewind: false,

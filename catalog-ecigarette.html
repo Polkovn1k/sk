@@ -65,7 +65,7 @@
 
       <!-- <include src="html-modules/__catalog-page-ecigarette/catalog-slider.html"></include> -->
       <div class="catalog-slider">
-          <div class="catalog-slider__container">
+          <div class="catalog-slider__container js-catalog-slider__container">
               <div class="catalog-slider__title">Вы смотрели</div>
               <div class="glide catalog-slider__slider">
                   <!-- SLIDER -->
@@ -312,7 +312,13 @@
           </div>
       </div>
 
-      <include src="html-modules/in-modify/overlays.html"></include>
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <include src="html-modules/in-modify/overlays.html"></include>
+
+          </div>
+      </div>
 
   </main>
 
@@ -415,57 +421,7 @@ function _switch(opt) {
     container.classList.add(opt.dataset.toClass);
     opt.classList.add("active-btn");
 }
-
 init();
-
-
-
-
-
-  </script>
-  <script>
-      //---------catalog
-      var watchedProducts = new Glide('.catalog-slider__container', {
-          gap: -1,
-          bound: true,
-          rewind: false,
-          perView: 4,
-          peek: {
-              before: 0,
-              after: 0,
-          },
-          breakpoints: {
-              1023: {
-                  peek: {
-                      before: 0,
-                      after: 50,
-                  },
-                  perView: 3,
-              },
-              767: {
-                  peek: {
-                      before: 0,
-                      after: 50,
-                  },
-                  perView: 2,
-              },
-              575: {
-                  peek: {
-                      before: 0,
-                      after: 100,
-                  },
-                  perView: 1,
-              },
-              480: {
-                  peek: {
-                      before: 0,
-                      after: 30,
-                  },
-                  perView: 1,
-              },
-          }
-      });
-      watchedProducts.mount();
   </script>
 </body>
 
