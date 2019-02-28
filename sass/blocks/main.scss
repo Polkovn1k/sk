@@ -37,33 +37,6 @@
         }
     }
 
-    &__main-catalog {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-        padding-top: $common-block-vertical-padding;
-    }
-
-    &__goods-sliders {
-        position: relative;
-        width: 100%;
-    }
-
-    &__goods-sliders::after {
-        @media (min-width: $lg) {
-            @include pseudo();
-            top: 0;
-            left: 50%;
-            bottom: 0;
-            width: 100vw;
-            transform: translateX(-50%);
-            background: $goods-sliders-background;
-            z-index: -1;
-        }
-    }
-
-
-
     .communication-over,
     .city-pick-over
      {

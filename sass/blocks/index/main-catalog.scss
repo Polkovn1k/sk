@@ -1,6 +1,13 @@
 .main-catalog {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    margin-bottom: 15px;
+    padding-top: $common-block-vertical-padding;
+
+    &__col {
+        width: 100%;
+        margin-bottom: 15px;
+    }
 
     &__item {
         position: relative;

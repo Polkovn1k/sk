@@ -1,9 +1,26 @@
 .goods-sliders {
-    @media (min-width: $lg) {
-        padding: 15px 0;
+    position: relative;
+    padding: 0 7.5px;
+    width: 100%;
+
+    &::after {
+        @media (min-width: $lg) {
+            @include pseudo();
+            top: 0;
+            left: 50%;
+            bottom: 0;
+            width: 100vw;
+            transform: translateX(-50%);
+            background: $goods-sliders-background;
+            z-index: -1;
+        }
     }
 
-    &__container {}
+    &__container {
+        @media (min-width: $lg) {
+            padding: 15px 0;
+        }
+    }
 
     &__col {
         padding-bottom: 15px;
