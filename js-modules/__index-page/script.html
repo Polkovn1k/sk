@@ -7,7 +7,7 @@ var glide = new Glide('.glide--top-slider', {
 });
 glide.mount();
 
-var glideAdvantages = new Glide('.glide--advantages', {
+var glideAdvantages = new Glide('.advantages__container', {
   perView: 5,
   dragThreshold: false,
   bound: true,
@@ -20,7 +20,7 @@ var glideAdvantages = new Glide('.glide--advantages', {
 });
 glideAdvantages.mount();
 //---------index-page
-var sliders = document.querySelectorAll(".glide--goods-sliders");
+var sliders = document.querySelectorAll(".goods-sliders__slider");
 var glideGoodsSliders = [];
 
 var sliderCollection = function (i, item) {

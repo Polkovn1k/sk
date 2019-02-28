@@ -43,4 +43,10 @@
         font-size: 14px;
         font-weight: 400;
     }
+
+    &__slider {
+        .glide__slide {
+            height: auto;
+        }
+    }
 }
