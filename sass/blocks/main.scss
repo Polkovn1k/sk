@@ -1,6 +1,7 @@
 .main {
     overflow: hidden;
     margin-top: $mobile-header-height;
+    margin-bottom: $main-margin-bottom;
     padding-top: 20px;
     font-family: $font;
     @media (min-width: $md) {
@@ -9,6 +10,10 @@
     @media (min-width: $lg) {
         margin-top: $gradient-breakpoint-desktop + $gradient-breakpoint-desktop-end;
         padding-top: 30px;
+    }
+
+    &--catalog-section {
+        margin-bottom: 0;
     }
 
     &--no-padding {

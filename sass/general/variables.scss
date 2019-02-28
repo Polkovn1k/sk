@@ -5,6 +5,10 @@ $lg: 1024px;
 $tp: 1220px;
 $xl: 1395px;
 
+// Container-width
+$min-container: 320px;
+$max-container: 1365px;
+
 // Fonts
 $font: "Segoe UI", sans-serif;
 
@@ -54,6 +58,7 @@ $common-item-height: 40px;
 $add-btn-height: 40px;
 $footer-nav-item-height: 30px;
 $footer-nav-tog-mobile-width: 70px;
+$main-margin-bottom: 30px;
 
 //Slider--top
 $bullets-bottom-position: 20px;
@@ -126,6 +131,10 @@ $list-style-catalog-product-padding: 30px;
 $list-style-catalog-product-right-content-width: 30%;
 $list-style-catalog-product-padding-right: $catalog-product-action-item + $list-style-catalog-product-padding + 15px;
 $list-style-catalog-product-padding-left: 120px;
+
+//Catalog-slider
+$catalog-slider-title-height: 70px;
+$catalog-slider-title-padding-top: 20px;
 
 //Add-product
 $add-product-container-padding-top: 45px;
