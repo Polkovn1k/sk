@@ -394,29 +394,7 @@
           ".js-catalog-section__text-tog",
           ],
 
-          itemsStyleByttons: [
-          "js-sort__view-item",
-          ],
-
           TRANSITION_TIME: "300",
-
-// Показываем карточки товаров grid/style
-          itemsStyle: () => {
-              var itemsContainer = document.querySelector(".catalog-section__products-list");
-              document.querySelectorAll(".js-sort__view-item").forEach((item) => {
-                  item.addEventListener("click", (event) => {
-                    for (var i = 0; i < item.length; i++) {
-                        item[i].classList.remove("active-btn");
-                    };
-                      item.classList.add("active-btn");
-                      itemsContainer.classList.remove("list-style");
-                      if (item.classList.contains("list-style")) {
-                          itemsContainer.classList.add("list-style");
-                          return false;
-                      }
-                  });
-              });
-          },
 
 // Вешаем клик
           filterShowContent: () => {
@@ -447,17 +425,6 @@
               }, catalogSection.TRANSITION_TIME);
           },
 
-//события при ресайзе и повороте мобильного устройства
-          resizeDocumentForContent: (item) => {
-              window.addEventListener("resize", (event) => {
-
-              });
-
-              window.addEventListener("orientationchange", (event) => {
-
-              });
-          },
-
 // Находим элемент через id с помощью data-атрибута (без заданной высоты)
           findFilterContentId: (item) => {
               var findContentElementByID = document.getElementById(item.dataset.findId);
@@ -480,7 +447,35 @@
           },
       };
       catalogSection.filterShowContent();
-      catalogSection.itemsStyle();
+
+// Переключатель стяля карточек
+var container = document.getElementById("products-list-container");
+var styleBtn = document.querySelectorAll(".js-sort__view-item");
+
+function init() {
+    styleBtn.forEach(function(item) {
+        item.addEventListener("click", function(event) {
+            event.preventDefault();
+            _switch(this);
+        });
+    });
+}
+
+function _switch(opt) {
+    styleBtn.forEach(function(elements) {
+        container.classList.remove(elements.dataset.toClass);
+        elements.classList.remove("active-btn");
+    });
+    container.classList.add(opt.dataset.toClass);
+    opt.classList.add("active-btn");
+}
+
+init();
+
+
+
+
+
   </script>
 </body>
 

@@ -66,7 +66,7 @@
             <div class="sort__title">Вид</div>
             <ul class="sort__view-list">
                 <li class="sort__view-item">
-                    <button class="js-sort__view-item" data-find-id="grid-style">
+                    <button class="js-sort__view-item active-btn" data-to-class="grid-style">
                         Grid Items
                         <svg width="12" height="12" aria-hidden="true" role="presentation">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#grid-icon"></use>
@@ -74,7 +74,7 @@
                     </button>
                 </li>
                 <li class="sort__view-item">
-                    <button class="js-sort__view-item list-style" data-find-id="list-style">
+                    <button class="js-sort__view-item list-style" data-to-class="list-style">
                         List Items
                         <svg width="13" height="12" aria-hidden="true" role="presentation">
                             <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#list-icon"></use>
@@ -107,7 +107,7 @@
         </ul>
     </div>
     <div class="catalog-section__products">
-        <ul class="catalog-section__products-list row no-gutters grid-style">
+        <ul id="products-list-container" class="catalog-section__products-list row no-gutters grid-style">
             <li class="catalog-section__products-item col-12 col-lg-4">
                 <div class="catalog-product">
                     <div class="catalog-product__container catalog-product__container--add-info">

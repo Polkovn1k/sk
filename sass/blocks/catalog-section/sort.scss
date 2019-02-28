@@ -203,7 +203,8 @@
 
     .active-btn {
         background: $blue;
-
+        cursor: default;
+        pointer-events: none;
         svg {
             fill: $white;
         }
