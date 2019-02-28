@@ -380,15 +380,6 @@
             left: 0;
         }
     }
-//скрываем блок цен на десктопе если есть блок об отсутствии товара
-    .catalog-product__available ~ .catalog-product__price {
-        .catalog-product__current-value {
-            @media (min-width: $lg) {
-                display: none;
-            }
-        }
-    }
-
 //блок цен
     &__price {
         margin-top: auto;
@@ -487,17 +478,6 @@
             stroke: $main-color;
             vertical-align: middle;
             transition: 0.3s ease;
-        }
-        @media (min-width: $lg) {
-            width: 100%;
-            line-height: 1.30;
-            font-size: 14px;
-            font-weight: 600;
-            text-align: center;
-            color: $main-color;
-            svg {
-                display: none;
-            }
         }
     }
 
