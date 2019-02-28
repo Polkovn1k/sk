@@ -37,7 +37,6 @@
       <div class="main__container container-fluid">
           <div class="row">
 
-              <!-- <include src="html-modules/__catalog-page/catalog.html"></include> -->
               <div class="col-12">
                   <ul class="crumbs">
                       <li class="crumbs__item">
@@ -60,35 +59,18 @@
 
                   </div>
               </div>
-              <div class="col-12 goods-sliders__col">
+              <div class="col-12">
                   <div class="catalog-slider">
-
                       <div class="glide catalog-slider__container">
-                          SLIDER
+                          <!-- SLIDER -->
                           <div class="glide__track" data-glide-el="track">
                               <ul class="glide__slides">
-                                  <li class="glide__slide">
+                                  <li class="glide__slide catalog-slider__item">
                                       <div class="glide__item add-product">
                                           <div class="add-product__container">
                                               <div class="add-product__features">
                                                   <span class="add-product__features-item add-product__features-item--hit">Хит</span>
                                                   <span class="add-product__features-item">Выгода 5 Р.</span>
-                                                  <span class="add-product__features-item">-10%</span>
-                                                  <span class="add-product__features-item">Акция</span>
-                                              </div>
-                                              <div class="add-product__action">
-                                                  <a href="#" class="add-product__action-item add-product__action-item--favorite">
-                                                      В избранное
-                                                      <svg aria-hidden="true" role="presentation">
-                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
-                                                      </svg>
-                                                  </a>
-                                                  <a href="#" class="add-product__action-item add-product__action-item--compare">
-                                                      К сравнению
-                                                      <svg aria-hidden="true" role="presentation">
-                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
-                                                      </svg>
-                                                  </a>
                                               </div>
                                               <div class="add-product__img">
                                                   <img src="img/temp__img/item__1.png" alt="">
@@ -138,29 +120,61 @@
                                           </div>
                                       </div>
                                   </li>
-                                  <li class="glide__slide">
+                                  <li class="glide__slide catalog-slider__item">
                                       <div class="glide__item add-product">
                                           <div class="add-product__container">
-                                              <div class="add-product__features">
-                                                  <span class="add-product__features-item add-product__features-item--hit">Хит</span>
-                                                  <span class="add-product__features-item">Выгода 5 Р.</span>
-                                                  <span class="add-product__features-item">-10%</span>
-                                                  <span class="add-product__features-item">Акция</span>
+                                              <div class="add-product__img">
+                                                  <img src="img/temp__img/item__1.png" alt="">
                                               </div>
-                                              <div class="add-product__action">
-                                                  <a href="#" class="add-product__action-item add-product__action-item--favorite">
-                                                      В избранное
-                                                      <svg aria-hidden="true" role="presentation">
-                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
-                                                      </svg>
-                                                  </a>
-                                                  <a href="#" class="add-product__action-item add-product__action-item--compare">
-                                                      К сравнению
-                                                      <svg aria-hidden="true" role="presentation">
-                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
-                                                      </svg>
+                                              <a href="#" class="add-product__name">Жидкость Volcano "Dragon Cookie" для ваших электронных сигарет</a>
+                                              <div class="add-product__response">
+                                                  <div class="add-product__rating">
+                                                      <div class="add-product__rating-stars">
+                                                          <div class="add-product__stars-empty">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                              </svg>
+                                                          </div>
+                                                          <div class="add-product__stars-fill">
+                                                              <svg aria-hidden="true" role="presentation">
+                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                      <span class="add-product__rating-votes">(344)</span>
+                                                  </div>
+                                                  <a href="#" class="add-product__message">
+                                                      <div class="add-product__message-img">
+                                                          <svg aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#message"></use>
+                                                          </svg>
+                                                      </div>
+                                                      <span class="add-product__message-value">(102)</span>
                                                   </a>
                                               </div>
+                                              <div class="add-product__properties">
+                                                  <p class="add-product__properties-value">Вкус: <span>арбуз, клубника</span></p>
+                                                  <p class="add-product__properties-value">Объем: <span>100 мл.</span></p>
+                                                  <p class="add-product__properties-value">PG/VG: <span>30/70</span></p>
+                                              </div>
+                                              <div class="add-product__price">
+                                                  <span class="add-product__old-price">2 578</span>
+                                                  <div class="add-product__current-price">
+                                                      <span class="add-product__current-value">2 579 Р.</span>
+                                                      <button title="Сообщить о поступлении" class="catalog-product__goods-incoming">
+                                                          Сообщить о поступлении
+                                                          <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#bell"></use>
+                                                          </svg>
+                                                      </button>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </li>
+                                  <li class="glide__slide catalog-slider__item">
+                                      <div class="glide__item add-product">
+                                          <div class="add-product__container">
                                               <div class="add-product__img">
                                                   <img src="img/temp__img/item__1.png" alt="">
                                               </div>
@@ -209,29 +223,9 @@
                                           </div>
                                       </div>
                                   </li>
-                                  <li class="glide__slide">
+                                  <li class="glide__slide catalog-slider__item">
                                       <div class="glide__item add-product">
                                           <div class="add-product__container">
-                                              <div class="add-product__features">
-                                                  <span class="add-product__features-item add-product__features-item--hit">Хит</span>
-                                                  <span class="add-product__features-item">Выгода 5 Р.</span>
-                                                  <span class="add-product__features-item">-10%</span>
-                                                  <span class="add-product__features-item">Акция</span>
-                                              </div>
-                                              <div class="add-product__action">
-                                                  <a href="#" class="add-product__action-item add-product__action-item--favorite">
-                                                      В избранное
-                                                      <svg aria-hidden="true" role="presentation">
-                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
-                                                      </svg>
-                                                  </a>
-                                                  <a href="#" class="add-product__action-item add-product__action-item--compare">
-                                                      К сравнению
-                                                      <svg aria-hidden="true" role="presentation">
-                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
-                                                      </svg>
-                                                  </a>
-                                              </div>
                                               <div class="add-product__img">
                                                   <img src="img/temp__img/item__1.png" alt="">
                                               </div>
@@ -280,29 +274,9 @@
                                           </div>
                                       </div>
                                   </li>
-                                  <li class="glide__slide">
+                                  <li class="glide__slide catalog-slider__item">
                                       <div class="glide__item add-product">
                                           <div class="add-product__container">
-                                              <div class="add-product__features">
-                                                  <span class="add-product__features-item add-product__features-item--hit">Хит</span>
-                                                  <span class="add-product__features-item">Выгода 5 Р.</span>
-                                                  <span class="add-product__features-item">-10%</span>
-                                                  <span class="add-product__features-item">Акция</span>
-                                              </div>
-                                              <div class="add-product__action">
-                                                  <a href="#" class="add-product__action-item add-product__action-item--favorite">
-                                                      В избранное
-                                                      <svg aria-hidden="true" role="presentation">
-                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
-                                                      </svg>
-                                                  </a>
-                                                  <a href="#" class="add-product__action-item add-product__action-item--compare">
-                                                      К сравнению
-                                                      <svg aria-hidden="true" role="presentation">
-                                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
-                                                      </svg>
-                                                  </a>
-                                              </div>
                                               <div class="add-product__img">
                                                   <img src="img/temp__img/item__1.png" alt="">
                                               </div>
@@ -353,13 +327,12 @@
                                   </li>
                               </ul>
                           </div>
-                          ARROWS OF SLIDER
+                          <!-- ARROWS OF SLIDER -->
                           <div class="glide__arrows" data-glide-el="controls">
                               <button class="glide__arrow glide__arrow--left" data-glide-dir="<">prev</button>
                               <button class="glide__arrow glide__arrow--right" data-glide-dir=">">next</button>
                           </div>
                       </div>
-
                   </div>
               </div>
 
@@ -476,6 +449,50 @@ init();
 
 
 
+  </script>
+  <script>
+      //---------catalog
+      var watchedProducts = new Glide('.catalog-slider__container', {
+          gap: -1,
+          bound: true,
+          rewind: false,
+          perView: 4,
+          peek: {
+              before: 0,
+              after: 0,
+          },
+          breakpoints: {
+              1023: {
+                  peek: {
+                      before: 0,
+                      after: 50,
+                  },
+                  perView: 3,
+              },
+              767: {
+                  peek: {
+                      before: 0,
+                      after: 50,
+                  },
+                  perView: 2,
+              },
+              575: {
+                  peek: {
+                      before: 0,
+                      after: 100,
+                  },
+                  perView: 1,
+              },
+              480: {
+                  peek: {
+                      before: 0,
+                      after: 30,
+                  },
+                  perView: 1,
+              },
+          }
+      });
+      watchedProducts.mount();
   </script>
 </body>
 

@@ -13,6 +13,11 @@
 @import "general/normalize.scss";
 @import "general/global.scss";
 
+//---Glide slider & carousel
+@import "glide/_variables.scss";
+@import "glide/glide.core.scss";
+@import "glide/glide.theme.scss";
+
 //---BEM blocks
     //common-----
 @import "blocks/btn.scss";
@@ -57,8 +62,3 @@
 @import "blocks/catalog-section/pagination.scss";
 @import "blocks/catalog-section/catalog-slider.scss";
 @import "blocks/catalog-section/add-product.scss";
-
-//---Glide slider & carousel
-@import "glide/_variables.scss";
-@import "glide/glide.core.scss";
-@import "glide/glide.theme.scss";
