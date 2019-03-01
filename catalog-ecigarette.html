@@ -162,7 +162,6 @@ var styleBtn = document.querySelectorAll(".js-sort__view-item");
 function init() {
     styleBtn.forEach(function(item) {
         item.addEventListener("click", function(event) {
-            event.preventDefault();
             _switch(item);
         });
     });
@@ -177,6 +176,77 @@ function _switch(opt) {
     opt.classList.add("active-btn");
 }
 init();
+  </script>
+
+  <script>
+
+    var modals = {
+       buttons: [
+           "mobile-nav-btn",
+       ],
+
+       listenClick: () => {
+           modals.buttons.forEach(function(item) {
+               document.addEventListener("click", (event) => {
+                   var currentBtn = document.getElementById(item);
+                   if (currentBtn && currentBtn.contains(event.target)) {
+                       modals.toggleBtnAndModals(currentBtn);
+                   }
+               });
+           });
+       },
+
+       toggleBtnAndModals: (clickedBtn) => {
+           if (clickedBtn.classList.contains("active-btn")) {
+               modals.hideOverlays();
+               modals.deleteButtonsState();
+               modals.toggleHtmlBodyScrollLineInOverlays('enable');
+               return false;
+           }
+           modals.hideOverlays();
+           modals.openOverlayForClickedButton(clickedBtn);
+           modals.deleteButtonsState();
+           modals.addButtonState(clickedBtn);
+       },
+
+       hideOverlays: () => {
+           document.querySelectorAll(".js-overlay").forEach((element) => {
+               element.classList.remove("opened");
+           });
+       },
+
+       deleteButtonsState: () => {
+           document.querySelectorAll(".js-overlay-btn").forEach((element) => {
+               element.classList.remove("active-btn");
+           });
+       },
+
+       addButtonState: (btn) => {
+           btn.classList.add("active-btn");
+       },
+
+       openOverlayForClickedButton: (clickedBtn) => {
+           let overlayIdForClickedElement = clickedBtn.dataset.overlayId;
+           let overlayForClickedElement = document.getElementById(overlayIdForClickedElement);
+           overlayForClickedElement.classList.add("opened");
+       },
+
+       toggleHtmlBodyScrollLineInOverlays (state) {
+           let toggledElems = document.querySelectorAll('html, body');//находим теги html и body
+           if (state === 'disable') {//Если функция вызывается со значением disable то
+               for (let i = 0; i < toggledElems.length; i++) {//у html и body добавляем класс scroll-disabled, отключающий у них скролл
+                   toggledElems[i].classList.add('scroll-disabled');
+               }
+               return;//и выходим из функции
+           }
+           for (let i = 0; i < toggledElems.length; i++) {//если функция без значения disable, то удаляем класс scroll-disabled и включаем скрол заного у HTML
+               toggledElems[i].classList.remove('scroll-disabled');
+           }
+       },
+    };
+
+    modals.listenClick();
+
   </script>
 </body>
 
