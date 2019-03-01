@@ -229,6 +229,7 @@ init();
            let overlayIdForClickedElement = clickedBtn.dataset.overlayId;
            let overlayForClickedElement = document.getElementById(overlayIdForClickedElement);
            overlayForClickedElement.classList.add("opened");
+           modals.toggleHtmlBodyScrollLineInOverlays('disable');
        },
 
        toggleHtmlBodyScrollLineInOverlays (state) {
