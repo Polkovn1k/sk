@@ -1,8 +1,8 @@
 <div class="col-12 col-lg-3">
-    <div class="filters js-filters">
+    <div id="filters-open" class="filters">
         <div class="filters__tog-modal">
             <span>Фильтр</span>
-            <button class="filters__open-modal">
+            <button data-overlay-id="filters-open" class="filters__open-modal js-overlay-btn">
                 Открыть модальное окно
                 <svg width="20" height="20" aria-hidden="true" role="presentation">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#filter"></use>
@@ -15,7 +15,7 @@
                 </svg>
             </button>
         </div>
-        <form action="some.php" class="filters__container">
+        <form action="some.php" id="filters-form" class="filters__container js-overlay">
             <fieldset class="filters__panel">
                 <legend data-find-id="collapsePrice" class="filters__title active-btn js-filters__title">
                     Цена

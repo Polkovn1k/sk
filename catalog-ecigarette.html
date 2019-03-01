@@ -181,16 +181,11 @@ init();
   <script>
 
     var modals = {
-       buttons: [
-           "mobile-nav-btn",
-       ],
-
        listenClick: () => {
-           modals.buttons.forEach(function(item) {
-               document.addEventListener("click", (event) => {
-                   var currentBtn = document.getElementById(item);
-                   if (currentBtn && currentBtn.contains(event.target)) {
-                       modals.toggleBtnAndModals(currentBtn);
+           document.addEventListener("click", (event) => {
+               document.querySelectorAll(".js-overlay-btn").forEach((btnCallingOverlays) => {
+                   if (btnCallingOverlays && btnCallingOverlays.contains(event.target)) {
+                       modals.toggleBtnAndModals(btnCallingOverlays);
                    }
                });
            });
@@ -233,14 +228,14 @@ init();
        },
 
        toggleHtmlBodyScrollLineInOverlays (state) {
-           let toggledElems = document.querySelectorAll('html, body');//находим теги html и body
-           if (state === 'disable') {//Если функция вызывается со значением disable то
-               for (let i = 0; i < toggledElems.length; i++) {//у html и body добавляем класс scroll-disabled, отключающий у них скролл
+           let toggledElems = document.querySelectorAll('html, body');
+           if (state === 'disable') {
+               for (let i = 0; i < toggledElems.length; i++) {
                    toggledElems[i].classList.add('scroll-disabled');
                }
-               return;//и выходим из функции
+               return false;
            }
-           for (let i = 0; i < toggledElems.length; i++) {//если функция без значения disable, то удаляем класс scroll-disabled и включаем скрол заного у HTML
+           for (let i = 0; i < toggledElems.length; i++) {
                toggledElems[i].classList.remove('scroll-disabled');
            }
        },

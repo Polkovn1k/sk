@@ -3,7 +3,7 @@
     font-family: $font;
     background: $white;
 //Стиль кнопки при нажатии и открытии оверлея на мобилке
-    &--active {
+    &.opened {
         position: fixed;
         z-index: 1000;
         top: 0;
