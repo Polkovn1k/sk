@@ -56,7 +56,7 @@
         transition: 0.3s color ease;
         svg {
             fill: $extra-text-color;
-            transition: 0.3s fill ease;
+            transition: 0.3s ease;
         }
         @media (min-width: $lg) {
             height: auto;
@@ -208,6 +208,20 @@
         svg {
             fill: $white;
         }
+    }
+
+    &__title.active-btn {
+        pointer-events: auto;
+        cursor: pointer;
+        background: transparent;
+        svg {
+            fill: $main-color;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__title.active-btn:hover {
+        color: inherit;
     }
 
     &__view-item:last-child {

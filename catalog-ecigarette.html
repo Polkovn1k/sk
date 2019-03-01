@@ -101,7 +101,7 @@
 
           TRANSITION_TIME: "300",
 
-// Вешаем клик
+// ОБРАБОТЧИК ФИЛЬТРА
           filterShowContent: () => {
               catalogSection.catalogButtons.forEach(function(item) {
                   document.querySelectorAll(item).forEach((item) => {
@@ -141,7 +141,7 @@
               catalogSection.deleteItemMaxHeight(findContentElementByID);
           },
 
-// Находим элемент через id с помощью data-атрибута (с заданной высотой)
+// ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ
           findOtherContentId: (item) => {
               var findContentElementByID = document.getElementById(item.dataset.findId);
               if (item.classList.contains("active-btn")) {
@@ -151,9 +151,11 @@
               findContentElementByID.style.removeProperty("max-height");
           },
       };
+
+
       catalogSection.filterShowContent();
 
-// Переключатель стяля карточек
+// ОБРАБОТЧИК GRID/STYLE
 var container = document.getElementById("products-list-container");
 var styleBtn = document.querySelectorAll(".js-sort__view-item");
 
