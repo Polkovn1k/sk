@@ -2,80 +2,7 @@
     padding-bottom: 20px;
     font-family: $font;
     background: $white;
-//Стиль кнопки при нажатии и открытии оверлея на мобилке
-    &.opened {
-        position: fixed;
-        z-index: 1000;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        overflow: auto;
-        background: $white;
-        @media (min-width: $lg) {
-            position: static;
-        }
-        .filters__tog-modal {
-            position: fixed;
-            z-index: 100;
-            width: 100%;
-            height: $active-tog-modal-height;
-            line-height: $active-tog-modal-height;
-            padding-bottom: 0;
-            border: none;
-            border-bottom: 1px solid $border-color;
-            border-radius: 0;
-            background: $white;
-            outline: none;
-            font-size: 18px;
-        }
-        .filters__tog-modal:hover {
-            color: inherit;
-            svg {
-                fill: $add-text-color;
-            }
-        }
-        .filters__open-modal {
-            display: none;
-        }
-        .filters__close-modal {
-            display: block;
-            padding: 0;
-            position: fixed;
-            z-index: 100;
-            top: 0;
-            right: 0;
-            width: $active-tog-modal-height;
-            height: $active-tog-modal-height;
-            border-radius: 50%;
-            font-size: 0;
-            outline: none;
-            border: none;
-            background: transparent;
-            cursor: pointer;
-            svg {
-                position: absolute;
-                top: 50%;
-                right: 8px;
-                transform: translateY(-50%);
-                width: 26px;
-                height: 26px;
-                fill: $add-text-color;
-            }
-        }
-        .filters__close-modal:hover {
-            svg {
-                fill: $blue;
-            }
-        }
-        .filters__container {
-            display: block;
-            margin-top: $active-tog-modal-height;
-            @media (min-width: $lg) {
-                margin-top: 0;
-            }
-        }
-    }
+
 //Стиль кнопки до нажатия на кнопку и открытия оверлея
     &__tog-modal {
         position: relative;
@@ -118,7 +45,7 @@
         border: 1px solid $communication-add-color;
         cursor: pointer;
         transition: 0.3s border-color ease;
-        svg {
+        svg.filters__svg-open {
             position: absolute;
             top: 50%;
             right: $grid-padding;
@@ -126,12 +53,18 @@
             width: 20px;
             height: 20px;
             fill: $extra-text-color;
-            transition: 0.3s fill ease;
+            transition: 0.3s ease;
+        }
+        svg.filters__svg-close {
+            display: none;
+            transition: 0.3s ease;
         }
     }
 
-    &__close-modal {
-        display: none;
+    &__open-modal:hover {
+        svg.filters__svg-open {
+            fill: $blue;
+        }
     }
 //тело формы
     &__container {
@@ -269,5 +202,79 @@
 
     &__btn--reset:hover {
         background: $add-red;
+    }
+//Стиль кнопки при нажатии и открытии оверлея на мобилке
+    &.opened {
+        position: fixed;
+        z-index: 1000;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        overflow: auto;
+        background: $white;
+        @media (min-width: $lg) {
+            position: static;
+        }
+        .filters__tog-modal {
+            position: fixed;
+            z-index: 1000;
+            width: 100%;
+            height: $active-tog-modal-height;
+            line-height: $active-tog-modal-height;
+            padding-bottom: 0;
+            border: none;
+            border-bottom: 1px solid $border-color;
+            border-radius: 0;
+            background: $white;
+            outline: none;
+            font-size: 18px;
+            overflow: auto;
+        }
+        .filters__tog-modal:hover {
+            color: inherit;
+            svg {
+                fill: $add-text-color;
+            }
+        }
+        .filters__open-modal {
+            display: block;
+            margin-bottom: 0;
+            padding: 0;
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            right: 0;
+            left: auto;
+            width: $filter-svg-close-size * 3;
+            height: $active-tog-modal-height;
+            font-size: 0;
+            border: none;
+            svg.filters__svg-open {
+                display: none;
+            }
+            svg.filters__svg-close {
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 11px;
+                transform: translateY(-50%);
+                width: $filter-svg-close-size;
+                height: $filter-svg-close-size;
+                fill: $add-text-color;
+            }
+        }
+        .filters__open-modal:hover {
+            svg {
+                fill: $blue;
+            }
+        }
+        .filters__container {
+            display: block;
+            margin-top: $active-tog-modal-height;
+            @media (min-width: $lg) {
+                margin-top: 0;
+            }
+        }
     }
 }

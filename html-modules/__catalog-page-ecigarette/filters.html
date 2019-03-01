@@ -1,16 +1,13 @@
 <div class="col-12 col-lg-3">
-    <div id="filters-open" class="filters">
+    <div id="filters-open" class="filters js-overlay">
         <div class="filters__tog-modal">
             <span>Фильтр</span>
             <button data-overlay-id="filters-open" class="filters__open-modal js-overlay-btn">
                 Открыть модальное окно
-                <svg width="20" height="20" aria-hidden="true" role="presentation">
+                <svg width="20" height="20" aria-hidden="true" role="presentation" class="filters__svg-open">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#filter"></use>
                 </svg>
-            </button>
-            <button class="filters__close-modal">
-                Закрыть модальное окно
-                <svg width="26" height="26" aria-hidden="true" role="presentation">
+                <svg width="26" height="26" aria-hidden="true" role="presentation" class="filters__svg-close">
                   <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
                 </svg>
             </button>
