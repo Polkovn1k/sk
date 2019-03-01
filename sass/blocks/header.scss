@@ -74,25 +74,21 @@
     }
     &__logo-link {
         display: block;
-        height: 40px;
+        width: 90px;
+        height: 15px;
+        margin-top: -5px;
         overflow: hidden;
         @media (min-width: $sm) {
             height: 30px;
+            margin-top: 0;
+            width: auto;
         }
         @media (min-width: $md) {
             height: auto;
         }
     }
-    &__logo-img-mob {
-        display: inline;
-        width: 30px;
-        height: 30px;
-        @media (min-width: $sm) {
-            display: none;
-        }
-    }
     &__logo-img {
-        display: none;
+
         @media (min-width: $sm) {
             display: inline;
             width: 160px;
