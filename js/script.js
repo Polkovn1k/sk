@@ -139,7 +139,7 @@ modals.listenResizeDevice();
           },
       };
       productNav.filterShowContent();
-      //---------------------------------------------------------------
+//---------------------------------------------------------------
             var footerNav = {
 
                 catalogButtons: [
@@ -153,6 +153,9 @@ modals.listenResizeDevice();
                     footerNav.catalogButtons.forEach(function(item) {
                         document.querySelectorAll(item).forEach((item) => {
                             item.addEventListener("click", (event) => {
+                                if (item === event.target & !item.classList.contains("active-btn")) {
+                                    footerNav.filterShowRemoveAllActiveStateBtns();
+                                }
                                 item.classList.toggle("active-btn");
                                 if (item.classList.contains("js-product-nav__sub-nav-tog")) {
                                     footerNav.findFilterContentId(item);
@@ -161,6 +164,13 @@ modals.listenResizeDevice();
                                 footerNav.findOtherContentId(item);
                             });
                         });
+                    });
+                },
+
+                filterShowRemoveAllActiveStateBtns: () => {
+                    document.querySelectorAll(".js-footer-nav__nav-tog").forEach((element) => {
+                        element.classList.remove("active-btn");
+                        footerNav.findOtherContentId(element);
                     });
                 },
 
