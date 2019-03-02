@@ -108,11 +108,18 @@
         display: block;
         width: 70px;
         height: $mobile-header-nav-item-height;
+        padding: 0 15px;
         font-size: 0;
         border: 0;
         border-bottom: 1px solid $border-color;
         background: transparent;
         cursor: pointer;
+        outline: none;
+        text-align: right;
+        svg {
+            fill: $blue;
+            transition: 0.3s ease;
+        }
         @media (min-width: $sm) {
             width: 50%;
         }
@@ -121,7 +128,16 @@
         }
     }
 
-    &__sub-nav-tog::before,
+    &__sub-nav-tog.active-btn {
+        svg {
+            transform: rotate(180deg);
+        }
+        ~ .product-nav__sub-nav-list {
+            padding: 10px 30px;
+            border-bottom: 1px solid $border-color;
+        }
+    }
+
     &__product-link--arrow::before {
         @include pseudo();
         top: 15px;
@@ -170,10 +186,13 @@
 //Подменю на mobile
     &__sub-nav-list {
         @include order-reset();
+        max-height: 0;
+        overflow: hidden;
         width: 100%;
-        padding: 10px 30px;
         background: $bg-color;
-        border-bottom: 1px solid $border-color;
+        padding: 0;
+        border: none;
+        transition: 0.3s ease;
         @media (min-width: $lg) {
             display: none;
         }
