@@ -139,3 +139,63 @@ modals.listenResizeDevice();
           },
       };
       productNav.filterShowContent();
+      //---------------------------------------------------------------
+            var footerNav = {
+
+                catalogButtons: [
+                ".js-footer-nav__nav-tog",
+                ],
+
+                TRANSITION_TIME: "300",
+
+      // ОБРАБОТЧИК ФИЛЬТРА
+                filterShowContent: () => {
+                    footerNav.catalogButtons.forEach(function(item) {
+                        document.querySelectorAll(item).forEach((item) => {
+                            item.addEventListener("click", (event) => {
+                                item.classList.toggle("active-btn");
+                                if (item.classList.contains("js-product-nav__sub-nav-tog")) {
+                                    footerNav.findFilterContentId(item);
+                                    return false;
+                                }
+                                footerNav.findOtherContentId(item);
+                            });
+                        });
+                    });
+                },
+
+      // Высота элемента без учета схлопывания
+                elementHeightBeforeCollapse: (item) => {
+                    item.style.maxHeight = item.scrollHeight + "px";
+                    item.style.maxHeight = "0px";
+                },
+
+      // Убираем ограничитель высоты
+                deleteItemMaxHeight: (item) => {
+                    setTimeout(function() {
+                        item.style.maxHeight = "none";
+                    }, footerNav.TRANSITION_TIME);
+                },
+
+      // Находим элемент через id с помощью data-атрибута (без заданной высоты)
+                findFilterContentId: (item) => {
+                    var findContentElementByID = document.getElementById(item.dataset.findId);
+                    findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
+                    if (!item.classList.contains("active-btn")) {
+                        footerNav.elementHeightBeforeCollapse(findContentElementByID);
+                        return false;
+                    }
+                    footerNav.deleteItemMaxHeight(findContentElementByID);
+                },
+
+      // ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ
+                findOtherContentId: (item) => {
+                    var findContentElementByID = document.getElementById(item.dataset.findId);
+                    if (item.classList.contains("active-btn")) {
+                        findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
+                        return false;
+                    }
+                    findContentElementByID.style.removeProperty("max-height");
+                },
+            };
+            footerNav.filterShowContent();

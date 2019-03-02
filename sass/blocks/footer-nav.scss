@@ -73,6 +73,13 @@
         border: 0;
         background: transparent;
         cursor: pointer;
+        outline: none;
+        text-align: right;
+        svg {
+            fill: $communication-add-color;
+            transform: rotate(-90deg);
+            transition: 0.3s ease;
+        }
         @media (min-width: $sm) {
             width: 50%;
         }
@@ -81,28 +88,28 @@
         }
     }
 
-    &__nav-tog::after {
-        @include pseudo();
-        top: 50%;
-        right: $grid-padding;
-        width: 10px;
-        height: 10px;
-        border: 2px solid $communication-add-color;
-        border-left: transparent;
-        border-bottom: transparent;
-        transform: translateY(-30%) rotate(45deg);
-        @media (min-width: $lg) {
-            display: none;
+    &__nav-tog:hover {
+        svg {
+            fill: $white;
+        }
+    }
+
+    &__nav-tog.active-btn {
+        svg {
+            transform: rotate(0deg);
         }
     }
 
     &__links-list {
         @include order-reset();
+        max-height: 0;
+        overflow: hidden;
         padding-bottom: 10px;
         width: 100%;
         font-size: 16px;
         font-weight: 400;
         color: $communication-add-color;
+        transition: 0.3s ease;
         @media (min-width: $lg) {
             padding-bottom: 0;
             font-size: 14px;
