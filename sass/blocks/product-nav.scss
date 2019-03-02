@@ -1,6 +1,7 @@
 .product-nav {
     display: none;
     position: fixed;
+    z-index: 100;
     @include full-absolute();
     top: $gradient-breakpoint-mobile + $gradient-breakpoint-mobile-end;
     overflow: auto;
@@ -10,7 +11,6 @@
     }
     @media (min-width: $lg) {
         top: $gradient-breakpoint-desktop + $gradient-breakpoint-desktop-end;
-        position: fixed;
         background-color: transparentize($black, 0.5);
     }
 
