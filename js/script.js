@@ -113,7 +113,7 @@ modals.listenResizeDevice();
 // Убираем ограничитель высоты
           deleteItemMaxHeight: (item) => {
               setTimeout(function() {
-                  item.style.removeProperty("max-height");
+                  item.style.maxHeight = "none";
               }, productNav.TRANSITION_TIME);
           },
 
@@ -125,7 +125,7 @@ modals.listenResizeDevice();
                   productNav.elementHeightBeforeCollapse(findContentElementByID);
                   return false;
               }
-              //productNav.deleteItemMaxHeight(findContentElementByID);
+              productNav.deleteItemMaxHeight(findContentElementByID);
           },
 
 // ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ

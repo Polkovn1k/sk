@@ -126,7 +126,7 @@
 // Убираем ограничитель высоты
           deleteItemMaxHeight: (item) => {
               setTimeout(function() {
-                  item.style.removeProperty("max-height");
+                  item.style.maxHeight = "none";
               }, catalogSection.TRANSITION_TIME);
           },
 

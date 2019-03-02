@@ -88,10 +88,15 @@
     &__product-link {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         flex-grow: 1;
         height: $mobile-header-nav-item-height;
         padding: 0 $grid-padding;
         border-bottom: 1px solid $border-color;
+        transition: 0.3s ease;
+        svg {
+            fill: $blue;
+        }
         @media (min-width: $lg) {
             height: auto;
             padding: 0;
@@ -100,7 +105,14 @@
             line-height: 1.33;
             color: $main-color;
             border-bottom: none;
+            svg {
+                display: none;
+            }
         }
+    }
+
+    &__product-link:hover {
+        color: $blue;
     }
 
     &__sub-nav-tog {
@@ -133,23 +145,7 @@
             transform: rotate(180deg);
         }
         ~ .product-nav__sub-nav-list {
-            padding: 10px 30px;
             border-bottom: 1px solid $border-color;
-        }
-    }
-
-    &__product-link--arrow::before {
-        @include pseudo();
-        top: 15px;
-        right: $grid-padding;
-        width: 10px;
-        height: 10px;
-        border: 2px solid $border-color;
-        border-left: transparent;
-        border-bottom: transparent;
-        transform: rotate(45deg);
-        @media (min-width: $lg) {
-            display: none;
         }
     }
 //Подменю на desktop
@@ -187,10 +183,10 @@
     &__sub-nav-list {
         @include order-reset();
         max-height: 0;
+        padding: 0 30px;
         overflow: hidden;
         width: 100%;
         background: $bg-color;
-        padding: 0;
         border: none;
         transition: 0.3s ease;
         @media (min-width: $lg) {
@@ -205,6 +201,18 @@
             font-size: 16px;
             font-weight: 400;
             color: $communication-add-color;
+            transition: 0.3s ease;
+        }
+    }
+    &__sub-nav-item:first-child {
+        padding-top: 10px;
+    }
+    &__sub-nav-item:last-child {
+        padding-bottom: 10px;
+    }
+    &__sub-nav-item {
+        a:hover {
+            color: $blue;
         }
     }
 //Рекламный баннер
