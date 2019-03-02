@@ -108,7 +108,7 @@
 </div>
 
 <!-- overlays: product navigation -->
-<div class="product-nav">
+<div id="product-nav-overlay" class="product-nav js-overlay">
     <nav class="product-nav__container container-fluid">
         <div class="product-nav__row row no-gutters">
             <ul class="product-nav__list col-12 col-lg-9">
@@ -525,12 +525,12 @@
 
 <ul class="header__extra-nav">
     <li class="header__extra-nav-item header__extra-nav-item--toggler">
-        <a href="#" class="header__extra-nav-link">
+        <button data-overlay-id="product-nav-overlay" class="header__extra-nav-link js-overlay-btn">
             <svg width="27" height="23" aria-hidden="true" role="presentation">
-              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-tog-icon"></use>
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-tog-icon"></use>
             </svg>
             Каталог
-        </a>
+        </button>
     </li>
     <li class="header__extra-nav-item header__extra-nav-item--hide-lg">
         <a href="#" class="header__extra-nav-link">

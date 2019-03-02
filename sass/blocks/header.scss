@@ -262,13 +262,13 @@
 //дополнительная навигация (синии кнопки)
     &__extra-nav {
         @include order-reset();
+        display: flex;
+        align-items: center;
         width: 100%;
         font-size: 0;
         @media (min-width: $lg) {
-            display: flex;
-            align-items: center;
             height: $gradient-breakpoint-desktop-end;
-            width: 215px;//временно
+            width: 215px;
         }
     }
 
@@ -326,5 +326,25 @@
         display: block;
         width: 100%;
         height: 100%;
+        padding: 0;
+        border: none;
+        background: transparent;
+        font: inherit;
+        color: $white;
+        outline: none;
+        cursor: pointer;
+    }
+}
+
+.product-nav.opened ~ .header__extra-nav {
+    .header__extra-nav-item--toggler {
+        flex-grow: 1;
+        border: none;
+        @media (min-width: $lg) {
+            flex-grow: 0;
+        }
+    }
+    .header__extra-nav-item--hide-lg {
+        display: none;
     }
 }
