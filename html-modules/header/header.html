@@ -522,7 +522,7 @@
     </nav>
 </div>
 
-<div class="communication-type">
+<div id="communication-type" class="communication-type js-overlay">
     <section class="communication-type__container">
         <h3 class="communication-type__title">Связь с нами</h3>
         <p class="communication-type__text">
@@ -554,7 +554,7 @@
                 </a>
             </li>
         </ul>
-        <button class="communication-type__close">
+        <button data-overlay-id="communication-type" class="communication-type__close js-overlay-btn js-overlay-btn--to-close">
             Закрыть окно
             <svg aria-hidden="true" role="presentation">
                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
@@ -584,9 +584,9 @@
         </button>
     </li>
     <li class="header__extra-nav-item header__extra-nav-item--hide-lg">
-        <a href="#" class="header__extra-nav-link">
+        <button data-overlay-id="communication-type" href="#" class="header__extra-nav-link js-overlay-btn js-overlay-btn--to-open">
             Связаться
-        </a>
+        </button>
     </li>
     <li class="header__extra-nav-item header__extra-nav-item--hide-mob">
         <a href="catalog.html" class="header__extra-nav-link">

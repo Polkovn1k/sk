@@ -221,3 +221,81 @@ modals.listenResizeDevice();
             };
             footerNav.filterShowContent();
             footerNav.subscriptionFunc();
+//---------------------------------------------------------------
+var modalsWithTwoBtns = {
+   listenClick: () => {
+       document.addEventListener("click", (event) => {
+           document.querySelectorAll(".js-overlay-btn").forEach((btnCallingOverlays) => {
+               if (btnCallingOverlays && btnCallingOverlays.contains(event.target)) {
+                   modalsWithTwoBtns.toggleBtnAndModals(btnCallingOverlays);
+               }
+           });
+       });
+   },
+
+/*   listenTurnDevice: () => {
+       window.addEventListener("orientationchange", function() {
+           modalsWithTwoBtns.hideOverlays();
+           modalsWithTwoBtns.deleteButtonsState();
+           modalsWithTwoBtns.toggleHtmlBodyScrollLineInOverlays('enable');
+       });
+   },*/
+
+/*   listenResizeDevice: () => {
+       window.addEventListener("resize", function() {
+           modalsWithTwoBtns.hideOverlays();
+           modalsWithTwoBtns.deleteButtonsState();
+           modalsWithTwoBtns.toggleHtmlBodyScrollLineInOverlays('enable');
+       });
+   },*/
+
+   toggleBtnAndModals: (clickedBtn) => {
+       if (clickedBtn.classList.contains("js-overlay-btn--to-close")) {
+           modalsWithTwoBtns.hideOverlays();
+           modalsWithTwoBtns.toggleHtmlBodyScrollLineInOverlays('enable');
+           return false;
+       }
+       modalsWithTwoBtns.hideOverlays();
+       modalsWithTwoBtns.openOverlayForClickedButton(clickedBtn);
+       modalsWithTwoBtns.addButtonState(clickedBtn);
+   },
+
+   hideOverlays: () => {
+       document.querySelectorAll(".js-overlay").forEach((element) => {
+           element.classList.remove("opened");
+       });
+   },
+
+   deleteButtonsState: () => {
+       document.querySelectorAll(".js-overlay-btn").forEach((element) => {
+           element.classList.remove("active-btn");
+       });
+   },
+
+   addButtonState: (btn) => {
+       btn.classList.add("active-btn");
+   },
+
+   openOverlayForClickedButton: (clickedBtn) => {
+       let overlayIdForClickedElement = clickedBtn.dataset.overlayId;
+       let overlayForClickedElement = document.getElementById(overlayIdForClickedElement);
+       overlayForClickedElement.classList.add("opened");
+       modalsWithTwoBtns.toggleHtmlBodyScrollLineInOverlays('disable');
+   },
+
+   toggleHtmlBodyScrollLineInOverlays (state) {
+       let toggledElems = document.querySelectorAll('html, body');
+       if (state === 'disable') {
+           for (let i = 0; i < toggledElems.length; i++) {
+               toggledElems[i].classList.add('scroll-disabled');
+           }
+           return false;
+       }
+       for (let i = 0; i < toggledElems.length; i++) {
+           toggledElems[i].classList.remove('scroll-disabled');
+       }
+   },
+};
+modalsWithTwoBtns.listenClick();
+//modalsWithTwoBtns.listenTurnDevice();
+//modalsWithTwoBtns.listenResizeDevice();

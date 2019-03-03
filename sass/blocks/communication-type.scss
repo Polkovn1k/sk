@@ -3,7 +3,9 @@
     display: none;
     padding: $grid-padding;
     position: fixed;
+    z-index: 100;
     overflow: auto;
+    font-family: $font;
     background-color: transparentize($black, 0.5);
     @media (min-width: $lg) {
         display: flex;
@@ -12,6 +14,13 @@
         padding: 0;
         overflow: visible;
         background-color: transparent;
+    }
+
+    &.opened {
+        display: block;
+        @media (min-width: $lg) {
+            display: flex;
+        }
     }
 
     &__container {
@@ -32,7 +41,6 @@
         margin: 0 -20px;
         padding: 0 20px;
         min-height: 45px;
-        font-family: $font;
         font-size: 18px;
         font-weight: 600;
         line-height: 1.33;
@@ -47,7 +55,6 @@
         @include field-reset();
         padding-top: 20px;
         padding-bottom: 25px;
-        font-family: $font;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.38;
@@ -72,7 +79,6 @@
     &__item {
         height: $mobile-communication-item-height;
         margin-bottom: 20px;
-        font-family: $font;
         font-size: 16px;
         font-weight: 600;
         line-height: 1.38;
@@ -161,6 +167,7 @@
         height: 50px;
         border: none;
         cursor: pointer;
+        outline: none;
         font-size: 0;
         background: transparent;
         text-align: center;
