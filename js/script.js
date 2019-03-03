@@ -145,7 +145,7 @@ var productNav = {
     },
 
     // Убираем ограничитель высоты
-    deleteItemMaxHeight: (item) => {
+    deleteItemMaxHeightAfterAnimation: (item) => {
         setTimeout(function() {
             item.style.maxHeight = "none";
         }, productNav.TRANSITION_TIME);
@@ -159,7 +159,7 @@ var productNav = {
             productNav.elementHeightBeforeCollapse(findContentElementByID);
             return false;
         }
-        productNav.deleteItemMaxHeight(findContentElementByID);
+        productNav.deleteItemMaxHeightAfterAnimation(findContentElementByID);
     },
 
     // ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ
@@ -173,74 +173,49 @@ var productNav = {
     },
 };
 productNav.filterShowContent();
-//---------------------------------------------------------------
+//раскрытие пунктов навигаций в футере
 var footerNav = {
-    catalogButtons: [".js-footer-nav__nav-tog"],
+    catalogButtons: ".js-footer-nav__nav-tog",
 
-    TRANSITION_TIME: "300",
+    catalogCollapsedContent: ".js-footer-nav__links-list",
 
-    // ОБРАБОТЧИК ФИЛЬТРА
-    filterShowContent: () => {
-        footerNav.catalogButtons.forEach(function(item) {
-            document.querySelectorAll(item).forEach((item) => {
-                item.addEventListener("click", (event) => {
-                    if (item === event.target & !item.classList.contains("active-btn")) {
-                        footerNav.filterShowRemoveAllActiveStateBtns();
-                    }
-                    item.classList.toggle("active-btn");
-                    if (item.classList.contains("js-product-nav__sub-nav-tog")) {
-                        footerNav.findFilterContentId(item);
-                        return false;
-                    }
-                    footerNav.findOtherContentId(item);
-                });
+    clickListener: (btns) => {
+        document.querySelectorAll(btns).forEach(function(item) {
+            item.addEventListener("click", (event) => {
+                if (!item.classList.contains("active-btn")) {
+                    footerNav.removeAllBtnsActive();
+                    footerNav.removeAllContentsHeight();
+                    item.classList.add("active-btn");
+                    footerNav.openDataToIdContent(item);
+                    return false;
+                }
+                footerNav.removeAllBtnsActive();
+                footerNav.removeAllContentsHeight();
             });
         });
     },
 
-    filterShowRemoveAllActiveStateBtns: () => {
-        document.querySelectorAll(".js-footer-nav__nav-tog").forEach((element) => {
+    removeAllBtnsActive: () => {
+        document.querySelectorAll(footerNav.catalogButtons).forEach((element) => {
             element.classList.remove("active-btn");
-            footerNav.findOtherContentId(element);
         });
     },
 
-    // Высота элемента без учета схлопывания
-    elementHeightBeforeCollapse: (item) => {
-        item.style.maxHeight = item.scrollHeight + "px";
-        item.style.maxHeight = "0px";
+    removeAllContentsHeight: () => {
+        document.querySelectorAll(footerNav.catalogCollapsedContent).forEach((element) => {
+            element.style.removeProperty("max-height");
+        });
     },
 
-    // Убираем ограничитель высоты
-    deleteItemMaxHeight: (item) => {
-        setTimeout(function() {
-            item.style.maxHeight = "none";
-        }, footerNav.TRANSITION_TIME);
-    },
-
-    // Находим элемент через id с помощью data-атрибута (без заданной высоты)
-    findFilterContentId: (item) => {
-        var findContentElementByID = document.getElementById(item.dataset.findId);
-        findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
-        if (!item.classList.contains("active-btn")) {
-            footerNav.elementHeightBeforeCollapse(findContentElementByID);
-            return false;
-        }
-        footerNav.deleteItemMaxHeight(findContentElementByID);
-    },
-
-    // ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ
-    findOtherContentId: (item) => {
+    openDataToIdContent: (item) => {
         var findContentElementByID = document.getElementById(item.dataset.findId);
         if (item.classList.contains("active-btn")) {
             findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
             return false;
         }
-        findContentElementByID.style.removeProperty("max-height");
     },
 };
-footerNav.filterShowContent();
-
+footerNav.clickListener(footerNav.catalogButtons);
 
 //тоглер подписки в футера
 var subscription = {
