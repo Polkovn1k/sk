@@ -209,3 +209,12 @@ modals.listenResizeDevice();
                 },
             };
             footerNav.filterShowContent();
+//---------------------------------------------------------------
+var checkedSubscription = document.querySelector(".switch__label");
+var subscriptionBtn = document.querySelector(".subscription__btn");
+var subscriptionInput = document.querySelector(".subscription__input");
+
+checkedSubscription.addEventListener("click", (event) => {
+    subscriptionBtn.classList.toggle("active");
+    subscriptionInput.classList.toggle("active");
+});
