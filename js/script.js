@@ -216,7 +216,6 @@ var footerNav = {
     },
 };
 footerNav.clickListener(footerNav.catalogButtons);
-
 //тоглер подписки в футера
 var subscription = {
     subscriptionElement: [".js-subscription__btn", ".js-subscription__input"],
