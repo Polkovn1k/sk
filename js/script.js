@@ -207,14 +207,17 @@ modals.listenResizeDevice();
                     }
                     findContentElementByID.style.removeProperty("max-height");
                 },
+//---------------------------------------------------------------
+                subscriptionElement: [".js-subscription__btn", ".js-subscription__input"],
+
+                subscriptionFunc: () => {
+                    var checkedSubscription = document.querySelector(".js-switch__label");
+                    checkedSubscription.addEventListener("click", (event) => {
+                        footerNav.subscriptionElement.forEach((element) => {
+                            document.querySelector(element).classList.toggle("active");
+                        });
+                    });
+                },
             };
             footerNav.filterShowContent();
-//---------------------------------------------------------------
-var checkedSubscription = document.querySelector(".switch__label");
-var subscriptionBtn = document.querySelector(".subscription__btn");
-var subscriptionInput = document.querySelector(".subscription__input");
-
-checkedSubscription.addEventListener("click", (event) => {
-    subscriptionBtn.classList.toggle("active");
-    subscriptionInput.classList.toggle("active");
-});
+            footerNav.subscriptionFunc();
