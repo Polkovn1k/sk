@@ -225,7 +225,7 @@ modals.listenResizeDevice();
 var modalsWithTwoBtns = {
    listenClick: () => {
        document.addEventListener("click", (event) => {
-           document.querySelectorAll(".js-overlay-btn").forEach((btnCallingOverlays) => {
+           document.querySelectorAll(".js-overlay-two-btn").forEach((btnCallingOverlays) => {
                if (btnCallingOverlays && btnCallingOverlays.contains(event.target)) {
                    modalsWithTwoBtns.toggleBtnAndModals(btnCallingOverlays);
                }
@@ -250,7 +250,7 @@ var modalsWithTwoBtns = {
    },*/
 
    toggleBtnAndModals: (clickedBtn) => {
-       if (clickedBtn.classList.contains("js-overlay-btn--to-close")) {
+       if (clickedBtn.classList.contains("js-overlay-two-btn--close")) {
            modalsWithTwoBtns.hideOverlays();
            modalsWithTwoBtns.toggleHtmlBodyScrollLineInOverlays('enable');
            return false;
@@ -267,7 +267,7 @@ var modalsWithTwoBtns = {
    },
 
    deleteButtonsState: () => {
-       document.querySelectorAll(".js-overlay-btn").forEach((element) => {
+       document.querySelectorAll(".js-overlay-two-btn").forEach((element) => {
            element.classList.remove("active-btn");
        });
    },
