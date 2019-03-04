@@ -61,26 +61,6 @@
         background: $white;
         border-bottom: 1px solid $border-color;
         transition: 0.3s ease;
-        .compare-and-favorite:empty {
-            display: none;
-        }
-        .compare-and-favorite {
-            display: block;
-            width: $join-comapre-and-favorite-icon-height;
-            height: $join-comapre-and-favorite-icon-height;
-            border-radius: 50%;
-            background: $red;
-            margin-left: auto;
-            margin-right: 10px;
-            transition: 0.3s ease;
-            color: $white;
-            font-size: 12px;
-            line-height: $join-comapre-and-favorite-icon-height;
-            text-align: center;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
         svg {
             flex-shrink: 0;
             fill: $border-color;
@@ -103,5 +83,26 @@
         svg {
             fill: $blue;
         }
+    }
+    .compare-and-favorite:empty {
+        display: none;
+    }
+    .compare-and-favorite {
+        display: block;
+        width: $join-comapre-and-favorite-icon-height;
+        height: $join-comapre-and-favorite-icon-height;
+        border-radius: 50%;
+        background: $red;
+        margin-left: auto;
+        margin-right: 10px;
+        transition: 0.3s ease;
+        color: $white;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: $join-comapre-and-favorite-icon-height;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }

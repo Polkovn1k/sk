@@ -33,7 +33,7 @@
     }
 
     &__item {
-        width: 50px;
+        margin-right: 25px;
         font-size: 0;
         @media (min-width: $lg) {
             width: 30px;
@@ -46,6 +46,7 @@
     }
 
     &__item:last-child {
+        margin-right: 5px;
         @media (min-width: $lg) {
             margin-right: 0;
         }
@@ -77,27 +78,6 @@
         width: 30px;
         margin: 0 auto;
         text-align: center;
-        .compare-and-favorite:empty {
-            display: none;
-        }
-        .compare-and-favorite {
-            display: block;
-            position: absolute;
-            top: $header-comapre-and-favorite-top;
-            right: $header-comapre-and-favorite-right;
-            width: $header-comapre-and-favorite-icon-height;
-            height: $header-comapre-and-favorite-icon-height;
-            border-radius: 50%;
-            background: $red;
-            transition: 0.3s ease;
-            color: $white;
-            font-size: 12px;
-            line-height: $header-comapre-and-favorite-icon-height;
-            text-align: center;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
         svg {
             fill: $blue;
         }
@@ -172,5 +152,30 @@
                overflow: hidden;
             }
         }
+    }
+
+    //-----красные иконки
+    .compare-and-favorite:empty {
+        display: none;
+    }
+    .compare-and-favorite {
+        display: block;
+        position: absolute;
+        padding: 0;
+        font-weight: 400;
+        top: $header-comapre-and-favorite-top;
+        left: $header-comapre-and-favorite-left;
+        width: $header-comapre-and-favorite-icon-height;
+        height: $header-comapre-and-favorite-icon-height;
+        border-radius: 50%;
+        background: $red;
+        transition: 0.3s ease;
+        color: $white;
+        font-size: 12px;
+        line-height: $header-comapre-and-favorite-icon-height;
+        text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 }
