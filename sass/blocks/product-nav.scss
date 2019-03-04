@@ -95,7 +95,7 @@
         border-bottom: 1px solid $border-color;
         transition: 0.3s ease;
         svg {
-            fill: $blue;
+            fill: $border-color;
             transform: rotate(-90deg);
         }
         @media (min-width: $lg) {
@@ -114,6 +114,9 @@
 
     &__product-link:hover {
         color: $blue;
+        svg {
+            fill: $blue;
+        }
     }
 
     &__sub-nav-tog {
@@ -130,7 +133,7 @@
         outline: none;
         text-align: right;
         svg {
-            fill: $blue;
+            fill: $border-color;
             transform: rotate(-90deg);
             transition: 0.3s ease;
         }
@@ -142,8 +145,15 @@
         }
     }
 
+    &__sub-nav-tog:hover {
+        svg {
+            fill: $blue;
+        }
+    }
+
     &__sub-nav-tog.active-btn {
         svg {
+            fill: $blue;
             transform: rotate(0deg);
         }
         ~ .product-nav__sub-nav-list {
@@ -162,10 +172,14 @@
             font-weight: 600;
             line-height: 1.71;
             color: $communication-add-color;
+            transition: 0.3s ease;
         }
         li:last-child {
           color: $blue;
-      }
+        }
+        li:hover {
+            color: $blue;
+        }
     }
 
     &__calc {

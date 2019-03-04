@@ -61,15 +61,27 @@
 
     &__item-link {
         position: relative;
-        display: block;
+        display: flex;
+        align-items: center;
+        width: 100%;
         height: 100%;
-        padding: 10px $grid-padding 0 $grid-padding;
+        padding: 0 $grid-padding;
         background: $white;
         border-bottom: 1px solid $border-color;
-        transition: 0.3s color ease;
+        transition: 0.3s ease;
+        svg {
+            flex-shrink: 0;
+            margin-left: auto;
+            fill: $border-color;
+            transform: rotate(-90deg);
+            transition: 0.3s ease;
+        }
         @media (min-width: $lg) {
             border-bottom: none;
             padding: 7px 12px;
+            svg {
+                display: none;
+            }
         }
         @media (min-width: $tp) {
             padding: 7px;
@@ -81,6 +93,9 @@
 
     &__item-link:hover {
         color: $blue;
+        svg {
+            fill: $blue;
+        }
     }
 
     &__item-link--hide-mob {
@@ -88,21 +103,6 @@
         @media (min-width: $lg) {
             display: block;
             cursor: pointer;
-        }
-    }
-
-    &__item-link::before {
-        @include pseudo();
-        top: 15px;
-        right: $grid-padding;
-        width: 10px;
-        height: 10px;
-        border: 2px solid $border-color;
-        border-left: transparent;
-        border-bottom: transparent;
-        transform: rotate(45deg);
-        @media (min-width: $lg) {
-            display: none;
         }
     }
 //второе выпадающее меню
@@ -132,20 +132,32 @@
         font-size: 16px;
         font-weight: 600;
         color: $extra-text-color;
+        svg {
+            flex-shrink: 0;
+            margin-left: auto;
+            fill: $border-color;
+            transform: rotate(-90deg);
+            transition: 0.3s ease;
+        }
         @media (min-width: $lg) {
             height: auto;
             font-size: 14px;
             line-height: 1.30;
             text-align: left;
             color: $main-color;
+            svg {
+                display: none;
+            }
         }
     }
 
     &__dropdawn-link {
         position: relative;
-        display: block;
+        display: flex;
+        align-items: center;
+        width: 100%;
         height: 100%;
-        padding: 10px $grid-padding 0 $grid-padding;
+        padding: 0 $grid-padding;
         background: $white;
         border-bottom: 1px solid $border-color;
         transition: 0.3s color ease;
@@ -158,20 +170,8 @@
 
     &__dropdawn-link:hover {
         color: $blue;
-    }
-
-    &__dropdawn-link::before {
-        @include pseudo();
-        top: 15px;
-        right: $grid-padding;
-        width: 10px;
-        height: 10px;
-        border: 2px solid $border-color;
-        border-left: transparent;
-        border-bottom: transparent;
-        transform: rotate(45deg);
-        @media (min-width: $lg) {
-            display: none;
+        svg {
+            fill: $blue;
         }
     }
 //hover на дополнительное меню desktop

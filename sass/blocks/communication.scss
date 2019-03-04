@@ -39,28 +39,41 @@
 
     &__item-link {
         position: relative;
-        display: block;
+        display: flex;
+        align-items: center;
         width: 100%;
-        padding: 10px $grid-padding 10px $grid-padding;
+        padding: 0 $grid-padding;
         background: $white;
         border-bottom: 1px solid $border-color;
+        transition: 0.3s ease;
+        div {
+            padding: 5px 0;
+        }
+        span {
+            transition: 0.3s ease;
+        }
+        svg {
+            flex-shrink: 0;
+            margin-left: auto;
+            fill: $border-color;
+            transform: rotate(-90deg);
+            transition: 0.3s ease;
+        }
         @media (min-width: $lg) {
             border-bottom: none;
+            svg {
+                display: none;
+            }
         }
     }
 
-    &__item-link::before {
-        @include pseudo();
-        top: 15px;
-        right: $grid-padding;
-        width: 10px;
-        height: 10px;
-        border: 2px solid $border-color;
-        border-left: transparent;
-        border-bottom: transparent;
-        transform: rotate(45deg);
-        @media (min-width: $lg) {
-            display: none;
+    &__item-link:hover {
+        color: $blue;
+        span {
+            color: $blue;
+        }
+        svg {
+            fill: $blue;
         }
     }
 }
