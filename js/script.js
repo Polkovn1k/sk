@@ -3,6 +3,7 @@ var modals = {
 //обработчик для оверлеев с одной кнопкой вызова/закрытия
     listenClickForOneBtn: () => {
         document.addEventListener("click", (event) => {
+            event.preventDefault();
             document.querySelectorAll(".js-overlay-btn").forEach((btnCallingOverlays) => {
                 if (btnCallingOverlays && btnCallingOverlays.contains(event.target)) {
                     modals.toggleForOneBtnAndModals(btnCallingOverlays);
@@ -33,6 +34,7 @@ var modals = {
 //обработчик для оверлеев с двумя кнопками вызова/закрытия
     listenClickForTwoBtn: () => {
         document.addEventListener("click", (event) => {
+            event.preventDefault();
             document.querySelectorAll(".js-overlay-two-btn").forEach((btnCallingOverlays) => {
                 if (btnCallingOverlays && btnCallingOverlays.contains(event.target)) {
                     modals.toggleForTwoBtnsAndModals(btnCallingOverlays);

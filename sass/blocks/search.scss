@@ -1,57 +1,103 @@
 .search {
     display: none;
+    position: fixed;
+    z-index: 100;
+    @include full-absolute();
+    top: $gradient-breakpoint-mobile + $gradient-breakpoint-mobile-end;
+    overflow: auto;
+    background: $white;
+    font-family: $font;
+    @media (min-width: $md) {
+        top: $gradient-breakpoint-desktop + $gradient-breakpoint-mobile-end;
+    }
     @media (min-width: $lg) {
+        top: $gradient-breakpoint-desktop + $gradient-breakpoint-desktop-end;
+    }
+    @media (min-width: $lg) {
+        position: static;
         flex-grow: 1;
         padding: 0;
         width: auto;
         display: block;
+        background: transparent;
         height: $gradient-breakpoint-desktop-end;
         padding-right: 30px;
     }
 
+    &.opened {
+        display: block;
+        @media (min-width: $lg) {
+            position: static;
+            flex-grow: 1;
+            padding: 0;
+            width: auto;
+            display: block;
+            height: $gradient-breakpoint-desktop-end;
+            padding-right: 30px;
+        }
+    }
+
     &__container {
         height: 100%;
+        padding: 20px $grid-padding;
+        @media (min-width: $lg) {
+            padding: 0;
+        }
     }
 
     &__form {
-        display: flex;
-        height: 100%;
-        align-items: center;
+        @media (min-width: $lg) {
+            display: flex;
+            height: 100%;
+            align-items: center;
+        }
     }
 
     &__input {
-        flex-grow: 1;
+        width: 100%;
         height: $mobile-search-item-height;
         padding: 5px 20px;
+        margin-bottom: 20px;
         line-height: 1.15;
-        font-family: $font;
         font-size: 14px;
         font-weight: 400;
         color: $extra-text-color;
-        border: none;
-        border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
+        outline: none;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        @media (min-width: $lg) {
+            flex-grow: 1;
+            margin-bottom: 0;
+            border: none;
+            border-radius: 0;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
     }
 
     &__btn {
         display: block;
-        vertical-align: top;
         height: $mobile-search-item-height;
         line-height: $mobile-search-item-height;
-        width: 100px;
+        width: 100%;
         font-size: 14px;
         font-weight: 600;
         color: $white;
         background: $black;
         border: none;
-        border-radius: 0;
-        border-top-right-radius: 5px;
-        border-bottom-right-radius: 5px;
+        border-radius: 5px;
         cursor: pointer;
         transition: 0.3s background ease;
+        @media (min-width: $lg) {
+            width: 100px;
+            border: none;
+            border-radius: 0;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
     }
 
     &__btn:hover {
-        background: #333333;
+        background: lighten($black, 20%);
     }
 }

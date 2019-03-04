@@ -634,7 +634,7 @@
     </li>
 </ul>
 
-<div class="search">
+<div id="search-block" class="search js-overlay">
     <div class="search__container">
         <form action="#" class="search__form">
             <input type="text" placeholder="Искать товар" class="search__input">
@@ -646,39 +646,43 @@
 <div class="header-icons">
     <ul class="header-icons__list">
         <li class="header-icons__item header-icons__item--hide-lg">
-            <a href="#" class="header-icons__link header-icons__link--search">Поиск товара по сайту
-              <svg width="22" height="22" aria-hidden="true" role="presentation">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-icon"></use>
-              </svg>
+            <a href="#" data-overlay-id="search-block" class="header-icons__link header-icons__link--search js-overlay-btn">
+                Поиск товара по сайту
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-icon"></use>
+                </svg>
             </a>
         </li>
         <li class="header-icons__item">
-            <a href="#" class="header-icons__link header-icons__link--join">Вход/Регистрация
-              <svg width="22" height="22" aria-hidden="true" role="presentation">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#login-icon"></use>
-              </svg>
+            <a href="#" class="header-icons__link header-icons__link--join">
+                Вход/Регистрация
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#login-icon"></use>
+                </svg>
             </a>
         </li>
         <li class="header-icons__item header-icons__item--hide-mob">
-            <a href="#" class="header-icons__link header-icons__link--favorite">Избранные товары
-              <svg width="22" height="22" aria-hidden="true" role="presentation">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
-              </svg>
+            <a href="#" class="header-icons__link header-icons__link--favorite">
+                Избранные товары
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                </svg>
             </a>
         </li>
         <li class="header-icons__item header-icons__item--hide-mob">
-            <a href="#" class="header-icons__link header-icons__link--compare">Сравнить товары
-              <svg width="22" height="22" aria-hidden="true" role="presentation">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
-              </svg>
+            <a href="#" class="header-icons__link header-icons__link--compare">
+                Сравнить товары
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                </svg>
             </a>
         </li>
         <li class="header-icons__item header-icons__item--cart">
             <a href="#" class="header-icons__link header-icons__link--cart">
-              <svg width="22" height="22" aria-hidden="true" role="presentation">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
-              </svg>
-              <span>1 000 000 Р.</span>
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                </svg>
+                <span>1 000 000 Р.</span>
             </a>
         </li>
     </ul>
