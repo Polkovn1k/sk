@@ -78,7 +78,7 @@
     }
 //блок входа в личный кабинет
     &__join {
-        display: none;
+        display: block;
         padding-top: 15px;
     }
 
@@ -192,8 +192,8 @@
     }
 //блок регистрации
     &__registry {
+        display: none;
         padding-top: 15px;
-        display: block;
     }
 
     &__advantages {
