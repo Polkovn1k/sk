@@ -1,0 +1,10 @@
+.profile {
+    display: none;
+
+    &.opened {
+        display: block;
+        position: fixed;
+        @include full-absolute();
+        background: silver;
+    }
+}
