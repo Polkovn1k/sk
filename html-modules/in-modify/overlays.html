@@ -52,15 +52,7 @@
         <ul class="join__list">
             <li class="join__item">
                 <a data-overlay-id="profile-block" href="#" class="join__item-link js-overlay-btn">
-                    Войти в личный кабинет
-                    <svg width="15" height="8" aria-hidden="true" role="presentation">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
-                    </svg>
-                </a>
-            </li>
-            <li class="join__item">
-                <a href="#" class="join__item-link">
-                    Регистрация
+                    Войти/Регистрация
                     <svg width="15" height="8" aria-hidden="true" role="presentation">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                     </svg>
@@ -92,9 +84,14 @@
 <div id="profile-block" class="profile js-overlay">
     <div class="profile__container">
         <div class="profile__top-line">
-            <button class="profile__tab">Вход</button>
+            <button class="profile__tab active-btn">Вход</button>
             <button class="profile__tab">Регистрация</button>
-            <button class="profile__close">Закрыть окно</button>
+            <button class="profile__close">
+                Закрыть окно
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                </svg>
+            </button>
         </div>
         <!-- Вход в личный кабинет -->
         <div class="profile__join">
@@ -104,7 +101,7 @@
                 <input placeholder="Введите Email или логин" name="emailOrLogin" type="text" class="profile__input" required>
                 <input placeholder="Пароль" name="password" type="password" value="" class="profile__input" required>
                 <div class="profile__switch-join">
-                    <div class="switch">
+                    <div class="switch profile__switch-item">
                         <input class="switch__input" type="checkbox" id="joinSwitchOn" checked>
                         <label aria-hidden="true" class="switch__label js-switch__label" for="joinSwitchOn">On</label>
                         <div aria-hidden="true" class="switch__marker"></div>
@@ -112,17 +109,19 @@
                     <span>Запомнить меня</span>
                 </div>
                 <div class="profile__btn-block">
-                    <button type="submit" class="dark-btn">Войти</button>
-                    <a href="#" class="btn">Я забыл пароль</a>
+                    <button type="submit" class="dark-btn profile__btn">Войти</button>
+                    <a href="#" class="btn profile__btn">Я забыл пароль</a>
                 </div>
             </form>
             <div class="profile__social">
                 <p>Войти, используя аккаунт соцсети</p>
                 <ul class="profile__social-list">
                     <li class="profile__social-item">
-                        <svg aria-hidden="true" role="presentation">
-                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vk"></use>
-                        </svg>
+                        <a href="#">
+                            <svg aria-hidden="true" role="presentation">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vk"></use>
+                            </svg>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -149,14 +148,14 @@
                 <input placeholder="Пароль" name="regPassword" type="password" class="profile__input" required>
                 <input placeholder="Повторите пароль" name="regPasswordRepeat" type="password" class="profile__input" required>
                 <div class="profile__switch-registry">
-                    <div class="switch">
+                    <div class="switch profile__switch-item">
                         <input class="switch__input" type="checkbox" id="regSwitchOn" checked>
                         <label aria-hidden="true" class="switch__label js-switch__label" for="joinSwitchOn">On</label>
                         <div aria-hidden="true" class="switch__marker"></div>
                     </div>
                     <p>Я прочел условия и даю согласие на <a href="#">обработку данных</a></p>
                 </div>
-                <button type="submit" class="dark-btn">Зарегистрироваться</button>
+                <button type="submit" class="dark-btn profile__reg-btn">Зарегистрироваться</button>
             </form>
         </div>
     </div>

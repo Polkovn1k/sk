@@ -1,10 +1,245 @@
 .profile {
-    display: none;
+    //display: none;
+    font-family: $font;
+    position: fixed;
+    z-index: 1000;
+    @include full-absolute();
+    top: $gradient-breakpoint-mobile + $gradient-breakpoint-mobile-end;
+    overflow: auto;
+    background: $white;
+    @media (min-width: $md) {
+        top: $gradient-breakpoint-desktop + $gradient-breakpoint-mobile-end;
+    }
+    @media (min-width: $lg) {
+        top: 0;
+        background-color: transparentize($black, 0.5);
+    }
 
-    &.opened {
+    &__container {
+        padding: $grid-padding;
+        background: $white;
+        @media (min-width: $lg) {
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 475px;
+            margin: 0 auto;
+        }
+    }
+//меню табов
+    &__top-line {
+        display: flex;
+        min-height: 40px;
+        margin: 0 (-$grid-padding);
+        position: relative;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            padding: 0 25px;
+        }
+    }
+
+    &__tab {
+        position: relative;
+        width: 50%;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $main-color;
+        background: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        @media (min-width: $lg) {
+            width: auto;
+            padding-top: 5px;
+            padding-bottom: 20px;
+        }
+    }
+
+    &__tab.active-btn::before {
+        @include pseudo();
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: $blue;
+    }
+
+    &__close {
+        display: none;
+        @media (min-width: $lg) {
+            position: absolute;
+            right: 0;
+            display: block;
+            font-size: 0;
+        }
+    }
+//блок входа в личный кабинет
+    &__join {
+        display: none;
+        padding-top: 15px;
+    }
+
+    &__title {
+        @include field-reset();
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-weight: 400;
+        color: $extra-text-color;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__text {
+        @include field-reset();
+        margin-bottom: 20px;
+        color: $communication-add-color;
+    }
+
+    &__join-form {
+        margin: 0 (-$grid-padding);
+        padding: 0 $grid-padding 20px $grid-padding;
+        border-bottom: 1px solid $border-color;
+    }
+
+    &__input {
+        width: 100%;
+        height: $common-item-height;
+        padding: 0 10px;
+        margin-bottom: 20px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        line-height: $common-item-height;
+        outline: none;
+        transition: 0.3s ease;
+    }
+
+    &__input:hover,
+    &__input:focus {
+        border-color: $blue;
+    }
+
+    &__switch-join {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        span {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.31;
+            color: $communication-add-color;
+        }
+    }
+
+    &__btn-block {
+        display: flex;
+    }
+
+    &__btn {
+        margin-right: 5px;
+        width: 50%;
+        flex-grow: 1;
+        height: $add-btn-height;
+        line-height: $add-btn-height;
+    }
+
+    &__btn:last-child {
+        margin-right: 0;
+        margin-left: 5px;
+    }
+
+    &__switch-item {
+        margin-right: 15px;
+    }
+
+    &__social {
+        padding-top: 15px;
+        p {
+            @include field-reset();
+            margin-bottom: 15px;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.33;
+            color: $main-color;
+        }
+    }
+
+    &__social-list {
+        @include order-reset();
+    }
+
+    &__social-item {
+        width: $join-by-social-height;
+        height: $join-by-social-height;
+        background: $vk-color;
+        border-radius: 5px;
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: $join-by-social-height;
+        }
+        svg {
+            fill: $white;
+            width: 21px;
+            height: 12px;
+        }
+    }
+//блок регистрации
+    &__registry {
+        padding-top: 15px;
         display: block;
-        position: fixed;
-        @include full-absolute();
-        background: silver;
+    }
+
+    &__advantages {
+        @include order-reset();
+        padding-bottom: 20px;
+    }
+
+    &__advantages-item {
+        position: relative;
+        padding-bottom: 20px;
+        padding-left: 30px;
+        line-height: 1.71;
+        color: $communication-add-color;
+    }
+
+    &__advantages-item::before {
+        @include pseudo();
+        content: "+";
+        top: -1px;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        color: $green;
+        font-size: 25px;
+        text-align: center;
+        line-height: 25px;
+    }
+
+    &__advantages-item:last-child {
+        padding-bottom: 0;
+    }
+
+    &__switch-registry {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        p {
+            @include order-reset();
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.31;
+            color: $communication-add-color;
+        }
+    }
+
+    &__reg-btn {
+        width: 100%;
     }
 }

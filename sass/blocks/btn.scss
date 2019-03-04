@@ -14,7 +14,7 @@
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    transition: 0.3s background-color ease, 0.3s color ease;
+    transition: 0.3s ease;
 
     &:hover {
         background-color: $blue;
@@ -38,7 +38,7 @@
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    transition: 0.3s background-color ease, 0.3s color ease, 0.3s border-color ease;
+    transition: 0.3s ease;
 
     &:hover {
         background-color: $main-color;
@@ -68,5 +68,28 @@
     &:hover {
         border-color: $blue;
         color: $blue;
+    }
+}
+
+.dark-btn {
+    display: inline-block;
+    vertical-align: top;
+    height: $add-btn-height;
+    padding: 0 20px;
+    border: none;
+    line-height: $add-btn-height;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: $white;
+    background-color: $black;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+        background: lighten($black, 20%);
     }
 }
