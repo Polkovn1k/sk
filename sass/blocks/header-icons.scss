@@ -77,6 +77,27 @@
         width: 30px;
         margin: 0 auto;
         text-align: center;
+        .compare-and-favorite:empty {
+            display: none;
+        }
+        .compare-and-favorite {
+            display: block;
+            position: absolute;
+            top: $header-comapre-and-favorite-top;
+            right: $header-comapre-and-favorite-right;
+            width: $header-comapre-and-favorite-icon-height;
+            height: $header-comapre-and-favorite-icon-height;
+            border-radius: 50%;
+            background: $red;
+            transition: 0.3s ease;
+            color: $white;
+            font-size: 12px;
+            line-height: $header-comapre-and-favorite-icon-height;
+            text-align: center;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
         svg {
             fill: $blue;
         }
