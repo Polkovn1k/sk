@@ -234,17 +234,20 @@ var subscription = {
 subscription.togleElements();
 //модалка входа/регистрации
 var joinModal = {
-    container: document.getElementById("profile-block"),
+    //container: document.getElementById("profile-block"),
     joinBtns: document.querySelectorAll(".js-profile__tab"),
+    joinItems: document.querySelectorAll(".js-profile-item"),
 
     init: () => {
         joinModal.joinBtns.forEach(function(item) {
             item.addEventListener("click", function(event) {
-                joinModal._switch(item);
-                /*if (!container.classList.contains("opened")) {
-                    container.classList.remove("js-profile-registry");
-                    container.classList.add("js-profile-join");
-                }*/
+                joinModal.joinItems.forEach(function(jItem) {
+                    jItem.classList.remove("active");
+                    //console.dir(joinModal.joinBtns);
+                    //joinModal.joinBtns.classList.remove("active-btn");
+                });
+                joinModal._openBlock(event.target);
+                //joinModal._activeBtn(event.target);
             });
         });
     },
@@ -260,14 +263,29 @@ var joinModal = {
         });
     },*/
 
-    _switch: (opt) => {
-        joinModal.joinBtns.forEach(function(elements) {
-            joinModal.container.classList.remove(elements.dataset.toClass);
-            elements.classList.remove("active-btn");
-        });
-        joinModal.container.classList.add(opt.dataset.toClass);
-        opt.classList.add("active-btn");
+    _openBlock: (opt) => {
+        var currentBtn = opt.dataset.toClass;
+        for (var i = 0; i < joinModal.joinItems.length; i++) {
+            if (joinModal.joinItems[i].classList.contains(currentBtn)) {
+                joinModal.joinItems[i].classList.add("active");
+            }
+        };
     },
+/*
+    _activeBtn: (opt) => {
+        for (var i = 0; i < joinModal.joinBtns.length; i++) {
+            //joinModal.joinBtns.classList.remove("active-btn");
+            console.log("121212");
+            opt.classList.add("active-btn");
+        };
+    },*/
+
+    /*joinModal.joinBtns.forEach(function(elements) {
+        joinModal.container.classList.remove(elements.dataset.toClass);
+        elements.classList.remove("active-btn");
+    });
+    joinModal.container.classList.add(opt.dataset.toClass);
+    opt.classList.add("active-btn");*/
 };
 joinModal.init();
-joinModal.listenResizeDevice();
+//joinModal.listenResizeDevice();

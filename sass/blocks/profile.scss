@@ -17,22 +17,7 @@
 
     &.opened {
         display: block;
-    }
-
-    &.js-profile-join {
-        .js-profile__join {
-            display: block;
-        }
-        .js-profile__registry {
-            display: none;
-        }
-    }
-
-    &.js-profile-registry {
-        .js-profile__join {
-            display: none;
-        }
-        .js-profile__registry {
+        .js-profile-item.active {
             display: block;
         }
     }
@@ -91,7 +76,7 @@
 
     &__tab.active-btn{
         cursor: auto;
-        pointer-events: none;
+        //pointer-events: none;
     }
 
     &__close {
@@ -119,6 +104,7 @@
 //блок входа в личный кабинет
     &__join {
         padding-top: 15px;
+        display: none;
     }
 
     &__title {
@@ -298,6 +284,7 @@
     }
 //блок регистрации
     &__registry {
+        display: none;
         padding-top: 15px;
     }
 
