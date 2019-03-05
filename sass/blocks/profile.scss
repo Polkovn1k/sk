@@ -343,4 +343,8 @@
         width: 100%;
         margin-bottom: 15px;
     }
+
+    &__reg-btn:last-child {
+        margin-bottom: 0;
+    }
 }

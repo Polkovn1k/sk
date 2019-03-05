@@ -234,34 +234,32 @@ var subscription = {
 subscription.togleElements();
 //модалка входа/регистрации
 var joinModal = {
-    //container: document.getElementById("profile-block"),
+    container: document.getElementById("profile-block"),
     joinBtns: document.querySelectorAll(".js-profile__tab"),
     joinItems: document.querySelectorAll(".js-profile-item"),
 
     init: () => {
         joinModal.joinBtns.forEach(function(item) {
             item.addEventListener("click", function(event) {
-                joinModal.joinItems.forEach(function(jItem) {
-                    jItem.classList.remove("active");
-                    //console.dir(joinModal.joinBtns);
-                    //joinModal.joinBtns.classList.remove("active-btn");
-                });
+                joinModal._removeBtnActiveClasses(joinModal.joinBtns);
+                joinModal._removeBlockActiveClasses(joinModal.joinItems);
                 joinModal._openBlock(event.target);
-                //joinModal._activeBtn(event.target);
+                joinModal._activeBtn(event.target);
             });
         });
     },
 
-    /*listenResizeDevice: () => {
-        window.addEventListener("resize", function() {
-            joinModal.joinBtns.forEach(function(item) {
-                item.classList.remove("active-btn");
-                if (item.classList.contains("js-first-tab")) {
-                    item.classList.add("active-btn");
-                }
-            });
+    _removeBtnActiveClasses: (allBtns) => {
+        allBtns.forEach(function(bItem) {
+            bItem.classList.remove("active-btn");
         });
-    },*/
+    },
+
+    _removeBlockActiveClasses: (allBlocks) => {
+        allBlocks.forEach(function(jItem) {
+            jItem.classList.remove("active");
+        });
+    },
 
     _openBlock: (opt) => {
         var currentBtn = opt.dataset.toClass;
@@ -271,21 +269,11 @@ var joinModal = {
             }
         };
     },
-/*
+
     _activeBtn: (opt) => {
         for (var i = 0; i < joinModal.joinBtns.length; i++) {
-            //joinModal.joinBtns.classList.remove("active-btn");
-            console.log("121212");
             opt.classList.add("active-btn");
         };
-    },*/
-
-    /*joinModal.joinBtns.forEach(function(elements) {
-        joinModal.container.classList.remove(elements.dataset.toClass);
-        elements.classList.remove("active-btn");
-    });
-    joinModal.container.classList.add(opt.dataset.toClass);
-    opt.classList.add("active-btn");*/
+    },
 };
 joinModal.init();
-//joinModal.listenResizeDevice();
