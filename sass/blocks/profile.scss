@@ -1,5 +1,5 @@
 .profile {
-    //display: none;
+    display: none;
     font-family: $font;
     position: fixed;
     z-index: 1000;
@@ -13,6 +13,10 @@
     @media (min-width: $lg) {
         top: 0;
         background-color: transparentize($black, 0.5);
+    }
+
+    &.opened {
+        display: block;
     }
 
     &__container {
@@ -36,7 +40,7 @@
         position: relative;
         border-bottom: 1px solid $border-color;
         @media (min-width: $lg) {
-            padding: 0 25px;
+            padding: 0 $grid-padding;
         }
     }
 
@@ -53,11 +57,10 @@
         cursor: pointer;
         @media (min-width: $lg) {
             width: auto;
-            padding-top: 5px;
-            padding-bottom: 20px;
+            padding: 5px 15px 20px;
         }
     }
-
+    &__tab:hover::before,
     &__tab.active-btn::before {
         @include pseudo();
         bottom: -1px;
@@ -70,10 +73,23 @@
     &__close {
         display: none;
         @media (min-width: $lg) {
+            padding: 0;
+            padding-right: $grid-padding + 5px;
             position: absolute;
             right: 0;
+            top: -$grid-padding;
+            bottom: 0;
             display: block;
+            width: 80px;
+            background: transparent;
+            border: none;
+            outline: none;
             font-size: 0;
+            text-align: right;
+            cursor: pointer;
+            svg {
+                fill: $add-text-color;
+            }
         }
     }
 //блок входа в личный кабинет
@@ -96,6 +112,7 @@
     &__text {
         @include field-reset();
         margin-bottom: 20px;
+        font-size: 16px;
         color: $communication-add-color;
     }
 
@@ -141,6 +158,7 @@
 
     &__btn {
         margin-right: 5px;
+        font-size: 16px;
         width: 50%;
         flex-grow: 1;
         height: $add-btn-height;
@@ -173,21 +191,54 @@
     }
 
     &__social-item {
+        display: inline-block;
+        vertical-align: top;
+        margin-right: 10px;
         width: $join-by-social-height;
         height: $join-by-social-height;
-        background: $vk-color;
         border-radius: 5px;
         a {
+            position: relative;
             display: block;
             width: 100%;
             height: 100%;
-            text-align: center;
             line-height: $join-by-social-height;
         }
         svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             fill: $white;
+        }
+    }
+
+    &__social-item:last-child {
+        margin-right: 0;
+    }
+
+    &__social-item--vk {
+        background: $vk-color;
+        svg {
             width: 21px;
             height: 12px;
+        }
+
+    }
+
+    &__social-item--fb {
+        background: $fb-color;
+        svg {
+            width: 9px;
+            height: 21px;
+        }
+    }
+
+    &__social-item--mail {
+        background: $mail-color;
+        svg {
+            width: 23px;
+            height: 23px;
         }
     }
 //блок регистрации
@@ -203,16 +254,17 @@
 
     &__advantages-item {
         position: relative;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
         padding-left: 30px;
-        line-height: 1.71;
+        font-size: 16px;
+        line-height: 1.40;
         color: $communication-add-color;
     }
 
     &__advantages-item::before {
         @include pseudo();
         content: "+";
-        top: -1px;
+        top: -5px;
         left: 0;
         width: 25px;
         height: 25px;
@@ -230,16 +282,22 @@
         display: flex;
         align-items: center;
         margin-bottom: 20px;
-        p {
-            @include order-reset();
-            font-size: 16px;
+        a {
             font-weight: 400;
             line-height: 1.31;
             color: $communication-add-color;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: underline;
+            transition: 0.3s ease;
+        }
+        a:hover {
+            color: $blue;
         }
     }
 
     &__reg-btn {
+        font-size: 16px;
         width: 100%;
     }
 }

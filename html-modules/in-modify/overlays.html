@@ -52,7 +52,7 @@
         <ul class="join__list">
             <li class="join__item">
                 <a data-overlay-id="profile-block" href="#" class="join__item-link js-overlay-btn">
-                    Войти/Регистрация
+                    Войти / Регистрация
                     <svg width="15" height="8" aria-hidden="true" role="presentation">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                     </svg>
@@ -86,7 +86,7 @@
         <div class="profile__top-line">
             <button class="profile__tab active-btn">Вход</button>
             <button class="profile__tab">Регистрация</button>
-            <button class="profile__close">
+            <button class="profile__close js-overlay-two-btn js-overlay-two-btn--close">
                 Закрыть окно
                 <svg width="22" height="22" aria-hidden="true" role="presentation">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
@@ -116,10 +116,24 @@
             <div class="profile__social">
                 <p>Войти, используя аккаунт соцсети</p>
                 <ul class="profile__social-list">
-                    <li class="profile__social-item">
+                    <li class="profile__social-item profile__social-item--vk">
                         <a href="#">
                             <svg aria-hidden="true" role="presentation">
                                 <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vk"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="profile__social-item profile__social-item--fb">
+                        <a href="#">
+                            <svg aria-hidden="true" role="presentation">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb"></use>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="profile__social-item profile__social-item--mail">
+                        <a href="#">
+                            <svg aria-hidden="true" role="presentation">
+                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail"></use>
                             </svg>
                         </a>
                     </li>
@@ -150,10 +164,10 @@
                 <div class="profile__switch-registry">
                     <div class="switch profile__switch-item">
                         <input class="switch__input" type="checkbox" id="regSwitchOn" checked>
-                        <label aria-hidden="true" class="switch__label js-switch__label" for="joinSwitchOn">On</label>
+                        <label aria-hidden="true" class="switch__label js-switch__label" for="regSwitchOn">On</label>
                         <div aria-hidden="true" class="switch__marker"></div>
                     </div>
-                    <p>Я прочел условия и даю согласие на <a href="#">обработку данных</a></p>
+                    <a href="#">Я прочел условия и даю согласие на обработку данных</a>
                 </div>
                 <button type="submit" class="dark-btn profile__reg-btn">Зарегистрироваться</button>
             </form>
