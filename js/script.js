@@ -237,6 +237,7 @@ var joinModal = {
     container: document.getElementById("profile-block"),
     joinBtns: document.querySelectorAll(".js-profile__tab"),
     joinItems: document.querySelectorAll(".js-profile-item"),
+    btnToDefault: document.querySelectorAll(".js-default-overlay"),
 
     init: () => {
         joinModal.joinBtns.forEach(function(item) {
@@ -245,6 +246,20 @@ var joinModal = {
                 joinModal._removeBlockActiveClasses(joinModal.joinItems);
                 joinModal._openBlock(event.target);
                 joinModal._activeBtn(event.target);
+            });
+        });
+    },
+
+    resetOverlayView: () => {
+        joinModal.btnToDefault.forEach(function(item) {
+            item.addEventListener("click", function(event) {
+                if (joinModal.container.classList.contains("opened")) {
+                    joinModal._removeBtnActiveClasses(joinModal.joinBtns);
+                    joinModal._removeBlockActiveClasses(joinModal.joinItems);
+                    document.querySelector(".js-profile-join").classList.add("active");
+                    document.querySelector(".js-first-tab").classList.add("active-btn");
+                    return false;
+                }
             });
         });
     },
@@ -277,3 +292,4 @@ var joinModal = {
     },
 };
 joinModal.init();
+joinModal.resetOverlayView();
