@@ -241,15 +241,15 @@ var joinModal = {
         joinModal.joinBtns.forEach(function(item) {
             item.addEventListener("click", function(event) {
                 joinModal._switch(item);
-                if (!container.classList.contains("opened")) {
+                /*if (!container.classList.contains("opened")) {
                     container.classList.remove("js-profile-registry");
                     container.classList.add("js-profile-join");
-                }
+                }*/
             });
         });
     },
 
-    listenResizeDevice: () => {
+    /*listenResizeDevice: () => {
         window.addEventListener("resize", function() {
             joinModal.joinBtns.forEach(function(item) {
                 item.classList.remove("active-btn");
@@ -258,7 +258,7 @@ var joinModal = {
                 }
             });
         });
-    },
+    },*/
 
     _switch: (opt) => {
         joinModal.joinBtns.forEach(function(elements) {
