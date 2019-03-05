@@ -34,12 +34,13 @@
     }
 //меню табов
     &__top-line {
-        display: flex;
-        min-height: 40px;
-        margin: 0 (-$grid-padding);
-        position: relative;
-        border-bottom: 1px solid $border-color;
+        display: none;
         @media (min-width: $lg) {
+            display: flex;
+            min-height: 40px;
+            margin: 0 (-$grid-padding);
+            position: relative;
+            border-bottom: 1px solid $border-color;
             padding: 0 $grid-padding;
         }
     }
@@ -60,7 +61,7 @@
             padding: 5px 15px 20px;
         }
     }
-    &__tab:hover::before,
+
     &__tab.active-btn::before {
         @include pseudo();
         bottom: -1px;
@@ -68,6 +69,11 @@
         width: 100%;
         height: 3px;
         background: $blue;
+    }
+
+    &__tab.active-btn{
+        cursor: auto;
+        pointer-events: none;
     }
 
     &__close {
@@ -158,10 +164,12 @@
 
     &__btn {
         margin-right: 5px;
-        font-size: 16px;
+        font-size: 14px;
+        font-weight: 700;
         width: 50%;
         flex-grow: 1;
-        height: $add-btn-height;
+        height: auto;
+        min-height: $add-btn-height;
         line-height: $add-btn-height;
     }
 
@@ -175,7 +183,10 @@
     }
 
     &__social {
-        padding-top: 15px;
+        margin: 0 (-$grid-padding);
+        margin-bottom: 15px;
+        padding: 15px $grid-padding 15px $grid-padding;
+        border-bottom: 1px solid $border-color;
         p {
             @include field-reset();
             margin-bottom: 15px;
@@ -183,6 +194,11 @@
             font-weight: 600;
             line-height: 1.33;
             color: $main-color;
+        }
+        @media (min-width: $lg) {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
         }
     }
 
@@ -240,6 +256,19 @@
             width: 23px;
             height: 23px;
         }
+    }
+
+    &__to-registry {
+        padding-top: 15px;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__registry-btn {
+        width: 100%;
+        font-size: 14px;
+        font-weight: 700;
     }
 //блок регистрации
     &__registry {
