@@ -253,13 +253,19 @@ var joinModal = {
     resetOverlayView: () => {
         joinModal.btnToDefault.forEach(function(item) {
             item.addEventListener("click", function(event) {
-                if (joinModal.container.classList.contains("opened")) {
+                if (!joinModal.container.classList.contains("opened")) {
                     joinModal._removeBtnActiveClasses(joinModal.joinBtns);
                     joinModal._removeBlockActiveClasses(joinModal.joinItems);
-                    document.querySelector(".js-profile-join").classList.add("active");
-                    document.querySelector(".js-first-tab").classList.add("active-btn");
-                    return false;
+                    //console.dir(document.querySelector(".js-profile-join"));
+                    var qwert = document.querySelector(".js-profile-join");
+                    //debugger;
+                    qwert.classList.add("active-content")
+                    /*if (qwert.classList.contains("active-content")) {
+                        console.log("есть");
+                    }*/
+                    //document.querySelector(".js-first-tab").classList.add("active-btn");
                 }
+                return false;
             });
         });
     },
@@ -272,7 +278,7 @@ var joinModal = {
 
     _removeBlockActiveClasses: (allBlocks) => {
         allBlocks.forEach(function(jItem) {
-            jItem.classList.remove("active");
+            jItem.classList.remove("active-content");
         });
     },
 
@@ -280,7 +286,7 @@ var joinModal = {
         var currentBtn = opt.dataset.toClass;
         for (var i = 0; i < joinModal.joinItems.length; i++) {
             if (joinModal.joinItems[i].classList.contains(currentBtn)) {
-                joinModal.joinItems[i].classList.add("active");
+                joinModal.joinItems[i].classList.add("active-content");
             }
         };
     },
