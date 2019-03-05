@@ -232,3 +232,42 @@ var subscription = {
     },
 };
 subscription.togleElements();
+//модалка входа/регистрации
+var joinModal = {
+    container: document.getElementById("profile-block"),
+    joinBtns: document.querySelectorAll(".js-profile__tab"),
+
+    init: () => {
+        joinModal.joinBtns.forEach(function(item) {
+            item.addEventListener("click", function(event) {
+                joinModal._switch(item);
+                if (!container.classList.contains("opened")) {
+                    container.classList.remove("js-profile-registry");
+                    container.classList.add("js-profile-join");
+                }
+            });
+        });
+    },
+
+    listenResizeDevice: () => {
+        window.addEventListener("resize", function() {
+            joinModal.joinBtns.forEach(function(item) {
+                item.classList.remove("active-btn");
+                if (item.classList.contains("js-first-tab")) {
+                    item.classList.add("active-btn");
+                }
+            });
+        });
+    },
+
+    _switch: (opt) => {
+        joinModal.joinBtns.forEach(function(elements) {
+            joinModal.container.classList.remove(elements.dataset.toClass);
+            elements.classList.remove("active-btn");
+        });
+        joinModal.container.classList.add(opt.dataset.toClass);
+        opt.classList.add("active-btn");
+    },
+};
+joinModal.init();
+joinModal.listenResizeDevice();

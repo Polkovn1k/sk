@@ -19,6 +19,24 @@
         display: block;
     }
 
+    &.js-profile-join {
+        .js-profile__join {
+            display: block;
+        }
+        .js-profile__registry {
+            display: none;
+        }
+    }
+
+    &.js-profile-registry {
+        .js-profile__join {
+            display: none;
+        }
+        .js-profile__registry {
+            display: block;
+        }
+    }
+
     &__container {
         padding: $grid-padding;
         background: $white;
@@ -100,7 +118,6 @@
     }
 //блок входа в личный кабинет
     &__join {
-        display: block;
         padding-top: 15px;
     }
 
@@ -160,22 +177,32 @@
 
     &__btn-block {
         display: flex;
+        flex-wrap: wrap;
+        @media (min-width: $sm) {
+            flex-wrap: nowrap;
+        }
     }
 
     &__btn {
-        margin-right: 5px;
-        font-size: 14px;
-        font-weight: 700;
-        width: 50%;
-        flex-grow: 1;
+        margin-bottom: 15px;
+        font-size: 16px;
+        width: 100%;
         height: auto;
         min-height: $add-btn-height;
         line-height: $add-btn-height;
+        @media (min-width: $sm) {
+            margin-bottom: 0;
+            margin-right: 5px;
+            width: 50%;
+        }
     }
 
     &__btn:last-child {
-        margin-right: 0;
-        margin-left: 5px;
+        margin-bottom: 0;
+        @media (min-width: $sm) {
+            margin-right: 0;
+            margin-left: 5px;
+        }
     }
 
     &__switch-item {
@@ -267,12 +294,10 @@
 
     &__registry-btn {
         width: 100%;
-        font-size: 14px;
-        font-weight: 700;
+        font-size: 16px;
     }
 //блок регистрации
     &__registry {
-        display: none;
         padding-top: 15px;
     }
 
@@ -326,7 +351,9 @@
     }
 
     &__reg-btn {
+        min-height: $common-item-height;
         font-size: 16px;
         width: 100%;
+        margin-bottom: 15px;
     }
 }
