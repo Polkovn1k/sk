@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smoking Shop</title>
+  <meta name="description" content="Smoking Shop">
+  <meta name="keywords" content="Smoking Shop">
+  <link rel="shortcut icon" type="image/x-icon" href="*.ico">
+  <link rel="shortcut icon" type="image/png" href="*.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="canonical" href="https://***.ru/">
+  <script>document.createElement("picture");</script>
+  <!-- <script src="picturefill.js" async></script> -->
+</head>
+
+<body>
+
+  <div style="display: none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+  <!----------header-->
+  <header class="header">
+      <div class="header__container">
+
+          <include src="html-modules/header/header.html"></include>
+
+      </div>
+  </header>
+
+  <!----------main-->
+  <main class="main main--catalog-section">
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <div class="col-12">
+                  <ul class="crumbs">
+                      <li class="crumbs__item">
+                          <a href="/" class="crumbs__link">Главная</a>
+                      </li>
+                      <li class="crumbs__item">
+                          <a href="catalog.html" class="crumbs__link">Каталог</a>
+                      </li>
+                      <li class="crumbs__item">
+                          <a href="#" class="crumbs__link">Самозамес</a>
+                      </li>
+                  </ul>
+              </div>
+              <h2 class="col-12 main__title">Самозамес</h2>
+              <div class="col-12 catalog-section">
+                  <div class="row">
+
+                      <include src="html-modules/__catalog-page-mix/filters.html"></include>
+                      <include src="html-modules/__catalog-page-mix/main-content.html"></include>
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      <include src="html-modules/__catalog-page-mix/catalog-slider.html"></include>
+
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <include src="html-modules/in-modify/overlays.html"></include>
+
+          </div>
+      </div>
+
+  </main>
+
+  <!----------footer-->
+  <footer class="footer">
+      <div class="footer__container container-fluid">
+
+          <include src="html-modules/footer/top-footer.html"></include>
+          <include src="html-modules/footer/bottom-footer.html"></include>
+
+      </div>
+  </footer>
+
+  <!----------scripts-->
+  <script src="js/script.js"></script>
+  <!----------only page scripts-->
+  <include src="js-modules/__catalog-ecigarette/script.html"></include>
+  <script>
+// ----------------------------------------ФИЛЬТРЫ
+      var catalogSection = {
+
+          catalogButtons: [
+          ".js-filters__title",
+          ".js-sort__title",
+          ".js-catalog-section__text-tog",
+          ],
+
+          TRANSITION_TIME: "300",
+
+// ОБРАБОТЧИК ФИЛЬТРА
+          filterShowContent: () => {
+              catalogSection.catalogButtons.forEach(function(item) {
+                  document.querySelectorAll(item).forEach((item) => {
+                      item.addEventListener("click", (event) => {
+                          item.classList.toggle("active-btn");
+                          if (item.classList.contains("js-filters__title")) {
+                              catalogSection.findFilterContentId(item);
+                              return false;
+                          }
+                          catalogSection.findOtherContentId(item);
+                      });
+                  });
+              });
+          },
+
+// Высота элемента без учета схлопывания
+          elementHeightBeforeCollapse: (item) => {
+              item.style.maxHeight = item.scrollHeight + "px";
+              item.style.maxHeight = "0px";
+          },
+
+// Убираем ограничитель высоты
+          deleteItemMaxHeight: (item) => {
+              setTimeout(function() {
+                  item.style.maxHeight = "none";
+              }, catalogSection.TRANSITION_TIME);
+          },
+
+// Находим элемент через id с помощью data-атрибута (без заданной высоты)
+          findFilterContentId: (item) => {
+              var findContentElementByID = document.getElementById(item.dataset.findId);
+              findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
+              if (!item.classList.contains("active-btn")) {
+                  catalogSection.elementHeightBeforeCollapse(findContentElementByID);
+                  return false;
+              }
+              catalogSection.deleteItemMaxHeight(findContentElementByID);
+          },
+
+// ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ
+          findOtherContentId: (item) => {
+              var findContentElementByID = document.getElementById(item.dataset.findId);
+              if (item.classList.contains("active-btn")) {
+                  findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
+                  return false;
+              }
+              findContentElementByID.style.removeProperty("max-height");
+          },
+      };
+      catalogSection.filterShowContent();
+  </script>
+</body>
+
+</html>

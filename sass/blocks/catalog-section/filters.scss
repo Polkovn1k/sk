@@ -1,7 +1,10 @@
 .filters {
     padding-bottom: 20px;
     font-family: $font;
-    background: $white;
+    background: $transparent;
+    @media (min-width: $lg) {
+        background: $white;
+    }
 
 //Стиль кнопки до нажатия на кнопку и открытия оверлея
     &__tog-modal {

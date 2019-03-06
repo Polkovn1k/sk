@@ -1,0 +1,387 @@
+<div class="col-12 col-lg-3">
+    <div id="filters-open" class="filters js-overlay">
+        <div class="filters__tog-modal">
+            <span>Фильтр</span>
+            <button data-overlay-id="filters-open" class="filters__open-modal js-overlay-btn">
+                Открыть модальное окно
+                <svg width="20" height="20" aria-hidden="true" role="presentation" class="filters__svg-open">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#filter"></use>
+                </svg>
+                <svg width="26" height="26" aria-hidden="true" role="presentation" class="filters__svg-close">
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                </svg>
+            </button>
+        </div>
+        <form action="some.php" id="filters-form" class="filters__container js-overlay">
+            <fieldset class="filters__panel">
+                <legend data-find-id="collapsePrice" class="filters__title active-btn js-filters__title">
+                    Цена
+                    <svg width="15" height="8" aria-hidden="true" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                    </svg>
+                </legend>
+                <div id="collapsePrice" class="filters__content">
+                    <div id="price_ranger" class="range-filter">
+                        <div class="range-filter__inputs">
+                            <input id="price_ranger_min" type="text" name="price_min" placeholder="от" class="range-filter__input-min">
+                            <input id="price_ranger_max" type="text" name="price_max" placeholder="до" class="range-filter__input-max">
+                            <span class="range-filter__unit">руб.</span>
+                        </div>
+                        <div class="range-filter__handles">
+                            <div class="range-filter__bar">
+                                <div class="range-filter__left-handle"></div>
+                                <div class="range-filter__right-handle"></div>
+                            </div>
+                            <div class="range-filter__progress-bar"></div>
+                            <input type="hidden" id="price_ranger_available_min" class="range-filter__min-available" value="700">
+                            <input type="hidden" id="price_ranger_available_max" class="range-filter__max-available" value="1500">
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+            <fieldset class="filters__panel">
+                <legend data-find-id="collapseVgPgRelative" class="filters__title active-btn js-filters__title">
+                    Соотношение VG/PG
+                    <svg width="15" height="8" aria-hidden="true" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                    </svg>
+                </legend>
+                <div id="collapseVgPgRelative" class="filters__content">
+                    <ul id="vg-pg-relative_checkbox" class="check-box">
+                        <li class="check-box__item">
+                            <label for="vg-pg-relative_1" class="check-box__label">
+                                <input id="vg-pg-relative_1" type="checkbox" checked>
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">35/55/10</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="vg-pg-relative_2" class="check-box__label">
+                                <input id="vg-pg-relative_2" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">50/50</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="vg-pg-relative_3" class="check-box__label">
+                                <input id="vg-pg-relative_3" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">60/40</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="vg-pg-relative_4" class="check-box__label">
+                                <input id="vg-pg-relative_4" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">65/55</p>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+            <fieldset class="filters__panel">
+                <legend data-find-id="collapseNicotineType" class="filters__title active-btn js-filters__title">
+                    Вид никотина
+                    <svg width="15" height="8" aria-hidden="true" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                    </svg>
+                </legend>
+                <div id="collapseNicotineType" class="filters__content">
+                    <ul id="nicotine-type_checkbox" class="check-box">
+                        <li class="check-box__item">
+                            <label for="nicotine-type_1" class="check-box__label">
+                                <input id="nicotine-type_1" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">Обычный</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="nicotine-type_2" class="check-box__label">
+                                <input id="nicotine-type_2" type="checkbox" checked>
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">Солевой</p>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+            <fieldset class="filters__panel">
+                <legend data-find-id="collapseNicotineStr" class="filters__title active-btn js-filters__title">
+                    Крепость никотина
+                    <svg width="15" height="8" aria-hidden="true" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                    </svg>
+                </legend>
+                <div id="collapseNicotineStr" class="filters__content">
+                    <ul id="nicotine-str_checkbox" class="check-box">
+                        <li class="check-box__item">
+                            <label for="nicotine-str_1" class="check-box__label">
+                                <input id="nicotine-str_1" type="checkbox" checked>
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">0</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="nicotine-str_2" class="check-box__label">
+                                <input id="nicotine-str_2" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">0/1,5/3 (никобустер)</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="nicotine-str_3" class="check-box__label">
+                                <input id="nicotine-str_3" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">0/3 (никобустер)</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="nicotine-str_4" class="check-box__label">
+                                <input id="nicotine-str_4" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">6</p>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+            <fieldset class="filters__panel">
+                <legend data-find-id="collapseValue" class="filters__title active-btn js-filters__title">
+                    Объем
+                    <svg width="15" height="8" aria-hidden="true" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                    </svg>
+                </legend>
+                <div id="collapseValue" class="filters__content">
+                    <ul id="value_checkbox" class="check-box">
+                        <li class="check-box__item">
+                            <label for="value_1" class="check-box__label">
+                                <input id="value_1" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">1</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="value_2" class="check-box__label">
+                                <input id="value_2" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">100</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="value_3" class="check-box__label">
+                                <input id="value_3" type="checkbox" checked>
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">100 (прозрачный)</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="value_4" class="check-box__label">
+                                <input id="value_4" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">120</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="value_5" class="check-box__label">
+                                <input id="value_5" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">120 (черный)</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="value_6" class="check-box__label">
+                                <input id="value_6" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">15 (белый)</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="value_7" class="check-box__label">
+                                <input id="value_7" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">15 (черный)</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="value_8" class="check-box__label">
+                                <input id="value_8" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">60</p>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+            <fieldset class="filters__panel">
+                <legend data-find-id="collapseBrand" class="filters__title active-btn js-filters__title">
+                    Бренд
+                    <svg width="15" height="8" aria-hidden="true" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                    </svg>
+                </legend>
+                <div id="collapseBrand" class="filters__content">
+                    <input type="text" class="filters__text-input" placeholder="Поиск">
+                    <ul id="liquid-brand_checkbox" class="check-box">
+                        <li class="check-box__item">
+                            <label for="brand_1" class="check-box__label">
+                                <input id="brand_1" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">3 bubbles</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="brand_2" class="check-box__label">
+                                <input id="brand_2" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">3 candles</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="brand_3" class="check-box__label">
+                                <input id="brand_3" type="checkbox" checked>
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">Atlas</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="brand_4" class="check-box__label">
+                                <input id="brand_4" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">Angry Vape</p>
+                            </label>
+                        </li>
+                    </ul>
+                    <button type="button" class="filters__show-all">Показать еще +</button>
+                </div>
+            </fieldset>
+            <fieldset class="filters__panel">
+                <legend data-find-id="collapseAvailable" class="filters__title active-btn js-filters__title">
+                    Наличие
+                    <svg width="15" height="8" aria-hidden="true" role="presentation">
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                    </svg>
+                </legend>
+                <div id="collapseAvailable" class="filters__content">
+                    <ul id="available_checkbox" class="check-box">
+                        <li class="check-box__item">
+                            <label for="available_1" class="check-box__label">
+                                <input id="available_1" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">В наличии</p>
+                            </label>
+                        </li>
+                        <li class="check-box__item">
+                            <label for="available_2" class="check-box__label">
+                                <input id="available_2" type="checkbox">
+                                <span aria-hidden="true" class="check-box__pseudo-check">
+                                    <svg width="25" height="25" aria-hidden="true" role="presentation">
+                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#checked"></use>
+                                    </svg>
+                                </span>
+                                <p class="check-box__text">Отсутствуют</p>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+            </fieldset>
+            <div class="filters__buttons">
+                <p class="filters__value">Подобрано <span>10</span> товаров</p>
+                <button class="btn filters__btn">Показать</button>
+                <button type="reset" class="btn filters__btn filters__btn--reset">Сбросить фильтр</button>
+            </div>
+        </form>
+    </div>
+</div>
