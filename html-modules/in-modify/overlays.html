@@ -85,7 +85,7 @@
     <div class="profile__container">
         <div class="profile__top-line">
             <button data-to-class="js-profile-join" class="profile__tab js-profile__tab js-first-tab active-btn ">Вход</button>
-            <button data-to-class="js-profile-registry" class="profile__tab js-profile__tab">Регистрация</button>
+            <button data-to-class="js-profile-registry" class="profile__tab js-profile__tab js-default-overlay">Регистрация</button>
             <button class="profile__close js-overlay-two-btn js-overlay-two-btn--close">
                 Закрыть окно
                 <svg width="22" height="22" aria-hidden="true" role="presentation">
@@ -94,7 +94,7 @@
             </button>
         </div>
         <!-- Вход в личный кабинет -->
-        <div class="profile__join js-profile-item js-profile-join active-content">
+        <div class="profile__join js-profile-item js-profile-join active">
             <h3 class="profile__title">Вход в личный кабинет</h3>
             <p class="profile__text">Вход в личный кабинет. Здесь вы можете отслеживать статус заказа, а так же историю ваших покупок</p>
             <form action="#" class="profile__join-form">
@@ -113,6 +113,11 @@
                     <a href="#" class="btn profile__btn">Я забыл пароль</a>
                 </div>
             </form>
+            <div class="profile__to-registry">
+                <p class="profile__title">Регистрация нового пользователя</p>
+                <p class="profile__text">Зарегистрируйся легко и просто</p>
+                <button data-to-class="js-profile-registry" class="dark-btn profile__registry-btn js-profile__tab">Зарегистрироваться</button>
+            </div>
             <div class="profile__social">
                 <p>Войти, используя аккаунт соцсети</p>
                 <ul class="profile__social-list">
@@ -138,11 +143,6 @@
                         </a>
                     </li>
                 </ul>
-            </div>
-            <div class="profile__to-registry">
-                <p class="profile__title">Регистрация нового пользователя</p>
-                <p class="profile__text">Зарегистрируйся легко и просто</p>
-                <button data-to-class="js-profile-registry" class="dark-btn profile__registry-btn js-profile__tab">Зарегистрироваться</button>
             </div>
         </div>
         <!-- Регистрация нового пользователя -->

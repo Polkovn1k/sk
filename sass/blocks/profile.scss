@@ -17,7 +17,7 @@
 
     &.opened {
         display: block;
-        .js-profile-item.active-content {
+        .js-profile-item.active {
             display: block;
         }
     }
@@ -196,10 +196,6 @@
     }
 
     &__social {
-        margin: 0 (-$grid-padding);
-        margin-bottom: 15px;
-        padding: 15px $grid-padding 15px $grid-padding;
-        border-bottom: 1px solid $border-color;
         p {
             @include field-reset();
             margin-bottom: 15px;
@@ -209,7 +205,6 @@
             color: $main-color;
         }
         @media (min-width: $lg) {
-            border-bottom: none;
             padding-bottom: 0;
             margin-bottom: 0;
         }
@@ -272,7 +267,10 @@
     }
 
     &__to-registry {
-        padding-top: 15px;
+        margin: 0 (-$grid-padding);
+        margin-bottom: 15px;
+        padding: 15px $grid-padding 15px $grid-padding;
+        border-bottom: 1px solid $border-color;
         @media (min-width: $lg) {
             display: none;
         }
