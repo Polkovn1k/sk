@@ -77,6 +77,41 @@
     }
 
     &__calc-btn {
+        display: none;
+        @media (min-width: $lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 30px;
+            border: none;
+            outline: none;
+            background: $white;
+            cursor: pointer;
+            span {
+                @include field-reset();
+                padding-right: 20px;
+                font-size: 28px;
+                font-weight: 400;
+            }
+            svg {
+                flex-shrink: 0;
+                width: 56px;
+                height: 65px;
+                fill: $green;
+            }
+        }
+    }
+
+    &__mix-calc-mob {
+        display: block;
+        margin-bottom: 20px;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__calc-btn-mob {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -89,7 +124,7 @@
         span {
             @include field-reset();
             padding-right: 20px;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 400;
         }
         svg {
@@ -98,8 +133,39 @@
             height: 65px;
             fill: $green;
         }
+    }
+
+    &__mix-calc {
+        display: none;
         @media (min-width: $lg) {
+            display: block;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__calc-btn {
+        @media (min-width: $lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 30px;
             border: none;
+            outline: none;
+            background: $white;
+            cursor: pointer;
+            span {
+                @include field-reset();
+                padding-right: 20px;
+                font-size: 28px;
+                font-weight: 400;
+            }
+            svg {
+                flex-shrink: 0;
+                width: 56px;
+                height: 65px;
+                fill: $green;
+            }
         }
     }
 //анимация на стрелку

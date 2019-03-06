@@ -64,6 +64,7 @@
             padding-right: 15px;
             font-size: $sort-desktop-font-size;
             line-height: 1.25;
+            pointer-events: none;
             svg {
                 display: none;
             }

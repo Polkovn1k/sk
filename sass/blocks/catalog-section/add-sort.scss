@@ -25,6 +25,10 @@
             height: $add-sort-item-height;
             cursor: pointer;
             transition: 0.3s ease;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
         .active {
             background: $blue;
