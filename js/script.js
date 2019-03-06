@@ -224,7 +224,6 @@ var subscription = {
 
     togleElements: () => {
         var checkedSubscription = document.querySelector(".js-footer-switch");
-        console.log(checkedSubscription);
         checkedSubscription.addEventListener("click", (event) => {
             subscription.subscriptionElement.forEach((element) => {
                 document.querySelector(element).classList.toggle("active");
