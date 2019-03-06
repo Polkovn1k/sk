@@ -3,6 +3,16 @@
     padding-top: 10px;
     font-family: $font;
 
+    &--two-column {
+        @media (min-width: $lg) {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                width: 50%;
+            }
+        }
+    }
+
     &__item {
 
     }

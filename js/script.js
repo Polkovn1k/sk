@@ -220,10 +220,11 @@ var footerNav = {
 footerNav.clickListener(footerNav.catalogButtons);
 //тоглер подписки в футера
 var subscription = {
-    subscriptionElement: [".js-subscription__btn", ".js-subscription__input"],
+    subscriptionElement: [".js-subscription-footer-btn", ".js-subscription-footer-input"],
 
     togleElements: () => {
-        var checkedSubscription = document.querySelector(".js-switch__label");
+        var checkedSubscription = document.querySelector(".js-footer-switch");
+        console.log(checkedSubscription);
         checkedSubscription.addEventListener("click", (event) => {
             subscription.subscriptionElement.forEach((element) => {
                 document.querySelector(element).classList.toggle("active");
