@@ -199,6 +199,7 @@
     }
 //Блок пагинации
     &__pagination {
+        width: 100%;
         margin-bottom: 20px;
         @media (min-width: $lg) {
             margin-bottom: 0;
