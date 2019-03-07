@@ -6,7 +6,7 @@
     font-family: $font;
 
     &__col {
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     &__col:last-child {
@@ -14,16 +14,37 @@
     }
 
     &__item {
-        padding: $grid-padding;
+        position: relative;
+        padding: $grid-padding * 2;
         padding-top: 30px;
         outline: 1px solid $border-color;
         background: $white;
+        transition: 0.3s ease;
         @media (min-width: $lg) {
             display: flex;
             flex-direction: column;
             outline: none;
             height: 450px;
         }
+    }
+
+    &__item::after {
+        @include pseudo();
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 5px;
+        background: $blue;
+        transition: 0.2s width ease;
+    }
+
+    &__item:hover::after {
+        width: 100%;
+        transition: 0.3s width ease;
+    }
+
+    &__item:hover {
+        box-shadow: 0 0 15px 0 transparentize($main-color, 0.9);
     }
 
     &__img {
@@ -60,8 +81,7 @@
         display: none;
         @include field-reset();
         margin-bottom: 20px;
-        flex-grow: 1;
-        //max-height: 180px;
+        max-height: 180px;
         overflow: hidden;
         @media (min-width: $lg) {
             display: block;
@@ -80,13 +100,5 @@
     &__btn {
         width: 100%;
         font-size: 16px;
-        span {
-            display: none;
-        }
-        @media (min-width: $lg) {
-            span {
-                display: inline;
-            }
-        }
     }
 }
