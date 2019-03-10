@@ -51,7 +51,7 @@
         border: 1px solid $border-color;
         margin-bottom: 15px;
         background: $white;
-        transition: 0.3s box-shadow ease;
+        transition: 0.3s ease;
         @media (min-width: $lg) {
             height: 256px;
             padding: 30px;
@@ -66,12 +66,12 @@
         width: 0;
         height: 5px;
         background: $blue;
-        transition: 0.2s width ease;
+        transition: 0.2s ease;
     }
 
     &__item:hover::after {
         width: 100%;
-        transition: 0.3s width ease;
+        transition: 0.3s ease;
     }
 
     &__item:hover {
