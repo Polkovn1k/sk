@@ -1,6 +1,9 @@
 .articles {
-    padding-bottom: 30px;
     font-family: $font;
+
+    &--index {
+        padding-bottom: 30px;
+    }
 
     &__container {
 
@@ -95,6 +98,7 @@
     }
 
     &__item-title:hover {
+        color: $add-text-color;
         @media (min-width: $lg) {
             color: $blue;
         }
@@ -213,14 +217,30 @@
     }
 
     &__category--popular {
-        background: $articles-orange;
+        background: $articles-popular-color;
     }
 
     &__category--newbie {
-        background: $articles-green;
+        background: $articles-newbie-color;
     }
 
     &__category--components {
-        background: $articles-purple;
+        background: $articles-components-color;
+    }
+
+    &__category--about {
+        background: $articles-about-color;
+    }
+
+    &__category--selections {
+        background: $articles-selections-color;
+    }
+
+    &__category--liquid {
+        background: $articles-liquid-color;
+    }
+
+    &__category--nicotine {
+        background: $articles-nicotine-color;
     }
 }
