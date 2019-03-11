@@ -38,13 +38,13 @@
         input[type="checkbox"] {
             display: none;
         }
-        input[type="checkbox"]:checked + span {
+        input[type="checkbox"]:checked + span:not(:last-child) {
             border-color: $blue;
             svg {
                 fill: $blue;
             }
         }
-        span {
+        span:not(:last-child) {
             position: relative;
             flex-shrink: 0;
             margin-right: 10px;
@@ -70,7 +70,7 @@
     }
 
     &__text {
-        @include field-reset();
+        display: block;
         padding-top: 2px;
     }
 }
