@@ -122,11 +122,19 @@
             border: 1px solid $border-color;
             border-radius: 5px;
             outline: none;
+            resize: vertical;
             transition: 0.3s ease;
         }
         textarea:hover,
         textarea:focus {
             border-color: $blue;
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        @media (min-width: $lg) {
+            width: auto;
         }
     }
 }
