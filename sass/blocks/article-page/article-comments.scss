@@ -140,8 +140,7 @@
 //------------------
     &__discussions-container {
         padding-top: 20px;
-        padding-bottom: 20px;
-
+        //padding-bottom: 20px;
     }
 
     &__discuss-message {
@@ -215,6 +214,10 @@
         cursor: pointer;
     }
 
+    &__reply.hidden {
+        display: none;
+    }
+
     &__voting {
         display: flex;
         align-items: center;
@@ -286,5 +289,14 @@
         color: $white;
         border-color: $add-red;
         background: $add-red;
+    }
+
+    &__discussions-form {
+        display: none;
+        margin-top: 20px;
+    }
+
+    &__discussions-form.active {
+        display: block;
     }
 }
