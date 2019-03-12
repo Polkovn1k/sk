@@ -51,7 +51,33 @@
               <div class="col-12">
                   <div class="row">
 
-                      <!-- <include src="html-modules/____warranty/__warranty.html"></include> -->
+                      <!-- <include src="html-modules/__warranty/warranty.html"></include> -->
+                      <div class="col-12 articles-all__sort">
+                          <div id="collapsestickyNav" class="sticky-nav">
+                              <div class="sticky-nav__container">
+                                  <div data-find-id="collapsestickyNav" class="sticky-nav__title js-sort__title">
+                                      Навигация по контенту:
+                                      <svg width="15" height="8" aria-hidden="true" role="presentation">
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                      </svg>
+                                  </div>
+                                  <ul class="sticky-nav__list">
+                                      <li class="sticky-nav__item">
+                                          <a href="#">Категории товаров</a>
+                                      </li>
+                                      <li class="sticky-nav__item">
+                                          <a href="#">Гарантийные условия</a>
+                                      </li>
+                                      <li class="sticky-nav__item">
+                                          <a href="#">Возврат средств</a>
+                                      </li>
+                                      <li class="sticky-nav__item">
+                                          <a href="#">Предоставление гарантии</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
 
                   </div>
               </div>
@@ -84,7 +110,70 @@
   <!----------scripts-->
   <script src="js/script.js"></script>
   <!----------only page scripts-->
-  <include src="js-modules/__article-page/script.html"></include>
+  <!-- <include src="js-modules/__warranty/script.html"></include> -->
+  <script>
+    var catalogSection = {
+
+        catalogButtons: [
+        ".js-filters__title",
+        ".js-sort__title",
+        ".js-catalog-section__text-tog",
+        ],
+
+        TRANSITION_TIME: "300",
+
+      // ОБРАБОТЧИК ФИЛЬТРА
+      filterShowContent: () => {
+        catalogSection.catalogButtons.forEach(function(item) {
+            document.querySelectorAll(item).forEach((item) => {
+                item.addEventListener("click", (event) => {
+                    item.classList.toggle("active-btn");
+                    if (item.classList.contains("js-filters__title")) {
+                        catalogSection.findFilterContentId(item);
+                        return false;
+                    }
+                    catalogSection.findOtherContentId(item);
+                });
+            });
+        });
+    },
+
+      // Высота элемента без учета схлопывания
+      elementHeightBeforeCollapse: (item) => {
+        item.style.maxHeight = item.scrollHeight + "px";
+        item.style.maxHeight = "0px";
+    },
+
+      // Убираем ограничитель высоты
+      deleteItemMaxHeight: (item) => {
+        setTimeout(function() {
+            item.style.maxHeight = "none";
+        }, catalogSection.TRANSITION_TIME);
+    },
+
+      // Находим элемент через id с помощью data-атрибута (без заданной высоты)
+      findFilterContentId: (item) => {
+        var findContentElementByID = document.getElementById(item.dataset.findId);
+        findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
+        if (!item.classList.contains("active-btn")) {
+            catalogSection.elementHeightBeforeCollapse(findContentElementByID);
+            return false;
+        }
+        catalogSection.deleteItemMaxHeight(findContentElementByID);
+    },
+
+      // ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ
+      findOtherContentId: (item) => {
+        var findContentElementByID = document.getElementById(item.dataset.findId);
+        if (item.classList.contains("active-btn")) {
+            findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
+            return false;
+        }
+        findContentElementByID.style.removeProperty("max-height");
+    },
+};
+catalogSection.filterShowContent();
+</script>
 
 </body>
 
