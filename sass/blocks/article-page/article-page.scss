@@ -143,6 +143,10 @@
         p, ol, ul {
             margin: 0 0 15px 0;
         }
+        img, picture {
+            display: block;
+            margin-bottom: 15px;
+        }
         *:last-child {
             margin-bottom: 0;
         }

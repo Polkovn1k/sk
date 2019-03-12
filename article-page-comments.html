@@ -247,7 +247,7 @@
                                                               </a>
                                                           </div>
                                                       </div>
-                                                      <form action="#" class="article-comments__discussions-form" js-discussion-form>
+                                                      <form action="#" class="article-comments__discussions-form js-discussion-form">
                                                           <label class="article-comments__label">
                                                               <span>Автор</span>
                                                               <input name="diskuss_author_name" type="text" required>
@@ -363,6 +363,7 @@
                 item.addEventListener("click", (event) => {
                     event.preventDefault();
                     articlePage._removeAllFormActive();
+                    articlePage._removeAllBtnsHidden();
                 });
             });
         },
