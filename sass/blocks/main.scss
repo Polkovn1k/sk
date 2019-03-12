@@ -20,6 +20,10 @@
         padding-top: 0;
     }
 
+    &--no-hidden {
+        overflow: visible;
+    }
+
     &__container {
         @include container();
     }
