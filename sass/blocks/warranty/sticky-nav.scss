@@ -110,6 +110,9 @@
                 border-bottom: 1px solid $border-color;
                 border-left: 2px solid transparent;
             }
+            .active-btn {
+                border-left: 2px solid $blue;
+            }
         }
     }
 
@@ -117,10 +120,6 @@
         a {
             color: $blue;
         }
-    }
-
-    &__item:hover,
-    &__item.active {
         @media (min-width: $lg) {
             a {
                 border-left: 2px solid $blue;

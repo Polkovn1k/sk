@@ -11,6 +11,7 @@
     }
 
     &__section {
+        position: relative;
         border-bottom: 1px solid $border-color;
         padding: 20px $grid-padding;
         > *:last-child {
@@ -67,5 +68,17 @@
         font-weight: 400;
         line-height: 1.5;
         color: $communication-add-color;
+    }
+
+    &__anchor-element {
+        position: absolute;
+        z-index: -1;
+        top: -$mobile-header-height;
+        @media (min-width: $md) {
+            top: -$tablet-header-height;
+        }
+        @media (min-width: $lg) {
+            top: -$desktop-header-height;
+        }
     }
 }

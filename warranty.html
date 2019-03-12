@@ -64,16 +64,16 @@
                                   </div>
                                   <ul class="sticky-nav__list">
                                       <li class="sticky-nav__item">
-                                          <a href="#warranty-category">Категории товаров</a>
+                                          <a href="#warranty-category" class="js-sticky-btn active-btn">Категории товаров</a>
                                       </li>
                                       <li class="sticky-nav__item">
-                                          <a href="#warranty-condition">Гарантийные условия</a>
+                                          <a href="#warranty-condition" class="js-sticky-btn">Гарантийные условия</a>
                                       </li>
                                       <li class="sticky-nav__item">
-                                          <a href="#warranty-return">Возврат средств</a>
+                                          <a href="#warranty-return" class="js-sticky-btn">Возврат средств</a>
                                       </li>
                                       <li class="sticky-nav__item">
-                                          <a href="#warranty-give">Предоставление гарантии</a>
+                                          <a href="#warranty-give" class="js-sticky-btn">Предоставление гарантии</a>
                                       </li>
                                   </ul>
                               </div>
@@ -84,7 +84,7 @@
                           <div class="warranty__container">
 
                               <section class="warranty__section">
-                                  <h2 id="warranty-category" class="warranty__title">1. Категории товаров</h2>
+                                  <h2 class="warranty__title">1. Категории товаров</h2>
                                   <p class="warranty__sub-title">
                                       Магазин «Смокинг» берет на себя гарантийные обязательства за следующую продукцию:
                                   </p>
@@ -95,10 +95,11 @@
                                       <li>— Клиромайзеры</li>
                                       <li>— Атомайзеры для дрипа</li>
                                   </ul>
+                                  <span id="warranty-category" class="warranty__anchor-element"></span>
                               </section>
 
                               <section class="warranty__section">
-                                  <h2 id="warranty-condition" class="warranty__title">2. Гарантийные условия</h2>
+                                  <h2 class="warranty__title">2. Гарантийные условия</h2>
                                   <p class="warranty__sub-title">
                                       Электронные сигареты и батарейные моды
                                   </p>
@@ -154,10 +155,11 @@
                                       <li>— Механические повреждения базы</li>
                                       <li>— Поврежденный, или деформированный изолятор базы</li>
                                   </ul>
+                                  <span id="warranty-condition" class="warranty__anchor-element"></span>
                               </section>
 
                               <section class="warranty__section">
-                                  <h2 id="warranty-return" class="warranty__title">3. Возврат средств</h2>
+                                  <h2 class="warranty__title">3. Возврат средств</h2>
                                   <p class="warranty__sub-title">
                                       Возврат средств осуществляется только при условии не поврежденного комплекта поставки:
                                   </p>
@@ -192,16 +194,18 @@
                                   <p class="warranty__text">
                                       Жидкости для электронных сигарет, ароматизаторы и основы не подлежат возврату или обмену, так как после первого вскрытия теряется товарная ценность продукта. Будьте внимательны при покупке, отдавайте предпочтение тем жидкостям/ароматизаторам/основам, качество и вкус которых точно соответствует Вашим ожиданиям и требованиям. Магазин не несет ответственности за несоответствие ожиданий покупателя относительно приобретаемых жидкостей/ароматизаторов/основ.
                                   </p>
+                                  <span id="warranty-return" class="warranty__anchor-element"></span>
                               </section>
 
                               <section class="warranty__section">
-                                  <h2 id="warranty-give" class="warranty__title">4. Предоставление гарантии</h2>
+                                  <h2 class="warranty__title">4. Предоставление гарантии</h2>
                                   <p class="warranty__text">
                                       В гарантийном случае, покупатель может обратиться к магазину с просьбой произвести обмен/возврат, при условии соблюдения указанных выше пунктов. Далее, магазин берет изделие на диагностику. Срок экспертизы длится до 31 календарного дня с момента доставки изделия обратно в магазин. Обратная доставка в магазин может длиться до 8-ми календарных дней и срок доставки суммируется со сроком диагностики.
                                   </p>
                                   <p class="warranty__text">
                                       Как только диагностика подтверждает предоставление гарантийных обязательств, условия замены/возврата производятся в течении 14 календарных дней.
                                   </p>
+                                  <span id="warranty-give" class="warranty__anchor-element"></span>
                               </section>
                           </div>
                       </div>
@@ -239,67 +243,89 @@
   <!----------only page scripts-->
   <!-- <include src="js-modules/__warranty/script.html"></include> -->
   <script>
-    var catalogSection = {
-
-        catalogButtons: [
-        ".js-filters__title",
-        ".js-sort__title",
-        ".js-catalog-section__text-tog",
-        ],
-
-        TRANSITION_TIME: "300",
-
-      // ОБРАБОТЧИК ФИЛЬТРА
-      filterShowContent: () => {
-        catalogSection.catalogButtons.forEach(function(item) {
-            document.querySelectorAll(item).forEach((item) => {
+    var anchorTransition = {
+        listenBtnClick: () => {
+            document.querySelectorAll(".js-sticky-btn").forEach(function(item) {
                 item.addEventListener("click", (event) => {
-                    item.classList.toggle("active-btn");
-                    if (item.classList.contains("js-filters__title")) {
-                        catalogSection.findFilterContentId(item);
-                        return false;
-                    }
-                    catalogSection.findOtherContentId(item);
+                    anchorTransition._removeAllBtnsActive();
+                    anchorTransition._addActiveForBtns(item);
                 });
             });
-        });
-    },
+        },
 
-      // Высота элемента без учета схлопывания
-      elementHeightBeforeCollapse: (item) => {
-        item.style.maxHeight = item.scrollHeight + "px";
-        item.style.maxHeight = "0px";
-    },
+        _removeAllBtnsActive: () => {
+            document.querySelectorAll(".js-sticky-btn").forEach((item) => {
+                item.classList.remove("active-btn");
+            });
+        },
 
-      // Убираем ограничитель высоты
-      deleteItemMaxHeight: (item) => {
-        setTimeout(function() {
-            item.style.maxHeight = "none";
-        }, catalogSection.TRANSITION_TIME);
-    },
+        _addActiveForBtns: (clickedBtn) => {
+            clickedBtn.classList.add("active-btn");
+        },
+    };
+    anchorTransition.listenBtnClick();
 
-      // Находим элемент через id с помощью data-атрибута (без заданной высоты)
-      findFilterContentId: (item) => {
-        var findContentElementByID = document.getElementById(item.dataset.findId);
-        findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
-        if (!item.classList.contains("active-btn")) {
-            catalogSection.elementHeightBeforeCollapse(findContentElementByID);
-            return false;
-        }
-        catalogSection.deleteItemMaxHeight(findContentElementByID);
-    },
+        var catalogSection = {
 
-      // ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ
-      findOtherContentId: (item) => {
-        var findContentElementByID = document.getElementById(item.dataset.findId);
-        if (item.classList.contains("active-btn")) {
+            catalogButtons: [
+            ".js-filters__title",
+            ".js-sort__title",
+            ".js-catalog-section__text-tog",
+            ],
+
+            TRANSITION_TIME: "300",
+
+          // ОБРАБОТЧИК ФИЛЬТРА
+          filterShowContent: () => {
+            catalogSection.catalogButtons.forEach(function(item) {
+                document.querySelectorAll(item).forEach((item) => {
+                    item.addEventListener("click", (event) => {
+                        item.classList.toggle("active-btn");
+                        if (item.classList.contains("js-filters__title")) {
+                            catalogSection.findFilterContentId(item);
+                            return false;
+                        }
+                        catalogSection.findOtherContentId(item);
+                    });
+                });
+            });
+        },
+
+          // Высота элемента без учета схлопывания
+          elementHeightBeforeCollapse: (item) => {
+            item.style.maxHeight = item.scrollHeight + "px";
+            item.style.maxHeight = "0px";
+        },
+
+          // Убираем ограничитель высоты
+          deleteItemMaxHeight: (item) => {
+            setTimeout(function() {
+                item.style.maxHeight = "none";
+            }, catalogSection.TRANSITION_TIME);
+        },
+
+          // Находим элемент через id с помощью data-атрибута (без заданной высоты)
+          findFilterContentId: (item) => {
+            var findContentElementByID = document.getElementById(item.dataset.findId);
             findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
-            return false;
-        }
-        findContentElementByID.style.removeProperty("max-height");
-    },
-};
-catalogSection.filterShowContent();
+            if (!item.classList.contains("active-btn")) {
+                catalogSection.elementHeightBeforeCollapse(findContentElementByID);
+                return false;
+            }
+            catalogSection.deleteItemMaxHeight(findContentElementByID);
+        },
+
+          // ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ
+          findOtherContentId: (item) => {
+            var findContentElementByID = document.getElementById(item.dataset.findId);
+            if (item.classList.contains("active-btn")) {
+                findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
+                return false;
+            }
+            findContentElementByID.style.removeProperty("max-height");
+        },
+    };
+    catalogSection.filterShowContent();
 </script>
 
 </body>
