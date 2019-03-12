@@ -4,12 +4,10 @@
 
     &__wrapper {
         background: $white;
-        max-height: $common-item-height;
         line-height: $common-item-height;
         border-radius: 5px;
         border: 1px solid $communication-add-color;
         overflow: hidden;
-        transition: 0.3s ease;
         @media (min-width: $lg) {
             position: sticky;
             top: $desktop-header-height + 15px;
@@ -17,10 +15,6 @@
             border-radius: 0;
             border: none;
         }
-    }
-
-    &--opened {
-        max-height: none;
     }
 
     &:hover {
@@ -61,6 +55,12 @@
         }
     }
 
+    &__title.active-btn {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
     &__title:hover {
         color: $blue;
         svg {
@@ -77,8 +77,10 @@
 
     &__list {
         @include order-reset();
+        max-height: 0;
+        transition: 0.3s ease;
         @media (min-width: $lg) {
-
+            max-height: none;
         }
     }
 
