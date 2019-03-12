@@ -1,3 +1,71 @@
 .warranty {
+    font-family: $font;
 
+    &__container {
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            padding: 0;
+            border: none;
+        }
+    }
+
+    &__section {
+        border-bottom: 1px solid $border-color;
+        padding: 20px $grid-padding;
+        > *:last-child {
+            margin-bottom: 0;
+        }
+        @media (min-width: $lg) {
+            padding: 30px;
+        }
+    }
+
+    &__section:last-child {
+        border-bottom: none;
+    }
+
+    &__title {
+        @include field-reset();
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.33;
+        color: $extra-text-color;
+        @media (min-width: $lg) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__sub-title {
+        @include field-reset();
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $extra-text-color;
+    }
+
+    &__sub-title--warning {
+        color: $red;
+    }
+
+    &__list {
+        @include order-reset();
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $communication-add-color;
+        li {}
+    }
+
+    &__text {
+        @include field-reset();
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $communication-add-color;
+    }
 }

@@ -2,7 +2,7 @@
     margin-bottom: 20px;
     font-family: $font;
     @media (min-width: $lg) {
-
+        margin-bottom: 0;
     }
 
     &__wrapper {
