@@ -41,69 +41,60 @@ var watchedProducts = new Glide('.js-catalog-slider__container', {
     }
 });
 watchedProducts.mount();
+//Комментарии к ответам
+var articlePage = {
+    listenBtnCallingReplyForm: () => {
+        document.querySelectorAll(".js-reply-btn").forEach(function(item) {
+            item.addEventListener("click", (event) => {
+                event.preventDefault();
+                articlePage._removeAllFormActive();
+                articlePage._removeAllBtnsHidden();
+                articlePage._addHiddenToClickedBtns(item);
+                var clickedBtnParent = articlePage._findClickedBtnsParent(item);
+                var findRequiredElement = articlePage._findSiblingAndMakeActive(clickedBtnParent);
+                articlePage._doFormActive(findRequiredElement);
+            });
+        });
+    },
+
+    listenBtnClosingReplyForm: () => {
+        document.querySelectorAll(".js-btn-cancel").forEach(function(item) {
+            item.addEventListener("click", (event) => {
+                event.preventDefault();
+                articlePage._removeAllFormActive();
+                articlePage._removeAllBtnsHidden();
+            });
+        });
+    },
+
+    _addHiddenToClickedBtns: (clickedBtn) => {
+        clickedBtn.classList.add("hidden");
+    },
+
+    _doFormActive: (element) => {
+        element.classList.add("active");
+    },
+
+    _findClickedBtnsParent: (clickedBtn) => {
+        return clickedBtn.parentElement;
+    },
+
+    _findSiblingAndMakeActive: (element) => {
+        return element.nextElementSibling;
+    },
+
+    _removeAllFormActive: () => {
+        document.querySelectorAll(".js-discussion-form").forEach((item) => {
+            item.classList.remove("active");
+        });
+    },
+
+    _removeAllBtnsHidden: () => {
+        document.querySelectorAll(".js-reply-btn").forEach((item) => {
+            item.classList.remove("hidden");
+        });
+    },
+};
+articlePage.listenBtnCallingReplyForm();
+articlePage.listenBtnClosingReplyForm();
 </script>
-
-  <script>
-// ----------------------------------------ФИЛЬТРЫ
-      var catalogSection = {
-
-          catalogButtons: [
-          ".js-filters__title",
-          ".js-sort__title",
-          ".js-catalog-section__text-tog",
-          ],
-
-          TRANSITION_TIME: "300",
-
-// ОБРАБОТЧИК ФИЛЬТРА
-          filterShowContent: () => {
-              catalogSection.catalogButtons.forEach(function(item) {
-                  document.querySelectorAll(item).forEach((item) => {
-                      item.addEventListener("click", (event) => {
-                          item.classList.toggle("active-btn");
-                          if (item.classList.contains("js-filters__title")) {
-                              catalogSection.findFilterContentId(item);
-                              return false;
-                          }
-                          catalogSection.findOtherContentId(item);
-                      });
-                  });
-              });
-          },
-
-// Высота элемента без учета схлопывания
-          elementHeightBeforeCollapse: (item) => {
-              item.style.maxHeight = item.scrollHeight + "px";
-              item.style.maxHeight = "0px";
-          },
-
-// Убираем ограничитель высоты
-          deleteItemMaxHeight: (item) => {
-              setTimeout(function() {
-                  item.style.maxHeight = "none";
-              }, catalogSection.TRANSITION_TIME);
-          },
-
-// Находим элемент через id с помощью data-атрибута (без заданной высоты)
-          findFilterContentId: (item) => {
-              var findContentElementByID = document.getElementById(item.dataset.findId);
-              findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
-              if (!item.classList.contains("active-btn")) {
-                  catalogSection.elementHeightBeforeCollapse(findContentElementByID);
-                  return false;
-              }
-              catalogSection.deleteItemMaxHeight(findContentElementByID);
-          },
-
-// ДЛЯ ЭЛЕМЕНТОВ С ФИКСИРОВАННОЙ ВЫСОТОЙ
-          findOtherContentId: (item) => {
-              var findContentElementByID = document.getElementById(item.dataset.findId);
-              if (item.classList.contains("active-btn")) {
-                  findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
-                  return false;
-              }
-              findContentElementByID.style.removeProperty("max-height");
-          },
-      };
-      catalogSection.filterShowContent();
-  </script>

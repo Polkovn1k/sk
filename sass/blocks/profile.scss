@@ -345,5 +345,14 @@
 
     &__reg-btn:last-child {
         margin-bottom: 0;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__reg-btn:nth-last-child(2) {
+        @media (min-width: $lg) {
+            margin-bottom: 0;
+        }
     }
 }
