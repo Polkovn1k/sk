@@ -32,6 +32,15 @@
         border-bottom: none;
     }
 
+    p, ul, ol, img {
+        @include field-reset();
+        margin-bottom: 15px;
+    }
+
+    ul, ol {
+        list-style-type: none;
+    }
+
     &__title {
         @include field-reset();
         margin-bottom: 20px;
@@ -57,6 +66,7 @@
         }
         img {
             margin-left: 15px;
+            margin-bottom: 0;
         }
         @media (min-width: $sm) {
             div {
@@ -77,13 +87,9 @@
         color: $red;
     }
 
-    p, ul, ol {
-        @include field-reset();
-        margin-bottom: 15px;
-    }
-
-    ul, ol {
-        list-style-type: none;
+    &__btn {
+        height: $common-item-height;
+        line-height: $common-item-height;
     }
 
     &__anchor-element {
