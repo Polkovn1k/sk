@@ -1,0 +1,99 @@
+.faq {
+    font-family: $font;
+
+    &__container {
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    &__list {
+        @include order-reset();
+    }
+
+    &__item {
+        padding: 0 $grid-padding;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            padding: 0 30px;
+        }
+    }
+
+    &__item:last-child {
+        border-bottom: 0;
+    }
+
+    &__question {
+        position: relative;
+        width: 100%;
+        padding: $faq-mobile-btn-padding 30px $faq-mobile-btn-padding 0;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: $main-color;
+        text-align: left;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+        svg {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            fill: $blue;
+            transition: 0.3s ease;
+        }
+        @media (min-width: $lg) {
+            padding: $faq-desktop-btn-padding 30px $faq-desktop-btn-padding 0;
+        }
+    }
+
+    &__question:hover {
+        color: $blue;
+    }
+
+    &__question.active-btn {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__answer {
+        max-height: 0;
+        overflow: hidden;
+        color: $communication-add-color;
+        transition: 0.3s ease;
+        a {
+            color: $blue;
+        }
+        p, div {
+            @include field-reset();
+            margin-bottom: 15px;
+        }
+        ol, ul {
+            @include field-reset();
+            padding-left: 15px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        > *:last-child {
+            margin-bottom: 0;
+            padding-bottom: $faq-mobile-btn-padding;
+        }
+        @media (min-width: $lg) {
+            > *:last-child {
+                margin-bottom: 0;
+                padding-bottom: $faq-desktop-btn-padding;
+            }
+        }
+    }
+}
