@@ -1,0 +1,156 @@
+.contacts {
+    margin-bottom: 20px;
+    font-family: $font;
+    @media (min-width: $lg) {
+        margin-bottom: 30px;
+    }
+
+    &__col {
+        margin-bottom: 20px;
+    }
+
+    &__col:last-child {
+        margin-bottom: 0;
+    }
+
+    &__container {
+        height: 100%;
+        position: relative;
+        padding: $news-page-padding-mobile;
+        background: $white;
+        outline: 1px solid $border-color;
+        @media (min-width: $md) {
+            padding: $news-page-padding-md;
+        }
+        @media (min-width: $lg) {
+            outline: none;
+        }
+    }
+
+    &__title {
+        @include field-reset();
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.33;
+        color: $extra-text-color;
+        @media (min-width: $lg) {
+            font-size: 24px;
+        }
+    }
+//-------Оформление заказов
+    &__tel {
+        @include field-reset();
+        margin-bottom: 20px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.15;
+        color: $communication-add-color;
+        a {
+            color: $blue;
+        }
+        @media (min-width: $lg) {
+            font-size: 20px;
+        }
+    }
+
+    &__social-list {
+        padding-bottom: 0;
+    }
+
+    &__item--vk {
+        svg {
+            fill: #45668e;
+        }
+    }
+
+    &__item--youtube {
+        svg {
+            fill: red;
+        }
+    }
+
+    &__item--insta {
+        svg {
+            fill: #b84a85;
+        }
+    }
+//-------Менеджер по работе с клиентами
+    &__communication-list {
+        @include order-reset();
+    }
+
+    &__communication-item {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 1.3;
+        color: $communication-add-color;
+        a {
+            color: $blue;
+        }
+        @media (min-width: $lg) {
+            font-size: 20px;
+        }
+    }
+
+    &__communication-item:last-child {
+        margin-bottom: 0;
+    }
+//-------Адреса пунктов выдачи
+    &__adress-list {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 0;
+        margin-bottom: 15px;
+        overflow: hidden;
+        max-height: 180px;
+        transition: 0.3s ease;
+        @media (min-width: $sm) {
+            max-height: 190px;
+        }
+        @media (min-width: $md) {
+            max-height: 100px;
+        }
+    }
+
+    &__adress-item {
+        padding: 10px 0;
+    }
+
+    &__adress-title {
+        @include field-reset();
+        position: relative;
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.3;
+        color: $blue;
+        @media (min-width: $lg) {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+    }
+
+    &__adress-time {
+        @include field-reset();
+        color: $communication-add-color;
+    }
+
+    &__btn {
+        width: 100%;
+        outline: none;
+        span {
+            display: none;
+        }
+    }
+
+    &__btn.active-btn {
+        font-size: 0;
+        span {
+            display: inline;
+            font-size: 14px;
+        }
+    }
+}
