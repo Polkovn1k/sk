@@ -90,6 +90,7 @@
         line-height: $common-item-height;
         padding: 0 $grid-padding;
         a {
+            display: block;
             color: $communication-add-color;
             background: transparent;
             cursor: pointer;

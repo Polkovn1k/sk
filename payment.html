@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smoking Shop</title>
+  <meta name="description" content="Smoking Shop">
+  <meta name="keywords" content="Smoking Shop">
+  <link rel="shortcut icon" type="image/x-icon" href="*.ico">
+  <link rel="shortcut icon" type="image/png" href="*.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="canonical" href="https://***.ru/">
+  <script>document.createElement("picture");</script>
+  <!-- <script src="picturefill.js" async></script> -->
+</head>
+
+<body>
+
+  <div style="display: none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+  <!----------header-->
+  <header class="header">
+      <div class="header__container">
+
+          <include src="html-modules/header/header.html"></include>
+
+      </div>
+  </header>
+
+  <!----------main-->
+  <main class="main main--no-hidden">
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <div class="col-12">
+                  <ul class="crumbs">
+                      <li class="crumbs__item">
+                          <a href="/" class="crumbs__link">Главная</a>
+                      </li>
+                      <li class="crumbs__item">
+                          <a href="warranty.html" class="crumbs__link">Гарантия</a>
+                      </li>
+                  </ul>
+              </div>
+              <h2 class="col-12 main__title">Гарантия</h2>
+              <div class="col-12">
+                  <div class="row">
+
+                      <include src="html-modules/__payment/sticky-nav.html"></include>
+                      <include src="html-modules/__payment/payment.html"></include>
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      <include src="html-modules/__payment/catalog-slider.html"></include>
+
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <include src="html-modules/in-modify/overlays.html"></include>
+
+          </div>
+      </div>
+
+  </main>
+
+  <!----------footer-->
+  <footer class="footer">
+      <div class="footer__container container-fluid">
+
+          <include src="html-modules/footer/top-footer.html"></include>
+          <include src="html-modules/footer/bottom-footer.html"></include>
+
+      </div>
+  </footer>
+
+  <!----------scripts-->
+  <script src="js/script.js"></script>
+  <!----------only page scripts-->
+  <include src="js-modules/__warranty/script.html"></include>
+
+</body>
+
+</html>
