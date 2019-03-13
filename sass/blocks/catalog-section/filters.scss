@@ -120,7 +120,8 @@
     &__content {
         padding: 0 $grid-padding;
         overflow: hidden;
-        transition: 0.3s max-height ease;
+        max-height: 0;
+        transition: 0.3s ease;
         @media (min-width: $sm) {
             max-width: 70%;
         }
