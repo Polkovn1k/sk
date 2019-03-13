@@ -49,6 +49,9 @@
         svg {
             display: none;
         }
+        span:nth-child(2) {
+            display: none;
+        }
         @media (min-width: $lg) {
             position: relative;
             flex-shrink: 0;
@@ -64,6 +67,18 @@
                 fill: $blue;
                 transition: 0.3s ease;
             }
+            span {
+                display: none;
+            }
+        }
+    }
+
+    &__text-tog.active-btn {
+        span:first-child {
+            display: none;
+        }
+        span:nth-child(2) {
+            display: inline;
         }
     }
 
