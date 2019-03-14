@@ -140,6 +140,7 @@
 
     &__btn {
         width: 100%;
+        margin-bottom: 20px;
         outline: none;
         span {
             display: none;
@@ -151,6 +152,16 @@
         span {
             display: inline;
             font-size: 14px;
+        }
+    }
+
+    &__map {
+        margin: -$news-page-padding-mobile;
+        margin-top: 0;
+        img {}
+        @media (min-width: $md) {
+            margin: -$news-page-padding-md;
+            margin-top: 0;
         }
     }
 }
