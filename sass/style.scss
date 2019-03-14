@@ -53,6 +53,8 @@
 @import "blocks/index/news.scss";
 @import "blocks/index/articles.scss";
 @import "blocks/index/brands.scss";
+    //слайдер просмотренных товаров-----
+@import "blocks/viewed-products.scss";
     //catalog-----
 @import "blocks/catalog/catalog-main-page.scss";
     //catalog-section-----
@@ -65,7 +67,6 @@
 @import "blocks/catalog-section/catalog-product.scss";
 @import "blocks/catalog-section/pagination.scss";
 @import "blocks/catalog-section/catalog-slider.scss";
-@import "blocks/catalog-section/viewed-products.scss";
 @import "blocks/catalog-section/brands-list.scss";
     //news-all-----
 @import "blocks/news-all/news-all.scss";
@@ -94,3 +95,5 @@
     //offers-----
 @import "blocks/offers/offers.scss";
 @import "blocks/offers/offer.scss";
+    //offer-page-----
+@import "blocks/offer-page/offer-page.scss";
