@@ -1,0 +1,125 @@
+.offers {
+    font-family: $font;
+
+    &__sort {
+        margin-bottom: 20px;
+    }
+
+    &__list {
+        @include order-reset();
+        margin: 0 -7.5px;
+    }
+
+    &__item {
+        margin-bottom: 20px;
+    }
+
+    &__pagination {
+        margin-bottom: 30px;
+    }
+
+    &__title {
+        margin: 0;
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1.32;
+        text-align: left;
+        color: $extra-text-color;
+        @media (min-width: $lg) {
+            margin-bottom: 30px;
+            font-size: 33px;
+        }
+    }
+//---------------скидки
+    &__discount {
+        padding: 0;
+        padding-bottom: 15px;
+        list-style-type: none;
+    }
+
+    &__discount-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    &__discount-container {
+        height: 100%;
+        padding: 25px 10px;
+        padding-top: 10px;
+        background: $white;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        span {
+            display: block;
+            font-size: 45px;
+            text-align: center;
+            color: $green;
+            line-height: 1.3;
+        }
+        p {
+            @include field-reset();
+            font-size: 18px;
+            text-align: center;
+            color: $extra-text-color;
+        }
+        @media (min-width: $lg) {
+            border: none;
+            span {
+                font-size: 80px;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__discount-feature {
+        padding: 20px;
+        background: $white;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        @media (min-width: $lg) {
+            padding: 30px;
+            border: none;
+        }
+    }
+
+    &__discount-title{
+        @include field-reset();
+        font-size: 18px;
+        line-height: 1.5;
+        font-weight: 600;
+        color: $red;
+    }
+
+    &__discount-text {
+        @include field-reset();
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $communication-add-color;
+    }
+//---------------бонусы и подарки
+    &__bonuses {
+        padding: 0;
+        padding-bottom: 15px;
+        list-style-type: none;
+    }
+
+    &__bonuses-item {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    &__bonuses-container {
+        padding: 20px;
+        background: $white;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        @media (min-width: $lg) {
+            padding: 30px;
+            border: none;
+        }
+    }
+}

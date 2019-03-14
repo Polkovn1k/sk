@@ -1,0 +1,223 @@
+.offer {
+    font-family: $font;
+
+    &--index {
+        padding-bottom: 30px;
+    }
+
+    &__container {
+
+    }
+
+    &__type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 30px;
+    }
+
+    &__title {
+        @include field-reset();
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1.32;
+        color: $extra-text-color;
+        @media (min-width: $md) {
+            font-size: 33px;
+        }
+    }
+
+    &__btn {
+        min-width: 105px;
+    }
+//карточка слайдера
+    &__item {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: $article-height-mobile;
+        padding: 15px;
+        overflow: hidden;
+        background: $white;
+        border-radius: 5px;
+        transition: 0.2s box-shadow ease;
+        @media (min-width: $lg) {
+            height: $article-height-desktop;
+        }
+    }
+
+    &__item::after {
+        @include pseudo();
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 5px;
+        background: $blue;
+        transition: 0.2s width ease;
+    }
+
+    &__item:hover::after {
+        @media (min-width: $lg) {
+            width: 100%;
+            transition: 0.3s width ease;
+        }
+    }
+
+    &__item:hover {
+        box-shadow: 0 0 15px 0 transparentize($main-color, 0.9);
+    }
+
+    &__text {
+        flex-grow: 1;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        padding-top: $offer-category-height + 15px;
+        @media (min-width: $lg) {
+            padding: 15px;
+        }
+    }
+
+    &__item-title {
+        @include field-reset();
+        max-height: 100px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.33;
+        color: $white;
+
+        overflow : hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        transition: 0.2s color ease;
+        @media (min-width: $lg) {
+            color: $main-color;
+        }
+    }
+
+    &__item-title:hover {
+        color: $add-text-color;
+        @media (min-width: $lg) {
+            color: $blue;
+        }
+    }
+
+    &__date {
+        @include field-reset();
+        order: -1;
+        display: flex;
+        align-items: flex-start;
+        padding-bottom: 5px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.31;
+        color: $white;
+        svg {
+            flex-shrink: 0;
+            fill: $white;
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+        @media (min-width: $lg) {
+            color: $main-color;
+            svg {
+                fill: $blue;
+            }
+        }
+    }
+
+    &__icons {
+        display: flex;
+        margin-top: auto;
+        color: $white;
+        @media (min-width: $lg) {
+            margin-bottom: 20px;
+            color: $main-color;
+        }
+    }
+
+    &__icons-item {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        svg {
+            fill: $white;
+            margin-right: 10px;
+        }
+        @media (min-width: $lg) {
+            svg {
+                fill: $blue;
+            }
+        }
+    }
+
+    &__silver-btn {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-align: center;
+        height: $article-height-mobile;
+        overflow: hidden;
+        img {
+            max-width: none;
+            max-height: none;
+        }
+        @media (min-width: $lg) {
+            position: static;
+            order: -1;
+            margin: -15px -15px 25px -15px;
+        }
+    }
+
+    &__img::before {
+        @include pseudo();
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparentize($black, 0.5);
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+
+    &__category {
+        position: absolute;
+        width: $offer-category-height;
+        height: $offer-category-height;
+        top: 15px;
+        left: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0;
+        line-height: $offer-category-height;
+        border-radius: 50%;
+    }
+
+    &__category--percent {
+        background: $yellow;
+        svg {
+            fill: $main-color;
+        }
+    }
+
+    &__category--gift {
+        background: $add-red;
+        svg {
+            fill: $white;
+        }
+    }
+}
