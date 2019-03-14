@@ -113,6 +113,7 @@
     }
 
     &__bonuses-container {
+        height: 100%;
         padding: 20px;
         background: $white;
         border: 1px solid $border-color;
@@ -120,6 +121,18 @@
         @media (min-width: $lg) {
             padding: 30px;
             border: none;
+        }
+    }
+
+    &__bonuses-img {
+        margin: -20px;
+        margin-bottom: 20px;
+        img {
+
+        }
+        @media (min-width: $lg) {
+            margin: -30px;
+            margin-bottom: 20px;
         }
     }
 }
