@@ -127,12 +127,32 @@
     &__bonuses-img {
         margin: -20px;
         margin-bottom: 20px;
+        overflow: hidden;
         img {
-
+            width: auto;
+            height: 252px;
+            max-width: none;
         }
         @media (min-width: $lg) {
             margin: -30px;
             margin-bottom: 20px;
         }
+    }
+
+    &__bonuses-title {
+        @include field-reset();
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.33;
+        color: $extra-text-color;
+    }
+
+    &__bonuses-text {
+        @include field-reset();
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $communication-add-color;
     }
 }
