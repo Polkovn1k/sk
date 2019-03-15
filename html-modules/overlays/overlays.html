@@ -26,36 +26,72 @@
 </section>
 
 <!-- overlays: call-back -->
-<div class="city-pick-over">
+<div id="city-pick" class="city-pick-over js-overlay">
     <section class="city-pick-over__container">
-        <h3 class="city-pick-over__title">Выбор города</h3>
-        <input type="text" placeholder="Введите название города">
-        <ul class="city-pick-over__list">
-            <li class="city-pick-over__item">Москва</li>
-            <li class="city-pick-over__item">Санкт-Петербург</li>
-            <li class="city-pick-over__item">Архангельск</li>
-            <li class="city-pick-over__item">Владивосток</li>
-            <li class="city-pick-over__item">Волгоград</li>
-            <li class="city-pick-over__item">Воронеж</li>
-            <li class="city-pick-over__item">Екатеринбург</li>
-            <li class="city-pick-over__item">Ижевск</li>
-            <li class="city-pick-over__item">Иркутск</li>
-            <li class="city-pick-over__item">Казань</li>
-            <li class="city-pick-over__item">Кемерово</li>
-            <li class="city-pick-over__item">Краснодар</li>
-            <li class="city-pick-over__item">Красноярск</li>
-            <li class="city-pick-over__item">Мурманск</li>
-            <li class="city-pick-over__item">Набережные Челны</li>
-            <li class="city-pick-over__item">Нижний Новгород</li>
-            <li class="city-pick-over__item">Новосибирск</li>
-            <li class="city-pick-over__item">Омск</li>
-            <li class="city-pick-over__item">Пермь</li>
-            <li class="city-pick-over__item">Ростов-на-Дону</li>
-            <li class="city-pick-over__item">Саратов</li>
-            <li class="city-pick-over__item">Самара</li>
-            <li class="city-pick-over__item">Сочи</li>
-            <li class="city-pick-over__item">Сургут</li>
-        </ul>
+
+        <div class="city-pick-over__top-line">
+            <h3 class="city-pick-over__title">Выбор города</h3>
+            <button class="city-pick-over__close js-overlay-two-btn js-overlay-two-btn--close">
+                Закрыть окно
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                </svg>
+            </button>
+        </div>
+
+        <div class="container city-pick-over__wrapper">
+            <div class="city-pick-over__input">
+                <input type="text" placeholder="Введите название города">
+                <svg width="18" height="18" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-icon"></use>
+                </svg>
+            </div>
+            <ul class="row city-pick-over__list">
+
+                <li class="city-pick-over__item col-12 col-md-6 col-lg-4">
+                    <button>Москва</button>
+                    <button>Санкт-Петербург</button>
+                    <button>Архангельск</button>
+                    <button>Владивосток</button>
+                    <button>Волгоград</button>
+                    <button>Воронеж</button>
+                    <button>Екатеринбург</button>
+                    <button>Ижевск</button>
+                    <button>Иркутск</button>
+                    <button>Казань</button>
+                    <button>Кемерово</button>
+                </li>
+
+                <li class="city-pick-over__item col-12 col-md-6 col-lg-4">
+                    <button>Краснодар</button>
+                    <button>Красноярск</button>
+                    <button>Мурманск</button>
+                    <button>Набережные Челны</button>
+                    <button>Нижний Новгород</button>
+                    <button>Новосибирск</button>
+                    <button>Омск</button>
+                    <button>Пермь</button>
+                    <button>Ростов-на-Дону</button>
+                    <button>Саратов</button>
+                    <button>Самара</button>
+                </li>
+
+                <li class="city-pick-over__item col-12 col-md-6 col-lg-4">
+                    <button>Сочи</button>
+                    <button>Сургут</button>
+                    <button>Тверь</button>
+                    <button>Тольятти</button>
+                    <button>Тула</button>
+                    <button>Тюмень</button>
+                    <button>Ульяновск</button>
+                    <button>Уфа</button>
+                    <button>Хабаровск</button>
+                    <button>Челябинск</button>
+                    <button>Ярославль</button>
+                </li>
+
+            </ul>
+        </div>
     </section>
 </div>
 

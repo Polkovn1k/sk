@@ -16,8 +16,10 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        pointer-events: none;
         @media (min-width: $lg) {
             margin-right: 20px;
+            pointer-events: auto;
         }
     }
 
@@ -26,8 +28,10 @@
         font-size: 14px;
         font-weight: 400;
         color: $blue;
+        cursor: pointer;
         @media (min-width: $lg) {
             display: none;
+            pointer-events: none;
         }
    }
 }
