@@ -43,15 +43,27 @@
                           <a href="/" class="crumbs__link">Главная</a>
                       </li>
                       <li class="crumbs__item">
-                          <a href="landing.html" class="crumbs__link">Для новичков</a>
+                          <a href="favorite-empty.html" class="crumbs__link">Избранное</a>
                       </li>
                   </ul>
               </div>
-              <h2 class="col-12 main__title">Для новичков</h2>
+              <h2 class="col-12 main__title">Избранное</h2>
               <div class="col-12 catalog-section">
                   <div class="row">
 
-                      <include src="html-modules/__landing/main-content.html"></include>
+                      <!-- <include src="html-modules/__favorite/favorite-empty.html"></include> -->
+                      <div class="favorite col-12">
+                          <div class="favorite__container">
+                              <h3 class="favorite__title">Здесь пусто</h3>
+                              <p class="favorite__text">
+                                  Сохраняйте товары в избранном с помощью
+                                  <svg width="22" height="22" aria-hidden="true" role="presentation">
+                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                  </svg>
+                              </p>
+                              <a href="/" class="dark-btn favorite__dark-btn">Перейти на главную</a>
+                          </div>
+                      </div>
 
                   </div>
               </div>

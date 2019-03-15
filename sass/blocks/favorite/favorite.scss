@@ -1,0 +1,24 @@
+.favorite {
+    &__container {
+        padding: 100px $grid-padding;
+        background: $white;
+        text-align: center;
+    }
+
+    &__title {
+        @include field-reset();
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    &__text {
+        @include field-reset();
+        margin-bottom: 20px;
+        text-align: center;
+        vertical-align: middle;
+        svg {
+            fill: $blue;
+            vertical-align: middle;
+        }
+    }
+}
