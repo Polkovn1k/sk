@@ -1,14 +1,28 @@
 <!-- overlays: call-back -->
-<section class="communication-over">
-    <h3 class="communication-over__title">Звонок специалиста</h3>
-    <p class="communication-over__text">
-        Если вы не хотите тратить время на поиск нужной информации на сайте, находитесь в другом часовом поясе или просто предпочитаете телефонное сообщение по интересующему вопросу, то закажите консультацию нашего специалиста.
-    </p>
-    <form action="#" class="communication-over__form">
-        <input type="text" placeholder="Введите имя">
-        <input type="tel" placeholder="Введите номер телефона">
-        <button type="submit" class="dark-btn">Заказать звонок</button>
-    </form>
+<section id="call-back" class="communication-over js-overlay">
+    <div class="communication-over__container">
+
+        <div class="communication-over__top-line">
+            <h3 class="communication-over__title">Звонок специалиста</h3>
+            <button class="communication-over__close js-overlay-two-btn js-overlay-two-btn--close">
+                Закрыть окно
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                </svg>
+            </button>
+        </div>
+
+        <p class="communication-over__text">
+            Если вы не хотите тратить время на поиск нужной информации на сайте, находитесь в другом часовом поясе или просто предпочитаете телефонное сообщение по интересующему вопросу, то закажите консультацию нашего специалиста.
+        </p>
+        <form action="#" class="communication-over__form">
+            <div class="communication-over__inputs">
+                <input type="text" placeholder="Введите имя" class="communication-over__input">
+                <input type="tel" placeholder="Введите номер телефона" class="communication-over__input">
+            </div>
+            <button type="submit" class="dark-btn communication-over__btn">Заказать звонок</button>
+        </form>
+    </div>
 </section>
 
 <!-- overlays: call-back -->

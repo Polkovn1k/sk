@@ -1,7 +1,104 @@
 .communication-over {
     display: none;
-    @media (min-width: $lg) {
-        //display: block;
-        display: none;//временно
+    font-family: $font;
+    position: fixed;
+    z-index: 1000;
+    overflow: auto;
+    @include full-absolute();
+    top: 0;
+    background-color: transparentize($black, 0.5);
+
+    &.opened {
+        display: block;
+    }
+
+    &__container {
+        max-height: 100vh;
+        overflow: auto;
+        border-radius: 5px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - #{$two-grid-padding});
+        margin: 0 auto;
+        padding: $grid-padding;
+        background: $white;
+        @media (min-width: $sm) {
+            width: 475px;
+        }
+    }
+
+    &__top-line {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 (-$grid-padding);
+        margin-top: -$grid-padding;
+        position: relative;
+        border-bottom: 1px solid $border-color;
+        padding: 0 $grid-padding;
+        height: 75px;
+    }
+
+    &__close {
+        padding: 0;
+
+        display: block;
+        width: 50px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 0;
+        text-align: right;
+        cursor: pointer;
+        svg {
+            fill: $add-text-color;
+        }
+    }
+
+    &__title {
+        @include field-reset();
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $main-color;
+    }
+
+    &__text {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+    }
+
+    &__inputs {
+        margin-bottom: 20px;
+    }
+
+    &__input {
+        width: 100%;
+        height: $common-item-height;
+        padding: 0 10px;
+        margin-bottom: 20px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        line-height: $common-item-height;
+        outline: none;
+        transition: 0.3s ease;
+    }
+
+    &__input:last-child {
+        margin-bottom: 0;
+    }
+
+    &__input:hover,
+    &__input:focus {
+        border-color: $blue;
+    }
+
+    &__btn {
+        width: 100%;
     }
 }

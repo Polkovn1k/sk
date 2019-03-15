@@ -27,6 +27,9 @@
         font-size: 16px;
         font-weight: 600;
         color: $extra-text-color;
+        a {
+            cursor: pointer;
+        }
     }
 
     &__item--bold {
