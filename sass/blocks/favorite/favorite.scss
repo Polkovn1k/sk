@@ -1,5 +1,6 @@
 .favorite {
-    &__container {
+//пустая страница
+    &__empty-container {
         padding: 100px $grid-padding;
         background: $white;
         text-align: center;
@@ -9,6 +10,7 @@
         @include field-reset();
         margin-bottom: 20px;
         text-align: center;
+        color: $main-color;
     }
 
     &__text {
@@ -16,9 +18,44 @@
         margin-bottom: 20px;
         text-align: center;
         vertical-align: middle;
+        color: $communication-add-color;
         svg {
             fill: $blue;
             vertical-align: middle;
+        }
+    }
+//страница с товарами
+    &__container {
+
+    }
+
+    &__btn {
+        color: $add-red;
+        border-color: $add-red;
+        height: $common-item-height;
+        line-height: $common-item-height;
+        transition: 0.3s ease;
+        &:hover {
+            background: $add-red;
+            color: white;
+        }
+    }
+
+    &__sort {
+        .favorite__btn {
+            display: none;
+        }
+        @media (min-width: $lg) {
+            .favorite__btn {
+                display: block;
+            }
+        }
+    }
+
+    &__btn--margin {
+        margin-bottom: 20px;
+        @media (min-width: $lg) {
+            display: none;
         }
     }
 }
