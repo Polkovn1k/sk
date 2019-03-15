@@ -46,6 +46,12 @@
         }
     }
 
+    &__item--no-height {
+        @media (min-width: $lg) {
+            height: 100%;
+        }
+    }
+
     &__item::after {
         @include pseudo();
         bottom: 0;
