@@ -89,6 +89,7 @@ var modals = {
         });
     },
 
+//добавляем класс active-btn к конкретной кнопке
     addButtonState: (btn) => {
         btn.classList.add("active-btn");
     },
