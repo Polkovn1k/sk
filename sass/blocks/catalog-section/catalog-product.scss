@@ -153,7 +153,7 @@
     }
 
     &__action-item:hover::after {
-        content: "";
+        content: attr(data-tips);
         position: absolute;
         display: block;
         z-index: 10;
@@ -170,14 +170,6 @@
         line-height: 25px;
         text-align: center;
         color: $white;
-    }
-
-    &__action-item--favorite:hover::after {
-        content: "В избранное";
-    }
-
-    &__action-item--compare:hover::after {
-        content: "К сравнению";
     }
 
     &__action-item:last-child {

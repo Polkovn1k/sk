@@ -89,7 +89,7 @@
     }
 
     &__link:hover::before {
-        content: "";
+        content: attr(data-tips);
         position: absolute;
         display: block;
         z-index: 100;
@@ -109,26 +109,6 @@
         bottom: 0;
         left: 50%;
         transform: translate(-50%, 150%);
-    }
-
-    &__link--search:hover::before {
-        content: "Поиск";
-    }
-
-    &__link--join:hover::before {
-        content: "Войти";
-    }
-
-    &__link--favorite:hover::before {
-        content: "В избранное";
-    }
-
-    &__link--compare:hover::before {
-        content: "К cравнению";
-    }
-
-    &__link--cart:hover::before {
-        content: "Корзина";
     }
 
     &__link--cart {
