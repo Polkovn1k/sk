@@ -25,7 +25,7 @@
     </div>
 </section>
 
-<!-- overlays: call-back -->
+<!-- overlays: choose city -->
 <div id="city-pick" class="city-pick-over js-overlay">
     <section class="city-pick-over__container">
 
@@ -159,7 +159,7 @@
                 </div>
                 <div class="profile__btn-block">
                     <button type="submit" class="dark-btn profile__btn">Войти</button>
-                    <a href="#" class="btn profile__btn">Я забыл пароль</a>
+                    <a data-overlay-id="pass-recovery" class="btn profile__btn js-overlay-btn">Я забыл пароль</a>
                 </div>
             </form>
             <div class="profile__to-registry">
@@ -229,3 +229,32 @@
         </div>
     </div>
 </div>
+
+<!-- overlays: pass recovery -->
+<section id="pass-recovery" class="pass-recovery js-overlay">
+    <div class="pass-recovery__container">
+
+        <div class="pass-recovery__top-line">
+            <h3 class="pass-recovery__title">Восстановление пароля</h3>
+            <button class="pass-recovery__close js-close-overlays">
+                Закрыть окно
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                </svg>
+            </button>
+        </div>
+
+        <p class="pass-recovery__text">
+            Пожалуйста, введите Ваш адрес электронной почты, на который мы можем выслать инструкцию для смены пароля.
+        </p>
+        <form action="#" class="pass-recovery__form">
+            <div class="pass-recovery__inputs">
+                <input type="email" placeholder="Введите свой email" class="pass-recovery__input">
+            </div>
+            <div class="pass-recovery__btns-block">
+                <button type="submit" class="dark-btn pass-recovery__btn">Восстановить</button>
+                <a data-overlay-id="profile-block" class="btn pass-recovery__btn js-overlay-btn">Я вспомнил пароль</a>
+            </div>
+        </form>
+    </div>
+</section>
