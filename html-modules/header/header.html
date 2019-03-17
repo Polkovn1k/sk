@@ -564,7 +564,17 @@
 
 <div id="communication-type" class="communication-type js-overlay">
     <section class="communication-type__container">
-        <h3 class="communication-type__title">Связь с нами</h3>
+
+        <div class="communication-type__top-line">
+            <h3 class="communication-type__title">Связь с нами</h3>
+            <button class="communication-type__close js-close-overlays">
+                Закрыть окно
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                </svg>
+            </button>
+        </div>
+
         <p class="communication-type__text">
             Здравствуйте. Возникли вопросы? Вы можете связаться с нами следующими способами. Напоминаем - <span>звонок по РФ бесплатный</span>
         </p>
@@ -575,7 +585,7 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#whatsapp"></use>
                     </svg>
                     WhatsApp
-            </a>
+                </a>
             </li>
             <li class="communication-type__item">
                 <a href="http://tele.click/vape_generation" class="communication-type__link communication-type__link--telegram">
@@ -594,12 +604,6 @@
                 </a>
             </li>
         </ul>
-        <button data-overlay-id="communication-type" class="communication-type__close js-close-overlays">
-            Закрыть окно
-            <svg aria-hidden="true" role="presentation">
-                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-            </svg>
-        </button>
     </section>
 </div>
 

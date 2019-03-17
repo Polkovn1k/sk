@@ -1,19 +1,18 @@
 .communication-type {
     @include full-absolute();
     display: none;
-    padding: $grid-padding;
     position: fixed;
-    z-index: 100;
+    z-index: 1000;
     overflow: auto;
     font-family: $font;
-    background-color: transparentize($black, 0.5);
+    background: transparentize($black, 0.5);
     @media (min-width: $lg) {
         display: flex;
         position: static;
         height: $gradient-breakpoint-desktop;
         padding: 0;
         overflow: visible;
-        background-color: transparent;
+        background: transparent;
     }
 
     &.opened {
@@ -24,11 +23,27 @@
     }
 
     &__container {
-        position: relative;
-        padding: 20px;
+        max-height: 100vh;
+        overflow: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: calc(100% - #{$two-grid-padding});
+        margin: 0 auto;
+        padding: $grid-padding;
         background: $white;
         border-radius: 5px;
+        @media (min-width: $sm) {
+            width: 475px;
+        }
         @media (min-width: $lg) {
+            margin: 0;
+            overflow: visible;
+            max-height: none;
+            transform: none;
+            position: static;
+            width: auto;
             display: flex;
             align-items: center;
             height: 100%;
@@ -36,19 +51,43 @@
         }
     }
 
-    &__title {
-        @include field-reset();
-        margin: 0 -20px;
-        padding: 0 20px;
-        min-height: 45px;
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 1.33;
-        color: $extra-text-color;
+    &__top-line {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 (-$grid-padding);
+        margin-top: -$grid-padding;
+        position: relative;
         border-bottom: 1px solid $border-color;
+        padding: 0 $grid-padding;
+        height: 75px;
         @media (min-width: $lg) {
             display: none;
         }
+    }
+
+    &__close {
+        padding: 0;
+        display: block;
+        width: 50px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 0;
+        text-align: right;
+        cursor: pointer;
+        svg {
+            fill: $add-text-color;
+        }
+    }
+
+    &__title {
+        @include field-reset();
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $main-color;
     }
 
     &__text {
