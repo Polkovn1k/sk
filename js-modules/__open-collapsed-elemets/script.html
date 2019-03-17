@@ -22,30 +22,36 @@ var expandCollapsedItems = {
         });
     },
 
+//добавляем active-btn только к нажатой кнопке
     _addBtnActive: (clickedBtn) => {
         clickedBtn.classList.add("active-btn");
     },
 
+//убираем active-btn только у нажатой кнопке
     _removeBtnActive: (clickedBtn) => {
         clickedBtn.classList.remove("active-btn");
     },
 
+//убираем максимальную высоту у раскрытого элемента после транзишина
     _deleteMaxHeightFromExpanded: (item) => {
         setTimeout(function() {
             item.style.maxHeight = "none";
         }, expandCollapsedItems.TRANSITION_TIME);
     },
 
+//убираем максимальную высоту у схлопнутого элемента
     _deleteInlineStyleFromCollapsed: (item) => {
         setTimeout(function() {
             item.style.removeProperty("max-height");
         }, 1);
     },
 
+//находим нужный элемент который необходимо раскрыть
     _findClickedBtnsDataToId: (clickedBtn) => {
         return document.getElementById(clickedBtn.dataset.findId);
     },
 
+//получаем реальную высоту схлопнутого элемента
     _getTrueElementHeight: (collapsedElement) => {
         collapsedElement.style.maxHeight = collapsedElement.scrollHeight + "px";
     },
