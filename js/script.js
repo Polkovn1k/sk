@@ -1,47 +1,61 @@
-var expandCollapsedItemsToggleStyle = {
-    clickListener: () => {
-        document.querySelectorAll(".js-call-collapsed-toggle").forEach(function(item) {
-            item.addEventListener("click", (event) => {
-                //если у нажатой кнопки нет active-btn то...
-                if (!item.classList.contains("active-btn")) {
-                    expandCollapsedItemsToggleStyle._removeAllBtnsActive();//у всех кнопок убираем active-btn
-                    expandCollapsedItemsToggleStyle._removeAllContentsHeight();//убираем все высоты у схопнутых элементов
-                    item.classList.add("active-btn");//на нажатую кнопку вешаем active-btn
-                    expandCollapsedItemsToggleStyle._openDataToIdContent(item);//и открываем нужный контент по нажатой кнопке
-                    return false;
-                }
-                //если у нажатой кнопки есть active-btn то...
-                expandCollapsedItemsToggleStyle._removeAllBtnsActive();//у всех кнопок убираем active-btn
-                expandCollapsedItemsToggleStyle._removeAllContentsHeight();//убираем все высоты у схопнутых элементов
+//модалка входа/регистрации
+var joinModal = {
+    container: document.getElementById("profile-block"),
+    joinBtns: document.querySelectorAll(".js-profile__tab"),
+    joinItems: document.querySelectorAll(".js-profile-item"),
+    btnToDefault: document.querySelectorAll(".js-default-overlay"),
+
+    init: () => {
+        joinModal.joinBtns.forEach(function(item) {
+            item.addEventListener("click", function(event) {
+                joinModal._removeBtnActiveClasses(joinModal.joinBtns);
+                joinModal._removeBlockActiveClasses(joinModal.joinItems);
+                joinModal._openBlock(event.target);
+                joinModal._activeBtn(event.target);
             });
         });
     },
 
-//убираем active-btn у всех кнопок
-    _removeAllBtnsActive: () => {
-        document.querySelectorAll(".js-call-collapsed-toggle").forEach((element) => {
-            element.classList.remove("active-btn");
+    resetOverlayView: () => {
+        joinModal.btnToDefault.forEach(function(item) {
+            item.addEventListener("click", function(event) {
+                if (!joinModal.container.classList.contains("opened")) {
+                    joinModal._removeBtnActiveClasses(joinModal.joinBtns);
+                    joinModal._removeBlockActiveClasses(joinModal.joinItems);
+                    document.querySelector(".js-profile-join").classList.add("active");
+                    document.querySelector(".js-first-tab").classList.add("active-btn");
+                    return false;
+                }
+            });
         });
     },
 
-//убираем максимальную высоту у всех схлопнутых элементов
-    _removeAllContentsHeight: () => {
-        document.querySelectorAll(".js-footer-collapsed").forEach((element) => {
-            element.style.removeProperty("max-height");
+    _removeBtnActiveClasses: (allBtns) => {
+        allBtns.forEach(function(bItem) {
+            bItem.classList.remove("active-btn");
         });
     },
 
-//находим нужный элемент который необходимо раскрыть и
-    _openDataToIdContent: (item) => {
-        var findContentElementByID = document.getElementById(item.dataset.findId);
-        if (item.classList.contains("active-btn")) {
-            findContentElementByID.style.maxHeight = findContentElementByID.scrollHeight + "px";
-            return false;
-        }
+    _removeBlockActiveClasses: (allBlocks) => {
+        allBlocks.forEach(function(jItem) {
+            jItem.classList.remove("active");
+        });
     },
 
-    init: () => {
-        expandCollapsedItemsToggleStyle.clickListener();
-    }
+    _openBlock: (opt) => {
+        var currentBtn = opt.dataset.toClass;
+        for (var i = 0; i < joinModal.joinItems.length; i++) {
+            if (joinModal.joinItems[i].classList.contains(currentBtn)) {
+                joinModal.joinItems[i].classList.add("active");
+            }
+        };
+    },
+
+    _activeBtn: (opt) => {
+        for (var i = 0; i < joinModal.joinBtns.length; i++) {
+            opt.classList.add("active-btn");
+        };
+    },
 };
-expandCollapsedItemsToggleStyle.init();
+joinModal.init();
+joinModal.resetOverlayView();

@@ -35,7 +35,6 @@
         height: $common-item-height;
         padding: 0 10px;
         line-height: $common-item-height;
-        pointer-events: none;
         font-size: 14px;
         font-weight: 400;
         color: $extra-text-color;
@@ -47,8 +46,8 @@
         outline: none;
     }
 
-    &__input.active {
-        pointer-events: auto;
+    &__input.disable {
+        pointer-events: none;
     }
 
     &__btn {
@@ -56,9 +55,8 @@
         display: block;
         padding: 0 10px;
         height: $common-item-height;
-        background: $communication-add-color;
+        background: $yellow;
         border: none;
-        pointer-events: none;
 
         font-size: 14px;
         font-weight: 600;
@@ -72,9 +70,9 @@
         transition: 0.2s background ease;
     }
 
-    &__btn.active {
-        pointer-events: auto;
-        background: $yellow;
+    &__btn.disable {
+        pointer-events: none;
+        background: $communication-add-color;
     }
 
     &__btn:hover {

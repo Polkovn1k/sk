@@ -1,5 +1,5 @@
 <script>
-//стили навигация - обработчик клика кнопок в sticky навигации
+//СТИЛИ НАВИГАЦИЯ - ОБРАБОТЧИК КЛИКА КНОПОК В STICKY НАВИГАЦИИ
 var anchorTransition = {
     listenBtnClick: () => {
         document.querySelectorAll(".js-sticky-btn").forEach(function(item) {
@@ -19,6 +19,10 @@ var anchorTransition = {
     _addActiveForBtns: (clickedBtn) => {
         clickedBtn.classList.add("active-btn");
     },
+
+    init: () => {
+        anchorTransition.listenBtnClick();
+    },
 };
-anchorTransition.listenBtnClick();
+anchorTransition.init();
 </script>

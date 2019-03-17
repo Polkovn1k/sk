@@ -1,11 +1,9 @@
 <script>
 // ОБРАБОТЧИК GRID/LINE
 var gridStyle = {
-    container: document.getElementById("products-list-container"),
-    styleBtn: document.querySelectorAll(".js-sort__view-item"),
 
-    init: () => {
-        gridStyle.styleBtn.forEach(function(item) {
+    listenClick: () => {
+        document.querySelectorAll(".js-sort-view").forEach(function(item) {
             item.addEventListener("click", function(event) {
                 gridStyle._switch(item);
             });
@@ -13,12 +11,16 @@ var gridStyle = {
     },
 
     _switch: (opt) => {
-        gridStyle.styleBtn.forEach(function(elements) {
-            gridStyle.container.classList.remove(elements.dataset.toClass);
+        document.querySelectorAll(".js-sort-view").forEach(function(elements) {
+            document.getElementById("products-list-container").classList.remove(elements.dataset.toClass);
             elements.classList.remove("active-btn");
         });
-        gridStyle.container.classList.add(opt.dataset.toClass);
+        document.getElementById("products-list-container").classList.add(opt.dataset.toClass);
         opt.classList.add("active-btn");
+    },
+
+    init: () => {
+        gridStyle.listenClick();
     },
 };
 gridStyle.init();
