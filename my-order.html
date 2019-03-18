@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smoking Shop</title>
+  <meta name="description" content="Smoking Shop">
+  <meta name="keywords" content="Smoking Shop">
+  <link rel="shortcut icon" type="image/x-icon" href="*.ico">
+  <link rel="shortcut icon" type="image/png" href="*.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="canonical" href="https://***.ru/">
+  <script>document.createElement("picture");</script>
+  <!-- <script src="picturefill.js" async></script> -->
+</head>
+
+<body>
+
+  <div style="display: none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+  <!----------header-->
+  <header class="header">
+      <div class="header__container">
+
+          <include src="html-modules/header/header.html"></include>
+
+      </div>
+  </header>
+
+  <!----------main-->
+  <main class="main main--no-hidden">
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <div class="col-12">
+                  <ul class="crumbs">
+                      <li class="crumbs__item">
+                          <a href="/" class="crumbs__link">Главная</a>
+                      </li>
+                      <li class="crumbs__item">
+                          <a href="my-order.html" class="crumbs__link">Мои заказы</a>
+                      </li>
+                  </ul>
+              </div>
+              <h2 class="col-12 main__title">Мои заказы</h2>
+              <div class="col-12">
+                  <div class="row">
+
+                      <include src="html-modules/__my-order/sticky-nav.html"></include>
+                      <!-- <include src="html-modules/__my-order/my-order.html"></include> -->
+
+
+
+
+
+                      <div class="col-12 col-lg-9 my-order">
+                          <div class="my-order__container">
+                              <table class="my-order__table">
+                                  <tbody>
+                                      <tr>
+                                          <th>Номер заказа</th>
+                                          <th>Дата</th>
+                                          <th>Количество</th>
+                                          <th>Итоговая сумма</th>
+                                          <th></th>
+                                      </tr>
+                                      <tr class="my-order__list">
+                                          <td>
+                                              #23231
+                                          </td>
+                                          <td>
+                                              31.10.2018
+                                          </td>
+                                          <td>
+                                              4
+                                          </td>
+                                          <td>
+                                              12 555 Р.
+                                          </td>
+                                          <td>
+                                              <button data-find-id="order-1" class="my-order__open js-call-collapsed-element">
+
+                                                  <svg width="15" height="8" aria-hidden="true" role="presentation">
+                                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                                  </svg>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td colspan="5">
+                                              <div id="order-1" class="my-order__collapsed-info" >
+                                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit hic, beatae voluptas itaque, illum possimus quo. Iste consectetur sapiente, illo illum, quisquam esse repellat eaque suscipit, vitae dolore quas sequi.
+                                              </div>
+                                          </td>
+                                      </tr>
+                                      <tr class="my-order__list">
+                                          <td>
+                                              #33433
+                                          </td>
+                                          <td>
+                                              14.01.2019
+                                          </td>
+                                          <td>
+                                              4
+                                          </td>
+                                          <td>
+                                              154 000 Р.
+                                          </td>
+                                          <td>
+                                              <button data-find-id="order-2" class="my-order__open js-call-collapsed-element">
+
+                                                  <svg width="15" height="8" aria-hidden="true" role="presentation">
+                                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                                  </svg>
+                                              </button>
+                                          </td>
+                                      </tr>
+                                      <tr>
+                                          <td colspan="5">
+                                              <div id="order-2" class="my-order__collapsed-info" >
+                                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente voluptate hic molestias corporis vitae ratione et tempora perferendis maxime dolores fugiat dolor facilis, autem numquam neque aliquid dolore quae magni.
+                                              </div>
+                                          </td>
+                                      </tr>
+                                  </tbody>
+                              </table>
+                          </div>
+                      </div>
+
+
+
+
+
+
+
+
+
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      <include src="html-modules/viewed-slider/viewed-slider.html"></include>
+
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <include src="html-modules/overlays/overlays.html"></include>
+
+          </div>
+      </div>
+
+  </main>
+
+  <!----------footer-->
+  <footer class="footer">
+      <div class="footer__container container-fluid">
+
+          <include src="html-modules/footer/top-footer.html"></include>
+          <include src="html-modules/footer/bottom-footer.html"></include>
+
+      </div>
+  </footer>
+
+  <!----------library concat-->
+  <script src="js/script.js"></script>
+
+  <!----------actions for all pages-->
+  <include src="js-modules/__all-pages/__modals.html"></include>
+  <include src="js-modules/__all-pages/__open-collapsed-elemets-toggle-style.html"></include>
+  <include src="js-modules/__all-pages/__footer-switch.html"></include>
+
+  <!----------viewed slider-->
+  <include src="js-modules/__viewed-slider/script.html"></include>
+  <!----------open collapsed elements-->
+  <include src="js-modules/__open-collapsed-elemets/script.html"></include>
+  <!----------btn style in sticky nav-->
+  <include src="js-modules/__active-btn-in-sticky/script.html"></include>
+
+</body>
+
+</html>

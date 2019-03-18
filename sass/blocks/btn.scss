@@ -93,3 +93,27 @@
         background: lighten($black, 20%);
     }
 }
+
+.red-btn {
+    display: inline-block;
+    vertical-align: top;
+    height: $add-btn-height;
+    padding: 0 20px;
+    border: 1px solid $add-red;
+    line-height: $add-btn-height;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: $add-red;
+    background-color: $white;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+        background: $add-red;
+        color: $white;
+    }
+}
