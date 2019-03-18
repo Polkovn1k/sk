@@ -114,11 +114,6 @@
                 border-left: 2px solid $blue;
             }
         }
-        @media (min-width: $xl) {
-            a {
-                font-size: 18px;
-            }
-        }
     }
 
     &__item:hover {

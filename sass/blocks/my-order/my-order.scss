@@ -10,8 +10,7 @@
         overflow-y: hidden;
 
         @media (min-width: $lg) {
-            border-right: none;
-            border-left: none;
+            border: none;
             overflow-x: visible;
             overflow-y: visible;
         }
