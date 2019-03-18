@@ -28,6 +28,10 @@
             width: calc((100% - 40px) / 4);
             text-align: left;
             height: 52px;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
         }
         th:last-child,
         td:last-child {
@@ -53,6 +57,12 @@
         }
         tr {
             box-shadow: 0 1px 0 $border-color;
+        }
+        a {
+            transition: 0.3s ease;
+        }
+        a:hover {
+            color: $blue;
         }
         .my-order__collapsed-info {
             width: 100%;
