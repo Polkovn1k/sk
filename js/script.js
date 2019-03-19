@@ -59,3 +59,52 @@ var joinModal = {
 };
 joinModal.init();
 joinModal.resetOverlayView();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//---------------------------------
+//подгрузка ajax'а
+var callAjaxContent = document.querySelector(".js-ajax-content");
+var xhr = new XMLHttpRequest();
+var fragments = document.createDocumentFragment();
+var articleParent = document.getElementById("products-list-container");
+
+
+
+callAjaxContent.addEventListener("click", function (event) {
+    if (xhr.status === 200) {
+        console.log("Использую загруженный вариант");
+        var ajaxResponse = JSON.parse(xhr.responseText);
+        console.dir(ajaxResponse);
+        event.preventDefault();
+        for (var i = 0; i < ajaxResponse.length; i++) {
+            var frag = document.createRange().createContextualFragment(ajaxResponse[1]);
+            articleParent.appendChild(frag);
+        }
+        return false;
+        //console.dir(xhr);
+    }
+    xhr.addEventListener('load', function () {
+      var ajaxResponse = JSON.parse(xhr.responseText);
+      event.preventDefault();
+      for (var i = 0; i < ajaxResponse.length; i++) {
+          var frag = document.createRange().createContextualFragment(ajaxResponse[0]);
+          articleParent.appendChild(frag);
+      }
+      console.log("Первая загрузка файла");
+    });
+    xhr.open("GET", "json/articleData.json");
+    xhr.send();
+});
