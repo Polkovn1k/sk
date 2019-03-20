@@ -84,8 +84,6 @@ var ajaxResponse;
 
 
 function addItem() {
-    ajaxResponse = JSON.parse(xhr.responseText);
-    event.preventDefault();
     var qwerty = ajaxResponse.length;
     for (var i = 0; i < 6; i++) {
         var frag = document.createRange().createContextualFragment(ajaxResponse[0]);
@@ -96,35 +94,14 @@ function addItem() {
 };
 
 callAjaxContent.addEventListener("click", function (event) {
-    if (ajaxResponse !== undefined) {
-
-
-        event.preventDefault();
-        var qwerty = ajaxResponse.length;
-        for (var i = 0; i < 6; i++) {
-            var frag = document.createRange().createContextualFragment(ajaxResponse[0]);
-            fragments.appendChild(frag);
-            ajaxResponse.shift();
-        };
-        articleParent.appendChild(fragments);
+    if (xhr.status === 200) {
+        addItem();
         return false;
-
-
     }
     xhr.addEventListener('load', function () {
-
-
-          ajaxResponse = JSON.parse(xhr.responseText);
-          event.preventDefault();
-          var qwerty = ajaxResponse.length;
-          for (var i = 0; i < 6; i++) {
-              var frag = document.createRange().createContextualFragment(ajaxResponse[0]);
-              fragments.appendChild(frag);
-              ajaxResponse.shift();
-          };
-          articleParent.appendChild(fragments);
-
-
+        ajaxResponse = JSON.parse(xhr.responseText);
+        event.preventDefault();
+        addItem();
       });
     xhr.open("GET", "json/articleData.json");
     xhr.send();
