@@ -80,31 +80,52 @@ var callAjaxContent = document.querySelector(".js-ajax-content");
 var xhr = new XMLHttpRequest();
 var fragments = document.createDocumentFragment();
 var articleParent = document.getElementById("products-list-container");
+var ajaxResponse;
 
 
+function addItem() {
+    ajaxResponse = JSON.parse(xhr.responseText);
+    event.preventDefault();
+    var qwerty = ajaxResponse.length;
+    for (var i = 0; i < 6; i++) {
+        var frag = document.createRange().createContextualFragment(ajaxResponse[0]);
+        fragments.appendChild(frag);
+        ajaxResponse.shift();
+    };
+    articleParent.appendChild(fragments);
+};
 
 callAjaxContent.addEventListener("click", function (event) {
-    if (xhr.status === 200) {
-        console.log("Использую загруженный вариант");
-        var ajaxResponse = JSON.parse(xhr.responseText);
-        console.dir(ajaxResponse);
+    if (ajaxResponse !== undefined) {
+
+
         event.preventDefault();
-        for (var i = 0; i < ajaxResponse.length; i++) {
-            var frag = document.createRange().createContextualFragment(ajaxResponse[1]);
-            articleParent.appendChild(frag);
-        }
+        var qwerty = ajaxResponse.length;
+        for (var i = 0; i < 6; i++) {
+            var frag = document.createRange().createContextualFragment(ajaxResponse[0]);
+            fragments.appendChild(frag);
+            ajaxResponse.shift();
+        };
+        articleParent.appendChild(fragments);
         return false;
-        //console.dir(xhr);
+
+
     }
     xhr.addEventListener('load', function () {
-      var ajaxResponse = JSON.parse(xhr.responseText);
-      event.preventDefault();
-      for (var i = 0; i < ajaxResponse.length; i++) {
-          var frag = document.createRange().createContextualFragment(ajaxResponse[0]);
-          articleParent.appendChild(frag);
-      }
-      console.log("Первая загрузка файла");
-    });
+
+
+          ajaxResponse = JSON.parse(xhr.responseText);
+          event.preventDefault();
+          var qwerty = ajaxResponse.length;
+          for (var i = 0; i < 6; i++) {
+              var frag = document.createRange().createContextualFragment(ajaxResponse[0]);
+              fragments.appendChild(frag);
+              ajaxResponse.shift();
+          };
+          articleParent.appendChild(fragments);
+
+
+      });
     xhr.open("GET", "json/articleData.json");
     xhr.send();
 });
