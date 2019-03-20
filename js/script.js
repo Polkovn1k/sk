@@ -118,5 +118,9 @@ var loadAjaxContent = {
         };
         loadAjaxContent.parentContainer.appendChild(loadAjaxContent.fragments);
     },
+
+    init: () => {
+        loadAjaxContent.listenClick();
+    },
 };
-loadAjaxContent.listenClick();
+loadAjaxContent.init();
