@@ -75,34 +75,48 @@ joinModal.resetOverlayView();
 
 
 //---------------------------------
-//подгрузка ajax'а
-var callAjaxContent = document.querySelector(".js-ajax-content");
-var xhr = new XMLHttpRequest();
-var fragments = document.createDocumentFragment();
-var articleParent = document.getElementById("products-list-container");
-var ajaxResponse;
 
+var loadAjaxContent = {
 
-function addItem() {
-    var qwerty = ajaxResponse.length;
-    for (var i = 0; i < 6; i++) {
-        var frag = document.createRange().createContextualFragment(ajaxResponse[0]);
-        fragments.appendChild(frag);
-        ajaxResponse.shift();
-    };
-    articleParent.appendChild(fragments);
+    xhr: new XMLHttpRequest(),
+
+    callAjaxBtn: document.querySelector(".js-ajax-btn"),
+
+    parentContainer: document.getElementById("products-list-container"),
+
+    ITEMS_PER_CLICK: 6,
+
+    fragments: document.createDocumentFragment(),
+
+    ajaxObject: null,
+
+    listenClick: () => {
+        loadAjaxContent.callAjaxBtn.addEventListener("click", function (event) {
+            if (loadAjaxContent.xhr.status === 200) {
+                loadAjaxContent._addContentAfterClick();
+                return false;
+            }
+            loadAjaxContent.xhr.addEventListener('load', function () {
+                loadAjaxContent.ajaxObject = JSON.parse(loadAjaxContent.xhr.responseText);
+                event.preventDefault();
+                loadAjaxContent._addContentAfterClick();
+              });
+            loadAjaxContent.xhr.open("GET", "json/articleData.json");
+            loadAjaxContent.xhr.send();
+        });
+    },
+
+    _addContentAfterClick: () => {
+        for (var i = 0; i < loadAjaxContent.ITEMS_PER_CLICK; i++) {
+            if (loadAjaxContent.ajaxObject.length <= 0) {
+                loadAjaxContent.callAjaxBtn.classList.add("visually-hidden");
+                continue;
+            }
+            var frag = document.createRange().createContextualFragment(loadAjaxContent.ajaxObject[0]);
+            loadAjaxContent.fragments.appendChild(frag);
+            loadAjaxContent.ajaxObject.shift();
+        };
+        loadAjaxContent.parentContainer.appendChild(loadAjaxContent.fragments);
+    },
 };
-
-callAjaxContent.addEventListener("click", function (event) {
-    if (xhr.status === 200) {
-        addItem();
-        return false;
-    }
-    xhr.addEventListener('load', function () {
-        ajaxResponse = JSON.parse(xhr.responseText);
-        event.preventDefault();
-        addItem();
-      });
-    xhr.open("GET", "json/articleData.json");
-    xhr.send();
-});
+loadAjaxContent.listenClick();
