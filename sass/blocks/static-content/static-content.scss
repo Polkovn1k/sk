@@ -25,7 +25,7 @@
         position: relative;
         border-bottom: 1px solid $border-color;
         padding: 20px $grid-padding;
-        > *:not([class]):nth-last-child(2) {
+        > *:not([class]):last-child {
             margin-bottom: 0;
         }
         @media (min-width: $lg) {
@@ -138,18 +138,6 @@
         line-height: $common-item-height;
         @media (min-width: $md) {
             width: auto;
-        }
-    }
-
-    &__anchor-element {
-        position: absolute;
-        z-index: -1;
-        top: -$mobile-header-height;
-        @media (min-width: $md) {
-            top: -$tablet-header-height;
-        }
-        @media (min-width: $lg) {
-            top: -$desktop-header-height;
         }
     }
 

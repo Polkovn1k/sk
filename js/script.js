@@ -59,3 +59,63 @@ var joinModal = {
 };
 joinModal.init();
 joinModal.resetOverlayView();
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getCoords(elem) { // кроме IE8-
+  var box = elem.getBoundingClientRect();
+
+  var qwe = {
+    top: box.top + pageYOffset,
+  };
+  return qwe.top - 150;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+var goToAnchor = {
+    listenClick: () => {
+        document.querySelectorAll(".js-sticky-btn").forEach((item) => {
+            item.addEventListener("click", (event) => {
+              event.preventDefault();
+              var currentElement = goToAnchor._findClickedBtnsDataToId(item);
+              window.qwerty = currentElement.getBoundingClientRect();
+              console.log(getCoords(currentElement));
+              window.scrollTo(0, getCoords(currentElement));
+            });
+        });
+    },
+
+    _findClickedBtnsDataToId: (clickedBtn) => {
+        return document.getElementById(clickedBtn.dataset.findId);
+    },
+
+    _scrollToCurrentElement: () => {
+
+    },
+
+    init: () => {
+        goToAnchor.listenClick();
+    },
+};
+goToAnchor.init();
