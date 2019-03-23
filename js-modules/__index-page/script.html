@@ -1,13 +1,13 @@
 <script>
 //---------index-page
-var glide = new Glide('.js-top-slider__container', {
+var glide = new Glide('.js-top-slider', {
   type: 'carousel',
   autoplay: 3000,
   hoverpause: true,
 });
 glide.mount();
 //---------index-page
-var glideAdvantages = new Glide('.js-advantages__container', {
+var glideAdvantages = new Glide('.js-advantages-slider', {
   perView: 5,
   dragThreshold: false,
   bound: true,
@@ -20,7 +20,7 @@ var glideAdvantages = new Glide('.js-advantages__container', {
 });
 glideAdvantages.mount();
 //---------index-page
-var sliders = document.querySelectorAll(".js-goods-sliders__slider");
+var sliders = document.querySelectorAll(".js-goods-slider");
 var glideGoodsSliders = [];
 
 var sliderCollection = function (i, item) {
@@ -53,7 +53,7 @@ for (var i = 0; i < sliders.length; i++) {
     sliderCollection(i, sliders);
 }
 //---------index-page
-var articlesSlider = new Glide('.js-articles__slider', {
+var articlesSlider = new Glide('.js-articles-slider', {
     gap: 15,
     bound: true,
     rewind: false,
@@ -98,7 +98,7 @@ var articlesSlider = new Glide('.js-articles__slider', {
 });
 articlesSlider.mount();
 //---------index-page
-var brandsSlider = new Glide('.js-brands__slider', {
+var brandsSlider = new Glide('.js-brands-slider', {
     gap: 15,
     bound: true,
     rewind: false,

@@ -10,23 +10,23 @@ var loadAjaxContent = {
 
     ajaxObject: null,
 
-    listenClick: () => {
+    listenClick: (jsonFrom, container) => {
         document.querySelector(".js-ajax-btn").addEventListener("click", function (event) {
             if (loadAjaxContent.xhr.status === 200) {
-                loadAjaxContent._addContentAfterClick();
+                loadAjaxContent._addContentAfterClick(container);
                 return false;
             }
             loadAjaxContent.xhr.addEventListener('load', function () {
                 loadAjaxContent.ajaxObject = JSON.parse(loadAjaxContent.xhr.responseText);
                 event.preventDefault();
-                loadAjaxContent._addContentAfterClick();
+                loadAjaxContent._addContentAfterClick(container);
               });
-            loadAjaxContent.xhr.open("GET", "json/ajax-catalog.json");
+            loadAjaxContent.xhr.open("GET", jsonFrom);
             loadAjaxContent.xhr.send();
         });
     },
 
-    _addContentAfterClick: () => {
+    _addContentAfterClick: (containerToInsert) => {
         for (var i = 0; i < loadAjaxContent.ITEMS_PER_CLICK; i++) {
             if (loadAjaxContent.ajaxObject.length <= 0) {
                 document.querySelector(".js-ajax-btn").classList.add("visually-hidden");
@@ -43,7 +43,7 @@ var loadAjaxContent = {
     },
 
     init: () => {
-        loadAjaxContent.listenClick();
+        loadAjaxContent.listenClick("json/ajax-catalog.json", "products-list-container");
     },
 };
 loadAjaxContent.init();
