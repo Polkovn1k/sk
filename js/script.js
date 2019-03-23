@@ -72,46 +72,31 @@ joinModal.resetOverlayView();
 
 
 
-function getCoords(elem) { // кроме IE8-
-  var box = elem.getBoundingClientRect();
-
-  var qwe = {
-    top: box.top + pageYOffset,
-  };
-  return qwe.top - 150;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
 var goToAnchor = {
+//слушаем клик
     listenClick: () => {
         document.querySelectorAll(".js-sticky-btn").forEach((item) => {
             item.addEventListener("click", (event) => {
               event.preventDefault();
               var currentElement = goToAnchor._findClickedBtnsDataToId(item);
-              window.qwerty = currentElement.getBoundingClientRect();
-              console.log(getCoords(currentElement));
-              window.scrollTo(0, getCoords(currentElement));
+              window.scrollTo(0, goToAnchor._getCoords(currentElement));
             });
         });
     },
 
+//по клику находим нужную секцию
     _findClickedBtnsDataToId: (clickedBtn) => {
         return document.getElementById(clickedBtn.dataset.findId);
     },
 
-    _scrollToCurrentElement: () => {
+//высчитываем высоту хедера
+    _getHeaderHeight: (elem) => {
+        return document.querySelector(elem).offsetHeight;
+    },
 
+//определяем координаты нужной секции и вычитаем высоту хедера
+    _getCoords: (elem) => {
+        return elem.getBoundingClientRect().top + pageYOffset - goToAnchor._getHeaderHeight(".js-header");
     },
 
     init: () => {
