@@ -11,12 +11,10 @@ var loadAjaxContent = {
     ajaxObject: null,
 
     listenClick: (ajaxCallBtn, container, jsonFrom) => {
-        var qwerty = document.querySelector(ajaxCallBtn);
-        if (qwerty == null) {
+        if (document.querySelector(ajaxCallBtn) == null) {
             return false;
         }
-        console.log(qwerty);
-        qwerty.addEventListener("click", function (event) {
+        document.querySelector(ajaxCallBtn).addEventListener("click", function (event) {
             if (loadAjaxContent.xhr.status === 200) {
                 loadAjaxContent._addContentAfterClick(ajaxCallBtn, container);
                 return false;

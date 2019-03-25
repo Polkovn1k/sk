@@ -3,7 +3,6 @@
     font-family: $font;
 
     &__wrapper {
-        background: $white;
         line-height: $common-item-height;
         border-radius: 5px;
         border: 1px solid $communication-add-color;
@@ -45,6 +44,7 @@
         font-size: 16px;
         font-weight: 600;
         color: $main-color;
+        background: $white;
         transition: 0.3s color ease;
         svg {
             fill: $extra-text-color;
@@ -78,6 +78,7 @@
     &__list {
         @include order-reset();
         max-height: 0;
+        background: $white;
         transition: 0.3s ease;
         @media (min-width: $lg) {
             max-height: none;
@@ -134,5 +135,53 @@
                 border-bottom: 1px solid transparent;
             }
         }
+    }
+
+    &__delivery {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+            margin-top: 20px;
+            padding: 20px;
+            background: $white;
+        }
+        ul {
+            @include order-reset();
+            margin-bottom: 20px;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.38;
+            color: $communication-add-color;
+        }
+        li:last-child {
+            margin-bottom: 0;
+        }
+        div {
+            display: flex;
+            align-items: center;
+            width: 45px;
+        }
+        svg {
+            fill: $blue;
+            flex-shrink: 0;
+            max-width: 45px;
+        }
+        span {
+            display: block;
+            width: 70%;
+            flex-grow: 1;
+            margin-left: 20px;
+        }
+    }
+
+    &__btn {
+        width: 100%;
     }
 }

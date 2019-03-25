@@ -1,0 +1,166 @@
+.delivery-calc {
+
+    &__form {
+        margin-bottom: 30px;
+        input {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        @media (min-width: $lg) {
+            display: flex;
+            input {
+                flex-grow: 1;
+                margin-bottom: 0;
+                border-right: none;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+        }
+    }
+
+    &__btn {
+        width: 100%;
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        @media (min-width: $lg) {
+            flex-shrink: 0;
+            width: auto;
+            font-size: 14px;
+            border-left: none;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &__pay-btns {
+        margin-bottom: 30px;
+        @media (min-width: $lg) {
+            display: flex;
+        }
+    }
+
+    &__pay-btn {
+        width: 100%;
+        height: $common-item-height;
+        margin-bottom: 20px;
+        line-height: $common-item-height;
+
+        font-size: 16px;
+        font-weight: 600;
+    }
+
+    &__pay-btn:first-child {
+        @media (min-width: $lg) {
+            border-right: none;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    &__pay-btn:last-child {
+        margin-bottom: 0;
+        @media (min-width: $lg) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &__pay-btn.active {
+        color: $blue;
+        background: $delivery-active-btn;
+        pointer-events: none;
+    }
+//список способа оплаты
+    &__list {
+        @include order-reset();
+    }
+
+    &__item {
+        margin-bottom: 15px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+    }
+
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+
+    &__item-container {
+        padding: 10px;
+        cursor: pointer;
+        @media (min-width: $md) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__shipping-type {
+        @include field-reset();
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.31;
+        color: $main-color;
+        @media (min-width: $md) {
+            width: 70%;
+            margin-bottom: 0;
+            padding-right: 20px;
+        }
+    }
+
+    &__radio {
+        flex-shrink: 0;
+        display: block;
+        width: 25px;
+        height: 25px;
+        margin-right: 15px;
+        border-radius: 50%;
+        border: solid 1px $border-color;
+        background: $white;
+    }
+
+    &__shipping-img {
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+
+    &__values {
+        display: flex;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.30;
+        @media (min-width: $md) {
+            width: 50%;
+            margin-left: auto;
+        }
+    }
+
+    &__time {
+        @include field-reset();
+        color: $main-color;
+    }
+
+    &__pay-sum {
+        color: $green;
+        margin-left: auto;
+        @media (min-width: $md) {
+            width: 80px;
+            padding-left: 10px;
+            text-align: right;
+        }
+    }
+//переключатель "радио"
+    &__item-container.active {
+        background: $add-grey;
+
+        .delivery-calc__radio {
+            background-image: radial-gradient(circle, $green 40%, $white 40%);
+        }
+    }
+}
