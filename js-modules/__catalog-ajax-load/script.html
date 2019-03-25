@@ -10,19 +10,19 @@ var loadAjaxContent = {
 
     ajaxObject: null,
 
-    listenClick: (ajaxCallBtn, container, jsonFrom) => {
+    listenClick: (ajaxCallBtn, containerId, jsonFrom) => {
         if (document.querySelector(ajaxCallBtn) == null) {
             return false;
         }
         document.querySelector(ajaxCallBtn).addEventListener("click", function (event) {
             if (loadAjaxContent.xhr.status === 200) {
-                loadAjaxContent._addContentAfterClick(ajaxCallBtn, container);
+                loadAjaxContent._addContentAfterClick(ajaxCallBtn, containerId);
                 return false;
             }
             loadAjaxContent.xhr.addEventListener('load', function () {
                 loadAjaxContent.ajaxObject = JSON.parse(loadAjaxContent.xhr.responseText);
                 event.preventDefault();
-                loadAjaxContent._addContentAfterClick(ajaxCallBtn, container);
+                loadAjaxContent._addContentAfterClick(ajaxCallBtn, containerId);
               });
             loadAjaxContent.xhr.open("GET", jsonFrom);
             loadAjaxContent.xhr.send();
