@@ -6,7 +6,7 @@
             width: 100%;
             margin-bottom: 20px;
         }
-        @media (min-width: $lg) {
+        @media (min-width: $md) {
             display: flex;
             input {
                 flex-grow: 1;
@@ -23,7 +23,7 @@
         font-size: 16px;
         font-weight: 600;
         text-align: center;
-        @media (min-width: $lg) {
+        @media (min-width: $md) {
             flex-shrink: 0;
             width: auto;
             font-size: 14px;
@@ -35,7 +35,7 @@
 
     &__pay-btns {
         margin-bottom: 30px;
-        @media (min-width: $lg) {
+        @media (min-width: $md) {
             display: flex;
         }
     }
@@ -51,7 +51,7 @@
     }
 
     &__pay-btn:first-child {
-        @media (min-width: $lg) {
+        @media (min-width: $md) {
             border-right: none;
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
@@ -60,7 +60,7 @@
 
     &__pay-btn:last-child {
         margin-bottom: 0;
-        @media (min-width: $lg) {
+        @media (min-width: $md) {
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
