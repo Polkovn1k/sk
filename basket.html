@@ -43,7 +43,7 @@
                           <a href="/" class="crumbs__link">Главная</a>
                       </li>
                       <li class="crumbs__item">
-                          <a href="basket.html" class="crumbs__link">В корзине 5 товаров</a>
+                          <a href="basket.html" class="crumbs__link">Корзина</a>
                       </li>
                   </ul>
               </div>
@@ -51,8 +51,89 @@
               <div class="col-12">
                   <div class="row">
 
-                      <include src="html-modules/__basket/sticky-basket.html"></include>
-                      <include src="html-modules/__basket/basket.html"></include>
+                      <!-- <include src="html-modules/__basket/basket.html"></include> -->
+                      <div class="col-12 col-lg-9 basket">
+                          <div class="basket__container">
+                              <div class="row no-gutters basket__top-line">
+                                  <div class="col-lg-2"></div>
+                                  <div class="col-lg-4">Наименование</div>
+                                  <div class="col-lg-3">Количество</div>
+                                  <div class="col-lg-3">Сумма</div>
+                              </div>
+
+                              <ul class="basket__list">
+                                  <li class="basket__item">
+
+                                      <div class="basket-product">
+                                          <div class="basket-product__container">
+                                              <div class="row no-gutters basket-product__row">
+
+                                                  <div class="col-3 col-lg-2">
+                                                      <div class="basket-product__img">
+                                                          <img src="img/temp__img/item__1.png" alt="">
+                                                      </div>
+                                                  </div>
+
+                                                  <div class="col-9 col-lg-10">
+                                                      <div class="row no-gutters">
+
+                                                          <div class="col-12 col-lg-5">
+                                                              <div class="basket-product__features">
+                                                                  <span class="basket-product__features-item basket-product__features-item--hit">Хит</span>
+                                                                  <span class="basket-product__features-item">-10%</span>
+                                                              </div>
+                                                              <a href="#" class="basket-product__name">Электронная сигарета Eleaf Just 3 для вейперов</a>
+                                                          </div>
+
+                                                          <div class="col-12 col-lg-3"></div>
+
+                                                          <div class="col-12 col-lg-4"></div>
+
+                                                      </div>
+                                                  </div>
+
+                                              </div>
+                                          </div>
+                                      </div>
+
+                                  </li>
+                              </ul>
+
+
+
+
+
+                                 <!--
+
+                                      <div class="basket-product__action">
+                                          <a href="#" data-tips="Удалить" class="basket-product__action-item js-btn-for-del">
+                                              Удалить
+                                              <svg width="22" height="22" aria-hidden="true" role="presentation">
+                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                                              </svg>
+                                          </a>
+                                      </div>
+
+
+
+
+
+                                      <div class="basket-product__price">
+                                          <div class="basket-product__current-price">
+                                              <span class="basket-product__old-price">2 578</span>
+                                              <span class="basket-product__current-value">100 000 Р.</span>
+                                              <a href="#" title="Добавить в корзину" class="basket-product__cart">
+                                                  <svg aria-hidden="true" role="presentation">
+                                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#cart-icon"></use>
+                                                  </svg>
+                                              </a>
+                                          </div>
+                                      </div> -->
+
+
+                          </div>
+                      </div>
+                      <include src="html-modules/__basket/basket-aside.html"></include>
 
                   </div>
               </div>
@@ -92,14 +173,10 @@
 
   <!----------viewed slider-->
   <include src="js-modules/__viewed-slider/script.html"></include>
-  <!----------open collapsed elements-->
-  <include src="js-modules/__open-collapsed-elemets/script.html"></include>
-  <!----------btn style in sticky nav-->
-  <include src="js-modules/__active-btn-in-sticky/script.html"></include>
-  <!----------go to anchor per click sticky nav-->
-  <include src="js-modules/__transition-to-anchor/script.html"></include>
-  <!----------scroll spy in sticky nav-->
-  <include src="js-modules/__scroll-spy/script.html"></include>
+  <!----------advantages slider-->
+  <include src="js-modules/__basket/script.html"></include>
+  <!----------delete element after click-->
+  <include src="js-modules/__delete-element-per-click/script.html"></include>
 
 </body>
 

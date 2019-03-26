@@ -117,3 +117,26 @@
         color: $white;
     }
 }
+
+.yellow-btn {
+    display: inline-block;
+    vertical-align: top;
+    height: $add-btn-height;
+    padding: 0 20px;
+    border: none;
+    line-height: $add-btn-height;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: $main-color;
+    background-color: $yellow;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+
+    &:hover {
+        opacity: 0.8;
+    }
+}

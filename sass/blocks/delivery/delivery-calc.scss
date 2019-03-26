@@ -41,13 +41,30 @@
     }
 
     &__pay-btn {
+        display: inline-block;
+        vertical-align: top;
         width: 100%;
         height: $common-item-height;
         margin-bottom: 20px;
-        line-height: $common-item-height;
+        padding: 0 20px;
 
         font-size: 16px;
         font-weight: 600;
+        line-height: $common-item-height;
+        border: 1px solid $border-color;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        color: $add-btn-color;
+        background-color: transparent;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s ease;
+        &:hover {
+            color: $blue;
+            background: $delivery-active-btn;
+        }
     }
 
     &__pay-btn:first-child {

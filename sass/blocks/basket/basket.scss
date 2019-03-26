@@ -1,0 +1,61 @@
+.basket {
+
+    &__container {
+        background: $white;
+    }
+
+    &__top-line {
+        display: none;
+        @media (min-width: $lg) {
+            display: flex;
+            align-items: center;
+            min-height: $basket-top-line-height;
+            border-bottom: 1px solid $border-color;
+            div {
+                font-size: 18px;
+                font-weight: 600;
+                line-height: 1.33;
+                color: $main-color;
+            }
+            div:first-child {
+                padding-left: 130px;
+            }
+        }
+    }
+
+    &__list {
+        @include order-reset();
+    }
+
+    &__item {
+
+    }
+}
+
+
+//5 3 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//1020
+
+//460
+//230
+//330
