@@ -3,21 +3,26 @@
     &__container {
         padding: $grid-padding;
         @media (min-width: $lg) {
-            padding: 30px;
+            padding: $basket-product-lg-padding;
             height: 160px;
         }
     }
 
 //изображение
     &__img {
-        margin-left: -30px;
-        height: 100%;
+        margin-left: -$grid-padding;
+        height: 100px;
         text-align: center;
         img {
-            max-height: 100px;
-            width: auto;
+            max-height: 100%;
             max-width: 100%;
+            height: auto;
+            width: auto;
         }
+        @media (min-width: $lg) {
+            margin-left: -$basket-product-lg-padding;
+        }
+
     }
 
 //features
