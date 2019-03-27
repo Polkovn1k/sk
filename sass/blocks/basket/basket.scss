@@ -7,18 +7,15 @@
     &__top-line {
         display: none;
         @media (min-width: $lg) {
-            display: flex;
-            align-items: center;
-            min-height: $basket-top-line-height;
-            border-bottom: 1px solid $border-color;
-            div {
-                font-size: 18px;
-                font-weight: 600;
-                line-height: 1.33;
-                color: $main-color;
-            }
-            div:first-child {
-                padding-left: 130px;
+            display: block;
+            padding: 0 $basket-product-lg-padding;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.33;
+            color: $main-color;
+            span {
+                display: block;
+                padding: 20px 0;
             }
         }
     }
@@ -28,34 +25,10 @@
     }
 
     &__item {
+        border-bottom: 1px solid $border-color;
+    }
 
+    &__item:last-child {
+        border-bottom: none;
     }
 }
-
-
-//5 3 4
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//1020
-
-//460
-//230
-//330
