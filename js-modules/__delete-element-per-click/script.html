@@ -2,11 +2,10 @@
 //удаляем элемент после клика
     var hideElementPerClick = {
         listenClick: () => {
-            document.querySelectorAll(".js-btn-for-del").forEach((item) => {
+            document.querySelectorAll(".js-btn-delete").forEach((item) => {
                 item.addEventListener("click", (event) => {
                     event.preventDefault();
-                    var container = item.closest(".js-delete-element");
-                    container.remove();
+                    item.closest(".js-deleted-element").remove();
                 });
             });
         },
