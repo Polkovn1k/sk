@@ -1,5 +1,5 @@
 <script>
-  //удаляем элемент после клика
+//удаляем элемент после клика
     var removeElementAndAddAjax = {
         listenBtnsClick: () => {
             var deleteButtons = document.querySelectorAll(".js-delete-button");
@@ -7,7 +7,11 @@
                 button.addEventListener("click", (event) => {
                     event.preventDefault();
                     button.closest(".js-deleted-item").remove();
-                    removeElementAndAddAjax._checkToLastElement();
+                    if (document.querySelectorAll(".js-deleted-item").length <= 0) {
+                        removeElementAndAddAjax._checkToLastElement();
+                        removeElementAndAddAjax._loadAjaxAfterCleanContainer();
+                        removeElementAndAddAjax._scrolTopAfterAjax();
+                    }
                 });
             });
         },
@@ -16,35 +20,34 @@
             document.querySelector(".js-remove-container").addEventListener("click", (event) => {
                 event.preventDefault();
                 document.querySelector(".js-deleted-container").remove();
+                removeElementAndAddAjax._loadAjaxAfterCleanContainer();
+                removeElementAndAddAjax._scrolTopAfterAjax();
             });
         },
 
         _checkToLastElement: () => {
-            if (document.querySelectorAll(".js-deleted-item").length <= 0) {
-                document.querySelector(".js-deleted-container").remove();
-            }
+            document.querySelector(".js-deleted-container").remove();
         },
 
         _loadAjaxAfterCleanContainer: () => {
-            document.querySelector(".js-remove-container").addEventListener("click", (event) => {
-                event.preventDefault();
-                var xhr = new XMLHttpRequest();
-                xhr.addEventListener("load", (event) => {
-                    var loadedAjax = JSON.parse(xhr.responseText);
-                    var htmlFragment = document.createRange().createContextualFragment(loadedAjax);
-                    document.querySelector(".qwerty").appendChild(htmlFragment);
-                });
-                xhr.open("GET", "json/ajax-empty-basket.json");
-                xhr.send();
+            var xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", (event) => {
+                var loadedAjax = JSON.parse(xhr.responseText);
+                var htmlFragment = document.createRange().createContextualFragment(loadedAjax);
+                document.querySelector(".js-add-container").appendChild(htmlFragment);
             });
+            xhr.open("GET", "json/ajax-empty-basket.json");
+            xhr.send();
+        },
+
+        _scrolTopAfterAjax: () => {
+            window.scrollTo(0, 0);
         },
 
         init: () => {
             removeElementAndAddAjax.listenBtnsClick();
             removeElementAndAddAjax.listenClickForRemoveContainer();
-            removeElementAndAddAjax._loadAjaxAfterCleanContainer();
         },
     };
     removeElementAndAddAjax.init();
-
 </script>

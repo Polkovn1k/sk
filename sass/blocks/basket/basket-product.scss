@@ -40,6 +40,26 @@
         }
     }
 
+    &__del-item:hover::after {
+        content: attr(data-tips);
+        position: absolute;
+        display: block;
+        z-index: 10;
+        top: 50%;
+        left: -$action-item-pseudo-width - 12px;
+        transform: translateY(-50%);
+        width: $action-item-pseudo-width;
+        height: 25px;
+        padding: 0 8px;
+        background: $extra-text-color;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: center;
+        color: $white;
+    }
+
     &__row {
         height: 100%;
         @media (min-width: $lg) {
