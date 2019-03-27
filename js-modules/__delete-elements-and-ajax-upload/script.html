@@ -25,9 +25,24 @@
             }
         },
 
+        _loadAjaxAfterCleanContainer: () => {
+            document.querySelector(".js-remove-container").addEventListener("click", (event) => {
+                event.preventDefault();
+                var xhr = new XMLHttpRequest();
+                xhr.addEventListener("load", (event) => {
+                    var loadedAjax = JSON.parse(xhr.responseText);
+                    var htmlFragment = document.createRange().createContextualFragment(loadedAjax);
+                    document.querySelector(".qwerty").appendChild(htmlFragment);
+                });
+                xhr.open("GET", "json/ajax-empty-basket.json");
+                xhr.send();
+            });
+        },
+
         init: () => {
             removeElementAndAddAjax.listenBtnsClick();
             removeElementAndAddAjax.listenClickForRemoveContainer();
+            removeElementAndAddAjax._loadAjaxAfterCleanContainer();
         },
     };
     removeElementAndAddAjax.init();
