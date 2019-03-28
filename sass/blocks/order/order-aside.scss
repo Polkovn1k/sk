@@ -1,4 +1,4 @@
-.basket-aside {
+.order-aside {
     margin-bottom: 20px;
 
     &__wrapper {
@@ -12,20 +12,11 @@
 
     }
 
-//блок промо
-    &__promo {
-        margin-bottom: 20px;
-        background: $white;
-        border: 1px solid $border-color;
-        @media (min-width: $lg) {
-            border: none;
-        }
-    }
-
     &__header {
         display: flex;
+        align-items: center;
         justify-content: space-between;
-        padding: 20px $grid-padding;
+        padding: $grid-padding;
         border-bottom: 1px solid $border-color;
         font-size: 18px;
         font-weight: 600;
@@ -33,104 +24,9 @@
         color: $main-color;
     }
 
-    &__hide-promo {
-        background: transparent;
-        outline: none;
-        border: none;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 1.33;
-        color: $communication-add-color;
-        cursor: pointer;
-    }
-
-    &__input-promo {
-        padding: $grid-padding;
-    }
-
-    &__input-container {
-        display: flex;
-        width: 100%;
-        padding-bottom: 10px;
-        border-bottom: 1px solid $border-color;
-        input {
-            width: 100%;
-            flex-grow: 1;
-            height: $basket-aside-promo-input-btn-width;
-            border: none;
-            outline: none;
-            font-weight: 400;
-            line-height: 1.38;
-            font-size: 16px;
-            color: $main-color;
-        }
-        button {
-            flex-shrink: 0;
-            padding: 0;
-            margin-left: 10px;
-            width: $basket-aside-promo-input-btn-width;
-            height: $basket-aside-promo-input-btn-width;
-            border-radius: 50%;
-            border: none;
-            outline: none;
-            background: $blue;
-            font-size: 0;
-            cursor: pointer;
-        }
-        svg {
-            transform: rotate(-90deg);
-            fill: $white;
-        }
-    }
-
-    &__promo-accept {
-        display: none;
-    }
-
-    &__promo-accept.active {
-        margin-top: 15px;
-        display: block;
-        font-size: 16px;
+    &__blue-btn {
+        padding: 0 8px;
         font-weight: 400;
-        line-height: 1.5;
-        color: $green;
-        span:first-child {
-
-        }
-        span:last-child {
-            position: relative;
-            display: inline-block;
-            vertical-align: top;
-            margin-left: 10px;
-            width: $basket-aside-promo-accept-span-width;
-            height: $basket-aside-promo-accept-span-width;
-            border-radius: 50%;
-            background: $extra-text-color;
-
-            font-size: 13px;
-            font-weight: 600;
-            line-height: 1.38;
-            text-align: center;
-            color: $white;
-            cursor: default;
-        }
-        span:last-child:hover::before {
-            content: "Какой-то поясняющий текст, какой-то поясняющий текст";
-            position: absolute;
-            display: block;
-            padding: 5px;
-            top: 50%;
-            right: $basket-aside-promo-accept-span-width + 5px;
-            transform: translateY(-50%);
-            width: 150px;
-            height: auto;
-            border-radius: 5px;
-            background: $extra-text-color;
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 1.38;
-            color: $white;
-        }
     }
 
 //блок состава заказа
@@ -149,9 +45,12 @@
         padding: $grid-padding;
     }
 
-    &__goods-price {
-        @include field-reset();
+    &__brief {
         margin-bottom: 20px;
+    }
+
+    &__brief-info {
+        @include field-reset();
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -164,6 +63,9 @@
             font-weight: 700;
             line-height: 1.5;
             color: $main-color;
+        }
+        .green {
+            color: $green;
         }
     }
 
@@ -203,24 +105,19 @@
         overflow: hidden;
     }
 
-//слайдер advantages
-    &__advantages {
-        user-select: none;
-    }
-
-    &__slides {
-        padding-bottom: 20px;
-    }
-
-    &__bullets {
-        @media (min-width: $lg) {
-            display: inline-flex;
-            button {
-                width: 10px;
-                height: 10px;
-                border: 2px solid #008aff;
-                margin: 0 7px;
-            }
+    &__confirm {
+        @include field-reset();
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.83;
+        text-align: center;
+        color: $extra-text-color;
+        a {
+            color: $blue;
+            transition: 0.3s ease;
+        }
+        a:hover {
+           color: inherit;
         }
     }
 }
