@@ -1,103 +1,131 @@
-.basket {
+.order {
+    margin-bottom: 20px;
 
-    &__container {}
-
-    &__top-line {
-        display: none;
+    &__container {
+        background: $white;
+        border: 1px solid $border-color;
         @media (min-width: $lg) {
-            display: block;
-            padding: 0 $basket-product-lg-padding;
-            border-bottom: 1px solid $border-color;
-            font-size: 18px;
-            font-weight: 600;
-            line-height: 1.33;
-            color: $main-color;
-            background: $white;
-            span {
-                display: block;
-                padding: 20px 0;
-            }
+            border: none;
         }
     }
 
-    &__list {
-        @include order-reset();
-        margin-bottom: 20px;
-    }
-
-    &__item {
+    &__section {
+        padding: 20px $grid-padding;
         border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            padding: 30px;
+        }
     }
 
-    &__item:last-child {
+    &__section:last-child {
         border-bottom: none;
     }
 
-    &__bottom-line {
-
-    }
-
-    &__col {
-        margin-bottom: 20px;
-    }
-
-    &__delivery {
-        padding: $grid-padding;
-        background: $white;
-        height: 100%;
-        border: 1px solid $border-color;
-        text-align: center;
-        svg {
-            fill: $blue;
-        }
-        @media (min-width: $lg) {
-            padding: $basket-product-lg-padding;
-            border: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            svg {
-                margin-right: 10px;
-            }
-        }
-    }
-
-    &__pay-delivery,
-    &__free-delivery {
+    &__title {
         @include field-reset();
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 1.30;
-        color: $main-color;
-        span {
-            font-weight: 700;
-            color: $green;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.33;
+        color: $extra-text-color;
+        @media (min-width: $lg) {
+            margin-bottom: 30px;
         }
     }
 
-    &__pay-delivery.hide,
-    &__free-delivery.hide {
-        display: none;
+    &__text {
+        @include field-reset();
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+        @media (min-width: $lg) {
+            margin-bottom: 40px;
+        }
     }
 
-    &__clear-basket {
+    &__checked {
+        position: relative;
+        padding: 0 20px;
+        height: 40px;
         width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: $grid-padding;
-        font-size: 14px;
-        font-weight: 600;
-        line-height: 1.3;
-        text-align: center;
-        color: $add-red;
-        background: $white;
-        height: 100%;
-        border: 1px solid $border-color;
-        cursor: pointer;
+        line-height: $common-item-height;
+        font-size: 16px;
+        font-weight: 400;
+        color: $communication-add-color;
+        border-radius: 5px;
+        border: solid 1px $border-color;
         @media (min-width: $lg) {
-            padding: $basket-product-lg-padding;
-            border: none;
+            width: $order-lg-input-width;
+        }
+    }
+
+    &__checked.active,
+    &__toggler.active {
+        border-color: $green;
+        cursor: default;
+    }
+
+    &__checked.active::after,
+    &__toggler.active::after {
+        @include pseudo();
+        top: 40%;
+        right: $grid-padding;
+        transform: translateY(-50%) rotate(135deg);
+        width: 15px;
+        height: 8px;
+        border: 2px solid $green;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+    }
+
+    &__pay-type {
+        margin-bottom: 30px;
+        @media (min-width: $md) {
+            display: flex;
+            justify-content: space-between;
+        }
+        @media (min-width: $lg) {
+            justify-content: flex-start;
+            margin-bottom: 50px;
+        }
+    }
+
+    &__toggler {
+        position: relative;
+        padding: 0 20px;
+        margin-bottom: 20px;
+        height: 40px;
+        width: 100%;
+        background: transparent;
+        line-height: $common-item-height;
+        font-size: 16px;
+        font-weight: 400;
+        text-align: left;
+        color: $communication-add-color;
+        border-radius: 5px;
+        border: solid 1px $border-color;
+        cursor: pointer;
+        outline: none;
+        transition: 0.3s ease;
+        @media (min-width: $md) {
+            width: calc(50% - #{$half-grid-padding});
+        }
+        @media (min-width: $lg) {
+            width: $order-lg-input-width;
+            margin-right: $grid-padding;
+        }
+    }
+
+    &__toggler:not(.active):hover {
+        border-color: $green;
+    }
+
+    &__toggler:last-child {
+        margin-bottom: 0;
+        @media (min-width: $lg) {
+            margin-right: 0;
         }
     }
 }
