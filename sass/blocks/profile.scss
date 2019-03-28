@@ -145,6 +145,11 @@
         transition: 0.3s ease;
     }
 
+    &__input.disabled {
+        pointer-events: none;
+        opacity: 0.7;
+    }
+
     &__input:hover,
     &__input:focus {
         border-color: $blue;
@@ -343,6 +348,11 @@
         font-size: 16px;
         width: 100%;
         margin-bottom: 15px;
+    }
+
+    &__reg-btn.disabled {
+        pointer-events: none;
+        opacity: 0.7;
     }
 
     &__reg-btn:last-child {

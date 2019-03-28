@@ -16,18 +16,18 @@
         </p>
         <form action="#" class="buy-by-click__form">
             <div class="buy-by-click__inputs">
-                <input type="text" placeholder="Введите имя" class="buy-by-click__input">
-                <input type="tel" placeholder="Введите номер телефона" class="buy-by-click__input">
+                <input type="text" placeholder="Введите имя" class="buy-by-click__input js-one-click">
+                <input type="tel" placeholder="Введите номер телефона" class="buy-by-click__input js-one-click">
             </div>
             <div class="buy-by-click__switch-join">
                 <div class="switch buy-by-click__switch-item">
                     <input class="switch__input" type="checkbox" id="buyPerClick" checked>
-                    <label aria-hidden="true" class="switch__label js-switch__label" for="buyPerClick">On</label>
+                    <label data-class="js-one-click" aria-hidden="true" class="switch__label js-disable-by-switch" for="buyPerClick">On</label>
                     <div aria-hidden="true" class="switch__marker"></div>
                 </div>
                 <a href="#">Я прочел условия и даю согласие на обработку данных</a>
             </div>
-            <button type="submit" class="dark-btn buy-by-click__btn">Купить</button>
+            <button type="submit" class="dark-btn buy-by-click__btn js-one-click">Купить</button>
         </form>
     </div>
 </section>

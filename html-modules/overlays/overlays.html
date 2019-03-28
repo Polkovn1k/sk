@@ -119,7 +119,7 @@
                 </a>
             </li>
             <li class="join__item">
-                <a href="favorite-empty.html" class="join__item-link">
+                <a href="favorite.html" class="join__item-link">
                     В избранном <span class="compare-and-favorite">2</span>
                     <svg width="15" height="8" aria-hidden="true" role="presentation">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
@@ -152,7 +152,7 @@
                 <div class="profile__switch-join">
                     <div class="switch profile__switch-item">
                         <input class="switch__input" type="checkbox" id="joinSwitchOn" checked>
-                        <label aria-hidden="true" class="switch__label js-switch__label" for="joinSwitchOn">On</label>
+                        <label aria-hidden="true" class="switch__label" for="joinSwitchOn">On</label>
                         <div aria-hidden="true" class="switch__marker"></div>
                     </div>
                     <span>Запомнить меня</span>
@@ -212,18 +212,18 @@
                 </li>
             </ul>
             <form action="#" class="profile__registry-form">
-                <input placeholder="Введите Email" name="regEmailOrLogin" type="text" class="profile__input" required>
-                <input placeholder="Пароль" name="regPassword" type="password" class="profile__input" required>
-                <input placeholder="Повторите пароль" name="regPasswordRepeat" type="password" class="profile__input" required>
+                <input placeholder="Введите Email" name="regEmailOrLogin" type="text" class="profile__input js-switch-registry" required>
+                <input placeholder="Пароль" name="regPassword" type="password" class="profile__input js-switch-registry" required>
+                <input placeholder="Повторите пароль" name="regPasswordRepeat" type="password" class="profile__input js-switch-registry" required>
                 <div class="profile__switch-registry">
                     <div class="switch profile__switch-item">
                         <input class="switch__input" type="checkbox" id="regSwitchOn" checked>
-                        <label aria-hidden="true" class="switch__label js-switch__label" for="regSwitchOn">On</label>
+                        <label data-class="js-switch-registry" aria-hidden="true" class="switch__label js-disable-by-switch" for="regSwitchOn">On</label>
                         <div aria-hidden="true" class="switch__marker"></div>
                     </div>
                     <a href="#">Я прочел условия и даю согласие на обработку данных</a>
                 </div>
-                <button type="submit" class="dark-btn profile__reg-btn">Зарегистрироваться</button>
+                <button type="submit" class="dark-btn profile__reg-btn js-switch-registry">Зарегистрироваться</button>
                 <button data-to-class="js-profile-join" class="btn profile__reg-btn js-profile__tab">Войти</button>
             </form>
         </div>
