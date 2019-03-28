@@ -4,6 +4,10 @@
         padding: 100px $grid-padding;
         background: $white;
         text-align: center;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
     }
 
     &__title {

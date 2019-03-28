@@ -1,0 +1,44 @@
+<script>
+  var scrollTopAfterScrollDown = {
+
+      MIN_HEIGHT_FOR_APPEAR_BTN: 300,
+
+      listenScroll: () => {
+          var scrolledElement = document.querySelector("html");
+          var btnForScrollTop = document.querySelector(".scroll-up");
+          window.addEventListener("scroll", (event) => {
+              if (scrolledElement.getBoundingClientRect().top < -scrollTopAfterScrollDown.MIN_HEIGHT_FOR_APPEAR_BTN) {
+                  scrollTopAfterScrollDown._addAcrive(btnForScrollTop);
+                  return false;
+              }
+              scrollTopAfterScrollDown._removeAcrive(btnForScrollTop);
+          });
+      },
+
+      listenClick: () => {
+          document.querySelector(".scroll-up").addEventListener("click", (event) => {
+              window.scrollTo(0, 0);
+          });
+      },
+
+      _addAcrive: (btn) => {
+          if (btn.classList.contains("active")) {
+              return false;
+          };
+          btn.classList.add("active");
+      },
+
+      _removeAcrive: (btn) => {
+          if (!btn.classList.contains("active")) {
+              return false;
+          };
+          btn.classList.remove("active");
+      },
+
+      init: () => {
+          scrollTopAfterScrollDown.listenScroll();
+          scrollTopAfterScrollDown.listenClick();
+      },
+  };
+  scrollTopAfterScrollDown.init();
+</script>

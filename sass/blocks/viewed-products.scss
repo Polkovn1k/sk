@@ -10,19 +10,14 @@
         flex-direction: column;
         height: 100%;
         position: relative;
-        padding: 15px;
-        padding-top: $add-product-container-padding-top;
+        padding: $grid-padding;
         padding-left: $add-product-container-padding-left;
-    }
-
-    &__container--add-info {
-        padding-top: $catalog-product-mobile-container-padding-top--add;
     }
 //блок с картинкой
     &__img {
         position: absolute;
         left: 0;
-        top: $add-product-container-padding-top;
+        top: $grid-padding;
         width: $add-product-container-padding-left;
         padding: 0 5px;
         text-align: center;
@@ -34,44 +29,10 @@
     &__img:nth-child(3) {
         top: $catalog-product-mobile-container-padding-top--add;
     }
-//левый блок с особенностями товара
-    &__features {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        z-index: 1;
-        padding: 15px 5px 5px 15px;
-        font-size: 0;
-    }
-
-    &__features-item {
-        display: inline-block;
-        padding: 1px 6px;
-        margin-right: 3px;
-        margin-bottom: 3px;
-        text-align: center;
-        font-family: $font;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 1.36;
-        color: $red;
-        background: $white;
-        border: 1px solid $red;
-        border-radius: 3px;
-    }
-
-    &__features-item--hit {
-        color: $green;
-        border: 1px solid $green;
-    }
-
-    &__features-item:last-child {
-        margin-bottom: 0;
-        margin-right: 0;
-    }
 //название товара
     &__name {
         display: block;
+        max-height: 38px;
         margin-bottom: 10px;
         padding-right: 30px;
         overflow: hidden;
@@ -80,7 +41,13 @@
         line-height: 1.33;
         color: $main-color;
         transition: 0.3s ease;
+
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
         @media (min-width: $lg) {
+            max-height: 45px;
             font-size: 16px;
         }
     }
@@ -187,27 +154,6 @@
         color: $communication-add-color;
         transition: 0.3s ease;
     }
-//свойства продукта
-    &__properties {
-        margin-bottom: 15px;
-        overflow: hidden;
-        font-family: $font;
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 1.36;
-        color: $communication-add-color;
-    }
-
-    &__properties-value {
-        @include field-reset();
-        display: inline-block;
-        vertical-align: top;
-        padding-right: 5px;
-    }
-
-    &__properties-value:last-child {
-        padding-right: 0;
-    }
 //наличие/отсутствие товара
     &__available {
         position: absolute;
@@ -260,6 +206,10 @@
         height: $common-item-height;
         margin-right: 10px;
         line-height: $common-item-height;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     &__cart {

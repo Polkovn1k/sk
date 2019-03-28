@@ -33,7 +33,7 @@
   </header>
 
   <!----------main-->
-  <main class="main main--catalog-section">
+  <main class="main main--no-hidden">
       <div class="main__container container-fluid">
           <div class="row">
 
@@ -43,19 +43,19 @@
                           <a href="/" class="crumbs__link">Главная</a>
                       </li>
                       <li class="crumbs__item">
-                          <a href="catalog.html" class="crumbs__link">Каталог</a>
+                          <a href="basket.html" class="crumbs__link">Корзина</a>
                       </li>
                       <li class="crumbs__item">
-                          <a href="catalog-atomizer.html" class="crumbs__link">Атомайзеры</a>
+                          <a href="order.html" class="crumbs__link">Оформление заказа</a>
                       </li>
                   </ul>
               </div>
-              <h2 class="col-12 main__title">Атомайзеры</h2>
-              <div class="col-12 catalog-section">
+              <h2 class="col-12 main__title">Оформление заказа</h2>
+              <div class="col-12">
                   <div class="row">
 
-                      <include src="html-modules/__catalog-page-atomizer/filters.html"></include>
-                      <include src="html-modules/__catalog-page-atomizer/main-content.html"></include>
+                      <include src="html-modules/__order/order.html"></include>
+                      <include src="html-modules/__order/order-aside.html"></include>
 
                   </div>
               </div>
@@ -97,12 +97,6 @@
 
   <!----------viewed slider-->
   <include src="js-modules/__viewed-slider/script.html"></include>
-  <!----------open collapsed elements-->
-  <include src="js-modules/__open-collapsed-elemets/script.html"></include>
-  <!----------toggle grid/line style-->
-  <include src="js-modules/__grid-or-line-tog/script.html"></include>
-  <!----------catalog item ajax load-->
-  <include src="js-modules/__catalog-ajax-load/script.html"></include>
 
 </body>
 

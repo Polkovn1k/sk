@@ -1,0 +1,103 @@
+.basket {
+
+    &__container {}
+
+    &__top-line {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+            padding: 0 $basket-product-lg-padding;
+            border-bottom: 1px solid $border-color;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.33;
+            color: $main-color;
+            background: $white;
+            span {
+                display: block;
+                padding: 20px 0;
+            }
+        }
+    }
+
+    &__list {
+        @include order-reset();
+        margin-bottom: 20px;
+    }
+
+    &__item {
+        border-bottom: 1px solid $border-color;
+    }
+
+    &__item:last-child {
+        border-bottom: none;
+    }
+
+    &__bottom-line {
+
+    }
+
+    &__col {
+        margin-bottom: 20px;
+    }
+
+    &__delivery {
+        padding: $grid-padding;
+        background: $white;
+        height: 100%;
+        border: 1px solid $border-color;
+        text-align: center;
+        svg {
+            fill: $blue;
+        }
+        @media (min-width: $lg) {
+            padding: $basket-product-lg-padding;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            svg {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__pay-delivery,
+    &__free-delivery {
+        @include field-reset();
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.30;
+        color: $main-color;
+        span {
+            font-weight: 700;
+            color: $green;
+        }
+    }
+
+    &__pay-delivery.hide,
+    &__free-delivery.hide {
+        display: none;
+    }
+
+    &__clear-basket {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: $grid-padding;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.3;
+        text-align: center;
+        color: $add-red;
+        background: $white;
+        height: 100%;
+        border: 1px solid $border-color;
+        cursor: pointer;
+        @media (min-width: $lg) {
+            padding: $basket-product-lg-padding;
+            border: none;
+        }
+    }
+}
