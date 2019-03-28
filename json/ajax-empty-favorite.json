@@ -1,3 +1,3 @@
 [
-    "<div class=\"favorite col-12\"> <div class=\"favorite__empty-container\"> <h3 class=\"favorite__title\">Здесь пусто</h3> <p class=\"favorite__text\">Сохраняйте товары в избранном с помощью<svg width=\"22\" height=\"22\" aria-hidden=\"true\" role=\"presentation\"> <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#favorite-icon\"></use> </svg> </p> <a href=\"/\" class=\"dark-btn favorite__dark-btn\">Перейти на главную</a> </div> </div>"
+    "<div class=\"favorite col-12\"> <div class=\"favorite__empty-container\"> <h3 class=\"favorite__title\">Здесь пусто</h3> <p class=\"favorite__text\">Сохраняйте товары в избранном с помощью <svg width=\"22\" height=\"22\" aria-hidden=\"true\" role=\"presentation\"> <use xmlns:xlink=\"http://www.w3.org/1999/xlink\" xlink:href=\"#favorite-icon\"></use> </svg> </p> <a href=\"/\" class=\"dark-btn favorite__dark-btn\">Перейти на главную</a> </div> </div>"
 ]
