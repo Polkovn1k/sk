@@ -68,4 +68,122 @@
             background-image: radial-gradient(circle, $green 40%, $white 40%);
         }
     }
+
+//inner...
+    &__inner-container {
+        margin: 0 (-$grid-padding);
+        margin-top: 25px;
+        @media (min-width: $lg) {
+            margin: 0 (-30px);
+            margin-top: 25px;
+        }
+    }
+
+    &__inner-section {
+        padding: 20px $grid-padding;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            padding: 30px;
+        }
+    }
+
+    &__inner-head {
+        padding: 20px $grid-padding;
+        background: $delivery-active-btn;
+        @media (min-width: $md) {
+            display: flex;
+            justify-content: space-between;
+        }
+        @media (min-width: $lg) {
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__inner-btn {
+        margin-bottom: 20px;
+        display: block;
+        width: 100%;
+        height: $common-item-height;
+        color: $extra-text-color;
+        border: 1px solid $extra-text-color;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: $common-item-height;
+        text-align: center;
+        outline: none;
+        border-radius: 5px;
+        background: transparent;
+        cursor: pointer;
+        transition: 0.3s ease;
+        @media (min-width: $md) {
+            margin-bottom: 0;
+            width: calc(50% - #{$half-grid-padding});
+        }
+        @media (min-width: $lg) {
+            width: 280px;
+        }
+    }
+
+    &__inner-btn.active {
+        color: $blue;
+        border: 1px solid $blue;
+        cursor: default;
+    }
+
+    &__inner-btn:not(.active):hover {
+        color: $blue;
+        border: 1px solid $blue;
+    }
+
+    &__inner-btn:first-child {
+        @media (min-width: $lg) {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+    }
+
+    &__inner-btn:last-child {
+        margin-bottom: 0;
+        @media (min-width: $lg) {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &__inner-list {
+        max-height: 350px;
+        list-style-type: none;
+        padding: 0;
+        overflow: auto;
+        @media (min-width: $lg) {
+            min-height: 390px;
+        }
+    }
+
+    &__inner-item {
+        margin-bottom: 15px;
+    }
+
+    &__inner-item:last-child {
+        margin-bottom: 0;
+    }
+
+    &__inner-adress {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.36;
+        color: $extra-text-color;
+        p {
+            @include field-reset();
+        }
+        @media (min-width: $lg) {
+            font-size: 16px;
+        }
+    }
 }
