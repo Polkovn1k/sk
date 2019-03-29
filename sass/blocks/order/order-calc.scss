@@ -4,8 +4,17 @@
     .order-calc {
         max-height: $order-calc-inner-max-height;
         overflow: auto;
-        display: flex;
+        display: none;
         flex-wrap: wrap;
+    }
+    .order-calc.active {
+        display: flex;
+    }
+    .order-calc__map {
+        display: none;
+    }
+    .order-calc__map.active {
+        display: block;
     }
 
     &__item {

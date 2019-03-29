@@ -62,13 +62,13 @@
     }
 
     &__checked.active,
-    &__toggler.active {
+    &__pay-tog.active {
         border-color: $green;
         cursor: default;
     }
 
     &__checked.active::after,
-    &__toggler.active::after {
+    &__pay-tog.active::after {
         @include pseudo();
         top: 40%;
         right: $grid-padding;
@@ -92,7 +92,7 @@
         }
     }
 
-    &__toggler {
+    &__pay-tog {
         position: relative;
         padding: 0 20px;
         margin-bottom: 20px;
@@ -118,11 +118,11 @@
         }
     }
 
-    &__toggler:not(.active):hover {
+    &__pay-tog:not(.active):hover {
         border-color: $green;
     }
 
-    &__toggler:last-child {
+    &__pay-tog:last-child {
         margin-bottom: 0;
         @media (min-width: $lg) {
             margin-right: 0;

@@ -11,8 +11,8 @@
             <h3 class="order__title">2. Способ оплаты и доставки</h3>
             <p class="order__text">Выбор способа оплаты, а также доставки и транспортной компании</p>
             <div class="order__pay-type">
-                <button class="order__toggler active">Оплата онлайн</button>
-                <button class="order__toggler">Наличными, при получении</button>
+                <button class="order__pay-tog js-pay-tog active">Оплата онлайн</button>
+                <button class="order__pay-tog js-pay-tog">Наличными, при получении</button>
             </div>
 
             <ul class="order-calc">
@@ -21,7 +21,7 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress">
+                                <label class="order-calc__adress js-order-calc">
                                     <input type="radio" name="main-item" checked>
                                     <span class="order-calc__radio"></span>
                                     <span class="order-calc__adress-value">Почта России (EMS)</span>
@@ -38,7 +38,7 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress">
+                                <label class="order-calc__adress js-order-calc">
                                     <input type="radio" name="main-item">
                                     <span class="order-calc__radio"></span>
                                     <span class="order-calc__adress-value">Самовывоз ул. Спартаковская дом 6 (ТЦ Сувар Плаза, 1 этаж)</span>
@@ -55,7 +55,7 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress">
+                                <label class="order-calc__adress js-order-calc">
                                     <input type="radio" name="main-item">
                                     <span class="order-calc__radio"></span>
                                     <span class="order-calc__adress-value">Почта России (наземная посылка)</span>
@@ -72,7 +72,7 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress">
+                                <label class="order-calc__adress js-order-calc">
                                     <input type="radio" name="main-item">
                                     <span class="order-calc__radio"></span>
                                     <span class="order-calc__adress-value">СДЭК - курьером до двери</span>
@@ -89,7 +89,7 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress">
+                                <label class="order-calc__adress js-order-calc">
                                     <input type="radio" name="main-item">
                                     <span class="order-calc__radio"></span>
                                     <span class="order-calc__adress-value">СДЭК - до пункта самовывоза</span>
@@ -102,10 +102,10 @@
                     </div>
                     <div class="order-calc__container inner">
                         <div class="order-calc__inner-head">
-                            <button class="order-calc__inner-btn active">Отобразить списком</button>
-                            <button class="order-calc__inner-btn">Показать на карте</button>
+                            <button data-classname="pickup" class="order-calc__inner-btn js-order-calc-inner-btn active">Отобразить списком</button>
+                            <button data-classname="map" class="order-calc__inner-btn js-order-calc-inner-btn">Показать на карте</button>
                         </div>
-                        <ul class="order-calc">
+                        <ul class="order-calc js-tab-item pickup active">
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
                                     <label class="order-calc__adress">
@@ -350,7 +350,9 @@
                                 </div>
                             </li>
                         </ul>
-                        <div class="order-calc__map"></div>
+                        <div class="order-calc__map js-tab-item map">
+                            <img src="img/temp__img/no_image.jpg" alt="">
+                        </div>
                     </div>
                 </li>
 
