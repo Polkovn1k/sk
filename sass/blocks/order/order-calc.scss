@@ -2,12 +2,20 @@
     list-style-type: none;
     padding: 0;
     .order-calc {
+        max-height: $order-calc-inner-max-height;
+        overflow: auto;
         display: flex;
         flex-wrap: wrap;
     }
 
     &__item {
         margin-bottom: 15px;
+    }
+
+    &__item.active {
+        .inner {
+            display: block;
+        }
     }
 
     &__item:last-child {
@@ -18,6 +26,11 @@
         @media (min-width: $lg) {
             max-width: $order-lg-input-width * 2 + $grid-padding;
         }
+    }
+
+    &__container.inner {
+        display: none;
+        max-width: none;
     }
 
     &__adress {
@@ -71,20 +84,8 @@
     }
 
 //inner...
-    &__inner-container {
-        margin: 0 (-$grid-padding);
-        margin-top: 25px;
-        .order__section {
-            max-height: 350px;
-            overflow: auto;
-        }
-        @media (min-width: $lg) {
-            margin: 0 (-30px);
-            margin-top: 25px;
-        }
-    }
-
     &__inner-head {
+        margin: 25px (-$grid-padding);
         padding: 20px $grid-padding;
         background: $delivery-active-btn;
         @media (min-width: $md) {
@@ -92,6 +93,8 @@
             justify-content: space-between;
         }
         @media (min-width: $lg) {
+            margin: 25px -30px;
+            margin-top: 25px;
             display: flex;
             justify-content: center;
         }
