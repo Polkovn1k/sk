@@ -364,11 +364,19 @@
             <p class="order__text">Пожалуйста, указывайте реальные данные — у вас могут попросить паспорт, прежде чем вручить оплаченный заказ.</p>
             <div class="order__inner-container">
                 <div class="order__inputs">
-                    <input type="text" class="order__input" placeholder="Фамилия Имя Отчество">
-                    <input type="text" class="order__input" placeholder="Индекс">
-                    <input type="number" class="order__input" placeholder="Номер телефона">
-                    <input type="text" class="order__input" placeholder="Адрес">
-                    <input type="email" class="order__input" placeholder="Адрес электронной почты">
+                    <input type="text" class="order__input js-order-switch" placeholder="Фамилия Имя Отчество">
+                    <input type="text" class="order__input js-order-switch" placeholder="Индекс">
+                    <input type="number" class="order__input js-order-switch" placeholder="Номер телефона">
+                    <input type="text" class="order__input js-order-switch" placeholder="Адрес">
+                    <input type="email" class="order__input js-order-switch" placeholder="Адрес электронной почты">
+                </div>
+                <div class="order__switch">
+                    <div class="switch order__switch-item">
+                        <input class="switch__input" type="checkbox" id="switchOrder" checked>
+                        <label data-class="js-order-switch" aria-hidden="true" class="switch__label js-disable-by-switch" for="switchOrder">On</label>
+                        <div aria-hidden="true" class="switch__marker"></div>
+                    </div>
+                    <p>Я прочел условия и даю согласие на <a href="#">обработку данных</a></p>
                 </div>
             </div>
         </section>
@@ -376,7 +384,7 @@
         <section class="order__section">
             <h3 class="order__title">4. Комментарий к заказу</h3>
             <div class="order__inner-container">
-                <textarea class="order__textarea" placeholder="Введите текст сообщения"></textarea>
+                <textarea class="order__textarea js-order-switch" placeholder="Введите текст сообщения"></textarea>
             </div>
         </section>
     </form>
