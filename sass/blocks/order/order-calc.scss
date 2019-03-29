@@ -24,8 +24,14 @@
         font-weight: 400;
         line-height: 1.36;
         color: $extra-text-color;
-        p {
-            @include field-reset();
+        cursor: pointer;
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"]:checked {
+            ~.order-calc__radio {
+                background-image: radial-gradient(circle, $green 40%, $white 40%);
+            }
         }
         @media (min-width: $lg) {
             font-size: 16px;
@@ -57,16 +63,6 @@
 
     &__pay-sum--free {
         color: $green;
-    }
-
-//переключатель "радио"
-    &__item.active {
-        .order-calc__adress {
-            cursor: default;
-        }
-        .order-calc__radio {
-            background-image: radial-gradient(circle, $green 40%, $white 40%);
-        }
     }
 
 //inner...
@@ -179,8 +175,14 @@
         font-weight: 400;
         line-height: 1.36;
         color: $extra-text-color;
-        p {
-            @include field-reset();
+        cursor: pointer;
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"]:checked {
+            ~.order-calc__radio {
+                background-image: radial-gradient(circle, $green 40%, $white 40%);
+            }
         }
         @media (min-width: $lg) {
             font-size: 16px;
