@@ -1,5 +1,5 @@
 <div class="col-12 col-lg-9 order">
-    <form action="#" class="order__container">
+    <form id="order" action="#" class="order__container">
 
         <section class="order__section">
             <h3 class="order__title">1. Регион получения</h3>
@@ -21,10 +21,10 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress js-order-calc">
+                                <label class="order-calc__address js-order-calc">
                                     <input type="radio" name="main-item" checked>
                                     <span class="order-calc__radio"></span>
-                                    <span class="order-calc__adress-value">Почта России (EMS)</span>
+                                    <span class="order-calc__address-value">Почта России (EMS)</span>
                                 </label>
                             </div>
                             <div class="col-4">
@@ -38,10 +38,10 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress js-order-calc">
+                                <label class="order-calc__address js-order-calc">
                                     <input type="radio" name="main-item">
                                     <span class="order-calc__radio"></span>
-                                    <span class="order-calc__adress-value">Самовывоз ул. Спартаковская дом 6 (ТЦ Сувар Плаза, 1 этаж)</span>
+                                    <span class="order-calc__address-value">Самовывоз ул. Спартаковская дом 6 (ТЦ Сувар Плаза, 1 этаж)</span>
                                 </label>
                             </div>
                             <div class="col-4">
@@ -55,10 +55,10 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress js-order-calc">
+                                <label class="order-calc__address js-order-calc">
                                     <input type="radio" name="main-item">
                                     <span class="order-calc__radio"></span>
-                                    <span class="order-calc__adress-value">Почта России (наземная посылка)</span>
+                                    <span class="order-calc__address-value">Почта России (наземная посылка)</span>
                                 </label>
                             </div>
                             <div class="col-4">
@@ -72,10 +72,10 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress js-order-calc">
+                                <label class="order-calc__address js-order-calc">
                                     <input type="radio" name="main-item">
                                     <span class="order-calc__radio"></span>
-                                    <span class="order-calc__adress-value">СДЭК - курьером до двери</span>
+                                    <span class="order-calc__address-value">СДЭК - курьером до двери</span>
                                 </label>
                             </div>
                             <div class="col-4">
@@ -89,10 +89,10 @@
                     <div class="order-calc__container">
                         <div class="row">
                             <div class="col-8">
-                                <label class="order-calc__adress js-order-calc">
+                                <label class="order-calc__address js-order-calc">
                                     <input type="radio" name="main-item">
                                     <span class="order-calc__radio"></span>
-                                    <span class="order-calc__adress-value">СДЭК - до пункта самовывоза</span>
+                                    <span class="order-calc__address-value">СДЭК - до пункта самовывоза</span>
                                 </label>
                             </div>
                             <div class="col-4">
@@ -108,7 +108,7 @@
                         <ul class="order-calc js-tab-item pickup active">
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item" checked>
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. тракт Сибирский, 34 А</span>
@@ -117,7 +117,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Маршала Чуйкова, 55</span>
@@ -126,7 +126,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">пр-т Победы, 142</span>
@@ -135,7 +135,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Главная, 47</span>
@@ -144,7 +144,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Адоратского, 4</span>
@@ -153,7 +153,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Гвардейская, 16а</span>
@@ -162,7 +162,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">пр-т Победы, 46В</span>
@@ -171,7 +171,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Галиаскара Камала, 18</span>
@@ -180,7 +180,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Ямашева, 49</span>
@@ -189,7 +189,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Декабристов, 156, 9</span>
@@ -198,7 +198,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Большая Красная, 53</span>
@@ -207,7 +207,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Вишневского, 10</span>
@@ -216,7 +216,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Отрадная, 15, 3</span>
@@ -225,7 +225,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Галимджана Баруди, 18, 10</span>
@@ -234,7 +234,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Спартаковская, 2, 112</span>
@@ -243,7 +243,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Техническая, 23а</span>
@@ -252,7 +252,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Копылова, 3/1</span>
@@ -261,7 +261,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Галиаскара Камала, 18</span>
@@ -270,7 +270,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Ямашева, 49</span>
@@ -279,7 +279,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Декабристов, 156, 9</span>
@@ -288,7 +288,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Большая Красная, 53</span>
@@ -297,7 +297,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Вишневского, 10</span>
@@ -306,7 +306,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Отрадная, 15, 3</span>
@@ -315,7 +315,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Галимджана Баруди, 18, 10</span>
@@ -324,7 +324,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Спартаковская, 2, 112</span>
@@ -333,7 +333,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Техническая, 23а</span>
@@ -342,7 +342,7 @@
                             </li>
                             <li class="col-12 col-md-6 col-lg-4 order-calc__item">
                                 <div class="row">
-                                    <label class="order-calc__adress">
+                                    <label class="order-calc__address">
                                         <input type="radio" name="inner-item">
                                         <span class="order-calc__radio"></span>
                                         <span class="order-calc__address-value">ул. Копылова, 3/1</span>
@@ -362,6 +362,22 @@
         <section class="order__section">
             <h3 class="order__title">3. Данные получателя</h3>
             <p class="order__text">Пожалуйста, указывайте реальные данные — у вас могут попросить паспорт, прежде чем вручить оплаченный заказ.</p>
+            <div class="order__inner-container">
+                <div class="order__inputs">
+                    <input type="text" class="order__input" placeholder="Фамилия Имя Отчество">
+                    <input type="text" class="order__input" placeholder="Индекс">
+                    <input type="number" class="order__input" placeholder="Номер телефона">
+                    <input type="text" class="order__input" placeholder="Адрес">
+                    <input type="email" class="order__input" placeholder="Адрес электронной почты">
+                </div>
+            </div>
+        </section>
+
+        <section class="order__section">
+            <h3 class="order__title">4. Комментарий к заказу</h3>
+            <div class="order__inner-container">
+                <textarea class="order__textarea" placeholder="Введите текст сообщения"></textarea>
+            </div>
         </section>
     </form>
 </div>
