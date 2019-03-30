@@ -108,31 +108,38 @@
         invalidities: [],
 
         // Метод, проверяющий валидность (в качестве аргумента выбранный input)
-        validityChecker: function(input) {
+        _validityChecker: function(input) {
 
             //у каждого input есть свойство в котором хранится булевое значение на определенные ошибки
           var validity = input.validity;
 
           if (validity.tooLong) {
             var maxlength = input.getAttributeValue("maxlength");
-            this.addInvalidity("Максимальное количество символов " + maxlength);
+            this._addInvalidity("Максимальное количество символов " + maxlength);
           }
 
           if (validity.tooShort) {
             var minlength = input.getAttribute("minlength");
-            this.addInvalidity("Минимальное количество символов " + minlength);
+            this._addInvalidity("Минимальное количество символов " + minlength);
           }
 
           // И остальные проверки валидности...
         },
 
         // Добавляем сообщение об ошибке в массив ошибок
-        addInvalidity: function(message) {
+        _addInvalidity: function(message) {
           this.invalidities.push(message);
+          console.log(this.invalidities);
+        },
+
+        // Убираем все сообщения об ошибке из массива ошибок
+        _removeInvalidity: function() {
+          this.invalidities.splice(0);
+          console.log(this.invalidities);
         },
 
         // Получаем общий текст сообщений об ошибках
-        getInvalidities: function() {
+        _getInvalidities: function() {
           return this.invalidities.join('. \n');
         }
       };
@@ -157,12 +164,11 @@
           // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
           //Проверяем
           if (currentInput.checkValidity() == false) {
-
             var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
-            inputCustomValidation.validityChecker(currentInput); // Выявим ошибки
-            var customValidityMessage = inputCustomValidation.getInvalidities(); // Получим все сообщения об ошибках
+            inputCustomValidation._validityChecker(currentInput); // Выявим ошибки
+            var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
             currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
-
+            inputCustomValidation._removeInvalidity();
           } // закончился if
         } // закончился цикл
       });
