@@ -375,17 +375,34 @@
         }
     }
 //валидация формы
-    &__input:required:valid {
+    &__input.valid {
         border-color: $green;
+        ~ span {
+            position: absolute;
+            font-size: 0;
+            top: 20%;
+            left: auto;
+            bottom: auto;
+            right: 10px;
+            transform: rotate(135deg);
+            width: 15px;
+            height: 8px;
+            border: 2px solid #02b744;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        }
     }
 
-    &__valid-info {
-        position: absolute;
-        left: 10px;
-        bottom: 7px;
-        font-size: 12px;
-        line-height: 1.15;
-        font-weight: 400;
-        color: $red;
+    &__input.invalid {
+        border-color: $red;
+        ~ span {
+            position: absolute;
+            left: 10px;
+            bottom: 7px;
+            font-size: 12px;
+            line-height: 1.15;
+            font-weight: 400;
+            color: $red;
+        }
     }
 }

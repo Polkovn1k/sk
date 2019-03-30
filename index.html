@@ -129,19 +129,48 @@
         // Добавляем сообщение об ошибке в массив ошибок
         _addInvalidity: function(message) {
           this.invalidities.push(message);
-          console.log(this.invalidities);
         },
 
         // Убираем все сообщения об ошибке из массива ошибок
         _removeInvalidity: function() {
           this.invalidities.splice(0);
-          console.log(this.invalidities);
         },
 
         // Получаем общий текст сообщений об ошибках
         _getInvalidities: function() {
           return this.invalidities.join('. \n');
-        }
+        },
+
+        //Вставляем текст сообщения об ошибке
+        _getSiblingElementOfInput: (input, message) => {
+            var inputSibling = input.nextElementSibling;
+            inputSibling.innerText = message;
+        },
+
+        //Вставляем текст сообщения об ошибке
+        _addInvalidClassForInput: (input) => {
+            if (!input.classList.contains("invalid")) {
+                input.classList.add("invalid");
+            }
+        },
+
+        _removeInvalidClassForInput: (input) => {
+            if (input.classList.contains("invalid")) {
+                input.classList.remove("invalid");
+            }
+        },
+
+        _addValidClassForInput: (input) => {
+            if (!input.classList.contains("valid")) {
+                input.classList.add("valid");
+            }
+        },
+
+        _removeValidClassForInput: (input) => {
+            if (input.classList.contains("valid")) {
+                input.classList.remove("valid");
+            }
+        },
       };
 
 
@@ -168,11 +197,41 @@
             inputCustomValidation._validityChecker(currentInput); // Выявим ошибки
             var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
             currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
+            var errorsField = inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
             inputCustomValidation._removeInvalidity();
+            inputCustomValidation._removeValidClassForInput(currentInput);
+            inputCustomValidation._addInvalidClassForInput(currentInput);
+            var stopSubmit = true;
           } // закончился if
+          inputCustomValidation._addValidClassForInput(currentInput);
+          inputCustomValidation._removeInvalidClassForInput(currentInput);
         } // закончился цикл
+
+        //если
+        if (stopSubmit) {
+            event.preventDefault();
+        }
       });
   </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
