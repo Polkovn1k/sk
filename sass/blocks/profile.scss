@@ -1,5 +1,6 @@
 .profile {
-    display: none;
+    //display: none;
+    display: block;
     font-family: $font;
     position: fixed;
     z-index: 1000;
@@ -133,11 +134,16 @@
         border-bottom: 1px solid $border-color;
     }
 
+    &__label {
+        position: relative;
+        display: block;
+        padding-bottom: $profile-input-padding-botom;
+    }
+
     &__input {
         width: 100%;
         height: $common-item-height;
         padding: 0 10px;
-        margin-bottom: 20px;
         border: 1px solid $border-color;
         border-radius: 5px;
         line-height: $common-item-height;
@@ -290,7 +296,8 @@
     }
 //блок регистрации
     &__registry {
-        display: none;
+        //display: none;
+        display: block;
         padding-top: 15px;
     }
 
@@ -366,5 +373,19 @@
         @media (min-width: $lg) {
             margin-bottom: 0;
         }
+    }
+//валидация формы
+    &__input:required:valid {
+        border-color: $green;
+    }
+
+    &__valid-info {
+        position: absolute;
+        left: 10px;
+        bottom: 7px;
+        font-size: 12px;
+        line-height: 1.15;
+        font-weight: 400;
+        color: $red;
     }
 }

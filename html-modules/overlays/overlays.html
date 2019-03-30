@@ -212,9 +212,18 @@
                 </li>
             </ul>
             <form action="#" class="profile__registry-form">
-                <input placeholder="Введите Email" name="regEmailOrLogin" type="text" class="profile__input js-switch-registry" required>
-                <input placeholder="Пароль" name="regPassword" type="password" class="profile__input js-switch-registry" required>
-                <input placeholder="Повторите пароль" name="regPasswordRepeat" type="password" class="profile__input js-switch-registry" required>
+                <label class="profile__label">
+                    <input placeholder="Введите Email" name="regEmailOrLogin" type="text" class="profile__input js-switch-registry js-profile-reg-input" required maxlength="50" minlength="5">
+                    <span class="profile__valid-info">Все хуйня, делай по новой</span>
+                </label>
+                <label class="profile__label">
+                    <input placeholder="Пароль" name="regPassword" type="password" class="profile__input js-switch-registry" required maxlength="50" minlength="5">
+                    <span class="profile__valid-info"></span>
+                </label>
+                <label class="profile__label">
+                    <input placeholder="Повторите пароль" name="regPasswordRepeat" type="password" class="profile__input js-switch-registry" required maxlength="50" minlength="5">
+                    <span class="profile__valid-info"></span>
+                </label>
                 <div class="profile__switch-registry">
                     <div class="switch profile__switch-item">
                         <input class="switch__input" type="checkbox" id="regSwitchOn" checked>
@@ -223,7 +232,7 @@
                     </div>
                     <a href="#">Я прочел условия и даю согласие на обработку данных</a>
                 </div>
-                <button type="submit" class="dark-btn profile__reg-btn js-switch-registry">Зарегистрироваться</button>
+                <button type="submit" class="dark-btn profile__reg-btn js-profile-reg js-switch-registry">Зарегистрироваться</button>
                 <button data-to-class="js-profile-join" class="btn profile__reg-btn js-profile__tab">Войти</button>
             </form>
         </div>
