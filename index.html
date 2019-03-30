@@ -149,9 +149,7 @@
 
         //Вставляем текст сообщения об ошибке
         _addInvalidClassForInput: (input) => {
-            if (!input.classList.contains("invalid")) {
-                input.classList.add("invalid");
-            }
+            input.classList.add("invalid");
         },
 
         _removeInvalidClassForInput: (input) => {
@@ -161,9 +159,10 @@
         },
 
         _addValidClassForInput: (input) => {
-            if (!input.classList.contains("valid")) {
-                input.classList.add("valid");
+            if (input.classList.contains("invalid")) {
+                return false;
             }
+            input.classList.add("valid");
         },
 
         _removeValidClassForInput: (input) => {
@@ -188,23 +187,23 @@
         //Проходим по каждому полю
         for (var i = 0; i < inputs.length; i++) {
             //каждый input ложим в переменню currentInput
-          var currentInput = inputs[i];
+            var currentInput = inputs[i];
+            var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
+            inputCustomValidation._removeValidClassForInput(currentInput);
+            inputCustomValidation._removeInvalidClassForInput(currentInput);
 
           // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
           //Проверяем
           if (currentInput.checkValidity() == false) {
-            var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
             inputCustomValidation._validityChecker(currentInput); // Выявим ошибки
             var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
             currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
             var errorsField = inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
             inputCustomValidation._removeInvalidity();
-            inputCustomValidation._removeValidClassForInput(currentInput);
             inputCustomValidation._addInvalidClassForInput(currentInput);
             var stopSubmit = true;
           } // закончился if
           inputCustomValidation._addValidClassForInput(currentInput);
-          inputCustomValidation._removeInvalidClassForInput(currentInput);
         } // закончился цикл
 
         //если
