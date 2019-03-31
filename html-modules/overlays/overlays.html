@@ -213,26 +213,26 @@
             </ul>
             <form action="some.php" class="profile__registry-form">
                 <label class="profile__label">
-                    <input placeholder="Введите Email" name="regEmailOrLogin" type="text" class="profile__input js-profile-reg-input js-switch-registry email" maxlength="50" minlength="5" title="" required>
+                    <input placeholder="Введите Email" name="reg-email" type="text" class="profile__input js-profile-reg-input reg-email" maxlength="50" minlength="5" title="" required>
                     <span></span>
                 </label>
                 <label class="profile__label">
-                    <input placeholder="Пароль" name="regPassword" type="password" class="profile__input js-profile-reg-input js-switch-registry pass" maxlength="50" minlength="5" title="" required>
+                    <input placeholder="Пароль" name="reg-pass" type="password" class="profile__input js-profile-reg-input reg-pass" maxlength="50" minlength="5" title="" required>
                     <span></span>
                 </label>
                 <label class="profile__label">
-                    <input placeholder="Повторите пароль" name="regPasswordRepeat" type="password" class="profile__input js-profile-reg-input js-switch-registry pass-confirm" maxlength="50" minlength="5" title="" required>
+                    <input placeholder="Повторите пароль" name="reg-pass-confirm" type="password" class="profile__input js-profile-reg-input reg-pass-confirm" maxlength="50" minlength="5" title="" required>
                     <span></span>
                 </label>
                 <div class="profile__switch-registry">
                     <div class="switch profile__switch-item">
                         <input class="switch__input" type="checkbox" id="regSwitchOn" checked>
-                        <label data-class="js-switch-registry" aria-hidden="true" class="switch__label js-disable-by-switch" for="regSwitchOn">On</label>
+                        <label data-class="js-submit-reg" aria-hidden="true" class="switch__label js-disable-by-switch" for="regSwitchOn">On</label>
                         <div aria-hidden="true" class="switch__marker"></div>
                     </div>
                     <a href="#">Я прочел условия и даю согласие на обработку данных</a>
                 </div>
-                <button type="submit" class="dark-btn profile__reg-btn js-profile-reg js-switch-registry">Зарегистрироваться</button>
+                <button type="submit" class="dark-btn profile__reg-btn js-submit-reg">Зарегистрироваться</button>
                 <button data-to-class="js-profile-join" class="btn profile__reg-btn js-profile__tab">Войти</button>
             </form>
         </div>

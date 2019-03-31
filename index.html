@@ -110,18 +110,12 @@
         // Метод, проверяющий валидность (в качестве аргумента выбранный input)
         checkValidity: function(input) {
           var validity = input.validity;
-          var email = input.classList.contains("email");
-          var pass = input.classList.contains("pass");
-          var passConfirm = input.classList.contains("pass-confirm");
+          var email = input.classList.contains("reg-email");
+          var pass = input.classList.contains("reg-pass");
+          var passConfirm = input.classList.contains("reg-pass-confirm");
 
-          var jsPass = document.querySelector(".pass");
-          var jsPassConfirm = document.querySelector(".pass-confirm");
-
-          //ошибка если поле email не соответствует параметрам regExp
-          var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-          if (input && email && (emailRegExp.test(input.value) == false)) {
-            this._addInvalidity("Введите корректный email");
-          }
+          var jsPass = document.querySelector(".reg-pass");
+          var jsPassConfirm = document.querySelector(".reg-pass-confirm");
 
           //ошибка если поле пустое
           if (!input.value) {
@@ -138,6 +132,22 @@
           var minlength = input.getAttribute("minlength");
           if (input.value.length < minlength) {
             this._addInvalidity("Введено менее " + minlength + " символов");
+          }
+
+          //ошибка если поле email не соответствует параметрам regExp
+          var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          if (input && email && (emailRegExp.test(input.value) == false)) {
+            this._addInvalidity("Введите корректный email");
+          }
+
+          //ошибка если пароли не совпадают (для основного пароля)
+          if (pass && (jsPassConfirm.value != jsPass.value)) {
+            this._addInvalidity("Пароли не совпадают");
+          }
+
+          //ошибка если пароли не совпадают (для подтверждения пароля)
+          if (passConfirm && (jsPassConfirm.value != jsPass.value)) {
+            this._addInvalidity("Пароли не совпадают");
           }
 
 
@@ -198,7 +208,7 @@
 
       // Добавляем обработчик клика на кнопку отправки формы
       //нажимаем на кнопку отправки формы
-      var submit = document.querySelector(".js-profile-reg");
+      var submit = document.querySelector(".js-submit-reg");
 
       submit.addEventListener("mousedown", function(event) {
           var inputs = document.querySelectorAll(".js-profile-reg-input");
