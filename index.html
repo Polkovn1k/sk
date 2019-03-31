@@ -114,8 +114,8 @@
           var pass = input.classList.contains("reg-pass");
           var passConfirm = input.classList.contains("reg-pass-confirm");
 
-          var jsPass = document.querySelector(".reg-pass");
-          var jsPassConfirm = document.querySelector(".reg-pass-confirm");
+          var passItem = document.querySelector(".reg-pass");
+          var passConfirmItem = document.querySelector(".reg-pass-confirm");
 
           //ошибка если поле пустое
           if (!input.value) {
@@ -136,17 +136,12 @@
 
           //ошибка если поле email не соответствует параметрам regExp
           var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-          if (input && email && (emailRegExp.test(input.value) == false)) {
+          if (email && (emailRegExp.test(input.value) == false)) {
             this._addInvalidity("Введите корректный email");
           }
 
-          //ошибка если пароли не совпадают (для основного пароля)
-          if (pass && (jsPassConfirm.value != jsPass.value)) {
-            this._addInvalidity("Пароли не совпадают");
-          }
-
           //ошибка если пароли не совпадают (для подтверждения пароля)
-          if (passConfirm && (jsPassConfirm.value != jsPass.value)) {
+          if (passConfirm && (passConfirmItem.value != passItem.value)) {
             this._addInvalidity("Пароли не совпадают");
           }
 
