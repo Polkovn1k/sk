@@ -1,6 +1,5 @@
 .profile {
-    //display: none;
-    display: block;
+    display: none;
     font-family: $font;
     position: fixed;
     z-index: 1000;
@@ -79,7 +78,7 @@
 
     &__tab.active-btn{
         cursor: auto;
-        //pointer-events: none;
+        pointer-events: none;
     }
 
     &__close {
@@ -293,8 +292,7 @@
     }
 //блок регистрации
     &__registry {
-        //display: none;
-        display: block;
+        display: none;
         padding-top: 15px;
     }
 

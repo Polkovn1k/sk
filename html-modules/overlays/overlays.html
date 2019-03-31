@@ -147,8 +147,14 @@
             <h3 class="profile__title">Вход в личный кабинет</h3>
             <p class="profile__text">Вход в личный кабинет. Здесь вы можете отслеживать статус заказа, а так же историю ваших покупок</p>
             <form action="#" class="profile__join-form">
-                <input placeholder="Введите Email или логин" name="emailOrLogin" type="text" class="profile__input" required>
-                <input placeholder="Пароль" name="password" type="password" value="" class="profile__input" required>
+                <div class="profile__label">
+                    <input name="join-login" type="text" class="profile__input js-profile-join-input" maxlength="50" minlength="5" title="" placeholder="Введите Email" required>
+                    <span></span>
+                </div>
+                <div class="profile__label">
+                    <input name="join-password" type="password" class="profile__input js-profile-join-input" maxlength="50" minlength="5" title="" placeholder="Пароль" required>
+                    <span></span>
+                </div>
                 <div class="profile__switch-join">
                     <div class="switch profile__switch-item">
                         <input class="switch__input" type="checkbox" id="joinSwitchOn" checked>
@@ -158,7 +164,7 @@
                     <span>Запомнить меня</span>
                 </div>
                 <div class="profile__btn-block">
-                    <a href="profile.html" class="dark-btn profile__btn">Войти</a>
+                    <button type="submit" class="dark-btn profile__btn js-submit-join">Войти</button>
                     <a data-overlay-id="pass-recovery" class="btn profile__btn js-overlay-btn">Я забыл пароль</a>
                 </div>
             </form>

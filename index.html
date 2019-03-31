@@ -144,14 +144,6 @@
           if (passConfirm && (passConfirmItem.value != passItem.value)) {
             this._addInvalidity("Пароли не совпадают");
           }
-
-
-
-
-
-
-
-          // И остальные проверки валидности...
         },
 
         // Добавляем сообщение об ошибке в массив ошибок
@@ -200,12 +192,8 @@
         },
       };
 
-
-      // Добавляем обработчик клика на кнопку отправки формы
-      //нажимаем на кнопку отправки формы
-      var submit = document.querySelector(".js-submit-reg");
-
-      submit.addEventListener("mousedown", function(event) {
+      var regSubmit = document.querySelector(".js-submit-reg");
+      regSubmit.addEventListener("mousedown", function(event) {
           var inputs = document.querySelectorAll(".js-profile-reg-input");
           for (var i = 0; i < inputs.length; i++) {
               var currentInput = inputs[i];
@@ -217,7 +205,7 @@
           }
       });
 
-      submit.addEventListener("click", function(event) {
+      regSubmit.addEventListener("click", function(event) {
           var inputs = document.querySelectorAll(".js-profile-reg-input");
           for (var i = 0; i < inputs.length; i++) {
               var currentInput = inputs[i];
@@ -240,26 +228,45 @@
             event.preventDefault();
           }
       });
+
+
+      var joinSubmit = document.querySelector(".js-submit-join");
+      joinSubmit.addEventListener("mousedown", function(event) {
+          var inputs = document.querySelectorAll(".js-profile-join-input");
+          for (var i = 0; i < inputs.length; i++) {
+              var currentInput = inputs[i];
+              var inputCustomValidation = new CustomValidation();
+              inputCustomValidation.checkValidity(currentInput);
+              var customValidityMessage = inputCustomValidation._getInvalidities();
+              currentInput.setCustomValidity(customValidityMessage);
+              inputCustomValidation._removeInvalidity();
+          }
+      });
+
+      joinSubmit.addEventListener("click", function(event) {
+          var inputs = document.querySelectorAll(".js-profile-join-input");
+          for (var i = 0; i < inputs.length; i++) {
+              var currentInput = inputs[i];
+              var inputCustomValidation = new CustomValidation();
+              inputCustomValidation._removeValidClassForInput(currentInput);
+              inputCustomValidation._removeInvalidClassForInput(currentInput);
+              if (currentInput.checkValidity() == false) {
+                  inputCustomValidation.checkValidity(currentInput);
+                  var customValidityMessage = inputCustomValidation._getInvalidities();
+                  currentInput.setCustomValidity(customValidityMessage);
+                  inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
+                  inputCustomValidation._removeInvalidity();
+                  inputCustomValidation._addInvalidClassForInput(currentInput);
+                  var stopSubmit = true;
+              }
+              inputCustomValidation._addValidClassForInput(currentInput);
+          }
+
+          if (stopSubmit) {
+            event.preventDefault();
+          }
+      });
   </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </body>
 
