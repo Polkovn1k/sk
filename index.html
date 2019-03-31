@@ -109,19 +109,34 @@
 
         // Метод, проверяющий валидность (в качестве аргумента выбранный input)
         _validityChecker: function(input) {
-
-            //у каждого input есть свойство в котором хранится булевое значение на определенные ошибки
           var validity = input.validity;
+          var email = input.classList.contains("email");
 
+          //ошибка если сиволов больше лимита
           if (validity.tooLong) {
             var maxlength = input.getAttributeValue("maxlength");
-            this._addInvalidity("Максимальное количество символов " + maxlength);
+            this._addInvalidity("Введено более " + maxlength + " символов");
           }
 
+          //ошибка если сиволов меньше лимита
           if (validity.tooShort) {
             var minlength = input.getAttribute("minlength");
-            this._addInvalidity("Минимальное количество символов " + minlength);
+            this._addInvalidity("Введено менее " + minlength + " символов");
           }
+
+          //ошибка если поле пустое
+          if (!input.value) {
+            this._addInvalidity("Поле не заполнено");
+          }
+
+          //ошибка если поле email не соответствует параметрам regExp
+          var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          if (email && (emailRegExp.test(input.value) == false)) {
+            this._addInvalidity("Введите корректный email");
+          }
+
+
+
 
           // И остальные проверки валидности...
         },
