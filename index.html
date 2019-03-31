@@ -108,7 +108,7 @@
         invalidities: [],
 
         // Метод, проверяющий валидность (в качестве аргумента выбранный input)
-        _validityChecker: function(input) {
+        checkValidity: function(input) {
           var validity = input.validity;
           var email = input.classList.contains("email");
 
@@ -200,7 +200,7 @@
               inputCustomValidation._removeValidClassForInput(currentInput);
               inputCustomValidation._removeInvalidClassForInput(currentInput);
               if (currentInput.checkValidity() == false) {
-                  inputCustomValidation._validityChecker(currentInput); // Выявим ошибки
+                  inputCustomValidation.checkValidity(currentInput); // Выявим ошибки
                 var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
                 currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
                 var errorsField = inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
@@ -223,7 +223,7 @@
               inputCustomValidation._removeValidClassForInput(currentInput);
               inputCustomValidation._removeInvalidClassForInput(currentInput);
               if (currentInput.checkValidity() == false) {
-                  inputCustomValidation._validityChecker(currentInput); // Выявим ошибки
+                  inputCustomValidation.checkValidity(currentInput); // Выявим ошибки
                 var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
                 currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
                 var errorsField = inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
