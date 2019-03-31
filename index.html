@@ -173,43 +173,55 @@
       };
 
 
-
-
-
-
-
-
       // Добавляем обработчик клика на кнопку отправки формы
       //нажимаем на кнопку отправки формы
-      document.querySelector(".js-profile-reg").addEventListener("click", function(event) {
-        //присваиваем в переменную список все отслеживаемых input'ов
-        var inputs = document.querySelectorAll(".js-profile-reg-input");
-        //Проходим по каждому полю
-        for (var i = 0; i < inputs.length; i++) {
-            //каждый input ложим в переменню currentInput
-            var currentInput = inputs[i];
-            var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
-            inputCustomValidation._removeValidClassForInput(currentInput);
-            inputCustomValidation._removeInvalidClassForInput(currentInput);
+      var submit = document.querySelector(".js-profile-reg");
 
-          // Проверим валидность поля, используя встроенную в JavaScript функцию checkValidity()
-          //Проверяем
-          if (currentInput.checkValidity() == false) {
-            inputCustomValidation._validityChecker(currentInput); // Выявим ошибки
-            var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
-            currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
-            var errorsField = inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
-            inputCustomValidation._removeInvalidity();
-            inputCustomValidation._addInvalidClassForInput(currentInput);
-            var stopSubmit = true;
-          } // закончился if
-          inputCustomValidation._addValidClassForInput(currentInput);
-        } // закончился цикл
-
-        //если
-        if (stopSubmit) {
+      submit.addEventListener("mousedown", function(event) {
+          var inputs = document.querySelectorAll(".js-profile-reg-input");
+          for (var i = 0; i < inputs.length; i++) {
+              var currentInput = inputs[i];
+              var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
+              inputCustomValidation._removeValidClassForInput(currentInput);
+              inputCustomValidation._removeInvalidClassForInput(currentInput);
+              if (currentInput.checkValidity() == false) {
+                  inputCustomValidation._validityChecker(currentInput); // Выявим ошибки
+                var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
+                currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
+                var errorsField = inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
+                inputCustomValidation._removeInvalidity();
+                inputCustomValidation._addInvalidClassForInput(currentInput);
+                var stopSubmit = true;
+              } // закончился if
+              inputCustomValidation._addValidClassForInput(currentInput);
+          } // закончился цикл
+          if (stopSubmit) {
             event.preventDefault();
-        }
+          }
+      });
+
+      submit.addEventListener("click", function(event) {
+          var inputs = document.querySelectorAll(".js-profile-reg-input");
+          for (var i = 0; i < inputs.length; i++) {
+              var currentInput = inputs[i];
+              var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
+              inputCustomValidation._removeValidClassForInput(currentInput);
+              inputCustomValidation._removeInvalidClassForInput(currentInput);
+              if (currentInput.checkValidity() == false) {
+                  inputCustomValidation._validityChecker(currentInput); // Выявим ошибки
+                var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
+                currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
+                var errorsField = inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
+                inputCustomValidation._removeInvalidity();
+                inputCustomValidation._addInvalidClassForInput(currentInput);
+                var stopSubmit = true;
+              } // закончился if
+              inputCustomValidation._addValidClassForInput(currentInput);
+          } // закончился цикл
+
+          if (stopSubmit) {
+            event.preventDefault();
+          }
       });
   </script>
 
