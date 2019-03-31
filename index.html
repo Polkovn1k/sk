@@ -111,6 +111,22 @@
         checkValidity: function(input) {
           var validity = input.validity;
           var email = input.classList.contains("email");
+          var pass = input.classList.contains("pass");
+          var passConfirm = input.classList.contains("pass-confirm");
+
+          var jsPass = document.querySelector(".pass");
+          var jsPassConfirm = document.querySelector(".pass-confirm");
+
+          //ошибка если поле email не соответствует параметрам regExp
+          var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+          if (input && email && (emailRegExp.test(input.value) == false)) {
+            this._addInvalidity("Введите корректный email");
+          }
+
+          //ошибка если поле пустое
+          if (!input.value) {
+            this._addInvalidity("Поле не заполнено");
+          }
 
           //ошибка если сиволов больше лимита
           if (validity.tooLong) {
@@ -119,21 +135,13 @@
           }
 
           //ошибка если сиволов меньше лимита
-          if (validity.tooShort) {
-            var minlength = input.getAttribute("minlength");
+          var minlength = input.getAttribute("minlength");
+          if (input.value.length < minlength) {
             this._addInvalidity("Введено менее " + minlength + " символов");
           }
 
-          //ошибка если поле пустое
-          if (!input.value) {
-            this._addInvalidity("Поле не заполнено");
-          }
 
-          //ошибка если поле email не соответствует параметрам regExp
-          var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-          if (email && (emailRegExp.test(input.value) == false)) {
-            this._addInvalidity("Введите корректный email");
-          }
+
 
 
 
@@ -196,23 +204,19 @@
           var inputs = document.querySelectorAll(".js-profile-reg-input");
           for (var i = 0; i < inputs.length; i++) {
               var currentInput = inputs[i];
-              var inputCustomValidation = new CustomValidation(); // Создадим объект CustomValidation
-              inputCustomValidation._removeValidClassForInput(currentInput);
-              inputCustomValidation._removeInvalidClassForInput(currentInput);
-              if (currentInput.checkValidity() == false) {
-                  inputCustomValidation.checkValidity(currentInput); // Выявим ошибки
-                var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
-                currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
-                var errorsField = inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
-                inputCustomValidation._removeInvalidity();
-                inputCustomValidation._addInvalidClassForInput(currentInput);
-                var stopSubmit = true;
-              } // закончился if
+              var inputCustomValidation = new CustomValidation();                         //создаем новый объект со всеми свойствами для текущего input'a
+              inputCustomValidation._removeValidClassForInput(currentInput);              //удаляем класс Valid
+              inputCustomValidation._removeInvalidClassForInput(currentInput);            //удаляем класс Invalid
+
+              inputCustomValidation.checkValidity(currentInput);
+              var customValidityMessage = inputCustomValidation._getInvalidities();
+              currentInput.setCustomValidity(customValidityMessage);
+              inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
+              inputCustomValidation._removeInvalidity();
+              inputCustomValidation._addInvalidClassForInput(currentInput);
+
               inputCustomValidation._addValidClassForInput(currentInput);
           } // закончился цикл
-          if (stopSubmit) {
-            event.preventDefault();
-          }
       });
 
       submit.addEventListener("click", function(event) {
@@ -226,7 +230,7 @@
                   inputCustomValidation.checkValidity(currentInput); // Выявим ошибки
                 var customValidityMessage = inputCustomValidation._getInvalidities(); // Получим все сообщения об ошибках
                 currentInput.setCustomValidity(customValidityMessage); // Установим специальное сообщение об ошибке
-                var errorsField = inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
+                inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);
                 inputCustomValidation._removeInvalidity();
                 inputCustomValidation._addInvalidClassForInput(currentInput);
                 var stopSubmit = true;
