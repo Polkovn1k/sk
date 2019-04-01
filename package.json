@@ -19,6 +19,7 @@
     "gulp-svgstore": "^7.0.0",
     "gulp-uglifyjs": "^0.6.2",
     "gulp-webp": "^3.0.0",
+    "nouislider": "^13.1.4",
     "postcss-sorting": "^4.0.1",
     "posthtml-include": "^1.1.0",
     "run-sequence": "^2.2.0",

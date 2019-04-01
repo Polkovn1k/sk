@@ -8792,6 +8792,12 @@
         }
       }
     },
+    "nouislider": {
+      "version": "13.1.4",
+      "resolved": "https://registry.npmjs.org/nouislider/-/nouislider-13.1.4.tgz",
+      "integrity": "sha512-XcGdAkjDNjaciL4rBdf6/0Yfj7cVCPD9lUjFfOJnUdku4XaJUFa3Im3w8NnCuJFZ3NraRATREjpqDfbQIRRU0w==",
+      "dev": true
+    },
     "npm": {
       "version": "6.4.1",
       "resolved": "https://registry.npmjs.org/npm/-/npm-6.4.1.tgz",
