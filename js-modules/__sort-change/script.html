@@ -1,0 +1,37 @@
+<script>
+    var sortToggle = {
+        listenClickInSort: () => {
+            document.querySelectorAll(".js-sort").forEach(function(item) {
+                item.addEventListener("click", (event) => {
+                    sortToggle._removeAllBtnsActive(".js-sort");
+                    sortToggle._addActiveForBtns(item);
+                });
+            });
+        },
+
+        listenClickInAddSort: () => {
+            document.querySelectorAll(".js-add-sort").forEach(function(item) {
+                item.addEventListener("click", (event) => {
+                    sortToggle._removeAllBtnsActive(".js-add-sort");
+                    sortToggle._addActiveForBtns(item);
+                });
+            });
+        },
+
+        _removeAllBtnsActive: (element) => {
+            document.querySelectorAll(element).forEach((item) => {
+                item.classList.remove("active");
+            });
+        },
+
+        _addActiveForBtns: (clickedBtn) => {
+            clickedBtn.classList.add("active");
+        },
+
+        init: () => {
+            sortToggle.listenClickInSort();
+            sortToggle.listenClickInAddSort();
+        },
+    };
+    sortToggle.init();
+</script>

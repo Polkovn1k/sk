@@ -129,7 +129,21 @@
                 top: $sort-desktop-font-size / 2;
                 right: 0;
                 fill: $communication-add-color;
-                transition: 0.3s fill ease;
+                transition: 0.3s ease;
+            }
+        }
+    }
+
+    &__item.active {
+        button {
+            color: $blue;
+            cursor: default;
+            pointer-events: none;
+        }
+        @media (min-width: $lg) {
+            svg {
+                fill: $blue;
+                transform: rotate(180deg);
             }
         }
     }
