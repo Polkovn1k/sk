@@ -137,6 +137,10 @@
         position: relative;
         display: block;
         padding-bottom: $profile-input-padding-botom;
+        .error-message,
+        .input-icon {
+            display: none;
+        }
     }
 
     &__input {
@@ -370,9 +374,77 @@
         }
     }
 //валидация формы
-    &__input.valid {
-        border-color: $green;
-        ~ span {
+    &__label.invalid {
+        .profile__input {
+            border-color: $red;
+        }
+        .error-message {
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            height: $profile-input-padding-botom;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            font-size: 12px;
+            line-height: $profile-input-padding-botom - 5px;
+            font-weight: 400;
+            color: $red;
+        }
+        .input-icon {
+            display: block;
+            position: absolute;
+            top: 11px;
+            left: auto;
+            bottom: auto;
+            right: 13px;
+            transform: none;
+            overflow: hidden;
+            width: 17px;
+            height: 17px;
+            border: 1px solid $red;
+            border-radius: 50%;
+        }
+        .input-icon::before {
+            display: block;
+            background: $white;
+            width: 100%;
+            height: 100%;
+            content: "!";
+            font-size: 10px;
+            line-height: 15px;
+            color: $red;
+            text-align: center;
+
+        }
+    }
+
+    &__label.valid {
+        .profile__input {
+            border-color: $green;
+        }
+        .error-message {
+            display: none;
+        }
+        .input-icon {
+            display: block;
+            position: absolute;
+            font-size: 0;
+            top: 20%;
+            left: auto;
+            bottom: auto;
+            right: 13px;
+            transform: rotate(135deg);
+            width: 15px;
+            height: 8px;
+            border: 2px solid $green;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        }
+    }
+
+    &__input {
+        .dsds {
             position: absolute;
             font-size: 0;
             top: 20%;
@@ -385,21 +457,6 @@
             border: 2px solid $green;
             border-bottom-color: transparent;
             border-left-color: transparent;
-        }
-    }
-
-    &__input.invalid {
-        border-color: $red;
-        ~ span {
-            overflow: hidden;
-            height: $profile-input-padding-botom;
-            position: absolute;
-            left: 10px;
-            bottom: 0;
-            font-size: 12px;
-            line-height: $profile-input-padding-botom - 5px;
-            font-weight: 400;
-            color: $red;
         }
     }
 }

@@ -149,15 +149,17 @@
         <!-- Вход в личный кабинет -->
         <div class="profile__join js-profile-item js-profile-join active">
             <h3 class="profile__title">Вход в личный кабинет</h3>
-            <p class="profile__text">Вход в личный кабинет. Здесь вы можете отслеживать статус заказа, а так же историю ваших покупок</p>
+            <p class="profile__text">В личном кабинете Вы можете отслеживать статус заказа, а так же историю ваших покупок</p>
             <form action="#" class="profile__join-form">
-                <div class="profile__label">
+                <div class="profile__label valid">
                     <input name="join-login" type="text" class="profile__input js-profile-join-input" maxlength="50" minlength="5" title="" placeholder="Введите Email" required>
-                    <span></span>
+                    <span class="error-message"></span>
+                    <span class="input-icon"></span>
                 </div>
-                <div class="profile__label">
+                <div class="profile__label invalid">
                     <input name="join-password" type="password" class="profile__input js-profile-join-input" maxlength="50" minlength="5" title="" placeholder="Пароль" required>
-                    <span></span>
+                    <span class="error-message">У вас косяк в инпуте!</span>
+                    <span class="input-icon"></span>
                 </div>
                 <div class="profile__switch-join">
                     <div class="switch profile__switch-item">
@@ -222,17 +224,20 @@
                 </li>
             </ul>
             <form action="#" class="profile__registry-form">
-                <div class="profile__label">
+                <div class="profile__label valid">
                     <input name="reg-email" type="text" class="profile__input js-profile-reg-input reg-email" maxlength="50" minlength="5" title="" placeholder="Введите Email" required>
-                    <span></span>
+                    <span class="error-message"></span>
+                    <span class="input-icon"></span>
                 </div>
-                <div class="profile__label">
+                <div class="profile__label invalid">
                     <input name="reg-pass" type="password" class="profile__input js-profile-reg-input reg-pass" maxlength="50" minlength="5" title="" placeholder="Пароль" required>
-                    <span></span>
+                    <span class="error-message">У вас косяк в инпуте!</span>
+                    <span class="input-icon"></span>
                 </div>
-                <div class="profile__label">
+                <div class="profile__label invalid">
                     <input name="reg-pass-confirm" type="password" class="profile__input js-profile-reg-input reg-pass-confirm" maxlength="50" minlength="5" title="" placeholder="Повторите пароль" required>
-                    <span></span>
+                    <span class="error-message">У вас косяк в инпуте!</span>
+                    <span class="input-icon"></span>
                 </div>
                 <div class="profile__switch-registry">
                     <div class="switch profile__switch-item">
