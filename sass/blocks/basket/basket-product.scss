@@ -146,6 +146,30 @@
 
 //свойство товара
     &__property {
+        margin-bottom: 25px;
+        overflow: hidden;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.36;
+        color: $communication-add-color;
+    }
+
+    &__property-item {
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__property-value {
+        @include field-reset();
+        display: inline-block;
+        vertical-align: top;
+        padding-right: 15px;
+    }
+
+    &__color {
         display: inline-flex;
         vertical-align: top;
         align-items: center;
@@ -155,12 +179,12 @@
         overflow: hidden;
     }
 
-    &__color {
+    &__color-img {
+        overflow: hidden;
         height: 25px;
         width: 25px;
         color: $border-color;
         font-size: 0;
-        background: $border-color;
     }
 
     &__value {
