@@ -1,12 +1,22 @@
 .range-filter {
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     font-family: $font;
+
+    &__noui-slider {
+        height: 30px;
+    }
+
+
+
+
+
+
 //блок инпутов
     &__inputs {
         display: flex;
 
-        input {
+        input[type="text"] {
             flex-grow: 1;
             width: 35%;
             padding: 0 $grid-padding;
@@ -17,20 +27,13 @@
             margin-right: 15px;
             color: $extra-text-color;
             outline: none;
+            box-shadow: none;
             transition: 0.3s border-color ease;
         }
-        input:hover,
-        input:focus {
+        input[type="text"]:hover,
+        input[type="text"]:focus {
             border-color: $blue;
         }
-    }
-
-    &__input-min {
-
-    }
-
-    &__input-max {
-
     }
 
     &__unit {

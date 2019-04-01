@@ -14,7 +14,6 @@
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="canonical" href="https://***.ru/">
   <script>document.createElement("picture");</script>
-  <!-- <script src="picturefill.js" async></script> -->
 </head>
 
 <body>
@@ -106,6 +105,26 @@
   <include src="js-modules/__grid-or-line-tog/script.html"></include>
   <!----------catalog item ajax load-->
   <include src="js-modules/__catalog-ajax-load/script.html"></include>
+
+  <script>
+      var stepsSlider = document.getElementById("price-container");
+      var input0 = document.getElementById("price_ranger_min");
+      var input1 = document.getElementById("price_ranger_max");
+      var inputs = [input0, input1];
+
+      noUiSlider.create(stepsSlider, {
+          start: [0, 200],
+          connect: true,
+          range: {
+              "min": [0],
+              "max": 200
+          }
+      });
+
+      stepsSlider.noUiSlider.on("update", function (values, handle) {
+          inputs[handle].value = values[handle];
+      });
+  </script>
 
 </body>
 
