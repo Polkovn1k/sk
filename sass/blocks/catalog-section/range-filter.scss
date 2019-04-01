@@ -3,19 +3,9 @@
     flex-direction: column;
     font-family: $font;
 
-    &__noui-slider {
-        height: 30px;
-    }
-
-
-
-
-
-
 //блок инпутов
     &__inputs {
         display: flex;
-
         input[type="text"] {
             flex-grow: 1;
             width: 35%;
@@ -41,49 +31,5 @@
         font-weight: 400;
         color: $extra-text-color;
         line-height: $common-item-height;
-    }
-//блок хэндлеров
-    &__handles {
-        position: relative;
-        display: none;
-        @media (min-width: $lg) {
-            display: block;
-            margin: 20px 0 30px 0;
-        }
-    }
-
-    &__bar {
-        height: $bar-height;
-        background: $border-color;
-    }
-
-    &__left-handle,
-    &__right-handle {
-        position: absolute;
-        z-index: 10;
-        top: 50%;
-        transform: translateY(-50%);
-        height: $range-filter-hadles-height;
-        width: $range-filter-hadles-height;
-        border-radius: 50%;
-        background: $blue;
-        cursor: pointer;
-    }
-
-    &__left-handle {
-        left: 0;
-    }
-
-    &__right-handle {
-        left: 50%;
-    }
-
-    &__progress-bar {
-        position: absolute;
-        height: $bar-height;
-        top: 0;
-        left: 0;
-        width: 50%;
-        background: $blue;
     }
 }
