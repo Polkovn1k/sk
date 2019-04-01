@@ -73,24 +73,22 @@
         color: $communication-add-color;
     }
 
-    &__inputs {
-        margin-bottom: 20px;
+    &__label {
+        position: relative;
+        display: block;
+        padding-bottom: $profile-input-padding-botom;
     }
 
     &__input {
         width: 100%;
         height: $common-item-height;
         padding: 0 10px;
-        margin-bottom: 20px;
         border: 1px solid $border-color;
         border-radius: 5px;
         line-height: $common-item-height;
         outline: none;
+        box-shadow: none;
         transition: 0.3s ease;
-    }
-
-    &__input:last-child {
-        margin-bottom: 0;
     }
 
     &__input:hover,
@@ -121,6 +119,39 @@
         margin-bottom: 0;
         @media (min-width: $sm) {
 
+        }
+    }
+//валидация формы
+    &__input.valid {
+        border-color: $green;
+        ~ span {
+            position: absolute;
+            font-size: 0;
+            top: 20%;
+            left: auto;
+            bottom: auto;
+            right: 10px;
+            transform: rotate(135deg);
+            width: 15px;
+            height: 8px;
+            border: 2px solid $green;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
+        }
+    }
+
+    &__input.invalid {
+        border-color: $red;
+        ~ span {
+            overflow: hidden;
+            height: $profile-input-padding-botom;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            font-size: 12px;
+            line-height: $profile-input-padding-botom - 5px;
+            font-weight: 400;
+            color: $red;
         }
     }
 }

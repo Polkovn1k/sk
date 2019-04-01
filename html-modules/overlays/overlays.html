@@ -218,18 +218,18 @@
                 </li>
             </ul>
             <form action="#" class="profile__registry-form">
-                <label class="profile__label">
+                <div class="profile__label">
                     <input name="reg-email" type="text" class="profile__input js-profile-reg-input reg-email" maxlength="50" minlength="5" title="" placeholder="Введите Email" required>
                     <span></span>
-                </label>
-                <label class="profile__label">
+                </div>
+                <div class="profile__label">
                     <input name="reg-pass" type="password" class="profile__input js-profile-reg-input reg-pass" maxlength="50" minlength="5" title="" placeholder="Пароль" required>
                     <span></span>
-                </label>
-                <label class="profile__label">
+                </div>
+                <div class="profile__label">
                     <input name="reg-pass-confirm" type="password" class="profile__input js-profile-reg-input reg-pass-confirm" maxlength="50" minlength="5" title="" placeholder="Повторите пароль" required>
                     <span></span>
-                </label>
+                </div>
                 <div class="profile__switch-registry">
                     <div class="switch profile__switch-item">
                         <input class="switch__input" type="checkbox" id="regSwitchOn" checked>
@@ -263,11 +263,12 @@
             Пожалуйста, введите Ваш адрес электронной почты, на который мы можем выслать инструкцию для смены пароля.
         </p>
         <form action="#" class="pass-recovery__form">
-            <div class="pass-recovery__inputs">
-                <input type="email" placeholder="Введите свой email" class="pass-recovery__input">
+            <div class="pass-recovery__label">
+                <input name="pass-recovery" type="text" class="pass-recovery__input js-pass-recovery" maxlength="50" minlength="5" title="" placeholder="Введите свой email" required>
+                <span></span>
             </div>
             <div class="pass-recovery__btns-block">
-                <button type="submit" class="dark-btn pass-recovery__btn">Восстановить</button>
+                <button type="submit" class="dark-btn pass-recovery__btn js-submit-pass-recovery">Восстановить</button>
                 <a data-overlay-id="profile-block" class="btn pass-recovery__btn js-overlay-btn">Я вспомнил пароль</a>
             </div>
         </form>
