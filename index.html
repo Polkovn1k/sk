@@ -100,6 +100,171 @@
   <!----------only page scripts-->
   <include src="js-modules/__index-page/script.html"></include>
 
+<!--   <script>
+    //описываем новый объект
+    function CustomValidation() {}
+    CustomValidation.prototype = {
+      // Установим пустой массив сообщений об ошибках
+      invalidities: [],
+
+      // Метод, проверяющий валидность (в качестве аргумента выбранный input)
+      checkValidity: function(input) {
+        var validity = input.validity;
+        var phone = input.classList.contains("phone");
+
+        //ошибка если поле пустое
+        if (!input.value) {
+          this._addInvalidity("Поле не заполнено");
+        }
+
+        //ошибка если сиволов больше лимита
+        if (validity.tooLong) {
+          var maxlength = input.getAttributeValue("maxlength");
+          this._addInvalidity("Введено более " + maxlength + " символов");
+        }
+
+        //ошибка если сиволов меньше лимита
+        var minlength = input.getAttribute("minlength");
+        if (input.value.length < minlength) {
+          this._addInvalidity("Введено менее " + minlength + " символов");
+        }
+
+        //ошибка если поле email не соответствует параметрам regExp
+        var phoneRegExp = /^(\s*)?(\+)?([- _():=+]?\d[- _():=+]?){10,14}(\s*)?$/;
+        if (phone && (phoneRegExp.test(input.value) == false)) {
+          this._addInvalidity("Введите корректный номер телефона");
+        }
+      },
+
+      // Добавляем сообщение об ошибке в массив ошибок
+      _addInvalidity: function(message) {
+        this.invalidities.push(message);
+      },
+
+      // Убираем все сообщения об ошибке из массива ошибок
+      _removeInvalidity: function() {
+        this.invalidities.splice(0);
+      },
+
+      // Получаем общий текст сообщений об ошибках
+      _getInvalidities: function() {
+        return this.invalidities.join('. \n');
+      },
+
+      //Вставляем текст сообщения об ошибке
+      _getSiblingElementOfInput: (input, message) => {
+          var inputSibling = input.nextElementSibling;
+          inputSibling.innerText = message;
+      },
+
+      //Вставляем текст сообщения об ошибке
+      _addInvalidClassForInput: (input) => {
+          input.classList.add("invalid");
+      },
+
+      _removeInvalidClassForInput: (input) => {
+          if (input.classList.contains("invalid")) {
+              input.classList.remove("invalid");
+          }
+      },
+
+      _addValidClassForInput: (input) => {
+          if (input.classList.contains("invalid")) {
+              return false;
+          }
+          input.classList.add("valid");
+      },
+
+      _removeValidClassForInput: (input) => {
+          if (input.classList.contains("valid")) {
+              input.classList.remove("valid");
+          }
+      },
+    };
+
+    (function () {
+        var regSubmit = document.querySelector(".js-submit-callback");
+        regSubmit.addEventListener("mousedown", function(event) {
+            var inputs = document.querySelectorAll(".js-callback-input");
+            for (var i = 0; i < inputs.length; i++) {
+                var currentInput = inputs[i];
+                var inputCustomValidation = new CustomValidation();
+                inputCustomValidation.checkValidity(currentInput);
+                var customValidityMessage = inputCustomValidation._getInvalidities();
+                currentInput.setCustomValidity(customValidityMessage);
+                inputCustomValidation._removeInvalidity();
+            }
+        });
+
+        regSubmit.addEventListener("click", function(event) {
+            var inputs = document.querySelectorAll(".js-callback-input");
+            for (var i = 0; i < inputs.length; i++) {
+                var currentInput = inputs[i];
+                var inputCustomValidation = new CustomValidation();//--------------------------------------создаем новый объект со всеми свойствами для текущего input'a
+                inputCustomValidation._removeValidClassForInput(currentInput);//---------------------------удаляем класс Valid
+                inputCustomValidation._removeInvalidClassForInput(currentInput);//-------------------------удаляем класс Invalid
+                if (currentInput.checkValidity() == false) {//---------------------------------------------делаем проверку на валидность Input'а
+                    inputCustomValidation.checkValidity(currentInput);//-----------------------------------проверяем на валидность текущий input
+                    var customValidityMessage = inputCustomValidation._getInvalidities();//----------------формируем список всех сообщений по текущему input'у
+                    currentInput.setCustomValidity(customValidityMessage);//-------------------------------в свойство validationMessage у input' ложим список сообщений
+                    inputCustomValidation._getSiblingElementOfInput(currentInput, customValidityMessage);//в span текущего input'a вставляем список сообщений
+                    inputCustomValidation._removeInvalidity();//-------------------------------------------очищаем список всех сообщений
+                    inputCustomValidation._addInvalidClassForInput(currentInput);
+                    var stopSubmit = true;
+                }
+                inputCustomValidation._addValidClassForInput(currentInput);
+            }
+
+            if (stopSubmit) {
+              event.preventDefault();
+            }
+        });
+    }());
+</script> -->
+
+
+
+
+  <script>
+    var maskedInputs = document.querySelectorAll("[data-mask]");
+
+    for (var index = 0; index < maskedInputs.length; index++) {
+      maskedInputs[index].addEventListener('input', maskInput);
+    }
+
+    function maskInput() {
+      var input = this;
+      var mask = input.dataset.mask;
+      var value = input.value;
+      var literalPattern = /[0\*]/;
+      var numberPattern = /[0-9]/;
+      var newValue = "";
+      try {
+        var maskLength = mask.length;
+        var valueIndex = 0;
+        var maskIndex = 0;
+
+        for (; maskIndex < maskLength;) {
+          if (maskIndex >= value.length) break;
+
+          if (mask[maskIndex] === "0" && value[valueIndex].match(numberPattern) === null) break;
+
+          // Found a literal
+          while (mask[maskIndex].match(literalPattern) === null) {
+            if (value[valueIndex] === mask[maskIndex]) break;
+            newValue += mask[maskIndex++];
+          }
+          newValue += value[valueIndex++];
+          maskIndex++;
+        }
+
+        input.value = newValue;
+      } catch (e) {
+        console.log(e);
+      }
+    }
+  </script>
+
 </body>
 
 </html>

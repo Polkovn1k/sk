@@ -16,11 +16,15 @@
             Если вы не хотите тратить время на поиск нужной информации на сайте, находитесь в другом часовом поясе или просто предпочитаете телефонное сообщение по интересующему вопросу, то закажите консультацию нашего специалиста.
         </p>
         <form action="#" class="communication-over__form">
-            <div class="communication-over__inputs">
-                <input type="text" placeholder="Введите имя" class="communication-over__input">
-                <input type="tel" placeholder="Введите номер телефона" class="communication-over__input">
+            <div class="communication-over__label">
+                <input name="callback-name" type="text" class="communication-over__input js-callback-input name" maxlength="35" minlength="3" placeholder="Введите имя" required>
+                <span></span>
             </div>
-            <button type="submit" class="dark-btn communication-over__btn">Заказать звонок</button>
+            <div class="communication-over__label">
+                <input name="callback-phone" type="tel" class="communication-over__input js-callback-input phone" maxlength="30" minlength="7" placeholder="Введите номер телефона" required>
+                <span></span>
+            </div>
+            <button type="submit" class="dark-btn communication-over__btn js-submit-callback">Заказать звонок</button>
         </form>
     </div>
 </section>
