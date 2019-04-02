@@ -16,98 +16,398 @@
                     Выберите способ оплаты
                 </p>
                 <div class="delivery-calc__pay-btns">
-                    <button class="delivery-calc__pay-btn active">Онлайн оплата</button>
-                    <button class="delivery-calc__pay-btn">Оплата при получении</button>
+                    <button class="delivery-calc__pay-btn js-pay-tog active">Онлайн оплата</button>
+                    <button class="delivery-calc__pay-btn js-pay-tog">Оплата при получении</button>
                 </div>
                 <ul class="delivery-calc__list">
-                    <li class="delivery-calc__item">
-                        <div class="delivery-calc__item-container active">
-                            <p class="delivery-calc__shipping-type">
-                                <span class="delivery-calc__radio"></span>
-                                <img class="delivery-calc__shipping-img" width="30" height="24" src="img/decoration/rus-post.png" alt="">
-                                Почта России (EMS)
-                            </p>
-                            <div class="delivery-calc__values">
-                                <p class="delivery-calc__time">Срок доставки (1 день)</p>
-                                <span class="delivery-calc__pay-sum">194 Р.</span>
+                    <li class="delivery-calc__item active">
+                        <div class="delivery-calc__item-container">
+                            <div class="row">
+                                <div class="col-12 col-md-7">
+                                    <label class="delivery-calc__label js-delivery-calc">
+                                        <input type="radio" name="main-delivery" checked>
+                                        <span class="delivery-calc__radio"></span>
+                                        <img class="delivery-calc__img" width="30" height="24" src="img/decoration/rus-post.png" alt="">
+                                        <span class="delivery-calc__address-value">Почта России (EMS)</span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <div class="delivery-calc__values">
+                                        <p class="delivery-calc__time">Срок доставки (1 день)</p>
+                                        <span class="delivery-calc__pay-sum">194 Р.</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li class="delivery-calc__item">
                         <div class="delivery-calc__item-container">
-                            <p class="delivery-calc__shipping-type">
-                                <span class="delivery-calc__radio"></span>
-                                <img class="delivery-calc__shipping-img" width="30" height="24" src="img/decoration/rus-post.png" alt="">
-                                Почта России (отправление 1-го класса)
-                            </p>
-                            <div class="delivery-calc__values">
-                                <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
-                                <span class="delivery-calc__pay-sum">252 Р.</span>
+                            <div class="row">
+
+                                <div class="col-12 col-md-7">
+                                    <label class="delivery-calc__label js-delivery-calc">
+                                        <input type="radio" name="main-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <img class="delivery-calc__img" width="30" height="24" src="img/decoration/rus-post.png" alt="">
+                                        <span class="delivery-calc__address-value">Почта России (EMS)</span>
+                                    </label>
+                                </div>
+
+                                <div class="col-12 col-md-5">
+                                    <div class="delivery-calc__values">
+                                        <p class="delivery-calc__time">Срок доставки (1 день)</p>
+                                        <span class="delivery-calc__pay-sum">194 Р.</span>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </li>
                     <li class="delivery-calc__item">
                         <div class="delivery-calc__item-container">
-                            <p class="delivery-calc__shipping-type">
-                                <span class="delivery-calc__radio"></span>
-                                <img class="delivery-calc__shipping-img" width="30" height="24" src="img/decoration/rus-post.png" alt="">
-                                Почта России (наземная посылка)
-                            </p>
-                            <div class="delivery-calc__values">
-                                <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
-                                <span class="delivery-calc__pay-sum">239 Р.</span>
+                            <div class="row">
+                                <div class="col-12 col-md-7">
+                                    <label class="delivery-calc__label js-delivery-calc">
+                                        <input type="radio" name="main-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <img class="delivery-calc__img" width="30" height="24" src="img/decoration/rus-post.png" alt="">
+                                        <span class="delivery-calc__address-value">Почта России (отправление 1-го класса)</span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <div class="delivery-calc__values">
+                                        <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
+                                        <span class="delivery-calc__pay-sum">252 Р.</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li class="delivery-calc__item">
                         <div class="delivery-calc__item-container">
-                            <p class="delivery-calc__shipping-type">
-                                <span class="delivery-calc__radio"></span>
-                                <img class="delivery-calc__shipping-img" width="28" height="28" src="img/decoration/box-berry.png" alt="">
-                                BoxBerry (самовывоз)
-                            </p>
-                            <div class="delivery-calc__values">
-                                <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
-                                <span class="delivery-calc__pay-sum">239 Р.</span>
+                            <div class="row">
+                                <div class="col-12 col-md-7">
+                                    <label class="delivery-calc__label js-delivery-calc">
+                                        <input type="radio" name="main-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <img class="delivery-calc__img" width="30" height="24" src="img/decoration/rus-post.png" alt="">
+                                        <span class="delivery-calc__address-value">Почта России (наземная посылка)</span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <div class="delivery-calc__values">
+                                        <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
+                                        <span class="delivery-calc__pay-sum">239 Р.</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li class="delivery-calc__item">
                         <div class="delivery-calc__item-container">
-                            <p class="delivery-calc__shipping-type">
-                                <span class="delivery-calc__radio"></span>
-                                <img class="delivery-calc__shipping-img" width="28" height="28" src="img/decoration/box-berry.png" alt="">
-                                BoxBerry (курьерская служба)
-                            </p>
-                            <div class="delivery-calc__values">
-                                <p class="delivery-calc__time">Срок доставки (4 дня)</p>
-                                <span class="delivery-calc__pay-sum">526 Р.</span>
+                            <div class="row">
+                                <div class="col-12 col-md-7">
+                                    <label class="delivery-calc__label js-delivery-calc">
+                                        <input type="radio" name="main-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <img class="delivery-calc__img" width="28" height="28" src="img/decoration/box-berry.png" alt="">
+                                        <span class="delivery-calc__address-value">BoxBerry (самовывоз)</span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <div class="delivery-calc__values">
+                                        <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
+                                        <span class="delivery-calc__pay-sum">239 Р.</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="delivery-calc__item-container inner">
+                            <ul class="delivery-calc__list row">
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery" checked>
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. тракт Сибирский, 34 А</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Маршала Чуйкова, 55</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">пр-т Победы, 142</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Главная, 47</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Адоратского, 4</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Гвардейская, 16а</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. тракт Сибирский, 34 А</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Маршала Чуйкова, 55</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">пр-т Победы, 142</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Главная, 47</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Адоратского, 4</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Гвардейская, 16а</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. тракт Сибирский, 34 А</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Маршала Чуйкова, 55</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">пр-т Победы, 142</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Главная, 47</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Адоратского, 4</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Гвардейская, 16а</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. тракт Сибирский, 34 А</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Маршала Чуйкова, 55</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">пр-т Победы, 142</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Главная, 47</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Адоратского, 4</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Гвардейская, 16а</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. тракт Сибирский, 34 А</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Маршала Чуйкова, 55</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">пр-т Победы, 142</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Главная, 47</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Адоратского, 4</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Гвардейская, 16а</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. тракт Сибирский, 34 А</span>
+                                    </label>
+                                </li>
+                                <li class="col-12 col-md-6 col-lg-4 delivery-calc__item">
+                                    <label class="delivery-calc__label">
+                                        <input type="radio" name="inner-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <span class="delivery-calc__address-value">ул. Маршала Чуйкова, 55</span>
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="delivery-calc__item">
+                        <div class="delivery-calc__item-container">
+                            <div class="row">
+                                <div class="col-12 col-md-7">
+                                    <label class="delivery-calc__label js-delivery-calc">
+                                        <input type="radio" name="main-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <img class="delivery-calc__img" width="28" height="28" src="img/decoration/box-berry.png" alt="">
+                                        <span class="delivery-calc__address-value">BoxBerry (курьерская служба)</span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <div class="delivery-calc__values">
+                                        <p class="delivery-calc__time">Срок доставки (4 дня)</p>
+                                        <span class="delivery-calc__pay-sum">526 Р.</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li class="delivery-calc__item">
                         <div class="delivery-calc__item-container">
-                            <p class="delivery-calc__shipping-type">
-                                <span class="delivery-calc__radio"></span>
-                                <img class="delivery-calc__shipping-img" width="29" height="28" src="img/decoration/sdek.png" alt="">
-                                Курьером до двери СДЭК
-                            </p>
-                            <div class="delivery-calc__values">
-                                <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
-                                <span class="delivery-calc__pay-sum">299 Р.</span>
+                            <div class="row">
+                                <div class="col-12 col-md-7">
+                                    <label class="delivery-calc__label js-delivery-calc">
+                                        <input type="radio" name="main-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <img class="delivery-calc__img" width="29" height="28" src="img/decoration/sdek.png" alt="">
+                                        <span class="delivery-calc__address-value">Курьером до двери СДЭК</span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <div class="delivery-calc__values">
+                                        <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
+                                        <span class="delivery-calc__pay-sum">299 Р.</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>
                     <li class="delivery-calc__item">
                         <div class="delivery-calc__item-container">
-                            <p class="delivery-calc__shipping-type">
-                                <span class="delivery-calc__radio"></span>
-                                <img class="delivery-calc__shipping-img" width="28" height="28" src="img/decoration/pick-point.png" alt="">
-                                PickPoint
-                            </p>
-                            <div class="delivery-calc__values">
-                                <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
-                                <span class="delivery-calc__pay-sum">121 Р.</span>
+                            <div class="row">
+                                <div class="col-12 col-md-7">
+                                    <label class="delivery-calc__label js-delivery-calc">
+                                        <input type="radio" name="main-delivery">
+                                        <span class="delivery-calc__radio"></span>
+                                        <img class="delivery-calc__img" width="28" height="28" src="img/decoration/pick-point.png" alt="">
+                                        <span class="delivery-calc__address-value">PickPoint</span>
+                                    </label>
+                                </div>
+                                <div class="col-12 col-md-5">
+                                    <div class="delivery-calc__values">
+                                        <p class="delivery-calc__time">Срок доставки (1, 2 дня)</p>
+                                        <span class="delivery-calc__pay-sum">121 Р.</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </li>

@@ -99,36 +99,68 @@
         border-radius: 5px;
     }
 
+    &__item {
+        .inner {
+            display: none;
+        }
+    }
+
+    &__item.active {
+        background: $goods-sliders-background;
+        .inner {
+            display: flex;
+        }
+    }
+
     &__item:last-child {
         margin-bottom: 0;
     }
 
     &__item-container {
+        position: relative;
         padding: 10px;
-        cursor: pointer;
-        @media (min-width: $md) {
-            display: flex;
-            align-items: center;
-        }
+        overflow: hidden;
     }
 
-    &__shipping-type {
-        @include field-reset();
-        margin-bottom: 15px;
+    &__label {
         display: flex;
         align-items: center;
-        width: 100%;
-
-        font-size: 16px;
+        justify-content: flex-start;
+        height: 100%;
+        padding-bottom: 15px;
+        font-size: 14px;
         font-weight: 400;
-        line-height: 1.31;
-        color: $main-color;
+        line-height: 1.36;
+        color: $extra-text-color;
+        cursor: pointer;
+        input[type="radio"] {
+            display: none;
+        }
+        input[type="radio"]:checked {
+            ~.delivery-calc__radio {
+                background-image: radial-gradient(circle, $green 40%, $white 40%);
+            }
+        }
+        img {
+            flex-shrink: 0;
+            margin-right: 15px;
+        }
         @media (min-width: $md) {
-            width: 70%;
-            margin-bottom: 0;
-            padding-right: 20px;
+            padding-bottom: 0;
+        }
+        @media (min-width: $lg) {
+            font-size: 16px;
         }
     }
+
+    /* &__label::before {
+        @include pseudo();
+        z-index: 100;
+        top: -10px;
+        left: -10px;
+        height: 200%;
+        width: 200%;
+    } */
 
     &__radio {
         flex-shrink: 0;
@@ -141,21 +173,23 @@
         background: $white;
     }
 
-    &__shipping-img {
-        flex-shrink: 0;
-        margin-right: 15px;
-    }
-
     &__values {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        height: 100%;
         font-size: 16px;
         font-weight: 600;
         line-height: 1.30;
         @media (min-width: $md) {
-            width: 50%;
-            margin-left: auto;
+            align-items: center;
         }
+    }
+
+    &__address-value {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.31;
+        color: $main-color;
     }
 
     &__time {
@@ -164,12 +198,39 @@
     }
 
     &__pay-sum {
+        flex-shrink: 0;
+        min-width: 60px;
+        text-align: right;
         color: $green;
         margin-left: auto;
         @media (min-width: $md) {
+            min-width: auto;
             width: 80px;
             padding-left: 10px;
-            text-align: right;
+            text-align: left;
+        }
+    }
+//вложенные формы
+    .inner {
+        border-top: 1px solid $border-color;
+        padding: 10px 0;
+        .delivery-calc__list {
+            padding: 0 10px;
+            width: 100%;
+            max-height: $order-calc-inner-max-height;
+            overflow: auto;
+            flex-wrap: wrap;
+        }
+
+        .delivery-calc__item {
+            border: none;
+            @media (min-width: $md) {
+                padding-left: 0;
+            }
+        }
+
+        .delivery-calc__label {
+            padding-bottom: 0;
         }
     }
 
