@@ -117,6 +117,12 @@
         }
     }
 //--------
+    &__title.active-btn {
+        ~ .filters__content {
+            max-height: none;
+        }
+    }
+
     &__content {
         padding: 0 $grid-padding;
         overflow: hidden;
