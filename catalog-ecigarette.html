@@ -105,7 +105,55 @@
   <!----------range slider-->
   <include src="js-modules/catalog-pages/ecigarette.html"></include>
   <!----------sort change-->
-  <include src="js-modules/__sort-change/script.html"></include>
+  <!-- <include src="js-modules/__sort-change/script.html"></include> -->
+
+  <script>
+      var sortToggle = {
+          listenClickInSort: () => {
+              document.querySelectorAll(".js-sort").forEach(function(item) {
+                  item.addEventListener("click", (event) => {
+                      sortToggle._removeAllBtnsActive(".js-sort");
+                      sortToggle._addActiveForBtns(item);
+                      sortToggle._toggleArrowDirection(item);
+                  });
+              });
+          },
+
+          listenClickInAddSort: () => {
+              document.querySelectorAll(".js-add-sort").forEach(function(item) {
+                  item.addEventListener("click", (event) => {
+                      sortToggle._removeAllBtnsActive(".js-add-sort");
+                      sortToggle._addActiveForBtns(item);
+                  });
+              });
+          },
+
+          _toggleArrowDirection: (clickedBtn) => {
+              if (clickedBtn.classList.contains("up") || clickedBtn.classList.contains("down")) {
+                  clickedBtn.classList.toggle("down");
+                  clickedBtn.classList.toggle("up");
+                  return false;
+              }
+              clickedBtn.classList.toggle("down");
+          },
+
+          _removeAllBtnsActive: (element) => {
+              document.querySelectorAll(element).forEach((item) => {
+                  item.classList.remove("active");
+              });
+          },
+
+          _addActiveForBtns: (clickedBtn) => {
+              clickedBtn.classList.add("active");
+          },
+
+          init: () => {
+              sortToggle.listenClickInSort();
+              sortToggle.listenClickInAddSort();
+          },
+      };
+      sortToggle.init();
+  </script>
 
 </body>
 
