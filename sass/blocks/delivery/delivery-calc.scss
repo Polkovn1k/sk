@@ -106,7 +106,7 @@
     }
 
     &__item.active {
-        background: $goods-sliders-background;
+        background: $bg-color;
         .inner {
             display: flex;
         }
