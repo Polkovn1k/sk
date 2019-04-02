@@ -50,14 +50,11 @@
     }
 
     &__label {
-        margin-bottom: 20px;
-        &:last-child {
-            margin-bottom: 0;
-        }
-        @media (min-width: $md) {
-            &:nth-last-child(2) {
-                margin-bottom: 0;
-            }
+        display: block;
+        position: relative;
+        padding-bottom: $profile-input-padding-botom;
+        .error-message {
+            display: none;
         }
     }
 
@@ -75,10 +72,6 @@
     input:hover,
     input:focus {
         border-color: $blue;
-    }
-
-    &__pass {
-        margin-bottom: 20px;
     }
 
     &__title {
@@ -152,19 +145,55 @@
         }
     }
 
-    .red-btn {
+    &__confirm-info {
+        padding: 0 10px;
+        height: $common-item-height;
+        line-height: $common-item-height;
+        background: transparent;
+        border-radius: 5px;
+        color: $add-red;
+        border: 1px solid $add-red;
+
+        font-size: 14px;
+        font-weight: 400;
         .confirm {
             display: none;
         }
+
+        .no-confirm {
+            display: inline;
+        }
     }
 
-    .btn {
+    &__confirm-info.confirmed {
+        color: $blue;
+        border-color: $blue;
         .confirm {
             display: inline;
         }
 
         .no-confirm {
             display: none;
+        }
+    }
+//валидация формы
+    &__label.invalid {
+        input,
+        textarea {
+            border-color: $red;
+        }
+        .error-message {
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            height: $profile-input-padding-botom;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            font-size: 12px;
+            line-height: $profile-input-padding-botom - 5px;
+            font-weight: 400;
+            color: $red;
         }
     }
 }

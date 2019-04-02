@@ -73,25 +73,29 @@
         color: $communication-add-color;
     }
 
-    &__inputs {
-        margin-bottom: 20px;
-    }
-
-    &__input {
-        width: 100%;
-        height: $common-item-height;
-        padding: 0 10px;
-        margin-bottom: 20px;
-        border: 1px solid $border-color;
-        border-radius: 5px;
-        line-height: $common-item-height;
-        outline: none;
-        transition: 0.3s ease;
-    }
-
-    &__input.disabled {
-        pointer-events: none;
-        opacity: 0.7;
+    &__label {
+        position: relative;
+        display: block;
+        padding-bottom: $profile-input-padding-botom;
+        color: $extra-text-color;
+        .error-message {
+            display: none;
+        }
+        input {
+            width: 100%;
+            height: $common-item-height;
+            padding: 0 20px;
+            line-height: $common-item-height;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+            outline: none;
+            box-shadow: none;
+            transition: 0.3s ease;
+        }
+        input:hover,
+        input:focus {
+            border-color: $blue;
+        }
     }
 
     &__input:last-child {
@@ -131,5 +135,25 @@
     &__btn.disabled {
         pointer-events: none;
         opacity: 0.7;
+    }
+//валидация формы
+    &__label.invalid {
+        input,
+        textarea {
+            border-color: $red;
+        }
+        .error-message {
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            height: $profile-input-padding-botom;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            font-size: 12px;
+            line-height: $profile-input-padding-botom - 5px;
+            font-weight: 400;
+            color: $red;
+        }
     }
 }

@@ -98,14 +98,12 @@
     }
 
     &__label {
+        position: relative;
         display: block;
-        margin-bottom: 15px;
+        padding-bottom: $profile-input-padding-botom;
         color: $extra-text-color;
-        span {
-            display: inline-block;
-            margin-bottom: 15px;
-            font-weight: 600;
-            cursor: pointer;
+        .error-message {
+            display: none;
         }
         input {
             width: 100%;
@@ -115,6 +113,7 @@
             border: 1px solid $border-color;
             border-radius: 5px;
             outline: none;
+            box-shadow: none;
             transition: 0.3s ease;
         }
         input:hover,
@@ -129,12 +128,20 @@
             border-radius: 5px;
             outline: none;
             resize: vertical;
+            box-shadow: none;
             transition: 0.3s ease;
         }
         textarea:hover,
         textarea:focus {
             border-color: $blue;
         }
+    }
+
+    &__label-title {
+        display: inline-block;
+        margin-bottom: 15px;
+        font-weight: 600;
+        cursor: pointer;
     }
 
     &__btn {
@@ -305,5 +312,25 @@
 
     &__discussions-form.active {
         display: block;
+    }
+//валидация формы
+    &__label.invalid {
+        input,
+        textarea {
+            border-color: $red;
+        }
+        .error-message {
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            height: $profile-input-padding-botom;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            font-size: 12px;
+            line-height: $profile-input-padding-botom - 5px;
+            font-weight: 400;
+            color: $red;
+        }
     }
 }

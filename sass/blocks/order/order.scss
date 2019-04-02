@@ -137,7 +137,6 @@
 
     &__inputs {
         width: 100%;
-        margin-bottom: 30px;
         @media (min-width: $lg) {
             display: flex;
             flex-wrap: wrap;
@@ -145,24 +144,33 @@
         }
     }
 
-    &__input {
-        padding: 0 20px;
-        margin-bottom: 20px;
-        height: 40px;
+    &__label {
+        position: relative;
+        display: block;
+        padding-bottom: $profile-input-padding-botom;
         width: 100%;
+        .error-message {
+            display: none;
+        }
+        @media (min-width: $lg) {
+            width: calc(50% - #{$half-grid-padding});
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 0 20px;
+        height: 40px;
         background: transparent;
         line-height: $common-item-height;
         font-size: 16px;
         font-weight: 400;
-        text-align: left;
         color: $extra-text-color;
         border-radius: 5px;
         border: solid 1px $border-color;
         outline: none;
+        box-shadow: none;
         transition: 0.3s ease;
-        @media (min-width: $lg) {
-            width: calc(50% - #{$half-grid-padding});
-        }
     }
 
     &__input:last-child {
@@ -218,5 +226,24 @@
 
     &__switch-item {
         margin-right: 15px;
+    }
+//валидация формы
+    &__label.invalid {
+        input {
+            border-color: $red;
+        }
+        .error-message {
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            height: $profile-input-padding-botom;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            font-size: 12px;
+            line-height: $profile-input-padding-botom - 5px;
+            font-weight: 400;
+            color: $red;
+        }
     }
 }

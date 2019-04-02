@@ -442,21 +442,4 @@
             border-left-color: transparent;
         }
     }
-
-    &__input {
-        .dsds {
-            position: absolute;
-            font-size: 0;
-            top: 20%;
-            left: auto;
-            bottom: auto;
-            right: 10px;
-            transform: rotate(135deg);
-            width: 15px;
-            height: 8px;
-            border: 2px solid $green;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
-        }
-    }
 }

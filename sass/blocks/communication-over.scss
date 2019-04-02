@@ -77,6 +77,9 @@
         position: relative;
         display: block;
         padding-bottom: $profile-input-padding-botom;
+        .error-message {
+            display: none;
+        }
     }
 
     &__input {
@@ -104,27 +107,13 @@
         width: 100%;
     }
 //валидация формы
-    &__input.valid {
-        border-color: $green;
-        ~ span {
-            position: absolute;
-            font-size: 0;
-            top: 20%;
-            left: auto;
-            bottom: auto;
-            right: 10px;
-            transform: rotate(135deg);
-            width: 15px;
-            height: 8px;
-            border: 2px solid $green;
-            border-bottom-color: transparent;
-            border-left-color: transparent;
+    &__label.invalid {
+        input {
+            border-color: $red;
         }
-    }
-
-    &__input.invalid {
-        border-color: $red;
-        ~ span {
+        .error-message {
+            display: block;
+            position: absolute;
             overflow: hidden;
             height: $profile-input-padding-botom;
             position: absolute;

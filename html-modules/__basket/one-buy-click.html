@@ -16,8 +16,14 @@
         </p>
         <form action="#" class="buy-by-click__form">
             <div class="buy-by-click__inputs">
-                <input type="text" placeholder="Введите имя" class="buy-by-click__input js-one-click">
-                <input type="tel" placeholder="Введите номер телефона" class="buy-by-click__input js-one-click">
+                <label class="buy-by-click__label">
+                    <input type="text" placeholder="Введите имя" class="buy-by-click__input">
+                    <span class="error-message"></span>
+                </label>
+                <label class="buy-by-click__label invalid">
+                    <input type="tel" placeholder="Введите номер телефона" class="buy-by-click__input">
+                    <span class="error-message">Исправь косяк в поле!</span>
+                </label>
             </div>
             <div class="buy-by-click__switch-join">
                 <div class="switch buy-by-click__switch-item">

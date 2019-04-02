@@ -20,9 +20,9 @@
                 <input name="callback-name" type="text" class="communication-over__input js-callback-input name" maxlength="35" minlength="3" placeholder="Введите имя" required>
                 <span></span>
             </div>
-            <div class="communication-over__label">
+            <div class="communication-over__label invalid">
                 <input name="callback-phone" type="tel" class="communication-over__input js-callback-input phone" placeholder="Введите номер телефона" pattern="(8|\+7)[0-9]{10}" required>
-                <span></span>
+                <span class="error-message">Исправь косяк в поле!</span>
             </div>
             <button type="submit" class="dark-btn communication-over__btn js-submit-callback">Заказать звонок</button>
         </form>
@@ -272,9 +272,9 @@
             Пожалуйста, введите Ваш адрес электронной почты, на который мы можем выслать инструкцию для смены пароля.
         </p>
         <form action="#" class="pass-recovery__form">
-            <div class="pass-recovery__label">
+            <div class="pass-recovery__label invalid">
                 <input name="pass-recovery" type="text" class="pass-recovery__input js-pass-recovery" maxlength="50" minlength="5" title="" placeholder="Введите свой email" required>
-                <span></span>
+                <span class="error-message">Исправь косяк в поле!</span>
             </div>
             <div class="pass-recovery__btns-block">
                 <button type="submit" class="dark-btn pass-recovery__btn js-submit-pass-recovery">Восстановить</button>

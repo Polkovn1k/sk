@@ -6,9 +6,10 @@
                 <p class="static-content__title">
                     Ваш профиль
                 </p>
-                <div class="red-btn static-content__btn">
-                    <span class="no-confirm">Учетная запись не подтверждена</span>
-                    <span class="confirm">Учетная запись подтверждена</span>
+                <div class="static-content__confirm-info">
+                    Учетная запись
+                    <span class="no-confirm"> не подтверждена</span>
+                    <span class="confirm"> подтверждена</span>
                 </div>
             </div>
         </div>
@@ -21,21 +22,27 @@
                 <div class="row">
                     <label class="col-12 col-md-6 static-content__label">
                         <input type="email" name="profile-email" placeholder="Email">
+                        <span class="error-message"></span>
                     </label>
                     <label class="col-12 col-md-6 static-content__label">
                         <input type="text" name="profile-city" placeholder="Город">
+                        <span class="error-message"></span>
                     </label>
                     <label class="col-12 col-md-6 static-content__label">
                         <input type="text" name="profile-name" placeholder="ФИО">
+                        <span class="error-message"></span>
                     </label>
                     <label class="col-12 col-md-6 static-content__label">
                         <input type="text" name="profile-post-code" placeholder="Почтовый индекс">
+                        <span class="error-message"></span>
                     </label>
                     <label class="col-12 col-md-6 static-content__label">
                         <input type="tel" name="profile-tel" placeholder="Телефон">
+                        <span class="error-message"></span>
                     </label>
-                    <label class="col-12 col-md-6 static-content__label">
+                    <label class="col-12 col-md-6 static-content__label invalid">
                         <input type="text" name="profile-address" placeholder="Адрес">
+                        <span class="error-message">Ты ввел херню!</span>
                     </label>
                 </div>
             </div>
@@ -45,8 +52,9 @@
                         <label class="col-12 col-md-6 static-content__label">
                             <input type="password" name="profile-pass" placeholder="Новый пароль">
                         </label>
-                        <label class="col-12 col-md-6 static-content__label">
+                        <label class="col-12 col-md-6 static-content__label invalid">
                             <input type="password" name="profile-pass-repeat" placeholder="Повторите пароль">
+                            <span class="error-message">Ты ввел херню!</span>
                         </label>
                     </div>
                 </div>

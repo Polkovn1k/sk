@@ -364,11 +364,26 @@
             <p class="order__text">Пожалуйста, указывайте реальные данные — у вас могут попросить паспорт, прежде чем вручить оплаченный заказ.</p>
             <div class="order__inner-container">
                 <div class="order__inputs">
-                    <input type="text" class="order__input js-order-switch" placeholder="Фамилия Имя Отчество">
-                    <input type="text" class="order__input js-order-switch" placeholder="Индекс">
-                    <input type="number" class="order__input js-order-switch" placeholder="Номер телефона">
-                    <input type="text" class="order__input js-order-switch" placeholder="Адрес">
-                    <input type="email" class="order__input js-order-switch" placeholder="Адрес электронной почты">
+                    <label class="order__label js-order-switch">
+                        <input type="text" class="order__input" placeholder="Фамилия Имя Отчество" required>
+                        <span class="error-message"></span>
+                    </label>
+                    <label class="order__label js-order-switch">
+                        <input type="text" class="order__input" placeholder="Индекс" required>
+                        <span class="error-message"></span>
+                    </label>
+                    <label class="order__label js-order-switch">
+                        <input type="number" class="order__input" placeholder="Номер телефона" required>
+                        <span class="error-message"></span>
+                    </label>
+                    <label class="order__label js-order-switch">
+                        <input type="text" class="order__input" placeholder="Адрес" required>
+                        <span class="error-message"></span>
+                    </label>
+                    <label class="order__label js-order-switch invalid">
+                        <input type="email" class="order__input" placeholder="Адрес электронной почты" required>
+                        <span class="error-message">У вас косяк в инпуте!</span>
+                    </label>
                 </div>
                 <div class="order__switch">
                     <div class="switch order__switch-item">

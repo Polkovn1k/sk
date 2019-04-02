@@ -39,9 +39,10 @@
                             </div>
                         </div>
                         <form action="#" class="article-comments__discussions-form js-discussion-form">
-                            <label class="article-comments__label">
-                                <span>Автор</span>
+                            <label class="article-comments__label invalid">
+                                <span class="article-comments__label-title">Автор</span>
                                 <input name="diskuss_author_name" type="text" required>
+                                <span class="error-message">Исправь косяк в поле!</span>
                             </label>
                             <label class="article-comments__label">
                                 <span>Текст</span>
@@ -90,8 +91,9 @@
                             </div>
                             <form action="#" class="article-comments__discussions-form js-discussion-form">
                                 <label class="article-comments__label">
-                                    <span>Автор</span>
+                                    <span class="article-comments__label-title">Автор</span>
                                     <input name="diskuss_author_name" type="text" required>
+                                    <span class="error-message"></span>
                                 </label>
                                 <label class="article-comments__label">
                                     <span>Текст</span>
@@ -139,8 +141,9 @@
                             </div>
                             <form action="#" class="article-comments__discussions-form js-discussion-form">
                                 <label class="article-comments__label">
-                                    <span>Автор</span>
+                                    <span class="article-comments__label-title">Автор</span>
                                     <input name="diskuss_author_name" type="text" required>
+                                    <span class="error-message"></span>
                                 </label>
                                 <label class="article-comments__label">
                                     <span>Текст</span>
@@ -189,8 +192,9 @@
                                 </div>
                                 <form action="#" class="article-comments__discussions-form js-discussion-form">
                                     <label class="article-comments__label">
-                                        <span>Автор</span>
+                                        <span class="article-comments__label-title">Автор</span>
                                         <input name="diskuss_author_name" type="text" required>
+                                        <span class="error-message"></span>
                                     </label>
                                     <label class="article-comments__label">
                                         <span>Текст</span>
@@ -237,13 +241,15 @@
             </div>
             <div class="article-comments__message-block">
                 <form action="#" class="article-comments__form">
-                    <label class="article-comments__label">
-                        <span>Автор</span>
+                    <label class="article-comments__label invalid">
+                        <span class="article-comments__label-title">Автор</span>
                         <input name="author_name" type="text" required>
+                        <span class="error-message">Исправь косяк в поле!</span>
                     </label>
                     <label class="article-comments__label">
-                        <span>Текст</span>
+                        <span class="article-comments__label-title">Текст</span>
                         <textarea name="text" required></textarea>
+                        <span class="error-message"></span>
                     </label>
                     <button class="dark-btn article-comments__btn">Оставить комментарий</button>
                 </form>
