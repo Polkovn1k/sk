@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smoking Shop</title>
+  <meta name="description" content="Smoking Shop">
+  <meta name="keywords" content="Smoking Shop">
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="*.ico"> -->
+  <!-- <link rel="shortcut icon" type="image/png" href="*.png"> -->
+  <link rel="apple-touch-icon" href="favicon.png">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="canonical" href="https://***.ru/">
+  <script>document.createElement("picture");</script>
+</head>
+
+<body>
+
+  <div style="display: none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+  <!----------header-->
+  <header class="header js-header">
+      <div class="header__container">
+
+          <include src="html-modules/header/header.html"></include>
+
+      </div>
+  </header>
+
+  <!----------main-->
+  <main class="main main--no-hidden">
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <div class="col-12">
+                  <ul class="crumbs">
+                      <li class="crumbs__item">
+                          <a href="/" class="crumbs__link">Главная</a>
+                      </li>
+                      <li class="crumbs__item">
+                          <a href="basket.html" class="crumbs__link">Корзина</a>
+                      </li>
+                      <li class="crumbs__item">
+                          <a href="order.html" class="crumbs__link">Оформление заказа</a>
+                      </li>
+                  </ul>
+              </div>
+              <h2 class="col-12 main__title">Ваш заказ успешно оформлен</h2>
+              <div class="col-12">
+                  <div class="row">
+
+                      <!-- <include src="html-modules/__order-final/order-final.html"></include> -->
+
+
+
+
+
+                      <div class="col-12 col-lg-9 order-final">
+                          <div class="order-final__container">
+
+                              <div class="order-final__section">
+                                  <div class="order-final__order-number">Номер заказа: #<span>1 123</span></div>
+                                  <div class="order-final__sub-title">Контакты</div>
+                                  <ul class="order-final__contacts-list">
+                                      <li class="order-final__contacts-item">
+                                          Email: <a href="info@smoking-shop.ru">info@smoking-shop.ru</a>
+                                      </li>
+                                      <li class="order-final__contacts-item">
+                                          Для связи с нами:
+                                          <a href="https://api.whatsapp.com/send?phone=79963355434&amp;text=&amp;source=&amp;data">WhatsApp</a>,
+                                          <a href="http://tele.click/vape_generation">Telegram</a>
+                                      </li>
+                                      <li class="order-final__contacts-item">
+                                          Телефон клиентской поддержки (звонок по РФ бесплатный): <a href="tel:+78005006790">8 (800) 500 67 90</a>
+                                      </li>
+                                  </ul>
+                              </div>
+
+                              <div class="order-final__section">
+                                  <p>
+                                      На вашу эл. почту (e-mail) было отправлено автоматически сформированное письмо.
+                                  </p>
+                                  <p>
+                                      Заказы отправляются в течение 24 часов с момента оформления наложенным платежом или с момента оплаты при предоплате. Обращаем ваше внимание на то, что заказы оформленные, в субботу после 13:00, отправляются в понедельник.
+                                  </p>
+                                  <p>
+                                      Для заказов по предоплате товар резервируется за вами на 72 часа. Если мы не можем отправить вам заказ, или товар снимается с резерва, мы напишем вам еще одно письмо. Пожалуйста, проверяйте свою эл. почту, в том числе папку "Спам" (gmail иногда отправляет наши письма туда).
+                                  </p>
+                                  <p>
+                                      Если в течении 24 часов подтверждение заказа не пришло - свяжитесь с менеджером по Skype, E-mail или напишите онлайн-консультанту или переоформите заказ проверив правильность e-mail.
+                                  </p>
+                                  <div class="order-final__sub-title">Спасибо за Ваш выбор и доверие к магазину «Смокинг шоп»!</div>
+                              </div>
+
+                          </div>
+                      </div>
+
+
+
+
+
+                      <include src="html-modules/__order-final/order-final-aside.html"></include>
+
+                  </div>
+              </div>
+
+          </div>
+      </div>
+
+      <include src="html-modules/viewed-slider/viewed-slider.html"></include>
+
+      <div class="main__container container-fluid">
+          <div class="row">
+
+              <!----------overlays for all pages-->
+              <include src="html-modules/overlays/overlays.html"></include>
+
+          </div>
+      </div>
+
+  </main>
+
+  <!----------footer-->
+  <footer class="footer">
+      <div class="footer__container container-fluid">
+
+          <include src="html-modules/footer/top-footer.html"></include>
+          <include src="html-modules/footer/bottom-footer.html"></include>
+
+      </div>
+  </footer>
+
+  <!----------library concat-->
+  <script src="js/script.js"></script>
+
+  <!----------actions for all pages-->
+  <include src="js-modules/__all-pages/__modals.html"></include>
+  <include src="js-modules/__all-pages/__open-collapsed-elemets-toggle-style.html"></include>
+  <include src="js-modules/__all-pages/__switch.html"></include>
+  <include src="js-modules/__all-pages/__scroll-top.html"></include>
+
+  <!----------viewed slider-->
+  <include src="js-modules/__viewed-slider/script.html"></include>
+  <!----------radio change-->
+  <include src="js-modules/order-page/radio-change.html"></include>
+  <!----------tabs change-->
+  <include src="js-modules/order-page/tabs-change.html"></include>
+
+</body>
+
+</html>

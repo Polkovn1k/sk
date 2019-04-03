@@ -1,0 +1,74 @@
+.order-final {
+    margin-bottom: 20px;
+
+    &__container {
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    &__section {
+        padding: 20px $grid-padding;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            padding: 30px;
+        }
+    }
+
+    &__section:last-child {
+        border-bottom: none;
+        >*:last-child {
+            margin-bottom: 0;
+        }
+
+        p:not([class]) {
+            @include field-reset();
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.25;
+            color: $main-color;
+        }
+    }
+//номер заказ
+    &__order-number {
+        margin-bottom: 20px;
+        height: $common-item-height;
+        width: 100%;
+        line-height: $common-item-height;
+        border-radius: 5px;
+        background: $main-color;
+        font-size: 20px;
+        font-weight: 700;
+        text-align: center;
+        color: $white;
+        @media (min-width: $md) {
+            display: inline-block;
+            vertical-align: top;
+            width: auto;
+            padding: 0 25px;
+        }
+    }
+//Контакты
+    &__sub-title {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $extra-text-color;
+    }
+
+    &__contacts-list {
+        @include order-reset();
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: $main-color;
+        a {
+            font-weight: 600;
+            color: $blue;
+        }
+    }
+}
