@@ -33,6 +33,7 @@
 
 //блок состава заказа
     &__structure {
+        margin-bottom: 15px;
         background: $white;
         border: 1px solid $border-color;
         >*:last-child {
@@ -134,5 +135,68 @@
         a:hover {
            color: inherit;
         }
+    }
+//форма
+    &__form-field {
+        background: $white;
+        border: 1px solid $border-color;
+        margin-bottom: 15px;
+        textarea {
+            margin-bottom: 15px;
+            padding: 15px;
+            width: 100%;
+            max-height: 350px;
+            min-height: 115px;
+            resize: vertical;
+            border: 1px solid $border-color;
+            outline: none;
+        }
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    &__form-field {
+        padding: $grid-padding;
+    }
+
+    &__title {
+        margin-bottom: 15px;
+        background: $white;
+        display: block;
+        width: 100%;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 1.33;
+        color: $main-color;
+        @media (min-width: $md) {
+            text-align: center;
+        }
+        @media (min-width: $lg) {
+            text-align: left;
+        }
+    }
+
+    &__text {
+        @include field-reset();
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.31;
+        color: $extra-text-color;
+        @media (min-width: $md) {
+            text-align: center;
+        }
+        @media (min-width: $lg) {
+            text-align: left;
+        }
+    }
+
+    &__form-btn {
+        width: 100%;
+        font-size: 16px;
+        font-weight: 700;;
+        line-height: 1.31;
+        color: $main-color;
     }
 }
