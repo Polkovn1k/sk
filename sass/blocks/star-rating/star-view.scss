@@ -1,0 +1,51 @@
+.star-view {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 5px;
+
+    &__rating-stars {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        width: 96px;
+        height: 21px;
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 96px;
+            height: 16px;
+            fill: $yellow;
+        }
+    }
+
+    &__stars-empty {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 96px;
+        height: 16px;
+        overflow: hidden;
+    }
+
+    &__stars-fill {
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 60%;
+        height: 16px;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    &__rating-votes {
+        display: inline-block;
+        vertical-align: top;
+        padding-top: 2px;
+        font-family: $font;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 1.33;
+        color: $communication-add-color;
+    }
+}
