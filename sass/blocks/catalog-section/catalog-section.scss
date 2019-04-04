@@ -10,18 +10,17 @@
 //текстовый блок
     &__text {
         order: 1;
-        padding: 20px 15px;
+        padding: $grid-padding;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.38;
         color: $communication-add-color;
         border: 1px solid $border-color;
         background: $white;
-
         @media (min-width: $lg) {
             order: 0;
             display: flex;
-            padding: 30px;
+            padding: 20px;
             margin-bottom: 15px;
             border: none;
         }

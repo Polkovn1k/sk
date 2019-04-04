@@ -28,8 +28,7 @@
         @media (min-width: $lg) {
             min-height: 0;
             height: 100%;
-            padding: 15px;
-            padding-top: $catalog-product-sm-container-padding-top--add;
+            padding: $grid-padding;
         }
     }
 //блок с картинкой
@@ -49,7 +48,7 @@
         @media (min-width: $lg) {
             position: static;
             width: 100%;
-            padding-bottom: 15px;
+            padding-bottom: $grid-padding;
         }
     }
 //левый блок с особенностями товара
@@ -202,15 +201,6 @@
         @media (min-width: $md) {
             display: inline-block;
             vertical-align: top;
-        }
-    }
-
-    &__message:hover {
-        .catalog-product__message-value {
-            color: $blue;
-        }
-        svg {
-            fill: $blue;
         }
     }
 

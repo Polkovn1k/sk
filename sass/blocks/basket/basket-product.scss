@@ -5,7 +5,6 @@
         position: relative;
         padding: $grid-padding;
         @media (min-width: $lg) {
-            padding: $basket-product-lg-padding;
             min-height: 170px;
         }
     }

@@ -25,7 +25,7 @@
     &__header {
         display: flex;
         justify-content: space-between;
-        padding: 20px $grid-padding;
+        padding: $grid-padding;
         border-bottom: 1px solid $border-color;
         font-size: 18px;
         font-weight: 600;
@@ -201,6 +201,10 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+    }
+
+    &__btn:last-child {
+        margin-bottom: 0;
     }
 
 //слайдер advantages

@@ -11,7 +11,7 @@
     transition: 0.3s min-height ease, 0.3s padding ease, 0.3s box-shadow ease;
     @media (min-width: $lg) {
         min-height: $desktop-catalog-page-item-height;
-        padding: $desktop-catalog-page-padding;
+        padding: $grid-padding + 5px;
         border: none;
     }
 

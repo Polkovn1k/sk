@@ -6,7 +6,7 @@
         display: none;
         @media (min-width: $lg) {
             display: block;
-            padding: 0 $basket-product-lg-padding;
+            padding: 0 $grid-padding;
             border-bottom: 1px solid $border-color;
             font-size: 18px;
             font-weight: 600;
@@ -15,7 +15,7 @@
             background: $white;
             span {
                 display: block;
-                padding: 20px 0;
+                padding: $grid-padding 0;
             }
         }
     }
@@ -51,7 +51,6 @@
             fill: $blue;
         }
         @media (min-width: $lg) {
-            padding: $basket-product-lg-padding;
             border: none;
             display: flex;
             align-items: center;
@@ -96,7 +95,6 @@
         border: 1px solid $border-color;
         cursor: pointer;
         @media (min-width: $lg) {
-            padding: $basket-product-lg-padding;
             border: none;
         }
     }

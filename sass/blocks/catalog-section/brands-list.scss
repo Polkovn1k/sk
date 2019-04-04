@@ -15,8 +15,7 @@
 
     &__item {
         position: relative;
-        padding: $grid-padding * 2;
-        padding-top: 30px;
+        padding: $grid-padding;
         outline: 1px solid $border-color;
         background: $white;
         transition: 0.3s ease;
@@ -25,6 +24,7 @@
             flex-direction: column;
             outline: none;
             height: 450px;
+            padding: $grid-padding + 5px;
         }
     }
 
