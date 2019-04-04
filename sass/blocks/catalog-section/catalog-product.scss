@@ -32,13 +32,6 @@
             padding-top: $catalog-product-sm-container-padding-top--add;
         }
     }
-
-    &__container--add-info {
-        padding-top: $catalog-product-mobile-container-padding-top--add;
-        @media (min-width: $lg) {
-            padding-top: $catalog-product-sm-container-padding-top--add;
-        }
-    }
 //блок с картинкой
     &__img {
         position: absolute;
@@ -59,55 +52,39 @@
             padding-bottom: 15px;
         }
     }
-
-    &__img:nth-child(3) {
-        top: $catalog-product-mobile-container-padding-top--add;
-    }
 //левый блок с особенностями товара
-    &__features {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        padding: 15px 5px 5px 15px;
-        font-size: 0;
-        @media (min-width: $sm) {
-            padding-left: 0;
-            left: $catalog-product-sm-container-padding-left;
-        }
-        @media (min-width: $md) {
-            padding: 15px;
-            padding-left: 0;
-        }
-        @media (min-width: $lg) {
-            padding: 15px;
-            left: 0;
-        }
+&__features {
+    flex-direction: row;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    padding: 15px 5px 5px 15px;
+    font-size: 0;
+    @media (min-width: $sm) {
+        padding-left: 0;
+        left: $catalog-product-sm-container-padding-left;
     }
+    @media (min-width: $md) {
+        padding: 15px;
+        padding-left: 0;
+    }
+    @media (min-width: $lg) {
+        flex-direction: column;
+        padding: 15px;
+        left: 0;
+    }
+}
 
-    &__features-item {
-        display: inline-block;
-        padding: 1px 6px;
-        margin-right: 3px;
-        text-align: center;
-        font-family: $font;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 1.36;
-        color: $red;
-        background: $white;
-        border: 1px solid $red;
-        border-radius: 3px;
+&__features-item {
+    margin-bottom: 0;
+    @media (min-width: $lg) {
+        margin-bottom: 10px;
     }
+}
 
-    &__features-item--hit {
-        color: $green;
-        border: 1px solid $green;
-    }
-
-    &__features-item:last-child {
-        margin-bottom: 0;
-        margin-right: 0;
-    }
+&__features-item:last-child {
+    margin-bottom: 0;
+}
 //правый блок сравнения/в избранное
     &__action {
         position: absolute;
@@ -199,7 +176,7 @@
             font-size: 18px;
         }
         @media (min-width: $lg) {
-            height: 50px;
+            max-height: 50px;
             padding-right: 0;
 
             text-overflow: ellipsis;
@@ -424,18 +401,23 @@
         flex-direction: column;
         justify-content: center;
         position: relative;
-        padding: 15px;
-        padding-top: $catalog-product-mobile-container-padding-top;
+        padding: $grid-padding;
         padding-left: $catalog-product-mobile-container-padding-left;
-        min-height: 230px;
+        min-height: 170px;
         @media (min-width: $sm) {
             padding-left: $catalog-product-sm-container-padding-left;
         }
         @media (min-width: $lg) {
             min-height: 0;
             height: 100%;
-            padding: 15px;
-            padding-top: $catalog-product-sm-container-padding-top--add;
+            padding: $grid-padding;
+        }
+
+        .catalog-product__img {
+            top: $grid-padding;
+            img {
+                max-height: 140px;
+            }
         }
     }
 }
@@ -450,6 +432,7 @@
         }
 
         .catalog-product__container {
+            justify-content: center;
             height: 100%;
             padding: $list-style-catalog-product-padding;
             padding-left: $list-style-catalog-product-padding-left;
@@ -457,9 +440,14 @@
         }
 
         .catalog-product__features {
+            flex-direction: row;
             position: static;
             padding: 0;
             padding-bottom: 5px;
+        }
+
+        .catalog-product__features-item {
+            margin-bottom: 0;
         }
 
         .catalog-product__available {
@@ -568,12 +556,17 @@
     .catalog-product__certificate-container {
         @media (min-width: $lg) {
             height: 100%;
-            padding: $list-style-catalog-product-padding;
+            padding: $grid-padding;
             padding-left: $list-style-catalog-product-certificate-padding-left;
             padding-right: calc(#{$list-style-catalog-product-right-content-width} + #{$list-style-catalog-product-padding-right});
             .catalog-product__img {
+                padding: $grid-padding;
                 width: $list-style-catalog-product-certificate-padding-left - 10px;
             }
+        }
+
+        .catalog-product__name {
+            margin-bottom: 0;
         }
     }
 }

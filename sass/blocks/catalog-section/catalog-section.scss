@@ -33,6 +33,13 @@
         margin-bottom: 10px;
         overflow: hidden;
         transition: 0.3s ease;
+        >* {
+            @include field-reset();
+            margin-bottom: 15px;
+        }
+        >*:last-child {
+            margin-bottom: 0;
+        }
         @media (min-width: $lg) {
             flex-grow: 1;
             padding-right: 10px;

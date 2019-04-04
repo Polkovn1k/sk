@@ -124,7 +124,7 @@ $desktop-catalog-page-item-height: 255px;
 //Filters
 $active-tog-modal-height: 66px;
 $filter-title-height: 40px;
-$filter-title-padding-top: 20px;
+$filter-title-padding-top: 15px;
 $filter-title-svg-width: 15px;
 $item-in-panel-filter-max-width: 600px;
 $filter-svg-close-size: 26px;
@@ -146,16 +146,16 @@ $add-sort-item-height: 25px;
 //Catalog-product
 $catalog-product-mobile-container-padding-left: 30%;
 $catalog-product-sm-container-padding-left: 165px;
-$catalog-product-mobile-container-padding-top: 35px;
+$catalog-product-mobile-container-padding-top: 40px;
 $catalog-product-mobile-container-padding-top--add: 45px;
-$catalog-product-sm-container-padding-top--add: 55px;
+$catalog-product-sm-container-padding-top--add: 25px;
 $catalog-product-old-price-size: 16px;
 $catalog-product-action-item: 36px;
-$list-style-catalog-product-min-height: 190px;
-$list-style-catalog-product-padding: 30px;
+$list-style-catalog-product-min-height: 165px;
+$list-style-catalog-product-padding: 20px;
 $list-style-catalog-product-right-content-width: 30%;
 $list-style-catalog-product-padding-right: $catalog-product-action-item + $list-style-catalog-product-padding + 15px;
-$list-style-catalog-product-padding-left: 120px;
+$list-style-catalog-product-padding-left: 140px;
 
 //Catalog-product-certificate
 $list-style-catalog-product-certificate-padding-left: 190px;

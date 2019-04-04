@@ -79,7 +79,7 @@
 
     &__panel {
         @include field-reset();
-        padding-bottom: 20px;
+        padding-bottom: 15px;
         border: none;
         border-bottom: 1px solid $border-color;
     }

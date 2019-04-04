@@ -45,6 +45,10 @@
 @import "blocks/subscription.scss";
 @import "blocks/index/product.scss";
 @import "blocks/visually-hidden.scss";
+    //star-rating-view-----
+@import "blocks/star-rating/star-view.scss";
+    //product-features-----
+@import "blocks/features/features.scss";
     //catalog-pages-----
 @import "blocks/crumbs.scss";
     //index-----
@@ -123,5 +127,3 @@
 @import "blocks/order-final/order-final-aside.scss";
     //product-detail-----
 @import "blocks/product-item/top-line.scss";
-    //star-rating-view-----
-@import "blocks/star-rating/star-view.scss";

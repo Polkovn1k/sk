@@ -17,49 +17,14 @@
     &__container {
         position: relative;
         padding: 15px;
-        padding-top: 45px;
     }
 //блок с картинкой
     &__img {
-        padding-bottom: 30px;
+        padding-bottom: 15px;
         text-align: center;
         img {
             max-height: 150px;
         }
-    }
-//левый блок с особенностями товара
-    &__features {
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        padding: 15px;
-        font-size: 0;
-    }
-
-    &__features-item {
-        display: inline-block;
-        padding: 1px 6px;
-        margin-bottom: 10px;
-        margin-right: 3px;
-        text-align: center;
-        font-family: $font;
-        font-size: 12px;
-        font-weight: 600;
-        line-height: 1.36;
-        color: $red;
-        background: $white;
-        border: 1px solid $red;
-        border-radius: 3px;
-    }
-
-    &__features-item--hit {
-        color: $green;
-        border: 1px solid $green;
-    }
-
-    &__features-item:last-child {
-        margin-bottom: 0;
-        margin-right: 0;
     }
 //правый блок сравнения/в избранное
     &__action {
