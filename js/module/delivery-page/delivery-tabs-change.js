@@ -1,4 +1,6 @@
-<script>
+//ТАБЫ В DELIVERY-PAGE
+if (document.querySelector(".delivery-tabs-change")) {
+
     var orderTabs = {
         listenClickForPayType: () => {
             document.querySelectorAll(".js-pay-tog").forEach((btn) => {
@@ -30,4 +32,5 @@
         },
     };
     orderTabs.init();
-</script>
+
+}

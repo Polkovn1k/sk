@@ -1,4 +1,6 @@
-<script>
+//РАДИО КНОПКИ В DELIVERY-PAGE
+if (document.querySelector(".delivery-radio-change")) {
+
     var openCheckedRadioContainer = {
         listenClick: () => {
             document.querySelectorAll(".js-delivery-calc").forEach((radioBtn) => {
@@ -31,4 +33,5 @@
         },
     };
     openCheckedRadioContainer.init();
-</script>
+
+}

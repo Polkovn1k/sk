@@ -19,7 +19,7 @@ var uglify = require('gulp-uglifyjs');
 var del = require("del");
 
 gulp.task("library", function() {
-  return gulp.src("js/library/*.js")
+  return gulp.src("js/library/**/*.js")
   .pipe(concat("library.js"))
   .pipe(gulp.dest('build/js'))
   //.pipe(rename("script.min.js"))
@@ -27,7 +27,7 @@ gulp.task("library", function() {
 });
 
 gulp.task("module", function() {
-  return gulp.src("js/module/*.js")
+  return gulp.src("js/module/**/*.js")
   .pipe(concat("module.js"))
   .pipe(gulp.dest('build/js'))
   //.pipe(rename("script.min.js"))
@@ -101,10 +101,6 @@ gulp.task("clean", function() {
   return del("build");
 });
 
-/*gulp.task("cleanTwo", function() {
-  return del(["build/js/*.js", "!build/js/script.js", "!build/js/script.min.js"]);
-});*/
-
 gulp.task("serve", ["style"], function() {
   server.init({
     server: "build/"
@@ -112,7 +108,7 @@ gulp.task("serve", ["style"], function() {
 
   gulp.watch("sass/**/*.{scss,sass}", ["style"])
   gulp.watch("*.html", ["html"])
-  gulp.watch('js/**/*.js', ["script"])
+  gulp.watch('js/**/*.js', ["module"])
     .on("change", server.reload);
 });
 

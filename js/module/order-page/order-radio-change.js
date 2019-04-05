@@ -1,4 +1,6 @@
-<script>
+//РАДИО КНОПКИ В ORDER-PAGE
+if (document.querySelector(".order-radio-change")) {
+
     var openCheckedRadioContainer = {
         listenClick: () => {
             document.querySelectorAll(".js-order-calc").forEach((radioBtn) => {
@@ -31,4 +33,5 @@
         },
     };
     openCheckedRadioContainer.init();
-</script>
+
+}

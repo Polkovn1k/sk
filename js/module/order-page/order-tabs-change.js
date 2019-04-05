@@ -1,4 +1,6 @@
-<script>
+//ТАБЫ В ORDER-PAGE
+if (document.querySelector(".order-tabs-change")) {
+
     var orderTabs = {
         listenClick: () => {
             document.querySelectorAll(".js-order-calc-inner-btn").forEach((btn) => {
@@ -64,4 +66,5 @@
         },
     };
     orderTabs.init();
-</script>
+
+}

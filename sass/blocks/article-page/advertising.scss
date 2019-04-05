@@ -200,6 +200,10 @@
         height: $common-item-height;
         margin-right: 10px;
         line-height: $common-item-height;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
     }
 
     &__cart {

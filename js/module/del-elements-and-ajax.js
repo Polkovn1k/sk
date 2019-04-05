@@ -1,5 +1,6 @@
-<script>
-//удаляем элемент после клика
+//УДАЛЯЕМ ЭЛЕМЕНТ ПОСЛЕ КЛИКА И ПОДГРУЖАЕМ ПОДЛОЖКУ "ПУСТО" ЕСЛИ ЭЛЕМЕНТОВ БОЛЬШЕ НЕТ
+if (document.querySelector(".del-elements-and-ajax")) {
+
     var removeElementAndAddAjax = {
         listenBtnsClick: () => {
             var deleteButtons = document.querySelectorAll(".js-delete-button");
@@ -59,4 +60,5 @@
         },
     };
     removeElementAndAddAjax.init();
-</script>
+
+}
