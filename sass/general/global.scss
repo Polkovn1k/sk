@@ -76,3 +76,36 @@ html {
         transform: translateY(0);
     }
 }
+
+//loader + animation
+.loader {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: $white;
+    opacity: 0;
+    transition: 0.7s ease;
+    img {
+        width: 160px;
+        height: 40px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -20px;
+        margin-left: -80px;
+        animation: rotate 1s linear infinite;
+    }
+}
+
+@keyframes rotate {
+  from {
+    transform: scale(0);
+  }
+}
+
+.loader.active {
+    opacity: 1;
+}

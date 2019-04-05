@@ -280,3 +280,26 @@ var joinModal = {
 };
 joinModal.init();
 joinModal.resetOverlayView();
+
+
+//ПРЕЛОАДЕР
+var loader = {
+
+    element: document.querySelector(".loader"),
+
+    activeLoader: () => {
+        loader.element.style.display = "block";
+        loader.element.classList.add("active");
+    },
+
+    hideLoader: () => {
+        loader.element.classList.remove("active");
+        setTimeout(loader._afterHideEffect, 700);
+    },
+
+    _afterHideEffect: () => {
+        loader.element.style.display = "none";
+    },
+};
+//loader.activeLoader();
+//loader.hideLoader();
