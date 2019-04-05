@@ -1,24 +1,22 @@
-<script>
+//ОТСЛЕЖИВАНИЕ СКРОЛА И ПРОСТАВЛЯЕМ ACTIVE НА КНОПКИ
+if (document.querySelector(".scroll-spy")) {
+
     var scrollSpy = {
 
-    //разделитель высоты секции на половины. Если высота больше чем половина от секции, то рассмотривается следующая секция
         DEVIDER_FOR_SECTION: 2,
 
-    //слушаем скролл
         listenScroll: () => {
             window.addEventListener("scroll", (event) => {
                 scrollSpy._getCurrentSectionAfterScroll(".js-static-content");
             });
         },
 
-    //получаем необходимую секцию и запускаем методы
         _getCurrentSectionAfterScroll: (item) => {
             var sections = document.querySelectorAll(item);
             for(var i = 0; i < sections.length; i++) {
                 if (scrollSpy._isBelowScroll(sections[i]))
                     break;
             }
-            //если в области видимости есть хоть какая-то секция, то выполняем метод
             if (sections[i]) {
                 scrollSpy._changeLinkStatus(sections[i].id);
             }
@@ -31,17 +29,14 @@
             return position.top > -((sectionHeight - headerHeight) / scrollSpy.DEVIDER_FOR_SECTION);
         },
 
-    //получаем высоту текущей секции
         _getCurrentElementHeight: (element) => {
             return element.offsetHeight;
         },
 
-    //высчитываем высоту хедера
         _getHeaderHeight: (elem) => {
             return document.querySelector(elem).offsetHeight;
         },
 
-    //меняем статус кнопки
         _changeLinkStatus: (id) => {
             document.querySelectorAll(".js-sticky-btn").forEach((item) => {
                 item.classList.remove("active-btn");
@@ -55,4 +50,5 @@
 
     };
     scrollSpy.init();
-</script>
+
+}

@@ -18,13 +18,20 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglifyjs');
 var del = require("del");
 
-gulp.task("script", function() {
-  return gulp.src("js/*.js")
-  .pipe(concat("script.js"))
+gulp.task("library", function() {
+  return gulp.src("js/library/*.js")
+  .pipe(concat("library.js"))
   .pipe(gulp.dest('build/js'))
-  //.pipe(uglify())
-  .pipe(rename("script.min.js"))
-  .pipe(gulp.dest('build/js'));
+  //.pipe(rename("script.min.js"))
+  //.pipe(gulp.dest('build/js'));
+});
+
+gulp.task("module", function() {
+  return gulp.src("js/module/*.js")
+  .pipe(concat("module.js"))
+  .pipe(gulp.dest('build/js'))
+  //.pipe(rename("script.min.js"))
+  //.pipe(gulp.dest('build/js'));
 });
 
 gulp.task("json", function() {
@@ -94,9 +101,9 @@ gulp.task("clean", function() {
   return del("build");
 });
 
-gulp.task("cleanTwo", function() {
+/*gulp.task("cleanTwo", function() {
   return del(["build/js/*.js", "!build/js/script.js", "!build/js/script.min.js"]);
-});
+});*/
 
 gulp.task("serve", ["style"], function() {
   server.init({
@@ -116,8 +123,9 @@ gulp.task("build", function(done) {
     "style",
     "sprite",
     "html",
-    "script",
+    "library",
+    "module",
     "json",
-    "cleanTwo",
+    /*"cleanTwo",*/
     done);
 });

@@ -1,5 +1,7 @@
-<script>
-//удаляем элемент после клика
+//УДАЛЯЕМ ЭЛЕМЕНТ ПОСЛЕ КЛИКА НА ИКОНКУ
+
+if (document.querySelector(".delete-after-click")) {
+
     var hideElementPerClick = {
         listenClick: () => {
             document.querySelectorAll(".js-btn-delete").forEach((item) => {
@@ -15,4 +17,5 @@
         },
     };
     hideElementPerClick.init();
-</script>
+
+}

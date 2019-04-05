@@ -1,6 +1,6 @@
-<script>
 //СЛАЙДЕР ПОСЛЕДНИХ ПРОСМОТРЕННЫХ ТОВАРОВ
 if (document.querySelector(".js-viewed-slider")) {
+
     var watchedProducts = new Glide(".js-viewed-slider", {
         gap: -1,
         bound: true,
@@ -42,5 +42,5 @@ if (document.querySelector(".js-viewed-slider")) {
         }
     });
     watchedProducts.mount();
+
 }
-</script>

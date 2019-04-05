@@ -1,6 +1,8 @@
-<script>
+//ПЕРЕХОД ПО ЯКОРЮ
+if (document.querySelector(".transition-to-anchor")) {
+
     var goToAnchor = {
-    //слушаем клик
+
         listenClick: () => {
             document.querySelectorAll(".js-sticky-btn").forEach((item) => {
                 item.addEventListener("click", (event) => {
@@ -11,17 +13,14 @@
             });
         },
 
-    //по клику находим нужную секцию
         _findClickedBtnsDataToId: (clickedBtn) => {
             return document.getElementById(clickedBtn.dataset.findId);
         },
 
-    //высчитываем высоту хедера
         _getHeaderHeight: (elem) => {
             return document.querySelector(elem).offsetHeight;
         },
 
-    //определяем координаты нужной секции и вычитаем высоту хедера
         _getCoords: (elem) => {
             return elem.getBoundingClientRect().top + pageYOffset - goToAnchor._getHeaderHeight(".js-header");
         },
@@ -31,4 +30,5 @@
         },
     };
     goToAnchor.init();
-</script>
+
+}
