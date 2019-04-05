@@ -1,31 +1,29 @@
 //ПЕРЕКЛЮЧАТЕЛЬ ВИДА КАРТОЧЕК: ПЛИТКА/СТРОКА
 if (document.querySelector(".grid-tog")) {
 
-    var anchorTransition = {
+    var gridStyle = {
 
-        listenBtnClick: () => {
-            document.querySelectorAll(".js-sticky-btn").forEach(function(item) {
-                item.addEventListener("click", (event) => {
-                    anchorTransition._removeAllBtnsActive();
-                    anchorTransition._addActiveForBtns(item);
+        listenClick: () => {
+            document.querySelectorAll(".js-sort-view").forEach(function(item) {
+                item.addEventListener("click", function(event) {
+                    gridStyle._switch(item);
                 });
             });
         },
 
-        _removeAllBtnsActive: () => {
-            document.querySelectorAll(".js-sticky-btn").forEach((item) => {
-                item.classList.remove("active-btn");
+        _switch: (opt) => {
+            document.querySelectorAll(".js-sort-view").forEach(function(elements) {
+                document.getElementById("products-list-container").classList.remove(elements.dataset.toClass);
+                elements.classList.remove("active-btn");
             });
-        },
-
-        _addActiveForBtns: (clickedBtn) => {
-            clickedBtn.classList.add("active-btn");
+            document.getElementById("products-list-container").classList.add(opt.dataset.toClass);
+            opt.classList.add("active-btn");
         },
 
         init: () => {
-            anchorTransition.listenBtnClick();
+            gridStyle.listenClick();
         },
     };
-    anchorTransition.init();
+    gridStyle.init();
 
 }
