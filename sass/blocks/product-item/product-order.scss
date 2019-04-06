@@ -17,9 +17,11 @@
         padding-bottom: 20px;
         @media (min-width: $md) {
             border-bottom: 1px solid $border-color;
+            justify-content: center;
         }
         @media (min-width: $lg) {
             border-bottom: none;
+            justify-content: flex-start;
         }
     }
 //блок цен
@@ -49,6 +51,12 @@
         font-size: 14px;
         font-weight: 600;
         color: $red;
+        @media (min-width: $md) {
+            text-align: center;
+        }
+        @media (min-width: $lg) {
+            text-align: left;
+        }
     }
 //Шильдики выгоды
     &__features {
@@ -56,6 +64,12 @@
         flex-direction: row;
         padding: 0;
         padding-top: 10px;
+        @media (min-width: $md) {
+            display: none;
+        }
+        @media (min-width: $lg) {
+            display: flex;
+        }
     }
 //Блок подсчета + кнопка
     &__cart {
@@ -65,9 +79,15 @@
         border-bottom: 1px solid $border-color;
         @media (min-width: $md) {
             padding-top: 20px;
+            padding-bottom: 0;
+            border-bottom: none;
+            order: 1;
         }
         @media (min-width: $lg) {
             padding-top: 0;
+            padding-bottom: 20px;
+            border-bottom: 1px solid $border-color;
+            order: 0;
         }
     }
 //добавка/убавка количества
@@ -189,9 +209,16 @@
         color: $extra-text-color;
         @media (min-width: $md) {
             padding-bottom: 15px;
+            border-bottom: 1px solid $border-color;
         }
         @media (min-width: $lg) {
             display: none;
+        }
+    }
+
+    &__add-item {
+        @media (min-width: $md) {
+            padding-left: 25px;
         }
     }
 //Способы оплаты
@@ -217,9 +244,5 @@
             width: 60px;
             height: 30px;
         }
-    }
-
-    &__payment-item:last-child {
-        margin-right: 0;
     }
 }
