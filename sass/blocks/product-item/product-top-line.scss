@@ -1,4 +1,11 @@
 .product-top-line {
+    padding-bottom: 15px;
+    @media (min-width: $md) {
+        order: -1;
+    }
+    @media (min-width: $lg) {
+        order: 0;
+    }
 
     &__container {
         display: flex;

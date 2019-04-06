@@ -1,3 +1,9 @@
 .product-slider {
-
+    padding-bottom: 15px;
+    @media (min-width: $md) {
+        order: -1;
+    }
+    @media (min-width: $lg) {
+        order: 0;
+    }
 }
