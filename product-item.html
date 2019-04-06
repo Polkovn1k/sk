@@ -56,34 +56,88 @@
               <div class="col-12">
                   <div class="row">
 
-                      <div class="col-12 top-line">
-                          <div class="top-line__container">
+                      <include src="html-modules/__product-item/top-line.html"></include>
+                      <!-- СЛАЙДЕР ФОТОГРАФИЙ ТОВАРА -->
+                      <div class="col-12 col-md-6 col-lg-4 product-slider"></div>
 
-                              <div class="star-view">
-                                  <div class="star-view__rating-stars">
-                                      <div class="star-view__stars-empty">
-                                          <svg aria-hidden="true" role="presentation">
-                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
-                                          </svg>
-                                      </div>
-                                      <div class="star-view__stars-fill">
-                                          <svg aria-hidden="true" role="presentation">
-                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
-                                          </svg>
-                                      </div>
+                      <include src="html-modules/__product-item/product-detail.html"></include>
+
+                      <div class="col-12 col-md-6 col-lg-4 product-order">
+                          <div class="product-order__container">
+                              <div class="product-order__price">
+                                  <div class="product-order__value">
+                                      <span class="product-order__old-price">3 570 Р.</span>
+                                      <span class="product-order__current-price">13 500 Р.</span>
+                                      <div class="product-order__profit">Вы экономите 1 000 Р.</div>
                                   </div>
-                                  <span class="star-view__rating-votes">(345)</span>
+                                  <div class="features product-order__features">
+                                      <span class="features__item features__item--green">Хит</span>
+                                  </div>
                               </div>
-
-                              <ul class="top-line__list">
-                                  <li class="top-line__item">
-                                      <a href="#">Добавить в избранное</a>
+                              <div class="product-order__cart">
+                                  <div class="product-order__count">
+                                      <button class="product-order__minus">-</button>
+                                      <input type="number" min="1" value="1">
+                                      <button class="product-order__plus">+</button>
+                                  </div>
+                                  <button class="yellow-btn product-order__btn">В корзину</button>
+                              </div>
+                              <ul class="product-order__list">
+                                  <li class="product-order__item">
+                                      <svg width="27" height="27" aria-hidden="true" role="presentation">
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#circle-check"></use>
+                                      </svg>
+                                      <p>Есть в наличии</p>
                                   </li>
-                                  <li class="top-line__item">
-                                      <a href="#">Добавить в сравнение</a>
+                                  <li class="product-order__item">
+                                      <svg width="27" height="27" aria-hidden="true" role="presentation">
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#hand-gift"></use>
+                                      </svg>
+                                      <p>Гарантированные подарки к вашему заказу</p>
                                   </li>
-                                  <li class="top-line__item">
-                                      <a href="#">Поделиться с друзьями</a>
+                                  <li class="product-order__item">
+                                      <svg width="29" height="29" aria-hidden="true" role="presentation">
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delivery"></use>
+                                      </svg>
+                                      <p>Доставка в ваш город от 49 рублей</p>
+                                  </li>
+                                  <li class="product-order__item">
+                                      <svg width="26" height="18" aria-hidden="true" role="presentation">
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#card"></use>
+                                      </svg>
+                                      <p>Безопасная оплата (Наличными, банковской картой)</p>
+                                  </li>
+                              </ul>
+                              <ul class="product-order__payment-list">
+                                  <li class="product-order__payment-item">
+                                      <svg width="60" height="30" role="img">
+                                          <title>MasterCard</title>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mastercard"></use>
+                                      </svg>
+                                  </li>
+                                  <li class="product-order__payment-item">
+                                      <svg width="60" height="30" role="img">
+                                          <title>Visa</title>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#visa"></use>
+                                      </svg>
+                                  </li>
+                                  <li class="product-order__payment-item">
+                                      <svg width="60" height="30" role="img">
+                                          <title>Qiwi</title>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#qiwi"></use>
+                                      </svg>
+                                  </li>
+                                  <li class="product-order__payment-item">
+                                      <svg width="60" height="30" role="img">
+                                          <title>Яндекс Деньги</title>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#yandex"></use>
+                                      </svg>
+                                  </li>
+                                  <li class="product-order__payment-item">
+                                      <svg width="60" height="30" role="img">
+                                          <title>Мир</title>
+                                          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mir"></use>
+                                      </svg>
                                   </li>
                               </ul>
                           </div>

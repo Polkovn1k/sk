@@ -1,0 +1,172 @@
+.product-detail {
+
+    &__container {
+        *>:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__prop-section {
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        @include field-reset();
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $main-color;
+        cursor: pointer;
+        svg {
+            margin-left: 10px;
+            fill: $main-color;
+            transition: 0.3s ease;
+        }
+    }
+
+    &__title.active {
+        svg {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__list {
+        @include order-reset();
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__item {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1.33;
+        text-align: left;
+        color: $extra-text-color;
+    }
+
+    &__item:last-child {
+        margin-right: 0;
+    }
+//Цвет
+    &__color {
+        display: inline-flex;
+        vertical-align: top;
+        align-items: center;
+        height: 25px;
+        border-radius: 3px;
+        border: 1px solid $border-color;
+        overflow: hidden;
+    }
+
+    &__color-img {
+        overflow: hidden;
+        height: 25px;
+        width: 25px;
+        color: $border-color;
+        font-size: 0;
+    }
+
+    &__color-value {
+        padding: 0 10px;
+    }
+//Обычные свойства
+    &__item-prop {
+        display: inline-flex;
+        vertical-align: top;
+        align-items: center;
+        height: 25px;
+        padding: 0 10px;
+        border-radius: 3px;
+        border: 1px solid $border-color;
+    }
+//Активность свойст
+    &__color,
+    &__item-prop {
+        cursor: pointer;
+        opacity: 1;
+        transition: 0.3s ease;
+    }
+
+    &__color:hover,
+    &__item-prop:hover {
+        opacity: 0.7;
+        transition: 0.3s ease;
+    }
+
+    &__color.active,
+    &__item-prop.active {
+        border-color: $blue;
+        cursor: default;
+        opacity: 1;
+    }
+
+    &__color.active:hover,
+    &__item-prop.active:hover {
+        border-color: $blue;
+        cursor: default;
+        opacity: 1;
+    }
+//Блок текста
+    &__text {
+        display: none;
+        @media (min-width: $lg) {
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.38;
+            color: $communication-add-color;
+            >*:last-child {
+                margin-bottom: 0;
+            }
+            p {
+                @include field-reset();
+                margin-bottom: 10px;
+            }
+            a {
+                color: $blue;
+            }
+        }
+    }
+
+    &__text-container {
+        max-height: 90px;
+        overflow: hidden;
+    }
+
+    &__text-container.opened {
+        max-height: auto;
+    }
+
+    &__text-tog {
+        width: 100%;
+        padding: 0;
+        color: $blue;
+        text-align: left;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        cursor: pointer;
+        .open {
+            display: inline;
+        }
+        .hide {
+            display: none;
+        }
+    }
+
+    &__text-tog.opened {
+        .open {
+            display: none;
+        }
+        .hide {
+            display: inline;
+        }
+    }
+}

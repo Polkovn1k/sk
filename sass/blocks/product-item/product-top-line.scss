@@ -1,0 +1,40 @@
+.product-top-line {
+
+    &__container {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__stars {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+
+    &__list {
+        @include order-reset();
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        flex-shrink: 0;
+        margin-right: 20px;
+        a {
+            display: block;
+            font-size: 0;
+        }
+        svg {
+            display: block;
+            width: 16px;
+            height: 16px;
+            fill: $blue;
+        }
+    }
+
+    &__item:last-child {
+        margin-right: 0;
+    }
+}

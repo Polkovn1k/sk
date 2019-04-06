@@ -1,0 +1,196 @@
+.product-order {
+
+
+    &__container {
+        padding: 20px $grid-padding;
+        border-radius: 5px;
+        border: 1px solid $border-color;
+        background: $white;
+    }
+
+    &__price {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+//блок цен
+    &__value {
+        width: auto;
+        padding-right: 10px;
+        line-height: 1.30;
+        color: $main-color;
+    }
+
+    &__old-price {
+        vertical-align: middle;
+        padding-right: 5px;
+        font-size: 16px;
+        font-weight: 400;
+        text-decoration: line-through;
+    }
+
+    &__current-price {
+        vertical-align: middle;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    &__profit {
+        display: block;
+        font-size: 14px;
+        font-weight: 600;
+        color: $red;
+    }
+//Шильдики выгоды
+    &__features {
+        position: static;
+        flex-direction: row;
+        padding: 0;
+        padding-top: 10px;
+    }
+//Блок подсчета + кнопка
+    &__cart {
+        display: flex;
+        align-items: center;
+        padding-bottom: 20px;
+        border-bottom: 1px solid $border-color;
+    }
+//добавка/убавка количества
+    &__count {
+        display: flex;
+        margin-right: 15px;
+        input {
+            height: $common-item-height;
+            width: 50px;
+            outline: none;
+            border: none;
+            border-top: 1px solid $border-color;
+            border-bottom: 1px solid $border-color;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.33;
+            color: $main-color;
+            text-align: center;
+            background: transparent;
+            -moz-appearance: textfield;
+        }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    &__minus,
+    &__plus {
+        width: $common-item-height;
+        height: $common-item-height;
+        border: 1px solid $border-color;
+        background: transparent;
+        outline: none;
+        font-size: 25px;
+        font-weight: 400;
+        cursor: pointer;
+        padding-bottom: 5px;
+    }
+
+    &__btn {
+        padding: 0 5px;
+        flex-grow: 1;
+        font-size: 18px;
+        font-weight: 700;
+        color: $main-color;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+//Список особенностей
+    &__list {
+        @include order-reset();
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $border-color;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        padding-left: 25px;
+        svg {
+            display: none;
+        }
+        p {
+            @include field-reset();
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.30;
+            color: $extra-text-color;
+        }
+        @media (min-width: $lg) {
+            margin-bottom: 15px;
+            padding-left: 40px;
+            svg {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                fill: $blue;
+            }
+            p {
+                line-height: 1.85;
+            }
+        }
+    }
+
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+
+    &__item::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        transform: rotate(135deg);
+        width: 15px;
+        height: 8px;
+        border: 2px solid #02b744;
+        border-bottom-color: transparent;
+        border-left-color: transparent;
+        @media (min-width: $lg) {
+            display: none;
+        }
+    }
+//Способы оплаты
+    &__payment-list {
+        display: none;
+        @media (min-width: $lg) {
+            @include order-reset();
+            display: flex;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            padding-top: 20px;
+        }
+    }
+
+    &__payment-item {
+        flex-shrink: 0;
+        margin-bottom: 5px;
+        margin-right: 5px;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        overflow: hidden;
+        svg {
+            width: 60px;
+            height: 30px;
+        }
+    }
+
+    &__payment-item:last-child {
+        margin-right: 0;
+    }
+}
