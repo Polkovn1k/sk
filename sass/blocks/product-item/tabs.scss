@@ -1,0 +1,87 @@
+.tabs {
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    &__col {
+        margin-bottom: 20px;
+    }
+
+    &__col:last-child {
+        margin-bottom: 0;
+    }
+
+    &__container {
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+//Список табов
+    &__tabs-list {
+        @include order-reset();
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        @media (min-width: $md) {
+            border-bottom: 1px solid $border-color;
+        }
+    }
+
+    &__tabs-item {
+        flex-grow: 1;
+        width: 50%;
+        button {
+            padding: 15px;
+            width: 100%;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid $border-color;
+            background: transparent;
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.30;
+            text-align: center;
+            color: $extra-text-color;
+            cursor: pointer;
+
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+        button.active {
+            background: $delivery-active-btn;
+            cursor: default;
+            pointer-events: none;
+        }
+        button:hover {
+            background: $delivery-active-btn;
+        }
+        span {
+            color: $blue;
+        }
+        @media (min-width: $md) {
+            width: 33.33%;
+            button {
+                border-bottom: none;
+            }
+        }
+        @media (min-width: $lg) {
+            flex-grow: 0;
+            width: auto;
+            button {
+                padding-right: 30px;
+                padding-left: 30px;
+            }
+        }
+    }
+
+    &__tabs-item:last-child {
+        button {
+            border-bottom: none;
+        }
+    }
+//
+    //&__
+}

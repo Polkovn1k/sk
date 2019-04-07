@@ -32,7 +32,6 @@
     }
 
     &__arrows {
-        background: $white;
         position: absolute;
         top: -($catalog-slider-title-height - $catalog-slider-title-padding-top);
         right: 0;
@@ -74,29 +73,5 @@
     &__arrow-left::before,
     &__arrow-right::before {
         display: none;
-    }
-}
-
-.catalog-slider--addition {
-    position: relative;
-    padding-right: 0;
-    margin-right: -15px;
-    margin-left: -15px;
-    @media (min-width: $lg) {
-        padding-left: 0;
-        padding-right: 0;
-        margin-right: 0;
-        margin-left: 0;
-    }
-
-    &::after {
-        @include pseudo();
-        top: 0;
-        left: 50%;
-        bottom: 0;
-        width: 100vw;
-        transform: translateX(-50%);
-        background: $white;
-        z-index: -1;
     }
 }
