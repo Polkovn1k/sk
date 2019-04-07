@@ -3,6 +3,7 @@
     background: $white;
     border: 1px solid $border-color;
     border-top: none;
+    overflow: hidden;
     @media (min-width: $lg) {
         margin-bottom: 40px;
         border: none;
