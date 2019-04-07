@@ -1,4 +1,9 @@
 .comments {
+    margin-bottom: 0;
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
 
     > *:last-child {
         margin-bottom: 0;
