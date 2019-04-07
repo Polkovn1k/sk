@@ -10,20 +10,21 @@
         margin-bottom: 0;
     }
 
-    &__container {
-        background: $white;
-        border: 1px solid $border-color;
-        @media (min-width: $lg) {
-            border: none;
-        }
-    }
+    &__container {}
 //Список табов
     &__tabs-list {
         @include order-reset();
+        background: $white;
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        border: 1px solid $border-color;
+        border-bottom: none;
         @media (min-width: $md) {
+            border-bottom: 1px solid $border-color;
+        }
+        @media (min-width: $lg) {
+            border: none;
             border-bottom: 1px solid $border-color;
         }
     }
@@ -91,6 +92,13 @@
         font-weight: 400;
         line-height: 1.38;
         color: $communication-add-color;
+        background: $white;
+        border: 1px solid $border-color;
+        border-top: none;
+        @media (min-width: $lg) {
+            border: none;
+        }
+
         > *:last-child {
             margin-bottom: 0;
         }
@@ -124,8 +132,14 @@
         font-weight: 400;
         line-height: 1.38;
         color: $communication-add-color;
+        background: $white;
+        border: 1px solid $border-color;
+        border-top: none;
         @media (min-width: $md) {
             padding: 30px;
+        }
+        @media (min-width: $lg) {
+            border: none;
         }
     }
 

@@ -1,0 +1,130 @@
+.product-comments {
+    background: $white;
+    border: 1px solid $border-color;
+    border-top: none;
+    @media (min-width: $lg) {
+        border: none;
+    }
+
+    &__container {}
+
+    &__title {
+        @include field-reset();
+        padding: 15px;
+        font-size: 25px;
+        font-weight: 400;
+        line-height: 1.32;
+        color: $extra-text-color;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            padding: 30px;
+        }
+    }
+
+    &__form {
+        padding: 25px 15px;
+        @media (min-width: $lg) {
+            padding: 30px;
+        }
+    }
+
+    &__section {
+        margin-bottom: 20px;
+    }
+
+    &__section-title {
+        @include field-reset();
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.15;
+        color: $extra-text-color;
+    }
+//Блок звезд
+    &__star-rating {
+        display: flex;
+    }
+
+    &__rating {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    &__stars-label {
+        display: block;
+        padding: 0 5px;
+        width: 30px;
+        height: 25px;
+        background: silver;
+        background: url("../img/svg/star-empty-yellow.svg") no-repeat center;
+        background-size: 25px 25px;
+        cursor: pointer;
+    }
+
+    &__stars-input {
+        display: none;
+    }
+
+    &__stars-input:checked ~
+    &__stars-label {
+        background: url("../img/svg/star-yellow.svg") no-repeat center;
+        background-size: 25px 25px;
+    }
+
+    &__stars-label:hover,
+    &__stars-label:hover ~
+    &__stars-label {
+        background: url("../img/svg/star-yellow.svg") no-repeat center;
+        background-size: 25px 25px;
+    }
+//Блок инпутов
+    &__inputs {
+        textarea {
+            display: block;
+            width: 100%;
+            max-width: 100%;
+            min-height: 100px;
+            outline: none;
+            border: 1px solid $border-color;
+            border-radius: 3px;
+            resize: vertical;
+        }
+    }
+//Блок загрузки файлов
+    &__upload {
+        input {
+            display: none;
+        }
+        label {
+            margin-bottom: 15px;
+            width: 100%;
+            height: $common-item-height;
+            line-height: $common-item-height;
+        }
+        p {
+            @include field-reset();
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.30;
+            color: $communication-add-color;
+        }
+        @media (min-width: $lg) {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            label {
+                width: auto;
+                padding: 0 30px;
+                margin-right: 30px;
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__send-btn {
+        width: 100%;
+        @media (min-width: $lg) {
+            margin-top: 10px;
+        }
+    }
+}
