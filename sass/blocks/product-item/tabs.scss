@@ -194,4 +194,35 @@
             padding-left: 15px;
         }
     }
+//Блок комплектности товара
+    &__aside-container {
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    &__header {
+        padding: 15px;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.30;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            padding: 15px 30px;
+        }
+    }
+
+    &__kit-list {
+        @include order-reset();
+        padding: 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+        @media (min-width: $lg) {
+            padding: 15px 30px;
+        }
+    }
 }
