@@ -27,6 +27,7 @@
         flex-wrap: wrap;
         align-items: center;
         padding: 15px;
+        border-bottom: 1px solid $border-color;
         @media (min-width: $lg) {
             flex-wrap: nowrap;
             padding: 30px;
@@ -92,5 +93,22 @@
         @media (min-width: $lg) {
             width: auto;
         }
+    }
+//Блок лучшего сообщения
+    &__main-block {
+        padding: 15px;
+        @media (min-width: $lg) {
+            padding: 30px;
+        }
+    }
+
+    &__sub-title {
+        @include field-reset();
+        margin-bottom: 25px;
+        font-size: 25px;
+        font-weight: 400;
+        font-stretch: normal;
+        line-height: 1.32;
+        color: $extra-text-color;
     }
 }
