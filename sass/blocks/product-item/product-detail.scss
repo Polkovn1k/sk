@@ -1,6 +1,7 @@
 .product-detail {
     position: relative;
     padding-bottom: 15px;
+
     &__container {
         > *:last-child {
             margin-bottom: 0;
@@ -86,13 +87,12 @@
     &__color,
     &__item-prop {
         cursor: pointer;
-        opacity: 1;
         transition: 0.3s ease;
     }
 
     &__color:hover,
     &__item-prop:hover {
-        opacity: 0.7;
+        border-color: $blue;
         transition: 0.3s ease;
     }
 
@@ -100,14 +100,12 @@
     &__item-prop.active {
         border-color: $blue;
         cursor: default;
-        opacity: 1;
     }
 
     &__color.active:hover,
     &__item-prop.active:hover {
         border-color: $blue;
         cursor: default;
-        opacity: 1;
     }
 //Блок текста
     &__text {
