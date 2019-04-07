@@ -76,12 +76,108 @@
             }
         }
     }
+//Блок контента
+    &__content {
+        display: none;
+    }
 
-    &__tabs-item:last-child {
-        button {
-            border-bottom: none;
+    &__content.active {
+        display: block;
+    }
+//Описание товара
+    &__article {
+        padding: 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+        > *:last-child {
+            margin-bottom: 0;
+        }
+        a {
+            color: $blue;
+        }
+        h1, h2, h3, h4, h5, h6, p, ul, ol {
+            @include field-reset();
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            list-style-type: none;
+        }
+        @media (min-width: $md) {
+            padding: 30px;
         }
     }
-//
-    //&__
+
+    &__article-title {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $main-color;
+    }
+//Характеристики товара
+    &__property-list {
+        @include order-reset();
+        width: 100%;
+        padding: 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+        @media (min-width: $md) {
+            padding: 30px;
+        }
+    }
+
+    &__property-item {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        padding-bottom: 10px;
+        @media (min-width: $md) {
+
+        }
+    }
+
+    &__property-item:last-child {
+        padding-bottom: 0;
+    }
+
+    &__property-name {
+        flex-grow: 1;
+        max-width: 60%;
+        display: flex;
+        align-items: flex-end;
+        padding-right: 7px;
+        font-weight: 600;
+        color: $extra-text-color;
+        span {
+            display: block;
+        }
+        hr {
+            display: none;
+        }
+        @media (min-width: $md) {
+            max-width: 70%;
+            hr {
+                @include field-reset();
+                display: block;
+                margin-bottom: 5px;
+                flex-grow: 1;
+                height: 0;
+                border: none;
+                border-bottom: 1px dotted $communication-add-color;
+            }
+        }
+    }
+
+    &__property-value {
+        max-width: 40%;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        @media (min-width: $md) {
+            max-width: 30%;
+            padding-left: 15px;
+        }
+    }
 }
