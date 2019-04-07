@@ -1,41 +1,245 @@
 .comments {
-    margin-bottom: 20px;
-    background: $white;
-    border: 1px solid $border-color;
-    @media (min-width: $lg) {
-        margin-bottom: 40px;
-        border: none;
-    }
 
-    &__container {}
-
-    &__header {
-        padding: 15px;
-        border-bottom: 1px solid $border-color;
-        @media (min-width: $lg) {
-            padding-top: 0;
-            padding-bottom: 0;
-        }
-    }
-
-    &__sort {
+    > *:last-child {
         margin-bottom: 0;
     }
 
-    &__main-block {
-        padding: 15px;
+    &__discuss-message {
+        margin-bottom: 20px;
+    }
+
+    &__discuss-message:last-child {
+        margin-bottom: 0;
+    }
+
+    &__discuss-message.inner {
+        padding-left: 15px;
+    }
+
+    &__discuss-message.admin {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__discuss-message.admin::before {
+        @include pseudo();
+        z-index: -1;
+        top: 0;
+        right: -50%;
+        bottom: 0;
+        left: -50%;
+        background: $delivery-active-btn;
+    }
+
+    &__discuss-comment {
+        padding: 15px 0;
+        margin-bottom: 20px;
+    }
+
+    &__discuss-comment:last-child {
+        margin-bottom: 0;
+    }
+
+    &__user-block {
+        display: flex;
+        align-items: center;
+        padding-bottom: 15px;
+    }
+
+    &__user-img {
+        margin-right: 15px;
+        svg {
+            width: 45px;
+            height: 45px;
+            fill: $border-color;
+        }
         @media (min-width: $lg) {
-            padding: 30px;
+            svg {
+                width: 63px;
+                height: 63px;
+            }
+        }
+    }
+
+    &__user-info {
+        color: $extra-text-color;
+    }
+
+    &__user-name {
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    &__message-date {
+        font-size: 14px;
+        font-weight: 400;
+        color: $add-text-color;
+    }
+
+    &__content {
+        margin-bottom: 15px;
+        > *:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
         }
     }
 
     &__sub-title {
         @include field-reset();
-        margin-bottom: 25px;
-        font-size: 25px;
-        font-weight: 400;
-        font-stretch: normal;
-        line-height: 1.32;
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.15;
         color: $extra-text-color;
+    }
+
+    &__discuss-text {
+        @include field-reset();
+        margin-bottom: 20px;
+        font-size: 16px;
+        font-weight: 400;
+        color: $communication-add-color;
+    }
+
+    &__text {
+        @include field-reset();
+    }
+
+    &__reply-i-voting {
+        display: flex;
+        align-items: center;
+    }
+
+    &__reply {
+        font-size: 14px;
+        font-weight: 400;
+        color: $blue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    &__reply.hidden {
+        display: none;
+    }
+
+    &__voting {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        font-size: 0;
+    }
+
+    &__like {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-right: 15px;
+        cursor: pointer;
+        svg {
+            margin-right: 5px;
+            fill: $green;
+        }
+        span {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    &__dislike {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        svg {
+            margin-right: 5px;
+            fill: $red;
+            transform: rotate(180deg);
+        }
+        span {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+
+    &__btns {
+        @media (min-width: $md) {
+            display: flex;
+            justify-content: flex-end;
+            width: 100%;
+        }
+    }
+
+    &__btn-reply {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 15px;
+        @media (min-width: $md) {
+            width: auto;
+            margin-right: 15px;
+            margin-bottom: 0;
+        }
+    }
+
+    &__btn-cancel {
+        width: 100%;
+        height: $common-item-height;
+        color: $add-red;
+        border-color: $add-red;
+        @media (min-width: $md) {
+            width: auto;
+        }
+    }
+
+    &__btn-cancel:hover {
+        color: $white;
+        border-color: $add-red;
+        background: $add-red;
+    }
+
+    &__discussions-form {
+        display: none;
+        margin-top: 20px;
+    }
+
+    &__discussions-form.active {
+        display: block;
+    }
+//валидация формы
+    &__label.invalid {
+        input,
+        textarea {
+            border-color: $red;
+        }
+        .error-message {
+            display: block;
+            position: absolute;
+            overflow: hidden;
+            height: $profile-input-padding-botom;
+            position: absolute;
+            left: 10px;
+            bottom: 0;
+            font-size: 12px;
+            line-height: $profile-input-padding-botom - 5px;
+            font-weight: 400;
+            color: $red;
+        }
+    }
+}
+
+//Ответ админа
+.comments__discuss-message.admin {
+    .comments__user-img {
+        svg {
+            fill: $yellow;
+        }
+    }
+    .comments__user-name {
+        color: $main-color;
+    }
+    .comments__message-date {
+        color: $extra-text-color;
+    }
+    .comments__text {
+        color: $main-color;
     }
 }

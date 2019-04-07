@@ -267,10 +267,10 @@
                                               </div>
                                           </div>
 
-                                          <div class="comments">
-                                              <div class="comments__container">
-                                                  <div class="comments__header">
-                                                      <div id="collapseSort" class="sort comments__sort">
+                                          <div class="discuss">
+                                              <div class="discuss__container">
+                                                  <div class="discuss__header">
+                                                      <div id="collapseSort" class="sort discuss__sort">
                                                           <div class="sort__by-property">
                                                               <div data-find-id="collapseSort" class="sort__title js-call-collapsed-element">
                                                                   Отсортировать по:
@@ -307,8 +307,140 @@
                                                           </div>
                                                       </div>
                                                   </div>
-                                                  <div class="comments__main-block">
-                                                      <p class="comments__sub-title">Отзывы <span>(1)</span></p>
+                                                  <div class="discuss__main-block">
+                                                      <p class="discuss__sub-title">Отзывы <span>(1)</span></p>
+                                                      <div class="discuss__comments-block">
+
+
+                                                          <div class="comments">
+                                                              <div class="comments__discuss-message">
+                                                                  <div class="comments__discuss-comment">
+                                                                      <div class="comments__user-block">
+                                                                          <div class="comments__user-img">
+                                                                              <svg width="63" height="63" aria-hidden="true" role="presentation">
+                                                                                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-icon"></use>
+                                                                              </svg>
+                                                                          </div>
+                                                                          <div class="comments__user-info">
+                                                                              <div class="comments__user-name">Человек Человеков</div>
+                                                                              <time class="comments__message-date" datetime="2018-10-06T13:53">12 марта 2018</time>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="comments__content">
+                                                                          <div class="comments__discuss-text">
+                                                                              <p class="comments__sub-title">Оценка пользователя</p>
+                                                                              <div class="star-view">
+                                                                                  <div class="star-view__rating-stars">
+                                                                                      <div class="star-view__stars-empty">
+                                                                                          <svg aria-hidden="true" role="presentation">
+                                                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-empty"></use>
+                                                                                          </svg>
+                                                                                      </div>
+                                                                                      <div class="star-view__stars-fill">
+                                                                                          <svg aria-hidden="true" role="presentation">
+                                                                                              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#stars-fill"></use>
+                                                                                          </svg>
+                                                                                      </div>
+                                                                                  </div>
+                                                                              </div>
+                                                                          </div>
+                                                                          <div class="comments__discuss-text">
+                                                                              <p class="comments__sub-title">Достоинства</p>
+                                                                              <p class="comments__text">
+                                                                                  Красивый. Удобная заправка. Новый тип испарителя. Дрип тип не греет. Валит хорошо, так же хорошо жрёт жижку. На прежних айджастах мне 10 мл хватало на трое суток. Сейчас за сутки съедает. Но того стоит.
+                                                                              </p>
+                                                                          </div>
+                                                                          <div class="comments__discuss-text">
+                                                                              <p class="comments__sub-title">Недостатки</p>
+                                                                              <p class="comments__text">
+                                                                                  Можно подумать цена дороговата-но учитывая в комплекте допстекло, которое отдельно на прежние айджасты стоит от 300 деревянных, плюс оринги-нормально. Для бросателей курения-идеально.
+                                                                              </p>
+                                                                          </div>
+                                                                          <div class="comments__discuss-text">
+                                                                              <p class="comments__sub-title">Общее впечатление</p>
+                                                                              <p class="comments__text">
+                                                                                  Это не первая покупка на этом сайте. Постоянно присутствует качество товара и обслуживания.
+                                                                              </p>
+                                                                          </div>
+                                                                      </div>
+                                                                      <div class="comments__reply-i-voting">
+                                                                          <a class="comments__reply js-reply-btn">Ответить</a>
+                                                                          <div class="comments__voting">
+                                                                              <a class="comments__like">
+                                                                                  За
+                                                                                  <svg width="19" height="16" aria-hidden="true" role="presentation">
+                                                                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#like"></use>
+                                                                                  </svg>
+                                                                                  <span>200</span>
+                                                                              </a>
+                                                                              <a class="comments__dislike">
+                                                                                  Против
+                                                                                  <svg width="19" height="16" aria-hidden="true" role="presentation">
+                                                                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#like"></use>
+                                                                                  </svg>
+                                                                                  <span>100</span>
+                                                                              </a>
+                                                                          </div>
+                                                                      </div>
+                                                                      <form action="#" class="comments__discussions-form js-discussion-form">
+                                                                          <label class="comments__label invalid">
+                                                                              <span class="comments__label-title">Автор</span>
+                                                                              <input name="diskuss_author_name" type="text" required>
+                                                                              <span class="error-message">Исправь косяк в поле!</span>
+                                                                          </label>
+                                                                          <label class="comments__label">
+                                                                              <span>Текст</span>
+                                                                              <textarea name="diskuss_text" required></textarea>
+                                                                          </label>
+                                                                          <div class="comments__btns">
+                                                                              <button class="dark-btn comments__btn-reply">Оставить комментарий</button>
+                                                                              <button class="btn comments__btn-cancel js-btn-cancel">Отмена</button>
+                                                                          </div>
+                                                                      </form>
+                                                                  </div>
+                                                                  <div class="comments__discuss-message inner admin">
+                                                                      <div class="comments__discuss-comment">
+                                                                          <div class="comments__user-block">
+                                                                              <div class="comments__user-img">
+                                                                                  <svg width="63" height="63" aria-hidden="true" role="presentation">
+                                                                                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user-icon"></use>
+                                                                                  </svg>
+                                                                              </div>
+                                                                              <div class="comments__user-info">
+                                                                                  <div class="comments__user-name">Магазин "Смокинг Шоп"</div>
+                                                                                  <time class="comments__message-date" datetime="2018-10-06T13:53">12 марта 2018</time>
+                                                                              </div>
+                                                                          </div>
+                                                                          <div class="comments__discuss-text">
+                                                                              <p class="comments__text">
+                                                                                  Данный отзыв мы хотели отклонить изначально, но решили опубликовать в качестве некого предупреждения. В следующий раз в подобной ситуации Ваши отзывы не будут опубликованы на нашем сайте. Кроме нашего недоумения, нам нечего добавить к Вашему отзыву.<br><br>
+                                                                                  С уважением, менеджер Виталий.
+                                                                              </p>
+                                                                          </div>
+                                                                          <form action="#" class="comments__discussions-form js-discussion-form">
+                                                                              <label class="comments__label">
+                                                                                  <span class="comments__label-title">Автор</span>
+                                                                                  <input name="diskuss_author_name" type="text" required>
+                                                                                  <span class="error-message"></span>
+                                                                              </label>
+                                                                              <label class="comments__label">
+                                                                                  <span>Текст</span>
+                                                                                  <textarea name="diskuss_text" required></textarea>
+                                                                              </label>
+                                                                              <div class="comments__btns">
+                                                                                  <button class="dark-btn comments__btn-reply">Оставить комментарий</button>
+                                                                                  <button class="btn comments__btn-cancel js-btn-cancel">Отмена</button>
+                                                                              </div>
+                                                                          </form>
+                                                                      </div>
+                                                                  </div>
+                                                              </div>
+                                                          </div>
+
+
+
+
+                                                      </div>
                                                   </div>
                                               </div>
                                           </div>
