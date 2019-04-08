@@ -90,6 +90,7 @@
         width: 100%;
         padding: 0 $grid-padding;
         padding-top: $filter-title-padding-top;
+        padding-bottom: 10px;
         padding-right: #{$grid-padding + $filter-title-svg-width + 5px};
         font-size: 18px;
         font-weight: 600;
@@ -110,19 +111,12 @@
         }
     }
 //анимация на стрелку
-    .active-btn {
-        margin-bottom: 10px;
+    &__title.active {
         svg {
             transform: rotate(180deg);
         }
     }
 //--------
-    &__title.active-btn {
-        ~ .filters__content {
-            max-height: none;
-        }
-    }
-
     &__content {
         padding: 0 $grid-padding;
         overflow: hidden;
@@ -137,6 +131,10 @@
         @media (min-width: $lg) {
             max-width: none;
         }
+    }
+
+    &__content.active {
+        max-height: none;
     }
 
     &__show-all {

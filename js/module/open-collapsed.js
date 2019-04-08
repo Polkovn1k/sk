@@ -3,44 +3,39 @@ if (document.querySelector(".open-collapsed")) {
 
     var expandCollapsedItems = {
 
-        TRANSITION_TIME: "300",
-
         showCollapsedElement: () => {
             document.querySelectorAll(".js-call-collapsed-element").forEach(function(clickedBtn) {
                 clickedBtn.addEventListener("click", (event) => {
                     var currentCollapsedElement = expandCollapsedItems._findClickedBtnsDataToId(clickedBtn);
-                    //Если нажатая кнопка содержит active-btn то контейнер схлопываем
-                    if (clickedBtn.classList.contains("active-btn")) {
+                    //Если нажатая кнопка содержит active то контейнер схлопываем
+                    if (clickedBtn.classList.contains("active")) {
+                        expandCollapsedItems._removeActiveStatus(clickedBtn);
                         expandCollapsedItems._getTrueElementHeight(currentCollapsedElement);
+                        expandCollapsedItems._removeActiveStatus(currentCollapsedElement);
                         if (currentCollapsedElement.clientHeight == currentCollapsedElement.scrollHeight) {
-                            expandCollapsedItems._removeBtnActive(clickedBtn);
                             expandCollapsedItems._deleteInlineStyleBeforeCollapsed(currentCollapsedElement);
                         }
                         return false;
                     }
-                    //Если нажатая кнопка НЕ содержит active-btn то контейнер развертываем
+                    //Если нажатая кнопка НЕ содержит active то контейнер развертываем
                     expandCollapsedItems._getTrueElementHeight(currentCollapsedElement);
-                    expandCollapsedItems._deleteInlineStyleAfterCollapsed(currentCollapsedElement);
-                    expandCollapsedItems._addBtnActive(clickedBtn);
+                    expandCollapsedItems._addActiveStatus(currentCollapsedElement);
+                    expandCollapsedItems._addActiveStatus(clickedBtn);
+                    currentCollapsedElement.addEventListener("transitionend", (event) => {
+                        expandCollapsedItems._deleteInlineStyleBeforeCollapsed(currentCollapsedElement);
+                    });
                 });
             });
         },
 
 //Добавляем активность нажатой кнопке
-        _addBtnActive: (clickedBtn) => {
-            clickedBtn.classList.add("active-btn");
+        _addActiveStatus: (element) => {
+            element.classList.add("active");
         },
 
 //Удаляем активность нажатой кнопке
-        _removeBtnActive: (clickedBtn) => {
-            clickedBtn.classList.remove("active-btn");
-        },
-
-//Удаляем максимальную высоту элемента, поставленную инлайном - ПОСЛЕ раскрытия
-        _deleteInlineStyleAfterCollapsed: (collapsedElement) => {
-            setTimeout(function() {
-                collapsedElement.style.removeProperty("max-height");
-            }, expandCollapsedItems.TRANSITION_TIME);
+        _removeActiveStatus: (element) => {
+            element.classList.remove("active");
         },
 
 //Удаляем максимальную высоту элемента, поставленную инлайном - ДО раскрытия
@@ -48,7 +43,7 @@ if (document.querySelector(".open-collapsed")) {
             collapsedElement.style.removeProperty("max-height");
         },
 
-//Находим элемент который неоходимо схлопнуть или раскрыть в заввисимости от нажатой кнопки
+//Находим элемент который неоходимо схлопнуть или раскрыть в зависимости от нажатой кнопки
         _findClickedBtnsDataToId: (clickedBtn) => {
             return document.getElementById(clickedBtn.dataset.findId);
         },
