@@ -7,14 +7,14 @@ if (document.querySelector(".product-tab-tog")) {
             document.querySelectorAll(".js-product-tab").forEach(function(clickedBtn) {
                 clickedBtn.addEventListener("click", function(event) {
                     if (clickedBtn.classList.contains(".active")) return
-                    productTabs._removeAllActiveClasses(clickedBtn);
+                    productTabs._removeAllActiveClasses();
                     productTabs._addActiveForClickedBtn(clickedBtn);
                     productTabs._findContainerByBtnAndSetActive(clickedBtn);
                 });
             });
         },
 
-        _removeAllActiveClasses: (btn) => {
+        _removeAllActiveClasses: () => {
             document.querySelectorAll(".js-product-tab").forEach((item) => {
                 item.classList.remove("active");
             });
@@ -24,6 +24,10 @@ if (document.querySelector(".product-tab-tog")) {
         },
 
         _addActiveForClickedBtn: (btn) => {
+            if (btn.classList.contains("product-detail__scroll-to")) {
+                document.querySelector(".js-product-tab-comments").classList.add("active");
+                return false;
+            }
             btn.classList.add("active");
         },
 

@@ -1,13 +1,13 @@
 <div class="col-12 col-md-12 col-lg-4 product-detail product-detail--out-of-stock">
     <div class="product-detail__container">
         <div class="product-detail__prop-section">
-            <p class="product-detail__title">
+            <p data-find-id="collapseColorProp" class="product-detail__title js-call-collapsed-element active">
                 Цвет
                 <svg width="9" height="5" aria-hidden="true" role="presentation">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                 </svg>
             </p>
-            <ul class="product-detail__list">
+            <ul id="collapseColorProp" class="product-detail__list js-property-list active">
                 <li class="product-detail__item">
                     <div class="product-detail__color">
                         <div class="product-detail__color-img">
@@ -59,13 +59,13 @@
             </ul>
         </div>
         <div class="product-detail__prop-section">
-            <p class="product-detail__title">
+            <p data-find-id="collapseResistProp" class="product-detail__title js-call-collapsed-element">
                 Сопротивление
                 <svg width="9" height="5" aria-hidden="true" role="presentation">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                 </svg>
             </p>
-            <ul class="product-detail__list">
+            <ul id="collapseResistProp" class="product-detail__list js-property-list">
                 <li class="product-detail__item">
                     <div class="product-detail__item-prop active">0.18 (4 койла 55)</div>
                 </li>
@@ -96,13 +96,13 @@
             </ul>
         </div>
         <div class="product-detail__prop-section">
-            <p class="product-detail__title">
+            <p data-find-id="collapseBatterySizeProp" class="product-detail__title js-call-collapsed-element">
                 Объем аккумулятора
                 <svg width="9" height="5" aria-hidden="true" role="presentation">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                 </svg>
             </p>
-            <ul class="product-detail__list">
+            <ul id="collapseBatterySizeProp" class="product-detail__list js-property-list">
                 <li class="product-detail__item">
                     <div class="product-detail__item-prop">650</div>
                 </li>
@@ -118,13 +118,13 @@
             </ul>
         </div>
         <div class="product-detail__prop-section">
-            <p class="product-detail__title">
+            <p data-find-id="collapseNicoProp" class="product-detail__title js-call-collapsed-element">
                 Никотин (мг/мл)
                 <svg width="9" height="5" aria-hidden="true" role="presentation">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                 </svg>
             </p>
-            <ul class="product-detail__list">
+            <ul id="collapseNicoProp" class="product-detail__list js-property-list">
                 <li class="product-detail__item">
                     <div class="product-detail__item-prop active">3</div>
                 </li>
@@ -144,14 +144,8 @@
                 <p>
                     Модель Eleaf iJust 3 представляет собой одну из новых моделей электронных сигарет известной компании «Элиф», получившую усовершенствованный дизайн и конструкцию. Для изготовления корпуса использован цинковый сплав, а наличие рельефного рисунка делает стильное устройство ещё более привлекательным на вид. К другим причинам выбора этой модели относят приличную мощность в 80 Вт, комплектацию клиромайзером Ello Duro и возможность регулирования силы затяжки с помощью специального кольца.
                 </p>
-                <p>
-                    Удобную в использовании модель стоит выбирать начинающим парильщикам. Подойдёт она и более опытным вейперам, внимание которых способна привлечь особенностями индикации заряда и оригинальным дизайном. Работает вейп вместе с любыми койлами из серии HW: Eleaf HW 1, Eleaf HW 2, Eleaf HW 3, Eleaf HW 4, Eleaf HW-1C.
-                </p>
             </div>
-            <button class="product-detail__text-tog">
-                <span class="open">Читать полностью...</span>
-                <span class="hide">Скрыть</span>
-            </button>
+            <button data-to-id="tab-comments" data-find-id="tab-list" class="product-detail__scroll-to js-product-tab js-go-to">Читать полностью...</button>
         </div>
     </div>
 </div>

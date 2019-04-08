@@ -37,9 +37,16 @@
 
     &__list {
         @include order-reset();
+        overflow: hidden;
+        max-height: 0;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        transition: 0.3s ease;
+    }
+
+    &__list.active {
+        max-height: none;
     }
 
     &__item {
@@ -100,6 +107,7 @@
     &__item-prop.active {
         border-color: $blue;
         cursor: default;
+        //box-shadow: 0 0 0 1px $blue;
     }
 
     &__color.active:hover,
@@ -138,7 +146,7 @@
         max-height: auto;
     }
 
-    &__text-tog {
+    &__scroll-to {
         width: 100%;
         padding: 0;
         color: $blue;
@@ -148,21 +156,6 @@
         box-shadow: none;
         outline: none;
         cursor: pointer;
-        .open {
-            display: inline;
-        }
-        .hide {
-            display: none;
-        }
-    }
-
-    &__text-tog.opened {
-        .open {
-            display: none;
-        }
-        .hide {
-            display: inline;
-        }
     }
 }
 

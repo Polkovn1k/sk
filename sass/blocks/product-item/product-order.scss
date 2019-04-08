@@ -29,12 +29,6 @@
         flex-wrap: wrap;
         align-items: flex-start;
         padding-bottom: 20px;
-        @media (min-width: $md) {
-            border-bottom: 1px solid $border-color;
-        }
-        @media (min-width: $lg) {
-            border-bottom: none;
-        }
     }
 //блок цен
     &__value {
@@ -77,18 +71,6 @@
         align-items: center;
         padding-bottom: 20px;
         border-bottom: 1px solid $border-color;
-        @media (min-width: $md) {
-            padding-top: 20px;
-            padding-bottom: 0;
-            border-bottom: none;
-            order: 1;
-        }
-        @media (min-width: $lg) {
-            padding-top: 0;
-            padding-bottom: 20px;
-            border-bottom: 1px solid $border-color;
-            order: 0;
-        }
     }
 //добавка/убавка количества
     &__count {
@@ -144,82 +126,32 @@
         @include order-reset();
         padding-top: 15px;
         padding-bottom: 15px;
-        border-bottom: 1px solid $border-color;
     }
 
     &__item {
         position: relative;
         display: flex;
         align-items: flex-start;
-        margin-bottom: 10px;
-        padding-left: 25px;
+        margin-bottom: 15px;
+        padding-left: 40px;
         svg {
-            display: none;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            fill: $blue;
         }
         p {
             @include field-reset();
             font-size: 14px;
             font-weight: 400;
-            line-height: 1.30;
+            line-height: 1.85;
             color: $extra-text-color;
-        }
-        @media (min-width: $lg) {
-            margin-bottom: 15px;
-            padding-left: 40px;
-            svg {
-                display: block;
-                position: absolute;
-                left: 0;
-                top: 0;
-                fill: $blue;
-            }
-            p {
-                line-height: 1.85;
-            }
         }
     }
 
     &__item:last-child {
         margin-bottom: 0;
-    }
-
-    &__item::before {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 3px;
-        left: 0;
-        transform: rotate(135deg);
-        width: 15px;
-        height: 8px;
-        border: 2px solid #02b744;
-        border-bottom-color: transparent;
-        border-left-color: transparent;
-        @media (min-width: $lg) {
-            display: none;
-        }
-    }
-//Дополнительный список особенностей
-    &__add-list {
-        @include order-reset();
-        padding-top: 15px;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.85;
-        color: $extra-text-color;
-        @media (min-width: $md) {
-            padding-bottom: 15px;
-            border-bottom: 1px solid $border-color;
-        }
-        @media (min-width: $lg) {
-            display: none;
-        }
-    }
-
-    &__add-item {
-        @media (min-width: $md) {
-            padding-left: 25px;
-        }
     }
 //Способы оплаты
     &__payment-list {
@@ -227,7 +159,6 @@
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
-        padding-top: 20px;
     }
 
     &__payment-item {
