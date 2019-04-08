@@ -69,6 +69,9 @@
             overflow: hidden;
             transition: 0.3s ease;
         }
+        .my-order__collapsed-info.active {
+            max-height: none;
+        }
         @media (min-width: $md) {
             width: 100%;
             min-width: auto;
@@ -127,7 +130,7 @@
         color: $blue;
     }
 
-    &__open.active-btn {
+    &__open.active {
         svg {
             transform: rotate(180deg);
         }

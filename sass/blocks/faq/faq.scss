@@ -57,7 +57,7 @@
         color: $blue;
     }
 
-    &__question.active-btn {
+    &__question.active {
         svg {
             transform: rotate(180deg);
         }
@@ -97,5 +97,9 @@
                 padding-bottom: $faq-desktop-btn-padding;
             }
         }
+    }
+
+    &__answer.active {
+        max-height: none;
     }
 }

@@ -114,6 +114,10 @@
         }
     }
 
+    &__adress-list.active {
+        max-height: none;
+    }
+
     &__adress-item {
         padding: 10px 0;
     }
@@ -147,7 +151,7 @@
         }
     }
 
-    &__btn.active-btn {
+    &__btn.active {
         font-size: 0;
         span {
             display: inline;

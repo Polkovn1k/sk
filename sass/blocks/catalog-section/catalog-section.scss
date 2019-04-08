@@ -46,6 +46,10 @@
         }
     }
 
+    &__collapsed-text.active {
+        max-height: none;
+    }
+
     &__text-tog {
         @include field-reset();
         display: block;
@@ -79,15 +83,15 @@
         }
     }
 
-    &__text-tog.active-btn {
+    &__text-tog.active {
+        svg {
+            transform: rotate(180deg);
+        }
         span:first-child {
             display: none;
         }
         span:nth-child(2) {
             display: inline;
-        }
-        ~ .catalog-section__collapsed-text {
-            max-height: none;
         }
     }
 
@@ -192,12 +196,7 @@
             }
         }
     }
-//анимация на стрелку
-    .active-btn {
-        svg {
-            transform: rotate(180deg);
-        }
-    }
+
 //Список товаров
     &__products {
 

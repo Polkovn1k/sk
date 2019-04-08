@@ -7,7 +7,7 @@
     border-radius: 5px;
     border: 1px solid $communication-add-color;
     overflow: hidden;
-    transition: 0.3s border-color ease, 0.3s max-height ease;
+    transition: 0.3s ease;
     @media (min-width: $lg) {
         display: flex;
         flex-wrap: wrap;
@@ -19,7 +19,7 @@
         border: none;
     }
 
-    &--opened {
+    &.active {
         max-height: none;
     }
 
@@ -234,7 +234,7 @@
         }
     }
 
-    &__title.active-btn {
+    &__title.active {
         pointer-events: auto;
         cursor: pointer;
         background: transparent;
@@ -244,7 +244,7 @@
         }
     }
 
-    &__title.active-btn:hover {
+    &__title.active:hover {
         color: inherit;
     }
 
