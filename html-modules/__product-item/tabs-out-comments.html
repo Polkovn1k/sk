@@ -4,16 +4,16 @@
             <div class="tabs__container">
                 <ul class="tabs__tabs-list">
                     <li class="tabs__tabs-item">
-                        <button class="active">Описание</button>
+                        <button class="active js-product-tab" data-to-id="tab-description">Описание</button>
                     </li>
                     <li class="tabs__tabs-item">
-                        <button>Характеристики</button>
+                        <button class="js-product-tab" data-to-id="tab-property">Характеристики</button>
                     </li>
                     <li class="tabs__tabs-item">
-                        <button>Отзывы <span>34</span></button>
+                        <button class="js-product-tab" data-to-id="tab-comments">Отзывы <span></span></button>
                     </li>
                 </ul>
-                <div class="tabs__content active">
+                <div id="tab-description" class="tabs__content js-tabs-content active">
                     <article class="tabs__article">
                         <h2 class="visually-hidden">Электронная сигарета Eleaf Just 3 - особенности</h2>
                         <p>
@@ -47,7 +47,7 @@
                         </p>
                     </article>
                 </div>
-                <div class="tabs__content">
+                <div id="tab-property" class="tabs__content js-tabs-content">
                     <ul class="tabs__property-list">
                         <li class="tabs__property-item">
                             <div class="tabs__property-name">
@@ -168,7 +168,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="tabs__content">
+                <div id="tab-comments" class="tabs__content js-tabs-content">
                     <div class="product-comments">
                         <div class="product-comments__container">
                             <h3 class="product-comments__title">
@@ -194,20 +194,23 @@
                                 </div>
                                 <div class="product-comments__section">
                                     <p class="product-comments__section-title">Достоинства</p>
-                                    <div class="product-comments__inputs">
+                                    <div class="product-comments__inputs invalid">
                                         <textarea></textarea>
+                                        <span class="error-message">Поле не должно быть пустым!</span>
                                     </div>
                                 </div>
                                 <div class="product-comments__section">
                                     <p class="product-comments__section-title">Недостатки</p>
                                     <div class="product-comments__inputs">
                                         <textarea></textarea>
+                                        <span class="error-message"></span>
                                     </div>
                                 </div>
                                 <div class="product-comments__section">
                                     <p class="product-comments__section-title">Общее впечатление</p>
                                     <div class="product-comments__inputs">
                                         <textarea></textarea>
+                                        <span class="error-message"></span>
                                     </div>
                                 </div>
                                 <div class="product-comments__section">
@@ -225,7 +228,6 @@
                 </div>
             </div>
         </div>
-
         <div class="col-12 col-lg-3 tabs__col">
             <aside class="tabs__aside-container">
                 <div class="tabs__header">
