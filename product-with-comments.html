@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="response-to-question sort-change open-collapsed transition-to-anchor-product">
+<html lang="ru" class="response-to-question sort-change open-collapsed transition-to-anchor-product product-tab-tog">
 
 <head>
   <meta charset="UTF-8">
@@ -69,16 +69,16 @@
                                   <div class="tabs__container">
                                       <ul class="tabs__tabs-list">
                                           <li class="tabs__tabs-item">
-                                              <button class="active">Описание</button>
+                                              <button class="active" data-to-id="tab-description">Описание</button>
                                           </li>
                                           <li class="tabs__tabs-item">
-                                              <button>Характеристики</button>
+                                              <button data-to-id="tab-property">Характеристики</button>
                                           </li>
                                           <li class="tabs__tabs-item">
-                                              <button>Отзывы <span>34</span></button>
+                                              <button data-to-id="tab-comments">Отзывы <span>34</span></button>
                                           </li>
                                       </ul>
-                                      <div class="tabs__content">
+                                      <div id="tab-description" class="tabs__content active">
                                           <article class="tabs__article">
                                               <h2 class="visually-hidden">Электронная сигарета Eleaf Just 3 - особенности</h2>
                                               <p>
@@ -112,7 +112,7 @@
                                               </p>
                                           </article>
                                       </div>
-                                      <div class="tabs__content">
+                                      <div id="tab-property" class="tabs__content">
                                           <ul class="tabs__property-list">
                                               <li class="tabs__property-item">
                                                   <div class="tabs__property-name">
@@ -233,10 +233,7 @@
                                               </li>
                                           </ul>
                                       </div>
-                                      <div class="tabs__content active">
-
-
-
+                                      <div id="tab-comments" class="tabs__content">
                                           <div class="best-message">
                                               <div class="best-message__container">
                                                   <h3 class="best-message__title">
@@ -411,7 +408,6 @@
                                                   </div>
                                               </div>
                                           </div>
-
                                           <div class="discuss">
                                               <div class="discuss__container">
                                                   <div class="discuss__header">
@@ -613,8 +609,6 @@
                                                   </div>
                                               </div>
                                           </div>
-
-
                                           <div id="write-comment" class="product-comments">
                                               <div class="product-comments__container">
                                                   <h3 class="product-comments__title">
@@ -671,7 +665,6 @@
                                       </div>
                                   </div>
                               </div>
-
                               <div class="col-12 col-lg-3 tabs__col">
                                   <aside class="tabs__aside-container">
                                       <div class="tabs__header">
