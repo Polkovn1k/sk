@@ -70,11 +70,11 @@
 
 
 
-                      <section id="call-back" class="add-to-cart opened"><!-- js-overlay -->
-                          <div class="add-to-cart__container">
+                      <div id="call-back" class="add-to-cart opened"><!-- js-overlay -->
+                          <form action="#" class="add-to-cart__container">
 
                               <div class="add-to-cart__top-line">
-                                  <h3 class="add-to-cart__title">Добавить в корзину</h3>
+                                  <p class="add-to-cart__title">Добавить в корзину</p>
                                   <button class="add-to-cart__close js-close-overlays">
                                       Закрыть окно
                                       <svg width="22" height="22" aria-hidden="true" role="presentation">
@@ -279,7 +279,21 @@
                                   </div>
                               </div>
 
-                              <div class="add-to-cart__bottom-line"></div>
+                              <div class="add-to-cart__bottom-line">
+                                  <div class="add-to-cart__result">
+                                      <p>
+                                          Товар на сумму: <span>2 578 Р.</span>
+                                      </p>
+                                  </div>
+                                  <div class="add-to-cart__result-btns">
+                                      <a class="silver-btn add-to-cart__btn js-close-overlays">
+                                          Продолжить покупки
+                                      </a>
+                                      <button type="submit" class="yellow-btn add-to-cart__btn">
+                                          Перейти в корзину
+                                      </button>
+                                  </div>
+                              </div>
 
                               <div class="add-to-cart__delivery-line">
                                   <div class="add-to-cart__delivery">
@@ -292,8 +306,8 @@
                                   <a href="catalog.html" class="dark-btn add-to-cart__delivery-btn">Перейти в каталог</a>
                               </div>
 
-                          </div>
-                      </section>
+                          </form>
+                      </div>
 
 
 
