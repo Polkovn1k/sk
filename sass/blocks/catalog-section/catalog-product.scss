@@ -421,6 +421,11 @@
             height: $list-style-catalog-product-min-height;
         }
 
+        .catalog-product {
+            outline: none;
+            border-bottom: 1px solid $border-color;
+        }
+
         .catalog-product__container {
             justify-content: center;
             height: 100%;

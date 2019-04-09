@@ -18,7 +18,7 @@
         font-weight: 600;
         line-height: $common-item-height;
         color: $main-color;
-        transition: 0.3s color ease;
+        transition: 0.3s ease;
         @media (min-width: $lg) {
             display: none;
         }
@@ -45,7 +45,7 @@
         outline: none;
         border-radius: 5px;
         background: transparent;
-        border: 1px solid $communication-add-color;
+        border: 1px solid $border-color;
         cursor: pointer;
         transition: 0.3s border-color ease;
         svg.filters__svg-open {
@@ -221,6 +221,9 @@
         left: 0;
         overflow: auto;
         background: $white;
+        span {
+            //transition: all 0s ease 0s;
+        }
         @media (min-width: $lg) {
             position: static;
         }
@@ -237,15 +240,16 @@
             border: none;
             border-bottom: 1px solid $border-color;
             border-radius: 0;
-            background: $white;
+            background: $blue;
             outline: none;
             font-size: 18px;
             overflow: auto;
+            color: $white;
         }
         .filters__tog-modal:hover {
-            color: inherit;
+            color: $white;
             svg {
-                fill: $add-text-color;
+                fill: $white;
             }
         }
         .filters__open-modal {
@@ -270,12 +274,7 @@
                 transform: translateY(-50%);
                 width: $filter-svg-close-size;
                 height: $filter-svg-close-size;
-                fill: $add-text-color;
-            }
-        }
-        .filters__open-modal:hover {
-            svg {
-                fill: $blue;
+                fill: $white;
             }
         }
         .filters__container {
