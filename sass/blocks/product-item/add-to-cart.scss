@@ -15,7 +15,6 @@
     &__container {
         max-height: 100vh;
         overflow: auto;
-        border-radius: 5px;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -23,8 +22,6 @@
         width: calc(100% - #{$two-grid-padding});
         max-width: 705px;
         margin: 0 auto;
-        padding: $grid-padding;
-        background: $white;
     }
 
     &__top-line {
@@ -32,12 +29,13 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin: 0 (-$grid-padding);
-        margin-top: -$grid-padding;
         position: relative;
         border-bottom: 1px solid $border-color;
         padding: 0 $grid-padding;
         height: 75px;
+        background: $white;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
     }
 
     &__close {
@@ -65,13 +63,14 @@
     }
 //--------------------------------------------------------------------------------
         &__product {
+            margin-bottom: 20px;
             background: $white;
+            border-bottom: 1px solid $border-color;
         }
 
         &__product-container {
             position: relative;
             padding: $grid-padding;
-            margin: 0 -15px -15px -15px;
         }
 
         &__del-item {
@@ -524,5 +523,66 @@
         &__item-prop.active:hover {
             border-color: $blue;
             cursor: default;
+        }
+//-------------------------------
+        &__delivery-line {
+            padding: $grid-padding;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            border-radius: 5px;
+            background: $white;
+        }
+
+        &__delivery {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 15px;
+            svg {
+                flex-shrink: 0;
+                margin-right: 10px;
+                fill: $blue;
+            }
+            @media (min-width: $md) {
+                justify-content: flex-start;
+                width: auto;
+                margin-bottom: 0;
+            }
+            @media (min-width: $lg) {
+                border: none;
+                display: flex;
+                align-items: center;
+                svg {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        &__pay-delivery,
+        &__free-delivery {
+            @include field-reset();
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.30;
+            color: $main-color;
+            text-align: left;
+            span {
+                font-weight: 700;
+                color: $green;
+            }
+        }
+
+        &__pay-delivery.hide,
+        &__free-delivery.hide {
+            display: none;
+        }
+
+        &__delivery-btn {
+            margin: 0 auto;
         }
 }
