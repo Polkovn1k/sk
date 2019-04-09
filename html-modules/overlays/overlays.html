@@ -537,3 +537,33 @@
 
     </div>
 </div>
+
+<!-- overlays: pass recovery -->
+<section id="unavailable" class="unavailable js-overlay">
+    <div class="unavailable__container">
+
+        <div class="unavailable__top-line">
+            <h3 class="unavailable__title">Сообщение о поступлении товара</h3>
+            <button class="unavailable__close js-close-overlays">
+                Закрыть окно
+                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                </svg>
+            </button>
+        </div>
+
+        <p class="unavailable__text">
+            Пожалуйста, введите Ваш адрес электронной почты, с помощью которого мы сможем оповестить вас о наличии данного товара
+        </p>
+        <form action="#" class="unavailable__form">
+            <div class="unavailable__label valid">
+                <input name="unavailable" type="text" class="unavailable__input" maxlength="50" minlength="5" title="" placeholder="Введите свой email" required>
+                <span class="error-message"></span>
+                <span class="input-icon"></span>
+            </div>
+            <div class="unavailable__btns-block">
+                <button type="submit" class="dark-btn unavailable__btn">Восстановить</button>
+            </div>
+        </form>
+    </div>
+</section>
