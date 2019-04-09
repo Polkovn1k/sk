@@ -122,6 +122,7 @@ var modals = {
     listenClickForBtnWhichCallOverlay: () => {
         document.querySelectorAll(".js-overlay-btn").forEach((btnCallingOverlays) => {
             btnCallingOverlays.addEventListener("click", (event) => {
+                event.preventDefault();
                if (btnCallingOverlays && btnCallingOverlays.contains(event.target)) {
                    event.preventDefault();
                    modals._actionsWithBtnsAndModals(btnCallingOverlays);
