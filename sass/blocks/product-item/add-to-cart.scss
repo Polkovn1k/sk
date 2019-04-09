@@ -63,7 +63,6 @@
     }
 //--------------------------------------------------------------------------------
         &__product {
-            margin-bottom: 20px;
             background: $white;
             border-bottom: 1px solid $border-color;
         }
@@ -523,6 +522,14 @@
         &__item-prop.active:hover {
             border-color: $blue;
             cursor: default;
+        }
+//-------------------------------
+        &__bottom-line {
+            margin-bottom: 20px;
+            padding: $grid-padding;
+            background: $white;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
         }
 //-------------------------------
         &__delivery-line {
