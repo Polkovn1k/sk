@@ -6,4 +6,35 @@
     @media (min-width: $lg) {
         order: 0;
     }
+
+    &__container {
+        padding: 0 $grid-padding;
+    }
+
+    &__for-list {
+        @include order-reset();
+        height: 400px;
+        overflow: hidden;
+    }
+
+    &__for-item {
+        a {
+            display: block;
+        }
+    }
+
+    &__nav-list {
+        @include order-reset();
+        height: 75px;
+        overflow: hidden;
+    }
+
+    &__nav-item {
+        height: 75px;
+        width: 75px;
+        border: 1px solid $border-color;
+        a {
+            display: block;
+        }
+    }
 }
