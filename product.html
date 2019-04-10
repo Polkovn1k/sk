@@ -103,8 +103,17 @@
       slidesToScroll: 1,
       //autoplay: true,
       arrows: true,
-      fade: true,
-      asNavFor: ".js-product-slider-nav"
+      fade: false,
+      asNavFor: ".js-product-slider-nav",
+            responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              dots: true,
+              arrows: false
+            }
+          },
+        ]
     });
     $(".js-product-slider-nav").slick({
       slidesToShow: 4,
@@ -113,23 +122,7 @@
       dots: false,
       centerMode: true,
       focusOnSelect: true,
-      centerPadding: 0,
-      responsive: [
-          {
-            breakpoint: 767,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
-            }
-          },
-          {
-            breakpoint: 480,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1
-            }
-          }
-        ]
+      centerPadding: 0
     });
   </script>
 
