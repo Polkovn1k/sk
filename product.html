@@ -101,17 +101,35 @@
     $(".js-product-slider-for").slick({
       slidesToShow: 1,
       slidesToScroll: 1,
-      arrows: false,
+      //autoplay: true,
+      arrows: true,
       fade: true,
       asNavFor: ".js-product-slider-nav"
     });
     $(".js-product-slider-nav").slick({
-      slidesToShow: 3,
+      slidesToShow: 4,
       slidesToScroll: 1,
       asNavFor: ".js-product-slider-for",
-      dots: true,
+      dots: false,
       centerMode: true,
-      focusOnSelect: true
+      focusOnSelect: true,
+      centerPadding: 0,
+      responsive: [
+          {
+            breakpoint: 767,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 2
+            }
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1
+            }
+          }
+        ]
     });
   </script>
 
