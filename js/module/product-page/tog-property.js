@@ -18,7 +18,6 @@ if (document.querySelector(".tog-property")) {
 
       _removeActive: (listItem) => {
           listItem.querySelectorAll(".js-property-item").forEach((btn) => {
-              console.log(btn);
               btn.classList.remove("active");
           });
       },
