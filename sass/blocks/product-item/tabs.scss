@@ -19,6 +19,9 @@
 
     &__col {
         margin-bottom: 20px;
+        @media (min-width: $lg) {
+            margin-bottom: 0;
+        }
     }
 
     &__col:last-child {
