@@ -25,7 +25,7 @@ if (document.querySelector(".product-tab-tog")) {
 
         _addActiveForClickedBtn: (btn) => {
             if (btn.classList.contains("product-detail__scroll-to")) {
-                document.querySelector(".js-product-tab-comments").classList.add("active");
+                document.querySelector(".js-product-tab-descr").classList.add("active");
                 return false;
             }
             btn.classList.add("active");
