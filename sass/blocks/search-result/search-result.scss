@@ -1,15 +1,13 @@
 .search-result {
+    padding-bottom: 30px;
 
-    &__container {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        padding-bottom: 30px;
+    &__add-sort {
+        margin-bottom: 10px;
     }
 
-//Список товаров
-    &__products {}
+    &__container {}
 
+//Список товаров
     &__products-list {
         @include order-reset();
         margin-bottom: 20px;
@@ -36,6 +34,18 @@
             margin-bottom: 35px;
         }
     }
+
+//блок новостей
+
+    &__articles-list {
+        @include order-reset();
+        margin: 0 -7.5px;
+    }
+
+    &__articles-item {
+        margin-bottom: 20px;
+    }
+
 //Блок пагинации
     &__pagination {
         width: 100%;
