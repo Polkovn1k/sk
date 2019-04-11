@@ -35,8 +35,7 @@
         }
     }
 
-//блок новостей
-
+//Блок статей
     &__articles-list {
         @include order-reset();
         margin: 0 -7.5px;
@@ -46,13 +45,12 @@
         margin-bottom: 20px;
     }
 
+//Блок новостей
+
+
 //Блок пагинации
     &__pagination {
         width: 100%;
-        margin-bottom: 20px;
-        @media (min-width: $lg) {
-            margin-bottom: 0;
-        }
     }
 }
 
