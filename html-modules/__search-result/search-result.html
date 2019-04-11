@@ -2,19 +2,19 @@
 
     <div class="add-sort search-result__add-sort">
         <ul class="add-sort__list">
-            <li class="add-sort__item js-add-sort active">
+            <li data-to-id="result-products" class="add-sort__item js-product-tab active">
                 <button>Товаров <span>272</span></button>
             </li>
-            <li class="add-sort__item js-add-sort">
+            <li data-to-id="result-articles" class="add-sort__item js-product-tab">
                 <button>Статей <span>19</span></button>
             </li>
-            <li class="add-sort__item js-add-sort">
+            <li data-to-id="result-news" class="add-sort__item js-product-tab">
                 <button>Новостей <span>4</span></button>
             </li>
         </ul>
     </div>
 
-    <div class="search-result__container">
+    <div id="result-products" class="search-result__container js-tabs-content active">
         <ul class="search-result__products-list row no-gutters list-style">
             <li class="search-result__products-item col-12 col-lg-4">
                 <div class="catalog-product">
@@ -319,7 +319,7 @@
         </div>
     </div>
 
-    <div class="search-result__container">
+    <div id="result-articles" class="search-result__container js-tabs-content">
         <ul class="search-result__articles-list row">
             <li class="col-12 col-sm-6 col-md-4 col-xl-3 search-result__articles-item articles">
                 <article class="articles__item">
@@ -471,7 +471,7 @@
         </div>
     </div>
 
-    <div class="search-result__container news-all">
+    <div id="result-news" class="search-result__container js-tabs-content news-all">
         <div class="row">
             <div class="col-12 col-sm-6 col-md-4 col-lg-12 news-all__wrapper">
                 <div class="news-all__container">

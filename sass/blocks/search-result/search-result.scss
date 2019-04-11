@@ -5,7 +5,13 @@
         margin-bottom: 10px;
     }
 
-    &__container {}
+    &__container {
+        display: none;
+    }
+
+    &__container.active {
+        display: block;
+    }
 
 //Список товаров
     &__products-list {
