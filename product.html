@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="response-to-question sort-change open-collapsed transition-to-anchor-product product-tab-tog tog-property">
+<html lang="ru" class="response-to-question sort-change open-collapsed transition-to-anchor-product product-tab-tog tog-property product-slider">
 
 <head>
   <meta charset="UTF-8">
@@ -13,8 +13,8 @@
   <!-- <link rel="apple-touch-icon" href="favicon.png"> -->
   <link rel="stylesheet" href="css/style.min.css">
   <link rel="canonical" href="https://***.ru/">
-  <script>document.createElement("picture");</script>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  <script>document.createElement("picture");</script>
 </head>
 
 <body>
@@ -97,36 +97,6 @@
   <script src="js/library.js"></script>
   <!----------module concat-->
   <script src="js/module.js"></script>
-
-  <script type="text/javascript">
-    $(".js-product-slider-for").slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      lazyLoad: 'ondemand',
-      //autoplay: true,
-      arrows: true,
-      fade: false,
-      asNavFor: ".js-product-slider-nav",
-            responsive: [
-          {
-            breakpoint: 767,
-            settings: {
-              dots: true,
-              arrows: false
-            }
-          },
-        ]
-    });
-    $(".js-product-slider-nav").slick({
-      slidesToShow: 4,
-      slidesToScroll: 1,
-      asNavFor: ".js-product-slider-for",
-      dots: false,
-      centerMode: true,
-      focusOnSelect: true,
-      centerPadding: 0
-    });
-  </script>
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
 
 </body>
