@@ -78,7 +78,6 @@
 }
 
 .catalog-slider--addition {
-    position: relative;
     padding-right: 0;
     margin-right: -15px;
     margin-left: -15px;
@@ -87,16 +86,5 @@
         padding-right: 0;
         margin-right: 0;
         margin-left: 0;
-    }
-
-    &::after {
-        @include pseudo();
-        top: 0;
-        left: 50%;
-        bottom: 0;
-        width: 100vw;
-        transform: translateX(-50%);
-        background: $white;
-        z-index: -1;
     }
 }

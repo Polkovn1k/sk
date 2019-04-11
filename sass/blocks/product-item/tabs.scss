@@ -1,6 +1,21 @@
 .tabs {
+    position: relative;
+    z-index: 1;
     padding-top: 20px;
     padding-bottom: 20px;
+
+    &::before {
+        z-index: -1;
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        width: 100vw;
+        transform: translateX(-50%);
+        background: $bg-color;
+    }
 
     &__col {
         margin-bottom: 20px;

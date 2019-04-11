@@ -24,6 +24,10 @@
         overflow: visible;
     }
 
+    &--product {
+        background: $white;
+    }
+
     &__container {
         @include container();
     }
