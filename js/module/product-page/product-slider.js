@@ -1,5 +1,5 @@
 //СЛАЙДЕР ТОВАРА - (ДЕТАЛЬНАЯ)
-if (document.querySelector(".product-slider")) {
+if (document.querySelector(".product-item-slider")) {
 
     $(".js-product-slider-for").slick({
       slidesToShow: 1,

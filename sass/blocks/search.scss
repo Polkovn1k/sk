@@ -14,6 +14,7 @@
         top: $gradient-breakpoint-desktop + $gradient-breakpoint-desktop-end;
     }
     @media (min-width: $lg) {
+        overflow: visible;
         position: static;
         z-index: auto;
         flex-grow: 1;
@@ -40,16 +41,20 @@
 
     &__container {
         height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        position: relative;
         padding: 20px $grid-padding;
         @media (min-width: $lg) {
             padding: 0;
+            justify-content: center;
         }
     }
 
     &__form {
         @media (min-width: $lg) {
             display: flex;
-            height: 100%;
             align-items: center;
         }
     }
@@ -100,5 +105,67 @@
 
     &__btn:hover {
         background: lighten($black, 20%);
+    }
+//Результат поиска
+    &__result {
+        position: relative;
+        width: 100%;
+        background: $white;
+    }
+
+     &__result-list {
+        @include order-reset();
+        padding: 20px 0;
+        width: 100%;
+        background: $white;
+
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.36;
+        color: $main-color;
+        li {
+            padding: 5px 20px;
+        }
+        @media (min-width: $lg) {
+            padding: 5px 0;
+            max-height: 300px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            left: 0;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            box-shadow: 0 3px 6px 0 rgba(0,0,0,.16);
+            li {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+        }
+    }
+
+    &__container {
+        .search__result {
+            display: none;
+        }
+    }
+
+    &__container.active {
+        .search__result {
+            display: block;
+        }
+        .search__input {
+            @media (min-width: $lg) {
+                border-bottom-left-radius: 0;
+                border-bottom: 1px solid $border-color;
+            }
+        }
+        .search__btn {
+            @media (min-width: $lg) {
+                border-bottom-right-radius: 0;
+            }
+        }
     }
 }
