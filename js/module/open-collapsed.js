@@ -12,9 +12,12 @@ if (document.querySelector(".open-collapsed")) {
                         expandCollapsedItems._removeActiveStatus(clickedBtn);
                         expandCollapsedItems._getTrueElementHeight(currentCollapsedElement);
                         expandCollapsedItems._removeActiveStatus(currentCollapsedElement);
-                        if (currentCollapsedElement.clientHeight == currentCollapsedElement.scrollHeight) {
+                        /*if (currentCollapsedElement.clientHeight == currentCollapsedElement.scrollHeight) {
                             expandCollapsedItems._deleteInlineStyleBeforeCollapsed(currentCollapsedElement);
-                        }
+                        }*/
+                        setTimeout(() => {
+                            expandCollapsedItems._deleteInlineStyleBeforeCollapsed(currentCollapsedElement);
+                        }, 0);
                         return false;
                     }
                     //Если нажатая кнопка НЕ содержит active то контейнер развертываем
