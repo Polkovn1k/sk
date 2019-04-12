@@ -3,8 +3,10 @@ if (document.querySelector(".open-collapsed")) {
 
     var expandCollapsedItems = {
 
-        showCollapsedElement: () => {
-            document.querySelectorAll(".js-call-collapsed-element").forEach(function(clickedBtn) {
+        btnForCollapse: document.querySelectorAll(".js-call-collapsed-element"),
+
+        showCollapsedElement: (element) => {
+            element.forEach(function(clickedBtn) {
                 clickedBtn.addEventListener("click", (event) => {
                     var currentCollapsedElement = expandCollapsedItems._findClickedBtnsDataToId(clickedBtn);
                     //Если нажатая кнопка содержит active то контейнер схлопываем
@@ -12,9 +14,6 @@ if (document.querySelector(".open-collapsed")) {
                         expandCollapsedItems._removeActiveStatus(clickedBtn);
                         expandCollapsedItems._getTrueElementHeight(currentCollapsedElement);
                         expandCollapsedItems._removeActiveStatus(currentCollapsedElement);
-                        /*if (currentCollapsedElement.clientHeight == currentCollapsedElement.scrollHeight) {
-                            expandCollapsedItems._deleteInlineStyleBeforeCollapsed(currentCollapsedElement);
-                        }*/
                         setTimeout(() => {
                             expandCollapsedItems._deleteInlineStyleBeforeCollapsed(currentCollapsedElement);
                         }, 0);
@@ -56,10 +55,32 @@ if (document.querySelector(".open-collapsed")) {
             collapsedElement.style.maxHeight = collapsedElement.scrollHeight + "px";
         },
 
-        init: () => {
-            expandCollapsedItems.showCollapsedElement();
+
+
+
+        _addInitializedStatus: (clickedBtn) => {
+            clickedBtn.forEach((clickedBtn) => {
+                clickedBtn.classList.add("js-initialized");
+            });
         },
+
+        init: () => {
+            expandCollapsedItems.showCollapsedElement(expandCollapsedItems.btnForCollapse);
+            expandCollapsedItems._addInitializedStatus(expandCollapsedItems.btnForCollapse);
+        },
+
+        /*afterInit: () => {
+            var afterInit = document.querySelectorAll(".js-call-collapsed-element");
+            afterInit.forEach((afterInitElement) => {
+                if (!afterInitElement.classList.contains("js-initialized")) {
+                    console.dir(afterInitElement);
+                    expandCollapsedItems.showCollapsedElement(afterInitElement);
+                    expandCollapsedItems._addInitializedStatus(afterInitElement);
+                }
+            });
+        },*/
     };
     expandCollapsedItems.init();
+    //expandCollapsedItems.afterInit();
 
 }
