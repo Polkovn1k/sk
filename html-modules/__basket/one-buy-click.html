@@ -1,39 +1,39 @@
 <section id="buy-by-click" class="buy-by-click js-overlay">
-    <div class="buy-by-click__container">
-
-        <div class="buy-by-click__top-line">
-            <h3 class="buy-by-click__title">Купить товары в один клик</h3>
-            <button class="buy-by-click__close js-close-overlays">
-                Закрыть окно
-                <svg width="22" height="22" aria-hidden="true" role="presentation">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-                </svg>
-            </button>
-        </div>
-
-        <p class="buy-by-click__text">
-            Пожалуйста, введите Ваше имя и номер телефона для того, что бы связаться и оформить заказ.
-        </p>
-        <form action="#" class="buy-by-click__form">
-            <div class="buy-by-click__inputs">
-                <label class="buy-by-click__label">
-                    <input type="text" placeholder="Введите имя" class="buy-by-click__input">
-                    <span class="error-message"></span>
-                </label>
-                <label class="buy-by-click__label invalid">
-                    <input type="tel" placeholder="Введите номер телефона" class="buy-by-click__input">
-                    <span class="error-message">Исправь косяк в поле!</span>
-                </label>
+    <div class="buy-by-click__wrapper">
+        <div class="buy-by-click__container">
+            <div class="buy-by-click__top-line">
+                <h3 class="buy-by-click__title">Купить товары в один клик</h3>
+                <button class="buy-by-click__close js-close-overlays">
+                    Закрыть окно
+                    <svg width="22" height="22" aria-hidden="true" role="presentation">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                    </svg>
+                </button>
             </div>
-            <div class="buy-by-click__switch-join">
-                <div class="switch buy-by-click__switch-item">
-                    <input class="switch__input" type="checkbox" id="buyPerClick" checked>
-                    <label data-class="js-one-click" aria-hidden="true" class="switch__label js-disable-by-switch" for="buyPerClick">On</label>
-                    <div aria-hidden="true" class="switch__marker"></div>
+            <p class="buy-by-click__text">
+                Пожалуйста, введите Ваше имя и номер телефона для того, что бы связаться и оформить заказ.
+            </p>
+            <form action="#" class="buy-by-click__form">
+                <div class="buy-by-click__inputs">
+                    <label class="buy-by-click__label">
+                        <input type="text" placeholder="Введите имя" class="buy-by-click__input">
+                        <span class="error-message"></span>
+                    </label>
+                    <label class="buy-by-click__label invalid">
+                        <input type="tel" placeholder="Введите номер телефона" class="buy-by-click__input">
+                        <span class="error-message">Исправь косяк в поле!</span>
+                    </label>
                 </div>
-                <a href="#">Я прочел условия и даю согласие на обработку данных</a>
-            </div>
-            <button type="submit" class="dark-btn buy-by-click__btn js-one-click">Купить</button>
-        </form>
+                <div class="buy-by-click__switch-join">
+                    <div class="switch buy-by-click__switch-item">
+                        <input class="switch__input" type="checkbox" id="buyPerClick" checked>
+                        <label data-class="js-one-click" aria-hidden="true" class="switch__label js-disable-by-switch" for="buyPerClick">On</label>
+                        <div aria-hidden="true" class="switch__marker"></div>
+                    </div>
+                    <a href="#">Я прочел условия и даю согласие на обработку данных</a>
+                </div>
+                <button type="submit" class="dark-btn buy-by-click__btn js-one-click">Купить</button>
+            </form>
+        </div>
     </div>
 </section>

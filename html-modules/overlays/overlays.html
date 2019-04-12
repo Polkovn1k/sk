@@ -1,102 +1,98 @@
 <!-- overlays: call-back -->
 <section id="call-back" class="communication-over js-overlay">
-    <div class="communication-over__container">
-
-        <div class="communication-over__top-line">
-            <h3 class="communication-over__title">Звонок специалиста</h3>
-            <button class="communication-over__close js-close-overlays">
-                Закрыть окно
-                <svg width="22" height="22" aria-hidden="true" role="presentation">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-                </svg>
-            </button>
+    <div class="communication-over__wrapper">
+        <div class="communication-over__container">
+            <div class="communication-over__top-line">
+                <h3 class="communication-over__title">Звонок специалиста</h3>
+                <button class="communication-over__close js-close-overlays">
+                    Закрыть окно
+                    <svg width="22" height="22" aria-hidden="true" role="presentation">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                    </svg>
+                </button>
+            </div>
+            <p class="communication-over__text">
+                Если вы не хотите тратить время на поиск нужной информации на сайте, находитесь в другом часовом поясе или просто предпочитаете телефонное сообщение по интересующему вопросу, то закажите консультацию нашего специалиста.
+            </p>
+            <form action="#" class="communication-over__form">
+                <div class="communication-over__label">
+                    <input name="callback-name" type="text" class="communication-over__input js-callback-input name" maxlength="35" minlength="3" placeholder="Введите имя" required>
+                    <span></span>
+                </div>
+                <div class="communication-over__label invalid">
+                    <input name="callback-phone" type="tel" class="communication-over__input js-callback-input phone" placeholder="Введите номер телефона" pattern="(8|\+7)[0-9]{10}" required>
+                    <span class="error-message">Исправь косяк в поле!</span>
+                </div>
+                <button type="submit" class="dark-btn communication-over__btn js-submit-callback">Заказать звонок</button>
+            </form>
         </div>
-
-        <p class="communication-over__text">
-            Если вы не хотите тратить время на поиск нужной информации на сайте, находитесь в другом часовом поясе или просто предпочитаете телефонное сообщение по интересующему вопросу, то закажите консультацию нашего специалиста.
-        </p>
-        <form action="#" class="communication-over__form">
-            <div class="communication-over__label">
-                <input name="callback-name" type="text" class="communication-over__input js-callback-input name" maxlength="35" minlength="3" placeholder="Введите имя" required>
-                <span></span>
-            </div>
-            <div class="communication-over__label invalid">
-                <input name="callback-phone" type="tel" class="communication-over__input js-callback-input phone" placeholder="Введите номер телефона" pattern="(8|\+7)[0-9]{10}" required>
-                <span class="error-message">Исправь косяк в поле!</span>
-            </div>
-            <button type="submit" class="dark-btn communication-over__btn js-submit-callback">Заказать звонок</button>
-        </form>
     </div>
 </section>
 
 <!-- overlays: choose city -->
 <div id="city-pick" class="city-pick-over js-overlay">
-    <section class="city-pick-over__container">
-
-        <div class="city-pick-over__top-line">
-            <h3 class="city-pick-over__title">Выбор города</h3>
-            <button class="city-pick-over__close js-close-overlays">
-                Закрыть окно
-                <svg width="22" height="22" aria-hidden="true" role="presentation">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-                </svg>
-            </button>
-        </div>
-
-        <div class="city-pick-over__wrapper">
-            <div class="city-pick-over__input">
-                <input type="text" placeholder="Введите название города">
-                <svg width="18" height="18" aria-hidden="true" role="presentation">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-icon"></use>
-                </svg>
+    <div class="city-pick-over__main-wrapper">
+        <section class="city-pick-over__container">
+            <div class="city-pick-over__top-line">
+                <h3 class="city-pick-over__title">Выбор города</h3>
+                <button class="city-pick-over__close js-close-overlays">
+                    Закрыть окно
+                    <svg width="22" height="22" aria-hidden="true" role="presentation">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                    </svg>
+                </button>
             </div>
-            <ul class="row city-pick-over__list">
-
-                <li class="city-pick-over__item col-12 col-md-6 col-lg-4">
-                    <button>Москва</button>
-                    <button>Санкт-Петербург</button>
-                    <button>Архангельск</button>
-                    <button>Владивосток</button>
-                    <button>Волгоград</button>
-                    <button>Воронеж</button>
-                    <button>Екатеринбург</button>
-                    <button>Ижевск</button>
-                    <button>Иркутск</button>
-                    <button>Казань</button>
-                    <button>Кемерово</button>
-                </li>
-
-                <li class="city-pick-over__item col-12 col-md-6 col-lg-4">
-                    <button>Краснодар</button>
-                    <button>Красноярск</button>
-                    <button>Мурманск</button>
-                    <button>Набережные Челны</button>
-                    <button>Нижний Новгород</button>
-                    <button>Новосибирск</button>
-                    <button>Омск</button>
-                    <button>Пермь</button>
-                    <button>Ростов-на-Дону</button>
-                    <button>Саратов</button>
-                    <button>Самара</button>
-                </li>
-
-                <li class="city-pick-over__item col-12 col-md-6 col-lg-4">
-                    <button>Сочи</button>
-                    <button>Сургут</button>
-                    <button>Тверь</button>
-                    <button>Тольятти</button>
-                    <button>Тула</button>
-                    <button>Тюмень</button>
-                    <button>Ульяновск</button>
-                    <button>Уфа</button>
-                    <button>Хабаровск</button>
-                    <button>Челябинск</button>
-                    <button>Ярославль</button>
-                </li>
-
-            </ul>
-        </div>
-    </section>
+            <div class="city-pick-over__wrapper">
+                <div class="city-pick-over__input">
+                    <input type="text" placeholder="Введите название города">
+                    <svg width="18" height="18" aria-hidden="true" role="presentation">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search-icon"></use>
+                    </svg>
+                </div>
+                <ul class="row city-pick-over__list">
+                    <li class="city-pick-over__item col-12 col-md-6 col-lg-4">
+                        <button>Москва</button>
+                        <button>Санкт-Петербург</button>
+                        <button>Архангельск</button>
+                        <button>Владивосток</button>
+                        <button>Волгоград</button>
+                        <button>Воронеж</button>
+                        <button>Екатеринбург</button>
+                        <button>Ижевск</button>
+                        <button>Иркутск</button>
+                        <button>Казань</button>
+                        <button>Кемерово</button>
+                    </li>
+                    <li class="city-pick-over__item col-12 col-md-6 col-lg-4">
+                        <button>Краснодар</button>
+                        <button>Красноярск</button>
+                        <button>Мурманск</button>
+                        <button>Набережные Челны</button>
+                        <button>Нижний Новгород</button>
+                        <button>Новосибирск</button>
+                        <button>Омск</button>
+                        <button>Пермь</button>
+                        <button>Ростов-на-Дону</button>
+                        <button>Саратов</button>
+                        <button>Самара</button>
+                    </li>
+                    <li class="city-pick-over__item col-12 col-md-6 col-lg-4">
+                        <button>Сочи</button>
+                        <button>Сургут</button>
+                        <button>Тверь</button>
+                        <button>Тольятти</button>
+                        <button>Тула</button>
+                        <button>Тюмень</button>
+                        <button>Ульяновск</button>
+                        <button>Уфа</button>
+                        <button>Хабаровск</button>
+                        <button>Челябинск</button>
+                        <button>Ярославль</button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
 </div>
 
 <!-- ПЕРВЫЙ ОВЕРЛЕЙ ВХОДА НА САЙТ С МОБИЛОК-->
@@ -135,152 +131,155 @@
 </div>
 <!-- ОВЕРЛЕЙ РЕГИСТРАЦИИ/ВОЙТИ НА САЙТ -->
 <div id="profile-block" class="profile js-overlay">
-    <div class="profile__container">
-        <div class="profile__top-line">
-            <button data-to-class="js-profile-join" class="profile__tab js-profile__tab js-first-tab active-btn ">Вход</button>
-            <button data-to-class="js-profile-registry" class="profile__tab js-profile__tab js-default-overlay">Регистрация</button>
-            <button class="profile__close js-close-overlays">
-                Закрыть окно
-                <svg width="22" height="22" aria-hidden="true" role="presentation">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-                </svg>
-            </button>
-        </div>
-        <!-- Вход в личный кабинет -->
-        <div class="profile__join js-profile-item js-profile-join active">
-            <h3 class="profile__title">Вход в личный кабинет</h3>
-            <p class="profile__text">В личном кабинете Вы можете отслеживать статус заказа, а так же историю ваших покупок</p>
-            <form action="#" class="profile__join-form">
-                <div class="profile__label valid">
-                    <input name="join-login" type="text" class="profile__input js-profile-join-input" maxlength="50" minlength="5" title="" placeholder="Введите Email" required>
-                    <span class="error-message"></span>
-                    <span class="input-icon"></span>
-                </div>
-                <div class="profile__label invalid">
-                    <input name="join-password" type="password" class="profile__input js-profile-join-input" maxlength="50" minlength="5" title="" placeholder="Пароль" required>
-                    <span class="error-message">У вас косяк в инпуте!</span>
-                    <span class="input-icon"></span>
-                </div>
-                <div class="profile__switch-join">
-                    <div class="switch profile__switch-item">
-                        <input class="switch__input" type="checkbox" id="joinSwitchOn" checked>
-                        <label aria-hidden="true" class="switch__label" for="joinSwitchOn">On</label>
-                        <div aria-hidden="true" class="switch__marker"></div>
-                    </div>
-                    <span>Запомнить меня</span>
-                </div>
-                <div class="profile__btn-block">
-                    <button type="submit" class="dark-btn profile__btn js-submit-join">Войти</button>
-                    <a data-overlay-id="pass-recovery" class="btn profile__btn js-overlay-btn">Я забыл пароль</a>
-                </div>
-            </form>
-            <div class="profile__to-registry">
-                <p class="profile__title">Регистрация нового пользователя</p>
-                <p class="profile__text">Зарегистрируйся легко и просто</p>
-                <button data-to-class="js-profile-registry" class="dark-btn profile__registry-btn js-profile__tab">Зарегистрироваться</button>
+    <div class="profile__wrapper">
+        <div class="profile__container">
+            <div class="profile__top-line">
+                <button data-to-class="js-profile-join" class="profile__tab js-profile__tab js-first-tab active-btn ">Вход</button>
+                <button data-to-class="js-profile-registry" class="profile__tab js-profile__tab js-default-overlay">Регистрация</button>
+                <button class="profile__close js-close-overlays">
+                    Закрыть окно
+                    <svg width="22" height="22" aria-hidden="true" role="presentation">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                    </svg>
+                </button>
             </div>
-            <div class="profile__social">
-                <p>Войти, используя аккаунт соцсети</p>
-                <ul class="profile__social-list">
-                    <li class="profile__social-item profile__social-item--vk">
-                        <a href="#" title="Войти через профиль vk">
-                            <svg aria-hidden="true" role="presentation">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vk"></use>
-                            </svg>
-                        </a>
+            <!-- Вход в личный кабинет -->
+            <div class="profile__join js-profile-item js-profile-join active">
+                <h3 class="profile__title">Вход в личный кабинет</h3>
+                <p class="profile__text">В личном кабинете Вы можете отслеживать статус заказа, а так же историю ваших покупок</p>
+                <form action="#" class="profile__join-form">
+                    <div class="profile__label valid">
+                        <input name="join-login" type="text" class="profile__input js-profile-join-input" maxlength="50" minlength="5" title="" placeholder="Введите Email" required>
+                        <span class="error-message"></span>
+                        <span class="input-icon"></span>
+                    </div>
+                    <div class="profile__label invalid">
+                        <input name="join-password" type="password" class="profile__input js-profile-join-input" maxlength="50" minlength="5" title="" placeholder="Пароль" required>
+                        <span class="error-message">У вас косяк в инпуте!</span>
+                        <span class="input-icon"></span>
+                    </div>
+                    <div class="profile__switch-join">
+                        <div class="switch profile__switch-item">
+                            <input class="switch__input" type="checkbox" id="joinSwitchOn" checked>
+                            <label aria-hidden="true" class="switch__label" for="joinSwitchOn">On</label>
+                            <div aria-hidden="true" class="switch__marker"></div>
+                        </div>
+                        <span>Запомнить меня</span>
+                    </div>
+                    <div class="profile__btn-block">
+                        <button type="submit" class="dark-btn profile__btn js-submit-join">Войти</button>
+                        <a data-overlay-id="pass-recovery" class="btn profile__btn js-overlay-btn">Я забыл пароль</a>
+                    </div>
+                </form>
+                <div class="profile__to-registry">
+                    <p class="profile__title">Регистрация нового пользователя</p>
+                    <p class="profile__text">Зарегистрируйся легко и просто</p>
+                    <button data-to-class="js-profile-registry" class="dark-btn profile__registry-btn js-profile__tab">Зарегистрироваться</button>
+                </div>
+                <div class="profile__social">
+                    <p>Войти, используя аккаунт соцсети</p>
+                    <ul class="profile__social-list">
+                        <li class="profile__social-item profile__social-item--vk">
+                            <a href="#" title="Войти через профиль vk">
+                                <svg aria-hidden="true" role="presentation">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#vk"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="profile__social-item profile__social-item--fb">
+                            <a href="#" title="Войти через профиль Facebook">
+                                <svg aria-hidden="true" role="presentation">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="profile__social-item profile__social-item--mail">
+                            <a href="#" title="Войти через профиль Mail.ru">
+                                <svg aria-hidden="true" role="presentation">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail"></use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Регистрация нового пользователя -->
+            <div class="profile__registry js-profile-item js-profile-registry">
+                <h3 class="profile__title">Регистрация</h3>
+                <ul class="profile__advantages">
+                    <li class="profile__advantages-item">
+                        Скидки постоянного покупателя
                     </li>
-                    <li class="profile__social-item profile__social-item--fb">
-                        <a href="#" title="Войти через профиль Facebook">
-                            <svg aria-hidden="true" role="presentation">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#fb"></use>
-                            </svg>
-                        </a>
+                    <li class="profile__advantages-item">
+                        Отслеживание статуса заказов и хранение истории в «Личном кабинете»
                     </li>
-                    <li class="profile__social-item profile__social-item--mail">
-                        <a href="#" title="Войти через профиль Mail.ru">
-                            <svg aria-hidden="true" role="presentation">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#mail"></use>
-                            </svg>
-                        </a>
+                    <li class="profile__advantages-item">
+                        Однократный ввод адреса доставки
+                    </li>
+                    <li class="profile__advantages-item">
+                        Возможность отменить заказ в разделе «Мои Заказы», если статус Вашего заказа: «Ожидает проверки», «Оплачивается», «Резерв»
                     </li>
                 </ul>
-            </div>
-        </div>
-        <!-- Регистрация нового пользователя -->
-        <div class="profile__registry js-profile-item js-profile-registry">
-            <h3 class="profile__title">Регистрация</h3>
-            <ul class="profile__advantages">
-                <li class="profile__advantages-item">
-                    Скидки постоянного покупателя
-                </li>
-                <li class="profile__advantages-item">
-                    Отслеживание статуса заказов и хранение истории в «Личном кабинете»
-                </li>
-                <li class="profile__advantages-item">
-                    Однократный ввод адреса доставки
-                </li>
-                <li class="profile__advantages-item">
-                    Возможность отменить заказ в разделе «Мои Заказы», если статус Вашего заказа: «Ожидает проверки», «Оплачивается», «Резерв»
-                </li>
-            </ul>
-            <form action="#" class="profile__registry-form">
-                <div class="profile__label valid">
-                    <input name="reg-email" type="text" class="profile__input js-profile-reg-input reg-email" maxlength="50" minlength="5" title="" placeholder="Введите Email" required>
-                    <span class="error-message"></span>
-                    <span class="input-icon"></span>
-                </div>
-                <div class="profile__label invalid">
-                    <input name="reg-pass" type="password" class="profile__input js-profile-reg-input reg-pass" maxlength="50" minlength="5" title="" placeholder="Пароль" required>
-                    <span class="error-message">У вас косяк в инпуте!</span>
-                    <span class="input-icon"></span>
-                </div>
-                <div class="profile__label invalid">
-                    <input name="reg-pass-confirm" type="password" class="profile__input js-profile-reg-input reg-pass-confirm" maxlength="50" minlength="5" title="" placeholder="Повторите пароль" required>
-                    <span class="error-message">У вас косяк в инпуте!</span>
-                    <span class="input-icon"></span>
-                </div>
-                <div class="profile__switch-registry">
-                    <div class="switch profile__switch-item">
-                        <input class="switch__input" type="checkbox" id="regSwitchOn" checked>
-                        <label data-class="js-submit-reg" aria-hidden="true" class="switch__label js-disable-by-switch" for="regSwitchOn">On</label>
-                        <div aria-hidden="true" class="switch__marker"></div>
+                <form action="#" class="profile__registry-form">
+                    <div class="profile__label valid">
+                        <input name="reg-email" type="text" class="profile__input js-profile-reg-input reg-email" maxlength="50" minlength="5" title="" placeholder="Введите Email" required>
+                        <span class="error-message"></span>
+                        <span class="input-icon"></span>
                     </div>
-                    <a href="#">Я прочел условия и даю согласие на обработку данных</a>
-                </div>
-                <button type="submit" class="dark-btn profile__reg-btn js-submit-reg">Зарегистрироваться</button>
-                <button data-to-class="js-profile-join" class="btn profile__reg-btn js-profile__tab">Войти</button>
-            </form>
+                    <div class="profile__label invalid">
+                        <input name="reg-pass" type="password" class="profile__input js-profile-reg-input reg-pass" maxlength="50" minlength="5" title="" placeholder="Пароль" required>
+                        <span class="error-message">У вас косяк в инпуте!</span>
+                        <span class="input-icon"></span>
+                    </div>
+                    <div class="profile__label invalid">
+                        <input name="reg-pass-confirm" type="password" class="profile__input js-profile-reg-input reg-pass-confirm" maxlength="50" minlength="5" title="" placeholder="Повторите пароль" required>
+                        <span class="error-message">У вас косяк в инпуте!</span>
+                        <span class="input-icon"></span>
+                    </div>
+                    <div class="profile__switch-registry">
+                        <div class="switch profile__switch-item">
+                            <input class="switch__input" type="checkbox" id="regSwitchOn" checked>
+                            <label data-class="js-submit-reg" aria-hidden="true" class="switch__label js-disable-by-switch" for="regSwitchOn">On</label>
+                            <div aria-hidden="true" class="switch__marker"></div>
+                        </div>
+                        <a href="#">Я прочел условия и даю согласие на обработку данных</a>
+                    </div>
+                    <button type="submit" class="dark-btn profile__reg-btn js-submit-reg">Зарегистрироваться</button>
+                    <button data-to-class="js-profile-join" class="btn profile__reg-btn js-profile__tab">Войти</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 
 <!-- overlays: pass recovery -->
 <section id="pass-recovery" class="pass-recovery js-overlay">
-    <div class="pass-recovery__container">
+    <div class="pass-recovery__wrapper">
+        <div class="pass-recovery__container">
+            <div class="pass-recovery__top-line">
+                <h3 class="pass-recovery__title">Восстановление пароля</h3>
+                <button class="pass-recovery__close js-close-overlays">
+                    Закрыть окно
+                    <svg width="22" height="22" aria-hidden="true" role="presentation">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                    </svg>
+                </button>
+            </div>
 
-        <div class="pass-recovery__top-line">
-            <h3 class="pass-recovery__title">Восстановление пароля</h3>
-            <button class="pass-recovery__close js-close-overlays">
-                Закрыть окно
-                <svg width="22" height="22" aria-hidden="true" role="presentation">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-                </svg>
-            </button>
+            <p class="pass-recovery__text">
+                Пожалуйста, введите Ваш адрес электронной почты, на который мы можем выслать инструкцию для смены пароля.
+            </p>
+            <form action="#" class="pass-recovery__form">
+                <div class="pass-recovery__label invalid">
+                    <input name="pass-recovery" type="text" class="pass-recovery__input js-pass-recovery" maxlength="50" minlength="5" title="" placeholder="Введите свой email" required>
+                    <span class="error-message">Исправь косяк в поле!</span>
+                </div>
+                <div class="pass-recovery__btns-block">
+                    <button type="submit" class="dark-btn pass-recovery__btn js-submit-pass-recovery">Восстановить</button>
+                    <a data-overlay-id="profile-block" class="btn pass-recovery__btn js-overlay-btn">Я вспомнил пароль</a>
+                </div>
+            </form>
         </div>
-
-        <p class="pass-recovery__text">
-            Пожалуйста, введите Ваш адрес электронной почты, на который мы можем выслать инструкцию для смены пароля.
-        </p>
-        <form action="#" class="pass-recovery__form">
-            <div class="pass-recovery__label invalid">
-                <input name="pass-recovery" type="text" class="pass-recovery__input js-pass-recovery" maxlength="50" minlength="5" title="" placeholder="Введите свой email" required>
-                <span class="error-message">Исправь косяк в поле!</span>
-            </div>
-            <div class="pass-recovery__btns-block">
-                <button type="submit" class="dark-btn pass-recovery__btn js-submit-pass-recovery">Восстановить</button>
-                <a data-overlay-id="profile-block" class="btn pass-recovery__btn js-overlay-btn">Я вспомнил пароль</a>
-            </div>
-        </form>
     </div>
 </section>
 
@@ -298,272 +297,272 @@
 
 <!-- overlays: cart -->
 <div id="add-cart-overlay" class="add-to-cart js-overlay">
-    <div class="add-to-cart__container">
-
-        <div class="add-to-cart__top-line">
-            <p class="add-to-cart__title">Добавить в корзину</p>
-            <button class="add-to-cart__close js-close-overlays">
-                Закрыть окно
-                <svg width="22" height="22" aria-hidden="true" role="presentation">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-                </svg>
-            </button>
-        </div>
-
-        <form action="#" class="add-to-cart__form-container">
-            <div class="add-to-cart__product">
-                <div class="add-to-cart__product-container">
-                    <div class="row add-to-cart__row">
-                        <div class="col-12 col-sm-3 col-lg-2">
-                            <div class="add-to-cart__img">
-                                <img src="img/temp__img/item__1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-9 col-lg-10">
-                            <div class="row add-to-cart__row">
-                                <div class="col-12 col-lg-7">
-                                    <div class="add-to-cart__body">
-                                        <div class="add-to-cart__features">
-                                            <span class="add-to-cart__features-item">-10%</span>
-                                        </div>
-                                        <a href="product.html" class="add-to-cart__name">Страница товара - без комментариев</a>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-lg-5">
-                                    <div class="add-to-cart__count-container">
-                                        <div class="add-to-cart__count">
-                                            <button class="add-to-cart__minus">-</button>
-                                            <input type="number" min="1" value="1">
-                                            <button class="add-to-cart__plus">+</button>
-                                        </div>
-                                        <div class="add-to-cart__price-one">2578 Р./шт.</div>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="add-to-cart__property-container">
-
-
-                                        <div class="add-to-cart__prop-section">
-                                            <p data-find-id="collapseColorPropOver" class="add-to-cart__sub-title js-call-collapsed-element active">
-                                                Цвет
-                                                <svg width="9" height="5" aria-hidden="true" role="presentation">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
-                                                </svg>
-                                            </p>
-                                            <ul id="collapseColorPropOver" class="add-to-cart__list js-property-list active">
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__color js-property-item">
-                                                        <div class="add-to-cart__color-img">
-                                                            <img src="img/temp__img/color__img-3.png" alt="Красный цвет">
-                                                        </div>
-                                                        <span class="add-to-cart__color-value">Красный</span>
-                                                    </div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__color js-property-item active">
-                                                        <div class="add-to-cart__color-img">
-                                                            <img src="img/temp__img/color__img-1.png" alt="Серый цвет">
-                                                        </div>
-                                                        <span class="add-to-cart__color-value">Серый</span>
-                                                    </div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__color js-property-item">
-                                                        <div class="add-to-cart__color-img">
-                                                            <img src="img/temp__img/color__img-4.png" alt="Зеленый цвет">
-                                                        </div>
-                                                        <span class="add-to-cart__color-value">Зеленый</span>
-                                                    </div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__color js-property-item">
-                                                        <div class="add-to-cart__color-img">
-                                                            <img src="img/temp__img/color__img-2.png" alt="Фиолетовый цвет">
-                                                        </div>
-                                                        <span class="add-to-cart__color-value">Фиолетовый</span>
-                                                    </div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__color js-property-item">
-                                                        <div class="add-to-cart__color-img">
-                                                            <img src="img/temp__img/color__img-5.png" alt="Бирюзовый цвет">
-                                                        </div>
-                                                        <span class="add-to-cart__color-value">Бирюзовый</span>
-                                                    </div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__color js-property-item">
-                                                        <div class="add-to-cart__color-img">
-                                                            <img src="img/temp__img/color__img-6.png" alt="Золотой цвет">
-                                                        </div>
-                                                        <span class="add-to-cart__color-value">Золотой</span>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="add-to-cart__prop-section">
-                                            <p data-find-id="collapseResistPropOver" class="add-to-cart__sub-title js-call-collapsed-element">
-                                                Сопротивление
-                                                <svg width="9" height="5" aria-hidden="true" role="presentation">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
-                                                </svg>
-                                            </p>
-                                            <ul id="collapseResistPropOver" class="add-to-cart__list js-property-list">
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item active">0.18 (4 койла 55)</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">175 121 (44 койла 155)</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">2.18 (0 койла 0.111)</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">12.18 (1 койла 0.1)</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">0.18 (4 койла 5)</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">0.18 (4 койла 5)</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">0.18 (4 койла 55)</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">175 121 (44 койла 155)</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">2.18 (0 койла 0.111)</div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="add-to-cart__prop-section">
-                                            <p data-find-id="collapseBatterySizePropOver" class="add-to-cart__sub-title js-call-collapsed-element">
-                                                Объем аккумулятора
-                                                <svg width="9" height="5" aria-hidden="true" role="presentation">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
-                                                </svg>
-                                            </p>
-                                            <ul id="collapseBatterySizePropOver" class="add-to-cart__list js-property-list">
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">650</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">900</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">1650</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item active">1900</div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div class="add-to-cart__prop-section">
-                                            <p data-find-id="collapseNicoPropOver" class="add-to-cart__sub-title js-call-collapsed-element">
-                                                Никотин (мг/мл)
-                                                <svg width="9" height="5" aria-hidden="true" role="presentation">
-                                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
-                                                </svg>
-                                            </p>
-                                            <ul id="collapseNicoPropOver" class="add-to-cart__list js-property-list">
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item active">3</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">6</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">13</div>
-                                                </li>
-                                                <li class="add-to-cart__item">
-                                                    <div class="add-to-cart__item-prop js-property-item">16</div>
-                                                </li>
-                                            </ul>
-                                        </div>
-
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="add-to-cart__action">
-                        <a href="#" class="add-to-cart__action-item add-to-cart__action-item--favorite">
-                            В избранное
-                            <svg width="22" height="22" aria-hidden="true" role="presentation">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
-                            </svg>
-                        </a>
-                        <a href="#" class="add-to-cart__action-item add-to-cart__action-item--compare">
-                            К сравнению
-                            <svg width="22" height="22" aria-hidden="true" role="presentation">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="add-to-cart__bottom-line">
-                <div class="add-to-cart__result">
-                    <p>
-                        Товар на сумму: <span>2 578 Р.</span>
-                    </p>
-                </div>
-                <div class="add-to-cart__result-btns">
-                    <a class="silver-btn add-to-cart__btn js-close-overlays">
-                        Продолжить покупки
-                    </a>
-                    <button type="submit" class="yellow-btn add-to-cart__btn">
-                        Перейти в корзину
-                    </button>
-                </div>
-            </div>
-
-            <div class="add-to-cart__delivery-line">
-                <div class="add-to-cart__delivery">
-                    <svg width="40" height="28" aria-hidden="true" role="presentation">
-                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delivery-truck"></use>
+    <div class="add-to-cart__wrapper">
+        <div class="add-to-cart__container">
+            <div class="add-to-cart__top-line">
+                <p class="add-to-cart__title">Добавить в корзину</p>
+                <button class="add-to-cart__close js-close-overlays">
+                    Закрыть окно
+                    <svg width="22" height="22" aria-hidden="true" role="presentation">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
                     </svg>
-                    <p class="add-to-cart__pay-delivery">До бесплатной доставки осталось: <span>2 564 Р.</span></p>
-                    <p class="add-to-cart__free-delivery hide">Поздравляем! У Вас бесплатная доставка.</p>
-                </div>
-                <a href="catalog.html" class="dark-btn add-to-cart__delivery-btn">Перейти в каталог</a>
+                </button>
             </div>
-        </form>
 
+            <form action="#" class="add-to-cart__form-container">
+                <div class="add-to-cart__product">
+                    <div class="add-to-cart__product-container">
+                        <div class="row add-to-cart__row">
+                            <div class="col-12 col-sm-3 col-lg-2">
+                                <div class="add-to-cart__img">
+                                    <img src="img/temp__img/item__1.png" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-9 col-lg-10">
+                                <div class="row add-to-cart__row">
+                                    <div class="col-12 col-lg-7">
+                                        <div class="add-to-cart__body">
+                                            <div class="add-to-cart__features">
+                                                <span class="add-to-cart__features-item">-10%</span>
+                                            </div>
+                                            <a href="product.html" class="add-to-cart__name">Страница товара - без комментариев</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-5">
+                                        <div class="add-to-cart__count-container">
+                                            <div class="add-to-cart__count">
+                                                <button class="add-to-cart__minus">-</button>
+                                                <input type="number" min="1" value="1">
+                                                <button class="add-to-cart__plus">+</button>
+                                            </div>
+                                            <div class="add-to-cart__price-one">2578 Р./шт.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="add-to-cart__property-container">
+
+
+                                            <div class="add-to-cart__prop-section">
+                                                <p data-find-id="collapseColorPropOver" class="add-to-cart__sub-title js-call-collapsed-element active">
+                                                    Цвет
+                                                    <svg width="9" height="5" aria-hidden="true" role="presentation">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                                    </svg>
+                                                </p>
+                                                <ul id="collapseColorPropOver" class="add-to-cart__list js-property-list active">
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__color js-property-item">
+                                                            <div class="add-to-cart__color-img">
+                                                                <img src="img/temp__img/color__img-3.png" alt="Красный цвет">
+                                                            </div>
+                                                            <span class="add-to-cart__color-value">Красный</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__color js-property-item active">
+                                                            <div class="add-to-cart__color-img">
+                                                                <img src="img/temp__img/color__img-1.png" alt="Серый цвет">
+                                                            </div>
+                                                            <span class="add-to-cart__color-value">Серый</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__color js-property-item">
+                                                            <div class="add-to-cart__color-img">
+                                                                <img src="img/temp__img/color__img-4.png" alt="Зеленый цвет">
+                                                            </div>
+                                                            <span class="add-to-cart__color-value">Зеленый</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__color js-property-item">
+                                                            <div class="add-to-cart__color-img">
+                                                                <img src="img/temp__img/color__img-2.png" alt="Фиолетовый цвет">
+                                                            </div>
+                                                            <span class="add-to-cart__color-value">Фиолетовый</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__color js-property-item">
+                                                            <div class="add-to-cart__color-img">
+                                                                <img src="img/temp__img/color__img-5.png" alt="Бирюзовый цвет">
+                                                            </div>
+                                                            <span class="add-to-cart__color-value">Бирюзовый</span>
+                                                        </div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__color js-property-item">
+                                                            <div class="add-to-cart__color-img">
+                                                                <img src="img/temp__img/color__img-6.png" alt="Золотой цвет">
+                                                            </div>
+                                                            <span class="add-to-cart__color-value">Золотой</span>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="add-to-cart__prop-section">
+                                                <p data-find-id="collapseResistPropOver" class="add-to-cart__sub-title js-call-collapsed-element">
+                                                    Сопротивление
+                                                    <svg width="9" height="5" aria-hidden="true" role="presentation">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                                    </svg>
+                                                </p>
+                                                <ul id="collapseResistPropOver" class="add-to-cart__list js-property-list">
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item active">0.18 (4 койла 55)</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">175 121 (44 койла 155)</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">2.18 (0 койла 0.111)</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">12.18 (1 койла 0.1)</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">0.18 (4 койла 5)</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">0.18 (4 койла 5)</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">0.18 (4 койла 55)</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">175 121 (44 койла 155)</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">2.18 (0 койла 0.111)</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="add-to-cart__prop-section">
+                                                <p data-find-id="collapseBatterySizePropOver" class="add-to-cart__sub-title js-call-collapsed-element">
+                                                    Объем аккумулятора
+                                                    <svg width="9" height="5" aria-hidden="true" role="presentation">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                                    </svg>
+                                                </p>
+                                                <ul id="collapseBatterySizePropOver" class="add-to-cart__list js-property-list">
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">650</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">900</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">1650</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item active">1900</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="add-to-cart__prop-section">
+                                                <p data-find-id="collapseNicoPropOver" class="add-to-cart__sub-title js-call-collapsed-element">
+                                                    Никотин (мг/мл)
+                                                    <svg width="9" height="5" aria-hidden="true" role="presentation">
+                                                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                                                    </svg>
+                                                </p>
+                                                <ul id="collapseNicoPropOver" class="add-to-cart__list js-property-list">
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item active">3</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">6</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">13</div>
+                                                    </li>
+                                                    <li class="add-to-cart__item">
+                                                        <div class="add-to-cart__item-prop js-property-item">16</div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="add-to-cart__action">
+                            <a href="#" class="add-to-cart__action-item add-to-cart__action-item--favorite">
+                                В избранное
+                                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
+                                </svg>
+                            </a>
+                            <a href="#" class="add-to-cart__action-item add-to-cart__action-item--compare">
+                                К сравнению
+                                <svg width="22" height="22" aria-hidden="true" role="presentation">
+                                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-to-cart__bottom-line">
+                    <div class="add-to-cart__result">
+                        <p>
+                            Товар на сумму: <span>2 578 Р.</span>
+                        </p>
+                    </div>
+                    <div class="add-to-cart__result-btns">
+                        <a class="silver-btn add-to-cart__btn js-close-overlays">
+                            Продолжить покупки
+                        </a>
+                        <button type="submit" class="yellow-btn add-to-cart__btn">
+                            Перейти в корзину
+                        </button>
+                    </div>
+                </div>
+
+                <div class="add-to-cart__delivery-line">
+                    <div class="add-to-cart__delivery">
+                        <svg width="40" height="28" aria-hidden="true" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delivery-truck"></use>
+                        </svg>
+                        <p class="add-to-cart__pay-delivery">До бесплатной доставки осталось: <span>2 564 Р.</span></p>
+                        <p class="add-to-cart__free-delivery hide">Поздравляем! У Вас бесплатная доставка.</p>
+                    </div>
+                    <a href="catalog.html" class="dark-btn add-to-cart__delivery-btn">Перейти в каталог</a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<!-- overlays: pass recovery -->
+<!-- overlays: product unavailable -->
 <section id="unavailable" class="unavailable js-overlay">
-    <div class="unavailable__container">
-
-        <div class="unavailable__top-line">
-            <h3 class="unavailable__title">Сообщение о поступлении товара</h3>
-            <button class="unavailable__close js-close-overlays">
-                Закрыть окно
-                <svg width="22" height="22" aria-hidden="true" role="presentation">
-                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
-                </svg>
-            </button>
+    <div class="unavailable__wrapper">
+        <div class="unavailable__container">
+            <div class="unavailable__top-line">
+                <h3 class="unavailable__title">Сообщение о поступлении товара</h3>
+                <button class="unavailable__close js-close-overlays">
+                    Закрыть окно
+                    <svg width="22" height="22" aria-hidden="true" role="presentation">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
+                    </svg>
+                </button>
+            </div>
+            <p class="unavailable__text">
+                Пожалуйста, введите Ваш адрес электронной почты, с помощью которого мы сможем оповестить вас о наличии данного товара
+            </p>
+            <form action="#" class="unavailable__form">
+                <div class="unavailable__label valid">
+                    <input name="unavailable" type="text" class="unavailable__input" maxlength="50" minlength="5" title="" placeholder="Введите свой email" required>
+                    <span class="error-message"></span>
+                    <span class="input-icon"></span>
+                </div>
+                <div class="unavailable__btns-block">
+                    <button type="submit" class="dark-btn unavailable__btn">Восстановить</button>
+                </div>
+            </form>
         </div>
-
-        <p class="unavailable__text">
-            Пожалуйста, введите Ваш адрес электронной почты, с помощью которого мы сможем оповестить вас о наличии данного товара
-        </p>
-        <form action="#" class="unavailable__form">
-            <div class="unavailable__label valid">
-                <input name="unavailable" type="text" class="unavailable__input" maxlength="50" minlength="5" title="" placeholder="Введите свой email" required>
-                <span class="error-message"></span>
-                <span class="input-icon"></span>
-            </div>
-            <div class="unavailable__btns-block">
-                <button type="submit" class="dark-btn unavailable__btn">Восстановить</button>
-            </div>
-        </form>
     </div>
 </section>

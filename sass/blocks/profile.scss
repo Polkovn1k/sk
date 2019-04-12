@@ -5,7 +5,8 @@
     z-index: 1000;
     @include full-absolute();
     top: $gradient-breakpoint-mobile + $gradient-breakpoint-mobile-end;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     background: $white;
     @media (min-width: $md) {
         top: $gradient-breakpoint-desktop + $gradient-breakpoint-mobile-end;
@@ -22,19 +23,28 @@
         }
     }
 
-    &__container {
-        padding: $grid-padding;
-        background: $white;
+    &__wrapper {
         @media (min-width: $lg) {
+            padding-top: 20px;
             max-height: 100vh;
-            overflow: auto;
-            border-radius: 5px;
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
             width: 475px;
             margin: 0 auto;
+        }
+    }
+
+    &__container {
+        padding: $grid-padding;
+        background: $white;
+        @media (min-width: $lg) {
+            overflow: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            padding: $grid-padding;
+            background: $white;
         }
     }
 //меню табов

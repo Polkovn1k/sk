@@ -131,6 +131,16 @@ var modals = {
         });
     },
 
+    listenEscForCloseOverlays: () => {
+        document.addEventListener("keydown", (event) => {
+            if (event.keyCode === 27) {
+                modals._hideOverlays();
+                modals._deleteButtonsStateForAllBtn();
+                modals._toggleHtmlScrollForOverlays("enable");
+            }
+        });
+    },
+
     closeAllOverlaysBtn: () => {
         document.querySelectorAll(".js-close-overlays").forEach((btnCloseAllOverlay) => {
             btnCloseAllOverlay.addEventListener("click", (event) => {
@@ -212,6 +222,7 @@ var modals = {
     },
 
     init: () => {
+        modals.listenEscForCloseOverlays();
         modals.listenClickForBtnWhichCallOverlay();
         modals.closeAllOverlaysBtn();
         modals.listenTurnDevice();

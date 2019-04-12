@@ -1,9 +1,9 @@
 .add-to-cart {
     display: none;
-    font-family: $font;
     position: fixed;
     z-index: 1000;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     @include full-absolute();
     top: 0;
     background-color: transparentize($black, 0.5);
@@ -12,9 +12,9 @@
         display: block;
     }
 
-    &__container {
+    &__wrapper {
+        padding-top: 20px;
         max-height: 100vh;
-        overflow: auto;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -22,6 +22,11 @@
         width: calc(100% - #{$two-grid-padding});
         max-width: 705px;
         margin: 0 auto;
+    }
+
+    &__container {
+        overflow: auto;
+        margin-bottom: 20px;
     }
 
     &__top-line {

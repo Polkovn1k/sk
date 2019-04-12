@@ -1,9 +1,9 @@
 .city-pick-over {
     display: none;
-    font-family: $font;
     position: fixed;
     z-index: 1000;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     @include full-absolute();
     top: 0;
     background-color: transparentize($black, 0.5);
@@ -12,24 +12,30 @@
         display: block;
     }
 
-    &__container {
+    &__main-wrapper {
+        padding-top: 20px;
         max-height: 100vh;
-        overflow: auto;
-        border-radius: 5px;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: calc(100% - #{$two-grid-padding});
+        max-width: 705px;
         margin: 0 auto;
-        padding: $grid-padding;
-        background: $white;
         @media (min-width: $sm) {
             width: 475px;
         }
         @media (min-width: $lg) {
             width: 750px;
         }
+    }
+
+    &__container {
+        overflow: auto;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        padding: $grid-padding;
+        background: $white;
     }
 
     &__top-line {
