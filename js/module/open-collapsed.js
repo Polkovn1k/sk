@@ -3,10 +3,10 @@ if (document.querySelector(".open-collapsed")) {
 
     var expandCollapsedItems = {
 
-        btnForCollapse: document.querySelectorAll(".js-call-collapsed-element"),
-
-        showCollapsedElement: (element) => {
-            element.forEach(function(clickedBtn) {
+        showCollapsedElement: () => {
+            var btnForClick = document.querySelectorAll(".js-call-collapsed-element:not(.js-inited)");
+            btnForClick.forEach(function(clickedBtn) {
+                expandCollapsedItems._addInitializedStatus(clickedBtn);
                 clickedBtn.addEventListener("click", (event) => {
                     var currentCollapsedElement = expandCollapsedItems._findClickedBtnsDataToId(clickedBtn);
                     //Если нажатая кнопка содержит active то контейнер схлопываем
@@ -55,32 +55,15 @@ if (document.querySelector(".open-collapsed")) {
             collapsedElement.style.maxHeight = collapsedElement.scrollHeight + "px";
         },
 
-
-
-
+//Присваиваем статус "инициализированна"
         _addInitializedStatus: (clickedBtn) => {
-            clickedBtn.forEach((clickedBtn) => {
-                clickedBtn.classList.add("js-initialized");
-            });
+            clickedBtn.classList.add("js-inited");
         },
 
         init: () => {
-            expandCollapsedItems.showCollapsedElement(expandCollapsedItems.btnForCollapse);
-            expandCollapsedItems._addInitializedStatus(expandCollapsedItems.btnForCollapse);
+            expandCollapsedItems.showCollapsedElement();
         },
-
-        /*afterInit: () => {
-            var afterInit = document.querySelectorAll(".js-call-collapsed-element");
-            afterInit.forEach((afterInitElement) => {
-                if (!afterInitElement.classList.contains("js-initialized")) {
-                    console.dir(afterInitElement);
-                    expandCollapsedItems.showCollapsedElement(afterInitElement);
-                    expandCollapsedItems._addInitializedStatus(afterInitElement);
-                }
-            });
-        },*/
     };
     expandCollapsedItems.init();
-    //expandCollapsedItems.afterInit();
 
 }
