@@ -19,6 +19,7 @@
     }
 
     &__section-item {
+        width: 100%;
         margin-bottom: 15px;
         display: flex;
         flex-wrap: wrap;
@@ -65,6 +66,7 @@
             font-weight: 400;
             line-height: 1.38;
             color: $white;
+            z-index: 10;
         }
     }
 //------------------
@@ -77,7 +79,7 @@
         line-height: 1.38;
         color: $communication-add-color;
         @media (min-width: $lg) {
-            width: 50%;
+            width: 60%;
             margin-bottom: 0;
             margin-right: 15px;
         }
@@ -85,7 +87,7 @@
 
     &__text--switch {
         @media (min-width: $lg) {
-            width: calc(50% - #{$mix-calc-switch-width + $mix-calc-switch-margin-right});
+            width: calc(60% - #{$mix-calc-switch-width + $mix-calc-switch-margin-right});
             margin-bottom: 0;
             margin-right: 15px;
         }
@@ -96,6 +98,7 @@
         display: flex;
         vertical-align: middle;
         input {
+            padding: 0 7px;
             flex-grow: 1;
             height: $common-item-height;
             width: 100px;
@@ -103,12 +106,13 @@
             border: none;
             border-top: 1px solid $border-color;
             border-bottom: 1px solid $border-color;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 400;
             line-height: 1.33;
             color: $communication-add-color;
             text-align: center;
             background: transparent;
+            box-shadow: none;
             -moz-appearance: textfield;
         }
         input::-webkit-outer-spin-button,
@@ -199,6 +203,43 @@
         }
         .mix-calc__marker-vg {
             display: none;
+        }
+    }
+//------------------
+    &__flavor-input {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 10px;
+        input {
+            flex-grow: 1;
+            padding: 0 7px;
+            height: $common-item-height;
+            line-height: $common-item-height;
+            border: 1px solid $border-color;
+            border-radius: 5px;
+            box-shadow: none;
+        }
+        @media (min-width: $sm) {
+            width: 60%;
+            margin-bottom: 0;
+            margin-right: 15px;
+        }
+    }
+
+    &__del-element {
+        flex-shrink: 0;
+        margin-left: 5px;
+        background: transparent;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 0;
+        svg {
+            fill: $communication-add-color;
+        }
+        @media (min-width: $sm) {
+            margin: 0 5px;
         }
     }
 }
