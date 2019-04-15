@@ -2,23 +2,25 @@
     <div class="mix-calc__container">
 
         <div class="mix-calc__section">
-            <div class="mix-calc__section-item">
-                <p class="mix-calc__text">Объём готовой жидкости (мл)</p>
-                <div class="mix-calc__count-container">
-                    <div class="mix-calc__count">
-                        <button class="mix-calc__minus">-</button>
-                        <input type="number" min="1" value="1" placeholder="мл">
-                        <button class="mix-calc__plus">+</button>
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-12">
+                    <div class="mix-calc__section-item">
+                        <p class="mix-calc__text">Объём готовой жидкости (мл)</p>
+                        <div class="mix-calc__count">
+                            <button class="mix-calc__minus">-</button>
+                            <input type="number" placeholder="Ввести (мл)">
+                            <button class="mix-calc__plus">+</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mix-calc__section-item">
-                <p class="mix-calc__text">Содержание никотина в жидкости (мг/мл)</p>
-                <div class="mix-calc__count-container">
-                    <div class="mix-calc__count">
-                        <button class="mix-calc__minus">-</button>
-                        <input type="number" min="1" value="1" placeholder="мг/мл">
-                        <button class="mix-calc__plus">+</button>
+                <div class="col-12 col-md-6 col-lg-12">
+                    <div class="mix-calc__section-item">
+                        <p class="mix-calc__text">Содержание никотина в жидкости (мг/мл)</p>
+                        <div class="mix-calc__count">
+                            <button class="mix-calc__minus">-</button>
+                            <input type="number" placeholder="Ввести (мг/мл)">
+                            <button class="mix-calc__plus">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -26,38 +28,49 @@
 
         <div class="mix-calc__section">
             <p class="mix-calc__section-title">Соотношение PG и VG</p>
-            <div class="mix-calc__section-item">
-                <p class="mix-calc__text">Вода (%)</p>
-                <div class="mix-calc__count-container">
-                    <div class="mix-calc__count">
-                        <button class="mix-calc__minus">-</button>
-                        <input type="number" min="1" value="1" placeholder="%">
-                        <button class="mix-calc__plus">+</button>
+            <div class="row">
+                <div class="col-12">
+                    <div class="mix-calc__section-item"></div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-12">
+                    <div class="mix-calc__section-item">
+                        <p class="mix-calc__text">Вода (%)</p>
+                        <div class="mix-calc__count">
+                            <button class="mix-calc__minus">-</button>
+                            <input type="number" placeholder="Ввести (%)">
+                            <button class="mix-calc__plus">+</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mix-calc__section-item">
-                <p class="mix-calc__text">Крепость никотиновой основы (мг/мл)</p>
-                <div class="switch mix-calc__switch">
-                    <input class="switch__input" type="checkbox" id="switchFooterOn" checked>
-                    <label data-class="js-footer-switch" aria-hidden="true" class="switch__label js-disable-by-switch" for="switchFooterOn">On</label>
-                    <div aria-hidden="true" class="switch__marker"></div>
-                </div>
-                <div class="mix-calc__count-container">
-                    <div class="mix-calc__count">
-                        <button class="mix-calc__minus">-</button>
-                        <input type="number" min="1" value="1" placeholder="мг/мл">
-                        <button class="mix-calc__plus">+</button>
+                <div class="col-12 col-md-6 col-lg-12">
+                    <div class="mix-calc__section-item">
+                        <p class="mix-calc__text">Крепость никотиновой основы (мг/мл)</p>
+                        <div class="switch mix-calc__switch">
+                            <input class="switch__input mix-calc__input" type="checkbox" id="switchVgPg" checked>
+                            <label aria-hidden="true" class="switch__label mix-calc__switch-label" for="switchVgPg">
+                                <span>PG</span>
+                                <span>VG</span>
+                            </label>
+                            <div aria-hidden="true" class="switch__marker mix-calc__marker">
+                                <span class="mix-calc__marker-pg">PG</span>
+                                <span class="mix-calc__marker-vg">VG</span>
+                            </div>
+                        </div>
+                        <div class="mix-calc__count">
+                            <button class="mix-calc__minus">-</button>
+                            <input type="number" placeholder="Ввести (мг/мл)">
+                            <button class="mix-calc__plus">+</button>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="mix-calc__section-item">
-                <p class="mix-calc__text">Количество капель в 1 мл. (мл)</p>
-                <div class="mix-calc__count-container">
-                    <div class="mix-calc__count">
-                        <button class="mix-calc__minus">-</button>
-                        <input type="number" min="1" value="1" placeholder="мл">
-                        <button class="mix-calc__plus">+</button>
+                <div class="col-12 col-md-6 col-lg-12">
+                    <div class="mix-calc__section-item">
+                        <p class="mix-calc__text">Количество капель в 1 мл. (мл)</p>
+                        <div class="mix-calc__count">
+                            <button class="mix-calc__minus">-</button>
+                            <input type="number" placeholder="Ввести (мл)">
+                            <button class="mix-calc__plus">+</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,12 +88,10 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
                     </svg>
                 </button>
-                <div class="mix-calc__count-container">
-                    <div class="mix-calc__count">
-                        <button class="mix-calc__minus">-</button>
-                        <input type="number" min="1" value="1" placeholder="%">
-                        <button class="mix-calc__plus">+</button>
-                    </div>
+                <div class="mix-calc__count">
+                    <button class="mix-calc__minus">-</button>
+                    <input type="number" placeholder="Ввести (%)">
+                    <button class="mix-calc__plus">+</button>
                 </div>
             </div>
             <div class="mix-calc__section-item">
@@ -93,12 +104,10 @@
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#close"></use>
                     </svg>
                 </button>
-                <div class="mix-calc__count-container">
-                    <div class="mix-calc__count">
-                        <button class="mix-calc__minus">-</button>
-                        <input type="number" min="1" value="1" placeholder="%">
-                        <button class="mix-calc__plus">+</button>
-                    </div>
+                <div class="mix-calc__count">
+                    <button class="mix-calc__minus">-</button>
+                    <input type="number" placeholder="Ввести (%)">
+                    <button class="mix-calc__plus">+</button>
                 </div>
             </div>
         </div>
