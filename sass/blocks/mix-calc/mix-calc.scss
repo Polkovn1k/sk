@@ -18,9 +18,16 @@
         margin-bottom: 0;
     }
 
+    &__col {
+        margin-bottom: 15px;
+    }
+
+    &__col:last-child {
+        margin-bottom: 0;
+    }
+
     &__section-item {
         width: 100%;
-        margin-bottom: 15px;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
@@ -241,5 +248,12 @@
         @media (min-width: $sm) {
             margin: 0 5px;
         }
+    }
+
+    &__btn {
+        margin-top: 20px;
+        width: 100%;
+        height: $common-item-height;
+        line-height: $common-item-height;
     }
 }
