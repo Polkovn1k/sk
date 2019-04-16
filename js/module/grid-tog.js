@@ -13,10 +13,14 @@ if (document.querySelector(".grid-tog")) {
 
         _switch: (opt) => {
             document.querySelectorAll(".js-sort-view").forEach(function(elements) {
-                document.getElementById("products-list-container").classList.remove(elements.dataset.toClass);
+                document.querySelectorAll(".js-products-list-container").forEach((container) => {
+                    container.classList.remove(elements.dataset.toClass);
+                });
                 elements.classList.remove("active-btn");
             });
-            document.getElementById("products-list-container").classList.add(opt.dataset.toClass);
+            document.querySelectorAll(".js-products-list-container").forEach((container) => {
+                container.classList.add(opt.dataset.toClass);
+            });
             opt.classList.add("active-btn");
         },
 

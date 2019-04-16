@@ -1,9 +1,23 @@
 .search-result {
     padding-bottom: 30px;
 
-    &__add-sort {
+    &__sort-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         margin-bottom: 10px;
     }
+
+    &__sort {
+        display: none;
+        @media (min-width: $lg) {
+            display: flex;
+            padding: 0;
+            background: transparent;
+        }
+    }
+
+    &__add-sort {}
 
     &__container {
         display: none;
