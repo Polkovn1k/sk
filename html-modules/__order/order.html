@@ -4,7 +4,11 @@
         <section class="order__section">
             <h3 class="order__title">1. Регион получения</h3>
             <p class="order__text">Укажите ваш город или населенный пункт и узнайте о стоимости и способах доставки</p>
-            <div class="order__checked active">Казань</div>
+            <label class="order__label invalid">
+                <input type="text" class="order__input" placeholder="Выберите город" required>
+                <span class="error-message">Выберите из списка</span>
+                <span class="input-icon"></span>
+            </label>
         </section>
 
         <section class="order__section">
@@ -364,25 +368,30 @@
             <p class="order__text">Пожалуйста, указывайте реальные данные — у вас могут попросить паспорт, прежде чем вручить оплаченный заказ.</p>
             <div class="order__inner-container">
                 <div class="order__inputs">
-                    <label class="order__label js-order-switch">
+                    <label class="order__label valid">
                         <input type="text" class="order__input" placeholder="Фамилия Имя Отчество" required>
                         <span class="error-message"></span>
+                        <span class="input-icon"></span>
                     </label>
-                    <label class="order__label js-order-switch">
+                    <label class="order__label">
                         <input type="text" class="order__input" placeholder="Индекс" required>
                         <span class="error-message"></span>
+                        <span class="input-icon"></span>
                     </label>
-                    <label class="order__label js-order-switch">
+                    <label class="order__label">
                         <input type="number" class="order__input" placeholder="Номер телефона" required>
                         <span class="error-message"></span>
+                        <span class="input-icon"></span>
                     </label>
-                    <label class="order__label js-order-switch">
+                    <label class="order__label">
                         <input type="text" class="order__input" placeholder="Адрес" required>
                         <span class="error-message"></span>
+                        <span class="input-icon"></span>
                     </label>
-                    <label class="order__label js-order-switch invalid">
+                    <label class="order__label invalid">
                         <input type="email" class="order__input" placeholder="Адрес электронной почты" required>
                         <span class="error-message">У вас косяк в инпуте!</span>
+                        <span class="input-icon"></span>
                     </label>
                 </div>
                 <div class="order__switch">

@@ -51,29 +51,11 @@
         }
     }
 
-    &__checked {
-        position: relative;
-        padding: 0 20px;
-        height: 40px;
-        width: 100%;
-        line-height: $common-item-height;
-        font-size: 16px;
-        font-weight: 400;
-        color: $communication-add-color;
-        border-radius: 5px;
-        border: solid 1px $border-color;
-        @media (min-width: $lg) {
-            width: $order-lg-input-width;
-        }
-    }
-
-    &__checked.active,
     &__pay-tog.active {
         border-color: $green;
         cursor: default;
     }
 
-    &__checked.active::after,
     &__pay-tog.active::after {
         @include pseudo();
         top: 40%;
@@ -117,6 +99,7 @@
         transition: 0.3s ease;
         @media (min-width: $md) {
             width: calc(50% - #{$half-grid-padding});
+            margin-bottom: 0;
         }
         @media (min-width: $lg) {
             width: $order-lg-input-width;
@@ -160,7 +143,7 @@
     &__input {
         width: 100%;
         padding: 0 20px;
-        height: 40px;
+        height: $common-item-height;
         background: transparent;
         line-height: $common-item-height;
         font-size: 16px;
@@ -229,7 +212,7 @@
     }
 //валидация формы
     &__label.invalid {
-        input {
+        .order__input {
             border-color: $red;
         }
         .error-message {
@@ -244,6 +227,56 @@
             line-height: $profile-input-padding-botom - 5px;
             font-weight: 400;
             color: $red;
+        }
+        .input-icon {
+            display: block;
+            position: absolute;
+            top: 11px;
+            left: auto;
+            bottom: auto;
+            right: 13px;
+            transform: none;
+            overflow: hidden;
+            width: 17px;
+            height: 17px;
+            border: 1px solid $red;
+            border-radius: 50%;
+        }
+        .input-icon::before {
+            display: block;
+            background: $white;
+            width: 100%;
+            height: 100%;
+            content: "!";
+            font-size: 10px;
+            line-height: 15px;
+            color: $red;
+            text-align: center;
+
+        }
+    }
+
+    &__label.valid {
+        .order__input {
+            border-color: $green;
+        }
+        .error-message {
+            display: none;
+        }
+        .input-icon {
+            display: block;
+            position: absolute;
+            font-size: 0;
+            top: 20%;
+            left: auto;
+            bottom: auto;
+            right: 13px;
+            transform: rotate(135deg);
+            width: 15px;
+            height: 8px;
+            border: 2px solid $green;
+            border-bottom-color: transparent;
+            border-left-color: transparent;
         }
     }
 }
