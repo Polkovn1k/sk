@@ -155,6 +155,13 @@
         outline: none;
         box-shadow: none;
         transition: 0.3s ease;
+
+        -moz-appearance: textfield;
+    }
+
+    &__input::-webkit-outer-spin-button,
+    &__input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
     }
 
     &__input:last-child {
