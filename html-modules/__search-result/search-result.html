@@ -1,5 +1,18 @@
 <div class="search-result col-12">
 
+    <div class="add-sort search-result__add-sort">
+        <ul class="add-sort__list">
+            <li data-to-id="result-products" class="add-sort__item js-product-tab active">
+                <button>Товаров <span>272</span></button>
+            </li>
+            <li data-to-id="result-articles" class="add-sort__item js-product-tab js-hide-sort">
+                <button>Статей <span>19</span></button>
+            </li>
+            <li data-to-id="result-news" class="add-sort__item js-product-tab js-hide-sort">
+                <button>Новостей <span>4</span></button>
+            </li>
+        </ul>
+    </div>
     <div id="collapseSort" class="sort">
         <div class="sort__by-property">
             <div data-find-id="collapseSort" class="sort__title js-call-collapsed-element">
@@ -72,19 +85,6 @@
                 </li>
             </ul>
         </div>
-    </div>
-    <div class="add-sort search-result__add-sort">
-        <ul class="add-sort__list">
-            <li data-to-id="result-products" class="add-sort__item js-product-tab active">
-                <button>Товаров <span>272</span></button>
-            </li>
-            <li data-to-id="result-articles" class="add-sort__item js-product-tab">
-                <button>Статей <span>19</span></button>
-            </li>
-            <li data-to-id="result-news" class="add-sort__item js-product-tab">
-                <button>Новостей <span>4</span></button>
-            </li>
-        </ul>
     </div>
 
     <div id="result-products" class="search-result__container js-tabs-content active">
