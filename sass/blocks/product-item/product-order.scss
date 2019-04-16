@@ -120,6 +120,19 @@
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
+        svg {
+            display: none;
+        }
+    }
+//btn loader
+    &__btn.active {
+        font-size: 0;
+        vertical-align: middle;
+        svg {
+            fill: $main-color;
+            display: inline-block;
+            vertical-align: middle;
+        }
     }
 //Список особенностей
     &__list {

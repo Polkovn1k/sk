@@ -14,7 +14,7 @@
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s color ease, 0.3s border ease, 0.3s background ease;
 
     &:hover {
         background-color: $blue;
@@ -38,7 +38,7 @@
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s color ease, 0.3s border ease, 0.3s background ease;
 
     &:hover {
         background-color: $main-color;
@@ -63,7 +63,7 @@
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s color ease, 0.3s border ease, 0.3s background ease;
 
     &:hover {
         border-color: $blue;
@@ -87,7 +87,7 @@
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s color ease, 0.3s border ease, 0.3s background ease;
 
     &:hover {
         background: lighten($black, 20%);
@@ -110,7 +110,7 @@
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s color ease, 0.3s border ease, 0.3s background ease;
 
     &:hover {
         background: $add-red;
@@ -134,7 +134,7 @@
     border-radius: 5px;
     outline: none;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: 0.3s color ease, 0.3s border ease, 0.3s background ease;
 
     &:hover {
         opacity: 0.8;
