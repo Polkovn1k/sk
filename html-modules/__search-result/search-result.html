@@ -1,47 +1,95 @@
 <div class="search-result col-12">
 
-    <div class="search-result__sort-block">
-        <div class="add-sort search-result__add-sort">
-            <ul class="add-sort__list">
-                <li data-to-id="result-products" class="add-sort__item js-product-tab active">
-                    <button>Товаров <span>272</span></button>
+    <div id="collapseSort" class="sort">
+        <div class="sort__by-property">
+            <div data-find-id="collapseSort" class="sort__title js-call-collapsed-element">
+                Отсортировать по:
+                <svg width="15" height="8" aria-hidden="true" role="presentation">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                </svg>
+            </div>
+            <ul class="sort__list">
+                <li class="sort__item js-sort active down">
+                    <button>
+                        Алфавиту
+                        <svg width="6" height="3" aria-hidden="true" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                        </svg>
+                    </button>
                 </li>
-                <li data-to-id="result-articles" class="add-sort__item js-product-tab">
-                    <button>Статей <span>19</span></button>
+                <li class="sort__item js-sort">
+                    <button>
+                        Цене
+                        <svg width="6" height="3" aria-hidden="true" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                        </svg>
+                    </button>
                 </li>
-                <li data-to-id="result-news" class="add-sort__item js-product-tab">
-                    <button>Новостей <span>4</span></button>
+                <li class="sort__item js-sort">
+                    <button>
+                        Рейтингу
+                        <svg width="6" height="3" aria-hidden="true" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                        </svg>
+                    </button>
+                </li>
+                <li class="sort__item js-sort">
+                    <button>
+                        Скидке
+                        <svg width="6" height="3" aria-hidden="true" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                        </svg>
+                    </button>
+                </li>
+                <li class="sort__item js-sort">
+                    <button>
+                        Хитам
+                        <svg width="6" height="3" aria-hidden="true" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
+                        </svg>
+                    </button>
                 </li>
             </ul>
         </div>
-        <div class="sort search-result__sort">
-            <div class="sort__by-view">
-                <div class="sort__title">Вид</div>
-                <ul class="sort__view-list">
-                    <li class="sort__view-item">
-                        <button class="js-sort-view active-btn" data-to-class="grid-style">
-                            Grid Items
-                            <svg width="12" height="12" aria-hidden="true" role="presentation">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#grid-icon"></use>
-                            </svg>
-                        </button>
-                    </li>
-                    <li class="sort__view-item">
-                        <button class="js-sort-view list-style" data-to-class="list-style">
-                            List Items
-                            <svg width="13" height="12" aria-hidden="true" role="presentation">
-                                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#list-icon"></use>
-                            </svg>
-                        </button>
-                    </li>
-                </ul>
-            </div>
+        <div class="sort__by-view">
+            <div class="sort__title">Вид</div>
+            <ul class="sort__view-list">
+                <li class="sort__view-item">
+                    <button class="js-sort-view active-btn" data-to-class="grid-style">
+                        Grid Items
+                        <svg width="12" height="12" aria-hidden="true" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#grid-icon"></use>
+                        </svg>
+                    </button>
+                </li>
+                <li class="sort__view-item">
+                    <button class="js-sort-view list-style" data-to-class="list-style">
+                        List Items
+                        <svg width="13" height="12" aria-hidden="true" role="presentation">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#list-icon"></use>
+                        </svg>
+                    </button>
+                </li>
+            </ul>
         </div>
+    </div>
+    <div class="add-sort search-result__add-sort">
+        <ul class="add-sort__list">
+            <li data-to-id="result-products" class="add-sort__item js-product-tab active">
+                <button>Товаров <span>272</span></button>
+            </li>
+            <li data-to-id="result-articles" class="add-sort__item js-product-tab">
+                <button>Статей <span>19</span></button>
+            </li>
+            <li data-to-id="result-news" class="add-sort__item js-product-tab">
+                <button>Новостей <span>4</span></button>
+            </li>
+        </ul>
     </div>
 
     <div id="result-products" class="search-result__container js-tabs-content active">
         <ul class="search-result__products-list row no-gutters js-products-list-container grid-style">
-            <li class="search-result__products-item col-12 col-lg-4">
+            <li class="search-result__products-item col-12 col-lg-3">
                 <div class="catalog-product">
                     <div class="catalog-product__container">
                         <div class="features catalog-product__features">
@@ -110,7 +158,7 @@
                     </div>
                 </div>
             </li>
-            <li class="search-result__products-item col-12 col-lg-4">
+            <li class="search-result__products-item col-12 col-lg-3">
                 <div class="catalog-product">
                     <div class="catalog-product__container">
                         <div class="catalog-product__available">
@@ -178,7 +226,7 @@
                     </div>
                 </div>
             </li>
-            <li class="search-result__products-item col-12 col-lg-4">
+            <li class="search-result__products-item col-12 col-lg-3">
                 <div class="catalog-product">
                     <div class="catalog-product__container">
                         <div class="catalog-product__action">
@@ -243,7 +291,7 @@
                     </div>
                 </div>
             </li>
-            <li class="search-result__products-item col-12 col-lg-4">
+            <li class="search-result__products-item col-12 col-lg-3">
                 <div class="catalog-product">
                     <div class="catalog-product__container">
                         <div class="catalog-product__action">
