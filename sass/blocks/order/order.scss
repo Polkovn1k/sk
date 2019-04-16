@@ -10,6 +10,7 @@
     }
 
     &__section {
+        position: relative;
         padding: 20px $grid-padding;
         border-bottom: 1px solid $border-color;
         @media (min-width: $lg) {
@@ -278,5 +279,37 @@
             border-bottom-color: transparent;
             border-left-color: transparent;
         }
+    }
+//Прелоадер для блока
+    &__loader {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: $white;
+        opacity: 0;
+        transition: 0.7s ease;
+        img {
+            width: 160px;
+            height: 40px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -20px;
+            margin-left: -80px;
+            animation: rotate 1s linear infinite;
+        }
+    }
+
+    @keyframes rotate {
+      from {
+        transform: scale(0);
+      }
+    }
+
+    &__loader.active {
+        opacity: 1;
     }
 }

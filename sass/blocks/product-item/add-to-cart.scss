@@ -177,7 +177,7 @@
     &__features-item {
         display: inline-block;
         padding: 1px 6px;
-        margin-right: 3px;
+        margin-right: 5px;
         text-align: center;
         font-family: $font;
         font-size: 12px;
@@ -189,7 +189,7 @@
         border-radius: 3px;
     }
 
-    &__features-item--hit {
+    &__features-item--green {
         color: $green;
         border: 1px solid $green;
     }
