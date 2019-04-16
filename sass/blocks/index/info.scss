@@ -1,6 +1,9 @@
-.news {
+.info {
     padding-bottom: 30px;
-    font-family: $font;
+
+    &--mix-calc {
+        padding-bottom: 0;
+    }
 
     &__header {
         display: flex;
