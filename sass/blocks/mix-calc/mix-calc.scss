@@ -257,4 +257,27 @@
         height: $common-item-height;
         line-height: $common-item-height;
     }
+//Настройка рэндж слайдера
+    &__vg-pg-result {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+    }
+
+    &__pg,
+    &__vg {
+        position: relative;
+    }
+
+    &__pg::after,
+    &__vg::after {
+        content: attr(data-value-type);
+        display: inline;
+        text-transform: uppercase;
+    }
 }

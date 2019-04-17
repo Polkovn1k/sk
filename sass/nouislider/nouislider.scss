@@ -294,7 +294,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 //Костомизация - фильтры
 .range-filter {
-    //range-filter__noui-slider noUi-target noUi-ltr noUi-horizontal
     .noUi-target {
         width: calc(100% - #{$range-filter-hadles-height});
         margin: 20px auto 25px auto;
@@ -323,6 +322,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
         cursor: pointer;
         box-shadow: none;
         outline: transparent;
+        transition: 0.3s box-shadow ease;
+        &:hover {
+            box-shadow: 0 0 15px 0 transparentize($blue, 0.25);
+        }
         &::before,
         &::after {
             display: none;
@@ -334,22 +337,13 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   left: auto;
 }
 
-
-
-
-
-
-
-
-
 //Костомизация - калькулятор самозамесов
-.range-filter {
-    //range-filter__noui-slider noUi-target noUi-ltr noUi-horizontal
+.mix-calc {
     .noUi-target {
-        width: calc(100% - #{$range-filter-hadles-height});
-        margin: 20px auto 25px auto;
+        width: 100%;
+        margin: 10px auto 10px auto;
         height: $bar-height;
-        background: $border-color;
+        background: $blue;
         border-radius: 0;
         border: none;
     }
@@ -373,6 +367,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
         cursor: pointer;
         box-shadow: none;
         outline: transparent;
+        transition: 0.3s box-shadow ease;
+        &:hover {
+            box-shadow: 0 0 15px 0 transparentize($blue, 0.25);
+        }
         &::before,
         &::after {
             display: none;

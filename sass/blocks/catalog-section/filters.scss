@@ -18,7 +18,7 @@
         font-weight: 600;
         line-height: $common-item-height;
         color: $main-color;
-        transition: 0.3s ease;
+        transition: 0.3s color ease, 0.3s border-color ease;
         @media (min-width: $lg) {
             display: none;
         }
@@ -185,28 +185,61 @@
     }
 
     &__buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
         padding: 20px $grid-padding 0 $grid-padding;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.31;
         color: $main-color;
+        @media (min-width: $md) {
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+        @media (min-width: $lg) {
+            display: block;
+        }
+
     }
 
     &__value {
         @include field-reset();
+        width: 100%;
         padding-bottom: 20px;
         text-align: center;
+        @media (min-width: $md) {
+            width: 50%;
+            padding-bottom: 0;
+        }
+        @media (min-width: $lg) {
+            width: 100%;
+            padding-bottom: 20px;
+        }
     }
 
     &__btn {
         display: block;
-        width: 100%;
+        width: calc(50% - 7.5px);
         height: $common-item-height;
-        margin-bottom: 15px;
+        font-size: 16px;
+        @media (min-width: $md) {
+            flex-grow: 1;
+        }
+        @media (min-width: $lg) {
+            width: 100%;
+            margin-bottom: 15px;
+        }
     }
 
     &__btn:last-child {
         margin-bottom: 0;
+        @media (min-width: $md) {
+            margin-left: 15px;
+        }
+        @media (min-width: $lg) {
+            margin-left: 0;
+        }
     }
 
     &__btn--reset {
@@ -227,9 +260,6 @@
         left: 0;
         overflow: auto;
         background: $white;
-        span {
-            //transition: all 0s ease 0s;
-        }
         @media (min-width: $lg) {
             position: static;
         }
