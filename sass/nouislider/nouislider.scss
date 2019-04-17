@@ -292,7 +292,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   right: 120%;
 }
 
-//Костомизация
+//Костомизация - фильтры
 .range-filter {
     //range-filter__noui-slider noUi-target noUi-ltr noUi-horizontal
     .noUi-target {
@@ -332,4 +332,50 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   right: -($range-filter-hadles-height / 2);
   left: auto;
+}
+
+
+
+
+
+
+
+
+
+//Костомизация - калькулятор самозамесов
+.range-filter {
+    //range-filter__noui-slider noUi-target noUi-ltr noUi-horizontal
+    .noUi-target {
+        width: calc(100% - #{$range-filter-hadles-height});
+        margin: 20px auto 25px auto;
+        height: $bar-height;
+        background: $border-color;
+        border-radius: 0;
+        border: none;
+    }
+
+    .noUi-connects {
+        border-radius: 0;
+    }
+
+    .noUi-connect {
+        background: $blue;
+    }
+
+//ручки слайдера
+    .noUi-handle {
+        height: $range-filter-hadles-height;
+        width: $range-filter-hadles-height;
+        z-index: 10;
+        border: none;
+        border-radius: 50%;
+        background: $blue;
+        cursor: pointer;
+        box-shadow: none;
+        outline: transparent;
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
 }
