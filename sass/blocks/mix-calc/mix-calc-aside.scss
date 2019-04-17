@@ -1,3 +1,116 @@
 .mix-calc-aside {
     margin-bottom: 25px;
+
+    &__container {}
+
+    &__header {
+        padding: 0 15px;
+        height: $mix-calc-table-td-height;
+        font-size: 18px;
+        font-weight: 600;
+        line-height: $mix-calc-table-td-height;
+        color: $main-color;
+        text-align: left;
+        border-bottom: 1px solid $border-color;
+
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        @media (min-width: $lg) {
+            padding: 0 20px;
+        }
+    }
+//------------------
+    &__table-block {
+        margin-bottom: 20px;
+        background: $white;
+        border: 1px solid $border-color;
+        border-bottom: none;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    &__table {
+        max-width: 100%;
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        thead {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.33;
+            color: $main-color;
+        }
+        tbody {
+            font-size: 16px;
+            line-height: 1.33;
+            color: $extra-text-color;
+        }
+        tfoot {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.33;
+            text-align: left;
+            color: $main-color;
+            background: $delivery-active-btn;
+        }
+        tr {
+            border-bottom: 1px solid $border-color;
+        }
+        th, td {
+            height: $mix-calc-table-td-height;
+            padding: 5px;
+            vertical-align: middle;
+            width: 20%;
+            color: $extra-text-color;
+        }
+        th:first-child,
+        td:first-child {
+            width: 40%;
+            padding-left: 15px;
+            @media (min-width: $lg) {
+                padding-left: 20px;
+            }
+        }
+        th:last-child,
+        td:last-child {
+            padding-right: 15px;
+            @media (min-width: $lg) {
+                padding-right: 20px;
+            }
+        }
+    }
+//------------------
+    &__block {
+        margin-bottom: 20px;
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    &__block:last-child {
+        margin-bottom: 0;
+    }
+
+    &__list {
+        @include order-reset();
+        padding: 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.33;
+        letter-spacing: normal;
+        color: $extra-text-color;
+        a {
+            transition: 0.3s color ease;
+        }
+        a:hover {
+            color: $blue;
+        }
+        @media (min-width: $lg) {
+            padding: 15px 20px;
+        }
+    }
 }
