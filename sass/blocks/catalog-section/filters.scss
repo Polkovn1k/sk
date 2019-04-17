@@ -79,9 +79,15 @@
 
     &__panel {
         @include field-reset();
-        //padding-bottom: 15px;
         border: none;
         border-bottom: 1px solid $border-color;
+    }
+
+    &__panel:last-child {
+        border-bottom: none;
+        @media (min-width: $lg) {
+            border-bottom: 1px solid $border-color;
+        }
     }
 
     &__title {
@@ -102,12 +108,17 @@
         svg {
             position: absolute;
             top: $filter-title-padding-top + 8px;
-            right: $grid-padding;
+            right: 20px;
             width: $filter-title-svg-width;
             height: 8px;
             fill: $blue;
             transform: rotate(0deg);
             transition: 0.3s ease;
+        }
+        @media (min-width: $lg) {
+            svg {
+                right: $grid-padding;
+            }
         }
     }
 //анимация на стрелку
@@ -122,15 +133,6 @@
         overflow: hidden;
         max-height: 0;
         transition: 0.3s ease;
-        @media (min-width: $sm) {
-            max-width: 70%;
-        }
-        @media (min-width: $md) {
-            max-width: 60%;
-        }
-        @media (min-width: $lg) {
-            max-width: none;
-        }
     }
 
     &__content {
@@ -185,22 +187,16 @@
     }
 
     &__buttons {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        padding: 20px $grid-padding 0 $grid-padding;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 1.31;
-        color: $main-color;
-        @media (min-width: $md) {
-            flex-wrap: nowrap;
-            align-items: center;
-        }
+        display: none;
         @media (min-width: $lg) {
             display: block;
+            padding: $filters-buttons-padding-top $grid-padding 0 $grid-padding;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.31;
+            color: $main-color;
+            border-top: none;
         }
-
     }
 
     &__value {
@@ -258,14 +254,13 @@
         right: 0;
         bottom: 0;
         left: 0;
-        overflow: auto;
         background: $white;
         @media (min-width: $lg) {
             position: static;
         }
         .filters__tog-modal {
-            position: fixed;
-            z-index: 1000;
+            //position: fixed;
+            //z-index: 1000;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -315,9 +310,39 @@
         }
         .filters__container {
             display: block;
-            margin-top: $active-tog-modal-height;
+            height: calc(100% - #{$active-tog-modal-height} - #{$filters-buttons-mobile-height});
+            overflow-y: auto;
+            @media (min-width: $md) {
+                height: calc(100% - #{$active-tog-modal-height} - #{$filters-buttons-tabled-height});
+            }
             @media (min-width: $lg) {
-                margin-top: 0;
+                height: auto;
+                overflow-y: visible;
+            }
+        }
+
+        .filters__buttons {
+            height: $filters-buttons-mobile-height;
+            background: $white;
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            padding: $filters-buttons-padding-top $grid-padding 0 $grid-padding;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.31;
+            color: $main-color;
+            border-top: 1px solid $border-color;
+            @media (min-width: $md) {
+                height: $filters-buttons-tabled-height;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+            @media (min-width: $lg) {
+                height: auto;
+                display: block;
+                border-top: none;
             }
         }
     }
