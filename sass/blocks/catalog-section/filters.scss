@@ -1,6 +1,7 @@
 .filters {
+    display: flex;
+    flex-direction: column;
     padding-bottom: 20px;
-    font-family: $font;
     background: $transparent;
     @media (min-width: $lg) {
         background: $white;
@@ -259,8 +260,7 @@
             position: static;
         }
         .filters__tog-modal {
-            //position: fixed;
-            //z-index: 1000;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -310,19 +310,15 @@
         }
         .filters__container {
             display: block;
-            height: calc(100% - #{$active-tog-modal-height} - #{$filters-buttons-mobile-height});
+            flex-grow: 1;
             overflow-y: auto;
-            @media (min-width: $md) {
-                height: calc(100% - #{$active-tog-modal-height} - #{$filters-buttons-tabled-height});
-            }
             @media (min-width: $lg) {
-                height: auto;
                 overflow-y: visible;
             }
         }
 
         .filters__buttons {
-            height: $filters-buttons-mobile-height;
+            flex-shrink: 0;
             background: $white;
             width: 100%;
             display: flex;
@@ -335,12 +331,10 @@
             color: $main-color;
             border-top: 1px solid $border-color;
             @media (min-width: $md) {
-                height: $filters-buttons-tabled-height;
                 flex-wrap: nowrap;
                 align-items: center;
             }
             @media (min-width: $lg) {
-                height: auto;
                 display: block;
                 border-top: none;
             }
