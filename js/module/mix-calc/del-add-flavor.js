@@ -4,7 +4,9 @@ if (document.querySelector(".del-add-flavor")) {
     var delAndAddFlavor = {
 
         btnCollection: document.querySelectorAll(".js-mix-calc-del-flavor"),
+
 //----------------удаление элементов
+
         listenRemoveClick: () => {
             var dynamicCollection = Array.prototype.slice.call(document.querySelectorAll(".js-mix-calc-del-flavor"));
             dynamicCollection.forEach((btn) => {
@@ -25,9 +27,11 @@ if (document.querySelector(".del-add-flavor")) {
             }
         },
 
-//----------------удаление элементов
+//----------------добавление элементов
 
-        listenAddClick: () => {},
+        listenAddClick: () => {
+
+        },
 
         init: () => {
             delAndAddFlavor.elementStatusAfterInit();
