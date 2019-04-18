@@ -142,6 +142,12 @@
     }
 
     &__input {
+        @include placeholder {
+          color: $communication-add-color;
+        }
+        @include placeholder-f {
+          color: transparent;
+        }
         width: 100%;
         padding: 0 20px;
         height: $common-item-height;
@@ -179,6 +185,12 @@
     }
 
     &__textarea {
+        @include placeholder {
+          color: $communication-add-color;
+        }
+        @include placeholder-f {
+          color: transparent;
+        }
         width: 100%;
         padding: 15px 20px;
         min-height: 100px;
@@ -186,6 +198,7 @@
         resize: vertical;
         border: 1px solid $border-color;
         border-radius: 5px;
+        box-shadow: none;
         outline: none;
         transition: 0.3s border-color ease;
     }

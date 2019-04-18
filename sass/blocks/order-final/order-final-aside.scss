@@ -149,7 +149,14 @@
             min-height: 115px;
             resize: vertical;
             border: 1px solid $border-color;
+            border-radius: 5px;
+            box-shadow: none;
             outline: none;
+            transition: 0.3s border-color ease;
+        }
+        textarea:hover,
+        textarea:focus {
+            border-color: $blue;
         }
         @media (min-width: $lg) {
             border: none;

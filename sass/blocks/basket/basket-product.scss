@@ -209,6 +209,12 @@
         vertical-align: middle;
         margin-right: 15px;
         input {
+            @include placeholder {
+              color: $communication-add-color;
+            }
+            @include placeholder-f {
+              color: transparent;
+            }
             height: $basket-product-cound-height;
             width: 50px;
             outline: none;

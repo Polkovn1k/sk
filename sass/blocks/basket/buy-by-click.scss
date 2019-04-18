@@ -89,6 +89,12 @@
             display: none;
         }
         input {
+            @include placeholder {
+              color: $communication-add-color;
+            }
+            @include placeholder-f {
+              color: transparent;
+            }
             width: 100%;
             height: $common-item-height;
             padding: 0 20px;

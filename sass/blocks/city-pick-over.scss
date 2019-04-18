@@ -83,6 +83,12 @@
         position: relative;
         margin-bottom: 20px;
         input {
+            @include placeholder {
+              color: $communication-add-color;
+            }
+            @include placeholder-f {
+              color: transparent;
+            }
             width: 100%;
             height: $common-item-height;
             padding: 0 10px;
@@ -91,6 +97,7 @@
             border-radius: 5px;
             line-height: $common-item-height;
             outline: none;
+            box-shadow: none;
             transition: 0.3s ease;
         }
         input:hover,

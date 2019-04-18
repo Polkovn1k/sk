@@ -3,8 +3,16 @@
     &__form {
         margin-bottom: 30px;
         input {
+            @include placeholder {
+              color: $communication-add-color;
+            }
+            @include placeholder-f {
+              color: transparent;
+            }
             width: 100%;
             margin-bottom: 20px;
+            box-shadow: none;
+            outline: none;
         }
         @media (min-width: $md) {
             display: flex;

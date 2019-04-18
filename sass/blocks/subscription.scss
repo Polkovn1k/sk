@@ -30,6 +30,12 @@
     }
 
     &__input {
+        @include placeholder {
+          color: $communication-add-color;
+        }
+        @include placeholder-f {
+          color: transparent;
+        }
         display: block;
         flex-grow: 1;
         height: $common-item-height;
@@ -44,6 +50,7 @@
         border-top-left-radius: 5px;
         border-bottom-left-radius: 5px;
         outline: none;
+        box-shadow: none;
         transition: 0.3s ease;
     }
 

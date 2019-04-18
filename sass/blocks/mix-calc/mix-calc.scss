@@ -106,6 +106,12 @@
         display: flex;
         vertical-align: middle;
         input {
+            @include placeholder {
+              color: $communication-add-color;
+            }
+            @include placeholder-f {
+              color: transparent;
+            }
             padding: 0 7px;
             flex-grow: 1;
             height: $common-item-height;
@@ -220,13 +226,21 @@
         width: 100%;
         margin-bottom: 10px;
         input {
+            @include placeholder {
+              color: $communication-add-color;
+            }
+            @include placeholder-f {
+              color: transparent;
+            }
             flex-grow: 1;
             padding: 0 15px;
             height: $common-item-height;
             line-height: $common-item-height;
+            color: $communication-add-color;
             border: 1px solid $border-color;
             border-radius: 5px;
             box-shadow: none;
+            outline: none;
         }
         @media (min-width: $sm) {
             width: 60%;
@@ -236,6 +250,7 @@
     }
 
     &__del-element {
+        position: relative;
         flex-shrink: 0;
         margin-left: 5px;
         background: transparent;
@@ -249,6 +264,25 @@
         @media (min-width: $sm) {
             margin: 0 5px;
         }
+    }
+
+    &__del-element:hover::before {
+        content: attr(data-tips);
+        position: absolute;
+        display: block;
+        padding: 5px;
+        top: 50%;
+        right: $basket-aside-promo-accept-span-width + 5px;
+        transform: translateY(-50%);
+        width: 200px;
+        height: auto;
+        border-radius: 5px;
+        background: $extra-text-color;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: $white;
+        z-index: 10;
     }
 
     &__btn {
