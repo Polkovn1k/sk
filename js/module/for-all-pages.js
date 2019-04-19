@@ -208,17 +208,32 @@ var modals = {
         return overlayForClickedElement;
     },
 
+    _contentMove: (scrollValue) => {
+        var wrapper = document.querySelector(".wrapper");
+        wrapper.style.position = "relative";
+        wrapper.style.top = -scrollValue + "px";
+    },
+
+    _afterContentMove: (scrollValue) => {
+        var wrapper = document.querySelector(".wrapper");
+        wrapper.removeAttribute("style");
+    },
+
     _toggleHtmlScrollForOverlays(state) {
         var toggledElems = document.querySelectorAll('html, body');
+        var scrollPosition = window.pageYOffset;
         if (state === "disable") {
             for (var i = 0; i < toggledElems.length; i++) {
                 toggledElems[i].classList.add('scroll-disabled');
             }
+            modals._contentMove(scrollPosition);
             return false;
         }
         for (var i = 0; i < toggledElems.length; i++) {
             toggledElems[i].classList.remove('scroll-disabled');
         }
+        console.log(scrollPosition);
+        modals._afterContentMove(scrollPosition);
     },
 
     init: () => {

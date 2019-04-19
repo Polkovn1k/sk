@@ -31,57 +31,59 @@
       </div>
   </header>
 
-  <!----------main-->
-  <main class="main main--no-padding">
-      <div class="main__container container-fluid">
-          <div class="row">
+  <div class="wrapper">
+      <!----------main-->
+      <main class="main main--no-padding">
+          <div class="main__container container-fluid">
+              <div class="row">
 
-              <include src="html-modules/__index-page/catalog.html"></include>
-              <include src="html-modules/__index-page/top-slider.html"></include>
-              <include src="html-modules/__index-page/advantages.html"></include>
-              <include src="html-modules/__index-page/main-catalog.html"></include>
-              <include src="html-modules/__index-page/goods-sliders.html"></include>
+                  <include src="html-modules/__index-page/catalog.html"></include>
+                  <include src="html-modules/__index-page/top-slider.html"></include>
+                  <include src="html-modules/__index-page/advantages.html"></include>
+                  <include src="html-modules/__index-page/main-catalog.html"></include>
+                  <include src="html-modules/__index-page/goods-sliders.html"></include>
+
+              </div>
+          </div>
+          <div class="main__container container-fluid">
+              <div class="row">
+
+                  <include src="html-modules/__index-page/vk-comments.html"></include>
+
+              </div>
+          </div>
+
+          <div class="main__container container-fluid">
+              <div class="row">
+
+                  <include src="html-modules/__index-page/news.html"></include>
+                  <include src="html-modules/__index-page/articles.html"></include>
+                  <include src="html-modules/__index-page/brands.html"></include>
+
+              </div>
+          </div>
+
+          <div class="main__container container-fluid">
+              <div class="row">
+
+                  <!----------overlays for all pages-->
+                  <include src="html-modules/overlays/overlays.html"></include>
+
+              </div>
+          </div>
+
+      </main>
+
+      <!----------footer-->
+      <footer class="footer">
+          <div class="footer__container container-fluid">
+
+              <include src="html-modules/footer/top-footer.html"></include>
+              <include src="html-modules/footer/bottom-footer.html"></include>
 
           </div>
-      </div>
-      <div class="main__container container-fluid">
-          <div class="row">
-
-              <include src="html-modules/__index-page/vk-comments.html"></include>
-
-          </div>
-      </div>
-
-      <div class="main__container container-fluid">
-          <div class="row">
-
-              <include src="html-modules/__index-page/news.html"></include>
-              <include src="html-modules/__index-page/articles.html"></include>
-              <include src="html-modules/__index-page/brands.html"></include>
-
-          </div>
-      </div>
-
-      <div class="main__container container-fluid">
-          <div class="row">
-
-              <!----------overlays for all pages-->
-              <include src="html-modules/overlays/overlays.html"></include>
-
-          </div>
-      </div>
-
-  </main>
-
-  <!----------footer-->
-  <footer class="footer">
-      <div class="footer__container container-fluid">
-
-          <include src="html-modules/footer/top-footer.html"></include>
-          <include src="html-modules/footer/bottom-footer.html"></include>
-
-      </div>
-  </footer>
+      </footer>
+  </div>
 
   <!----------library concat-->
   <script src="js/library.js"></script>
