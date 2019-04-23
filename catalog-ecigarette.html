@@ -31,59 +31,61 @@
       </div>
   </header>
 
-  <!----------main-->
-  <main class="main main--catalog-section">
-      <div class="main__container container-fluid">
-          <div class="row">
+  <div data-scroll="" class="wrapper">
+      <!----------main-->
+      <main class="main main--catalog-section">
+          <div class="main__container container-fluid">
+              <div class="row">
 
-              <div class="col-12">
-                  <ul class="crumbs">
-                      <li class="crumbs__item">
-                          <a href="/" class="crumbs__link">Главная</a>
-                      </li>
-                      <li class="crumbs__item">
-                          <a href="catalog.html" class="crumbs__link">Каталог</a>
-                      </li>
-                      <li class="crumbs__item">
-                          <a href="catalog-ecigarette.html" class="crumbs__link">Вейпы</a>
-                      </li>
-                  </ul>
-              </div>
-              <h2 class="col-12 main__title">Вейпы</h2>
-              <div class="col-12 catalog-section">
-                  <div class="row">
-
-                      <include src="html-modules/__catalog-page-ecigarette/filters.html"></include>
-                      <include src="html-modules/__catalog-page-ecigarette/main-content.html"></include>
-
+                  <div class="col-12">
+                      <ul class="crumbs">
+                          <li class="crumbs__item">
+                              <a href="/" class="crumbs__link">Главная</a>
+                          </li>
+                          <li class="crumbs__item">
+                              <a href="catalog.html" class="crumbs__link">Каталог</a>
+                          </li>
+                          <li class="crumbs__item">
+                              <a href="catalog-ecigarette.html" class="crumbs__link">Вейпы</a>
+                          </li>
+                      </ul>
                   </div>
+                  <h2 class="col-12 main__title">Вейпы</h2>
+                  <div class="col-12 catalog-section">
+                      <div class="row">
+
+                          <include src="html-modules/__catalog-page-ecigarette/filters.html"></include>
+                          <include src="html-modules/__catalog-page-ecigarette/main-content.html"></include>
+
+                      </div>
+                  </div>
+
               </div>
+          </div>
+
+          <include src="html-modules/viewed-slider/viewed-slider.html"></include>
+
+          <div class="main__container container-fluid">
+              <div class="row">
+
+                  <!----------overlays for all pages-->
+                  <include src="html-modules/overlays/overlays.html"></include>
+
+              </div>
+          </div>
+
+      </main>
+
+      <!----------footer-->
+      <footer class="footer">
+          <div class="footer__container container-fluid">
+
+              <include src="html-modules/footer/top-footer.html"></include>
+              <include src="html-modules/footer/bottom-footer.html"></include>
 
           </div>
-      </div>
-
-      <include src="html-modules/viewed-slider/viewed-slider.html"></include>
-
-      <div class="main__container container-fluid">
-          <div class="row">
-
-              <!----------overlays for all pages-->
-              <include src="html-modules/overlays/overlays.html"></include>
-
-          </div>
-      </div>
-
-  </main>
-
-  <!----------footer-->
-  <footer class="footer">
-      <div class="footer__container container-fluid">
-
-          <include src="html-modules/footer/top-footer.html"></include>
-          <include src="html-modules/footer/bottom-footer.html"></include>
-
-      </div>
-  </footer>
+      </footer>
+  </div>
 
   <!----------library concat-->
   <script src="js/library.js"></script>

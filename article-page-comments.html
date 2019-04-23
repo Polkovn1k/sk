@@ -31,60 +31,62 @@
       </div>
   </header>
 
-  <!----------main-->
-  <main class="main">
-      <div class="main__container container-fluid">
-          <div class="row">
+  <div data-scroll="" class="wrapper">
+      <!----------main-->
+      <main class="main">
+          <div class="main__container container-fluid">
+              <div class="row">
 
-              <div class="col-12">
-                  <ul class="crumbs">
-                      <li class="crumbs__item">
-                          <a href="/" class="crumbs__link">Главная</a>
-                      </li>
-                      <li class="crumbs__item">
-                          <a href="articles.html" class="crumbs__link">Статьи</a>
-                      </li>
-                      <li class="crumbs__item">
-                          <a href="article-page.html" class="crumbs__link">Можно ли парить в общественных местах</a>
-                      </li>
-                  </ul>
-              </div>
-              <h2 class="col-12 main__title">Можно ли парить в общественных местах</h2>
-              <div class="col-12">
-                  <div class="row">
-
-                      <include src="html-modules/__article-page/article-page.html"></include>
-                      <include src="html-modules/__article-page/article-comments-with-comments.html"></include>
-                      <include src="html-modules/__article-page/viewed-articles.html"></include>
-
+                  <div class="col-12">
+                      <ul class="crumbs">
+                          <li class="crumbs__item">
+                              <a href="/" class="crumbs__link">Главная</a>
+                          </li>
+                          <li class="crumbs__item">
+                              <a href="articles.html" class="crumbs__link">Статьи</a>
+                          </li>
+                          <li class="crumbs__item">
+                              <a href="article-page.html" class="crumbs__link">Можно ли парить в общественных местах</a>
+                          </li>
+                      </ul>
                   </div>
+                  <h2 class="col-12 main__title">Можно ли парить в общественных местах</h2>
+                  <div class="col-12">
+                      <div class="row">
+
+                          <include src="html-modules/__article-page/article-page.html"></include>
+                          <include src="html-modules/__article-page/article-comments-with-comments.html"></include>
+                          <include src="html-modules/__article-page/viewed-articles.html"></include>
+
+                      </div>
+                  </div>
+
               </div>
+          </div>
+
+          <include src="html-modules/viewed-slider/viewed-slider.html"></include>
+
+          <div class="main__container container-fluid">
+              <div class="row">
+
+                  <!----------overlays for all pages-->
+                  <include src="html-modules/overlays/overlays.html"></include>
+
+              </div>
+          </div>
+
+      </main>
+
+      <!----------footer-->
+      <footer class="footer">
+          <div class="footer__container container-fluid">
+
+              <include src="html-modules/footer/top-footer.html"></include>
+              <include src="html-modules/footer/bottom-footer.html"></include>
 
           </div>
-      </div>
-
-      <include src="html-modules/viewed-slider/viewed-slider.html"></include>
-
-      <div class="main__container container-fluid">
-          <div class="row">
-
-              <!----------overlays for all pages-->
-              <include src="html-modules/overlays/overlays.html"></include>
-
-          </div>
-      </div>
-
-  </main>
-
-  <!----------footer-->
-  <footer class="footer">
-      <div class="footer__container container-fluid">
-
-          <include src="html-modules/footer/top-footer.html"></include>
-          <include src="html-modules/footer/bottom-footer.html"></include>
-
-      </div>
-  </footer>
+      </footer>
+  </div>
 
   <!----------library concat-->
   <script src="js/library.js"></script>
