@@ -214,15 +214,14 @@ var modals = {
         var rootWrapper = document.querySelector("html");
 
         if (state === "getScroll") {
-            wrapper.style.position = "relative";
             wrapper.style.top = -scrollPosition + "px";
             wrapper.setAttribute("data-scroll", scrollPosition);
-            rootWrapper.style.scrollBehavior = "auto";
+            rootWrapper.classList.add("disable-smooth");
             return false;
         }
         window.scrollTo(0, wrapper.dataset.scroll);
         wrapper.removeAttribute("style");
-        rootWrapper.removeAttribute("style");
+        rootWrapper.classList.remove("disable-smooth");
     },
 
     _toggleHtmlScrollForOverlays(state) {
