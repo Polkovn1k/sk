@@ -133,11 +133,13 @@ var modals = {
 
     listenEscForCloseOverlays: () => {
         document.addEventListener("keydown", (event) => {
-            if (event.keyCode === 27) {
-                modals._hideOverlays();
-                modals._deleteButtonsStateForAllBtn();
-                modals._toggleHtmlScrollForOverlays("enable");
-            }
+            document.querySelectorAll(".js-overlay.opened").forEach((overlay) => {
+                if (event.keyCode === 27) {
+                    modals._hideOverlays();
+                    modals._deleteButtonsStateForAllBtn();
+                    modals._toggleHtmlScrollForOverlays("enable");
+                }
+            });
         });
     },
 
