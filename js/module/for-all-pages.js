@@ -211,17 +211,17 @@ var modals = {
     _setScrollPosition: (state) => {
         var scrollPosition = window.pageYOffset;
         var wrapper = document.querySelector(".wrapper");
-        var rootWrapper = document.querySelector("html");
+        var html = document.querySelector("html");
 
         if (state === "getScroll") {
             wrapper.style.top = -scrollPosition + "px";
             wrapper.setAttribute("data-scroll", scrollPosition);
-            rootWrapper.classList.add("disable-smooth");
+            html.classList.add("disable-smooth");
             return false;
         }
         window.scrollTo(0, wrapper.dataset.scroll);
         wrapper.removeAttribute("style");
-        rootWrapper.classList.remove("disable-smooth");
+        html.classList.remove("disable-smooth");
     },
 
     _toggleHtmlScrollForOverlays(state) {
