@@ -208,27 +208,27 @@ var modals = {
         return overlayForClickedElement;
     },
 
-    _contentMove: () => {
+    _setScrollPosition: (state) => {
         var scrollPosition = window.pageYOffset;
         var wrapper = document.querySelector(".wrapper");
-        wrapper.style.position = "relative";
-        wrapper.style.top = -scrollPosition + "px";
-        wrapper.setAttribute("data-scroll", scrollPosition);
-    },
-
-    _afterContentMove: () => {
-        var wrapper = document.querySelector(".wrapper");
         var rootWrapper = document.querySelector("html");
-        rootWrapper.style.scrollBehavior = "auto";
-        var verticalScroll = Number(wrapper.dataset.scroll);
-        window.scrollTo(verticalScroll, verticalScroll);
+
+        if (state === "getScroll") {
+            wrapper.style.position = "relative";
+            wrapper.style.top = -scrollPosition + "px";
+            wrapper.setAttribute("data-scroll", scrollPosition);
+            rootWrapper.style.scrollBehavior = "auto";
+            return false;
+        }
+        window.scrollTo(0, wrapper.dataset.scroll);
         wrapper.removeAttribute("style");
+        rootWrapper.removeAttribute("style");
     },
 
     _toggleHtmlScrollForOverlays(state) {
         var toggledElems = document.querySelectorAll('html, body');
         if (state === "disable") {
-            modals._contentMove();
+            modals._setScrollPosition("getScroll");
             for (var i = 0; i < toggledElems.length; i++) {
                 toggledElems[i].classList.add('scroll-disabled');
             }
@@ -237,7 +237,7 @@ var modals = {
         for (var i = 0; i < toggledElems.length; i++) {
             toggledElems[i].classList.remove('scroll-disabled');
         }
-        modals._afterContentMove();
+        modals._setScrollPosition("setScroll");
     },
 
     init: () => {
