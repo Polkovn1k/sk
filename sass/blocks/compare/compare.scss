@@ -1,0 +1,50 @@
+.compare {
+
+    &__container {
+
+    }
+
+    &__header {
+        margin-bottom: 20px;
+        @media (min-width: $lg) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: $white;
+        }
+    }
+
+//switch блок
+    &__switch {
+        display: flex;
+        margin-bottom: 20px;
+        @media (min-width: $sm) {
+            align-items: center;
+        }
+        @media (min-width: $lg) {
+            margin-bottom: 0;
+        }
+    }
+
+    &__switch-item {
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+
+    &__switch-link {
+        @include field-reset();
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $extra-text-color;
+    }
+
+    &__clear-btn {
+        width: 100%;
+        @media (min-width: $lg) {
+            width: auto;
+        }
+    }
+}
