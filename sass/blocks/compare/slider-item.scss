@@ -8,12 +8,15 @@
 
     &__container {
         position: relative;
-        padding: 15px 0;
+        padding: 15px 0 $slider-item-padding-bottom 0;
+        @media (min-width: $lg) {
+            padding: 15px 7.5px;
+        }
     }
 
 //Изображение
     &__img {
-        margin-bottom: 15px;
+        margin-bottom: $slider-item-img-margin-bottom;
         height: 90px;
         text-align: center;
         img {
@@ -21,7 +24,7 @@
             max-height: 100%;
         }
         @media (min-width: $md) {
-            height: 130px;
+            height: $slider-item-img-height-md;
         }
     }
 
@@ -140,6 +143,7 @@
         background: $white;
         @media (min-width: $lg) {
             opacity: 0;
+            padding-right: 7.5px;
         }
     }
 

@@ -69,6 +69,7 @@
     }
 
     &__slider-arrows {
+        height: $common-item-height;
         width: 100%;
         display: flex;
         justify-content: space-between;
@@ -90,8 +91,56 @@
     }
 
     &__add-item {
+        padding: 15px 35px;
+        padding-bottom: $common-item-height + $slider-item-padding-bottom;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         height: 100%;
         border: 1px dashed $border-color;
+    }
+
+    &__add-item-link {
+        display: block;
+        span:first-child {
+            position: relative;
+            display: block;
+            width: $slider-item-img-height-md;
+            height: $slider-item-img-height-md;
+            margin: 0 auto;
+            margin-bottom: $slider-item-img-margin-bottom;
+            font-size: 0;
+        }
+        span:first-child::after {
+            @include pseudo();
+            height: $slider-item-img-height-md;
+            width: 2px;
+            background: $border-color;
+        }
+        span:first-child::after {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        span:first-child::before {
+            @include pseudo();
+            width: $slider-item-img-height-md;
+            height: 2px;
+            background: $border-color;
+        }
+        span:first-child::before {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        span:last-child {
+            display: block;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.31;
+            text-align: center;
+            color: $extra-text-color;
+        }
     }
 
 //Блок параметров
@@ -101,7 +150,7 @@
         width: 100%;
         padding: 0 30px 25px 30px;
         font-size: 24px;
-        font-weight: 600;;
+        font-weight: 600;
         line-height: 1.33;
         color: $main-color;
         text-align: center;
