@@ -57,7 +57,16 @@
     }
 
 //Блок слайдера
-    &__slider {}
+    &__slider {
+        margin-bottom: 25px;
+        padding: 10px;
+        @media (min-width: $sm) {
+            padding: 15px;
+        }
+        @media (min-width: $lg) {
+            margin-bottom: 35px;
+        }
+    }
 
     &__slider-arrows {
         width: 100%;
@@ -78,5 +87,27 @@
         opacity: 1;
         box-shadow: none;
         border-radius: none;
+    }
+
+    &__add-item {
+        height: 100%;
+        border: 1px dashed $border-color;
+    }
+
+//Блок параметров
+    &__parameter {}
+
+    &__par-title {
+        width: 100%;
+        padding: 0 30px 25px 30px;
+        font-size: 24px;
+        font-weight: 600;;
+        line-height: 1.33;
+        color: $main-color;
+        text-align: center;
+        border-bottom: 1px solid $border-color;
+        @media (min-width: $lg) {
+            text-align: left;
+        }
     }
 }

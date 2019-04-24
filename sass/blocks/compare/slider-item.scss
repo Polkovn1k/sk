@@ -1,17 +1,27 @@
 .slider-item {
 
+    &:hover {
+        .slider-item__action {
+            opacity: 1;
+        }
+    }
+
     &__container {
-        padding: 15px 10px;
+        position: relative;
+        padding: 15px 0;
     }
 
 //Изображение
     &__img {
-        margin-bottom: 5px;
-        height: 70px;
+        margin-bottom: 15px;
+        height: 90px;
         text-align: center;
         img {
             max-width: 100%;
             max-height: 100%;
+        }
+        @media (min-width: $md) {
+            height: 130px;
         }
     }
 
@@ -34,14 +44,40 @@
 //Блок звезд/сообщений
     &__response {
         margin-bottom: 5px;
+        @media (min-width: $sm) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__stars {
+        margin-right: 7px;
     }
 
     &__rating-votes {
         display: none;
+        @media (min-width: $sm) {
+            display: inline-block;
+        }
     }
 
     &__message {
         display: none;
+        @media (min-width: $sm) {
+            display: flex;
+            align-items: center;
+            color: $communication-add-color;
+        }
+    }
+
+    &__message-img {
+        margin-bottom: -7px;
+        svg {
+            width: 16px;
+            height: 18px;
+            margin-right: 5px;
+            fill: $add-text-color;
+        }
     }
 
 //Блок цен
@@ -90,6 +126,81 @@
             width: 25px;
             height: 25px;
             fill: $main-color;
+        }
+    }
+
+//Правый блок сравнения/удалить
+    &__action {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        opacity: 1;
+        transition: 0.1s opacity ease-in;
+        background: $white;
+        @media (min-width: $lg) {
+            opacity: 0;
+        }
+    }
+
+    &__action-item {
+        position: relative;
+        display: block;
+        width: 25px;
+        height: 25px;
+        margin-bottom: 10px;
+        padding-top: 4px;
+        font-size: 0;
+        text-align: center;
+        border-radius: 3px;
+        border: 1px solid $extra-text-color;
+        background: $white;
+        svg {
+            fill: $extra-text-color;
+            width: 15px;
+            height: 15px;
+        }
+        @media (min-width: $md) {
+            padding-top: 8px;
+            width: $catalog-product-action-item;
+            height: $catalog-product-action-item;
+            svg {
+                fill: $extra-text-color;
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    &__action-item:hover::after {
+        content: attr(data-tips);
+        position: absolute;
+        display: block;
+        z-index: 10;
+        top: 50%;
+        left: -$action-item-pseudo-width - 12px;
+        transform: translateY(-50%);
+        width: $action-item-pseudo-width;
+        height: 25px;
+        padding: 0 8px;
+        background: $extra-text-color;
+        border-radius: 5px;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: center;
+        color: $white;
+    }
+
+    &__action-item:last-child {
+        margin-bottom: 0;
+    }
+
+    &__action-item:hover {
+        border-color: $blue;
+        background: $blue;
+        svg {
+            fill: $white;
         }
     }
 }
