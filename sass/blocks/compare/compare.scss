@@ -47,4 +47,36 @@
             width: auto;
         }
     }
+
+    &__body {
+        background: $white;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+//Блок слайдера
+    &__slider {}
+
+    &__slider-arrows {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+    }
+
+    &__left-arrow,
+    &__right-arrow {
+        transform: none;
+        position: relative;
+        top: auto;
+        left: auto;
+        right: auto;
+        display: block;
+        opacity: 1;
+        box-shadow: none;
+        border-radius: none;
+    }
 }

@@ -1,0 +1,95 @@
+.slider-item {
+
+    &__container {
+        padding: 15px 10px;
+    }
+
+//Изображение
+    &__img {
+        margin-bottom: 5px;
+        height: 70px;
+        text-align: center;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+//Название
+    &__name {
+        margin-bottom: 3px;
+        height: 40px;
+        overflow: hidden;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.31;
+        color: $extra-text-color;
+
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+//Блок звезд/сообщений
+    &__response {
+        margin-bottom: 5px;
+    }
+
+    &__rating-votes {
+        display: none;
+    }
+
+    &__message {
+        display: none;
+    }
+
+//Блок цен
+    &__price {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 5px;
+        @media (min-width: $sm) {
+            flex-wrap: nowrap;
+            align-items: center;
+        }
+    }
+
+    &__old-price {
+        width: 100%;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.31;
+        color: $main-color;
+        text-decoration: line-through;
+        @media (min-width: $sm) {
+            width: auto;
+            margin-right: 7px;
+        }
+    }
+
+    &__current-price {
+        width: 100%;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 1.33;
+        color: $main-color;
+        @media (min-width: $sm) {
+            width: auto;
+            font-size: 24px;
+        }
+    }
+
+//Кнопка в корзину
+    &__cart {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        svg {
+            width: 25px;
+            height: 25px;
+            fill: $main-color;
+        }
+    }
+}
