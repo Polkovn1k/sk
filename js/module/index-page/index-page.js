@@ -1,6 +1,7 @@
 //СЛАЙДЕРЫ НА ГЛАВНОЙ СТРАНИЦЕ
 if (document.querySelector(".index-page")) {
 
+    //Верхний слайдер
     var glide = new Glide('.js-top-slider', {
       type: 'carousel',
       autoplay: 3000,
@@ -8,6 +9,7 @@ if (document.querySelector(".index-page")) {
     });
     glide.mount();
 
+    //Слайдер преимуществ
     var glideAdvantages = new Glide('.js-advantages-slider', {
       perView: 5,
       dragThreshold: false,
@@ -21,6 +23,32 @@ if (document.querySelector(".index-page")) {
     });
     glideAdvantages.mount();
 
+    var advantagesSlider = {
+
+        START_DESKTOP_WIDTH: 1024,
+
+        listenTurnDevice: () => {
+            window.addEventListener("orientationchange", function() {
+                if (document.documentElement.clientWidth <= advantagesSlider.START_DESKTOP_WIDTH) return false;
+                glideAdvantages.update({ startAt: 0 });
+            });
+        },
+
+        listenResizeDevice: () => {
+            window.addEventListener("resize", function() {
+                if (document.documentElement.clientWidth <= advantagesSlider.START_DESKTOP_WIDTH) return false;
+                glideAdvantages.update({ startAt: 0 });
+            });
+        },
+
+        init: () => {
+            advantagesSlider.listenTurnDevice();
+            advantagesSlider.listenResizeDevice();
+        },
+    };
+    advantagesSlider.init();
+
+    //Слайдер товаров
     var sliders = document.querySelectorAll(".js-goods-slider");
     var glideGoodsSliders = [];
     var sliderCollection = function (i, item) {
@@ -53,6 +81,7 @@ if (document.querySelector(".index-page")) {
         sliderCollection(i, sliders);
     }
 
+    //Слайдер статей
     var articlesSlider = new Glide('.js-articles-slider', {
         gap: 15,
         bound: true,
@@ -98,6 +127,7 @@ if (document.querySelector(".index-page")) {
     });
     articlesSlider.mount();
 
+    //Слайдер брендов
     var brandsSlider = new Glide('.js-brands-slider', {
         gap: 15,
         bound: true,
