@@ -8,7 +8,7 @@ if (document.querySelector(".compare-slider")) {
           gap: 0,
           bound: true,
           rewind: false,
-          perView: 6,
+          perView: 5,
           breakpoints: {
               1280: {
                   perView: 4,

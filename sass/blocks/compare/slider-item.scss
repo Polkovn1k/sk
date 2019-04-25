@@ -11,6 +11,7 @@
         padding: 15px 0 $slider-item-padding-bottom 0;
         @media (min-width: $lg) {
             padding: 15px 7.5px;
+            height: $slider-item-lg-container-height;
         }
     }
 
@@ -134,6 +135,7 @@
 
 //Правый блок сравнения/удалить
     &__action {
+        padding-right: 1px;
         position: absolute;
         z-index: 1;
         top: 0;
@@ -205,6 +207,64 @@
         background: $blue;
         svg {
             fill: $white;
+        }
+    }
+
+//Карточка - добавить товар
+    &__add-item {
+        display: none;
+        @media (min-width: $lg) {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: $slider-item-lg-container-height;
+            padding: 15px 7.5px;
+            border: 1px dashed $border-color;
+        }
+    }
+
+    &__add-item-link {
+        display: block;
+        span:first-child {
+            position: relative;
+            display: block;
+            width: $slider-item-img-height-md;
+            height: $slider-item-img-height-md;
+            margin: 0 auto;
+            margin-bottom: $slider-item-img-margin-bottom;
+            font-size: 0;
+        }
+        span:first-child::after {
+            @include pseudo();
+            height: $slider-item-img-height-md;
+            width: 2px;
+            background: $border-color;
+        }
+        span:first-child::after {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        span:first-child::before {
+            @include pseudo();
+            width: $slider-item-img-height-md;
+            height: 2px;
+            background: $border-color;
+        }
+        span:first-child::before {
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+        span:last-child {
+            display: block;
+            height: 40px;
+            overflow: hidden;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.31;
+            text-align: center;
+            color: $extra-text-color;
         }
     }
 }
