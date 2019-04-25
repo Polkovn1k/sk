@@ -58,12 +58,19 @@
 
 //Блок слайдера
     &__slider-block {
+        position: sticky;
+        top: $mobile-header-height;
         margin-bottom: 25px;
         padding: 10px;
+        background: $white;
         @media (min-width: $sm) {
             padding: 15px;
         }
+        @media (min-width: $md) {
+            top: $tablet-header-height;
+        }
         @media (min-width: $lg) {
+            top: $desktop-header-height;
             margin-bottom: 35px;
         }
     }
