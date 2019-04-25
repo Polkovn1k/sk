@@ -34,11 +34,16 @@ if (document.querySelector(".js-main-compare-slider")) {
 
         START_DESKTOP_WIDTH: 1024,
 
+        DESKTOP_XL_SIZE: 1395,
+
         listenTurnDevice: () => {
             window.addEventListener("orientationchange", function() {
                 if (document.documentElement.clientWidth <= compare.START_DESKTOP_WIDTH) return false;
                 //меняем позицию только у 2-го слайдера, т.к. 1-ый скрыт на десктопе
                 glideCompareSliders[1].update({ startAt: 0 });
+                if (document.documentElement.clientWidth <= compare.DESKTOP_XL_SIZE) return false;
+                //устраняем баг, при котором в col-xl при ресайзе показывал только один товар
+                glideCompareSliders[1].update({ perView: 6 });
             });
         },
 
@@ -47,6 +52,9 @@ if (document.querySelector(".js-main-compare-slider")) {
                 if (document.documentElement.clientWidth <= compare.START_DESKTOP_WIDTH) return false;
                 //меняем позицию только у 2-го слайдера, т.к. 1-ый скрыт на десктопе
                 glideCompareSliders[1].update({ startAt: 0 });
+                if (document.documentElement.clientWidth <= compare.DESKTOP_XL_SIZE) return false;
+                //устраняем баг, при котором в col-xl при ресайзе показывал только один товар
+                glideCompareSliders[1].update({ perView: 6 });
             });
         },
 
