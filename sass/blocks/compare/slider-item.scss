@@ -1,4 +1,5 @@
 .slider-item {
+    height: 100%;
 
     &:hover {
         .slider-item__action {
@@ -18,7 +19,7 @@
 //Изображение
     &__img {
         margin-bottom: $slider-item-img-margin-bottom;
-        height: 90px;
+        height: $slider-itemmobile-img-height;
         text-align: center;
         img {
             max-width: 100%;
@@ -212,15 +213,12 @@
 
 //Карточка - добавить товар
     &__add-item {
-        display: none;
-        @media (min-width: $lg) {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            height: $slider-item-lg-container-height;
-            padding: 15px 7.5px;
-            border: 1px dashed $border-color;
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px 7.5px;
+        border: 1px dashed $border-color;
+        height: 100%;
     }
 
     &__add-item-link {
@@ -228,17 +226,24 @@
         span:first-child {
             position: relative;
             display: block;
-            width: $slider-item-img-height-md;
-            height: $slider-item-img-height-md;
+            height: $slider-itemmobile-img-height;
+            width: $slider-itemmobile-img-height;
             margin: 0 auto;
             margin-bottom: $slider-item-img-margin-bottom;
             font-size: 0;
+            @media (min-width: $sm) {
+                width: $slider-item-img-height-md;
+                height: $slider-item-img-height-md;
+            }
         }
         span:first-child::after {
             @include pseudo();
-            height: $slider-item-img-height-md;
+            height: $slider-itemmobile-img-height;
             width: 2px;
             background: $border-color;
+            @media (min-width: $sm) {
+                height: $slider-item-img-height-md;
+            }
         }
         span:first-child::after {
             top: 0;
@@ -247,9 +252,12 @@
         }
         span:first-child::before {
             @include pseudo();
-            width: $slider-item-img-height-md;
+            width: $slider-itemmobile-img-height;
             height: 2px;
             background: $border-color;
+            @media (min-width: $sm) {
+                width: $slider-item-img-height-md;
+            }
         }
         span:first-child::before {
             top: 50%;
@@ -258,8 +266,6 @@
         }
         span:last-child {
             display: block;
-            height: 40px;
-            overflow: hidden;
             font-size: 16px;
             font-weight: 400;
             line-height: 1.31;
