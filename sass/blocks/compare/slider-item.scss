@@ -73,6 +73,9 @@
             align-items: center;
             color: $communication-add-color;
         }
+        @media (min-width: $xl) {
+            display: none;
+        }
     }
 
     &__message-img {

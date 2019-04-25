@@ -59,6 +59,7 @@
 //Блок слайдера
     &__slider-block {
         position: sticky;
+        z-index: 1;
         top: $mobile-header-height;
         margin-bottom: 25px;
         padding: 10px;
@@ -176,10 +177,18 @@
     }
 
 //Блок параметров
-    &__parameter {}
+    &__parameter {
+        padding: 10px;
+        @media (min-width: $sm) {
+            padding: 15px;
+        }
+        @media (min-width: $lg) {
+            padding: 15px 22.5px;
+        }
+    }
 
     &__par-title {
-        width: 100%;
+        margin: 0 -10px;
         padding: 0 30px 25px 30px;
         font-size: 24px;
         font-weight: 600;
@@ -187,6 +196,9 @@
         color: $main-color;
         text-align: center;
         border-bottom: 1px solid $border-color;
+        @media (min-width: $sm) {
+            margin: 0 -15px;
+        }
         @media (min-width: $lg) {
             text-align: left;
         }
