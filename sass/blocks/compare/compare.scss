@@ -63,7 +63,7 @@
         top: $mobile-header-height;
         padding: 10px;
         background: $white;
-        box-shadow: 0 0 0 black;
+        box-shadow: 0 8px 10px -9px transparentize($black, 0.8);
         @media (min-width: $sm) {
             padding: 15px;
         }
