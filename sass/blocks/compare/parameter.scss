@@ -8,7 +8,7 @@
     &__diff-block {
         margin: 0 -10px;
         padding: 0 10px;
-        border-bottom: 1px dotted $border-color;
+        border-bottom: 1px solid $border-color;
         @media (min-width: $sm) {
             margin: 0 -15px;
             padding: 0 15px;

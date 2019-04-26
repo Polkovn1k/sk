@@ -61,9 +61,9 @@
         position: sticky;
         z-index: 1;
         top: $mobile-header-height;
-        margin-bottom: 25px;
         padding: 10px;
         background: $white;
+        box-shadow: 0 0 0 black;
         @media (min-width: $sm) {
             padding: 15px;
         }
@@ -72,7 +72,6 @@
         }
         @media (min-width: $lg) {
             top: $desktop-header-height;
-            margin-bottom: 35px;
         }
     }
 
