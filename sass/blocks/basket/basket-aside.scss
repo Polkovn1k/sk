@@ -92,15 +92,10 @@
 
     &__promo-accept {
         display: none;
-    }
-
-    &__promo-accept.active {
         margin-top: 15px;
-        display: block;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.5;
-        color: $green;
         span:first-child {}
         span:last-child {
             position: relative;
@@ -136,6 +131,16 @@
             line-height: 1.38;
             color: $white;
         }
+    }
+
+    &__promo-accept.active {
+        display: block;
+        color: $green;
+    }
+
+    &__promo-accept.no-active {
+        display: block;
+        color: $red;
     }
 
 //блок состава заказа
