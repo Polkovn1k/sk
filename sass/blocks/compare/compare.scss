@@ -63,7 +63,6 @@
         top: $mobile-header-height;
         padding: 10px;
         background: $white;
-        box-shadow: 0 8px 10px -9px transparentize($black, 0.8);
         @media (min-width: $sm) {
             padding: 15px;
         }
@@ -73,6 +72,10 @@
         @media (min-width: $lg) {
             top: $desktop-header-height;
         }
+    }
+
+    &__slider-block.sticked {
+        box-shadow: 0 10px 11px -9px transparentize($black, 0.9);
     }
 
     &__slider {
