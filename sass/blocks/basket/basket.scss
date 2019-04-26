@@ -84,14 +84,13 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: $grid-padding;
+        padding: 20px $grid-padding;
         font-size: 14px;
         font-weight: 600;
         line-height: 1.3;
         text-align: center;
         color: $add-red;
         background: $white;
-        height: 100%;
         border: 1px solid $border-color;
         cursor: pointer;
         @media (min-width: $lg) {
