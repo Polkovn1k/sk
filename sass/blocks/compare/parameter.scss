@@ -6,13 +6,23 @@
 
 //Ряд свойства
     &__diff-block {
+        margin: 0 -10px;
+        padding: 0 10px;
         border-bottom: 1px dotted $border-color;
+        @media (min-width: $sm) {
+            margin: 0 -15px;
+            padding: 0 15px;
+        }
+        @media (min-width: $lg) {
+            margin: 0 -22.5px;
+            padding: 0 22.5px;
+        }
     }
 
     &__diff-title {
         display: flex;
         align-items: center;
-        padding: 0 0 15px 0;
+        padding: 10px 0 10px 0;
         font-size: 16px;
         font-weight: 600;
         line-height: 1.13;
@@ -25,8 +35,8 @@
         svg {
             margin-top: 3px;
             fill: $blue;
-            width: 15px;
-            height: 8px;
+            width: 10px;
+            height: 5px;
             transition: 0.3s ease;
         }
     }
@@ -41,7 +51,6 @@
         overflow: hidden;
         max-height: 0;
         transition: 0.3s ease;
-        margin-bottom: 10px;
     }
 
     &__diff-row.active {
@@ -49,6 +58,7 @@
     }
 
     &__diff-col {
+        margin-bottom: 10px;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.13;
