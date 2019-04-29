@@ -58,25 +58,28 @@ if (document.querySelector(".js-main-compare-slider")) {
             });
         },
 
-        /*someAction: () => {
-            glideCompareSliders[0].on('mount.after', function() {
-              console.log("Произошло событие!");
-            })
+        someAction: () => {
+            glideCompareSliders[0].on(["mount.before", "run"], function() {
+                var diffBlock = document.querySelectorAll(".js-parameter-diff");
+                console.dir(diffBlock);
+                var currentElement = glideCompareSliders[0].index;
+                console.log(currentElement);
+            });
         },
-*/
+
         init: () => {
             compare.listenTurnDevice();
             compare.listenResizeDevice();
-            //compare.someAction();
+            compare.someAction();
         },
     };
     compare.init();
 
 }
 
-for (var i = 0; i < glideCompareSliders.length; i++) {
+/*for (var i = 0; i < glideCompareSliders.length; i++) {
     glideCompareSliders[i].on(["mount.before", "run"], function() {
       console.log(glideCompareSliders[0].index);
       console.log(glideCompareSliders[1].index);
     })
-}
+}*/
