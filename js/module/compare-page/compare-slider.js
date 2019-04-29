@@ -58,11 +58,25 @@ if (document.querySelector(".js-main-compare-slider")) {
             });
         },
 
+        /*someAction: () => {
+            glideCompareSliders[0].on('mount.after', function() {
+              console.log("Произошло событие!");
+            })
+        },
+*/
         init: () => {
             compare.listenTurnDevice();
             compare.listenResizeDevice();
+            //compare.someAction();
         },
     };
     compare.init();
 
+}
+
+for (var i = 0; i < glideCompareSliders.length; i++) {
+    glideCompareSliders[i].on(["mount.before", "run"], function() {
+      console.log(glideCompareSliders[0].index);
+      console.log(glideCompareSliders[1].index);
+    })
 }
