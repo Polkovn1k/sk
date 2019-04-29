@@ -95,25 +95,25 @@ if (document.querySelector(".js-main-compare-slider")) {
         },
 
         _firstSlider: () => {
-            glideCompareSliders[0].on(["run.after", "run"], function() {
-                if (glideCompareSliders[0].index !== glideCompareSliders[1].index) return false
-                if (glideCompareSliders[0].index - glideCompareSliders[1].index === 0) {
-                    glideCompareSliders[0].index = glideCompareSliders[0].index + 1;
-                } else if (glideCompareSliders[0].index - glideCompareSliders[1].index === 1) {
-                    glideCompareSliders[0].index = glideCompareSliders[0].index - 1;
-                }
+            glideCompareSliders[0].on(["run.before", "run"], function() {
+                //if (glideCompareSliders[0].index !== glideCompareSliders[1].index) return false
+                if (glideCompareSliders[0].index === glideCompareSliders[1].index) {
+                    glideCompareSliders[0].index++;
+                } /*else if (glideCompareSliders[0].index - glideCompareSliders[1].index === 1) {
+                    glideCompareSliders[0].index--;
+                }*/
             });
             glideCompareSliders[0].mount();
         },
 
         _secondSlider: () => {
-            glideCompareSliders[1].on(["run.after", "run"], function() {
-                if (glideCompareSliders[1].index !== glideCompareSliders[0].index) return false
-                if (glideCompareSliders[1].index - glideCompareSliders[0].index === 0) {
-                    glideCompareSliders[1].index = glideCompareSliders[1].index + 1;
-                } else if (glideCompareSliders[1].index - glideCompareSliders[0].index === 1) {
-                    glideCompareSliders[1].index = glideCompareSliders[1].index - 1;
-                }
+            glideCompareSliders[1].on(["run.before", "run"], function() {
+                //if (glideCompareSliders[1].index !== glideCompareSliders[0].index) return false
+                if (glideCompareSliders[1].index === glideCompareSliders[0].index) {
+                    glideCompareSliders[1].index++;
+                } /*else if (glideCompareSliders[1].index - glideCompareSliders[0].index === 1) {
+                    glideCompareSliders[1].index--;
+                }*/
             });
             glideCompareSliders[1].mount();
         },
