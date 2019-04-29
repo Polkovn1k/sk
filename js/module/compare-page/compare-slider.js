@@ -41,7 +41,7 @@ if (document.querySelector(".js-main-compare-slider")) {
         START_DESKTOP_WIDTH: 1024,
 
         DESKTOP_XL_SIZE: 1395,
-
+//Внешний вид при ресайзе или повороте устройства
         listenTurnDevice: () => {
             window.addEventListener("orientationchange", function() {
                 compare._resizeOrTurn();
@@ -68,34 +68,55 @@ if (document.querySelector(".js-main-compare-slider")) {
                 glideCompareSliders[1].update({ perView: 6 });
             }
         },
+//Свойства после инициализации
+        propertyStateAfterInit: () => {
+            document.querySelectorAll(".js-parameter-col").forEach((block) => {
+                block.classList.add("visually-hidden");
+            });
+            compare._propsPosition(glideCompareSliders[0].index);
+            compare._propsPosition(glideCompareSliders[1].index);
+        },
 
+        _propsPosition: (currentElement) => {
+            var diffBlock = document.querySelectorAll(".js-parameter-diff-row");
+            diffBlock.forEach((propContainer) => {
+                propContainer.children[currentElement].classList.remove("visually-hidden");
+            });
+        },
+//Свойства при смене слайдов
         listenSliderActions: () => {
             for (var i = 0; i < glideCompareSliders.length; i++) {
                 glideCompareSliders[i].on(["mount.before", "run"], function() {
                     document.querySelectorAll(".js-parameter-col").forEach((block) => {
                         block.classList.add("visually-hidden");
                     });
+                    //Первый слайдер
+                    compare._firstSlider(glideCompareSliders[0]);
+                    //Второй слайдер
+                    compare._firstSlider(glideCompareSliders[1]);
                 })
             }
-            compare._firstSlider();
-            compare._secondSlider();
         },
 
-        _firstSlider: () => {
-            glideCompareSliders[0].on(["mount.before", "run"], function() {
+        _firstSlider: (sliderNumber) => {
+            /*sliderNumber.on(["mount.before", "run"], function() {
                 var diffBlock = document.querySelectorAll(".js-parameter-diff-row");
-                var currentElement = glideCompareSliders[0].index;
+                var currentElement = sliderNumber.index;
                 diffBlock.forEach((propContainer) => {
                     propContainer.children[currentElement].classList.remove("visually-hidden");
                 });
+            });*/
+            var diffBlock = document.querySelectorAll(".js-parameter-diff-row");
+            var currentElement = sliderNumber.index;
+            diffBlock.forEach((propContainer) => {
+                propContainer.children[currentElement].classList.remove("visually-hidden");
             });
         },
-
-        _secondSlider: () => {},
 
         init: () => {
             compare.listenTurnDevice();
             compare.listenResizeDevice();
+            compare.propertyStateAfterInit();
             compare.listenSliderActions();
         },
     };
