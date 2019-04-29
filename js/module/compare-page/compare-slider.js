@@ -7,7 +7,7 @@ if (document.querySelector(".compare-slider")) {
         glideCompareSliders[i] = new Glide(item[i], {
           gap: 0,
           bound: true,
-          rewind: false,
+          rewind: true,
           perView: 6,
           breakpoints: {
               1394: {
@@ -91,21 +91,14 @@ if (document.querySelector(".js-main-compare-slider")) {
                         block.classList.add("visually-hidden");
                     });
                     //Первый слайдер
-                    compare._firstSlider(glideCompareSliders[0]);
+                    compare.sliderBlock(glideCompareSliders[0]);
                     //Второй слайдер
-                    compare._firstSlider(glideCompareSliders[1]);
+                    compare.sliderBlock(glideCompareSliders[1]);
                 })
             }
         },
 
-        _firstSlider: (sliderNumber) => {
-            /*sliderNumber.on(["mount.before", "run"], function() {
-                var diffBlock = document.querySelectorAll(".js-parameter-diff-row");
-                var currentElement = sliderNumber.index;
-                diffBlock.forEach((propContainer) => {
-                    propContainer.children[currentElement].classList.remove("visually-hidden");
-                });
-            });*/
+        sliderBlock: (sliderNumber) => {
             var diffBlock = document.querySelectorAll(".js-parameter-diff-row");
             var currentElement = sliderNumber.index;
             diffBlock.forEach((propContainer) => {
