@@ -90,27 +90,44 @@ if (document.querySelector(".js-main-compare-slider")) {
                     document.querySelectorAll(".js-parameter-col").forEach((block) => {
                         block.classList.add("visually-hidden");
                     });
-                    //Первый слайдер
-                    compare.sliderBlock(glideCompareSliders[0]);
-                    //Второй слайдер
-                    compare.sliderBlock(glideCompareSliders[1]);
                 })
             }
         },
 
-        sliderBlock: (sliderNumber) => {
+        _firstSlider: () => {
+            glideCompareSliders[0].on(["mount.after", "run"], function() {
+                if (glideCompareSliders[0].index === glideCompareSliders[1].index) {
+                    glideCompareSliders[0].index = glideCompareSliders[0].index + 1;
+                    //glideCompareSliders[0].go(">>");
+                }
+            });
+            glideCompareSliders[0].mount();
+        },
+
+        _secondSlider: () => {
+            glideCompareSliders[1].on(["mount.after", "run"], function() {
+                if (glideCompareSliders[1].index === glideCompareSliders[0].index) {
+                    glideCompareSliders[1].index = glideCompareSliders[1].index + 1;
+                }
+            });
+            glideCompareSliders[1].mount();
+        },
+
+        /*sliderBlock: (sliderNumber) => {
             var diffBlock = document.querySelectorAll(".js-parameter-diff-row");
             var currentElement = sliderNumber.index;
             diffBlock.forEach((propContainer) => {
                 propContainer.children[currentElement].classList.remove("visually-hidden");
             });
-        },
+        },*/
 
         init: () => {
             compare.listenTurnDevice();
             compare.listenResizeDevice();
             compare.propertyStateAfterInit();
             compare.listenSliderActions();
+            compare._firstSlider();
+            compare._secondSlider();
         },
     };
     compare.init();
