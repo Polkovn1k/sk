@@ -9,7 +9,7 @@
 
     &__container {
         position: relative;
-        padding: 15px 0 $slider-item-padding-bottom 0;
+        padding: 15px 7.5px $slider-item-padding-bottom 7.5px;
         @media (min-width: $lg) {
             padding: 15px 7.5px;
             height: $slider-item-lg-container-height;
