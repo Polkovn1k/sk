@@ -95,36 +95,17 @@ if (document.querySelector(".js-main-compare-slider")) {
         },
 
         _firstSlider: () => {
-            glideCompareSliders[0].on(["run.before", "run"], function() {
-                //if (glideCompareSliders[0].index !== glideCompareSliders[1].index) return false
-                if (glideCompareSliders[0].index === glideCompareSliders[1].index) {
+            glideCompareSliders[0].on(["mount.after", "run"], function() {
+                if ((glideCompareSliders[0].index - glideCompareSliders[1].index === 1) || (glideCompareSliders[0].index === glideCompareSliders[1].index)) {
+                    console.log(1);
                     glideCompareSliders[0].index++;
-                } /*else if (glideCompareSliders[0].index - glideCompareSliders[1].index === 1) {
+                } else if (glideCompareSliders[0].index - glideCompareSliders[1].index === 0) {
+                    console.log(2);
                     glideCompareSliders[0].index--;
-                }*/
+                }
             });
             glideCompareSliders[0].mount();
         },
-
-        _secondSlider: () => {
-            glideCompareSliders[1].on(["run.before", "run"], function() {
-                //if (glideCompareSliders[1].index !== glideCompareSliders[0].index) return false
-                if (glideCompareSliders[1].index === glideCompareSliders[0].index) {
-                    glideCompareSliders[1].index++;
-                } /*else if (glideCompareSliders[1].index - glideCompareSliders[0].index === 1) {
-                    glideCompareSliders[1].index--;
-                }*/
-            });
-            glideCompareSliders[1].mount();
-        },
-
-        /*sliderBlock: (sliderNumber) => {
-            var diffBlock = document.querySelectorAll(".js-parameter-diff-row");
-            var currentElement = sliderNumber.index;
-            diffBlock.forEach((propContainer) => {
-                propContainer.children[currentElement].classList.remove("visually-hidden");
-            });
-        },*/
 
         init: () => {
             compare.listenTurnDevice();
@@ -132,7 +113,6 @@ if (document.querySelector(".js-main-compare-slider")) {
             compare.propertyStateAfterInit();
             compare.listenSliderActions();
             compare._firstSlider();
-            compare._secondSlider();
         },
     };
     compare.init();
