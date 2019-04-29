@@ -44,36 +44,29 @@ if (document.querySelector(".js-main-compare-slider")) {
 
         listenTurnDevice: () => {
             window.addEventListener("orientationchange", function() {
-                //меняем позицию слайда у второго слайда, в зависимости от вьюпорта
-                var viewPort = document.documentElement.clientWidth;
-                if (viewPort < compare.START_DESKTOP_WIDTH) {
-                    glideCompareSliders[1].update({ startAt: 1 });
-                    return false;
-                } else {
-                    glideCompareSliders[1].update({ startAt: 0 });
-                }
-                //устраняем баг, при котором в col-xl при ресайзе показывал только один товар
-                if (viewPort >= compare.DESKTOP_XL_SIZE) {
-                    glideCompareSliders[1].update({ perView: 6 });
-                }
+                compare._resizeOrTurn();
             });
         },
 
         listenResizeDevice: () => {
             window.addEventListener("resize", function() {
-                //меняем позицию слайда у второго слайда, в зависимости от вьюпорта
-                var viewPort = document.documentElement.clientWidth;
-                if (viewPort < compare.START_DESKTOP_WIDTH) {
-                    glideCompareSliders[1].update({ startAt: 1 });
-                    return false;
-                } else {
-                    glideCompareSliders[1].update({ startAt: 0 });
-                }
-                //устраняем баг, при котором в col-xl при ресайзе показывал только один товар
-                if (viewPort >= compare.DESKTOP_XL_SIZE) {
-                    glideCompareSliders[1].update({ perView: 6 });
-                }
+                compare._resizeOrTurn();
             });
+        },
+
+        _resizeOrTurn: () => {
+            //меняем позицию слайда у второго слайда, в зависимости от вьюпорта
+            var viewPort = document.documentElement.clientWidth;
+            if (viewPort < compare.START_DESKTOP_WIDTH) {
+                glideCompareSliders[1].update({ startAt: 1 });
+                return false;
+            } else {
+                glideCompareSliders[1].update({ startAt: 0 });
+            }
+            //устраняем баг, при котором в col-xl при ресайзе показывал только один товар
+            if (viewPort >= compare.DESKTOP_XL_SIZE) {
+                glideCompareSliders[1].update({ perView: 6 });
+            }
         },
 
         listenSliderActions: () => {
