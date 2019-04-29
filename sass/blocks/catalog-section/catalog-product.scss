@@ -1,9 +1,10 @@
 .catalog-product {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     position: relative;
-    height: 100%;
     background: $white;
     outline: 1px solid $border-color;
-    font-family: $font;
     transition: box-shadow 0.3s ease;
 
     &:hover {
@@ -17,6 +18,7 @@
     &__container {
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
         position: relative;
         padding: 15px;
         padding-top: $catalog-product-mobile-container-padding-top;
@@ -27,7 +29,6 @@
         }
         @media (min-width: $lg) {
             min-height: 0;
-            height: 100%;
             padding: $grid-padding;
         }
     }
@@ -399,7 +400,6 @@
         }
         @media (min-width: $lg) {
             min-height: 0;
-            height: 100%;
             padding: $grid-padding;
         }
 
@@ -428,7 +428,6 @@
 
         .catalog-product__container {
             justify-content: center;
-            height: 100%;
             padding: $list-style-catalog-product-padding;
             padding-left: $list-style-catalog-product-padding-left;
             padding-right: calc(#{$list-style-catalog-product-right-content-width} + #{$list-style-catalog-product-padding-right});
@@ -470,13 +469,11 @@
             top: 0;
             left: 0;
             width: $list-style-catalog-product-padding-left;
-            height: 100%;
             padding: $list-style-catalog-product-padding;
             padding-right: 15px;
             display: flex;
             align-items: center;
             img {
-                max-height: 100%;
                 width: 100%;
             }
         }
@@ -550,7 +547,6 @@
 //если карточка сертификата
     .catalog-product__certificate-container {
         @media (min-width: $lg) {
-            height: 100%;
             padding: $grid-padding;
             padding-left: $list-style-catalog-product-certificate-padding-left;
             padding-right: calc(#{$list-style-catalog-product-right-content-width} + #{$list-style-catalog-product-padding-right});

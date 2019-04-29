@@ -97,50 +97,54 @@
         font-weight: 400;
         line-height: 1.5;
         span:first-child {}
-        span:last-child {
-            position: relative;
-            display: inline-block;
-            vertical-align: top;
-            margin-left: 10px;
-            width: $basket-aside-promo-accept-span-width;
-            height: $basket-aside-promo-accept-span-width;
-            border-radius: 50%;
-            background: $extra-text-color;
-
-            font-size: 13px;
-            font-weight: 600;
-            line-height: 1.38;
-            text-align: center;
-            color: $white;
-            cursor: default;
-        }
-        span:last-child:hover::before {
-            content: "Какой-то поясняющий текст, какой-то поясняющий текст";
-            position: absolute;
-            display: block;
-            padding: 5px;
-            top: 50%;
-            right: $basket-aside-promo-accept-span-width + 5px;
-            transform: translateY(-50%);
-            width: 150px;
-            height: auto;
-            border-radius: 5px;
-            background: $extra-text-color;
-            font-size: 13px;
-            font-weight: 400;
-            line-height: 1.38;
-            color: $white;
-        }
     }
 
     &__promo-accept.active {
-        display: block;
+        display: flex;
+        align-items: center;
         color: $green;
     }
 
     &__promo-accept.no-active {
-        display: block;
+        display: flex;
+        align-items: center;
         color: $red;
+    }
+
+    &__promo-add-info {
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 10px;
+        width: $basket-aside-promo-accept-span-width;
+        height: $basket-aside-promo-accept-span-width;
+        border-radius: 50%;
+        background: $extra-text-color;
+
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.38;
+        text-align: center;
+        color: $white;
+        cursor: default;
+    }
+
+    &__promo-add-info:hover::before {
+        content: "Промокод применен, товар со скидкой..";
+        position: absolute;
+        display: block;
+        padding: 5px;
+        top: 50%;
+        right: $basket-aside-promo-accept-span-width + 5px;
+        transform: translateY(-50%);
+        width: 150px;
+        height: auto;
+        border-radius: 5px;
+        background: $extra-text-color;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $white;
     }
 
 //блок состава заказа

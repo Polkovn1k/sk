@@ -210,6 +210,8 @@
     }
 
     &__products-item {
+        display: flex;
+        flex-direction: column;
         margin-bottom: 15px;
         @media (min-width: $lg) {
             margin-bottom: 0;

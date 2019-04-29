@@ -20,6 +20,7 @@
         @include order-reset();
         @media (min-width: $lg) {
             display: flex;
+            align-items: center;
         }
     }
 
@@ -77,6 +78,8 @@
             transition: 0.3s ease;
         }
         @media (min-width: $lg) {
+            display: block;
+            height: auto;
             border-bottom: none;
             padding: 7px 12px;
             svg {
