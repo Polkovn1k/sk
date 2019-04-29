@@ -17,12 +17,18 @@ if (document.querySelector(".compare-slider")) {
                   perView: 1,
               },
           }
-      });
+        });
         glideCompareSliders[i].mount();
         return glideCompareSliders;
     }
     for (var i = 0; i < sliders.length; i++) {
         sliderCollection(i, sliders);
+    }
+//Второй слайдер всегда начинается со 2-го слайда на мобилках, либо с 1-го на десктопе
+    if (document.documentElement.clientWidth < 1024) {
+        glideCompareSliders[1].update({ startAt: 1 });
+    } else {
+        glideCompareSliders[1].update({ startAt: 0 });
     }
 
 }
@@ -38,48 +44,68 @@ if (document.querySelector(".js-main-compare-slider")) {
 
         listenTurnDevice: () => {
             window.addEventListener("orientationchange", function() {
-                if (document.documentElement.clientWidth <= compare.START_DESKTOP_WIDTH) return false;
-                //меняем позицию только у 2-го слайдера, т.к. 1-ый скрыт на десктопе
-                glideCompareSliders[1].update({ startAt: 0 });
-                if (document.documentElement.clientWidth <= compare.DESKTOP_XL_SIZE) return false;
+                //меняем позицию слайда у второго слайда, в зависимости от вьюпорта
+                var viewPort = document.documentElement.clientWidth;
+                if (viewPort < compare.START_DESKTOP_WIDTH) {
+                    glideCompareSliders[1].update({ startAt: 1 });
+                    return false;
+                } else {
+                    glideCompareSliders[1].update({ startAt: 0 });
+                }
                 //устраняем баг, при котором в col-xl при ресайзе показывал только один товар
-                glideCompareSliders[1].update({ perView: 6 });
+                if (viewPort >= compare.DESKTOP_XL_SIZE) {
+                    glideCompareSliders[1].update({ perView: 6 });
+                }
             });
         },
 
         listenResizeDevice: () => {
             window.addEventListener("resize", function() {
-                if (document.documentElement.clientWidth <= compare.START_DESKTOP_WIDTH) return false;
-                //меняем позицию только у 2-го слайдера, т.к. 1-ый скрыт на десктопе
-                glideCompareSliders[1].update({ startAt: 0 });
-                if (document.documentElement.clientWidth <= compare.DESKTOP_XL_SIZE) return false;
+                //меняем позицию слайда у второго слайда, в зависимости от вьюпорта
+                var viewPort = document.documentElement.clientWidth;
+                if (viewPort < compare.START_DESKTOP_WIDTH) {
+                    glideCompareSliders[1].update({ startAt: 1 });
+                    return false;
+                } else {
+                    glideCompareSliders[1].update({ startAt: 0 });
+                }
                 //устраняем баг, при котором в col-xl при ресайзе показывал только один товар
-                glideCompareSliders[1].update({ perView: 6 });
+                if (viewPort >= compare.DESKTOP_XL_SIZE) {
+                    glideCompareSliders[1].update({ perView: 6 });
+                }
             });
         },
 
-        someAction: () => {
+        listenSliderActions: () => {
+            for (var i = 0; i < glideCompareSliders.length; i++) {
+                glideCompareSliders[i].on(["mount.before", "run"], function() {
+                    document.querySelectorAll(".js-parameter-col").forEach((block) => {
+                        block.classList.add("visually-hidden");
+                    });
+                })
+            }
+            compare._firstSlider();
+            compare._secondSlider();
+        },
+
+        _firstSlider: () => {
             glideCompareSliders[0].on(["mount.before", "run"], function() {
-                var diffBlock = document.querySelectorAll(".js-parameter-diff");
-                console.dir(diffBlock);
+                var diffBlock = document.querySelectorAll(".js-parameter-diff-row");
                 var currentElement = glideCompareSliders[0].index;
-                console.log(currentElement);
+                diffBlock.forEach((propContainer) => {
+                    propContainer.children[currentElement].classList.remove("visually-hidden");
+                });
             });
         },
+
+        _secondSlider: () => {},
 
         init: () => {
             compare.listenTurnDevice();
             compare.listenResizeDevice();
-            compare.someAction();
+            compare.listenSliderActions();
         },
     };
     compare.init();
 
 }
-
-/*for (var i = 0; i < glideCompareSliders.length; i++) {
-    glideCompareSliders[i].on(["mount.before", "run"], function() {
-      console.log(glideCompareSliders[0].index);
-      console.log(glideCompareSliders[1].index);
-    })
-}*/
