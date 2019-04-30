@@ -84,7 +84,7 @@ if (document.querySelector(".js-main-compare-slider")) {
             });
         },
 //Свойства при смене слайдов
-        listenSliderActions: () => {
+        /*listenSliderActions: () => {
             for (var i = 0; i < glideCompareSliders.length; i++) {
                 glideCompareSliders[i].on(["mount.before", "run"], function() {
                     document.querySelectorAll(".js-parameter-col").forEach((block) => {
@@ -92,16 +92,19 @@ if (document.querySelector(".js-main-compare-slider")) {
                     });
                 })
             }
+        },*/
+
+        _writeCurrentIndex: () => {
+            var firstSlider = document.querySelectorAll(".js-compare-slider");
+            return firstSlider[0].querySelector(".glide__slide--active");
         },
 
         _firstSlider: () => {
-            glideCompareSliders[0].on(["mount.after", "run"], function() {
-                if ((glideCompareSliders[0].index - glideCompareSliders[1].index === 1) || (glideCompareSliders[0].index === glideCompareSliders[1].index)) {
-                    console.log(1);
+            glideCompareSliders[0].on("run.before", () => {
+                compare._writeCurrentIndex().setAttribute("data-index", glideCompareSliders[0].index);
+                console.log(compare._writeCurrentIndex());
+                if (glideCompareSliders[0].index + 1 === glideCompareSliders[1].index) {
                     glideCompareSliders[0].index++;
-                } else if (glideCompareSliders[0].index - glideCompareSliders[1].index === 0) {
-                    console.log(2);
-                    glideCompareSliders[0].index--;
                 }
             });
             glideCompareSliders[0].mount();
@@ -111,7 +114,7 @@ if (document.querySelector(".js-main-compare-slider")) {
             compare.listenTurnDevice();
             compare.listenResizeDevice();
             compare.propertyStateAfterInit();
-            compare.listenSliderActions();
+            //compare.listenSliderActions();
             compare._firstSlider();
         },
     };
