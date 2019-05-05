@@ -99,13 +99,16 @@ if (document.querySelector(".js-main-compare-slider")) {
             return firstSlider[0].querySelector(".glide__slide--active");
         },
 
-        _firstSlider: () => {
+        runBefore: () => {
             glideCompareSliders[0].on("run.before", () => {
-                compare._writeCurrentIndex().setAttribute("data-index", glideCompareSliders[0].index);
-                console.log(compare._writeCurrentIndex());
-                if (glideCompareSliders[0].index + 1 === glideCompareSliders[1].index) {
-                    glideCompareSliders[0].index++;
-                }
+                console.log(glideCompareSliders[0].index);
+            });
+            glideCompareSliders[0].mount();
+        },
+
+        runAfter: () => {
+            glideCompareSliders[0].on("run.after", () => {
+                console.log(glideCompareSliders[0].index + 1);
             });
             glideCompareSliders[0].mount();
         },
@@ -114,8 +117,8 @@ if (document.querySelector(".js-main-compare-slider")) {
             compare.listenTurnDevice();
             compare.listenResizeDevice();
             compare.propertyStateAfterInit();
-            //compare.listenSliderActions();
-            compare._firstSlider();
+            compare.runBefore();
+            compare.runAfter();
         },
     };
     compare.init();
