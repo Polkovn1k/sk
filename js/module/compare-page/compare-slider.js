@@ -128,32 +128,44 @@ if (document.querySelector(".compare-slider")) {
 
 
 
-        /*listenSliderActions: () => {
-            for (var i = 0; i < glideCompareSliders.length; i++) {
-                glideCompareSliders[i].on(["mount.before", "run"], function() {
-                    document.querySelectorAll(".js-parameter-col").forEach((block) => {
-                        block.classList.add("visually-hidden");
-                    });
-                })
-            }
-        },*/
 
-        _propsPosition: (currentElement) => {
-            var diffBlock = document.querySelectorAll(".js-parameter-diff-row");
-            diffBlock.forEach((propContainer) => {
-                propContainer.children[currentElement].classList.remove("visually-hidden");
+
+
+
+
+
+        listenSliderActions: () => {
+            addCompare.on("run.after", () => {
+                document.querySelectorAll(".js-parameter-col").forEach((block) => {
+                    block.classList.add("visually-hidden");
+                });
+                compare._propsPosition(addCompare.index, mainCompare.index);
+            });
+            mainCompare.on("run.after", () => {
+                document.querySelectorAll(".js-parameter-col").forEach((block) => {
+                    block.classList.add("visually-hidden");
+                });
+                compare._propsPosition(addCompare.index, mainCompare.index);
             });
         },
 
-        _writeCurrentIndex: () => {
-            var firstSlider = document.querySelectorAll(".js-compare-slider");
-            return firstSlider[0].querySelector(".glide__slide--active");
+        _propsPosition: (addSliderIndex, mainSliderIndex) => {
+            var diffRow = document.querySelectorAll(".js-parameter-diff-row");
+            diffRow.forEach((propContainer) => {
+                if (addSliderIndex > mainSliderIndex) {
+                    propContainer.classList.add("reverse");
+                } else {
+                    propContainer.classList.remove("reverse");
+                }
+                propContainer.children[addSliderIndex].classList.remove("visually-hidden");
+                propContainer.children[mainSliderIndex].classList.remove("visually-hidden");
+            });
         },
 
         init: () => {
             compare.listenTurnDevice();
             compare.listenResizeDevice();
-            //compare.listenSliderActions();
+            compare.listenSliderActions();
         },
     };
     compare.init();
