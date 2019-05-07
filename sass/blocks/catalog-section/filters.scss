@@ -96,6 +96,7 @@
 
     &__panel {
         @include field-reset();
+        position: relative;
         border: none;
         border-bottom: 1px solid $border-color;
     }
@@ -354,6 +355,55 @@
                 display: block;
                 border-top: none;
             }
+        }
+    }
+
+//Подсказки
+    &__tooltip {
+        display: none;
+        @media (min-width: $lg) {
+            position: absolute;
+            z-index: 100;
+            width: $filters-tooltip-width;
+            height: 35px;
+            color: $white;
+            font-size: 12px;
+            line-height: 35px;
+            text-align: center;
+
+            top: 54px;
+            right: -$filters-tooltip-width;
+            a {
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: $extra-text-color;
+                border-radius: 3px;
+                transition: 0.3s background ease;
+            }
+            a::before {
+                @include pseudo();
+                top: 50%;
+                margin-top: -8px;
+                width: 15px;
+                height: 15px;
+                left: -5px;
+                background: inherit;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__tooltip.active {
+        @media (min-width: $lg) {
+            display: block;
+        }
+    }
+
+    &__tooltip:hover {
+        a {
+            background: lighten($extra-text-color, 5%);
         }
     }
 }
