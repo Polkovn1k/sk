@@ -4,17 +4,32 @@ if (document.querySelector(".catalog-tips")) {
     var filterTips = {
 
         listenAction: () => {
-            document.querySelectorAll('.filters__container input[type="checkbox"]').forEach((clickedCheckbox) => {
+            var checkbox = document.querySelectorAll('.filters__container input[type="checkbox"]');
+            checkbox.forEach((clickedCheckbox) => {
                 clickedCheckbox.addEventListener("change", (event) => {
-                    if (clickedCheckbox.checked) {
-                        var clickedElementTopPosition = filterTips._getCheckboxPosition(clickedCheckbox);
-                        filterTips._removeAllActiveTips();
-                        filterTips._addStyleForTip(clickedCheckbox, clickedElementTopPosition);
+//Убираем все классы clicked
+                    for (var i = 0; i < checkbox.length; i++) {
+                        checkbox[i].classList.remove("clicked");
+                    };
+//Ставим clicked только на нажатом элементе
+                    event.target.classList.add("clicked");
+                    if (!clickedCheckbox.checked) {
+                        filterTips._removeAllStatus();
                         return false;
                     }
-                    filterTips._removeAllActiveTips();
+                    filterTips.action();
                 });
             });
+        },
+
+        action: () => {
+            var clickedCheckbox = document.querySelector(".clicked");
+            if (clickedCheckbox.checked && clickedCheckbox.classList.contains("clicked")) {
+                var clickedElementTopPosition = filterTips._getCheckboxPosition(clickedCheckbox);
+                filterTips._removeAllStatus();
+                filterTips._addStyleForTip(clickedCheckbox, clickedElementTopPosition);
+                return false;
+            }
         },
 
         _getCheckboxPosition: (activeCheckbox) => {
@@ -24,7 +39,7 @@ if (document.querySelector(".catalog-tips")) {
             return objectTopPosition;
         },
 
-        _removeAllActiveTips: () => {
+        _removeAllStatus: () => {
             document.querySelectorAll(".filters__tooltip").forEach((tip) => {
                 tip.classList.remove("active");
             });
