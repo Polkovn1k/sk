@@ -373,6 +373,7 @@
 
             top: 54px;
             right: -$filters-tooltip-width;
+            transition: 0.3s opacity ease;
             a {
                 position: relative;
                 display: block;

@@ -8,10 +8,12 @@ if (document.querySelector(".catalog-tips")) {
             document.querySelectorAll('.filters__container input[type="checkbox"]').forEach((clickedCheckbox) => {
                 clickedCheckbox.addEventListener("change", (event) => {
                     if (clickedCheckbox.checked) {
-                        //console.dir();
                         var clickedElementTopPosition = filterTips._getCheckboxPosition(clickedCheckbox);
+                        filterTips._removeAllActiveTips();
                         filterTips._addStyleForTip(clickedCheckbox, clickedElementTopPosition);
+                        return false;
                     }
+                    filterTips._removeAllActiveTips();
                 });
             });
         },
@@ -21,6 +23,12 @@ if (document.querySelector(".catalog-tips")) {
             var innerContainer = activeCheckbox.closest(".check-box__item");
             var objectTopPosition = innerContainer.getBoundingClientRect().top - mainContainer.getBoundingClientRect().top - 4;
             return objectTopPosition;
+        },
+
+        _removeAllActiveTips: () => {
+            document.querySelectorAll(".filters__tooltip").forEach((tip) => {
+                tip.classList.remove("active");
+            });
         },
 
         _addStyleForTip: (checkBox, positionTopOfcheckBox) => {
