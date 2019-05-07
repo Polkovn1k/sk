@@ -1,7 +1,6 @@
-//ПЕРЕКЛЮЧАТЕЛЬ ВИДА КАРТОЧЕК: ПЛИТКА/СТРОКА
+//ПОДСКАЗКИ В ФИЛЬТРЕ
 if (document.querySelector(".catalog-tips")) {
 
-    //ПРЕЛОАДЕР
     var filterTips = {
 
         listenAction: () => {
@@ -31,49 +30,25 @@ if (document.querySelector(".catalog-tips")) {
             });
         },
 
+        _fadeOverTime: (tip) => {
+            function fade() {
+                tip.classList.remove("active");
+            }
+            return fade;
+        },
+
         _addStyleForTip: (checkBox, positionTopOfcheckBox) => {
             var mainContainer = checkBox.closest(".filters__panel");
             var currentTooltip = mainContainer.querySelector(".filters__tooltip");
             currentTooltip.classList.add("active");
             currentTooltip.style.top = positionTopOfcheckBox + "px";
+            setTimeout(filterTips._fadeOverTime(currentTooltip), 7000);
         },
 
         init: () => {
             filterTips.listenAction();
         },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*element: document.querySelector(".loader"),
-
-        activeLoader: () => {
-            filterTips.element.style.display = "block";
-            filterTips.element.classList.add("active");
-        },
-
-        hideLoader: () => {
-            filterTips.element.classList.remove("active");
-            setTimeout(filterTips._afterHideEffect, 700);
-        },
-
-        _afterHideEffect: () => {
-            filterTips.element.style.display = "none";
-        },*/
     };
-    //filterTips.activeLoader();
-    //filterTips.hideLoader();
 
 }
 filterTips.init();
