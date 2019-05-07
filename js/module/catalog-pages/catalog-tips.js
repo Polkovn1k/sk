@@ -23,13 +23,10 @@ if (document.querySelector(".catalog-tips")) {
         },
 
         action: () => {
-            var clickedCheckbox = document.querySelector(".clicked");
-            if (clickedCheckbox.checked && clickedCheckbox.classList.contains("clicked")) {
-                var clickedElementTopPosition = filterTips._getCheckboxPosition(clickedCheckbox);
-                filterTips._removeAllStatus();
-                filterTips._addStyleForTip(clickedCheckbox, clickedElementTopPosition);
-                return false;
-            }
+            var clickedCheckbox = document.querySelector(".clicked:checked");
+            var clickedElementTopPosition = filterTips._getCheckboxPosition(clickedCheckbox);
+            filterTips._removeAllStatus();
+            filterTips._addStyleForTip(clickedCheckbox, clickedElementTopPosition);
         },
 
         _getCheckboxPosition: (activeCheckbox) => {
