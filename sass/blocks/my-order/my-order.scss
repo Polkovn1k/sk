@@ -23,7 +23,7 @@
     }
 
     &__table {
-        min-width: 715px;
+        min-width: 730px;
         border-collapse: collapse;
         width: 100%;
         padding: $grid-padding 0;
@@ -32,7 +32,7 @@
             padding: $grid-padding $grid-padding;
             width: calc((100% - 40px) / 4);
             text-align: left;
-            vertical-align: top;
+            vertical-align: middle;
             height: 52px;
 
             text-overflow: ellipsis;
@@ -138,6 +138,11 @@
         }
     }
 
+    &__price {
+        display: inline-block;
+        width: 75px;
+    }
+
     &__status {
         padding-left: 5px;
         color: $blue;
@@ -145,11 +150,11 @@
     }
 
     &__buy {
-        background: transparent;
-        outline: none;
-        border: none;
-        color: $blue;
-        cursor: pointer;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 5px;
+        font-size: 12px;
+        font-weight: 600;
     }
 
     &__delivery {
