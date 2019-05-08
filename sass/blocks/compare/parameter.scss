@@ -19,6 +19,10 @@
         }
     }
 
+    &__diff-block:last-child {
+        border-bottom: none;
+    }
+
     &__diff-title {
         display: flex;
         align-items: center;
