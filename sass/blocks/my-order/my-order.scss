@@ -23,7 +23,7 @@
     }
 
     &__table {
-        min-width: 700px;
+        min-width: 715px;
         border-collapse: collapse;
         width: 100%;
         padding: $grid-padding 0;
@@ -32,6 +32,7 @@
             padding: $grid-padding $grid-padding;
             width: calc((100% - 40px) / 4);
             text-align: left;
+            vertical-align: top;
             height: 52px;
 
             text-overflow: ellipsis;
@@ -105,7 +106,7 @@
         position: absolute;
         right: $grid-padding;
         margin-top: 2px;
-        width: 50px;
+        width: 35px;
         height: 40px;
         padding: 0;
         font-size: 0;
@@ -134,6 +135,31 @@
     &__open.active {
         svg {
             transform: rotate(180deg);
+        }
+    }
+
+    &__status {
+        padding-left: 5px;
+        color: $blue;
+        font-size: 12px;
+    }
+
+    &__buy {
+        background: transparent;
+        outline: none;
+        border: none;
+        color: $blue;
+        cursor: pointer;
+    }
+
+    &__delivery {
+        td {
+            vertical-align: middle;
+            font-size: 12px;
+            color: $add-text-color;
+
+            text-overflow: clip;
+            white-space: normal;
         }
     }
 }
