@@ -111,3 +111,9 @@ html {
 .wrapper {
     position: relative;
 }
+
+//Отключаем движение нижнего слайдера в карточке товаров + ширина 100%
+.block-translate {
+    transform: translate3d(0px, 0px, 0px) !important;
+    width: 100% !important;
+}
