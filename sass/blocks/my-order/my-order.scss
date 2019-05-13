@@ -15,6 +15,24 @@
             overflow-y: visible;
         }
     }
+//Скролл на webkit--------
+    &__container::-webkit-scrollbar-track-piece {
+        background: $delivery-active-btn;
+    }
+
+    &__container::-webkit-scrollbar {
+        -webkit-appearance: none;
+    }
+
+    &__container::-webkit-scrollbar:horizontal {
+        height: 13px;
+    }
+
+    &__container::-webkit-scrollbar-thumb {
+        border: 3px solid $delivery-active-btn;
+        background: lighten($main-color, 70%);
+    }
+//------------------------
 
     &__tbody {
         > tr:nth-child(2n) {
