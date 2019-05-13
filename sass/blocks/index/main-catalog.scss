@@ -155,8 +155,13 @@
         }
         @media (min-width: $lg) {
             img {
-                max-height: 70px;
+                max-height: 90px;
                 right: 20px;
+            }
+        }
+        @media (min-width: $tp) {
+            img {
+                max-height: 130px;
             }
         }
         @media (min-width: $xl) {

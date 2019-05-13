@@ -160,6 +160,7 @@
     }
 
     &__cart {
+        position: relative;
         display: inline-block;
         vertical-align: top;
         height: $common-item-height;
@@ -169,10 +170,13 @@
         text-align: center;
         transition: 0.3s opacity ease;
         svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
             width: 25px;
             height: 25px;
             fill: $main-color;
-            vertical-align: middle;
         }
     }
 

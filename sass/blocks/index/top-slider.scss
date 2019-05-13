@@ -11,14 +11,16 @@
         display: block;
         text-align: center;
         img {
-            height: 380px;
-            max-width: none;
+            //height: 380px;
+            //max-width: none;
+            height: auto;
+            max-width: 100%;
         }
         @media (min-width: $lg) {
             height: auto;
             img {
-                height: auto;
-                max-width: none;
+                //height: auto;
+                //max-width: none;
             }
         }
     }
