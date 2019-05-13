@@ -10,6 +10,7 @@
         position: relative;
         display: flex;
         flex-direction: column;
+        width: 100%;
         padding: $news-all-container-padding;
         background: $white;
         outline: 1px solid $border-color;
