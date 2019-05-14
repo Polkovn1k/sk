@@ -43,8 +43,8 @@ if (document.querySelector(".compare-slider")) {
 
     var mainCompare = new Glide(".js-compare-main-slider", {
         gap: 0,
-        bound: true,
-        rewind: true,
+        bound: false,
+        rewind: false,
         startAt: 1,
         perView: 6,
         breakpoints: {
@@ -53,26 +53,29 @@ if (document.querySelector(".compare-slider")) {
             },
             1023: {
                 perView: 1,
+                rewind: true,
             },
         }
     });
     var mainCustomComponent = function (Glide, Components, Events) {
         return {
             mount () {
-                mainCompare.on("run.before", () => {
-                    if (Components.Run.move.direction === ">" && mainCompare.index + 1 === addCompare.index) {
-                        mainCompare.index++;
-                    }
-                    if (Components.Run.move.direction === "<" && mainCompare.index - 1 === addCompare.index) {
-                        mainCompare.index--;
-                    }
-                    if (Components.Run.move.direction === ">" && mainCompare.index === sliderLength && addCompare.index === 0) {
-                        mainCompare.index = addCompare.index;
-                    }
-                    if (Components.Run.move.direction === "<" && addCompare.index === sliderLength && mainCompare.index === 0) {
-                        mainCompare.index = sliderLength;
-                    }
-                });
+                if (document.documentElement.clientWidth < 1024) {
+                    mainCompare.on("run.before", () => {
+                        if (Components.Run.move.direction === ">" && mainCompare.index + 1 === addCompare.index) {
+                            mainCompare.index++;
+                        }
+                        if (Components.Run.move.direction === "<" && mainCompare.index - 1 === addCompare.index) {
+                            mainCompare.index--;
+                        }
+                        if (Components.Run.move.direction === ">" && mainCompare.index === sliderLength && addCompare.index === 0) {
+                            mainCompare.index = addCompare.index;
+                        }
+                        if (Components.Run.move.direction === "<" && addCompare.index === sliderLength && mainCompare.index === 0) {
+                            mainCompare.index = sliderLength;
+                        }
+                    });
+                }
             }
         }
     }
@@ -136,20 +139,40 @@ if (document.querySelector(".compare-slider")) {
 
         listenSliderActions: () => {
             addCompare.on("run.after", () => {
-                document.querySelectorAll(".js-parameter-col").forEach((block) => {
-                    block.classList.add("visually-hidden");
-                });
-                compare._propsPosition(addCompare.index, mainCompare.index);
+//Меняем свойства в мобилке
+                if (document.documentElement.clientWidth < compare.START_DESKTOP_WIDTH) {
+                    document.querySelectorAll(".js-parameter-col").forEach((block) => {
+                        block.classList.add("visually-hidden");
+                    });
+                    compare._propsPositionInMobile(addCompare.index, mainCompare.index);
+                }
             });
             mainCompare.on("run.after", () => {
-                document.querySelectorAll(".js-parameter-col").forEach((block) => {
-                    block.classList.add("visually-hidden");
-                });
-                compare._propsPosition(addCompare.index, mainCompare.index);
+//Меняем свойства в мобилке
+                if (document.documentElement.clientWidth < compare.START_DESKTOP_WIDTH) {
+                    document.querySelectorAll(".js-parameter-col").forEach((block) => {
+                        block.classList.add("visually-hidden");
+                    });
+                    compare._propsPositionInMobile(addCompare.index, mainCompare.index);
+                }
+//Меняем свойства на десктопе
+                if (document.documentElement.clientWidth >= compare.START_DESKTOP_WIDTH) {
+                    var propRow = document.querySelectorAll(".js-parameter-diff-row");
+                    propRow.forEach((block) => {
+                        var propCol = block.querySelectorAll(".js-parameter-col");
+                        for (var i = 0; i < propCol.length; i++) {
+                            if (i < mainCompare.index || i >= 4) {
+                                propCol[i].classList.add("visually-hidden");
+                                continue;
+                            }
+                            propCol[i].classList.remove("visually-hidden");
+                        }
+                    });
+                }
             });
         },
 
-        _propsPosition: (addSliderIndex, mainSliderIndex) => {
+        _propsPositionInMobile: (addSliderIndex, mainSliderIndex) => {
             var diffRow = document.querySelectorAll(".js-parameter-diff-row");
             diffRow.forEach((propContainer) => {
                 if (addSliderIndex > mainSliderIndex) {
