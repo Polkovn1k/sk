@@ -6,6 +6,9 @@
         padding: $grid-padding;
         @media (min-width: $lg) {
             min-height: 170px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
     }
 
@@ -67,18 +70,25 @@
 
 //изображение
     &__img {
-        margin-left: -$grid-padding;
-        height: 130px;
+        //margin-left: -$grid-padding;
+        height: 140px;
         text-align: center;
         img {
             max-height: 100%;
             max-width: 100%;
             height: auto;
             width: auto;
+            vertical-align: middle;
+        }
+        @media (min-width: $sm) {
+            height: 90%;
+            //margin-left: 0;
         }
         @media (min-width: $lg) {
-            height: 100px;
-            margin-left: -$basket-product-lg-padding;
+            //height: 100px;
+            //margin-left: -$basket-product-lg-padding;
+            height: 140px;
+            line-height: 140px;
         }
     }
 
