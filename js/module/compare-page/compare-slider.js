@@ -2,17 +2,21 @@
 //БАЗОВЫЕ НАСТРОЙКИ СЛАЙДЕРОВ----------------------------------------------------------------------------------------
 if (document.querySelector(".compare-slider")) {
 
+    var perViewMobile = 1;
+    var perViewMinDesktop = 4;
+    var perViewDesktop = 6;
+
     var addCompare = new Glide(".js-compare-add-slider", {
         gap: 0,
         bound: true,
         rewind: true,
-        perView: 6,
+        perView: perViewDesktop,
         breakpoints: {
             1394: {
-                perView: 4,
+                perView: perViewMinDesktop,
             },
             1023: {
-                perView: 1,
+                perView: perViewMobile,
             },
         }
     });
@@ -46,13 +50,13 @@ if (document.querySelector(".compare-slider")) {
         bound: false,
         rewind: false,
         startAt: 1,
-        perView: 6,
+        perView: perViewDesktop,
         breakpoints: {
             1394: {
-                perView: 4,
+                perView: perViewMinDesktop,
             },
             1023: {
-                perView: 1,
+                perView: perViewMobile,
                 rewind: true,
             },
         }
@@ -161,7 +165,20 @@ if (document.querySelector(".compare-slider")) {
                     propRow.forEach((block) => {
                         var propCol = block.querySelectorAll(".js-parameter-col");
                         for (var i = 0; i < propCol.length; i++) {
-                            if (i < mainCompare.index || i >= 4) {
+                            if (i < mainCompare.index || i >= mainCompare.index + perViewMinDesktop) {
+                                propCol[i].classList.add("visually-hidden");
+                                continue;
+                            }
+                            propCol[i].classList.remove("visually-hidden");
+                        }
+                    });
+                }
+                if (document.documentElement.clientWidth >= compare.DESKTOP_XL_SIZE) {
+                    var propRow = document.querySelectorAll(".js-parameter-diff-row");
+                    propRow.forEach((block) => {
+                        var propCol = block.querySelectorAll(".js-parameter-col");
+                        for (var i = 0; i < propCol.length; i++) {
+                            if (i < mainCompare.index || i >= mainCompare.index + perViewDesktop) {
                                 propCol[i].classList.add("visually-hidden");
                                 continue;
                             }
