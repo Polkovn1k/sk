@@ -4,9 +4,11 @@
     padding-bottom: 20px;
     width: 100%;
     display: flex;
+    justify-content: center;
     @media (min-width: $lg) {
         padding-top: 0;
         padding-bottom: 0;
+        justify-content: flex-start;
     }
 
     &__item {

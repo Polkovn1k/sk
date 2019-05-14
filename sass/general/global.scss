@@ -117,3 +117,11 @@ html {
     transform: translate3d(0px, 0px, 0px) !important;
     width: 100% !important;
 }
+
+//Уменьшаем размер кнопок перелистывания
+.fancybox-navigation .fancybox-button {
+    width: 38px !important;
+    height: 38px !important;
+    padding: 0 !important;
+    top: calc(50% - 19px) !important;
+}

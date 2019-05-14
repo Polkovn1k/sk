@@ -20,22 +20,39 @@
 
     &__sub-title {
         @include field-reset();
-        display: block;
+        display: flex;
+        align-items: center;
         min-height: $footer-nav-item-height;
-        width: calc(100% - #{$footer-nav-tog-mobile-width});
+        width: 100%;
         font-size: 18px;
         font-weight: 600;
         line-height: $footer-nav-item-height;
         color: $white;
-        @media (min-width: $sm) {
-            width: 50%;
+        cursor: pointer;
+        svg {
+            margin-left: auto;
+            fill: $communication-add-color;
+            transform: rotate(-90deg);
+            transition: 0.3s ease;
         }
         @media (min-width: $lg) {
-            width: 100%;
             margin-bottom: 15px;
-            span {
+            cursor: auto;
+            svg {
                 display: none;
             }
+        }
+    }
+
+    &__sub-title:hover {
+        svg {
+            fill: $white;
+        }
+    }
+
+    &__sub-title.active-btn {
+        svg {
+            transform: rotate(0deg);
         }
     }
 
@@ -60,43 +77,6 @@
         @media (min-width: $xl) {
             width: 33.33333%;
             margin-bottom: 0;
-        }
-    }
-
-    &__nav-tog {
-        position: relative;
-        display: inline-block;
-        vertical-align: top;
-        width: $footer-nav-tog-mobile-width;
-        height: $footer-nav-item-height;
-        font-size: 0;
-        border: 0;
-        background: transparent;
-        cursor: pointer;
-        outline: none;
-        text-align: right;
-        svg {
-            fill: $communication-add-color;
-            transform: rotate(-90deg);
-            transition: 0.3s ease;
-        }
-        @media (min-width: $sm) {
-            width: 50%;
-        }
-        @media (min-width: $lg) {
-            display: none;
-        }
-    }
-
-    &__nav-tog:hover {
-        svg {
-            fill: $white;
-        }
-    }
-
-    &__nav-tog.active-btn {
-        svg {
-            transform: rotate(0deg);
         }
     }
 
