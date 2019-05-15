@@ -151,6 +151,15 @@ var modals = {
                modals._toggleHtmlScrollForOverlays("enable");
             });
         });
+        document.querySelectorAll(".js-overlay").forEach((btnCloseAllOverlay) => {
+            btnCloseAllOverlay.addEventListener("click", function(event) {
+               if (event.target === this) {
+                  modals._hideOverlays();
+                  modals._deleteButtonsStateForAllBtn();
+                  modals._toggleHtmlScrollForOverlays("enable");
+               }
+            });
+        });
     },
 
     listenTurnDevice: () => {

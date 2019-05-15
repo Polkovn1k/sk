@@ -586,11 +586,14 @@
         }
     }
 
-    &__btn:last-child {
-        margin-bottom: 0;
+    &__btn:not(:first-child) {
         @media (min-width: $md) {
             margin-left: 20px;
         }
+    }
+
+    &__btn:last-child {
+        margin-bottom: 0;
     }
 
     &__delivery-line {
