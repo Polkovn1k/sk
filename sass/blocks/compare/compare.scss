@@ -206,4 +206,33 @@
             text-align: left;
         }
     }
+//пустая страница
+    &__empty-container {
+        padding: 100px $grid-padding;
+        background: $white;
+        text-align: center;
+        border: 1px solid $border-color;
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    &__title {
+        @include field-reset();
+        margin-bottom: 20px;
+        text-align: center;
+        color: $main-color;
+    }
+
+    &__text {
+        @include field-reset();
+        margin-bottom: 20px;
+        text-align: center;
+        vertical-align: middle;
+        color: $communication-add-color;
+        svg {
+            fill: $blue;
+            vertical-align: middle;
+        }
+    }
 }
