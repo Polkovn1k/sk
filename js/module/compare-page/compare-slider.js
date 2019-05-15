@@ -22,7 +22,7 @@ if (document.querySelector(".compare-slider")) {
     });
 //Выясняем общее количество index'ов таким способом, т.к. встроенные методы не работают----
     var sliderLength = document.querySelector(".js-compare-add-slider").querySelectorAll(".compare__slide").length - 1;
-//----
+//Компоненты для допонительного слайдера
     var addCustomComponent = function (Glide, Components, Events) {
         return {
             mount () {
@@ -61,6 +61,7 @@ if (document.querySelector(".compare-slider")) {
             },
         }
     });
+//Компоненты для основного слайдера
     var mainCustomComponent = function (Glide, Components, Events) {
         return {
             mount () {
@@ -90,7 +91,6 @@ if (document.querySelector(".compare-slider")) {
         mainCompare.update({ startAt: 0 });
     }
     mainCompare.mount({"createdComponent": mainCustomComponent});
-//----
 
 //ОБЪЕКТ--------------------------------------------------------------------
     var compare = {
@@ -105,7 +105,6 @@ if (document.querySelector(".compare-slider")) {
                 compare._resizeOrTurn();
             });
         },
-//----
 
 //Внешний вид при ресайзе окна----
         listenResizeDevice: () => {
@@ -113,7 +112,6 @@ if (document.querySelector(".compare-slider")) {
                 compare._resizeOrTurn();
             });
         },
-//----
 
         _resizeOrTurn: () => {
 //Меняем позицию слайда у второго слайда, в зависимости от вьюпорта----
@@ -124,12 +122,10 @@ if (document.querySelector(".compare-slider")) {
             } else {
                 mainCompare.update({ startAt: 0 });
             }
-//----
-//Устраняем баг, при котором в col-xl при ресайзе показывал только один товар----
+//Устраняем баг, при котором в col-xl при ресайзе показывал только один товар
             if (viewPort >= compare.DESKTOP_XL_SIZE) {
                 mainCompare.update({ perView: 6 });
             }
-//----
         },
 
 
@@ -143,56 +139,32 @@ if (document.querySelector(".compare-slider")) {
 
         listenSliderActions: () => {
             addCompare.on("run.after", () => {
-//Меняем свойства на мобилке - дополнительный слайдер
+//Условия запуска функции на смену свойств для дополнительного слайдера на мобиле
                 if (document.documentElement.clientWidth < compare.START_DESKTOP_WIDTH) {
-                    document.querySelectorAll(".js-parameter-col").forEach((block) => {
-                        block.classList.add("visually-hidden");
-                    });
                     compare._propsPositionInMobile(addCompare.index, mainCompare.index);
                 }
             });
             mainCompare.on("run.after", () => {
-//Меняем свойства на мобилке - основной слайдер
+//Условия запуска функции на смену свойств для основного слайдера на мобиле
                 if (document.documentElement.clientWidth < compare.START_DESKTOP_WIDTH) {
-                    document.querySelectorAll(".js-parameter-col").forEach((block) => {
-                        block.classList.add("visually-hidden");
-                    });
                     compare._propsPositionInMobile(addCompare.index, mainCompare.index);
                 }
-//Меняем свойства на начальном десктопе (1024 - 1394) основного слайдера
+//Условия запуска функции на смену свойств для основного слайдера на десктопе 1024 - 1394
                 if (document.documentElement.clientWidth >= compare.START_DESKTOP_WIDTH) {
-                    var propRow = document.querySelectorAll(".js-parameter-diff-row");
-                    var allMainSlides = document.querySelectorAll(".js-compare-main-slider .compare__slide");
-                    propRow.forEach((block) => {
-                        var propCol = block.querySelectorAll(".js-parameter-col");
-                        for (var i = 0; i < propCol.length; i++) {
-                            if (i < mainCompare.index || i >= mainCompare.index + perViewMinDesktop || allMainSlides[i] === undefined) {
-                                propCol[i].classList.add("visually-hidden");
-                                continue;
-                            }
-                            propCol[i].classList.remove("visually-hidden");
-                        }
-                    });
+                    compare._propsPositionInDesktop(perViewMinDesktop);
                 }
-//Меняем свойства на десктопе (1395+) основного слайдера
+//Условия запуска функции на смену свойств для основного слайдера на десктопе 1395+
                 if (document.documentElement.clientWidth >= compare.DESKTOP_XL_SIZE) {
-                    var propRow = document.querySelectorAll(".js-parameter-diff-row");
-                    propRow.forEach((block) => {
-                        var propCol = block.querySelectorAll(".js-parameter-col");
-                        for (var i = 0; i < propCol.length; i++) {
-                            if (i < mainCompare.index || i >= mainCompare.index + perViewDesktop || allMainSlides[i] === undefined) {
-                                propCol[i].classList.add("visually-hidden");
-                                continue;
-                            }
-                            propCol[i].classList.remove("visually-hidden");
-                        }
-                    });
+                    compare._propsPositionInDesktop(perViewDesktop);
                 }
             });
         },
 
-//-----------
+//Cмена свойств на мобиле
         _propsPositionInMobile: (addSliderIndex, mainSliderIndex) => {
+            document.querySelectorAll(".js-parameter-col").forEach((block) => {
+                block.classList.add("visually-hidden");
+            });
             var diffRow = document.querySelectorAll(".js-parameter-diff-row");
             diffRow.forEach((propContainer) => {
                 if (addSliderIndex > mainSliderIndex) {
@@ -202,6 +174,22 @@ if (document.querySelector(".compare-slider")) {
                 }
                 propContainer.children[addSliderIndex].classList.remove("visually-hidden");
                 propContainer.children[mainSliderIndex].classList.remove("visually-hidden");
+            });
+        },
+
+//Cмена свойств на десктопе
+        _propsPositionInDesktop: (quantity) => {
+            var propRow = document.querySelectorAll(".js-parameter-diff-row");
+            var allMainSlides = document.querySelectorAll(".js-compare-main-slider .compare__slide");
+            propRow.forEach((block) => {
+                var propCol = block.querySelectorAll(".js-parameter-col");
+                for (var i = 0; i < propCol.length; i++) {
+                    if (i < mainCompare.index || i >= mainCompare.index + quantity || allMainSlides[i] === undefined) {
+                        propCol[i].classList.add("visually-hidden");
+                        continue;
+                    }
+                    propCol[i].classList.remove("visually-hidden");
+                }
             });
         },
 
