@@ -5,7 +5,7 @@ if (document.querySelector(".compare-slider")) {
     let PER_VIEW_MOBILE = 1;
     let PER_VIEW_MIN_DESKTOP = 4;
     let PER_VIEW_DESKTOP = 6;
-    let START_DESKTOP_WIDTH = 1024;
+    let DESKTOP_LG_SIZE = 1024;
     let DESKTOP_XL_SIZE = 1395;
 
     var addCompare = new Glide(".js-compare-add-slider", {
@@ -22,7 +22,7 @@ if (document.querySelector(".compare-slider")) {
             },
         }
     });
-//Выясняем общее количество index'ов таким способом, т.к. встроенные методы не работают----
+//Выясняем общее количество index'ов таким способом, т.к. встроенные методы не работают
     var sliderLength = document.querySelector(".js-compare-add-slider").querySelectorAll(".compare__slide").length - 1;
 //Компоненты для допонительного слайдера
     var addCustomComponent = function (Glide, Components, Events) {
@@ -67,7 +67,7 @@ if (document.querySelector(".compare-slider")) {
     var mainCustomComponent = function (Glide, Components, Events) {
         return {
             mount () {
-                if (document.documentElement.clientWidth < 1024) {
+                if (document.documentElement.clientWidth < DESKTOP_LG_SIZE) {
                     mainCompare.on("run.before", () => {
                         if (Components.Run.move.direction === ">" && mainCompare.index + 1 === addCompare.index) {
                             mainCompare.index++;
@@ -91,18 +91,19 @@ if (document.querySelector(".compare-slider")) {
 //ОБЪЕКТ--------------------------------------------------------------------
     var compare = {
 
-//Стартовые позиции слайдов и свойств основного слайдера
+//Стартовые позиции слайдов и свойств
         slidesAndPropsStartPosition: () => {
-            if (document.documentElement.clientWidth < 1024) {
+            if (document.documentElement.clientWidth < DESKTOP_LG_SIZE) {
+                addCompare.update({ startAt: 0 });
                 mainCompare.update({ startAt: 1 });
                 compare._propsPositionInMobile(addCompare.index, mainCompare.index);
             }
-            if (document.documentElement.clientWidth >= 1024 && document.documentElement.clientWidth < 1395) {
+            if (document.documentElement.clientWidth >= DESKTOP_LG_SIZE && document.documentElement.clientWidth < DESKTOP_XL_SIZE) {
                 mainCompare.update({ startAt: 0 });
                 compare._propsPositionInDesktop(PER_VIEW_MIN_DESKTOP);
             }
-            if (document.documentElement.clientWidth >= 1395) {
-                mainCompare.update({ startAt: 0 });
+            if (document.documentElement.clientWidth >= DESKTOP_XL_SIZE) {
+                mainCompare.update({ startAt: 0, perView: 6 });
                 compare._propsPositionInDesktop(PER_VIEW_DESKTOP);
             }
         },
@@ -110,55 +111,31 @@ if (document.querySelector(".compare-slider")) {
 //Внешний вид при повороте устройства
         listenTurnDevice: () => {
             window.addEventListener("orientationchange", function() {
-                compare._resizeOrTurn();
+                compare.slidesAndPropsStartPosition();
             });
         },
 
 //Внешний вид при ресайзе окна
         listenResizeDevice: () => {
             window.addEventListener("resize", function() {
-                compare._resizeOrTurn();
+                compare.slidesAndPropsStartPosition();
             });
         },
-
-        _resizeOrTurn: () => {
-//Меняем позицию слайда у второго слайда, в зависимости от вьюпорта
-            var viewPort = document.documentElement.clientWidth;
-            if (viewPort < START_DESKTOP_WIDTH) {
-                mainCompare.update({ startAt: 1 });
-                return false;
-            } else {
-                mainCompare.update({ startAt: 0 });
-            }
-//Устраняем баг, при котором в col-xl при ресайзе показывал только один товар
-            if (viewPort >= DESKTOP_XL_SIZE) {
-                mainCompare.update({ perView: 6 });
-            }
-        },
-
-
-
-
-
-
-
-
-
 
         listenSliderActions: () => {
             addCompare.on("run.after", () => {
 //Условия запуска функции на смену свойств для дополнительного слайдера на мобиле
-                if (document.documentElement.clientWidth < START_DESKTOP_WIDTH) {
+                if (document.documentElement.clientWidth < DESKTOP_LG_SIZE) {
                     compare._propsPositionInMobile(addCompare.index, mainCompare.index);
                 }
             });
             mainCompare.on("run.after", () => {
 //Условия запуска функции на смену свойств для основного слайдера на мобиле
-                if (document.documentElement.clientWidth < START_DESKTOP_WIDTH) {
+                if (document.documentElement.clientWidth < DESKTOP_LG_SIZE) {
                     compare._propsPositionInMobile(addCompare.index, mainCompare.index);
                 }
 //Условия запуска функции на смену свойств для основного слайдера на десктопе 1024 - 1394
-                if (document.documentElement.clientWidth >= START_DESKTOP_WIDTH) {
+                if (document.documentElement.clientWidth >= DESKTOP_LG_SIZE) {
                     compare._propsPositionInDesktop(PER_VIEW_MIN_DESKTOP);
                 }
 //Условия запуска функции на смену свойств для основного слайдера на десктопе 1395+
