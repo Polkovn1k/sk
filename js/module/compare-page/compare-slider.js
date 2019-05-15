@@ -2,21 +2,23 @@
 //БАЗОВЫЕ НАСТРОЙКИ СЛАЙДЕРОВ----------------------------------------------------------------------------------------
 if (document.querySelector(".compare-slider")) {
 
-    var perViewMobile = 1;
-    var perViewMinDesktop = 4;
-    var perViewDesktop = 6;
+    let PER_VIEW_MOBILE = 1;
+    let PER_VIEW_MIN_DESKTOP = 4;
+    let PER_VIEW_DESKTOP = 6;
+    let START_DESKTOP_WIDTH = 1024;
+    let DESKTOP_XL_SIZE = 1395;
 
     var addCompare = new Glide(".js-compare-add-slider", {
         gap: 0,
         bound: true,
         rewind: true,
-        perView: perViewDesktop,
+        perView: PER_VIEW_DESKTOP,
         breakpoints: {
             1394: {
-                perView: perViewMinDesktop,
+                perView: PER_VIEW_MIN_DESKTOP,
             },
             1023: {
-                perView: perViewMobile,
+                perView: PER_VIEW_MOBILE,
             },
         }
     });
@@ -50,13 +52,13 @@ if (document.querySelector(".compare-slider")) {
         bound: false,
         rewind: false,
         startAt: 1,
-        perView: perViewDesktop,
+        perView: PER_VIEW_DESKTOP,
         breakpoints: {
             1394: {
-                perView: perViewMinDesktop,
+                perView: PER_VIEW_MIN_DESKTOP,
             },
             1023: {
-                perView: perViewMobile,
+                perView: PER_VIEW_MOBILE,
                 rewind: true,
             },
         }
@@ -84,29 +86,35 @@ if (document.querySelector(".compare-slider")) {
             }
         }
     }
-//Второй слайдер всегда начинается со 2-го слайда на мобилках, либо с 1-го на десктопе----
-    if (document.documentElement.clientWidth < 1024) {
-        mainCompare.update({ startAt: 1 });
-    } else {
-        mainCompare.update({ startAt: 0 });
-    }
     mainCompare.mount({"createdComponent": mainCustomComponent});
 
 //ОБЪЕКТ--------------------------------------------------------------------
     var compare = {
 
-        START_DESKTOP_WIDTH: 1024,
+//Стартовые позиции слайдов и свойств основного слайдера
+        slidesAndPropsStartPosition: () => {
+            if (document.documentElement.clientWidth < 1024) {
+                mainCompare.update({ startAt: 1 });
+                compare._propsPositionInMobile(addCompare.index, mainCompare.index);
+            }
+            if (document.documentElement.clientWidth >= 1024 && document.documentElement.clientWidth < 1395) {
+                mainCompare.update({ startAt: 0 });
+                compare._propsPositionInDesktop(PER_VIEW_MIN_DESKTOP);
+            }
+            if (document.documentElement.clientWidth >= 1395) {
+                mainCompare.update({ startAt: 0 });
+                compare._propsPositionInDesktop(PER_VIEW_DESKTOP);
+            }
+        },
 
-        DESKTOP_XL_SIZE: 1395,
-
-//Внешний вид при повороте устройства----
+//Внешний вид при повороте устройства
         listenTurnDevice: () => {
             window.addEventListener("orientationchange", function() {
                 compare._resizeOrTurn();
             });
         },
 
-//Внешний вид при ресайзе окна----
+//Внешний вид при ресайзе окна
         listenResizeDevice: () => {
             window.addEventListener("resize", function() {
                 compare._resizeOrTurn();
@@ -114,16 +122,16 @@ if (document.querySelector(".compare-slider")) {
         },
 
         _resizeOrTurn: () => {
-//Меняем позицию слайда у второго слайда, в зависимости от вьюпорта----
+//Меняем позицию слайда у второго слайда, в зависимости от вьюпорта
             var viewPort = document.documentElement.clientWidth;
-            if (viewPort < compare.START_DESKTOP_WIDTH) {
+            if (viewPort < START_DESKTOP_WIDTH) {
                 mainCompare.update({ startAt: 1 });
                 return false;
             } else {
                 mainCompare.update({ startAt: 0 });
             }
 //Устраняем баг, при котором в col-xl при ресайзе показывал только один товар
-            if (viewPort >= compare.DESKTOP_XL_SIZE) {
+            if (viewPort >= DESKTOP_XL_SIZE) {
                 mainCompare.update({ perView: 6 });
             }
         },
@@ -140,22 +148,22 @@ if (document.querySelector(".compare-slider")) {
         listenSliderActions: () => {
             addCompare.on("run.after", () => {
 //Условия запуска функции на смену свойств для дополнительного слайдера на мобиле
-                if (document.documentElement.clientWidth < compare.START_DESKTOP_WIDTH) {
+                if (document.documentElement.clientWidth < START_DESKTOP_WIDTH) {
                     compare._propsPositionInMobile(addCompare.index, mainCompare.index);
                 }
             });
             mainCompare.on("run.after", () => {
 //Условия запуска функции на смену свойств для основного слайдера на мобиле
-                if (document.documentElement.clientWidth < compare.START_DESKTOP_WIDTH) {
+                if (document.documentElement.clientWidth < START_DESKTOP_WIDTH) {
                     compare._propsPositionInMobile(addCompare.index, mainCompare.index);
                 }
 //Условия запуска функции на смену свойств для основного слайдера на десктопе 1024 - 1394
-                if (document.documentElement.clientWidth >= compare.START_DESKTOP_WIDTH) {
-                    compare._propsPositionInDesktop(perViewMinDesktop);
+                if (document.documentElement.clientWidth >= START_DESKTOP_WIDTH) {
+                    compare._propsPositionInDesktop(PER_VIEW_MIN_DESKTOP);
                 }
 //Условия запуска функции на смену свойств для основного слайдера на десктопе 1395+
-                if (document.documentElement.clientWidth >= compare.DESKTOP_XL_SIZE) {
-                    compare._propsPositionInDesktop(perViewDesktop);
+                if (document.documentElement.clientWidth >= DESKTOP_XL_SIZE) {
+                    compare._propsPositionInDesktop(PER_VIEW_DESKTOP);
                 }
             });
         },
@@ -194,6 +202,7 @@ if (document.querySelector(".compare-slider")) {
         },
 
         init: () => {
+            compare.slidesAndPropsStartPosition();
             compare.listenTurnDevice();
             compare.listenResizeDevice();
             compare.listenSliderActions();
