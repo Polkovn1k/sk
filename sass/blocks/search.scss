@@ -53,6 +53,7 @@
     }
 
     &__form {
+        margin: 0;
         @media (min-width: $lg) {
             display: flex;
             align-items: center;
