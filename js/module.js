@@ -290,9 +290,11 @@ var modals = {
 
     listenResizeDevice: () => {
         window.addEventListener("resize", function() {
-            modals._hideOverlays();
-            modals._deleteButtonsStateForAllBtn();
-            modals._toggleHtmlScrollForOverlays("enable");
+            if (document.documentElement.clientWidth >= 1024) {
+                modals._hideOverlays();
+                modals._deleteButtonsStateForAllBtn();
+                modals._toggleHtmlScrollForOverlays("enable");
+            }
         });
     },
 
