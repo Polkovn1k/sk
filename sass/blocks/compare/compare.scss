@@ -105,11 +105,10 @@
         padding: 0 15px;
         transition: 0.3s ease;
         @media (min-width: $lg) {
+            height: 0;
             opacity: 0;
             padding: 0;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
+            position: static;
         }
     }
 
@@ -124,6 +123,23 @@
         opacity: 1;
         box-shadow: none;
         border-radius: none;
+        @media (min-width: $lg) {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__left-arrow {
+        @media (min-width: $lg) {
+            left: 0;
+        }
+    }
+
+    &__right-arrow {
+        @media (min-width: $lg) {
+            right: 0;
+        }
     }
 
     &__add-item {
