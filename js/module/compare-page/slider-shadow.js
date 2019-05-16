@@ -19,7 +19,7 @@ if (document.querySelector(".slider-shadow")) {
         },
 
         _hideHeaderAndSliderToTop: (sliderBody, headerBlock, sliderBlock) => {
-            if (sliderBody.getBoundingClientRect().y <= 0 && /*sliderBlock.getBoundingClientRect().y > 0*/) {
+            if (sliderBody.getBoundingClientRect().y <= 0 /*&& sliderBlock.getBoundingClientRect().y > 0*/) {
                 headerBlock.classList.add("hide");
                 sliderBlock.classList.add("top-stick");
                 return false;
