@@ -1,0 +1,13 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20">
+    <g transform="translate(-0.01 2.727)">
+        <path d="M15.7-1c-0.2,1.1-0.5,2.2-1,3.2c1.3,1.4,2,3.2,1.9,5c0.1,3-1.7,5.6-4.5,6.6L11.6,13H8.5L8,13.8c-2.8-1-4.7-3.7-4.6-6.7
+        C3.3,4.6,4.7,2.1,7,0.9C6.4,0,5.7-0.8,4.9-1.4C1.8,0.4,0,3.7,0,7.2c0,5.5,4.5,10,10,10c5.5,0,10-4.5,10-10c0,0,0,0,0,0
+        C20,3.9,18.4,0.9,15.7-1L15.7-1z" />
+    </g>
+    <linearGradient id="logo-gradient-mobile" gradientUnits="userSpaceOnUse" x1="10.0121" y1="15.106" x2="10.0121" y2="-9.094947e-13">
+        <stop offset="0" style="stop-color:#8B8291" />
+        <stop offset="0.75" style="stop-color:#8B8291;stop-opacity:0" />
+    </linearGradient>
+    <path style="fill: url(#logo-gradient-mobile);" d="M16.2,0H3.9c-0.1,0.2-0.1,0.4,0,0.6C6.1,2.4,8.7,4,7.3,8.9c-1.4,4.9,4,6.2,4,6.2c-3.6-5.3,3.9-6.6,4.5-14.5
+    C15.9,0.4,16,0.2,16.2,0z" />
+</svg>
