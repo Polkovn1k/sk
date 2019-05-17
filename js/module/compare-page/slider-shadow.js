@@ -9,23 +9,14 @@ if (document.querySelector(".slider-shadow")) {
                 var sliderBlock = document.querySelector(".js-compare-slider-block");
                 var sliderBody = document.querySelector(".js-compare__body");
                 var headerHeight = sliderShadow._getHeaderHeight(".js-header");
-                if (sliderBlock.getBoundingClientRect().y == headerHeight || 0) {
+                if (sliderBlock.getBoundingClientRect().y === 0) {
                     sliderBlock.classList.add("sticked");
+                    headerBlock.classList.add("hide");
                 } else {
                     sliderBlock.classList.remove("sticked");
+                    headerBlock.classList.remove("hide");
                 }
-                sliderShadow._hideHeaderAndSliderToTop(sliderBody, headerBlock, sliderBlock);
             });
-        },
-
-        _hideHeaderAndSliderToTop: (sliderBody, headerBlock, sliderBlock) => {
-            if (sliderBody.getBoundingClientRect().y <= 0 /*&& sliderBlock.getBoundingClientRect().y > 0*/) {
-                headerBlock.classList.add("hide");
-                sliderBlock.classList.add("top-stick");
-                return false;
-            }
-            headerBlock.classList.remove("hide");
-            sliderBlock.classList.remove("top-stick");
         },
 
         _getHeaderHeight: (elem) => {

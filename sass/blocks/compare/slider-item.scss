@@ -9,7 +9,7 @@
 
     &__container {
         position: relative;
-        padding: 15px 7.5px 10px 7.5px;
+        padding: 10px 7.5px 10px 7.5px;
         @media (min-width: $lg) {
             padding: 15px 7.5px;
             height: $slider-item-lg-container-height;
@@ -44,6 +44,11 @@
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
+        /* горизонтальная ориентация ориентация */
+        @media screen and (orientation:landscape) {
+            height: 17px;
+            -webkit-line-clamp: 1;
+        }
         @media (min-width: $sm) {
             height: 15px;
             -webkit-line-clamp: 1;
@@ -123,7 +128,7 @@
 
     &__current-price {
         width: 100%;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 700;
         line-height: 1.33;
         color: $main-color;
@@ -264,10 +269,13 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 15px 7.5px;
+        padding: 10px 7.5px;
         padding-bottom: 10px;
         border: 1px dashed $border-color;
         height: 100%;
+        @media (min-width: $lg) {
+            padding: 15px 7.5px;
+        }
     }
 
     &__add-item-link {
@@ -314,7 +322,7 @@
             transform: translateY(-50%);
         }
         span:last-child {
-            margin-bottom: 27px;
+            margin-bottom: 24px;
             display: block;
             height: 32px;
             overflow: hidden;
@@ -328,6 +336,10 @@
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
+            @media screen and (orientation:landscape) {
+                height: 17px;
+                -webkit-line-clamp: 1;
+            }
             @media (min-width: $sm) {
                 height: 15px;
                 -webkit-line-clamp: 1;

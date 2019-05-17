@@ -60,7 +60,7 @@
     &__slider-block {
         position: sticky;
         z-index: 1;
-        top: $mobile-header-height;
+        top: 0;
         padding: 10px;
         padding-bottom: 0;
         background: $white;
@@ -70,7 +70,7 @@
             padding-bottom: 0;
         }
         @media (min-width: $md) {
-            top: $tablet-header-height;
+            top: 0;
         }
         @media (min-width: $lg) {
             top: $desktop-header-height;
@@ -79,16 +79,6 @@
 
     &__slider-block.sticked {
         box-shadow: 0 10px 11px -9px transparentize($black, 0.9);
-    }
-
-    &__slider-block.top-stick {
-        top: 0;
-        @media (min-width: $md) {
-            top: 0;
-        }
-        @media (min-width: $lg) {
-            top: $desktop-header-height;
-        }
     }
 
     &__slider {
