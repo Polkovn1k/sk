@@ -62,10 +62,12 @@
         z-index: 1;
         top: $mobile-header-height;
         padding: 10px;
+        padding-bottom: 0;
         background: $white;
         transition: 0.3s top ease;
         @media (min-width: $sm) {
             padding: 15px;
+            padding-bottom: 0;
         }
         @media (min-width: $md) {
             top: $tablet-header-height;
