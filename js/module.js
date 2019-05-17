@@ -1255,13 +1255,13 @@ if (document.querySelector(".slider-shadow")) {
                 var sliderBlock = document.querySelector(".js-compare-slider-block");
                 var sliderBody = document.querySelector(".js-compare__body");
                 var headerHeight = sliderShadow._getHeaderHeight(".js-header");
-                if (sliderBlock.getBoundingClientRect().y === 0) {
+                if ((sliderBlock.getBoundingClientRect().y === headerHeight) || (sliderBlock.getBoundingClientRect().y === 0)) {
                     sliderBlock.classList.add("sticked");
                     headerBlock.classList.add("hide");
-                } else {
-                    sliderBlock.classList.remove("sticked");
-                    headerBlock.classList.remove("hide");
+                    return false;
                 }
+                sliderBlock.classList.remove("sticked");
+                headerBlock.classList.remove("hide");
             });
         },
 
@@ -1275,6 +1275,79 @@ if (document.querySelector(".slider-shadow")) {
 
     };
     sliderShadow.init();
+
+}
+//РАДИО КНОПКИ В DELIVERY-PAGE
+if (document.querySelector(".delivery-radio-change")) {
+
+    var openCheckedRadioContainer = {
+        listenClick: () => {
+            document.querySelectorAll(".js-delivery-calc").forEach((radioBtn) => {
+                radioBtn.addEventListener("click", (event) => {
+                    var radioParent = openCheckedRadioContainer._findClickedRadioParent(radioBtn);
+                    openCheckedRadioContainer._removeParentActiveStatus();
+                    openCheckedRadioContainer._addParentActiveStatus(radioParent);
+                });
+            });
+        },
+
+        _findClickedRadioParent: (radio) => {
+            return radio.closest(".delivery-calc__item");
+        },
+
+        _removeParentActiveStatus: () => {
+            document.querySelectorAll(".delivery-calc__item").forEach((element) => {
+                if (element.classList.contains("active")) {
+                    element.classList.remove("active");
+                }
+            });
+        },
+
+        _addParentActiveStatus: (parent) => {
+            parent.classList.add("active");
+        },
+
+        init: () => {
+            openCheckedRadioContainer.listenClick();
+        },
+    };
+    openCheckedRadioContainer.init();
+
+}
+//ТАБЫ В DELIVERY-PAGE
+if (document.querySelector(".delivery-tabs-change")) {
+
+    var orderTabs = {
+        listenClickForPayType: () => {
+            document.querySelectorAll(".js-pay-tog").forEach((btn) => {
+                btn.addEventListener("click", (event) => {
+                    event.preventDefault();
+                    if (btn.classList.contains("active")) {
+                        return false;
+                    }
+                    orderTabs._removeActiveStatusForBtn(".js-pay-tog");
+                    orderTabs._addActiveStatusForBtn(btn);
+                });
+            });
+        },
+
+        _removeActiveStatusForBtn: (btn) => {
+            document.querySelectorAll(btn).forEach((item) => {
+                if (item.classList.contains("active")) {
+                    item.classList.remove("active");
+                }
+            });
+        },
+
+        _addActiveStatusForBtn: (clickedBtn) => {
+            clickedBtn.classList.add("active");
+        },
+
+        init: () => {
+            orderTabs.listenClickForPayType();
+        },
+    };
+    orderTabs.init();
 
 }
 //СЛАЙДЕРЫ НА ГЛАВНОЙ СТРАНИЦЕ
@@ -1446,78 +1519,104 @@ if (document.querySelector(".index-page")) {
     brandsSlider.mount();
 
 }
-//РАДИО КНОПКИ В DELIVERY-PAGE
-if (document.querySelector(".delivery-radio-change")) {
+//ПЕРЕКЛЮЧАТЕЛЬ ВИДА КАРТОЧЕК: ПЛИТКА/СТРОКА
+if (document.querySelector(".del-add-flavor")) {
 
-    var openCheckedRadioContainer = {
-        listenClick: () => {
-            document.querySelectorAll(".js-delivery-calc").forEach((radioBtn) => {
-                radioBtn.addEventListener("click", (event) => {
-                    var radioParent = openCheckedRadioContainer._findClickedRadioParent(radioBtn);
-                    openCheckedRadioContainer._removeParentActiveStatus();
-                    openCheckedRadioContainer._addParentActiveStatus(radioParent);
-                });
-            });
-        },
+    var delAndAddFlavor = {
 
-        _findClickedRadioParent: (radio) => {
-            return radio.closest(".delivery-calc__item");
-        },
+        btnCollection: document.querySelectorAll(".js-mix-calc-del-flavor"),
 
-        _removeParentActiveStatus: () => {
-            document.querySelectorAll(".delivery-calc__item").forEach((element) => {
-                if (element.classList.contains("active")) {
-                    element.classList.remove("active");
-                }
-            });
-        },
+//----------------удаление элементов
 
-        _addParentActiveStatus: (parent) => {
-            parent.classList.add("active");
-        },
-
-        init: () => {
-            openCheckedRadioContainer.listenClick();
-        },
-    };
-    openCheckedRadioContainer.init();
-
-}
-//ТАБЫ В DELIVERY-PAGE
-if (document.querySelector(".delivery-tabs-change")) {
-
-    var orderTabs = {
-        listenClickForPayType: () => {
-            document.querySelectorAll(".js-pay-tog").forEach((btn) => {
+        listenRemoveClick: () => {
+            document.querySelectorAll(".js-mix-calc-del-flavor").forEach((btn) => {
                 btn.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    if (btn.classList.contains("active")) {
+                    btn.closest(".mix-calc__col").remove();
+                    var btnCollection = document.querySelectorAll(".js-mix-calc-del-flavor");
+                    if (btnCollection.length <= 1) {
+                        btnCollection[0].classList.add("hide");
                         return false;
                     }
-                    orderTabs._removeActiveStatusForBtn(".js-pay-tog");
-                    orderTabs._addActiveStatusForBtn(btn);
-                });
+                })
             });
         },
 
-        _removeActiveStatusForBtn: (btn) => {
-            document.querySelectorAll(btn).forEach((item) => {
-                if (item.classList.contains("active")) {
-                    item.classList.remove("active");
-                }
-            });
+        elementStatusAfterInit: () => {
+            if (delAndAddFlavor.btnCollection.length == 1) {
+                delAndAddFlavor.btnCollection[0].classList.add("hide");
+            }
         },
 
-        _addActiveStatusForBtn: (clickedBtn) => {
-            clickedBtn.classList.add("active");
+//----------------добавление элементов
+
+        listenAddClick: () => {
+            document.querySelector(".js-mix-calc-add-flavor").addEventListener("click", () => {
+                var clonedNode = document.querySelector(".js-flavor-container:first-child").cloneNode(true);
+                delAndAddFlavor._removeValandClassFromClonedNode(clonedNode);
+                document.querySelector(".js-flavor-parent").appendChild(clonedNode);
+                delAndAddFlavor.listenRemoveClick();
+                delAndAddFlavor._checkHideStatusForFirstDelBtn();
+            })
+        },
+
+        _removeValandClassFromClonedNode: (clonedElement) => {
+            var allInnerInputs = clonedElement.querySelectorAll("input");
+            allInnerInputs.forEach((input) => {
+                input.value = "";
+            });
+            if (clonedElement.querySelector(".mix-calc__del-element").classList.contains("hide")) {
+                clonedElement.querySelector(".hide").classList.remove("hide");
+            }
+        },
+
+        _checkHideStatusForFirstDelBtn: () => {
+            var delBtn = document.querySelectorAll(".js-mix-calc-del-flavor");
+            if (delBtn.length > 1) {
+                delBtn[0].classList.remove("hide");
+            }
         },
 
         init: () => {
-            orderTabs.listenClickForPayType();
-        },
-    };
-    orderTabs.init();
+            delAndAddFlavor.elementStatusAfterInit();
+            delAndAddFlavor.listenRemoveClick();
+            delAndAddFlavor.listenAddClick();
+        }
 
+    }
+    delAndAddFlavor.init();
+
+}
+//ПЕРЕКЛЮЧАТЕЛЬ ВИДА КАРТОЧЕК: ПЛИТКА/СТРОКА
+if (document.querySelector(".mix-calc-range-slider")) {
+
+    (function () {
+        var rangeSlider = document.getElementById("vg-pg-range");
+
+        noUiSlider.create(rangeSlider, {
+            start: [50],
+            step: 5,
+            range: {
+                'min': [0],
+                'max': [100]
+            },
+            format: {
+                from: function(value) {
+                    return parseInt(value);
+                },
+                to: function(value) {
+                    return parseInt(value);
+                }
+            }
+        });
+
+        var vgValue = document.getElementById("vg-range");
+        var pgValue = document.getElementById("pg-range");
+
+        rangeSlider.noUiSlider.on('update', function (values, handle) {
+            vgValue.innerHTML = values[handle];
+            pgValue.innerHTML = 100 - values[handle];
+        });
+    }());
 }
 //СЛАЙДЕР НА СТРАНИЦЕ OFFER-PAGE
 if (document.querySelector(".offer-slider")) {
@@ -1884,103 +1983,4 @@ if (document.querySelector(".transition-to-anchor-product")) {
     };
     goToAnchor.init();
 
-}
-//ПЕРЕКЛЮЧАТЕЛЬ ВИДА КАРТОЧЕК: ПЛИТКА/СТРОКА
-if (document.querySelector(".del-add-flavor")) {
-
-    var delAndAddFlavor = {
-
-        btnCollection: document.querySelectorAll(".js-mix-calc-del-flavor"),
-
-//----------------удаление элементов
-
-        listenRemoveClick: () => {
-            document.querySelectorAll(".js-mix-calc-del-flavor").forEach((btn) => {
-                btn.addEventListener("click", (event) => {
-                    btn.closest(".mix-calc__col").remove();
-                    var btnCollection = document.querySelectorAll(".js-mix-calc-del-flavor");
-                    if (btnCollection.length <= 1) {
-                        btnCollection[0].classList.add("hide");
-                        return false;
-                    }
-                })
-            });
-        },
-
-        elementStatusAfterInit: () => {
-            if (delAndAddFlavor.btnCollection.length == 1) {
-                delAndAddFlavor.btnCollection[0].classList.add("hide");
-            }
-        },
-
-//----------------добавление элементов
-
-        listenAddClick: () => {
-            document.querySelector(".js-mix-calc-add-flavor").addEventListener("click", () => {
-                var clonedNode = document.querySelector(".js-flavor-container:first-child").cloneNode(true);
-                delAndAddFlavor._removeValandClassFromClonedNode(clonedNode);
-                document.querySelector(".js-flavor-parent").appendChild(clonedNode);
-                delAndAddFlavor.listenRemoveClick();
-                delAndAddFlavor._checkHideStatusForFirstDelBtn();
-            })
-        },
-
-        _removeValandClassFromClonedNode: (clonedElement) => {
-            var allInnerInputs = clonedElement.querySelectorAll("input");
-            allInnerInputs.forEach((input) => {
-                input.value = "";
-            });
-            if (clonedElement.querySelector(".mix-calc__del-element").classList.contains("hide")) {
-                clonedElement.querySelector(".hide").classList.remove("hide");
-            }
-        },
-
-        _checkHideStatusForFirstDelBtn: () => {
-            var delBtn = document.querySelectorAll(".js-mix-calc-del-flavor");
-            if (delBtn.length > 1) {
-                delBtn[0].classList.remove("hide");
-            }
-        },
-
-        init: () => {
-            delAndAddFlavor.elementStatusAfterInit();
-            delAndAddFlavor.listenRemoveClick();
-            delAndAddFlavor.listenAddClick();
-        }
-
-    }
-    delAndAddFlavor.init();
-
-}
-//ПЕРЕКЛЮЧАТЕЛЬ ВИДА КАРТОЧЕК: ПЛИТКА/СТРОКА
-if (document.querySelector(".mix-calc-range-slider")) {
-
-    (function () {
-        var rangeSlider = document.getElementById("vg-pg-range");
-
-        noUiSlider.create(rangeSlider, {
-            start: [50],
-            step: 5,
-            range: {
-                'min': [0],
-                'max': [100]
-            },
-            format: {
-                from: function(value) {
-                    return parseInt(value);
-                },
-                to: function(value) {
-                    return parseInt(value);
-                }
-            }
-        });
-
-        var vgValue = document.getElementById("vg-range");
-        var pgValue = document.getElementById("pg-range");
-
-        rangeSlider.noUiSlider.on('update', function (values, handle) {
-            vgValue.innerHTML = values[handle];
-            pgValue.innerHTML = 100 - values[handle];
-        });
-    }());
 }

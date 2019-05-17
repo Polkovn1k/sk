@@ -9,13 +9,13 @@ if (document.querySelector(".slider-shadow")) {
                 var sliderBlock = document.querySelector(".js-compare-slider-block");
                 var sliderBody = document.querySelector(".js-compare__body");
                 var headerHeight = sliderShadow._getHeaderHeight(".js-header");
-                if (sliderBlock.getBoundingClientRect().y === 0) {
+                if ((sliderBlock.getBoundingClientRect().y === headerHeight) || (sliderBlock.getBoundingClientRect().y === 0)) {
                     sliderBlock.classList.add("sticked");
                     headerBlock.classList.add("hide");
-                } else {
-                    sliderBlock.classList.remove("sticked");
-                    headerBlock.classList.remove("hide");
+                    return false;
                 }
+                sliderBlock.classList.remove("sticked");
+                headerBlock.classList.remove("hide");
             });
         },
 
