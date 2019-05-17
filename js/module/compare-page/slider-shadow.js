@@ -5,13 +5,17 @@ if (document.querySelector(".slider-shadow")) {
 
         listenScroll: () => {
             window.addEventListener("scroll", (event) => {
-                var headerHeight = sliderShadow._getHeaderHeight(".js-header");
+                var headerBlock = document.querySelector(".js-header");
                 var sliderBlock = document.querySelector(".js-compare-slider-block");
-                if (sliderBlock.getBoundingClientRect().y == headerHeight) {
+                var sliderBody = document.querySelector(".js-compare__body");
+                var headerHeight = sliderShadow._getHeaderHeight(".js-header");
+                if (sliderBlock.getBoundingClientRect().y === 0) {
                     sliderBlock.classList.add("sticked");
-                    return false;
+                    headerBlock.classList.add("hide");
+                } else {
+                    sliderBlock.classList.remove("sticked");
+                    headerBlock.classList.remove("hide");
                 }
-                sliderBlock.classList.remove("sticked");
             });
         },
 
