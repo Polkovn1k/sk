@@ -220,6 +220,10 @@
             width: 15px;
             height: 15px;
         }
+        @media screen and (orientation:landscape) {
+            display: inline-block;
+            vertical-align: top;
+        }
         @media (min-width: $md) {
             padding-top: 8px;
             width: $catalog-product-action-item;
