@@ -1,0 +1,39 @@
+.about-index {
+    &__container {
+        padding: 15px;
+        background: $white;
+        border: 1px solid $border-color;
+        color: $communication-add-color;
+        font-weight: 400;
+        h1 {
+            @include field-reset();
+            margin-bottom: 20px;
+            font-size: 30px;
+            font-weight: 400;
+            line-height: 1.30;
+        }
+        h2, h3 {
+            @include field-reset();
+            margin-bottom: 15px;
+            font-size: 24px;
+            font-weight: 400;
+            line-height: 1.30;
+        }
+        p, div, strong {
+            @include field-reset();
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        ul, ol {
+            font-weight: 400;
+            margin-bottom: 15px;
+        }
+        > *:last-child {
+            margin-bottom: 0;
+        }
+        @media (min-width: $lg) {
+            padding: 30px;
+            border: none;
+        }
+    }
+}

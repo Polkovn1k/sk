@@ -6,34 +6,26 @@
     $se: $glide-element-separator;
     $sm: $glide-modifier-separator;
 
-    &:hover &__arrow {
-        opacity: 1;
-    }
-
     &#{$se}slide {
         height: auto;
     }
 
     &#{$se}arrow {
-        display: none;
         position: absolute;
         top: 50%;
         z-index: 2;
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-color: $white;
         border: 2px solid rgba(255, 255, 255, 0.5);
-        box-shadow: 0 0 20px 0 transparentize($black, 0.9);
-        opacity: 0;
+        opacity: 1;
         cursor: pointer;
         transition: opacity 0.3s ease, border 0.3s ease-in-out;
         transform: translateY(-50%);
         font-size: 0;
         outline: none;
-        @media (min-width: $lg) {
-            display: block;
-        }
+        background: transparent;
+        border: none;
 
         &::before {
             display: block;
@@ -58,11 +50,11 @@
         }
 
         &#{$sm}left {
-            left: 15px;
+            left: 1px;
         }
 
         &#{$sm}right {
-            right: 15px;
+            right: 1px;
         }
 
         &#{$sm}right::before {
