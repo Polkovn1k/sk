@@ -347,3 +347,15 @@ var loader = {
 };
 //loader.activeLoader();
 //loader.hideLoader();
+
+
+window.addEventListener("load", (event) => {
+    fetch("json/ajax-product-nav-brands.json")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(item) {
+            var htmlFragment = document.createRange().createContextualFragment(item);
+            document.querySelector(".js-product-link-ajax").appendChild(htmlFragment);
+        })
+});

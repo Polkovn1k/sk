@@ -37,6 +37,7 @@ if (document.querySelector(".del-elements-and-ajax")) {
         _loadAjaxAfterCleanContainer: (jsonPath) => {
             var xhr = new XMLHttpRequest();
             xhr.addEventListener("load", (event) => {
+                console.log(JSON.parse(xhr.responseText));
                 var loadedAjax = JSON.parse(xhr.responseText);
                 var htmlFragment = document.createRange().createContextualFragment(loadedAjax);
                 document.querySelector(".js-add-container").appendChild(htmlFragment);
