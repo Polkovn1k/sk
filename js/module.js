@@ -70,6 +70,7 @@ if (document.querySelector(".del-elements-and-ajax")) {
         _loadAjaxAfterCleanContainer: (jsonPath) => {
             var xhr = new XMLHttpRequest();
             xhr.addEventListener("load", (event) => {
+                console.log(JSON.parse(xhr.responseText));
                 var loadedAjax = JSON.parse(xhr.responseText);
                 var htmlFragment = document.createRange().createContextualFragment(loadedAjax);
                 document.querySelector(".js-add-container").appendChild(htmlFragment);
@@ -465,6 +466,18 @@ var loader = {
 };
 //loader.activeLoader();
 //loader.hideLoader();
+
+
+window.addEventListener("load", (event) => {
+    fetch("json/ajax-product-nav-brands.json")
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(item) {
+            var htmlFragment = document.createRange().createContextualFragment(item);
+            document.querySelector(".js-product-link-ajax").appendChild(htmlFragment);
+        })
+});
 //ПЕРЕКЛЮЧАТЕЛЬ ВИДА КАРТОЧЕК: ПЛИТКА/СТРОКА
 if (document.querySelector(".grid-tog")) {
 

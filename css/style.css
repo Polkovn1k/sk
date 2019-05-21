@@ -1553,35 +1553,27 @@ html {
   .glide--rtl {
     direction: rtl; }
 
-.glide:hover .glide__arrow {
-  opacity: 1; }
-
 .glide__slide {
   height: auto; }
 
 .glide__arrow {
-  display: none;
   position: absolute;
   top: 50%;
   z-index: 2;
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: #ffffff;
   border: 2px solid rgba(255, 255, 255, 0.5);
-  -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-          box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1);
-  opacity: 0;
+  opacity: 1;
   cursor: pointer;
   -webkit-transition: opacity 0.3s ease, border 0.3s ease-in-out;
   transition: opacity 0.3s ease, border 0.3s ease-in-out;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   font-size: 0;
-  outline: none; }
-  @media (min-width: 1024px) {
-    .glide__arrow {
-      display: block; } }
+  outline: none;
+  background: transparent;
+  border: none; }
   .glide__arrow::before {
     display: block;
     content: "";
@@ -1600,9 +1592,9 @@ html {
   .glide__arrow:hover {
     border-color: white; }
   .glide__arrow--left {
-    left: 15px; }
+    left: 1px; }
   .glide__arrow--right {
-    right: 15px; }
+    right: 1px; }
   .glide__arrow--right::before {
     top: 14px;
     left: 12px;
@@ -6574,30 +6566,65 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   .articles__category--nicotine {
     background: #000000; }
 
-.brands__container {
+.brands {
+  margin-bottom: 30px; }
+  .brands__container {
+    background: #ffffff;
+    border: 1px solid #dfdfdf; }
+    @media (min-width: 1024px) {
+      .brands__container {
+        border: none; } }
+  .brands__item {
+    width: 100%;
+    height: 105px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .brands__link img {
+    width: auto;
+    max-height: 50px;
+    max-width: 155px; }
+
+.about-index__container {
+  padding: 15px;
   background: #ffffff;
-  border: 1px solid #dfdfdf; }
+  border: 1px solid #dfdfdf;
+  color: #a1a1a1;
+  font-weight: 400; }
+  .about-index__container h1 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.30; }
+  .about-index__container h2, .about-index__container h3 {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.30; }
+  .about-index__container p, .about-index__container div, .about-index__container strong {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    margin-bottom: 15px; }
+  .about-index__container ul, .about-index__container ol {
+    font-weight: 400;
+    margin-bottom: 15px; }
+  .about-index__container > *:last-child {
+    margin-bottom: 0; }
   @media (min-width: 1024px) {
-    .brands__container {
+    .about-index__container {
+      padding: 30px;
       border: none; } }
-
-.brands__item {
-  width: 100%;
-  height: 105px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
-
-.brands__link img {
-  width: auto;
-  max-height: 50px;
-  max-width: 155px; }
 
 .viewed-products {
   position: relative;
