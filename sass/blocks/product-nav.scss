@@ -160,26 +160,16 @@
             border-bottom: 1px solid $border-color;
         }
     }
+
+    &__sub-nav-tog.active {
+        svg {
+            transform: rotate(0deg);
+        }
+    }
 //Подменю на desktop
     &__link-text {
         display: none;
-        @media (min-width: $lg) {
-            @include order-reset();
-            display: block;
-        }
-        li {
-            font-size: 14px;
-            font-weight: 600;
-            line-height: 1.71;
-            color: $communication-add-color;
-            transition: 0.3s ease;
-        }
-        /* li:last-child {
-          color: $blue;
-        } */
-        li:hover {
-            color: $blue;
-        }
+
     }
 
     &__calc {
@@ -206,8 +196,14 @@
         border: none;
         transition: 0.3s ease;
         @media (min-width: $lg) {
-            display: none;
+            max-height: none;
+            padding: 0;
+            background: transparent;
         }
+    }
+
+    &__sub-nav-list.active {
+        max-height: none;
     }
 
     &__sub-nav-item {
@@ -219,12 +215,33 @@
             color: $communication-add-color;
             transition: 0.3s ease;
         }
+        @media (min-width: $lg) {
+            a {
+                display: inline;
+                padding: 0;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 1.71;
+                color: $communication-add-color;
+                transition: 0.3s ease;
+            }
+            a:hover {
+                color: $blue;
+            }
+        }
     }
+
     &__sub-nav-item:first-child {
         padding-top: 10px;
+        @media (min-width: $lg) {
+            padding-top: 0;
+        }
     }
     &__sub-nav-item:last-child {
         padding-bottom: 10px;
+        @media (min-width: $lg) {
+            padding-bottom: 0;
+        }
     }
     &__sub-nav-item {
         a:hover {
@@ -282,10 +299,11 @@
                 margin-right: 3%;
             }
 
-            .product-nav__link-text {
+            .product-nav__sub-nav-list {
                 display: flex;
                 flex-grow: 1;
                 justify-content: space-between;
+                width: auto;
             }
         }
     }
