@@ -1,7 +1,7 @@
 //ОТСЛЕЖИВАНИЕ СКРОЛА И ПРОСТАВЛЯЕМ ACTIVE НА КНОПКИ
 if (document.querySelector(".slider-shadow")) {
 
-    let eventHandlerArg = function(event) {
+    let eventHandler = function(event) {
         console.log("Произошло событие!");
         var headerBlock = document.querySelector(".js-header");
         var sliderBlock = document.querySelector(".js-compare-slider-block");
@@ -18,10 +18,10 @@ if (document.querySelector(".slider-shadow")) {
 
     var sliderShadow = {
 
-        scrollEvent: throttle(eventHandlerArg, 100),
+        actionAfterEvent: throttle(eventHandler, 100),
 
         listenScroll: () => {
-            window.addEventListener("scroll", sliderShadow.scrollEvent);
+            window.addEventListener("scroll", sliderShadow.actionAfterEvent);
         },
 
         _getHeaderHeight: (elem) => {
