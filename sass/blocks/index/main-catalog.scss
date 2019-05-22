@@ -110,6 +110,24 @@
                 margin-right: 25px;
                 line-height: 2;
             }
+            button {
+                background: transparent;
+                border: none;
+                box-shadow: none;
+                outline: none;
+                font-size: inherit;
+                font-weight: inherit;
+                line-height: inherit;
+                color: inherit;
+                cursor: pointer;
+                transition: 0.3s color ease;
+            }
+            button:hover {
+                color: $blue;
+            }
+            button.active-btn {
+                color: $blue;
+            }
         }
     }
 

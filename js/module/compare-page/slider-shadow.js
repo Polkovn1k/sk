@@ -2,7 +2,6 @@
 if (document.querySelector(".slider-shadow")) {
 
     let eventHandler = function(event) {
-        console.log("Произошло событие!");
         var headerBlock = document.querySelector(".js-header");
         var sliderBlock = document.querySelector(".js-compare-slider-block");
         var sliderBody = document.querySelector(".js-compare__body");

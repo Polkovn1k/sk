@@ -1,0 +1,12 @@
+.index-overlay {
+    display: none;
+    &.opened {
+        width: 400px;
+        height: 400px;
+        background: green;
+        top: 200px;
+        left: 100px;
+        position: fixed;
+        display: block;
+    }
+}
