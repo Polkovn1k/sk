@@ -1,12 +1,86 @@
 .index-overlay {
     display: none;
     &.opened {
-        width: 400px;
-        height: 400px;
-        background: green;
-        top: 200px;
-        left: 100px;
-        position: fixed;
+        display: none;
+        @media (min-width: $md) {
+            height: auto;
+            background: $white;
+            top: 410px;
+            left: 9px;
+            right: 9px;
+            position: absolute;
+            z-index: 10;
+            display: block;
+            box-shadow: 0 0 10px 0 transparentize($black, 0.5);
+            border-radius: 5px;
+        }
+        @media (min-width: $lg) {
+            top: 120px;
+        }
+    }
+
+    &__container {
+        padding: $grid-padding;
+    }
+
+    &__top-line {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 (-$grid-padding);
+        margin-top: -$grid-padding;
+        position: relative;
+        border-bottom: 1px solid $border-color;
+        padding: 0 $grid-padding;
+        height: 75px;
+    }
+
+    &__close {
+        padding: 0;
+
         display: block;
+        width: 50px;
+        background: transparent;
+        border: none;
+        outline: none;
+        font-size: 0;
+        text-align: right;
+        cursor: pointer;
+        svg {
+            fill: $add-text-color;
+        }
+    }
+
+    &__title {
+        @include field-reset();
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 1.33;
+        color: $main-color;
+    }
+
+    &__list {
+        @include order-reset();
+        padding-top: 15px;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
+        li {
+            width: 33.33%;
+        }
+        @media (min-width: $lg) {
+            li {
+                width: 25%;
+            }
+        }
+        @media (min-width: $tp) {
+            li {
+                width: 20%;
+            }
+        }
     }
 }

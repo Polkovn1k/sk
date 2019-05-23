@@ -11,6 +11,15 @@ if (document.querySelector(".index-page")) {
             });
         },
 
+        listenCloseBtn: () => {
+            document.querySelectorAll(".js-close-liquid-overlay").forEach((closeBtn) => {
+                closeBtn.addEventListener("click", (event) => {
+                    indexModal._hideAllOverlays();
+                    indexModal._hideAllBtnActiveStatus();
+                });
+            });
+        },
+
         action: (btnCallingOverlays) => {
             indexModal._hideAllOverlays();
             indexModal._btnState(btnCallingOverlays);
@@ -20,6 +29,12 @@ if (document.querySelector(".index-page")) {
         _hideAllOverlays: () => {
             document.querySelectorAll(".js-liquid-overlay").forEach((overlay) => {
                 overlay.classList.remove("opened");
+            });
+        },
+
+        _hideAllBtnActiveStatus: () => {
+            document.querySelectorAll(".js-liquid-prop-list").forEach((overlay) => {
+                overlay.classList.remove("active-btn");
             });
         },
 
@@ -43,6 +58,7 @@ if (document.querySelector(".index-page")) {
 
         init: () => {
             indexModal.listenClickForBtnWhichCallOverlay();
+            indexModal.listenCloseBtn();
         },
     };
     indexModal.init();
