@@ -2346,22 +2346,20 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background-image: linear-gradient(180deg, #ffffff 60px, #008aff 60px);
-  overflow: hidden; }
+  background-image: linear-gradient(180deg, #ffffff 60px, #008aff 60px); }
   @media (min-width: 768px) {
     .header {
       background-image: linear-gradient(180deg, #ffffff 75px, #008aff 75px); } }
-  @media (min-width: 1024px) {
-    .header {
-      overflow: visible; } }
   .header.hide {
+    overflow: hidden;
     height: 0; }
     @media (min-width: 768px) {
       .header.hide {
         height: 0; } }
     @media (min-width: 1024px) {
       .header.hide {
-        height: auto; } }
+        height: auto;
+        overflow: visible; } }
   .header__container {
     min-width: 320px;
     max-width: 1395px;
