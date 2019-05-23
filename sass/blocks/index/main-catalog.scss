@@ -72,7 +72,6 @@
     &__title {
         @include field-reset();
         padding: 0 10px;
-        position: relative;
         z-index: 1;
         font-family: $font;
         font-size: 12px;
@@ -83,12 +82,26 @@
         span {
             display: none;
         }
+        a::before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: transparent;
+        }
         @media (min-width: $md) {
             padding: 0 0 15px 0;
             font-size: 24px;
             text-align: left;
             span {
                 display: inline;
+            }
+            a::before {
+                display: none;
             }
         }
     }
