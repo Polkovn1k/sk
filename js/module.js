@@ -467,7 +467,7 @@ var loader = {
 //loader.activeLoader();
 //loader.hideLoader();
 
-
+//--------------------------------------------------------------------------
 window.addEventListener("load", (event) => {
     fetch("json/ajax-product-nav-brands.json")
         .then(function(response) {
@@ -478,6 +478,39 @@ window.addEventListener("load", (event) => {
             document.querySelector(".js-product-link-ajax").appendChild(htmlFragment);
         })
 });
+
+//Throttle для различных событий
+function throttle(func, wait, options) {
+  var context, args, result;
+  var timeout = null;
+  var previous = 0;
+  if (!options) options = {};
+  var later = function() {
+    previous = options.leading === false ? 0 : Date.now();
+    timeout = null;
+    result = func.apply(context, args);
+    if (!timeout) context = args = null;
+  };
+  return function() {
+    var now = Date.now();
+    if (!previous && options.leading === false) previous = now;
+    var remaining = wait - (now - previous);
+    context = this;
+    args = arguments;
+    if (remaining <= 0 || remaining > wait) {
+      if (timeout) {
+        clearTimeout(timeout);
+        timeout = null;
+      }
+      previous = now;
+      result = func.apply(context, args);
+      if (!timeout) context = args = null;
+    } else if (!timeout && options.trailing !== false) {
+      timeout = setTimeout(later, remaining);
+    }
+    return result;
+  };
+};
 //ПЕРЕКЛЮЧАТЕЛЬ ВИДА КАРТОЧЕК: ПЛИТКА/СТРОКА
 if (document.querySelector(".grid-tog")) {
 
@@ -1260,22 +1293,26 @@ if (document.querySelector(".compare-slider")) {
 //ОТСЛЕЖИВАНИЕ СКРОЛА И ПРОСТАВЛЯЕМ ACTIVE НА КНОПКИ
 if (document.querySelector(".slider-shadow")) {
 
+    let eventHandler = function(event) {
+        var headerBlock = document.querySelector(".js-header");
+        var sliderBlock = document.querySelector(".js-compare-slider-block");
+        var sliderBody = document.querySelector(".js-compare__body");
+        var headerHeight = sliderShadow._getHeaderHeight(".js-header");
+        if ((sliderBlock.getBoundingClientRect().y === headerHeight) || (sliderBlock.getBoundingClientRect().y === 0)) {
+            sliderBlock.classList.add("sticked");
+            headerBlock.classList.add("hide");
+            return false;
+        }
+        sliderBlock.classList.remove("sticked");
+        headerBlock.classList.remove("hide");
+    }
+
     var sliderShadow = {
 
+        actionAfterEvent: throttle(eventHandler, 100),
+
         listenScroll: () => {
-            window.addEventListener("scroll", (event) => {
-                var headerBlock = document.querySelector(".js-header");
-                var sliderBlock = document.querySelector(".js-compare-slider-block");
-                var sliderBody = document.querySelector(".js-compare__body");
-                var headerHeight = sliderShadow._getHeaderHeight(".js-header");
-                if ((sliderBlock.getBoundingClientRect().y === headerHeight) || (sliderBlock.getBoundingClientRect().y === 0)) {
-                    sliderBlock.classList.add("sticked");
-                    headerBlock.classList.add("hide");
-                    return false;
-                }
-                sliderBlock.classList.remove("sticked");
-                headerBlock.classList.remove("hide");
-            });
+            window.addEventListener("scroll", sliderShadow.actionAfterEvent);
         },
 
         _getHeaderHeight: (elem) => {
@@ -1361,6 +1398,72 @@ if (document.querySelector(".delivery-tabs-change")) {
         },
     };
     orderTabs.init();
+
+}
+//СЛАЙДЕРЫ НА ГЛАВНОЙ СТРАНИЦЕ
+if (document.querySelector(".index-page")) {
+
+    var indexModal = {
+
+        listenClickForBtnWhichCallOverlay: () => {
+            document.querySelectorAll(".js-liquid-prop-list").forEach((btnCallingOverlays) => {
+                btnCallingOverlays.addEventListener("click", (event) => {
+                    indexModal.action(btnCallingOverlays);
+                });
+            });
+        },
+
+        listenCloseBtn: () => {
+            document.querySelectorAll(".js-close-liquid-overlay").forEach((closeBtn) => {
+                closeBtn.addEventListener("click", (event) => {
+                    indexModal._hideAllOverlays();
+                    indexModal._hideAllBtnActiveStatus();
+                });
+            });
+        },
+
+        action: (btnCallingOverlays) => {
+            indexModal._hideAllOverlays();
+            indexModal._btnState(btnCallingOverlays);
+            indexModal._findOverlayByClickedBtn(btnCallingOverlays);
+        },
+
+        _hideAllOverlays: () => {
+            document.querySelectorAll(".js-liquid-overlay").forEach((overlay) => {
+                overlay.classList.remove("opened");
+            });
+        },
+
+        _hideAllBtnActiveStatus: () => {
+            document.querySelectorAll(".js-liquid-prop-list").forEach((overlay) => {
+                overlay.classList.remove("active-btn");
+            });
+        },
+
+        _btnState: (item) => {
+            let btns = document.querySelectorAll(".js-liquid-prop-list");
+            for (var i = 0; i < btns.length; i++) {
+                if (btns[i] === event.target) {
+                    btns[i].classList.toggle("active-btn");
+                    continue;
+                }
+                btns[i].classList.remove("active-btn");
+            }
+        },
+
+        _findOverlayByClickedBtn: (clickedBtn) => {
+            var overlayIdForClickedElement = clickedBtn.dataset.liquid;
+            if (clickedBtn.classList.contains("active-btn")) {
+                document.getElementById(overlayIdForClickedElement).classList.add("opened");
+            }
+        },
+
+        init: () => {
+            indexModal.listenClickForBtnWhichCallOverlay();
+            indexModal.listenCloseBtn();
+        },
+    };
+    indexModal.init();
 
 }
 //СЛАЙДЕРЫ НА ГЛАВНОЙ СТРАНИЦЕ
