@@ -120,7 +120,8 @@ expandCollapsedItemsToggleStyle.init();
 var modals = {
 
     listenClickForBtnWhichCallOverlay: () => {
-        document.querySelectorAll(".js-overlay-btn").forEach((btnCallingOverlays) => {
+        document.querySelectorAll(".js-overlay-btn:not(.js-inited)").forEach((btnCallingOverlays) => {
+            modals._addInitializedStatus(btnCallingOverlays);
             btnCallingOverlays.addEventListener("click", (event) => {
                 event.preventDefault();
                if (btnCallingOverlays && btnCallingOverlays.contains(event.target)) {
@@ -251,6 +252,10 @@ var modals = {
             toggledElems[i].classList.remove('scroll-disabled');
         }
         modals._setScrollPosition("setScroll");
+    },
+
+    _addInitializedStatus: (clickedBtn) => {
+        clickedBtn.classList.add("js-inited");
     },
 
     init: () => {
