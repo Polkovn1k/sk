@@ -5767,7 +5767,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   z-index: 10; }
 
 .main-catalog {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5836,7 +5835,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     margin: 0;
     padding: 0;
     padding: 0 10px;
-    position: relative;
     z-index: 1;
     font-family: "Segoe UI", sans-serif;
     font-size: 12px;
@@ -5846,13 +5844,25 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     color: #2c2c2c; }
     .main-catalog__title span {
       display: none; }
+    .main-catalog__title a::before {
+      content: "";
+      display: block;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: transparent; }
     @media (min-width: 768px) {
       .main-catalog__title {
         padding: 0 0 15px 0;
         font-size: 24px;
         text-align: left; }
         .main-catalog__title span {
-          display: inline; } }
+          display: inline; }
+        .main-catalog__title a::before {
+          display: none; } }
   .main-catalog__sub-titles {
     display: none; }
     @media (min-width: 768px) {
@@ -5874,6 +5884,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
           margin-right: 25px;
           line-height: 2; }
         .main-catalog__sub-titles button {
+          padding: 0;
           background: transparent;
           border: none;
           -webkit-box-shadow: none;
@@ -6643,27 +6654,39 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
       border: none; } }
 
 .index-overlay {
-  display: none; }
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  overflow-y: auto;
+  overflow-x: hidden;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5); }
   .index-overlay.opened {
     display: none; }
     @media (min-width: 768px) {
       .index-overlay.opened {
-        height: auto;
-        background: #ffffff;
-        top: 410px;
-        left: 9px;
-        right: 9px;
-        position: absolute;
-        z-index: 10;
-        display: block;
-        -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-                box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
-        border-radius: 5px; } }
-    @media (min-width: 1024px) {
-      .index-overlay.opened {
-        top: 120px; } }
+        display: block; } }
+  .index-overlay__wrapper {
+    padding-top: 20px;
+    max-height: 100vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: calc(100% - 30px);
+    max-width: 1395px;
+    margin: 0 auto; }
   .index-overlay__container {
-    padding: 15px; }
+    overflow: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding: 15px;
+    background: #ffffff; }
   .index-overlay__top-line {
     position: relative;
     display: -webkit-box;
@@ -6700,27 +6723,37 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     font-weight: 600;
     line-height: 1.33;
     color: #2c2c2c; }
-  .index-overlay__list {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    padding-top: 15px;
+  .index-overlay__content {
+    padding-top: 15px; }
+    .index-overlay__content ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 1.38;
+      color: #a1a1a1; }
+  .index-overlay__col {
+    padding-bottom: 10px; }
+    @media (min-width: 1024px) {
+      .index-overlay__col {
+        padding-bottom: 0; } }
+  .index-overlay__strong {
+    padding-top: 10px;
+    font-weight: 700; }
+  .index-overlay__brands-list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.38;
-    color: #a1a1a1; }
-    .index-overlay__list li {
+        flex-wrap: wrap; }
+    .index-overlay__brands-list li {
       width: 33.33%; }
     @media (min-width: 1024px) {
-      .index-overlay__list li {
+      .index-overlay__brands-list li {
         width: 25%; } }
     @media (min-width: 1220px) {
-      .index-overlay__list li {
+      .index-overlay__brands-list li {
         width: 20%; } }
 
 .viewed-products {

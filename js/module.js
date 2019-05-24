@@ -239,7 +239,8 @@ expandCollapsedItemsToggleStyle.init();
 var modals = {
 
     listenClickForBtnWhichCallOverlay: () => {
-        document.querySelectorAll(".js-overlay-btn").forEach((btnCallingOverlays) => {
+        document.querySelectorAll(".js-overlay-btn:not(.js-inited)").forEach((btnCallingOverlays) => {
+            modals._addInitializedStatus(btnCallingOverlays);
             btnCallingOverlays.addEventListener("click", (event) => {
                 event.preventDefault();
                if (btnCallingOverlays && btnCallingOverlays.contains(event.target)) {
@@ -370,6 +371,10 @@ var modals = {
             toggledElems[i].classList.remove('scroll-disabled');
         }
         modals._setScrollPosition("setScroll");
+    },
+
+    _addInitializedStatus: (clickedBtn) => {
+        clickedBtn.classList.add("js-inited");
     },
 
     init: () => {
@@ -1403,72 +1408,6 @@ if (document.querySelector(".delivery-tabs-change")) {
 //СЛАЙДЕРЫ НА ГЛАВНОЙ СТРАНИЦЕ
 if (document.querySelector(".index-page")) {
 
-    var indexModal = {
-
-        listenClickForBtnWhichCallOverlay: () => {
-            document.querySelectorAll(".js-liquid-prop-list").forEach((btnCallingOverlays) => {
-                btnCallingOverlays.addEventListener("click", (event) => {
-                    indexModal.action(btnCallingOverlays);
-                });
-            });
-        },
-
-        listenCloseBtn: () => {
-            document.querySelectorAll(".js-close-liquid-overlay").forEach((closeBtn) => {
-                closeBtn.addEventListener("click", (event) => {
-                    indexModal._hideAllOverlays();
-                    indexModal._hideAllBtnActiveStatus();
-                });
-            });
-        },
-
-        action: (btnCallingOverlays) => {
-            indexModal._hideAllOverlays();
-            indexModal._btnState(btnCallingOverlays);
-            indexModal._findOverlayByClickedBtn(btnCallingOverlays);
-        },
-
-        _hideAllOverlays: () => {
-            document.querySelectorAll(".js-liquid-overlay").forEach((overlay) => {
-                overlay.classList.remove("opened");
-            });
-        },
-
-        _hideAllBtnActiveStatus: () => {
-            document.querySelectorAll(".js-liquid-prop-list").forEach((overlay) => {
-                overlay.classList.remove("active-btn");
-            });
-        },
-
-        _btnState: (item) => {
-            let btns = document.querySelectorAll(".js-liquid-prop-list");
-            for (var i = 0; i < btns.length; i++) {
-                if (btns[i] === event.target) {
-                    btns[i].classList.toggle("active-btn");
-                    continue;
-                }
-                btns[i].classList.remove("active-btn");
-            }
-        },
-
-        _findOverlayByClickedBtn: (clickedBtn) => {
-            var overlayIdForClickedElement = clickedBtn.dataset.liquid;
-            if (clickedBtn.classList.contains("active-btn")) {
-                document.getElementById(overlayIdForClickedElement).classList.add("opened");
-            }
-        },
-
-        init: () => {
-            indexModal.listenClickForBtnWhichCallOverlay();
-            indexModal.listenCloseBtn();
-        },
-    };
-    indexModal.init();
-
-}
-//СЛАЙДЕРЫ НА ГЛАВНОЙ СТРАНИЦЕ
-if (document.querySelector(".index-page")) {
-
     //Верхний слайдер
     var glide = new Glide('.js-top-slider', {
       type: 'carousel',
@@ -1633,6 +1572,60 @@ if (document.querySelector(".index-page")) {
         }
     });
     brandsSlider.mount();
+
+}
+//ПОДГРУЗКА AJAX НА ГЛАВНОЙ (блок жидкостей)
+if (document.querySelector(".index-page")) {
+
+    var loadAfterClick = {
+
+        listenBtnsClick: () => {
+            document.querySelectorAll(".js-load-ajax").forEach((button) => {
+                var ajaxString;
+                button.addEventListener("click", (event) => {
+                    if (ajaxString) return false;
+                    ajaxString = loadAfterClick._getJsonString(button, "path");
+                    loadAfterClick._loadAjaxAndActions(ajaxString, button);
+                });
+            });
+        },
+
+        _getJsonString: (clickedBtn, findString) => {
+            switch (findString) {
+                case "overlay":
+                    return clickedBtn.dataset.overlayId;
+                    break;
+                case "path":
+                    return clickedBtn.dataset.ajax;
+                    break;
+            }
+        },
+
+        _loadAjaxAndActions: (jsonPath, clickedBtn) => {
+            var xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", (evt) => {
+                var parsedJson = JSON.parse(xhr.responseText);
+                var htmlFragment = loadAfterClick._convertJsonToHtmlFragment(parsedJson);
+                loadAfterClick._appendHtml(htmlFragment, clickedBtn);
+            });
+            xhr.open("GET", "json/"+jsonPath+".json");
+            xhr.send();
+        },
+
+        _convertJsonToHtmlFragment: (loadedAjax) => {
+            return document.createRange().createContextualFragment(loadedAjax);
+        },
+
+        _appendHtml: (htmlContent, button) => {
+            var openedOverlayIdString = loadAfterClick._getJsonString(button, "overlay");
+            document.querySelector("#"+openedOverlayIdString+" .index-overlay__content").appendChild(htmlContent);
+        },
+
+        init: () => {
+            loadAfterClick.listenBtnsClick();
+        },
+    };
+    loadAfterClick.init();
 
 }
 //ПЕРЕКЛЮЧАТЕЛЬ ВИДА КАРТОЧЕК: ПЛИТКА/СТРОКА
