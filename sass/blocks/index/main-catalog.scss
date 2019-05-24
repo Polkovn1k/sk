@@ -1,5 +1,4 @@
 .main-catalog {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -125,6 +124,7 @@
                 line-height: 2;
             }
             button {
+                padding: 0;
                 background: transparent;
                 border: none;
                 box-shadow: none;
