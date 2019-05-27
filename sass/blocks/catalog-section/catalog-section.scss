@@ -18,17 +18,15 @@
         background: $white;
         @media (min-width: $lg) {
             order: 0;
+            margin-top: 20px;
             display: flex;
             padding: 20px;
-            margin-bottom: 15px;
             border: none;
         }
     }
 
     &__collapsed-text {
         @include field-reset();
-        max-height: 90px;
-        margin-bottom: 10px;
         overflow: hidden;
         transition: 0.3s ease;
         >* {
@@ -40,13 +38,8 @@
         }
         @media (min-width: $lg) {
             flex-grow: 1;
-            padding-right: 10px;
             margin-bottom: 0;
         }
-    }
-
-    &__collapsed-text.active {
-        max-height: none;
     }
 
     &__text-tog {

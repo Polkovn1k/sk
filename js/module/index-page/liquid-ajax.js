@@ -25,6 +25,16 @@ if (document.querySelector(".index-page")) {
             }
         },
 
+        /*_loadAjaxAndActions: (jsonPath, clickedBtn) => {
+            var xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", (evt) => {
+                var htmlFragment = loadAfterClick._convertJsonToHtmlFragment(xhr.responseText);
+                loadAfterClick._appendHtml(htmlFragment, clickedBtn);
+            });
+            xhr.open("GET", jsonPath+".php");
+            xhr.send();
+        },*/
+
         _loadAjaxAndActions: (jsonPath, clickedBtn) => {
             var xhr = new XMLHttpRequest();
             xhr.addEventListener("load", (evt) => {

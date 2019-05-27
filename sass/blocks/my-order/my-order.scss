@@ -57,6 +57,10 @@
             white-space: nowrap;
             overflow: hidden;
         }
+        th:nth-child(4),
+        td:nth-child(4) {
+            width: 250px;
+        }
         th:last-child,
         td:last-child {
             padding: 0;
@@ -105,6 +109,13 @@
             padding: $grid-padding $grid-padding;
             text-overflow: clip;
             white-space: normal;
+        }
+    }
+
+    &__collapsed-info {
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 250px;
         }
     }
 
@@ -167,12 +178,27 @@
         font-size: 12px;
     }
 
-    &__buy {
+    &__delete {
+        padding: 0;
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 0;
+        vertical-align: middle;
+    }
+
+    &__buy,
+    &__cancel {
         height: 20px;
         line-height: 20px;
         padding: 0 5px;
         font-size: 12px;
         font-weight: 600;
+    }
+
+    &__cancel {
+        background: $red;
+        color: $white;
     }
 
     &__delivery {
