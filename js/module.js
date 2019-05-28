@@ -1060,7 +1060,7 @@ if (document.querySelector(".catalog-tips")) {
             if (html.getAttribute("data-timer-id")) {
                 clearTimeout(html.getAttribute("data-timer-id"));
             }
-            var clickedCheckbox = document.querySelector(".clicked:checked");
+            var clickedCheckbox = document.querySelector(".clicked");
             var clickedElementTopPosition = filterTips._getCheckboxPosition(clickedCheckbox);
             filterTips._removeAllStatus();
             var timerId = filterTips._addStyleForTip(clickedCheckbox, clickedElementTopPosition);
@@ -1600,6 +1600,16 @@ if (document.querySelector(".index-page")) {
                     break;
             }
         },
+
+        /*_loadAjaxAndActions: (jsonPath, clickedBtn) => {
+            var xhr = new XMLHttpRequest();
+            xhr.addEventListener("load", (evt) => {
+                var htmlFragment = loadAfterClick._convertJsonToHtmlFragment(xhr.responseText);
+                loadAfterClick._appendHtml(htmlFragment, clickedBtn);
+            });
+            xhr.open("GET", jsonPath+".php");
+            xhr.send();
+        },*/
 
         _loadAjaxAndActions: (jsonPath, clickedBtn) => {
             var xhr = new XMLHttpRequest();

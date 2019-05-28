@@ -30,7 +30,7 @@ if (document.querySelector(".catalog-tips")) {
             if (html.getAttribute("data-timer-id")) {
                 clearTimeout(html.getAttribute("data-timer-id"));
             }
-            var clickedCheckbox = document.querySelector(".clicked:checked");
+            var clickedCheckbox = document.querySelector(".clicked");
             var clickedElementTopPosition = filterTips._getCheckboxPosition(clickedCheckbox);
             filterTips._removeAllStatus();
             var timerId = filterTips._addStyleForTip(clickedCheckbox, clickedElementTopPosition);
