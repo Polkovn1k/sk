@@ -52,6 +52,13 @@
         }
     }
 
+    &__warning {
+        display: block;
+        margin-top: 10px;
+        font-weight: 700;
+        color: $red;
+    }
+
     &__pay-tog.active {
         border-color: $green;
         cursor: default;

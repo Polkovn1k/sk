@@ -187,6 +187,11 @@
         vertical-align: middle;
     }
 
+    &__cancel-form {
+        display: inline-block;
+        vertical-align: top;
+    }
+
     &__buy,
     &__cancel {
         height: 20px;

@@ -23,7 +23,11 @@
                     <td>
                         <span class="my-order__price">12 555 Р.</span>
                         <button class="yellow-btn my-order__buy">Оплатить</button>
-                        <button class="yellow-btn my-order__cancel">Отменить</button>
+                        <form method="post" class="my-order__cancel-form">
+                            <input type="hidden" name="order_action" value="cancel">
+                            <input type="hidden" name="order_id" value="51293">
+                            <button type="submit" class="yellow-btn my-order__cancel">Отменить</button>
+                        </form>
                     </td>
                     <td>
                         <button data-find-id="order-1" class="my-order__open js-call-collapsed-element">
@@ -101,7 +105,11 @@
                     <td>
                         <span class="my-order__price">154 000 Р.</span>
                         <button class="yellow-btn my-order__buy">Оплатить</button>
-                        <button class="yellow-btn my-order__cancel">Отменить</button>
+                        <form method="post" class="my-order__cancel-form">
+                            <input type="hidden" name="order_action" value="cancel">
+                            <input type="hidden" name="order_id" value="51293">
+                            <button type="submit" class="yellow-btn my-order__cancel">Отменить</button>
+                        </form>
                     </td>
                     <td>
                         <button data-find-id="order-2" class="my-order__open js-call-collapsed-element">
