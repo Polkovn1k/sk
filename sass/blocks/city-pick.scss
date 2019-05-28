@@ -1,9 +1,11 @@
 .city-pick {
     @include nav-title-block();
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     @media (min-width: $lg) {
+        position: static;
         min-height: 0;
         height: 100%;
         padding: 0;
@@ -33,5 +35,14 @@
             display: none;
             pointer-events: none;
         }
+   }
+
+   &__change::before {
+      @include pseudo();
+      @include full-absolute();
+      background: transparent;
+      @media (min-width: $lg) {
+          display: none;
+      }
    }
 }

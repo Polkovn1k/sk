@@ -2,7 +2,7 @@
     //height: 100%;
 
     &:hover {
-        .slider-item__action {
+        .slider-item__action-item {
             opacity: 1;
         }
     }
@@ -202,7 +202,6 @@
         transition: 0.1s opacity ease-in;
         background: $white;
         @media (min-width: $lg) {
-            opacity: 0;
             padding-right: 7.5px;
         }
     }
@@ -219,6 +218,7 @@
         border-radius: 3px;
         border: 1px solid $extra-text-color;
         background: $white;
+        transition: 0.1s opacity ease-in;
         svg {
             fill: $extra-text-color;
             width: 15px;
@@ -237,6 +237,9 @@
                 width: 20px;
                 height: 20px;
             }
+        }
+        @media (min-width: $lg) {
+            opacity: 0;
         }
     }
 
@@ -270,6 +273,19 @@
         svg {
             fill: $white;
         }
+    }
+
+    &__action-item.added {
+        border-color: $blue;
+        background: $blue;
+        opacity: 1;
+        svg {
+            fill: $white;
+        }
+    }
+
+    &__action-item.added:hover::after {
+        content: attr(data-status);
     }
 
 //Карточка - добавить товар
