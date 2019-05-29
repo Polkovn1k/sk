@@ -1340,6 +1340,7 @@ if (document.querySelector(".slider-shadow")) {
         }
         sliderBlock.classList.remove("sticked");
         headerBlock.classList.remove("hide");
+        alert(sliderBlock.getBoundingClientRect().y);
     }
 
     var sliderShadow = {
