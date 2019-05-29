@@ -1323,17 +1323,18 @@ if (document.querySelector(".compare-slider")) {
 
 }
 //ОТСЛЕЖИВАНИЕ СКРОЛА И ПРОСТАВЛЯЕМ ACTIVE НА КНОПКИ
+//ОТСЛЕЖИВАНИЕ СКРОЛА И ПРОСТАВЛЯЕМ ACTIVE НА КНОПКИ
 if (document.querySelector(".slider-shadow")) {
+
+    //Примерное значание для отслеживания прилипания слайдера к верху, т.к. на Safari это значение при скроле постоянно меняется и не может быть строго зафиксированно на 0
+    let REFERENT_VAL = 5;
 
     let eventHandler = function(event) {
         var headerBlock = document.querySelector(".js-header");
         var sliderBlock = document.querySelector(".js-compare-slider-block");
         var sliderBody = document.querySelector(".js-compare__body");
         var headerHeight = sliderShadow._getHeaderHeight(".js-header");
-        //alert(sliderBlock.getBoundingClientRect().y);
-        /*(sliderBlock.getBoundingClientRect().y === headerHeight) || */
-        if (sliderBlock.getBoundingClientRect().y >= -5 && sliderBlock.getBoundingClientRect().y <= 5) {
-            console.log(sliderBlock.getBoundingClientRect().y);
+        if ((sliderBlock.getBoundingClientRect().y >= -REFERENT_VAL) && (sliderBlock.getBoundingClientRect().y <= REFERENT_VAL)) {
             sliderBlock.classList.add("sticked");
             headerBlock.classList.add("hide");
             return false;
@@ -1343,6 +1344,8 @@ if (document.querySelector(".slider-shadow")) {
     }
 
     var sliderShadow = {
+
+        actionAfterEvent: throttle(eventHandler, 100),
 
         listenScroll: () => {
             window.addEventListener("scroll", eventHandler);

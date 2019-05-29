@@ -1,12 +1,15 @@
 //ОТСЛЕЖИВАНИЕ СКРОЛА И ПРОСТАВЛЯЕМ ACTIVE НА КНОПКИ
 if (document.querySelector(".slider-shadow")) {
 
+    //Примерное значание для отслеживания прилипания слайдера к верху, т.к. на Safari это значение при скроле постоянно меняется и не может быть строго зафиксированно на 0
+    let REFERENT_VAL = 5;
+
     let eventHandler = function(event) {
         var headerBlock = document.querySelector(".js-header");
         var sliderBlock = document.querySelector(".js-compare-slider-block");
         var sliderBody = document.querySelector(".js-compare__body");
         var headerHeight = sliderShadow._getHeaderHeight(".js-header");
-        if ((sliderBlock.getBoundingClientRect().y === headerHeight) || (sliderBlock.getBoundingClientRect().y === 0)) {
+        if ((sliderBlock.getBoundingClientRect().y >= -REFERENT_VAL) && (sliderBlock.getBoundingClientRect().y <= REFERENT_VAL)) {
             sliderBlock.classList.add("sticked");
             headerBlock.classList.add("hide");
             return false;
@@ -17,10 +20,10 @@ if (document.querySelector(".slider-shadow")) {
 
     var sliderShadow = {
 
-        actionAfterEvent: throttle(eventHandler, 0),
+        actionAfterEvent: throttle(eventHandler, 100),
 
         listenScroll: () => {
-            window.addEventListener("scroll", sliderShadow.actionAfterEvent);
+            window.addEventListener("scroll", eventHandler);
         },
 
         _getHeaderHeight: (elem) => {
