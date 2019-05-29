@@ -375,6 +375,14 @@
         }
     }
 
+    &__action-item.added {
+        background: $blue;
+        border-color: $blue;
+        svg {
+            fill: $white;
+        }
+    }
+
     &__action-item:hover::after {
         content: "";
         position: absolute;
@@ -401,6 +409,10 @@
 
     &__action-item--compare:hover::after {
         content: "К сравнению";
+    }
+
+    &__action-item.added:hover::after {
+        content: attr(data-status);
     }
 
     &__action-item:last-child {

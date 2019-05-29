@@ -29,11 +29,12 @@
     &__item {
         flex-shrink: 0;
         margin-right: 20px;
-        a {
-            display: flex;
-            align-items: center;
-            font-size: 0;
-        }
+    }
+
+    &__link {
+        position: relative;
+        display: flex;
+        align-items: center;
         svg {
             display: block;
             margin-right: 5px;
@@ -42,14 +43,21 @@
             fill: $blue;
         }
         @media (min-width: $md) {
-            a {
-                font-size: 14px;
-                font-weight: 400;
-                line-height: 1.36;
-                text-align: left;
-                color: $extra-text-color;
-            }
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1.36;
+            text-align: left;
+            color: $extra-text-color;
         }
+    }
+
+    &__link::after {
+        content: attr(data-hover);
+    }
+
+    &__link.added::after {
+        content: attr(data-status);
+        color: $blue;
     }
 
     &__item:last-child {

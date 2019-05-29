@@ -9,6 +9,7 @@ if (document.querySelector(".slider-shadow")) {
         var sliderBlock = document.querySelector(".js-compare-slider-block");
         var sliderBody = document.querySelector(".js-compare__body");
         var headerHeight = sliderShadow._getHeaderHeight(".js-header");
+        console.log(1111111111);
         if ((sliderBlock.getBoundingClientRect().y >= -REFERENT_VAL) && (sliderBlock.getBoundingClientRect().y <= REFERENT_VAL)) {
             sliderBlock.classList.add("sticked");
             headerBlock.classList.add("hide");
@@ -23,7 +24,7 @@ if (document.querySelector(".slider-shadow")) {
         actionAfterEvent: throttle(eventHandler, 100),
 
         listenScroll: () => {
-            window.addEventListener("scroll", eventHandler);
+            window.addEventListener("scroll", sliderShadow.actionAfterEvent);
         },
 
         _getHeaderHeight: (elem) => {
