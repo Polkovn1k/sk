@@ -17,10 +17,10 @@ if (document.querySelector(".slider-shadow")) {
 
     var sliderShadow = {
 
-        actionAfterEvent: throttle(eventHandler, 100),
+        //actionAfterEvent: throttle(eventHandler, 100),
 
         listenScroll: () => {
-            window.addEventListener("scroll", sliderShadow.actionAfterEvent);
+            window.addEventListener("scroll", eventHandler);
         },
 
         _getHeaderHeight: (elem) => {
