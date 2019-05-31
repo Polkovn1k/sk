@@ -11683,7 +11683,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     table-layout: fixed; }
     .my-order__table th, .my-order__table td {
       padding: 15px 15px;
-      width: calc((100% - 40px) / 4);
+      width: 100%;
       text-align: left;
       vertical-align: middle;
       height: 52px;
@@ -11704,6 +11704,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
       font-weight: 400;
       line-height: 1.31;
       color: #636363; }
+    .my-order__table td[colspan="2"] {
+      width: 200%; }
     .my-order__table th {
       font-size: 16px;
       font-weight: 600;
