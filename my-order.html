@@ -1033,6 +1033,7 @@
             <tbody class="my-order__tbody">
                 <tr>
                     <th>Номер заказа</th>
+                    <th>Трек-номер</th>
                     <th>Дата</th>
                     <th>Количество</th>
                     <th>Итоговая сумма</th>
@@ -1044,6 +1045,9 @@
                         <span class="my-order__status">Ждет оплаты</span>
                     </td>
                     <td>
+                        42093036567568
+                    </td>
+                    <td>
                         31.10.2018
                     </td>
                     <td>
@@ -1052,7 +1056,11 @@
                     <td>
                         <span class="my-order__price">12 555 Р.</span>
                         <button class="yellow-btn my-order__buy">Оплатить</button>
-                        <button class="yellow-btn my-order__cancel">Отменить</button>
+                        <form method="post" class="my-order__cancel-form">
+                            <input type="hidden" name="order_action" value="cancel">
+                            <input type="hidden" name="order_id" value="51293">
+                            <button type="submit" class="yellow-btn my-order__cancel">Отменить</button>
+                        </form>
                     </td>
                     <td>
                         <button data-find-id="order-1" class="my-order__open js-call-collapsed-element">
@@ -1064,12 +1072,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="5">
+                    <td colspan="6">
                         <div id="order-1" class="my-order__collapsed-info">
                             <table class="my-order__table">
                                 <tbody>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="3">
                                             <a href="https://kazan.smoking-shop.ru/zhidkosti/5-coons/dough-boy/">
                                                 Жидкость 5`Coons «Dough’Boy»
                                             </a>
@@ -1085,7 +1093,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="3">
                                             <a href="https://kazan.smoking-shop.ru/elektronnye-sigarety/eleaf/ijust-nexgen/">
                                                 Электронная сигарета Eleaf Ijust Nexgen
                                             </a>
@@ -1104,12 +1112,11 @@
                                         <td colspan="3">
                                             Самовывоз ул. Солдатская дом 8, офис 303 (оплата при получении)
                                         </td>
+                                        <td></td>
                                         <td>
                                             0 Р.
                                         </td>
-                                        <td>
-
-                                        </td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1122,6 +1129,9 @@
                         <span class="my-order__status">Ждет оплаты</span>
                     </td>
                     <td>
+                        42093036567568
+                    </td>
+                    <td>
                         14.01.2019
                     </td>
                     <td>
@@ -1130,7 +1140,11 @@
                     <td>
                         <span class="my-order__price">154 000 Р.</span>
                         <button class="yellow-btn my-order__buy">Оплатить</button>
-                        <button class="yellow-btn my-order__cancel">Отменить</button>
+                        <form method="post" class="my-order__cancel-form">
+                            <input type="hidden" name="order_action" value="cancel">
+                            <input type="hidden" name="order_id" value="51293">
+                            <button type="submit" class="yellow-btn my-order__cancel">Отменить</button>
+                        </form>
                     </td>
                     <td>
                         <button data-find-id="order-2" class="my-order__open js-call-collapsed-element">
@@ -1142,12 +1156,12 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="5">
+                    <td colspan="6">
                         <div id="order-2" class="my-order__collapsed-info">
                             <table class="my-order__table">
                                 <tbody>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="3">
                                             <a href="https://kazan.smoking-shop.ru/elektronnye-sigarety/rofvape/a-box-mini-50w-tc-atomizer-kit/">
                                                 Электронная сигарета Rofvape a Box Mini 50w TC Atomizer Kit
                                             </a>
@@ -1163,7 +1177,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">
+                                        <td colspan="3">
                                             <a href="https://kazan.smoking-shop.ru/elektronnye-sigarety/eleaf/istick-pico-25-starter-kit/">
                                                 Электронная сигарета Eleaf Istick Pico 25 Starter Kit
                                             </a>
@@ -1182,12 +1196,11 @@
                                         <td colspan="3">
                                             Почта России (наземная посылка)
                                         </td>
+                                        <td></td>
                                         <td>
                                             300 Р.
                                         </td>
-                                        <td>
-
-                                        </td>
+                                        <td></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -1918,13 +1931,13 @@
                             </div>
                         </div>
                         <div class="add-to-cart__action">
-                            <a href="#" class="add-to-cart__action-item add-to-cart__action-item--favorite">
+                            <a href="#" data-status="В избранном" class="add-to-cart__action-item add-to-cart__action-item--favorite">
                                 В избранное
                                 <svg width="22" height="22" aria-hidden="true" role="presentation">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#favorite-icon"></use>
                                 </svg>
                             </a>
-                            <a href="#" class="add-to-cart__action-item add-to-cart__action-item--compare">
+                            <a href="#" data-status="В сравнении" class="add-to-cart__action-item add-to-cart__action-item--compare">
                                 К сравнению
                                 <svg width="22" height="22" aria-hidden="true" role="presentation">
                                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#compare-icon"></use>

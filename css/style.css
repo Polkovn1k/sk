@@ -10433,6 +10433,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     @media (min-width: 768px) {
       .static-content__btn {
         width: auto; } }
+  .static-content__profile-info .static-content__title {
+    margin-bottom: 0; }
   @media (min-width: 768px) {
     .static-content__profile-info {
       display: -webkit-box;
@@ -10443,9 +10445,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
               justify-content: space-between;
       -webkit-box-align: center;
           -ms-flex-align: center;
-              align-items: center; }
-      .static-content__profile-info .static-content__title {
-        margin-bottom: 0; } }
+              align-items: center; } }
   .static-content__confirm-info {
     padding: 0 10px;
     height: 40px;
@@ -11045,6 +11045,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   .contacts__map {
     margin: -15px;
     margin-top: 0; }
+    .contacts__map iframe {
+      display: block; }
     @media (min-width: 768px) {
       .contacts__map {
         margin: -30px;
@@ -11661,9 +11663,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     overflow-y: hidden; }
     @media (min-width: 1024px) {
       .my-order__container {
-        border: none;
-        overflow-x: visible;
-        overflow-y: visible; } }
+        border: none; } }
   .my-order__container::-webkit-scrollbar-track-piece {
     background: #fff5db; }
   .my-order__container::-webkit-scrollbar {
@@ -11676,7 +11676,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   .my-order__tbody > tr:nth-child(2n) {
     background: #fff5db; }
   .my-order__table {
-    min-width: 730px;
+    min-width: 900px;
     border-collapse: collapse;
     width: 100%;
     padding: 15px 0;
@@ -11690,9 +11690,61 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden; }
+    .my-order__table th:first-child,
+    .my-order__table td:first-child {
+      width: 170px; }
+      @media (min-width: 1220px) {
+        .my-order__table th:first-child,
+        .my-order__table td:first-child {
+          width: 180px; } }
+      @media (min-width: 1395px) {
+        .my-order__table th:first-child,
+        .my-order__table td:first-child {
+          width: 190px; } }
+    .my-order__table th:nth-child(2),
+    .my-order__table td:nth-child(2) {
+      width: 170px; }
+      @media (min-width: 1220px) {
+        .my-order__table th:nth-child(2),
+        .my-order__table td:nth-child(2) {
+          width: 180px; } }
+      @media (min-width: 1395px) {
+        .my-order__table th:nth-child(2),
+        .my-order__table td:nth-child(2) {
+          width: 190px; } }
+    .my-order__table th:nth-child(3),
+    .my-order__table td:nth-child(3) {
+      width: 130px; }
+      @media (min-width: 1220px) {
+        .my-order__table th:nth-child(3),
+        .my-order__table td:nth-child(3) {
+          width: 130px; } }
+      @media (min-width: 1395px) {
+        .my-order__table th:nth-child(3),
+        .my-order__table td:nth-child(3) {
+          width: 170px; } }
     .my-order__table th:nth-child(4),
     .my-order__table td:nth-child(4) {
-      width: 250px; }
+      width: 130px; }
+      @media (min-width: 1220px) {
+        .my-order__table th:nth-child(4),
+        .my-order__table td:nth-child(4) {
+          width: 130px; } }
+      @media (min-width: 1395px) {
+        .my-order__table th:nth-child(4),
+        .my-order__table td:nth-child(4) {
+          width: 170px; } }
+    .my-order__table th:nth-child(5),
+    .my-order__table td:nth-child(5) {
+      width: 100%; }
+      @media (min-width: 1220px) {
+        .my-order__table th:nth-child(5),
+        .my-order__table td:nth-child(5) {
+          width: 100%; } }
+      @media (min-width: 1395px) {
+        .my-order__table th:nth-child(5),
+        .my-order__table td:nth-child(5) {
+          width: 100%; } }
     .my-order__table th:last-child,
     .my-order__table td:last-child {
       padding: 0;
@@ -11704,8 +11756,6 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
       font-weight: 400;
       line-height: 1.31;
       color: #636363; }
-    .my-order__table td[colspan="2"] {
-      width: 200%; }
     .my-order__table th {
       font-size: 16px;
       font-weight: 600;
@@ -11731,16 +11781,33 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
       max-height: none; }
     @media (min-width: 768px) {
       .my-order__table {
-        width: 100%;
-        min-width: auto; } }
+        width: 100%; } }
     @media (min-width: 1024px) {
       .my-order__table {
         padding: 15px 15px;
         text-overflow: clip;
         white-space: normal; } }
+  .my-order__collapsed-info th:first-child,
+  .my-order__collapsed-info td:first-child {
+    width: 470px; }
+    @media (min-width: 1220px) {
+      .my-order__collapsed-info th:first-child,
+      .my-order__collapsed-info td:first-child {
+        width: 490px; } }
+    @media (min-width: 1395px) {
+      .my-order__collapsed-info th:first-child,
+      .my-order__collapsed-info td:first-child {
+        width: 550px; } }
+  .my-order__collapsed-info th:nth-child(2),
+  .my-order__collapsed-info td:nth-child(2) {
+    width: 130px; }
+    @media (min-width: 1395px) {
+      .my-order__collapsed-info th:nth-child(2),
+      .my-order__collapsed-info td:nth-child(2) {
+        width: 170px; } }
   .my-order__collapsed-info th:nth-child(3),
   .my-order__collapsed-info td:nth-child(3) {
-    width: 250px; }
+    width: 100%; }
   .my-order__item {
     padding: 0 15px;
     border-bottom: 1px solid #dfdfdf; }
@@ -11793,6 +11860,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     line-height: 20px;
     font-size: 0;
     vertical-align: middle; }
+  .my-order__cancel-form {
+    display: inline-block;
+    vertical-align: top; }
   .my-order__buy, .my-order__cancel {
     height: 20px;
     line-height: 20px;
@@ -13020,6 +13090,11 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     @media (min-width: 1024px) {
       .order__text {
         margin-bottom: 40px; } }
+  .order__warning {
+    display: block;
+    margin-top: 10px;
+    font-weight: 700;
+    color: #ff0000; }
   .order__pay-tog.active {
     border-color: #02b744;
     cursor: default; }
@@ -13854,27 +13929,32 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     -ms-flex-negative: 0;
         flex-shrink: 0;
     margin-right: 20px; }
-    .product-top-line__item a {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      font-size: 0; }
-    .product-top-line__item svg {
+  .product-top-line__link {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .product-top-line__link svg {
       display: block;
       margin-right: 5px;
       width: 16px;
       height: 16px;
       fill: #008aff; }
     @media (min-width: 768px) {
-      .product-top-line__item a {
+      .product-top-line__link {
         font-size: 14px;
         font-weight: 400;
         line-height: 1.36;
         text-align: left;
         color: #636363; } }
+  .product-top-line__link::after {
+    content: attr(data-hover); }
+  .product-top-line__link.added::after {
+    content: attr(data-status);
+    color: #008aff; }
   .product-top-line__item:last-child {
     margin-right: 0; }
 
@@ -15573,6 +15653,11 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
         .add-to-cart__action-item svg {
           width: 20px;
           height: 20px; } }
+  .add-to-cart__action-item.added {
+    background: #008aff;
+    border-color: #008aff; }
+    .add-to-cart__action-item.added svg {
+      fill: #ffffff; }
   .add-to-cart__action-item:hover::after {
     content: "";
     position: absolute;
@@ -15596,6 +15681,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     content: "В избранное"; }
   .add-to-cart__action-item--compare:hover::after {
     content: "К сравнению"; }
+  .add-to-cart__action-item.added:hover::after {
+    content: attr(data-status); }
   .add-to-cart__action-item:last-child {
     margin-bottom: 0; }
   .add-to-cart__action-item:hover {
