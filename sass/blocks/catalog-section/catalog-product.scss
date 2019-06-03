@@ -211,11 +211,8 @@
     }
 //сообщения
     &__message {
-        display: none;
-        @media (min-width: $md) {
-            display: inline-block;
-            vertical-align: top;
-        }
+        display: inline-block;
+        vertical-align: top;
     }
 
     &__message-img {
