@@ -135,13 +135,13 @@
     }
 
     &__profile-info {
+        .static-content__title {
+            margin-bottom: 0;
+        }
         @media (min-width: $md) {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            .static-content__title {
-                margin-bottom: 0;
-            }
         }
     }
 

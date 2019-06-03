@@ -11,8 +11,6 @@
 
         @media (min-width: $lg) {
             border: none;
-            overflow-x: visible;
-            overflow-y: visible;
         }
     }
 //Скролл на webkit--------
@@ -41,14 +39,14 @@
     }
 
     &__table {
-        min-width: 730px;
+        min-width: 900px;
         border-collapse: collapse;
         width: 100%;
         padding: $grid-padding 0;
         table-layout: fixed;
         th, td {
             padding: $grid-padding $grid-padding;
-            width: calc((100% - 40px) / 4);
+            width: 100%;
             text-align: left;
             vertical-align: middle;
             height: 52px;
@@ -57,10 +55,57 @@
             white-space: nowrap;
             overflow: hidden;
         }
+        th:first-child,
+        td:first-child {
+            width: 170px;
+            @media (min-width: $tp) {
+                width: 180px;
+            }
+            @media (min-width: $xl) {
+                width: 190px;
+            }
+        }
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 170px;
+            @media (min-width: $tp) {
+                width: 180px;
+            }
+            @media (min-width: $xl) {
+                width: 190px;
+            }
+        }
+        th:nth-child(3),
+        td:nth-child(3) {
+            width: 130px;
+            @media (min-width: $tp) {
+                width: 130px;
+            }
+            @media (min-width: $xl) {
+                width: 170px;
+            }
+        }
         th:nth-child(4),
         td:nth-child(4) {
-            width: 250px;
+            width: 130px;
+            @media (min-width: $tp) {
+                width: 130px;
+            }
+            @media (min-width: $xl) {
+                width: 170px;
+            }
         }
+        th:nth-child(5),
+        td:nth-child(5) {
+            width: 100%;
+            @media (min-width: $tp) {
+                width: 100%;
+            }
+            @media (min-width: $xl) {
+                width: 100%;
+            }
+        }
+
         th:last-child,
         td:last-child {
             padding: 0;
@@ -103,7 +148,6 @@
         }
         @media (min-width: $md) {
             width: 100%;
-            min-width: auto;
         }
         @media (min-width: $lg) {
             padding: $grid-padding $grid-padding;
@@ -113,9 +157,26 @@
     }
 
     &__collapsed-info {
+        th:first-child,
+        td:first-child {
+            width: 470px;
+            @media (min-width: $tp) {
+                width: 490px;
+            }
+            @media (min-width: $xl) {
+                width: 550px;
+            }
+        }
+        th:nth-child(2),
+        td:nth-child(2) {
+            width: 130px;
+            @media (min-width: $xl) {
+                width: 170px;
+            }
+        }
         th:nth-child(3),
         td:nth-child(3) {
-            width: 250px;
+            width: 100%;
         }
     }
 

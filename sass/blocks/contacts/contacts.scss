@@ -162,7 +162,9 @@
     &__map {
         margin: -$news-page-padding-mobile;
         margin-top: 0;
-        img {}
+        iframe {
+            display: block;
+        }
         @media (min-width: $md) {
             margin: -$news-page-padding-md;
             margin-top: 0;
