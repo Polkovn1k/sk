@@ -1336,7 +1336,7 @@ if (document.querySelector(".slider-shadow")) {
         if ((sliderBlock.getBoundingClientRect().y >= -REFERENT_VAL) && (sliderBlock.getBoundingClientRect().y <= REFERENT_VAL)) {
             sliderBlock.classList.add("sticked");
             headerBlock.classList.add("hide");
-            console.log(sliderBlock.getBoundingClientRect().y);
+            alert(sliderBlock.getBoundingClientRect().y);
             return false;
         }
         sliderBlock.classList.remove("sticked");
