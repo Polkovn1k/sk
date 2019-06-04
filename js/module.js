@@ -1326,7 +1326,7 @@ if (document.querySelector(".compare-slider")) {
 if (document.querySelector(".slider-shadow")) {
 
     //Примерное значание для отслеживания прилипания слайдера к верху, т.к. на Safari это значение при скроле постоянно меняется и не может быть строго зафиксированно на 0
-    let REFERENT_VAL = 10;
+    let REFERENT_VAL = 5;
 
     let eventHandler = function(event) {
         var headerBlock = document.querySelector(".js-header");
@@ -1336,7 +1336,6 @@ if (document.querySelector(".slider-shadow")) {
         if ((sliderBlock.getBoundingClientRect().y >= -REFERENT_VAL) && (sliderBlock.getBoundingClientRect().y <= REFERENT_VAL)) {
             sliderBlock.classList.add("sticked");
             headerBlock.classList.add("hide");
-            alert(sliderBlock.getBoundingClientRect().y);
             return false;
         }
         sliderBlock.classList.remove("sticked");
