@@ -5766,7 +5766,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .catalog__item:hover > .catalog__list {
   display: block;
   position: absolute;
-  width: 100%;
+  width: 125%;
   top: 0;
   left: 100%; }
 
@@ -6472,7 +6472,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     padding-top: 40px; }
     @media (min-width: 1024px) {
       .articles__text {
-        padding: 15px; } }
+        padding: 15px;
+        max-height: 280px;
+        overflow: hidden; } }
   .articles__item-title {
     margin: 0;
     padding: 0;
@@ -6490,7 +6492,9 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     transition: 0.2s color ease; }
     @media (min-width: 1024px) {
       .articles__item-title {
-        color: #2c2c2c; } }
+        margin-bottom: 15px;
+        color: #2c2c2c;
+        overflow: visible; } }
   .articles__item-title:hover {
     color: #bcbcbc; }
     @media (min-width: 1024px) {
@@ -6521,6 +6525,15 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
         color: #2c2c2c; }
         .articles__date svg {
           fill: #008aff; } }
+  .articles__preview {
+    margin: 0;
+    padding: 0;
+    display: none;
+    overflow: hidden;
+    color: #a1a1a1; }
+    @media (min-width: 1024px) {
+      .articles__preview {
+        display: block; } }
   .articles__icons {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -7715,8 +7728,13 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   margin: 0;
   padding: 0;
   list-style-type: none;
-  padding-top: 10px;
-  font-family: "Segoe UI", sans-serif; }
+  padding-top: 10px; }
+  .check-box--brands {
+    margin-bottom: 15px; }
+  .check-box--brands.hide {
+    margin-bottom: 0;
+    max-height: 230px;
+    overflow: hidden; }
   @media (min-width: 1024px) {
     .check-box--two-column {
       display: -webkit-box;
@@ -7775,6 +7793,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   .check-box__text {
     display: block;
     padding-top: 2px; }
+  .check-box__no-result {
+    display: block;
+    margin-bottom: 15px;
+    color: #a1a1a1; }
 
 .sort {
   margin-bottom: 20px;
@@ -8260,11 +8282,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     overflow: hidden;
     padding-bottom: 15px; }
   .catalog-product__message {
-    display: none; }
-    @media (min-width: 768px) {
-      .catalog-product__message {
-        display: inline-block;
-        vertical-align: top; } }
+    display: inline-block;
+    vertical-align: top; }
   .catalog-product__message-img {
     display: inline-block;
     vertical-align: top;
@@ -15234,10 +15253,14 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     cursor: pointer; }
     .comments__like svg {
       margin-right: 5px;
-      fill: #02b744; }
+      stroke: #02b744;
+      stroke-width: 1px;
+      fill: transparent; }
     .comments__like span {
       font-size: 14px;
       font-weight: 400; }
+  .comments__like.active svg {
+    fill: #02b744; }
   .comments__dislike {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -15251,12 +15274,16 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
     cursor: pointer; }
     .comments__dislike svg {
       margin-right: 5px;
-      fill: #ff0000;
+      stroke: #ff0000;
+      stroke-width: 1px;
+      fill: transparent;
       -webkit-transform: rotate(180deg);
               transform: rotate(180deg); }
     .comments__dislike span {
       font-size: 14px;
       font-weight: 400; }
+  .comments__dislike.active svg {
+    fill: #ff0000; }
   @media (min-width: 768px) {
     .comments__btns {
       display: -webkit-box;
