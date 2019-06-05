@@ -349,15 +349,15 @@
                 </div>
             </fieldset>
             <fieldset class="filters__panel">
-                <legend data-find-id="collapseBrand" class="filters__title js-call-collapsed-element">
+                <legend data-find-id="collapseBrand" class="filters__title js-call-collapsed-element active">
                     Бренд
                     <svg width="15" height="8" aria-hidden="true" role="presentation">
                       <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#primitive-arrow"></use>
                     </svg>
                 </legend>
-                <div id="collapseBrand" class="filters__content">
-                    <input type="text" class="filters__text-input" placeholder="Поиск">
-                    <ul id="liquid-brand_checkbox" class="check-box">
+                <div id="collapseBrand" class="filters__content active">
+                    <input type="text" class="filters__text-input js-brands-input" placeholder="Поиск">
+                    <ul id="liquid-brand_checkbox" class="check-box check-box--brands hide">
                         <li class="check-box__item">
                             <label for="brand_1" class="check-box__label">
                                 <input id="brand_1" type="checkbox">
@@ -1668,7 +1668,10 @@
                             </label>
                         </li>
                     </ul>
-                    <button type="button" class="filters__show-all">Показать еще +</button>
+                    <span class="check-box__no-result visually-hidden">
+                        По данному запросу ничего не найдено...
+                    </span>
+                    <button type="button" class="filters__show-all js-show-all">Показать еще +</button>
                 </div>
                 <div class="filters__tooltip">
                     <a href="product.html" class="">Подобрано товаров: <span>100</span></a>

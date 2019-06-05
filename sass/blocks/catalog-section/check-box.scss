@@ -1,7 +1,16 @@
 .check-box {
     @include order-reset();
     padding-top: 10px;
-    font-family: $font;
+
+    &--brands {
+        margin-bottom: 15px;
+    }
+
+    &--brands.hide {
+        margin-bottom: 0;
+        max-height: 230px;
+        overflow: hidden;
+    }
 
     &--two-column {
         @media (min-width: $lg) {
@@ -13,9 +22,7 @@
         }
     }
 
-    &__item {
-
-    }
+    &__item {}
 
     &__item:last-child {
         .check-box__label {
@@ -72,5 +79,11 @@
     &__text {
         display: block;
         padding-top: 2px;
+    }
+
+    &__no-result {
+        display: block;
+        margin-bottom: 15px;
+        color: $communication-add-color;
     }
 }
