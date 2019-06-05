@@ -397,30 +397,3 @@ function throttle(func, wait, options) {
     return result;
   };
 };
-
-//ACTIVE для кнопок добавить в избранное/сравнение
-if (document.querySelector(".js-active-status")) {
-
-    compareOrFavoriteBtn = {
-
-        listenClick: () => {
-            document.querySelectorAll(".js-active-status").forEach((btn) => {
-                btn.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    compareOrFavoriteBtn.action(btn);
-                });
-            });
-        },
-
-        action: (element) => {
-            element.classList.toggle("added");
-        },
-
-        init: () => {
-            compareOrFavoriteBtn.listenClick();
-        }
-
-    }
-    compareOrFavoriteBtn.init();
-
-}

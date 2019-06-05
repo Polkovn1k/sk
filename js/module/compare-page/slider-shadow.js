@@ -1,8 +1,8 @@
 //ОТСЛЕЖИВАНИЕ СКРОЛА И ПРОСТАВЛЯЕМ ACTIVE НА КНОПКИ
 if (document.querySelector(".slider-shadow")) {
 
-    //Примерное значание для отслеживания прилипания слайдера к верху, т.к. на Safari это значение при скроле постоянно меняется и не может быть строго зафиксированно на 0
-    let REFERENT_VAL = 5;
+    //Примерное значание для отслеживания прилипания слайдера к верху, т.к. на Safari это значение при скроле постоянно меняется и не может быть строго зафиксированным на 0
+    let REFERENT_VAL = 10;
 
     let eventHandler = function(event) {
         var headerBlock = document.querySelector(".js-header");
@@ -23,7 +23,7 @@ if (document.querySelector(".slider-shadow")) {
         actionAfterEvent: throttle(eventHandler, 100),
 
         listenScroll: () => {
-            window.addEventListener("scroll", eventHandler);
+            window.addEventListener("scroll", sliderShadow.actionAfterEvent);
         },
 
         _getHeaderHeight: (elem) => {
