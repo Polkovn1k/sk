@@ -86,4 +86,8 @@
         margin-bottom: 15px;
         color: $communication-add-color;
     }
+
+    &__no-result.hide {
+        display: none;
+    }
 }

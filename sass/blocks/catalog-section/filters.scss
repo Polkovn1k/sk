@@ -178,6 +178,9 @@
         @include transition();
     }
 
+    &__show-all.hide {
+        display: none;
+    }
 
     &__show-all:hover {
         color: $blue;
