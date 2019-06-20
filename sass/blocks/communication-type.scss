@@ -170,10 +170,10 @@
         }
     }
 
-    &__link--whatsapp {
-        background: $whatsapp-color;
+    &__link--vk {
+        background: $vk-color;
         svg {
-            fill: $whatsapp-color;
+            fill: $vk-color;
         }
         @media (min-width: $lg) {
             background: transparent;

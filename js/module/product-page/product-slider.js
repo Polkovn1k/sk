@@ -25,6 +25,9 @@ if (document.querySelector(".js-product-slider-for")) {
       asNavFor: ".js-product-slider-for",
       dots: false,
       focusOnSelect: true,
+      settings: {
+        swipe: true,
+      }
     });
 
 //Если кол-во слайдов ниже 4-х, то отключаем движение нижнего слайдера
