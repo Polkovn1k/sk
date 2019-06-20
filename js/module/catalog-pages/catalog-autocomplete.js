@@ -17,65 +17,8 @@ function autoCompleteBrands() {
 
             listenAction: () => {
                 document.querySelector(".js-brands-input").addEventListener("input", function(event) {
-                    let newArr = brandsAutoComplete._getEqualValues(this.value.toLowerCase().trim(), brandsArray);
-                    //Если "Показать все" нажата, то
-                    if (flag) {
-                        //если в инпуте есть значения и есть совпадения, то...
-                        if (this.value.length > 0 && 0 in newArr) {
-                            brandsArray.forEach((item) => {
-                                item.closest(".check-box__item").classList.add("visually-hidden");
-                            });
-                            newArr.forEach((item) => {
-                                item.closest(".check-box__item").classList.remove("visually-hidden");
-                            });
-                            bradsList.classList.remove("visually-hidden");
-                            noResult.classList.add("hide");
-                        }
-                        //если в инпуте есть значения, но нет совпадений, то...
-                        if (this.value.length > 0 && !(0 in newArr)) {
-                            bradsList.classList.add("visually-hidden");
-                            noResult.classList.remove("hide");
-                        }
-                        //если после манипуляций инпут стал пустой, то
-                        if (this.value.length === 0) {
-                            brandsArray.forEach((item) => {
-                                item.closest(".check-box__item").classList.remove("visually-hidden");
-                            });
-                            bradsList.classList.remove("visually-hidden");
-                            noResult.classList.add("hide");
-                        }
-                        return false;
-                    }
-                    //Если "Показать все" не нажата, то
-                    //если в инпуте есть значения и есть совпадения, то...
-                    if (this.value.length > 0 && 0 in newArr) {
-                        brandsArray.forEach((item) => {
-                            item.closest(".check-box__item").classList.add("visually-hidden");
-                        });
-                        newArr.forEach((item) => {
-                            item.closest(".check-box__item").classList.remove("visually-hidden");
-                        });
-                        bradsList.classList.remove("visually-hidden");
-                        bradsList.classList.remove("hide");
-                        noResult.classList.add("hide");
-                        btn.classList.add("hide");
-                    }
-                    //если в инпуте есть значения, но нет совпадений, то...
-                    if (this.value.length > 0 && !(0 in newArr)) {
-                        bradsList.classList.add("visually-hidden");
-                        noResult.classList.remove("hide");
-                        btn.classList.add("hide");
-                    }
-                    //если после манипуляций инпут стал пустой, то
-                    if (this.value.length === 0) {
-                        brandsArray.forEach((item) => {
-                            item.closest(".check-box__item").classList.remove("visually-hidden");
-                        });
-                        bradsList.classList.remove("visually-hidden");
-                        bradsList.classList.add("hide");
-                        noResult.classList.add("hide");
-                        btn.classList.remove("hide");
-                    }
+                    let handler = brandsAutoComplete.actionInInput.bind(document.querySelector(".js-brands-input"));
+                    handler();
                 });
             },
 
@@ -95,8 +38,77 @@ function autoCompleteBrands() {
             init: () => {
                 brandsAutoComplete.listenClick();
                 brandsAutoComplete.listenAction();
+                return brandsAutoComplete.actionInInput.bind(document.querySelector(".js-brands-input"));
+            },
+
+            actionInInput: function() {
+                let newArr = brandsAutoComplete._getEqualValues(this.value.toLowerCase().trim(), brandsArray);
+                //Если "Показать все" нажата, то
+                if (flag) {
+                    //если в инпуте есть значения и есть совпадения, то...
+                    if (this.value.length > 0 && 0 in newArr) {
+                        //++++
+                        brandsArray.forEach((item) => {
+                            item.closest(".check-box__item").classList.add("visually-hidden");
+                        });
+                        //----
+                        newArr.forEach((item) => {
+                            item.closest(".check-box__item").classList.remove("visually-hidden");
+                        });
+                        bradsList.classList.remove("visually-hidden");
+                        noResult.classList.add("hide");
+                    }
+                    //если в инпуте есть значения, но нет совпадений, то...
+                    if (this.value.length > 0 && !(0 in newArr)) {
+                        bradsList.classList.add("visually-hidden");
+                        noResult.classList.remove("hide");
+                    }
+                    //если после манипуляций инпут стал пустой, то
+                    if (this.value.length === 0) {
+                        //====
+                        brandsArray.forEach((item) => {
+                            item.closest(".check-box__item").classList.remove("visually-hidden");
+                        });
+                        bradsList.classList.remove("visually-hidden");
+                        noResult.classList.add("hide");
+                    }
+                    return false;
+                }
+                //Если "Показать все" не нажата, то
+                //если в инпуте есть значения и есть совпадения, то...
+                if (this.value.length > 0 && 0 in newArr) {
+                    //++++
+                    brandsArray.forEach((item) => {
+                        item.closest(".check-box__item").classList.add("visually-hidden");
+                    });
+                    //----
+                    newArr.forEach((item) => {
+                        item.closest(".check-box__item").classList.remove("visually-hidden");
+                    });
+                    bradsList.classList.remove("visually-hidden");
+                    bradsList.classList.remove("hide");
+                    noResult.classList.add("hide");
+                    btn.classList.add("hide");
+                }
+                //если в инпуте есть значения, но нет совпадений, то...
+                if (this.value.length > 0 && !(0 in newArr)) {
+                    bradsList.classList.add("visually-hidden");
+                    noResult.classList.remove("hide");
+                    btn.classList.add("hide");
+                }
+                //если после манипуляций инпут стал пустой, то
+                if (this.value.length === 0) {
+                    //====
+                    brandsArray.forEach((item) => {
+                        item.closest(".check-box__item").classList.remove("visually-hidden");
+                    });
+                    bradsList.classList.remove("visually-hidden");
+                    bradsList.classList.add("hide");
+                    noResult.classList.add("hide");
+                    btn.classList.remove("hide");
+                }
             },
         };
-        brandsAutoComplete.init();
+        return brandsAutoComplete.init();
     }
 }
