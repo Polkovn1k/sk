@@ -23,10 +23,17 @@
         max-width: 705px;
         margin: 0 auto;
         @media (min-width: $sm) {
-            width: 475px;
+            width: 525px;
+        }
+        @media (min-width: $md) {
+            width: 710px;
         }
         @media (min-width: $lg) {
-            width: 750px;
+            width: 100%;
+            max-width: 950px;
+        }
+        @media (min-width: $xl) {
+            max-width: 1084px;
         }
     }
 
@@ -123,6 +130,9 @@
     }
 
     &__item {
+        width: 100%;
+        padding: 0 7.5px;
+        column-count: 1;
         button {
             display: block;
             padding: 0 6px;
@@ -139,12 +149,14 @@
         button:hover {
             color: $blue;
         }
-    }
-
-    &__item:last-child {
-        display: none;
+        @media (min-width: $sm) {
+            column-count: 2;
+        }
+        @media (min-width: $md) {
+            column-count: 3;
+        }
         @media (min-width: $lg) {
-            display: block;
+            column-count: 4;
         }
     }
 }

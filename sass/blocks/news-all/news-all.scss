@@ -43,8 +43,10 @@
     &__img {
         margin: -$news-all-container-padding;
         margin-bottom: $news-all-container-padding;
+        display: none;
         img {}
         @media (min-width: $lg) {
+            display: block;
             position: absolute;
             top: 0;
             left: 0;

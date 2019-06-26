@@ -244,3 +244,13 @@
         }
     }
 }
+
+/* Просили добавить... */
+.content-article__title {
+    @include field-reset();
+    margin-bottom: 15px;
+    line-height: 1.38;
+    color: #a1a1a1;
+    font-size: 18px;
+    font-weight: 700;
+}

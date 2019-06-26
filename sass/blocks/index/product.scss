@@ -47,7 +47,9 @@
             padding: 0 5px;
             padding-bottom: $grid-padding;
             transform: rotateY(-180deg);
-            display: block;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             position: absolute;
             top: 0;
             left: 0;
@@ -63,6 +65,7 @@
 //правый блок сравнения/в избранное
     &__action {
         position: absolute;
+        z-index: 1;
         top: 0;
         right: 0;
         padding: 15px 15px 5px 5px;

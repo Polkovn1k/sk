@@ -95,20 +95,15 @@
     }
 
     &__brands-list {
-        display: flex;
-        flex-wrap: wrap;
-        li {
-            width: 33.33%;
-        }
+        column-count: 3;
         @media (min-width: $lg) {
-            li {
-                width: 25%;
-            }
+            column-count: 4;
         }
         @media (min-width: $tp) {
-            li {
-                width: 20%;
-            }
+            column-count: 5;
+        }
+        @media (min-width: $xl) {
+            column-count: 6;
         }
     }
 }

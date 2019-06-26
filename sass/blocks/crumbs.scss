@@ -17,6 +17,17 @@
         font-size: 14px;
         font-weight: 400;
         line-height: 1.15;
+        a {
+            transition: 0.3s color ease;
+        }
+        a:hover {
+            color: $blue;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        label {
+            cursor: pointer;
+        }
     }
 
     &__item::after {
@@ -40,13 +51,5 @@
 
     &__item:last-child::after {
         display: none;
-    }
-
-    &__link {
-        transition: 0.3s color ease;
-    }
-
-    &__link:hover {
-        color: $blue;
     }
 }

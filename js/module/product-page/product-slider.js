@@ -35,4 +35,10 @@ if (document.querySelector(".js-product-slider-for")) {
         document.querySelector(".js-product-slider-nav .slick-track").classList.add("block-translate");
     }
 
+//Устранения бага fancybox
+    $().fancybox({
+      selector : '[data-fancybox="gallery"]',
+      backFocus : false,
+    });
+
 }
