@@ -1,0 +1,161 @@
+.category {
+    margin-bottom: 20px;
+    font-family: $font;
+    background: $white;
+    max-height: $common-item-height;
+    line-height: $common-item-height;
+    border-radius: 5px;
+    border: 1px solid $border-color;
+    overflow: hidden;
+    transition: 0.3s ease;
+    @media (min-width: $lg) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        max-height: none;
+        padding: 20px;
+        border-radius: 0;
+        border: none;
+    }
+
+    &.disabled {
+        position: relative;
+        pointer-events: none;
+    }
+
+    &.disabled::before {
+        @include pseudo();
+        z-index: 100;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $white;
+        opacity: 0.5;
+    }
+
+    &.active {
+        max-height: none;
+    }
+
+    &:hover {
+        border-color: $blue;
+        cursor: pointer;
+        @media (min-width: $lg) {
+            cursor: auto;
+        }
+    }
+
+//Сортировка по свойствам
+    &__by-property {
+        font-size: 16px;
+        line-height: 1.25;
+        color: $main-color;
+        @media (min-width: $lg) {
+            display: flex;
+            align-items: center;
+            font-size: $sort-desktop-font-size;
+        }
+    }
+
+    &__title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: $common-item-height;
+        padding: 0 $grid-padding;
+        line-height: $common-item-height;
+        font-size: 16px;
+        font-weight: 600;
+        color: $main-color;
+        transition: 0.3s color ease;
+        svg {
+            fill: $extra-text-color;
+            transition: 0.3s ease;
+        }
+        @media (min-width: $lg) {
+            height: auto;
+            padding-left: 0;
+            padding-right: 15px;
+            font-size: $sort-desktop-font-size;
+            line-height: 1.25;
+            pointer-events: none;
+            svg {
+                display: none;
+            }
+        }
+    }
+
+    &__title.active {
+        pointer-events: auto;
+        cursor: pointer;
+        background: transparent;
+        svg {
+            fill: $main-color;
+            transform: rotate(180deg);
+        }
+    }
+
+    &__title:hover {
+        color: $blue;
+        svg {
+            fill: $blue;
+        }
+        @media (min-width: $lg) {
+            color: $main-color;
+            cursor: auto;
+        }
+    }
+
+    &__title--opened:hover {
+        color: $main-color;
+        svg {
+            fill: $extra-text-color;
+        }
+    }
+
+    &__list {
+        @include order-reset();
+        @media (min-width: $lg) {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &__item {
+        position: relative;
+        height: $common-item-height;
+        line-height: $common-item-height;
+        padding: 0 $grid-padding;
+        a {
+            padding: 0;
+            border: none;
+            color: $communication-add-color;
+            background: transparent;
+            outline: none;
+            cursor: pointer;
+            transition: 0.3s color ease;
+        }
+        a:hover {
+            color: $blue;
+        }
+        @media (min-width: $lg) {
+            height: auto;
+            line-height: 1.15;
+            padding-left: 0;
+            padding-right: 11px;
+            margin-right: 15px;
+        }
+    }
+
+    &__item.active {
+        a {
+            color: $blue;
+        }
+    }
+
+    &__item:last-child {
+        margin-right: 0;
+    }
+}
