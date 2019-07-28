@@ -221,6 +221,13 @@
         }
     }
 
+    &__aside-container--similar-prod {
+        border-top: none;
+        @media (min-width: $lg) {
+            margin-top: 15px;
+        }
+    }
+
     &__header {
         padding: 15px;
         font-size: 18px;
@@ -242,6 +249,15 @@
         @media (min-width: $lg) {
             padding: 15px 30px;
         }
+    }
+
+    &__similar-list {
+        @include order-reset();
+        padding: 15px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $communication-add-color;
     }
 }
 

@@ -22,7 +22,7 @@
         padding: 0 5px;
         text-align: center;
         img {
-            max-height: 150px;
+            max-height: 110px;
         }
     }
 
@@ -270,5 +270,26 @@
 
     &__goods-incoming:hover {
         opacity: 0.8;
+    }
+}
+
+//Похожие товары
+.tabs__similar-item {
+    .viewed-products {
+        border-bottom: none;
+    }
+    .star-view__rating-votes {
+        @media (min-width: $lg) {
+            display: none;
+        }
+        @media (min-width: $tp) {
+            display: inline-block;
+        }
+    }
+}
+
+.tabs__similar-item:last-child{
+    .viewed-products {
+        border: 1px solid $border-color;
     }
 }
