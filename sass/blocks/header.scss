@@ -171,6 +171,7 @@
             justify-content: center;
             border: none;
             overflow: visible;
+            background-color: transparent;
         }
         @media (min-width: $tp) {
             flex-grow: 0;

@@ -32,7 +32,7 @@
         width: calc(100% - #{$two-grid-padding});
         margin: 0 auto;
         padding: $grid-padding;
-        background: $white;
+        background: transparent;
         border-radius: 5px;
         @media (min-width: $sm) {
             width: 475px;
