@@ -257,11 +257,19 @@
         cursor: pointer;
         svg {
             margin-right: 5px;
-            fill: $green;
+            stroke: $green;
+            stroke-width: 1px;
+            fill: transparent;
         }
         span {
             font-size: 14px;
             font-weight: 400;
+        }
+    }
+
+    &__like.active {
+        svg {
+            fill: $green;
         }
     }
 
@@ -272,12 +280,20 @@
         cursor: pointer;
         svg {
             margin-right: 5px;
-            fill: $red;
+            stroke: $red;
+            stroke-width: 1px;
+            fill: transparent;
             transform: rotate(180deg);
         }
         span {
             font-size: 14px;
             font-weight: 400;
+        }
+    }
+
+    &__dislike.active {
+        svg {
+            fill: $red;
         }
     }
 
