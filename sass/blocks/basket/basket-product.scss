@@ -46,6 +46,7 @@
         display: none;
         @media (min-width: $lg) {
             display: block;
+            cursor: default;
             svg {
                 width: 15px;
                 height: 15px;
@@ -71,6 +72,11 @@
         line-height: 25px;
         text-align: center;
         color: $white;
+    }
+
+    &__del-item--free:hover::after {
+        content: "";
+        display: none;
     }
 
     &__row {
@@ -105,7 +111,17 @@
 
     &__img--free {
         @media (min-width: $lg) {
+            display: flex;
             text-align: left;
+        }
+    }
+
+    &__img-inner {
+        @media (min-width: $lg) {
+            width: 52.25%;
+            img {
+                max-width: $basket-product-cound-height * 2 + 50px;
+            }
         }
     }
 
@@ -113,6 +129,8 @@
         display: none;
         @media (min-width: $lg) {
             display: block;
+            font-weight: 700;
+            color: $extra-text-color;
         }
     }
 
