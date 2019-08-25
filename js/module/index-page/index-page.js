@@ -4,8 +4,9 @@ if (document.querySelector(".index-page")) {
     //Верхний слайдер
     var glide = new Glide('.js-top-slider', {
       type: 'carousel',
-      autoplay: 3000,
+      autoplay: 5000,
       hoverpause: true,
+      animationDuration: 800,
     });
     glide.mount();
 
