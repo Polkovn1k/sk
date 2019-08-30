@@ -17,4 +17,12 @@
     &__pagination {
         margin-bottom: 20px;
     }
+
+    &__link {
+        color: $blue;
+    }
+
+    &__link:hover {
+        text-decoration: underline;
+    }
 }

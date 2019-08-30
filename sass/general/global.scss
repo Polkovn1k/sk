@@ -125,3 +125,15 @@ html {
     padding: 0 !important;
     top: calc(50% - 19px) !important;
 }
+
+.products-search__result {
+    position: absolute;
+    top: 60px;
+    left: 15px;
+    right: 15px;
+    @media (min-width: $lg) {
+        top: 58px;
+        left: 0;
+        right: 0;
+    }
+}

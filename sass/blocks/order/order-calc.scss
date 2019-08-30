@@ -23,7 +23,26 @@
 
     &__item.active {
         .inner {
+            position: relative;
+            z-index: 10;
             display: block;
+        }
+        .inner::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            display: block;
+            top: 0;
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            background: $delivery-active-btn;
+        }
+        @media (min-width: $lg) {
+            .inner::before {
+                left: -30px;
+                right: -30px;
+            }
         }
     }
 

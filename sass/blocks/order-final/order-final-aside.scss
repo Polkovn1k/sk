@@ -29,6 +29,12 @@
         border-color: $green;
         padding: 0 8px;
         font-weight: 400;
+        &:hover {
+            color: $green;
+            border-color: $green;
+            background: transparent;
+            cursor: default;
+        }
     }
 
 //блок состава заказа
