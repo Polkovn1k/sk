@@ -1,0 +1,47 @@
+.sitemap {
+    background: $white;
+    padding-top: 20px;
+    &__container {
+        padding-bottom: 30px;
+    }
+    &__title {
+        display: block;
+        margin-bottom: 15px;
+        font-weight: 700;
+        color: $blue;
+    }
+    &__list {
+        @include order-reset();
+    }
+    &__item {
+        margin-bottom: 15px;
+    }
+    &__item:last-child {
+        margin-bottom: 0;
+    }
+    &__inner-title {
+        display: block;
+        padding-left: 25px;
+        margin-bottom: 15px;
+        font-weight: 600;
+        color: $blue;
+    }
+    &__inner-list {
+        @include order-reset();
+        padding-left: 50px;
+    }
+    &__inner-item {
+        margin-bottom: 15px;
+        color: $add-text-color;
+        a {
+            transition: color 0.3s, text-decoration;
+        }
+        a:hover {
+            color: $blue;
+            text-decoration: underline;
+        }
+    }
+    &__inner-item:last-child {
+        margin-bottom: 0;
+    }
+}
