@@ -196,4 +196,54 @@
             color: $red;
         }
     }
+//Страница сертификатов
+    &__certificate-list {
+        @include order-reset();
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &__certificate-item {
+        width: 100%;
+        padding: 10px;
+        @media (min-width: $sm) {
+            width: 33.333333%;
+        }
+        @media (min-width: $lg) {
+            width: 25%;
+        }
+        @media (min-width: $tp) {
+            width: 20%;
+        }
+    }
+    &__certificate-name {
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 10px;
+        color: $extra-text-color;
+    }
+    &__certificate-img {
+        position: relative;
+        width: 130px;
+        height: 180px;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 1px solid $border-color;
+        border-radius: 5px;
+        cursor: pointer;
+        &::before {
+            @include full-absolute();
+            content: "";
+            display: block;
+            position: absolute;
+            background: transparent;
+            transition: 0.3s background;
+            pointer-events: none;
+        }
+        img {}
+    }
+    &__certificate-img:hover {
+        &::before {
+            background: transparentize($extra-text-color, 0.6);
+        }
+    }
 }
