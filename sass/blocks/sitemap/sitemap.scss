@@ -13,6 +13,17 @@
     &__list {
         @include order-reset();
     }
+    &__list--columns {
+        @media (min-width: $sm) {
+            column-count: 2;
+        }
+        @media (min-width: $md) {
+            column-count: 3;
+        }
+        @media (min-width: $lg) {
+            column-count: 4;
+        }
+    }
     &__item {
         margin-bottom: 15px;
     }

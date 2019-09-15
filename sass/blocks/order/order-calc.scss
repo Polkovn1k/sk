@@ -22,6 +22,9 @@
     }
 
     &__item.active {
+        + .order-calc__item {
+            padding-top: 10px;
+        }
         .inner {
             position: relative;
             z-index: 10;

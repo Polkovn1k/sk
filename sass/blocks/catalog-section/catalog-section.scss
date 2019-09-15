@@ -36,6 +36,12 @@
         >*:last-child {
             margin-bottom: 0;
         }
+        a {
+            color: $blue;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
         @media (min-width: $lg) {
             flex-grow: 1;
             margin-bottom: 0;

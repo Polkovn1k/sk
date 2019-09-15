@@ -32,8 +32,8 @@
         width: calc(100% - #{$two-grid-padding});
         margin: 0 auto;
         padding: $grid-padding;
-        background: transparent;
         border-radius: 5px;
+        background: #fff;
         @media (min-width: $sm) {
             width: 475px;
         }
@@ -48,6 +48,7 @@
             align-items: center;
             height: 100%;
             padding: 0;
+            background: transparent;
         }
     }
 

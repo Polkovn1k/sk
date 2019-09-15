@@ -276,10 +276,10 @@
         justify-content: space-between;
         margin-bottom: 10px;
         font-size: 16px;
-        font-weight: 400;
         line-height: 1.33;
         color: $extra-text-color;
         font-weight: 600;
+        transition: color 0.2s;
         svg {
             width: 15px;
             height: 15px;
@@ -294,6 +294,10 @@
                 display: none;
             }
         }
+    }
+
+    &__title:hover {
+        color: $blue;
     }
 
     &__text {
