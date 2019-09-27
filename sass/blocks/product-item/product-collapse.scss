@@ -2,8 +2,8 @@
     margin-bottom: 20px;
     font-family: $font;
     background: $white;
-    max-height: $common-item-height;
-    line-height: $common-item-height;
+    max-height: 30px;
+    line-height: 30px;
     border-radius: 5px;
     border: 1px solid $border-color;
     overflow: hidden;
@@ -35,7 +35,6 @@
         cursor: pointer;
     }
 
-    //Сортировка по свойствам
     &__by-property {
         font-size: 16px;
         line-height: 1.25;
@@ -46,9 +45,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: $common-item-height;
+        height: 30px;
         padding: 0 $grid-padding;
-        line-height: $common-item-height;
+        line-height: 30px;
         font-size: 16px;
         font-weight: 600;
         color: $main-color;
@@ -89,8 +88,8 @@
 
     &__item {
         position: relative;
-        height: $common-item-height;
-        line-height: $common-item-height;
+        height: 30px;
+        line-height: 30px;
         padding: 0 $grid-padding;
         a {
             padding: 0;
