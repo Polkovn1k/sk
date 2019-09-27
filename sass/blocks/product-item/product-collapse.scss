@@ -1,5 +1,4 @@
 .product-collapse {
-    margin-bottom: 20px;
     font-family: $font;
     background: $white;
     max-height: 30px;
@@ -8,7 +7,13 @@
     border: 1px solid $border-color;
     overflow: hidden;
     transition: 0.3s ease;
-
+    width: 100%;
+    @media (min-width: $md) {
+        max-width: 50%;
+    }
+    @media (min-width: $lg) {
+        max-width: 100%;
+    }
 
     &.disabled {
         position: relative;
@@ -36,7 +41,7 @@
     }
 
     &__by-property {
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.25;
         color: $main-color;
     }
@@ -48,7 +53,7 @@
         height: 30px;
         padding: 0 $grid-padding;
         line-height: 30px;
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
         color: $main-color;
         transition: 0.3s color ease;
