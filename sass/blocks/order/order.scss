@@ -61,7 +61,9 @@
 
     &__pay-tog.active {
         border-color: $green;
+        background: $green;
         cursor: default;
+        color: #fff;
     }
 
     &__pay-tog.active::after {
@@ -71,7 +73,7 @@
         transform: translateY(-50%) rotate(135deg);
         width: 15px;
         height: 8px;
-        border: 2px solid $green;
+        border: 2px solid #fff;
         border-bottom-color: transparent;
         border-left-color: transparent;
     }
@@ -153,9 +155,6 @@
         @include placeholder {
           color: $communication-add-color;
         }
-        @include placeholder-f {
-          color: transparent;
-        }
         width: 100%;
         padding: 0 20px;
         height: $common-item-height;
@@ -195,9 +194,6 @@
     &__textarea {
         @include placeholder {
           color: $communication-add-color;
-        }
-        @include placeholder-f {
-          color: transparent;
         }
         width: 100%;
         padding: 15px 20px;

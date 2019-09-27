@@ -36,6 +36,9 @@
         >*:last-child {
             margin-bottom: 0;
         }
+        ul, ol, .content-article__list {
+            padding-left: 30px;
+        }
         a {
             color: $blue;
         }

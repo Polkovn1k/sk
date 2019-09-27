@@ -35,6 +35,59 @@
         }
     }
 
+    &__title--default {
+        cursor: auto;
+    }
+
+    &__question {
+        display: table;
+        vertical-align: middle;
+        position: relative;
+        width: 18px;
+        height: 18px;
+        margin-left: 5px;
+        border-radius: 50%;
+        border: 1px solid $communication-add-color;
+        color: $communication-add-color;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
+        cursor: pointer;
+        div {
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 10;
+            width: 280px;
+            padding-left: 20px;
+            transform: translateY(-50%);
+        }
+        span {
+            display: block;
+            padding: 5px;
+            width: 250px;
+            border-radius: 5px;
+            background: $extra-text-color;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.38;
+            color: $white;
+            cursor: default;
+        }
+        a:hover {
+            text-decoration: underline;
+            color: lighten($blue, 20%);
+        }
+    }
+
+    &__question:hover {
+        div {
+            display: block;
+        }
+    }
+
     &__list {
         @include order-reset();
         overflow: hidden;

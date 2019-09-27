@@ -78,22 +78,6 @@
                                 <label class="order-calc__address js-order-calc">
                                     <input type="radio" name="main-item">
                                     <span class="order-calc__radio"></span>
-                                    <span class="order-calc__address-value">СДЭК - курьером до двери</span>
-                                </label>
-                            </div>
-                            <div class="col-4">
-                                <span class="order-calc__pay-sum">265 руб. (1-2 дня)</span>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="order-calc__item">
-                    <div class="order-calc__container">
-                        <div class="row">
-                            <div class="col-8">
-                                <label class="order-calc__address js-order-calc">
-                                    <input type="radio" name="main-item">
-                                    <span class="order-calc__radio"></span>
                                     <span class="order-calc__address-value">СДЭК - до пункта самовывоза</span>
                                 </label>
                             </div>
@@ -357,6 +341,22 @@
                         </div>
                     </div>
                 </li>
+                <li class="order-calc__item">
+                    <div class="order-calc__container">
+                        <div class="row">
+                            <div class="col-8">
+                                <label class="order-calc__address js-order-calc">
+                                    <input type="radio" name="main-item">
+                                    <span class="order-calc__radio"></span>
+                                    <span class="order-calc__address-value">СДЭК - курьером до двери</span>
+                                </label>
+                            </div>
+                            <div class="col-4">
+                                <span class="order-calc__pay-sum">265 руб. (1-2 дня)</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
             </ul>
             <!-- preloader layer -->
             <div class="order__loader" style="display: none;">
@@ -377,7 +377,7 @@
                         <span class="input-icon"></span>
                     </label>
                     <label class="order__label">
-                        <input type="text" class="order__input" placeholder="Индекс" required>
+                        <input type="number" maxlength="6" class="order__input" placeholder="Индекс" required>
                         <span class="error-message"></span>
                         <span class="input-icon"></span>
                     </label>

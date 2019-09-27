@@ -22,13 +22,11 @@
     }
 
     &__item.active {
-        + .order-calc__item {
-            padding-top: 10px;
-        }
         .inner {
             position: relative;
             z-index: 10;
             display: block;
+            margin-bottom: 30px;
         }
         .inner::before {
             content: "";
@@ -114,7 +112,7 @@
         color: $green;
     }
 
-//inner...
+    //inner...
     &__inner-head {
         margin: 25px (-$grid-padding);
         padding: 20px $grid-padding;
