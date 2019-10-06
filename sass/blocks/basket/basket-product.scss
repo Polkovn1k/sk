@@ -426,4 +426,16 @@
             display: block;
         }
     }
+
+    &__will-added-bonuses {
+        margin-top: 5px;
+        display: block;
+        font-size: 14px;
+        line-height: 12px;
+        color: $extra-text-color;
+        @media (min-width: $lg) {
+            display: inline;
+            margin: 0;
+        }
+    }
 }

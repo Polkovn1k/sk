@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru" class="sticky-active-btn open-collapsed tog-property">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smoking Shop</title>
+  <meta name="description" content="Smoking Shop">
+  <meta name="keywords" content="Smoking Shop">
+  <!-- <link rel="shortcut icon" type="image/x-icon" href="*.ico"> -->
+  <!-- <link rel="shortcut icon" type="image/png" href="*.png"> -->
+  <!-- <link rel="apple-touch-icon" href="favicon.png"> -->
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="canonical" href="https://***.ru/">
+  <script>document.createElement("picture");</script>
+</head>
+
+<body>
+
+  <div style="display: none">
+    <include src="build/img/sprite.svg"></include>
+  </div>
+
+  <!----------header-->
+  <header class="header js-header">
+      <div class="header__container">
+
+          <include src="html-modules/header/header.html"></include>
+
+      </div>
+  </header>
+
+  <div data-scroll="" class="wrapper">
+      <!----------main-->
+      <main class="main main--no-hidden">
+          <div class="main__container container-fluid">
+              <div class="row">
+
+                  <div class="col-12">
+                      <ul class="crumbs">
+                          <li class="crumbs__item">
+                              <a href="/" class="crumbs__link">Главная</a>
+                          </li>
+                          <li class="crumbs__item">
+                              <a href="profile.html" class="crumbs__link">Бонусы</a>
+                          </li>
+                      </ul>
+                  </div>
+                  <h2 class="col-12 main__title">Бонусы</h2>
+                  <div class="col-12">
+                      <div class="row">
+
+                          <include src="html-modules/__bonuses/sticky-nav.html"></include>
+                          <include src="html-modules/__bonuses/bonuses.html"></include>
+
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+
+          <include src="html-modules/viewed-slider/viewed-slider.html"></include>
+
+          <div class="main__container container-fluid">
+              <div class="row">
+
+                  <!----------overlays for all pages-->
+                  <include src="html-modules/overlays/overlays.html"></include>
+
+              </div>
+          </div>
+
+      </main>
+
+      <!----------footer-->
+      <footer class="footer">
+          <div class="footer__container container-fluid">
+
+              <include src="html-modules/footer/top-footer.html"></include>
+              <include src="html-modules/footer/bottom-footer.html"></include>
+
+          </div>
+      </footer>
+  </div>
+
+  <!----------library concat-->
+  <script src="js/library.js"></script>
+  <!----------module concat-->
+  <script src="js/module.js"></script>
+
+</body>
+
+</html>

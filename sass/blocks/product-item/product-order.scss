@@ -28,7 +28,7 @@
         display: flex;
         flex-wrap: wrap;
         align-items: flex-start;
-        padding-bottom: 20px;
+        padding-bottom: 15px;
     }
 //блок цен
     &__value {
@@ -64,6 +64,70 @@
         flex-direction: row;
         padding: 0;
         padding-top: 10px;
+    }
+//Бонусы
+    &__bonuses {
+        position: relative;
+        width: 100%;
+        padding-bottom: 15px;
+        p {
+            @include field-reset();
+            display: inline-block;
+            vertical-align: top;
+            font-size: 16px;
+        }
+        span {
+            margin-left: 5px;
+            display: inline-block;
+            vertical-align: top;
+            width: 18px;
+            height: 18px;
+            border: 1px solid $communication-add-color;
+            border-radius: 50%;
+            font-size: 13px;
+            font-weight: 600;
+            line-height: 1.2;
+            text-align: center;
+            color: $communication-add-color;
+            cursor: pointer;
+        }
+        span:hover::before {
+            content: attr(data-tips);
+            position: absolute;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            display: block;
+            padding: 5px;
+            transform: translateY(100%);
+            width: 250px;
+            height: auto;
+            border-radius: 5px;
+            background: $extra-text-color;
+            font-size: 13px;
+            font-weight: 400;
+            line-height: 1.38;
+            color: $white;
+            z-index: 10;
+        }
+        @media (min-width: $sm) {
+            position: static;
+            span {
+                position: relative;
+            }
+            span:hover::before {
+                bottom: auto;
+                top: 50%;
+                left: $basket-aside-promo-accept-span-width + 5px;
+                transform: translateY(-50%);
+            }
+        }
+        @media (min-width: $md) {
+            span:hover::before {
+                right: 25px;
+                left: auto;
+            }
+        }
     }
 //Блок подсчета + кнопка
     &__cart {

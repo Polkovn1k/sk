@@ -338,18 +338,23 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 //Костомизация - калькулятор самозамесов
-.mix-calc {
+.mix-calc,
+.order-aside__bonuses {
     .noUi-target {
         width: 100%;
         margin: 10px auto 10px auto;
         height: $bar-height;
-        background: $blue;
+        background: $border-color;
         border-radius: 0;
         border: none;
     }
 
     .noUi-connects {
         border-radius: 0;
+    }
+
+    .noUi-connect {
+        background: $blue;
     }
 
     .noUi-connect {

@@ -33,6 +33,25 @@
         }
     }
 
+    &__section--bonuses {
+        @media (min-width: $lg) {
+            border-bottom: none;
+        }
+    }
+
+    &__section--bonuses:not(:last-child)::after {
+        @media (min-width: $lg) {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 30px;
+            right: 30px;
+            height: 1px;
+            background: $border-color;
+        }
+    }
+
     &__section:last-child {
         border-bottom: none;
     }
@@ -111,6 +130,13 @@
     &__text {
         @include field-reset();
         margin-bottom: 15px;
+    }
+
+    &__text--bonuses {
+        text-align: center;
+        @media (min-width: $md) {
+            text-align: left;
+        }
     }
 
     .static-content__sub-title {
@@ -244,6 +270,17 @@
     &__certificate-img:hover {
         &::before {
             background: transparentize($extra-text-color, 0.6);
+        }
+    }
+
+    &__total-bonuses {
+        @include field-reset();
+        font-size: 40px;
+        line-height: 1.15;
+        color: $black;
+        text-align: center;
+        @media (min-width: $md) {
+            text-align: left;
         }
     }
 }

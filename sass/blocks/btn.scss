@@ -20,6 +20,16 @@
         background-color: $blue;
         color: $white;
     }
+
+    &--color-reverse {
+        color: $white;
+        background-color: $blue;
+    }
+
+    &--color-reverse:hover {
+        background-color: $white;
+        color: $blue;
+    }
 }
 //серая кнопка
 .silver-btn {

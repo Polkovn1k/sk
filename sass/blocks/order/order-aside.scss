@@ -20,6 +20,54 @@
         color: $main-color;
     }
 
+    &__header--clickable {
+        position: relative;
+        cursor: pointer;
+        border-bottom: none;
+        div {
+            padding-right: 10px;
+        }
+        @media (min-width: $lg) {
+            span:first-child {
+                display: none;
+            }
+        }
+        @media (min-width: $tp) {
+            span:first-child {
+                display: inline;
+            }
+        }
+    }
+
+    &__header--clickable::after {
+        content: attr(data-collapsed);
+        display: inline-block;
+        vertical-align: top;
+        height: $btn-height;
+        padding: 0 10px;
+        border: 1px solid $blue;
+        line-height: $btn-height;
+        text-align: center;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 600;
+        color: $blue;
+        background-color: transparent;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        transition: 0.3s color ease, 0.3s border ease, 0.3s background ease;
+    }
+
+    &__header--clickable.active {
+        border-bottom: 1px solid $border-color;
+    }
+
+    &__header--clickable.active::after {
+        content: attr(data-opened);
+        display: block;
+    }
+
     &__blue-btn {
         padding: 0 8px;
         font-weight: 400;
@@ -27,6 +75,7 @@
 
 //блок состава заказа
     &__structure {
+        margin-bottom: 20px;
         background: $white;
         border: 1px solid $border-color;
         >*:last-child {
@@ -49,12 +98,13 @@
         @include field-reset();
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        align-items: center;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.5;
         color: $communication-add-color;
-        span {
+        span:last-child {
+            margin-left: auto;
             font-size: 16px;
             font-weight: 700;
             line-height: 1.5;
@@ -82,6 +132,59 @@
             line-height: 1.33;
             color: $main-color;
             text-align: center;
+        }
+    }
+
+    &__bonuses-tip {
+        margin-bottom: 15px;
+        position: relative;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 1.2;
+        color: $extra-text-color;
+    }
+
+    &__tip {
+        margin-left: 5px;
+        display: inline-block;
+        vertical-align: top;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $communication-add-color;
+        border-radius: 50%;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
+        color: $communication-add-color;
+        cursor: pointer;
+        @media (min-width: $lg) {
+            position: relative;
+        }
+    }
+
+    &__tip:hover::before  {
+        content: attr(data-tips);
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        display: block;
+        padding: 5px;
+        transform: translateY(calc(100% + 10px)) translateX(-50%);
+        width: 250px;
+        height: auto;
+        border-radius: 5px;
+        background: $extra-text-color;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $white;
+        z-index: 10;
+        @media (min-width: $lg) {
+            transform: translateY(50%);
+            right: 25px;
+            left: auto;
         }
     }
 
@@ -136,5 +239,71 @@
         a:hover {
            color: inherit;
         }
+    }
+//Блок бонусов
+    &__bonuses {
+        background: $white;
+        border: 1px solid $border-color;
+        >*:last-child {
+            margin-bottom: 0;
+        }
+        @media (min-width: $lg) {
+            border: none;
+        }
+    }
+
+    &__bonuses-container {
+        overflow: hidden;
+        max-height: 0;
+        transition: .3s ease;
+    }
+
+    &__bonuses-container.active {
+        max-height: none;
+    }
+
+    &__bonuses-inner {
+        padding: $grid-padding;
+        > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__input-block {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        input {
+            margin-left: 10px;
+            max-width: 70px;
+            text-align: center;
+            border: 1px solid #dfdfdf;
+            outline: none;
+            height: $common-item-height;
+            line-height: $common-item-height;
+        }
+    }
+
+    &__values-spread + &__range-slider {
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+
+    &__values-spread {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: #a1a1a1;
+        background: #fafafa;
+    }
+
+    &__min-value,
+    &__max-value {
+        padding: 0 10px;
     }
 }

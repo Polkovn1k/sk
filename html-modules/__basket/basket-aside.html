@@ -30,9 +30,30 @@
                 </div>
                 <div class="basket-aside__structure-container">
                     <p class="basket-aside__goods-price">Товары без учета скидки <span>15 000 Р.</span></p>
+                    <p class="basket-aside__goods-price basket-aside__goods-price--bonuses">Бонусные баллы <span class="basket-aside__tip" data-tips="За покупку на сайте вы получите бонусные баллы, которые сможете потратить на оплату новых заказов. Баллы начисляются в течение нескольких часов после того, как вы получите свой заказ">?</span><span>1 000</span></p>
                     <div class="basket-aside__goods-total-price"><span>Итоговая сумма </span><span>15 000 Р.</span></div>
                     <a href="order.html" class="basket-aside__btn yellow-btn">Оформить заказ</a>
                     <button data-overlay-id="buy-by-click" class="btn basket-aside__btn js-overlay-btn">Купить в один клик</button>
+                </div>
+            </div>
+    
+            <div class="order-aside__bonuses">
+                <div data-collapsed="Использовать" data-opened="Свернуть" data-find-id="collapseBonusesContainer" class="order-aside__header order-aside__header--clickable js-call-collapsed-element">
+                    <div><span>У вас </span><span>1000</span> баллов</div>
+                </div>
+                <div id="collapseBonusesContainer" class="order-aside__bonuses-container">
+                    <div class="order-aside__bonuses-inner">
+                        <div class="order-aside__input-block">
+                            <span>Использовать</span>
+                            <input type="text" id="order_bonuses_ranger_input">
+                        </div>
+                        <div class="order-aside__values-spread">
+                            <div id="order_bonuses_ranger_min" class="order-aside__min-value"></div>
+                            <div id="order_bonuses_ranger_max" class="order-aside__max-value"></div>
+                        </div>
+                        <div id="order-bonuses"></div>
+                        <button class="btn order-aside__btn btn--color-reverse">Использовать</button>
+                    </div>
                 </div>
             </div>
 

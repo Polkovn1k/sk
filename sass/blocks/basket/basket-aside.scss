@@ -149,6 +149,7 @@
 
 //блок состава заказа
     &__structure {
+        margin-bottom: 20px;
         background: $white;
         border: 1px solid $border-color;
         >*:last-child {
@@ -165,15 +166,16 @@
 
     &__goods-price {
         @include field-reset();
-        margin-bottom: 20px;
+        margin-bottom: 5px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        align-items: center;
         font-size: 16px;
         font-weight: 400;
         line-height: 1.5;
         color: $communication-add-color;
-        span {
+        span:last-child {
+            margin-left: auto;
             font-size: 16px;
             font-weight: 700;
             line-height: 1.5;
@@ -181,7 +183,70 @@
         }
     }
 
+    &__goods-price--bonuses {
+        position: relative;
+        @media (min-width: $sm) {
+            position: static;
+        }
+    }
+
+    &__tip {
+        margin-left: 5px;
+        display: inline-block;
+        vertical-align: top;
+        width: 18px;
+        height: 18px;
+        border: 1px solid $communication-add-color;
+        border-radius: 50%;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.2;
+        text-align: center;
+        color: $communication-add-color;
+        cursor: pointer;
+        @media (min-width: $sm) {
+            position: relative;
+        }
+        @media (min-width: $lg) {
+            position: relative;
+        }
+    }
+
+    &__tip:hover::before  {
+        content: attr(data-tips);
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        display: block;
+        padding: 5px;
+        transform: translateY(calc(100% + 10px)) translateX(-50%);
+        width: 250px;
+        height: auto;
+        border-radius: 5px;
+        background: $extra-text-color;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.38;
+        color: $white;
+        z-index: 10;
+        @media (min-width: $sm) {
+            bottom: auto;
+            top: 50%;
+            transform: translateY(-50%) translateX(calc(100% + 15px));
+            right: 0;
+            left: auto;
+        }
+        @media (min-width: $lg) {
+            bottom: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 25px;
+            left: auto;
+        }
+    }
+
     &__goods-total-price {
+        padding-top: 10px;
         margin-bottom: 20px;
         span:first-child {
             display: block;
